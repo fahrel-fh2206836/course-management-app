@@ -108,6 +108,10 @@ img{
     background-color: var(--chamoisse-);
 }
 
+.submit-button:active {
+    background-color: var(--coffee-);
+}
+
 @media (min-width: 480px) {
     .remember-forgot{
         flex-direction: row;
