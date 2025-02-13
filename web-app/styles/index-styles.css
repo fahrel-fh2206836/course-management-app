@@ -1,17 +1,11 @@
+@import url(theme-styles.css);
+
 *{
     margin: 0;
     padding: 0;
     color: var(--bistre-);
     box-sizing: border-box;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-:root{
-    --beige- : #f5f5DC;
-    --khaki- : #cbb799;
-    --chamoisse- : #a07856;
-    --coffee-: #6f4d38;
-    --bistre-: #3d211a;
+    font-family: var(--font-theme-);
 }
 
 body{
