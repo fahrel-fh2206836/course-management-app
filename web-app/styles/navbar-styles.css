@@ -11,36 +11,72 @@
 nav {
     display: flex;
     justify-content: space-between;
-    padding: 20px 40px;
+    padding: 20px 30px;
     background-color: var(--chamoisse-);
     box-shadow: 0 0 15px;
     border-bottom-left-radius: 15px ;
     border-bottom-right-radius: 15px ;
-
-    img {
-        width: 20%;
-    }
+    height: 100px;
 
     ul {
         display: flex;
         list-style: none;
         align-items: center;
         column-gap: 30px;
-        li a, i{
+
+        li a, li i{
             color: var(--beige-);
             text-decoration: none;
-            font-size: 20px;
+            font-size: 15px;
             font-weight: bold;
+            transition: .7s;
         }
     }
 }
 
+.menu {
+    display: none;
+}
+
+/* active for dashboard for now*/
 .nav-index:hover, .active {
     background-color: var(--coffee-);
     padding: 10px;
     border-radius: 10px;
-    i, a {
-    font-size: 25px;
     transition: .5s;
+    i, a, p{
+    font-size: 20px;
+    transition: .5s;
+    }
+}
+
+#short-qu-logo {
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    .menu {
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+        p, i {
+            color: var(--beige-);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: bold;
+            transition: .7s;
+        }
+    }
+
+    ul li, ul div{
+        display: none;
+    }
+
+    #long-qu-logo {
+        display: none;
+    }
+
+    #short-qu-logo {
+        display: block;
     }
 }
