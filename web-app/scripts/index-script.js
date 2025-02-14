@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const password = document.getElementById('password').value;
 
 
-fetch('login.json')
+fetch('assets/data/users.json')
     .then(response => response.json())
     .then(users => {
         const user = users.find(user => user.username === username && user.password === password);

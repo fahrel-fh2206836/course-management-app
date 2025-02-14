@@ -12,17 +12,18 @@ nav {
     display: flex;
     justify-content: space-between;
     padding: 20px 30px;
+    position: relative;
     background-color: var(--chamoisse-);
     box-shadow: 0 0 15px;
     border-bottom-left-radius: 15px ;
     border-bottom-right-radius: 15px ;
     height: 100px;
 
-    ul {
+    #menuList {
         display: flex;
         list-style: none;
         align-items: center;
-        column-gap: 30px;
+        gap: 30px;
 
         li a, li i{
             color: var(--beige-);
@@ -39,14 +40,13 @@ nav {
 }
 
 /* active for dashboard for now*/
-.nav-index:hover, .active {
+.nav-index:hover{
     background-color: var(--coffee-);
     padding: 10px;
     border-radius: 10px;
     transition: .5s;
-    i, a, p{
+    i, a{
     font-size: 20px;
-    transition: .5s;
     }
 }
 
@@ -54,22 +54,33 @@ nav {
     display: none;
 }
 
+/* For Smaller than Desktops Screes (Tablets/Phones)*/
 @media (max-width: 1024px) {
     .menu {
-        display: flex;
-        align-items: center;
-        column-gap: 10px;
-        p, i {
+        display: block;
+        margin-top: auto;
+        margin-bottom: auto;
+        i{
             color: var(--beige-);
             text-decoration: none;
-            font-size: 20px;
+            font-size: 30px;
             font-weight: bold;
             transition: .7s;
         }
     }
 
-    ul li, ul div{
-        display: none;
+    nav #menuList{
+        position: absolute;
+        flex-direction: column; 
+        top: 100px;
+        left: 0px;
+        right: 0px;
+        background-color: var(--chamoisse-);
+        border-bottom-left-radius: 15px ;
+        border-bottom-right-radius: 15px ;
+        overflow: hidden;
+        transition: all 0.5s;
+        max-height: 0px;
     }
 
     #long-qu-logo {
