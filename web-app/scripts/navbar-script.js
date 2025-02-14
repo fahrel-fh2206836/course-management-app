@@ -1,5 +1,5 @@
 let menuList = document.getElementById("menuList")
-let navbar1 = document.getElementById("navbar1")
+let navbar = document.getElementById("navbar")
 
 if(window.innerWidth > 1024) {
     menuList.classList.add("largeMenuList")
@@ -12,10 +12,10 @@ function toggleMenu() {
         menuList.classList.add("openMenuList")
     }
     if(menuList.classList.contains("closeMenuList")) {
-        navbar1.style.borderRadius = "0px"
+        navbar.style.borderRadius = "0px"
         menuList.classList.remove("closeMenuList")
     }else {
-        navbar1.style.borderRadius = null 
+        navbar.style.borderRadius = null 
         menuList.classList.add("closeMenuList")
 
    }
@@ -25,7 +25,7 @@ window.addEventListener('resize', function(event) {
     if(this.window.innerWidth > 1024) {
         menuList.classList.remove("openMenuList")
         menuList.classList.remove("closeMenuList")
-        navbar1.style.borderRadius = null
+        navbar.style.borderRadius = null
         menuList.classList.add("largeMenuList")
     } else {
         menuList.classList.remove("largeMenuList")

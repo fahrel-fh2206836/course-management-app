@@ -91,7 +91,7 @@ nav ul li a, i {
     display: none;
 }
 
-.menu-icon {
+#menu-icon {
     display: none;
 }
 
@@ -101,7 +101,7 @@ nav ul li a, i {
 
 /* For Smaller than Desktops Screes (Tablets/Phones)*/
 @media (max-width: 1024px) {
-    .menu-icon {
+    #menu-icon {
         display: block;
         margin-top: auto;
         margin-bottom: auto;

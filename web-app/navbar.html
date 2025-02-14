@@ -1,7 +1,9 @@
-<img src="assets/images/qu_logo_white.png" alt="" id="long-qu-logo">
-<img src="assets/images/qu_logo_white3.png" alt="" id="short-qu-logo">
+<div id="nav-header">        
+    <img src="assets/images/qu_logo_white.png" alt="" id="long-qu-logo">
+    <img src="assets/images/qu_logo_white3.png" alt="" id="short-qu-logo">
+    <p id="nav-title">Student Management System</p></div>
 <ul id="menuList">
-    <div class="nav-index">
+    <div class="nav-index active">
         <li><i class='bx bxs-home'></i> <a href="#">Dashboard</a></li>
     </div>
     <div class="nav-index">
@@ -14,9 +16,48 @@
         <li><i class='bx bxs-graduation'></i> <a href="#">Learning Path</a></li>
     </div>
     <div class="nav-index">
-        <li><i class='bx bx-power-off'></i> <a href="#">Logout</a></li>
-    </div>
+    <li><i class='bx bx-power-off'></i> <a href="#">Logout</a></li>
+</div>
 </ul>
-<div class="nav-index menu" onclick="toggleMenu()">
+<div class="nav-index" id="menu-icon">
     <i class='bx bx-menu'></i>
 </div>
+
+<script>
+    let menuList = document.getElementById("menuList")
+    let navbar = document.getElementById("navbar")
+
+    if(window.innerWidth > 1024) {
+        menuList.classList.add("largeMenuList")
+    } else {
+        menuList.classList.add("closeMenuList")
+    }
+
+    window.addEventListener('resize', function(event) {
+        if(this.window.innerWidth > 1024) {
+            menuList.classList.remove("openMenuList")
+            menuList.classList.remove("closeMenuList")
+            navbar.style.borderRadius = null
+            menuList.classList.add("largeMenuList")
+        } else {
+            menuList.classList.remove("largeMenuList")
+            menuList.classList.add("closeMenuList")
+        }
+        }, true);
+
+
+    function toggleMenu() {
+        if(!menuList.classList.contains("openMenuList")) {
+            menuList.classList.add("openMenuList")
+        }
+        if(menuList.classList.contains("closeMenuList")) {
+            navbar.style.borderRadius = "0px"
+            menuList.classList.remove("closeMenuList")
+        }else {
+            navbar.style.borderRadius = null 
+            menuList.classList.add("closeMenuList")
+        }
+    }    
+    
+    document.getElementById("menu-icon").addEventListener("click", toggleMenu)
+</script>
