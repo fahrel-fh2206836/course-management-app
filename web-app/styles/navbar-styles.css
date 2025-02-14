@@ -20,11 +20,11 @@ nav {
     height: 100px;
 }
 
-.menu {
-    display: none;
+#nav-header{
+    display: flex;
+    column-gap: 5em;
 }
 
-/* active for dashboard for now*/
 .nav-index:hover{
     background-color: var(--coffee-);
     padding: 10px;
@@ -43,10 +43,6 @@ nav {
     i, a{
         font-size: 20px;
         }
-}
-
-#short-qu-logo {
-    display: none;
 }
 
 nav ul li a, i {
@@ -91,10 +87,21 @@ nav ul li a, i {
     transform: scaleY(0);
 }
 
+#nav-title{
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+}
+
+#short-qu-logo {
+    display: none;
+}
 
 /* For Smaller than Desktops Screes (Tablets/Phones)*/
 @media (max-width: 1024px) {
-    .menu {
+    .menu-icon {
         display: block;
         margin-top: auto;
         margin-bottom: auto;
@@ -106,12 +113,43 @@ nav ul li a, i {
             transition: .7s;
         }
     }
+    #nav-title{
+        display: block;
+        margin-top: auto;
+        margin-bottom: auto;
+        font-size: 20px;
+        color: var(--beige-);
+        font-weight: bold;
+    }
 
+}
+
+/* For Phone (Landscape) and Tablet (Portrait)*/
+@media (max-width: 768px) {
+    #long-qu-logo {
+        display: block;
+    }
+
+    #short-qu-logo {
+        display: none;
+    }
+
+    #nav-title{
+        display: none;
+    }
+}
+
+/* For Phone (Portrait)*/
+@media (max-width: 480px) {
     #long-qu-logo {
         display: none;
     }
 
     #short-qu-logo {
         display: block;
+    }
+
+    #nav-title{
+        display: none;
     }
 }

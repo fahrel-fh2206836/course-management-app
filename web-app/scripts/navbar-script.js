@@ -4,11 +4,13 @@ let navbar1 = document.getElementById("navbar1")
 if(window.innerWidth > 1024) {
     menuList.classList.add("largeMenuList")
 } else {
-    menuList.classList.add("openMenuList")
     menuList.classList.add("closeMenuList")
 }
 
 function toggleMenu() {
+    if(!menuList.classList.contains("openMenuList")) {
+        menuList.classList.add("openMenuList")
+    }
     if(menuList.classList.contains("closeMenuList")) {
         navbar1.style.borderRadius = "0px"
         menuList.classList.remove("closeMenuList")
@@ -27,7 +29,6 @@ window.addEventListener('resize', function(event) {
         menuList.classList.add("largeMenuList")
     } else {
         menuList.classList.remove("largeMenuList")
-        menuList.classList.add("openMenuList")
         menuList.classList.add("closeMenuList")
     }
 }, true);
