@@ -72,7 +72,7 @@ img{
 .input-box i{
     position: absolute;
     right: 20px;
-    top: 30%;
+    top: 25%;
     transform: translate(-50%);
     font-size: 25px;
 }
