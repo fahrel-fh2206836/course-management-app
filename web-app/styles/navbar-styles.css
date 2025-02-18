@@ -11,8 +11,8 @@
 nav {
     display: flex;
     justify-content: space-between;
-    padding: 20px 30px;
     position: relative;
+    padding: 20px 30px;
     background-color: var(--chamoisse-);
     box-shadow: 0 0 15px;
     border-bottom-left-radius: 15px ;
@@ -20,7 +20,7 @@ nav {
     height: 100px;
 }
 
-#nav-header{
+#nav-img-header{
     display: flex;
     column-gap: 5em;
 }
@@ -63,11 +63,11 @@ nav ul li a, i {
 
 .openMenuList{
     display: flex;
+    flex-direction: column; 
     list-style: none;
     align-items: center;
     gap: 30px;
     position: absolute;
-    flex-direction: column; 
     top: 100px;
     left: 0px;
     right: 0px;
@@ -75,16 +75,16 @@ nav ul li a, i {
     border-bottom-left-radius: 15px ;
     border-bottom-right-radius: 15px ;
     overflow: hidden;
-    padding-bottom: 20px;
+    padding: 20px;
     box-shadow: 0 4px 2px -2px grey;
-    max-height: 300px;
-    transition: 0.5s;
-    transform-origin: top;
+    max-height: 350px;
+    transition: 1s;
+    z-index: -1;
 }
 
 .closeMenuList {
     opacity: 0;
-    transform: scaleY(0);
+    transform: translateY(-400px);
 }
 
 #nav-title{
