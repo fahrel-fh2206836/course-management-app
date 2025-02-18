@@ -13,7 +13,7 @@ nav {
     justify-content: space-between;
     position: relative;
     padding: 20px 30px;
-    background-color: var(--chamoisse-);
+    background-color: var(--khaki-);
     box-shadow: 0 0 15px;
     border-bottom-left-radius: 15px ;
     border-bottom-right-radius: 15px ;
@@ -26,7 +26,7 @@ nav {
 }
 
 .nav-index:hover{
-    background-color: var(--coffee-);
+    background-color: var(--chamoisse-);
     padding: 10px;
     border-radius: 10px;
     transition: .5s;
@@ -46,7 +46,7 @@ nav {
 }
 
 nav ul li a, i {
-    color: var(--beige-);
+    color: white;
     text-decoration: none;
     font-size: 18px;
     font-weight: bold;
@@ -71,7 +71,7 @@ nav ul li a, i {
     top: 100px;
     left: 0px;
     right: 0px;
-    background-color: var(--chamoisse-);
+    background-color: var(--khaki-);
     border-bottom-left-radius: 15px ;
     border-bottom-right-radius: 15px ;
     overflow: hidden;
@@ -106,11 +106,10 @@ nav ul li a, i {
         margin-top: auto;
         margin-bottom: auto;
         i{
-            color: var(--beige-);
+            color: white;
             text-decoration: none;
             font-size: 30px;
             font-weight: bold;
-            transition: .7s;
         }
     }
     #nav-title{
@@ -118,7 +117,7 @@ nav ul li a, i {
         margin-top: auto;
         margin-bottom: auto;
         font-size: 20px;
-        color: var(--beige-);
+        color: white;
         font-weight: bold;
     }
 
