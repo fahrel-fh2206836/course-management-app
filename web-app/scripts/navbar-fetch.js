@@ -4,19 +4,17 @@ fetch('navbar.html')
         let navbar = document.getElementById("navbar");
         navbar.innerHTML = html;
 
-        // Find and execute external scripts
         let scripts = navbar.querySelectorAll("script[src]");
         scripts.forEach(script => {
             let newScript = document.createElement("script");
             newScript.src = script.src;
-            newScript.async = true; // Ensure non-blocking execution
+            newScript.async = true;
             document.body.appendChild(newScript);
         });
 
-        // Execute inline scripts
         let inlineScripts = navbar.querySelectorAll("script:not([src])");
         inlineScripts.forEach(script => {
-            eval(script.innerText); // Execute the script code
+            eval(script.innerText);
         });
     })
     .catch(error => console.error("Error loading HTML:", error));
@@ -28,7 +26,7 @@ fetch('navbar.html')
 //         document.getElementById('navbar').innerHTML = html;
 //         let scripts = document.getElementById('navbar').getElementsByTagName('script');
 //         for (let script of scripts) {
-//             eval(script.innerText); // Execute scripts inside the imported HTML
+//             eval(script.innerText);
 //         }
 //     })
 //     .catch(error => console.error('Error loading HTML:', error));
