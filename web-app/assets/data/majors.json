@@ -1,0 +1,15 @@
+[
+    { 
+        "majorId" : "1",
+        "majorCode" : "CMPS",
+        "majorName" : "Computer Science",
+        "allCourses" : []
+    },
+
+    {
+        "majorId" : "2",
+        "majorCode" : "CMPE",
+        "majorName" : "Computer Engineering",
+        "allCourses" : []
+    }
+]

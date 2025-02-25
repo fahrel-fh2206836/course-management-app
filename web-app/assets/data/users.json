@@ -1,10 +1,76 @@
 [
     {
+        "userId" : "202205004",
+        "firstName" : "Ghanim",
+        "lastName" : "Al-Kuwari",
         "username": "Ghanim",
-        "password": "Ghanim1234"
+        "password": "Ghanim123",
+        "role" : "Student",
+        "majorId" : "1",
+        "gpa" : "" 
     },
+
     {
-        "username": "name",
-        "password": "passowrd2"
+        "userId" : "202211203",
+        "firstName" : "Hamza",
+        "lastName" : "Syed",
+        "username": "Hamza",
+        "password": "Hamza123",
+        "role" : "Student",
+        "majorId" : "2",
+        "gpa" : ""
+    },
+
+    {
+        "userId" : "1001",
+        "firstName" : "Abdelkarim",
+        "lastName" : "Erradi",
+        "username": "Zeyad",
+        "password": "Zeyad123",
+        "role" : "Instructor",
+        "majorId" : "1",
+        "sectionIds" : []
+    },
+
+    {
+        "userId" : "1002",
+        "firstName" : "Mahmoud",
+        "lastName" : "Barhamgi",
+        "username": "Mahmoud",
+        "password": "Mahmoud123",
+        "role" : "Instructor",
+        "majorId" : "1",
+        "sectionIds" : []
+    },
+
+    {
+        "userId" : "1003",
+        "firstName" : "Ahmed",
+        "lastName" : "Badawy",
+        "username": "Ahmed",
+        "password": "Ahmed123",
+        "role" : "Instructor",
+        "majorId" : "2",
+        "sectionIds" : []
+    },
+
+    {
+        "userId" : "1004",
+        "firstName" : "Uvais",
+        "lastName" : "Qidwai",
+        "username": "Uvais",
+        "password": "Uvais123",
+        "role" : "Instructor",
+        "majorId" : "2",
+        "sectionIds" : []
+    },
+
+    {
+        "userId" : "1",
+        "firstName" : "Ali",
+        "lastName" : "Parker",
+        "username": "admin",
+        "password": "admin123",
+        "role" : "Admin"
     }
 ]
