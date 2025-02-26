@@ -1,5 +1,5 @@
-let menuList = document.getElementById("menuList")
-let navbar = document.getElementById("navbar")
+let menuList = document.querySelector("#menuList")
+let navbar = document.querySelector("#navbar")
 
 if(window.innerWidth > 1024) {
     menuList.classList.add("largeMenuList")
@@ -32,5 +32,3 @@ function toggleMenu() {
         menuList.classList.add("closeMenuList")
     }
 }    
-
-document.getElementById("menu-icon").addEventListener("click", toggleMenu)

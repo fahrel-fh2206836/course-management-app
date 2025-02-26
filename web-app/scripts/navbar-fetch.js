@@ -1,3 +1,5 @@
+//Encontered Errors, Keep for now but might not use it
+
 fetch('navbar.html')
     .then(response => response.text())
     .then(html => {

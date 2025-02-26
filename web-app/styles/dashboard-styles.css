@@ -7,3 +7,74 @@
     box-sizing: border-box;
     font-family: var(--font-theme-);
 }
+
+body {
+    background-color: white
+}
+
+main {
+    margin: 15px;
+    >h3 {
+        padding: 15px 0px;
+    }
+}
+
+.welcome-stats {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    padding: 20px;
+    border: 1px solid var(--coffee-);
+    background-color: var(--light-beige-);
+    border-radius: 10px;
+
+    >p span:nth-child(1) {
+        color: maroon;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    >p span:nth-child(2) {
+        font-weight: bold;
+    }
+}
+
+
+.stats-card {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    >div {
+        display: flex;
+        justify-content: space-between;
+
+        >span:nth-child(1){
+            font-weight: bold;
+        }
+    }
+}
+
+#bar-percentage {
+    font-weight: bold;
+    color: var(--bistre-); /* adjusted with javascript */ 
+    padding-left: 10px;   
+}
+
+#progress-bar {
+    flex-grow: 1;
+    background-color: white;
+    border-radius: 13px;
+    padding: 3px;
+    border: 1px solid var(--bistre-);
+  
+  >div {
+    background-color: var(--chamoisse-);
+    width: 40%; /*Will be adjusted with javascript*/
+    height: 20px;
+    border-radius: 10px;
+  }
+}

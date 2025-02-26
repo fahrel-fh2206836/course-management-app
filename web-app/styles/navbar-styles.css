@@ -61,6 +61,18 @@ nav ul li a, i {
     gap: 30px;
 }
 
+#nav-title{
+    display: none;
+}
+
+#menu-icon {
+    display: none;
+}
+
+#short-qu-logo {
+    display: none;
+}
+
 .openMenuList{
     display: flex;
     flex-direction: column; 
@@ -79,25 +91,14 @@ nav ul li a, i {
     box-shadow: 0 4px 2px -2px grey;
     max-height: 350px;
     transition: 1s;
-    z-index: -1;
+    /* z-index: -1; */
 }
+
 
 .closeMenuList {
     opacity: 0;
     transform: translateY(-400px);
-}
-
-#nav-title{
-    display: none;
-}
-
-#menu-icon {
-    display: none;
-}
-
-#short-qu-logo {
-    display: none;
-}
+}  
 
 /* For Smaller than Desktops Screes (Tablets/Phones)*/
 @media (max-width: 1024px) {
