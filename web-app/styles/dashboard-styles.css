@@ -152,11 +152,9 @@ main {
         width: 4.8rem;
         font-size: .65rem;
         border-radius: 5px;
-        padding: 2px 5px;
-        background-color: var(--chamoisse-);
-        color: var(--beige-);
         text-align: center;
         i{
+            color: var(--bistre-);
             display: block;
         }
     }
