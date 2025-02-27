@@ -17,9 +17,13 @@ fetch('assets/data/users.json')
     .then(response => response.json())
     .then(users => {
         const user = users.find(user => user.username === username && user.password === password);
-        if (user) {
-            window.location.href = 'dashboard.html';
-        } else { 
+        if (user.role === "Student") {
+            window.location.href = 'dashboard-student.html';
+        }else if (user.role === "Instructor") {
+            window.location.href = 'dashboard-instructor.html';
+        } else if (user.role === "Admin") {
+            window.location.href = 'dashboard-admin.html';
+        }else { 
             alert('credentials are incorrect or doesnt exist, retry please sir')
         }
     })

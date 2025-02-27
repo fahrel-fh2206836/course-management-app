@@ -25,8 +25,8 @@
         "userId" : "1001",
         "firstName" : "Abdelkarim",
         "lastName" : "Erradi",
-        "username": "Zeyad",
-        "password": "Zeyad123",
+        "username": "Abdelkarim",
+        "password": "Abdelkarim123",
         "role" : "Instructor",
         "majorId" : "1",
         "sectionIds" : []

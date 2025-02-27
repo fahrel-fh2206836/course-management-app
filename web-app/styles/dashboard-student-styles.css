@@ -17,7 +17,7 @@ main {
     display: flex;
     flex-direction: column;
     row-gap: 10px;
-    margin: 15px;
+    margin: 20px;
     >h1 {
         padding: 15px 0px;
     }
@@ -110,6 +110,12 @@ main {
         position: relative;
         padding: 35px 10px 10px;
     }
+
+    li:hover {
+        transform: scale(1.05);
+        transition: 0.5s;
+        z-index: 100;
+    }
 }
 
 .card-flag {
@@ -191,7 +197,7 @@ main {
         justify-self: center;
         display: block;
         img {
-            height: 50vh;
+            width: 50vw;
             border-radius: 15px;
             box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;        }
     }
