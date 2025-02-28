@@ -7,3 +7,7 @@
     --bistre-: #3d211a;
     --font-theme-: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+.hide {
+    display: none;
+}

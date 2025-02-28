@@ -10,26 +10,46 @@ document.addEventListener('DOMContentLoaded', function () {
         event.preventDefault();
 
     const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
+    const password = document.getElementById('password');
+    const wrongPass = document.getElementById('wrong-pass');
 
 
-fetch('assets/data/users.json')
-    .then(response => response.json())
-    .then(users => {
-        const user = users.find(user => user.username === username && user.password === password);
-        if (user.role === "Student") {
-            window.location.href = 'dashboard-student.html';
-        }else if (user.role === "Instructor") {
-            window.location.href = 'dashboard-instructor.html';
-        } else if (user.role === "Admin") {
-            window.location.href = 'dashboard-admin.html';
-        }else { 
-            alert('credentials are incorrect or doesnt exist, retry please sir')
-        }
-    })
+    fetch('assets/data/users.json')
+        .then(response => response.json())
+        .then(users => {
+            const user = users.find(user => user.username === username && user.password === password.value);
+            if (user) {
+                if (user.role === 'Student') {
+                    window.location.href = 'dashboard-student.html';
+                }else if (user.role === 'Instructor') {
+                    window.location.href = 'dashboard-instructor.html';
+                } else {
+                    window.location.href = 'dashboard-admin.html';
+                } 
+            } else {
+                password.value = "";
+                wrongPass.style.display = 'block';
+            }
+        })
 
-    .catch(error => {
-        console.error('user error', error);
-    });
+        .catch(error => {
+            console.error('user error', error);
+        });
 
 })})
+
+function toggleViewPassword() {
+    const passField = document.querySelector("#password");
+    const toggleBtn = document.querySelector("#toggle-btn");
+
+    if(passField.type === "password") {
+        passField.type = "text";
+        toggleBtn.classList.add('bx-hide');
+        toggleBtn.classList.remove('bx-show');
+        
+    } else {
+        passField.type = "password";
+        toggleBtn.classList.add('bx-show');
+        toggleBtn.classList.remove('bx-hide');
+    }
+}

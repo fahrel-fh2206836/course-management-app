@@ -37,10 +37,12 @@ body{
         padding: 10px;
         font-size: 15px;
         text-align: center;
-        font-style: italic;
     }
 }
 
+.quote {
+    font-style: italic;
+}
 
 
 img{
@@ -104,6 +106,15 @@ img{
 
 .submit-button:active {
     background-color: var(--coffee-);
+}
+
+.error {
+    color: red;
+    display: none;
+}
+
+#toggle-btn:hover{  
+    color: orange
 }
 
 /*For Phone landscape and bigger screens*/
