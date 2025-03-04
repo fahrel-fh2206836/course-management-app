@@ -54,7 +54,7 @@ nav ul li a, i {
     cursor: pointer;
 }
 
-.largeMenuList {
+.large-menulist {
     display: flex;
     list-style: none;
     align-items: center;
@@ -73,7 +73,7 @@ nav ul li a, i {
     display: none;
 }
 
-.openMenuList{
+.open-menulist{
     display: flex;
     flex-direction: column; 
     list-style: none;
@@ -95,7 +95,7 @@ nav ul li a, i {
 }
 
 
-.closeMenuList {
+.close-menulist {
     opacity: 0;
     transform: translateY(-400px);
 }  

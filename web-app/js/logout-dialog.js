@@ -16,7 +16,9 @@ function openLogoutDialog() {
 
 function closeLogoutDialog() {
     const logoutDialog = document.querySelector("#logoutDialog");
-    if (logoutDialog) logoutDialog.remove();
+    if (logoutDialog) {
+        logoutDialog.remove();
+    }
 }
 
 function confirmLogout() {
