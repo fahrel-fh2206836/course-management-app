@@ -7,6 +7,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="styles/navbar-styles.css">
     <link rel="stylesheet" href="styles/dashboard-student-styles.css">
+    <link rel="stylesheet" href="styles/dialog-styles.css">
 </head>
 <body>
     <header>
@@ -17,16 +18,16 @@
                 <p id="nav-title">Course Management System</p></div>
             <ul id="menuList">
                 <div class="nav-index active">
-                    <li><i class='bx bxs-home'></i> <a href="#">Dashboard</a></li>
+                    <li><i class='bx bxs-home'></i> <a href="dashboard-student.html">Dashboard</a></li>
                 </div>
                 <div class="nav-index">
-                    <li><i class='bx bxs-book'></i> <a href="#">Registration</a></li>
+                    <li><i class='bx bxs-book'></i> <a href="registration.html">Registration</a></li>
                 </div>
                 <div class="nav-index">           
                     <li><i class='bx bxs-graduation'></i> <a href="#">Learning Path</a></li>
                 </div>
                 <div class="nav-index">
-                <li><i class='bx bx-power-off'></i> <a href="index.html">Logout</a></li>
+                <li><i class='bx bx-power-off'></i> <a onclick="openLogoutDialog()">Logout</a></li>
             </div>
             </ul>
             <div class="nav-index" id="menu-icon" onclick="toggleMenu()">
@@ -35,11 +36,9 @@
         </nav>   
     </header> 
 
-    <script src="scripts/navbar-script.js"></script>
-
     <main>
         <h1>Course Management System</h1>
-        <div class="welcome-stats">
+        <div class="welcome-stats section-style">
             <p><span>Welcome</span>, <span>{First Name} {Last Name}</span>, to Qatar University's Course Management System.</p>
             <p>Register and manage courses with ease and track your progress!</p>
             
@@ -52,10 +51,10 @@
             </div>
         </div>
         <div class="welcome-img">
-            <img src="assets/images/student_drawing.webp" alt="">
+            <img src="assets/images/welcome.jpg" alt="">
         </div>
         <h1 id="ongoing-text">Ongoing Courses</h1>
-        <div class="registered-courses">
+        <div class="registered-courses section-style">
             <ul class="course-card-list"> 
                 <li>
                     <div class="card-flag"><p>CMPS 151</p></div>
@@ -125,5 +124,7 @@
         </div>
     </main>    
 
+    <script src="js/navbar-script.js"></script>
+    <script src="js/logout-dialog.js"></script>
 </body>
 </html>

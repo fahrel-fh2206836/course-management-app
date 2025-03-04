@@ -6,6 +6,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Dashboard-Instructor</title>
     <link rel="stylesheet" href="styles/navbar-styles.css">
+    <link rel="stylesheet" href="styles/dialog-styles.css">
 </head>
 <body>
     <header>
@@ -24,7 +25,7 @@
                 </div>
                 <!-- Temporary -->
                 <div class="nav-index">
-                    <li><i class='bx bx-power-off'></i> <a href="index.html">Logout</a></li>
+                    <li><i class='bx bx-power-off'></i> <a onclick="openLogoutDialog()">Logout</a></li>
                 </div>
             </ul>
             <div class="nav-index" id="menu-icon" onclick="toggleMenu()">
@@ -33,7 +34,7 @@
         </nav>   
     </header> 
 
-    <script src="scripts/navbar-script.js"></script>
-    
+    <script src="js/navbar-script.js"></script>
+    <script src="js/logout-dialog.js"></script>
 </body>
 </html>

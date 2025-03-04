@@ -23,14 +23,17 @@ main {
     }
 }
 
+.section-style {
+    border: 1px solid var(--coffee-);
+    background-color: var(--light-beige-);
+    border-radius: 10px;
+}
+
 .welcome-stats {
     display: flex;
     flex-direction: column;
     row-gap: 20px;
     padding: 20px;
-    border: 1px solid var(--coffee-);
-    background-color: var(--light-beige-);
-    border-radius: 10px;
 
     p {
         font-size: .9rem;
@@ -90,8 +93,14 @@ main {
   }
 }
 
-.welcome-img {
-    display: none;
+.welcome-img img{
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px; 
+    
+}
+.registered-courses {
+    padding: 15px;
 }
 
 .course-card-list {
@@ -109,10 +118,11 @@ main {
         border-left: 10px solid var(--coffee-);
         position: relative;
         padding: 35px 10px 10px;
+        background-color: white;
     }
 
     li:hover {
-        transform: scale(1.05);
+        transform: scale(1.02);
         transition: 0.5s;
         z-index: 100;
     }
@@ -195,11 +205,9 @@ main {
         grid-area: welcome-img;
         align-self: center;
         justify-self: center;
-        display: block;
-        img {
-            width: 27vw;
-            border-radius: 15px;
-            box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;        }
+        img{
+            height: 27vw;
+        }
     }
 
     .registered-courses {

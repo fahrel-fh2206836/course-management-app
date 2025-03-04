@@ -91,9 +91,9 @@ img{
 .submit-button{
     width: 100%;
     height: 45px;
-    background: var(--khaki-);
+    background: var(--bistre-);
     border-radius: 40px;
-    border: 1px solid var(--bistre-);
+    border: none;
     cursor: pointer;
     color: var(--beige-);
     font-weight: 500;
@@ -101,11 +101,11 @@ img{
 }
 
 .submit-button:hover{
-    background-color: var(--chamoisse-);
+    background-color: var(--coffee-);
 }
 
 .submit-button:active {
-    background-color: var(--coffee-);
+    background-color: var(--chamoisse-);
 }
 
 .error {
