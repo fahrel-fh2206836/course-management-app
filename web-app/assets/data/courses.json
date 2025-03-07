@@ -1,0 +1,85 @@
+[
+    {
+        "id" : "1",
+        "courseCode" : "CMPS 151",
+        "majorId" : "1",
+        "creditHour" : 3,
+        "courseName" : "Programming Concepts",
+        "category" : "Programming",
+        "prerequisitesCoursesId" : [],
+        "isOngoing" : true,
+        "isRegistration" : true
+    },
+
+    {
+        "id" : "2",
+        "courseCode" : "CMPS 251",
+        "majorId" : "1",
+        "creditHour" : 4,
+        "courseName" : "Object-Oriented Programming",
+        "category" : "Programming",
+        "prerequisitesCoursesId" : ["1"],
+        "isOngoing" : true,
+        "isRegistration" : true
+    },
+
+    {
+        "id" : "3",
+        "courseCode" : "CMPS 205",
+        "majorId" : "1",
+        "creditHour" : 3,
+        "courseName" : "Discrete Mathematics",
+        "category" : "Mathematics",
+        "prerequisitesCoursesId" : [""],
+        "isOngoing" : true,
+        "isRegistration" : true
+    },
+
+    {
+        "id" : "4",
+        "courseCode" : "CMPS 350",
+        "majorId" : "1",
+        "creditHour" : 3,
+        "courseName" : "Web Development Fundamentals",
+        "category" : "App Development",
+        "prerequisitesCoursesId" : ["2"],
+        "isOngoing" : true,
+        "isRegistration" : false
+    },
+
+    {
+        "id" : "51",
+        "courseCode" : "CMPE 261",
+        "majorId" : "2",
+        "creditHour" : 4,
+        "courseName" : "Digital Logic Design",
+        "category" : "Computer Hardware",
+        "prerequisitesCoursesId" : ["3"],
+        "isOngoing" : false,
+        "isRegistration" : true
+    },
+    
+    {
+        "id" : "52",
+        "courseCode" : "CMPE 263",
+        "majorId" : "2",
+        "creditHour" : 3,
+        "courseName" : "Computer Architecture and Organization I",
+        "category" : "Computer Hardware",
+        "prerequisitesCoursesId" : ["1,3"],
+        "isOngoing" : true,
+        "isRegistration" : false
+    },
+
+    {
+        "id" : "53",
+        "courseCode" : "CMPE 355",
+        "majorId" : "2",
+        "creditHour" : 4,
+        "courseName" : "Networks I",
+        "category" : "Computer Networks",
+        "prerequisitesCoursesId" : ["52"],
+        "isOngoing" : false,
+        "isRegistration" : true
+    }
+]

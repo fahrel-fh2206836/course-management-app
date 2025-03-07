@@ -3,13 +3,13 @@
         "majorId" : "1",
         "majorCode" : "CMPS",
         "majorName" : "Computer Science",
-        "allCourses" : []
+        "allCoursesId" : ["1","2","3","4"]
     },
 
     {
         "majorId" : "2",
         "majorCode" : "CMPE",
         "majorName" : "Computer Engineering",
-        "allCourses" : []
+        "allCourses" : ["51","52","53"]
     }
 ]
