@@ -3,6 +3,7 @@
         "majorId" : "1",
         "majorCode" : "CMPS",
         "majorName" : "Computer Science",
+        "totalCreditHour" : 120,
         "allCoursesId" : ["1","2","3","4"]
     },
 
@@ -10,6 +11,7 @@
         "majorId" : "2",
         "majorCode" : "CMPE",
         "majorName" : "Computer Engineering",
+        "totalCreditHour" : 128,
         "allCourses" : ["51","52","53"]
     }
 ]

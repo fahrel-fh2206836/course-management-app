@@ -7,7 +7,8 @@
         "password": "Ghanim123",
         "role" : "Student",
         "majorId" : "1",
-        "gpa" : "" 
+        "gpa" : 0.0,
+        "finishedCreditHour": 0
     },
 
     {
@@ -18,7 +19,8 @@
         "password": "Hamza123",
         "role" : "Student",
         "majorId" : "2",
-        "gpa" : ""
+        "gpa" : 0.0,
+        "finishedCreditHour": 0
     },
 
     {
