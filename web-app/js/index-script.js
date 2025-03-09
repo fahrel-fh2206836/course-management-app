@@ -20,11 +20,11 @@ document.addEventListener('DOMContentLoaded', function () {
             const user = users.find(user => user.username === username && user.password === password.value);
             if (user) {
                 if (user.role === 'Student') {
-                    window.location.href = 'dashboard-student.html';
+                    window.location.href = '/view-student/dashboard-student.html';
                 }else if (user.role === 'Instructor') {
-                    window.location.href = 'dashboard-instructor.html';
+                    window.location.href = '/view-instructor/dashboard-instructor.html';
                 } else {
-                    window.location.href = 'dashboard-admin.html';
+                    window.location.href = '/view-admin/dashboard-admin.html';
                 } 
             } else {
                 password.value = "";
