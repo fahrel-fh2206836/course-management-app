@@ -23,6 +23,9 @@ nav {
 #nav-img-header{
     display: flex;
     column-gap: 5em;
+    a{
+        display: flex;
+    }
 }
 
 .nav-index:hover{
