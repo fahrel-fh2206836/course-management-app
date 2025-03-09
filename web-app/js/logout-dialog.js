@@ -23,6 +23,6 @@ function closeLogoutDialog() {
 
 function confirmLogout() {
     closeLogoutDialog();
-    window.location.href = "index.html";
+    window.location.href = "../index.html";
 }
 
