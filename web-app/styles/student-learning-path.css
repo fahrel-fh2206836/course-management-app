@@ -1,0 +1,215 @@
+.achievements {
+    font-family: "Comic Sans MS", "Patrick Hand", cursive;
+}
+
+.achievements h1{
+    text-align: center; 
+    margin: 0 auto; 
+    padding: 20px 0;  
+    max-width: 80%;  
+}
+
+#colored-title{
+    color: red;
+}
+
+.student_details {
+    border: 1px solid var(--coffee-);
+    border-radius: 10px;
+    background: white;
+    padding: 15px;
+    width: 1150px;
+    height: 350px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 25px;
+    margin-top: 50px;
+}
+
+.top-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px; 
+}
+
+.completed_courses,.completed_CH {
+    margin-bottom: 50px; 
+}
+
+.progress {
+    width: 100%;
+    height: 25px; 
+    border: 3px solid black;
+    background: white;
+    position: relative;
+    margin-top: 15px;
+}
+
+.progress-bar {
+    height: 100%;
+    background: black;
+    width: 0%;
+}
+
+.percentage {
+    font-size: 20px; 
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+
+.prerequsite h1 {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.img-prerequiste img {
+    height: 538px;
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px; 
+}
+
+
+.Tracker {
+    width: 1250px;
+    margin: 30px auto;
+    text-align: center;
+    margin-top:100px;
+}
+
+
+.container {
+    display: flex;
+    gap: 10px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+
+.status-completed,.status-in_progress,.status-pending {
+    width: 32%; 
+    padding: 15px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.status-completed h2, .status-in_progress h2, .status-pending h2 {
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+
+.status-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+
+.completed-dot {
+    background-color: green;
+}
+
+.in_progress-dot {
+    background-color: blue;
+}
+
+.pending-dot {
+    background-color: orange;
+}
+
+
+.course-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto;
+    max-height: 300px;
+    padding-right: 5px;
+}
+
+.scrolling{
+    width: 350px;
+    height: 200px;
+    border: 1px solid #000;
+    overflow: auto;
+    padding: 10px;
+  }
+
+
+.course-card {
+    width: 100%;
+    border: 2px solid black;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background: white;
+}
+
+
+.course-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.course-code{
+    background-color: black;
+    color: white;
+}
+
+
+@media screen and (max-width: 900px) {
+.body{
+    width: auto;
+}
+.main{
+    display: block;
+    width: auto;
+}
+
+.student_details{
+    width: auto;
+    margin-bottom: 30px;
+    margin-right: 20px;
+}
+
+.Tracker{
+    width: auto;
+}
+
+.container {
+    display: none;
+}
+
+.status-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.status-dropdown {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid black;
+    background: white;
+}}
+

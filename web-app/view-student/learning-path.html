@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../styles/dashboard-student-styles.css">
     <link rel="stylesheet" href="../styles/dialog-styles.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../styles/student-learning-path.css">
 
     <script ></script>
 
@@ -39,12 +40,179 @@
             <div class="nav-index" id="menu-icon" onclick="toggleMenu()">
                 <i class='bx bx-menu'></i>
             </div>
-        </nav>   
+        </nav>  
     </header> 
-    
-
     <main>
+        <div class="achievments section-style">
+            <h1>Track your <span id="colored-title">Achievments!</span></h1>
+            <div class = "student_details">
+                <div class="top-row">
+                    <div class="major">Major: </div>
+                    <div class="gpa">CGPA: </div>
+                </div>
+                <div class="completed_courses">Completed Courses: </div>
+                <div class="completed_CH">Completed Credit Hours: </div>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 60%;"></div>
+                </div>
+                <div class="percentage">60%</div>
+            </div>
+        </div>
+        
+        <div class = "prerequsite section-style">
+            <h1> Prerequiste Flowchart </h1>
+            <div class = "img-prerequiste">
+                <img id="picture" src="../assets/images/flowchart_cs.png" alt="">
+            </div></div>
 
+        
+
+        <div class="Tracker section-style ">
+            <h1> Track your Learning Path!</h1>
+
+            <label for="status-filter" class="status-label">Select Status:</label>
+            <select id="status-filter" class="status-dropdown">
+                <option value="completed">Completed</option>
+                <option value="in_progress">In progress</option>
+                <option value="pending">Pending</option>
+            </select>
+
+            
+            <div class="container">
+                <div class="status-completed">
+                    <h2><span class="status-dot completed-dot"></span> Completed</h2>
+                    <div class="course-list">
+                        <div class="scrolling">
+                            <div class="course-card">
+                                <div class="course-header">
+                                    <span class="course-code">CS 101</span>
+                                    <span class="course-title">Intro to CS</span>
+                                    <span class="course-ch">3 CH</span>
+                                </div>
+                            </div>
+            
+                            <div class="course-card">
+                                <div class="course-header">
+                                    <span class="course-code">CS 201</span>
+                                    <span class="course-title">Data Structures</span>
+                                    <span class="course-ch">4 CH</span>
+                                </div>
+                            </div>
+
+                            <div class="course-card">
+                                <div class="course-header">
+                                    <span class="course-code">CS 201</span>
+                                    <span class="course-title">Data Structures</span>
+                                    <span class="course-ch">4 CH</span>
+                                </div>
+                            </div>
+
+                            <div class="course-card">
+                                <div class="course-header">
+                                    <span class="course-code">CS 201</span>
+                                    <span class="course-title">Data Structures</span>
+                                    <span class="course-ch">4 CH</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="status-pending">
+                    <h2><span class="status-dot pending-dot"></span> Pending</h2>
+                    <div class="course-list">
+                        <div class="scrolling">
+                            <div class="course-card">
+                                <div class="course-header">
+                                    <span class="course-code">CS 405</span>
+                                    <span class="course-title">Operating Systems</span>
+                                    <span class="course-ch">4 CH</span>
+                                </div>
+                            </div>
+                            <div class="course-card">
+                                <div class="course-header">
+                                    <span class="course-code">CS 201</span>
+                                    <span class="course-title">Data Structures</span>
+                                    <span class="course-ch">4 CH</span>
+                                </div>
+                            </div>
+
+                            <div class="course-card">
+                                <div class="course-header">
+                                    <span class="course-code">CS 201</span>
+                                    <span class="course-title">Data Structures</span>
+                                    <span class="course-ch">4 CH</span>
+                                </div>
+                            </div>
+
+                            <div class="course-card">
+                                <div class="course-header">
+                                    <span class="course-code">CS 201</span>
+                                    <span class="course-title">Data Structures</span>
+                                    <span class="course-ch">4 CH</span>
+                                </div>
+                            </div>
+
+                            <div class="course-card">
+                                <div class="course-header">
+                                    <span class="course-code">CS 201</span>
+                                    <span class="course-title">Data Structures</span>
+                                    <span class="course-ch">4 CH</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+        
+                <div class="status-in_progress">
+                    <h2><span class="status-dot in_progress-dot"></span> In progress</h2>
+                    <div class="course-list">
+                        <div class="scrolling">
+                            <div class="course-card">
+                                <div class="course-header">
+                                    <span class="course-code">CS 405</span>
+                                    <span class="course-title">Operating Systems</span>
+                                    <span class="course-ch">4 CH</span>
+                                </div>
+                            </div>
+                            <div class="course-card">
+                                <div class="course-header">
+                                    <span class="course-code">CS 201</span>
+                                    <span class="course-title">Data Structures</span>
+                                    <span class="course-ch">4 CH</span>
+                                </div>
+                            </div>
+
+                            <div class="course-card">
+                                <div class="course-header">
+                                    <span class="course-code">CS 201</span>
+                                    <span class="course-title">Data Structures</span>
+                                    <span class="course-ch">4 CH</span>
+                                </div>
+                            </div>
+
+                            <div class="course-card">
+                                <div class="course-header">
+                                    <span class="course-code">CS 201</span>
+                                    <span class="course-title">Data Structures</span>
+                                    <span class="course-ch">4 CH</span>
+                                </div>
+                            </div>
+
+                            <div class="course-card">
+                                <div class="course-header">
+                                    <span class="course-code">CS 201</span>
+                                    <span class="course-title">Data Structures</span>
+                                    <span class="course-ch">4 CH</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
 
