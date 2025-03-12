@@ -108,6 +108,7 @@ main {
     list-style: none;
     flex-direction: column;
     row-gap: 15px;
+    cursor: pointer;
     li{
         display: flex;
         flex-direction: column;
@@ -119,13 +120,17 @@ main {
         position: relative;
         padding: 35px 10px 10px;
         background-color: white;
+        transition: transform 0.5s ease;
     }
 
     li:hover {
         transform: scale(1.02);
-        transition: 0.5s;
         z-index: 100;
     }
+}
+
+.course-card-list li:hover .card-course-name{
+    text-decoration: underline;
 }
 
 .card-flag {
