@@ -1,0 +1,133 @@
+[
+    {
+        "studentId": "5001",
+        "sectionId": "1",
+        "grade": "B"
+    },
+
+    {
+        "studentId": "5002",
+        "sectionId": "1",
+        "grade": "A"
+    },
+
+    {
+        "studentId": "5001",
+        "sectionId": "2",
+        "grade": "A"
+    },
+
+    {
+        "studentId": "5002",
+        "sectionId": "2",
+        "grade": "C"
+    },
+
+    {
+        "studentId": "5003",
+        "sectionId": "3",
+        "grade": "C"
+    },
+
+    {
+        "studentId": "5004",
+        "sectionId": "3",
+        "grade": "A"
+    },
+
+    {
+        "studentId": "5003",
+        "sectionId": "4",
+        "grade": "B"
+    },
+
+    {
+        "studentId": "5004",
+        "sectionId": "4",
+        "grade": "D"
+    },
+
+    {
+        "studentId": "5001",
+        "sectionId": "5",
+        "grade": "A"
+    },
+
+    {
+        "studentId": "5003",
+        "sectionId": "5",
+        "grade": "C"
+    },
+
+    {
+        "studentId": "5001",
+        "sectionId": "6",
+        "grade": "B"
+    },
+
+    {
+        "studentId": "5002",
+        "sectionId": "6",
+        "grade": "A"
+    },
+
+    {
+        "studentId": "5002",
+        "sectionId": "7",
+        "grade": "B"
+    },
+
+    {
+        "studentId": "5003",
+        "sectionId": "8",
+        "grade": ""
+    },
+
+    {
+        "studentId": "5004",
+        "sectionId": "8",
+        "grade": ""
+    },
+
+    {
+        "studentId": "5001",
+        "sectionId": "9",
+        "grade": ""
+    },
+
+    {
+        "studentId": "5002",
+        "sectionId": "9",
+        "grade": ""
+    },
+
+    {
+        "studentId": "5003",
+        "sectionId": "9",
+        "grade": ""
+    },
+
+    {
+        "studentId": "5004",
+        "sectionId": "9",
+        "grade": ""
+    },
+
+    {
+        "studentId": "5001",
+        "sectionId": "10",
+        "grade": ""
+    },
+
+    {
+        "studentId": "5002",
+        "sectionId": "10",
+        "grade": ""
+    },
+
+    {
+        "studentId": "5001",
+        "sectionId": "11",
+        "grade": ""
+    }
+]
