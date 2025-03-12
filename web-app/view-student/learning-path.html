@@ -4,14 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learning-Path</title>
-    <link rel="stylesheet" href="../styles/search-course.css">
     <link rel="stylesheet" href="../styles/navbar-styles.css">
     <link rel="stylesheet" href="../styles/dashboard-student-styles.css">
     <link rel="stylesheet" href="../styles/dialog-styles.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../styles/student-learning-path.css">
-
-    <script ></script>
+    <script src="../js/student-learningpath.js"></script>
 
 </head>
 <body>
@@ -47,15 +45,15 @@
             <h1>Track your <span id="colored-title">Achievments!</span></h1>
             <div class = "student_details">
                 <div class="top-row">
-                    <div class="major">Major: </div>
-                    <div class="gpa">CGPA: </div>
+                    <div class="major"></div>
+                    <div class="gpa"></div>
                 </div>
-                <div class="completed_courses">Completed Courses: </div>
-                <div class="completed_CH">Completed Credit Hours: </div>
+                <div class="completed_courses"></div>
+                <div class="completed_CH"></div>
                 <div class="progress">
                     <div class="progress-bar" style="width: 60%;"></div>
                 </div>
-                <div class="percentage">60%</div>
+                <div class="percentage"></div>
             </div>
         </div>
         
@@ -65,8 +63,10 @@
                 <img id="picture" src="../assets/images/flowchart_cs.png" alt="">
             </div></div>
 
-        
+    
+    </main>
 
+    <footer>
         <div class="Tracker section-style ">
             <h1> Track your Learning Path!</h1>
 
@@ -90,30 +90,6 @@
                                     <span class="course-ch">3 CH</span>
                                 </div>
                             </div>
-            
-                            <div class="course-card">
-                                <div class="course-header">
-                                    <span class="course-code">CS 201</span>
-                                    <span class="course-title">Data Structures</span>
-                                    <span class="course-ch">4 CH</span>
-                                </div>
-                            </div>
-
-                            <div class="course-card">
-                                <div class="course-header">
-                                    <span class="course-code">CS 201</span>
-                                    <span class="course-title">Data Structures</span>
-                                    <span class="course-ch">4 CH</span>
-                                </div>
-                            </div>
-
-                            <div class="course-card">
-                                <div class="course-header">
-                                    <span class="course-code">CS 201</span>
-                                    <span class="course-title">Data Structures</span>
-                                    <span class="course-ch">4 CH</span>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -129,43 +105,9 @@
                                     <span class="course-ch">4 CH</span>
                                 </div>
                             </div>
-                            <div class="course-card">
-                                <div class="course-header">
-                                    <span class="course-code">CS 201</span>
-                                    <span class="course-title">Data Structures</span>
-                                    <span class="course-ch">4 CH</span>
-                                </div>
-                            </div>
-
-                            <div class="course-card">
-                                <div class="course-header">
-                                    <span class="course-code">CS 201</span>
-                                    <span class="course-title">Data Structures</span>
-                                    <span class="course-ch">4 CH</span>
-                                </div>
-                            </div>
-
-                            <div class="course-card">
-                                <div class="course-header">
-                                    <span class="course-code">CS 201</span>
-                                    <span class="course-title">Data Structures</span>
-                                    <span class="course-ch">4 CH</span>
-                                </div>
-                            </div>
-
-                            <div class="course-card">
-                                <div class="course-header">
-                                    <span class="course-code">CS 201</span>
-                                    <span class="course-title">Data Structures</span>
-                                    <span class="course-ch">4 CH</span>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
-
-                
-        
                 <div class="status-in_progress">
                     <h2><span class="status-dot in_progress-dot"></span> In progress</h2>
                     <div class="course-list">
@@ -177,49 +119,12 @@
                                     <span class="course-ch">4 CH</span>
                                 </div>
                             </div>
-                            <div class="course-card">
-                                <div class="course-header">
-                                    <span class="course-code">CS 201</span>
-                                    <span class="course-title">Data Structures</span>
-                                    <span class="course-ch">4 CH</span>
-                                </div>
-                            </div>
-
-                            <div class="course-card">
-                                <div class="course-header">
-                                    <span class="course-code">CS 201</span>
-                                    <span class="course-title">Data Structures</span>
-                                    <span class="course-ch">4 CH</span>
-                                </div>
-                            </div>
-
-                            <div class="course-card">
-                                <div class="course-header">
-                                    <span class="course-code">CS 201</span>
-                                    <span class="course-title">Data Structures</span>
-                                    <span class="course-ch">4 CH</span>
-                                </div>
-                            </div>
-
-                            <div class="course-card">
-                                <div class="course-header">
-                                    <span class="course-code">CS 201</span>
-                                    <span class="course-title">Data Structures</span>
-                                    <span class="course-ch">4 CH</span>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </main>
-
-
-    <footer>
-
     </footer>
-
     <script src="../js/navbar-script.js"></script>
     <script src="../js/logout-dialog.js"></script>
 </body>
