@@ -29,13 +29,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     document.querySelector(".gpa").innerHTML = `CGPA: ${student.gpa.toFixed(2)}`;
                     document.querySelector(".completed_courses").innerHTML = `Completed Courses: 0`; 
                     document.querySelector(".completed_CH").innerHTML = `Completed Credit Hours: ${student.finishedCreditHour}`;
-
+                    
                     let progress = (student.finishedCreditHour / 120) * 100;
                     document.querySelector(".progress-bar").style.width = progress + "%";
                     document.querySelector(".percentage").innerHTML = `${progress.toFixed(2)}%`;
                 });
-        })
-        .catch(error => {
-            console.error("Error fetching user data:", error);
         });
 });

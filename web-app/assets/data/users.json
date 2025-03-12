@@ -19,8 +19,8 @@
         "password": "Alam123",
         "role": "Student",
         "majorId": "2",
-        "gpa": 0,
-        "finishedCreditHour": 0
+        "gpa": 4.0,
+        "finishedCreditHour": 100
     },
 
     {
