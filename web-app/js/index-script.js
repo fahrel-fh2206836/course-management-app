@@ -19,6 +19,10 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(users => {
             const user = users.find(user => user.username === username && user.password === password.value);
             if (user) {
+
+                localStorage.setItem("loggedInUsername", username);
+                localStorage.setItem("loggedInPassword", password.value);
+                
                 if (user.role === 'Student') {
                     window.location.href = '/view-student/dashboard-student.html';
                 }else if (user.role === 'Instructor') {
