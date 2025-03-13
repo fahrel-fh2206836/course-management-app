@@ -5,10 +5,10 @@
         "lastName": "Al-Kuwari",
         "username": "Ghanim",
         "password": "Ghanim123",
-        "role": "Student",
+        "role": "STUDENT",
         "majorId": "1",
-        "gpa": 0.0,
-        "finishedCreditHour": 0
+        "gpa": 3.36,
+        "finishedCreditHour": 11
     },
 
     {
@@ -17,10 +17,10 @@
         "lastName": "Alam",
         "username": "Mansib",
         "password": "Alam123",
-        "role": "Student",
+        "role": "STUDENT",
         "majorId": "2",
-        "gpa": 4.0,
-        "finishedCreditHour": 100
+        "gpa": 3.28,
+        "finishedCreditHour": 14
     },
 
     {
@@ -29,10 +29,10 @@
         "lastName": "Hidayat",
         "username": "Fahrel",
         "password": "Fahrel123",
-        "role": "Student",
+        "role": "STUDENT",
         "majorId": "1",
-        "gpa": 0.0,
-        "finishedCreditHour": 0
+        "gpa": 2.42,
+        "finishedCreditHour": 7
     },
 
     {
@@ -41,10 +41,10 @@
         "lastName": "Wasay",
         "username": "Abdul",
         "password": "Abdul123",
-        "role": "Student",
+        "role": "STUDENT",
         "majorId": "2",
-        "gpa": 0.0,
-        "finishedCreditHour": 0
+        "gpa": 2.5,
+        "finishedCreditHour": 6
     },
 
     {
@@ -53,7 +53,7 @@
         "lastName": "Erradi",
         "username": "Abdelkarim",
         "password": "Abdelkarim123",
-        "role": "Instructor",
+        "role": "INSTRUCTOR",
         "majorId": "1"
     },
 
@@ -63,7 +63,7 @@
         "lastName": "Barhamgi",
         "username": "Mahmoud",
         "password": "Mahmoud123",
-        "role": "Instructor",
+        "role": "INSTRUCTOR",
         "majorId": "1"
     },
 
@@ -73,7 +73,7 @@
         "lastName": "Badawy",
         "username": "Ahmed",
         "password": "Ahmed123",
-        "role": "Instructor",
+        "role": "INSTRUCTOR",
         "majorId": "2"
     },
 
@@ -83,7 +83,7 @@
         "lastName": "Qidwai",
         "username": "Uvais",
         "password": "Uvais123",
-        "role": "Instructor",
+        "role": "INSTRUCTOR",
         "majorId": "2"
     },
 
@@ -93,7 +93,7 @@
         "lastName": "Halabi",
         "username": "Osama",
         "password": "Osama123",
-        "role": "Instructor",
+        "role": "INSTRUCTOR",
         "majorId": "1"
     },
 
@@ -103,7 +103,7 @@
         "lastName": "Chamkhia",
         "username": "Hela",
         "password": "Hela123",
-        "role": "Instructor",
+        "role": "INSTRUCTOR",
         "majorId": "2"
     },
 
@@ -113,6 +113,6 @@
         "lastName": "Parker",
         "username": "admin",
         "password": "admin123",
-        "role": "Admin"
+        "role": "ADMIN"
     }
 ]
