@@ -45,14 +45,14 @@ export class Student extends User {
     // calculateGPA() {}
 }
 
-export class Teacher extends User {
+export class Instructor extends User {
     constructor(userId, firstName, lastName, username, password, majorId) {
         super(userId, firstName, lastName, username, password, "INSTRUCTOR");
         this.majorId = majorId;
     }
 
     static fromJson(json) {
-        return new Teacher(json.userId, json.firstName, json.lastName, json.username, json.password, json.majorId);
+        return new Instructor(json.userId, json.firstName, json.lastName, json.username, json.password, json.majorId);
     }
 
     // getTotalCurrentStudents() {}
