@@ -21,9 +21,9 @@ document.addEventListener('DOMContentLoaded', function () {
             if (user) {
                 localStorage.setItem("loggedInUsername", username);
                 localStorage.setItem("loggedInPassword", password.value);
-                if (user.role === 'STUDENT') {
+                if (user.role === 'Student') {
                     window.location.href = '/view-student/dashboard-student.html';
-                }else if (user.role === 'INSTRUCTOR') {
+                }else if (user.role === 'Instructor') {
                     window.location.href = '/view-instructor/dashboard-instructor.html';
                 } else {
                     window.location.href = '/view-admin/dashboard-admin.html';
