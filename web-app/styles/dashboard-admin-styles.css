@@ -169,6 +169,7 @@ select:hover {
     main {
         display: grid;
         gap: 50px;
+        grid-template-columns: 1fr 1fr 1fr;
         grid-template-areas: 
             "ongoing registration not-offered"
             "schedule schedule schedule"
