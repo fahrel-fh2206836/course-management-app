@@ -23,6 +23,7 @@ function closeLogoutDialog() {
 
 function confirmLogout() {
     closeLogoutDialog();
+    localStorage.setItem("loggedInUser","");
     window.location.href = "../index.html";
 }
 

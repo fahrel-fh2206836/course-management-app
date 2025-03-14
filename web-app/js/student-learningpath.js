@@ -1,12 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    const loggedInUsername = localStorage.getItem("loggedInUsername");
-    const loggedInPassword = localStorage.getItem("loggedInPassword");
-    let users = JSON.parse(localStorage.users);
     let majors = JSON.parse(localStorage.majors);
 
-    let student = users.find(user => user.username === loggedInUsername && user.password === loggedInPassword);
-
+    let student = JSON.parse(localStorage.getItem("loggedInUser"));
+    console.log(student);
     if (!student || student.role !== "Student") {
         console.log("User not found or not a student.");
         return;

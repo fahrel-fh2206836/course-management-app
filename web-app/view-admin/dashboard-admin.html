@@ -7,6 +7,8 @@
     <title>Dashboard-Admin</title>
     <link rel="stylesheet" href="../styles/navbar-styles.css">
     <link rel="stylesheet" href="../styles/dialog-styles.css">
+    <link rel="stylesheet" href="../styles/course-card-styles.css">
+    <link rel="stylesheet" href="../styles/dashboard-admin-styles.css">
 </head>
 <body>
     <header>
@@ -33,7 +35,106 @@
             </div>
         </nav>   
     </header> 
+    <main>
+        <div class="status-container">
+            <i id="status-icon" class='bx bxs-hourglass-top icon-circle ongoing'></i>
+            <label for="status">Select Status:</label>
+            <select name="status" id="status">
+                <option value="ongoing">Ongoing</option>
+                <option value="registration">Registration</option>
+                <option value="not-offered">Not Offered</option>
+            </select>
+        </div>
+        
+        <div id="course-general" class="course-container">
+            <div class="search-filter">
+                <div class="c-status-title">
+                    <i id="c-status-icon" class='bx bxs-circle ongoing'></i>
+                    <p id="c-status-text" class="ongoing">Ongoing Courses</p>
+                </div>
+                <div class="major-filter">
+                    <i class='bx bxs-filter-alt icon-circle'></i>
+                    <select id="major" name="major" onchange="onMajorChange(event)">
+                        <option value="" selected>Select a Major</option>
+                        <option value="CMPS">Computer Science</option>
+                        <option value="CMPE">Computer Engineering</option>
+                    </select>
+                </div>
+            </div>
+            <hr>
+            <div id="course-list-general" class="course-list">
+                <!-- Add Courses Dynamically -->
+            </div>
+        </div>
 
+        <div id="course-ongoing" class="course-container">
+            <div class="search-filter">
+                <div class="c-status-title">
+                    <i id="c-status-icon-ongoing" class='bx bxs-circle ongoing'></i>
+                    <p id="c-status-text-ongoing" class="ongoing">Ongoing Courses</p>
+                </div>
+                <div class="major-filter">
+                    <i class='bx bxs-filter-alt icon-circle'></i>
+                    <select id="major-ongoing" name="major" onchange="onMajorChange(event, 'ongoing')">
+                        <option value="" selected>Select a Major</option>
+                        <option value="CMPS">Computer Science</option>
+                        <option value="CMPE">Computer Engineering</option>
+                    </select>
+                </div>
+            </div>
+            <hr>
+            <div id="course-list-ongoing" class="course-list">
+                <!-- Add Courses Dynamically -->
+            </div>
+        </div>
+
+        <div id="course-registration" class="course-container">
+            <div class="search-filter">
+                <div class="c-status-title">
+                    <i id="c-status-icon-reg" class='bx bxs-circle registration'></i>
+                    <p id="c-status-text-reg" class="registration">Open Courses</p>
+                </div>
+                <div class="major-filter">
+                    <i class='bx bxs-filter-alt icon-circle'></i>
+                    <select id="major-reg" name="major" onchange="onMajorChange(event,'registration')">
+                        <option value="" selected >Select a Major</option>
+                        <option value="CMPS" >Computer Science</option>
+                        <option value="CMPE" >Computer Engineering</option>
+                    </select>
+                </div>
+            </div>
+            <hr>
+            <div id="course-list-registration" class="course-list">
+                <!-- Add Courses Dynamically -->
+            </div>
+        </div>
+
+        <div id="course-not-offered" class="course-container">
+            <div class="search-filter">
+                <div class="c-status-title">
+                    <i id="c-status-icon-not" class='bx bxs-circle not-offered'></i>
+                    <p id="c-status-text-not" class="not-offered">Not Offered Courses</p>
+                </div>
+                <div class="major-filter">
+                    <i class='bx bxs-filter-alt icon-circle'></i>
+                    <select id="major-not" name="major" onchange="onMajorChange(event,'not-offered')">
+                        <option value="" selected>Select a Major</option>
+                        <option value="CMPS" >Computer Science</option>
+                        <option value="CMPE" >Computer Engineering</option>
+                    </select>
+                </div>
+            </div>
+            <hr>
+            <div id="course-list-not-offered" class="course-list">
+                <!-- Add Courses Dynamically -->
+            </div>
+        </div>
+
+        <div class="schedule-container">
+
+        </div>
+    </main>
+    <script src="../js/dashboard-admin.js"></script>
     <script src="../js/navbar-script.js"></script>
     <script src="../js/logout-dialog.js"></script>
 </body>

@@ -20,8 +20,6 @@ async function loadLocalStorages() {
     }
 }
 
-loadLocalStorages();
-
 async function loadUsers() {
     localStorage.users = await retrieveJSONData('../assets/data/users.json');
     return JSON.parse(localStorage.users);
@@ -47,8 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const user = users.find(user => user.username === username && user.password === password.value);
         if (user) {
-            localStorage.setItem("loggedInUsername", username);
-            localStorage.setItem("loggedInPassword", password.value);
+            localStorage.setItem("loggedInUser", JSON.stringify(user));
             if (user.role === 'Student') {
                 window.location.href = '/view-student/dashboard-student.html';
             }else if (user.role === 'Instructor') {
@@ -78,4 +75,6 @@ function toggleViewPassword() {
         toggleBtn.classList.remove('bx-hide');
     }
 }
+
+loadLocalStorages();
 
