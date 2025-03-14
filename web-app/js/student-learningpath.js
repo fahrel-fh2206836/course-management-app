@@ -24,4 +24,11 @@ document.addEventListener("DOMContentLoaded", () => {
     
     document.querySelector(".progress-bar").style.width = progress + "%";
     document.querySelector(".percentage").innerHTML = `${progress.toFixed(2)}%`;
+
+    let image = document.querySelector(".img-prerequiste");
+    if (studentMajor.majorName === "Computer Science") {
+        image.innerHTML = `<img src="../assets/images/flowchart_cs.png" alt="">`; 
+    } else if (studentMajor.majorName === "Computer Engineering") {
+        image.innerHTML = `<img src="../assets/images/flowchart_ce.png" alt="">`;}
+
 });
