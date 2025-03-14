@@ -1,4 +1,35 @@
+// Initializing Local Storages
+async function retrieveJSONData(url) {
+    const response = await fetch(url);
+    const jsonData = await response.json();
+    return JSON.stringify(jsonData);
+}
+
+async function loadLocalStorages() {
+    if(!localStorage.majors) {
+        localStorage.majors = await retrieveJSONData('../assets/data/majors.json');
+    }
+    if(!localStorage.courses) {
+        localStorage.courses = await retrieveJSONData('../assets/data/courses.json');
+    }
+    if(!localStorage.registrations) {
+        localStorage.registrations = await retrieveJSONData('../assets/data/registrations.json');   
+    }
+    if(!localStorage.sections) {
+        localStorage.sections = await retrieveJSONData('../assets/data/sections.json');
+    }
+}
+
+loadLocalStorages();
+
+async function loadUsers() {
+    localStorage.users = await retrieveJSONData('../assets/data/users.json');
+    return JSON.parse(localStorage.users);
+}
+
+
 document.addEventListener('DOMContentLoaded', function () {
+    let users = localStorage.users ? JSON.parse(localStorage.users) : loadUsers();
     const loginForm = document.getElementById('LoginForm');
 
     if (!loginForm) {
@@ -9,34 +40,26 @@ document.addEventListener('DOMContentLoaded', function () {
     loginForm.addEventListener('submit', function (event) {
         event.preventDefault();
 
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password');
-    const wrongPass = document.getElementById('wrong-pass');
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password');
+        const wrongPass = document.getElementById('wrong-pass');
 
 
-    fetch('assets/data/users.json')
-        .then(response => response.json())
-        .then(users => {
-            const user = users.find(user => user.username === username && user.password === password.value);
-            if (user) {
-                localStorage.setItem("loggedInUsername", username);
-                localStorage.setItem("loggedInPassword", password.value);
-                if (user.role === 'Student') {
-                    window.location.href = '/view-student/dashboard-student.html';
-                }else if (user.role === 'Instructor') {
-                    window.location.href = '/view-instructor/dashboard-instructor.html';
-                } else {
-                    window.location.href = '/view-admin/dashboard-admin.html';
-                } 
+        const user = users.find(user => user.username === username && user.password === password.value);
+        if (user) {
+            localStorage.setItem("loggedInUsername", username);
+            localStorage.setItem("loggedInPassword", password.value);
+            if (user.role === 'Student') {
+                window.location.href = '/view-student/dashboard-student.html';
+            }else if (user.role === 'Instructor') {
+                window.location.href = '/view-instructor/dashboard-instructor.html';
             } else {
-                password.value = "";
-                wrongPass.style.display = 'block';
-            }
-        })
-
-        .catch(error => {
-            console.error('user error', error);
-        });
+                window.location.href = '/view-admin/dashboard-admin.html';
+            } 
+        } else {
+            password.value = "";
+            wrongPass.style.display = 'block';
+        }
 
 })})
 
@@ -55,3 +78,4 @@ function toggleViewPassword() {
         toggleBtn.classList.remove('bx-hide');
     }
 }
+
