@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../styles/dialog-styles.css">
     <link rel="stylesheet" href="../styles/course-card-styles.css">
     <link rel="stylesheet" href="../styles/dashboard-admin-styles.css">
+    <link rel="stylesheet" href="../styles/schedule-styles.css">
 </head>
 <body>
     <header>
@@ -131,8 +132,54 @@
         </div>
 
         <div class="schedule-container">
+            <h2>Ongoing Class Schedule</h2>
 
+            <table>
+                <thead>
+                    <tr>
+                        <th>Course</th>
+                        <th>Section</th>
+                        <th>Day</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Introduction to Programming</td>
+                        <td>1</td>
+                        <td>
+                            <div class="week-days">
+                                <div class="day selected">S</div>
+                                <div class="day">M</div>
+                                <div class="day selected">T</div>
+                                <div class="day">W</div>
+                                <div class="day">T</div>
+                                <div class="day">F</div>
+                                <div class="day">S</div>
+                            </div>
+                        </td>
+                        <td>10:00-11:00</td>
+                    </tr>
+                    <tr>
+                        <td>Introduction to Programming</td>
+                        <td>2</td>
+                        <td>
+                            <div class="week-days">
+                                <div class="day selected">S</div>
+                                <div class="day">M</div>
+                                <div class="day selected">T</div>
+                                <div class="day">W</div>
+                                <div class="day">T</div>
+                                <div class="day">F</div>
+                                <div class="day">S</div>
+                            </div>
+                        </td>
+                        <td>10:00-11:00</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
+
     </main>
     <script src="../js/dashboard-admin.js"></script>
     <script src="../js/navbar-script.js"></script>
