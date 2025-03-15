@@ -18,7 +18,7 @@ window.addEventListener('resize', function(event) {
 
 function generateCoursesHTML(c) {
     return `<div class="course-card">
-                        <div class="manage-class-btn"><i class='bx bxs-cog'></i><p>Manage Classes</p></div>
+                        <div class="manage-class-btn"><i class='bx bxs-cog'></i><p>Manage Course</p></div>
                         <div class="card-flag"><p>${c.courseCode}</p></div>
                         <div class="card-course-name"><p>Course ID: ${c.id} - ${c.courseName}</p></div>
                 </div>
@@ -61,6 +61,7 @@ function onSmallScreen() {
     const statusIcon = document.querySelector("#status-icon");
     const cStatusIcon = document.querySelector("#c-status-icon");
     const cStatusText = document.querySelector("#c-status-text");
+    const majorDropDown = document.querySelector("#major");
     
     statusDropdown.addEventListener('change', onStatusChange);
 
@@ -101,6 +102,8 @@ function onSmallScreen() {
             courseListGeneral.innerHTML = courses.filter(c => c.isRegistration === false && c.isOngoing === false).map(c => generateCoursesHTML(c)).join('\n');
 
         }
+
+        majorDropDown.selectedIndex = 0;
     }
 }
 
