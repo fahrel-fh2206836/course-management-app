@@ -6,6 +6,9 @@ async function retrieveJSONData(url) {
 }
 
 async function loadLocalStorages() {
+
+    delete localStorage.majors;
+
     if(!localStorage.majors) {
         localStorage.majors = await retrieveJSONData('../assets/data/majors.json');
     }

@@ -89,6 +89,7 @@
 .status-completed,.status-in_progress,.status-pending {
     width: 32%; 
     padding: 15px;
+    overflow-y: auto;
     background: white;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
@@ -139,13 +140,11 @@
     padding-right: 5px;
 }
 
-.scrolling{
-    width: 350px;
-    height: 200px;
-    border: 1px solid #000;
-    overflow: auto;
-    padding: 10px;
-  }
+.scrolling {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Adds spacing between courses */
+}
 
 
 .course-card {
