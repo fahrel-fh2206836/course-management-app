@@ -16,6 +16,10 @@ window.addEventListener('resize', function(event) {
     }
 })
 
+function mapCoursesToHTML(cl) {
+    return cl.map(c => generateCoursesHTML(c)).join('\n');
+}
+
 function generateCoursesHTML(c) {
     return `<div class="course-card">
                         <div class="manage-class-btn"><i class='bx bxs-cog'></i><p>Manage Course</p></div>
@@ -25,25 +29,37 @@ function generateCoursesHTML(c) {
             `;
 }
 
+function filterOngoing() {
+    return courses.filter(c => c.isOngoing === true);
+}
+
+function filterRegistration() {
+    return courses.filter(c => c.isRegistration === true)
+}
+
+function filterNotOffered() {
+    return courses.filter(c => c.isRegistration === false && c.isOngoing === false)
+}
+
 function onMajorChange(e, s) {
     let courseListHTML;
     let status = window.matchMedia("(max-width: 1023px)").matches ? statusDropdown.value : s;
     let major = e.target.value;
     
     if(status === "ongoing") {
-        courseListHTML = courses.filter(c => c.isOngoing === true);
+        courseListHTML = filterOngoing();
     } else if (status === "registration") {
-        courseListHTML = courses.filter(c => c.isRegistration === true);
+        courseListHTML = filterRegistration();
     } else if(status === "not-offered") {
-        courseListHTML = courses.filter(c => c.isRegistration === false && c.isOngoing === false);
+        courseListHTML = filterNotOffered();
     }
 
     if(major === "CMPS") {
-        courseListHTML = courseListHTML.filter(c => c.majorId === "1").map(c => generateCoursesHTML(c)).join('\n');
+        courseListHTML = mapCoursesToHTML(courseListHTML.filter(c => c.majorId === "1"));
     } else if (major === "CMPE") {
-        courseListHTML = courseListHTML.filter(c => c.majorId === "2").map(c => generateCoursesHTML(c)).join('\n');
+        courseListHTML = mapCoursesToHTML(courseListHTML.filter(c => c.majorId === "2"));
     } else if (major === "") {
-        courseListHTML = courseListHTML.map(c => generateCoursesHTML(c)).join('\n');
+        courseListHTML = mapCoursesToHTML(courseListHTML.map(c => generateCoursesHTML(c)).join('\n'));
     }
 
     if(window.matchMedia("(max-width: 1023px)").matches) {
@@ -65,7 +81,7 @@ function onSmallScreen() {
     
     statusDropdown.addEventListener('change', onStatusChange);
 
-    courseListGeneral.innerHTML = courses.filter(c => c.isOngoing === true).map(c => generateCoursesHTML(c)).join('\n');
+    courseListGeneral.innerHTML = mapCoursesToHTML(filterOngoing());
 
     function onStatusChange(e) {
         if(e.target.value === "ongoing") {
@@ -77,7 +93,7 @@ function onSmallScreen() {
             cStatusText.classList.add("ongoing");
             cStatusText.innerText = "Ongoing Courses";
 
-            courseListGeneral.innerHTML = courses.filter(c => c.isOngoing === true).map(c => generateCoursesHTML(c)).join('\n');
+            courseListGeneral.innerHTML = mapCoursesToHTML(filterOngoing());
 
         } else if (e.target.value === "registration") {
             statusIcon.classList.remove(...statusIcon.classList);
@@ -88,7 +104,7 @@ function onSmallScreen() {
             cStatusText.classList.add("registration");
             cStatusText.innerText = "Open Courses";
 
-            courseListGeneral.innerHTML = courses.filter(c => c.isRegistration === true).map(c => generateCoursesHTML(c)).join('\n');
+            courseListGeneral.innerHTML = mapCoursesToHTML(filterRegistration());
 
         } else {
             statusIcon.classList.remove(...statusIcon.classList);
@@ -99,7 +115,7 @@ function onSmallScreen() {
             cStatusText.classList.add("not-offered");
             cStatusText.innerText = "Not Offered Courses";
 
-            courseListGeneral.innerHTML = courses.filter(c => c.isRegistration === false && c.isOngoing === false).map(c => generateCoursesHTML(c)).join('\n');
+            courseListGeneral.innerHTML = mapCoursesToHTML(filterNotOffered());
 
         }
 
@@ -113,7 +129,7 @@ function onBigScreen() {
     const courseOngoing = document.querySelector("#course-list-ongoing");
 
     
-    courseOngoing.innerHTML = courses.filter(c => c.isOngoing === true).map(c => generateCoursesHTML(c)).join('\n');
-    courseReg.innerHTML = courses.filter(c => c.isRegistration === true).map(c => generateCoursesHTML(c)).join('\n');
-    courseNotOffered.innerHTML = courses.filter(c => c.isRegistration === false && c.isOngoing === false).map(c => generateCoursesHTML(c)).join('\n');
+    courseOngoing.innerHTML = mapCoursesToHTML(filterOngoing());
+    courseReg.innerHTML = mapCoursesToHTML(filterRegistration());
+    courseNotOffered.innerHTML = mapCoursesToHTML(filterNotOffered());
 }
