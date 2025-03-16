@@ -1,12 +1,5 @@
 @import url(theme-styles.css);
 
-.course-card-list {
-    display: flex;
-    flex-direction: column;
-    row-gap: 15px;
-    cursor: pointer;
-}
-
 .course-card{
     display: flex;
     flex-direction: column;
@@ -21,11 +14,11 @@
     transition: transform 0.5s ease;
 }
 
-.course-card:hover {
-    transform: scale(1.01);
+.course-card:hover{
+    transform: scale(1.015);
 }
 
-.course-card:hover .card-course-name{
+.hover-underline:hover .card-course-name{
     text-decoration: underline;
 }
 
