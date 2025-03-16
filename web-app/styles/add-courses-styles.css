@@ -76,7 +76,7 @@ button:hover {
 .checkbox-group {
     padding: 10px;
     border: 1px solid var(--chamoisse-);
-    background-color: var(--beige-);
+    background-color: #f5e6cc;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
