@@ -1,0 +1,105 @@
+@import url(theme-styles.css);
+
+*{
+    margin: 0;
+    padding: 0;
+    color: var(--bistre-);
+    box-sizing: border-box;
+    font-family: var(--font-theme-);
+}
+
+body {
+    background-color: var(--light-beige-);
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+.form-container {
+    margin: 30px;
+    background-color: wheat;
+    padding: 30px 20px;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border: 2px solid var(--chamoisse-);
+    width: 85%;
+}
+
+.form-container h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--coffee-);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+label {
+    font-weight: bold;
+    color: var(--coffee-);
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid var(--chamoisse-);
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: var(--light-beige-);
+}
+
+button {
+    padding: 10px;
+    background-color: var(--chamoisse-);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.05rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--coffee-);
+}
+
+.checkbox-group {
+    padding: 10px;
+    border: 1px solid var(--chamoisse-);
+    background-color: var(--beige-);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    
+    p {
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+}
+
+
+@media (min-width: 1024px) {
+    .form-group {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        column-gap: 5px;
+    }
+    .form-group label {
+        align-self: center;
+    }
+    .form-group input,
+    .form-group select {
+        width: 75%;
+    }
+}
