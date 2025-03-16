@@ -306,7 +306,7 @@
     {
         "sectionId": "18",
         "courseId": "8",
-        "instructorId": "",
+        "instructorId": "1005",
         "currentSeats": 0,
         "totalSeats": 15,
         "semester": "Fall 2025",
@@ -322,7 +322,7 @@
     {
         "sectionId": "18",
         "courseId": "8",
-        "instructorId": "",
+        "instructorId": "1006",
         "currentSeats": 0,
         "totalSeats": 15,
         "semester": "Fall 2025",
@@ -338,7 +338,7 @@
     {
         "sectionId": "19",
         "courseId": "9",
-        "instructorId": "",
+        "instructorId": "1001",
         "currentSeats": 0,
         "totalSeats": 15,
         "semester": "Fall 2025",
@@ -354,7 +354,7 @@
     {
         "sectionId": "20",
         "courseId": "10",
-        "instructorId": "",
+        "instructorId": "1002",
         "currentSeats": 0,
         "totalSeats": 2,
         "semester": "Fall 2025",
@@ -386,7 +386,7 @@
     {
         "sectionId": "21",
         "courseId": "55",
-        "instructorId": "",
+        "instructorId": "1003",
         "currentSeats": 0,
         "totalSeats": 5,
         "semester": "Fall 2025",
@@ -402,7 +402,7 @@
     {
         "sectionId": "22",
         "courseId": "59",
-        "instructorId": "",
+        "instructorId": "1004",
         "currentSeats": 0,
         "totalSeats": 2,
         "semester": "Fall 2025",

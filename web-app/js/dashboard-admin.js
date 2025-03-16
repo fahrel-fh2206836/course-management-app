@@ -1,12 +1,16 @@
 const courseListGeneral = document.querySelector("#course-list-general");
 const courses = JSON.parse(localStorage.courses);
 const statusDropdown = document.querySelector('#status');
+const sections = JSON.parse(localStorage.sections);
+const users = JSON.parse(localStorage.users);
 
 if (window.matchMedia("(max-width: 1023px)").matches) {
     onSmallScreen();
 } else {    
     onBigScreen();
 }
+
+renderTable();
 
 window.addEventListener('resize', function(event) {
     if (window.matchMedia("(max-width: 1023px)").matches) {
@@ -58,8 +62,8 @@ function onMajorChange(e, s) {
         courseListHTML = mapCoursesToHTML(courseListHTML.filter(c => c.majorId === "1"));
     } else if (major === "CMPE") {
         courseListHTML = mapCoursesToHTML(courseListHTML.filter(c => c.majorId === "2"));
-    } else if (major === "") {
-        courseListHTML = mapCoursesToHTML(courseListHTML.map(c => generateCoursesHTML(c)).join('\n'));
+    } else if (major === "all") {        
+        courseListHTML = mapCoursesToHTML(courseListHTML);
     }
 
     if(window.matchMedia("(max-width: 1023px)").matches) {
@@ -132,4 +136,37 @@ function onBigScreen() {
     courseOngoing.innerHTML = mapCoursesToHTML(filterOngoing());
     courseReg.innerHTML = mapCoursesToHTML(filterRegistration());
     courseNotOffered.innerHTML = mapCoursesToHTML(filterNotOffered());
+}
+
+function renderTable() {
+    const ongoingSections = sections.filter(s => s.sectionStatus === "ONGOING");
+    const tBody = document.querySelector("#schedule-table").querySelector("tbody");
+    tBody.innerHTML = ongoingSections.map(s => convertRowToHTML(s)).join("\n");
+}
+
+function convertRowToHTML(s) {
+    const c = courses.find(course => course.id === s.courseId);
+    let tempI = users.find(u => u.userId === s.instructorId);
+    const i = tempI ? tempI : '';
+    const days = s.schedule.days.split("-");
+    return `<tr>
+                <td>${c.courseCode}</td>
+                <td>${c.courseName}</td>
+                <td>${s.sectionId}</td>
+                <td>${i ? i.firstName : ''} ${i ? i.lastName : ''}</td>
+                <td>
+                    <div class="week-days">
+                        <div class="day ${days.includes("SUN") ? 'selected' : ''}">S</div>
+                        <div class="day ${days.includes("MON") ? 'selected' : ''}">M</div>
+                        <div class="day ${days.includes("TUE") ? 'selected' : ''}">T</div>
+                        <div class="day ${days.includes("WED") ? 'selected' : ''}">W</div>
+                        <div class="day ${days.includes("THU") ? 'selected' : ''}">T</div>
+                        <div class="day ${days.includes("FRI") ? 'selected' : ''}">F</div>
+                        <div class="day ${days.includes("SAT") ? 'selected' : ''}">S</div>
+                    </div>
+                </td>
+                <td>${s.schedule.time}</td>   
+                <td>${s.location}</td>
+            </tr>
+            `;
 }

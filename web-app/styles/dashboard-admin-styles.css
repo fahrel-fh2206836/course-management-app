@@ -20,6 +20,11 @@ main {
     margin: 20px;
 }
 
+h2 i {
+    font-size: 1.5rem;
+    color: var(--bistre-);
+}
+
 #course-ongoing {
     display: none;
 }
@@ -103,7 +108,7 @@ select:hover {
     gap: 10px;
     p{
         font-weight: bold;
-        font-size: 18px;
+        font-size: 1.2rem;
     }
 }
 
@@ -173,6 +178,7 @@ select:hover {
     border: 1px solid var(--bistre-);
     padding: 20px;
     border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 @media (min-width: 1024px) {

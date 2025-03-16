@@ -15,7 +15,7 @@
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 1rem;
     border: 1px solid var(--bistre-);
     border-radius: 3px;
     background-color: white;
@@ -29,20 +29,19 @@
 
 h2 {
     color: var(--bistre-);
-    font-size: 1.3rem;
+    font-size: 1.1rem;
 }
 
 table {
-    display: block;
-    overflow-x: auto;
-    white-space: nowrap;
     border-collapse: collapse;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    overflow-y: auto;
+    max-height: 500px;
 }
 
 th, td {
     padding: 12px;
-    border: 1px solid var(--bistre-);
+    border: .5px solid var(--bistre-);
     text-align: center;
 }
 
@@ -60,8 +59,11 @@ tr:nth-child(odd) {
 }
 
 /* Responsive Table */
-@media (max-width: 720px) {
+@media (max-width: 850px) {
     table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
         width: 100%;
     }
 }
