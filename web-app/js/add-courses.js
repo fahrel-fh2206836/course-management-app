@@ -3,13 +3,7 @@ const courses = JSON.parse(localStorage.courses);
 
 //Inputs
 const form = document.querySelector("#add-courses-form");
-const courseCode = document.querySelector("#course-code");
-const courseName = document.querySelector("#course-name");
-const creditHour = document.querySelector("#credit-hour");
-const majorDropdown = document.querySelector("#major");
-const prerequisitesDropdown = document.querySelector("prerequisites");
-const ongoingCheckbox = document.querySelector("ongoing");
-const regCheckbox = document.querySelector("registration");
+const prerequisitesDropdown = document.querySelector("#prerequisites");
 
 //Initialize prerequisitesDropdown values
 const csCoursesOpt = document.querySelector("#cs-courses");
@@ -33,5 +27,26 @@ function courseOptionsToHTML(c) {
 form.addEventListener('submit', handleAddCourse);
 
 function handleAddCourse(e) {
+    e.preventDefault();
 
+    const formData = new FormData(e.target);
+    const course = Object.fromEntries(formData);
+    if(course.creditHour <= 0) {
+        alert("CREDIT HOUR SHOULD BE A POSITIVE INTEGER! (CH>0)");
+        return;
+    }
+    course.id = courses.length + 100;
+    course.prerequisitesCoursesId = Array.from(prerequisitesDropdown.selectedOptions).map(option => option.value);
+    course.isOngoing = course.isOngoing === "on" ? true : false;
+    course.isRegistration = course.isRegistration === "on"? true : false;
+    courses.push(course);
+    localStorage.courses = JSON.stringify(courses);
+    form.reset();
+    
+    //Will change to snack bar.
+    alert(`${course.courseCode} is Added to the System.`);
 }
+
+
+
+

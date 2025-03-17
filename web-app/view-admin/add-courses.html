@@ -49,20 +49,21 @@
 
                 <div class="form-group">
                     <label for="credit-hour">Credit Hour</label>
-                    <input type="num" id="credit-hour" name="creditHour" placeholder="Enter Credit Hour" required>
+                    <input type="number" id="credit-hour" name="creditHour" placeholder="Enter Credit Hour" required>
                 </div>
 
                 <div class="form-group">
                     <label for="major">Select Major</label>
                     <select id="major" name="majorId" required>
-                        <option value="1" selected>Computer Science (CMPS)</option>
+                        <option value="" selected disabled>Select Major</option>
+                        <option value="1">Computer Science (CMPS)</option>
                         <option value="2">Computer Science (CMPE)</option>
                     </select>
                 </div>
 
                 <div class="form-group">
                     <label for="prerequisites">Select Prerequisites Courses<p>Note: Hold Ctrl Key for Windows and CMD key for Mac to select multiple options</p></label>
-                    <select id="prerequisites" name="prerequisitesCoursesId" multiple class="prerequisites-dropdown">
+                    <select id="prerequisites" name="prerequisitesCoursesId" class="prerequisites-dropdown" multiple >
                         <optgroup label="Computer Sci. Courses" id="cs-courses">      
                             <!-- Added with js -->
                         </optgroup>
@@ -75,11 +76,17 @@
             
                 <div class="checkbox-group">
                     <p>Set Course Status</p>
+                    <input type="hidden" name="isOngoing" value="off">
                     <label id="ongoing"><input type="checkbox" id="ongoing" name="isOngoing">  Ongoing Course</label>
+                    <input type="hidden" name="isRegistration" value="off">
                     <label id="registration"><input type="checkbox" id="registration" name="isRegistration">  Open for Registration</label>
                 </div>
 
-                <button type="submit">Add Course</button>
+                <div class="button-group">
+                    <button type="submit">Add Course</button>
+                    <button type="reset">Clear All</button>
+                </div>
+
             </form>
         </div>
     </main>

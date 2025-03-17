@@ -74,12 +74,12 @@ input, select {
 
 button {
     padding: 10px;
-    background-color: var(--chamoisse-);
     color: white;
     border: none;
     border-radius: 5px;
     font-size: 1.05rem;
     cursor: pointer;
+    width: 100%;
 }
 
 button:hover {
@@ -102,6 +102,19 @@ button:hover {
 
     label{
         cursor: pointer;
+    }
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between; 
+    gap: 15px;
+    button:first-child {
+        background-color: green;
+    }
+
+    button:last-child {
+        background-color: red;
     }
 }
 
