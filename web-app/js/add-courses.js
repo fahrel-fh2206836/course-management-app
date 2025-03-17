@@ -18,8 +18,8 @@ const ceCoursesOpt = document.querySelector("#ce-courses");
 renderCourses();
 
 function renderCourses() {
-    const csCourses = courses.filter(c => c.majorId === "1");
-    const ceCourses = courses.filter(c => c.majorId === "2");
+    const csCourses = courses.filter(c => c.majorId === "1").sort((a, b) => a.courseName.localeCompare(b.courseName))
+    const ceCourses = courses.filter(c => c.majorId === "2").sort((a, b) => a.courseName.localeCompare(b.courseName))
     
     csCoursesOpt.innerHTML = csCourses.map(c => courseOptionsToHTML(c)).join('\n');
     ceCoursesOpt.innerHTML = ceCourses.map(c => courseOptionsToHTML(c)).join('\n');
@@ -32,6 +32,6 @@ function courseOptionsToHTML(c) {
 
 form.addEventListener('submit', handleAddCourse);
 
-function handleAddCourse() {
+function handleAddCourse(e) {
 
 }

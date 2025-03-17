@@ -64,6 +64,14 @@ label {
     background-color: var(--light-beige-);
 }
 
+input:focus, select:focus {
+    border: 2px solid var(--chamoisse-);
+}
+
+input, select {
+    outline: none;
+}
+
 button {
     padding: 10px;
     background-color: var(--chamoisse-);
@@ -99,6 +107,7 @@ button:hover {
 
 .prerequisites-dropdown {
     height: 150px;
+    overflow-x: auto;
 }
 
 
