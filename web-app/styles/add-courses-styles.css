@@ -28,9 +28,11 @@ main {
 }
 
 .form-container h2 {
-    margin-bottom: 20px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
     text-align: center;
     color: var(--coffee-);
+    border-bottom: 3px solid var(--chamoisse-);
 }
 
 form {
@@ -47,6 +49,9 @@ form {
 label {
     font-weight: bold;
     color: var(--coffee-);
+    p{
+        font-size: .8rem;
+    }
 }
 
 .form-group input, .form-group select {
@@ -86,6 +91,14 @@ button:hover {
         font-weight: bold;
         font-size: 1.2rem;
     }
+
+    label{
+        cursor: pointer;
+    }
+}
+
+.prerequisites-dropdown {
+    height: 150px;
 }
 
 
@@ -96,10 +109,11 @@ button:hover {
         column-gap: 5px;
     }
     .form-group label {
+        width: 30%;
         align-self: center;
     }
     .form-group input,
     .form-group select {
-        width: 75%;
+        width: 70%;
     }
 }
