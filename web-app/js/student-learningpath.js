@@ -121,6 +121,52 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>`;
         }
     })
+function filterCourses() { // this is to select specific category when in small screen
+    let selectedStatus = document.querySelector('#status-filter').value;
+    let allStatuses = ["completed", "pending", "in_progress"];
+    let isMobile = window.innerWidth <= 900;
+
+    if (isMobile) {
+        allStatuses.forEach(status => {
+            let section = document.querySelector(`.status-${status}`);
+            section.style.display = "none";
+        });
+
+        if (selectedStatus !== "all") {
+            let selectedSection = document.querySelector(`.status-${selectedStatus}`);
+            selectedSection.style.display = "block";
+        } else {
+            allStatuses.forEach(status => {
+                let section = document.querySelector(`.status-${status}`);
+                section.style.display = "block";
+            });
+        }
+    } else {
+        allStatuses.forEach(status => {
+            let section = document.querySelector(`.status-${status}`);
+            section.style.display = "block";
+        });
+    }
+}
+document.querySelector("#status-filter").addEventListener("change", filterCourses);
+window.addEventListener("resize", filterCourses);
+filterCourses();
+
+function toggleFilterVisibility() { // this is to hide the dropdowns in big screen
+    let label = document.querySelector(".status-label");
+    let dropdown = document.querySelector("#status-filter");
+
+    if (window.innerWidth <= 900) {
+        label.style.display = "block"; 
+        dropdown.style.display = "block"; 
+    } else {
+        label.style.display = "none";    
+        dropdown.style.display = "none"; 
+    }
+}
+
+toggleFilterVisibility();
+window.addEventListener("resize", toggleFilterVisibility);
 });
 
 

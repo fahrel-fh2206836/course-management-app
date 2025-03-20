@@ -143,7 +143,7 @@
 .scrolling {
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Adds spacing between courses */
+    gap: 10px; 
 }
 
 
@@ -172,7 +172,6 @@
     color: white;
 }
 
-
 @media screen and (max-width: 900px) {
 .body{
     width: auto;
@@ -193,8 +192,50 @@
 }
 
 .container {
-    display: none;
+    width: 90%; 
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+
+.status-completed, 
+.status-pending, 
+.status-in_progress {
+    width: 100%;
+    max-width: 100%;
+}
+
+
+.course-list {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.course-card {
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: white;
+    margin-bottom: 10px;
+}
+
+
+.scrolling {
+    width: 100%;
+    overflow-x: visible; 
+    overflow-y: visible; 
+}
+}
+
 
 .status-label {
     display: block;
@@ -210,5 +251,5 @@
     border-radius: 5px;
     border: 1px solid black;
     background: white;
-}}
+}
 
