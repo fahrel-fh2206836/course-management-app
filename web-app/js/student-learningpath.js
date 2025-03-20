@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let registration = JSON.parse(localStorage.registrations)
     let section = JSON.parse(localStorage.sections)
     let course = JSON.parse(localStorage.courses)
+    let completedcourses=0;
     console.log(student);
 
     //student details
@@ -18,7 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelector(".major").innerHTML = `Major: ${studentMajor.majorName}`;
     document.querySelector(".gpa").innerHTML = `CGPA: ${student.gpa.toFixed(2)}`;
-    document.querySelector(".completed_courses").innerHTML = `Completed Courses: 0`; 
     document.querySelector(".completed_CH").innerHTML = `Completed Credit Hours: ${student.finishedCreditHour}`;
     
     let progress = (student.finishedCreditHour / studentMajor.totalCreditHour) * 100;
@@ -62,6 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
         takenCourseIds.push(studentCourse.id);
     
         if (registration.grade !== "" && registration.grade !== "F" && registration.grade !== "f") {
+            completedcourses+=1;
             if (completed) {
                 completed.innerHTML += `
                     <div class="scrolling">
@@ -102,6 +103,8 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
     });
+
+    document.querySelector(".completed_courses").innerHTML = `Completed Courses: ${completedcourses}`; 
     
     allCoursesIds.filter(id => !takenCourseIds.includes(id)).forEach(courseId => {
         let pendingCourse = course.find(c => c.id === courseId);
@@ -117,7 +120,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     </div>
                 </div>`;
         }
-    })});
+    })
+});
 
 
 
