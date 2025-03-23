@@ -2,11 +2,13 @@ let dropDownBtn = document.querySelector("#dropdown");
 let list = document.querySelector("#list");
 let icon = document.querySelector("#drop-icon");
 
+dropDownBtn.addEventListener("click", showList)
 
-
-dropDownBtn.addEventListener("onclick", showList())
-
-function showList(){
-    list.classList.toggle("show-list");
-    icon.style.rotate = "-180deg";
+function showList(e){
+    list.classList.toggle("hide");
+    if (icon.style.rotate === "-180deg") {
+        icon.style.rotate = "0deg";
+    } else {
+        icon.style.rotate = "-180deg";
+    }
 }
