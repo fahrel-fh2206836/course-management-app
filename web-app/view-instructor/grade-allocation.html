@@ -7,7 +7,7 @@
         <title>Student-grades</title>
         <link rel="stylesheet" href="../styles/navbar-styles.css">
         <link rel="stylesheet" href="../styles/dialog-styles.css">
-        <link rel="stylesheet" href="../styles/dashboard-styles.css">
+        <!-- <link rel="stylesheet" href="../styles/dashboard-styles.css"> -->
         <link rel="stylesheet" href="../styles/course-card-styles.css">
         <link rel="stylesheet" href="../styles/courses-students-styles.css">
     </head>
@@ -23,10 +23,6 @@
                 <ul id="menulist">
                     <div class="nav-index active">
                         <li><i class='bx bxs-home'></i> <a href="dashboard-instructor.html">Dashboard</a></li>
-                    </div>
-                    <!-- Temporary Placeholder-->
-                    <div class="nav-index">
-                        <li><i class='bx bxs-cog'></i> <a href="course-allocation.html">Course Instructor Allocation</a></li>
                     </div>
                     <!-- Temporary Placeholder-->
                     <div class="nav-index">
@@ -52,12 +48,23 @@
             <h2>Search for Student</h2>
         <div class="search-bar">           
             <div class="search-box">
-                <i class='bx bx-search' ></i> 
                 <input type="text" id="search-input" placeholder="Search for Student">
+                <i class='bx bx-search' ></i> 
             </div>
-
-
         </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Student ID</th>
+                    <th>Student name</th>
+                    <th>Student Grade</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Dynamically Add Rows -->
+            </tbody>
+        </table>
         </main>
     </body>
+    <script src="../js/navbar-script.js"></script>
 </html>
