@@ -95,10 +95,6 @@ body{
     max-height: 300px;
 }
 
-.hide { 
-    display: none;
-}
-
 .dropdown-list-item{
     padding: 1rem 0 1rem 1.5rem;
     font-size: 0.9rem;
