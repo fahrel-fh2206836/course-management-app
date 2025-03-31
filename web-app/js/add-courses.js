@@ -36,7 +36,7 @@ function handleAddCourse(e) {
         return;
     }
     //Check if the course already exist.
-    course.id = courses.length + 100;
+    course.id = (courses.length + 100).toString();
     course.prerequisitesCoursesId = Array.from(prerequisitesDropdown.selectedOptions).map(option => option.value);
     course.isOngoing = course.isOngoing === "on" ? true : false;
     course.isRegistration = course.isRegistration === "on"? true : false;

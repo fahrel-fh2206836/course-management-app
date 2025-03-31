@@ -41,48 +41,21 @@
         </div>
         
         <div class="course-info">
+            <div class="edit-course-btn"><i class='bx bxs-edit'></i></div>
             <div class="info-header">
                 <i class='bx bxs-info-circle'></i>
                 <h2>Course Description</h2>
             </div>
-            <table>
-                <tbody>
-                    <tr>
-                    <th>Course ID</th>
-                    <td>{ID}</td>
-                    </tr>
-                    <tr>
-                    <th>Course Code</th>
-                    <td>{Code}</td>
-                    </tr>
-                    <tr>
-                    <th>Major</th>
-                    <td colspan="3">{Major}</td>
-                    </tr>
-                    <tr>
-                    <th>Credit Hour</th>
-                    <td colspan="3">{CH}</td>
-                    </tr>
-                    <tr>
-                    <th>Prerequisites</th>
-                    <td colspan="3"><div class="prerequisite-list">{Prerequisites}</div></td>
-                    </tr>
-                    <tr>
-                    <th>Status - Ongoing</th>
-                    <td colspan="3"><div class="red-box"></div></td>
-                    </tr>
-                    <tr>
-                    <th>Status - Registration</th>
-                    <td colspan="3"><div class="green-box"></div></td>
-                    </tr>
-                </tbody>
+            <table id="course-table">
+                <!-- Added thru javascript -->
             </table>
-        </div>
-        <div class="course-classes">
+    </div>
+    <div class="course-classes">
 
-        </div>
+    </div>
     </main>
 
+    <script src="../js/manage-courses.js"></script>
     <script src="../js/navbar-script.js"></script>
     <script src="../js/logout-dialog.js"></script>
 </body>

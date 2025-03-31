@@ -36,6 +36,7 @@ main {
 }
 
 .course-info {
+    position: relative;
     width: 100%;
     padding: 10px;
     border-radius: 10px;
@@ -44,6 +45,24 @@ main {
     flex-direction: column;
     gap: 20px;
     background-color: var(--beige-);
+}
+
+.edit-course-btn {
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 7px; 
+    border-radius: 5px;
+    padding: 2px 5px;
+    background-color: var(--chamoisse-);
+    i {
+        color: var(--beige-);
+        font-size: 1.1rem;
+    }
+}
+
+.edit-course-btn:hover {
+    background-color: var(--coffee-);
 }
 
 .info-header {
@@ -57,7 +76,6 @@ main {
 }
 
 .red-box , .green-box{
-    display: block;
     width: 1.05rem;
     height: 1.05rem;
     border: 1.5px solid black;
@@ -85,11 +103,6 @@ table {
 
 th, td {
     padding: 12px;
-}
-
-td {
-    width: 65%;
-    text-align: right;
 }
   
 th {
