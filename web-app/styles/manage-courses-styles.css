@@ -61,6 +61,20 @@ main {
     }
 }
 
+.prerequisite-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    p {
+        color: var(--beige-);
+    }
+    div {
+        background-color: var(--chamoisse-);
+        border-radius: 15px;
+        padding: 5px 10px;
+    }
+}
+
 .edit-course-btn:hover {
     background-color: var(--coffee-);
 }
@@ -91,14 +105,12 @@ main {
 
 
 table {
-    width: 100%;
     border-collapse: collapse;
     border-radius: 10px;
     border-style: hidden;
     background-color: var(--light-beige-);
     box-shadow: 0 0 0 1px #666;
     overflow: hidden;
-
 }
 
 th, td {

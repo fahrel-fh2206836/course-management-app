@@ -5,7 +5,7 @@ const table = document.querySelector("#course-table");
 
 function convertPrereqToHTML() {
     const prereqsName = courses.filter(c => selectedCourse.prerequisitesCoursesId.includes(c.id)).map(c => c.courseName);
-    return prereqsName.length === 0 ? "<p>No Prerequisties</p>" : prereqsName.map(pc => `<p>${pc}</p>`).join('\n')
+    return prereqsName.length === 0 ? "<div><p>No Prerequisties</p></div>" : prereqsName.map(pc => `<div><p>${pc}</p></div>`).join('\n')
 }
 
 function convertTableToHTML() {
@@ -32,16 +32,16 @@ function convertTableToHTML() {
                     <td colspan="3">${selectedCourse.creditHour}</td>
                     </tr>
                     <tr>
-                    <th>Prerequisites</th>
-                    <td colspan="3"><div class="prerequisite-list">${convertPrereqToHTML()}</div></td>
-                    </tr>
-                    <tr>
                     <th>Status - Ongoing</th>
                     <td colspan="3"><div class="${selectedCourse.isOngoing ? 'green-box' : 'red-box'}"></div></td>
                     </tr>
                     <tr>
                     <th>Status - Registration</th>
                     <td colspan="3"><div class="${selectedCourse.isRegistration ? 'green-box' : 'red-box'}"></div></td>
+                    </tr>
+                    <tr>
+                    <th>Prerequisites</th>
+                    <td colspan="3"><div class="prerequisite-list">${convertPrereqToHTML()}</div></td>
                     </tr>
                 </tbody>
                 `;
