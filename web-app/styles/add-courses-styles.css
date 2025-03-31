@@ -14,7 +14,6 @@ body {
 
 main {
     display: flex;
-    justify-content: center;
 }
 
 .form-container {
@@ -24,7 +23,7 @@ main {
     border-radius: 15px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border: 2px solid var(--chamoisse-);
-    width: 85%;
+    width: 100%; 
 }
 
 .form-container h2 {

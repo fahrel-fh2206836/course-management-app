@@ -136,7 +136,7 @@ select:hover {
     flex-direction: column;
     gap: 20px;
     height: 100%;
-    padding: 0px 10px;
+    padding: 5px 10px;
     overflow: auto;
 }
 
@@ -163,9 +163,18 @@ select:hover {
 
 .manage-class-btn:hover {
     border: none;
+    cursor: pointer;
     background-color: var(--coffee-);
     i, p{
         color: var(--beige-);
+    }
+}
+
+.status-header {
+    padding-top: 20px;
+    text-align: center;
+    h1 {
+        font-size: 1.5rem;
     }
 }
 
@@ -184,9 +193,10 @@ select:hover {
 @media (min-width: 1024px) {
     main {
         display: grid;
-        gap: 50px;
+        gap: 30px;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-areas: 
+            "header header header"
             "ongoing registration not-offered"
             "schedule schedule schedule"
         ;
@@ -196,8 +206,13 @@ select:hover {
         display: none;
     }
 
+
     #course-general {
         display: none;
+    }
+
+    .status-header {
+        grid-area: header;
     }
 
     #course-ongoing {

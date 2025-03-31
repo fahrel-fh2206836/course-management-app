@@ -26,11 +26,16 @@ function mapCoursesToHTML(cl) {
 
 function generateCoursesHTML(c) {
     return `<div class="course-card">
-                        <div class="manage-class-btn"><i class='bx bxs-cog'></i><p>Manage Course</p></div>
+                        <div class="manage-class-btn" onclick="manageCourse('${c}')"><i class='bx bxs-cog'></i><p>Manage Course</p></div>
                         <div class="card-flag"><p>${c.courseCode}</p></div>
                         <div class="card-course-name"><p>Course ID: ${c.id} - ${c.courseName}</p></div>
                 </div>
             `;
+}
+
+function manageCourse(c) {
+    localStorage.selectedCourse = c;
+    window.location.href = "../view-admin/manage-course.html";
 }
 
 function filterOngoing() {
@@ -38,11 +43,11 @@ function filterOngoing() {
 }
 
 function filterRegistration() {
-    return courses.filter(c => c.isRegistration === true)
+    return courses.filter(c => c.isRegistration === true);
 }
 
 function filterNotOffered() {
-    return courses.filter(c => c.isRegistration === false && c.isOngoing === false)
+    return courses.filter(c => c.isRegistration === false && c.isOngoing === false);
 }
 
 function onMajorChange(e, s) {
