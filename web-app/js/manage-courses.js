@@ -1,6 +1,5 @@
 const majors = JSON.parse(localStorage.majors);
 const courses = JSON.parse(localStorage.courses);
-console.log(courses);
 const selectedCourse = JSON.parse(localStorage.selectedCourse);
 const table = document.querySelector("#course-table");
 
