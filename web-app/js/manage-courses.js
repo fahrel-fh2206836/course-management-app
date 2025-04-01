@@ -232,19 +232,19 @@ function setReferences(id) {
 function convertEditableSectionHTML(s) {
     return `<div class="statuses">
                 <p>Approval Status</p>
-                <div class="status-value approval-type">
-                    <select id="edit-section-approval" name="edit-section-approval">
-                        <option value="PENDING" ${s.approvalStatus === "PENDING" ? 'selected' : ''}>Pending</option>
-                        <option value="APPROVED" ${s.appovalStatus === "APPROVED" ? 'selected' : ''}>Approved</option>
-                        <option value="CANCELLED" ${s.appovalStatus === "CANCELLED" ? 'selected' : ''}>Cancelled</option>
+                <div>
+                    <select class="edit-section-approval" name="edit-section-approval">
+                        <option value="PENDING" ${s.approvalStatus === "PENDING" ? "selected" : ''}>⏳ Pending</option>
+                        <option value="APPROVED" ${s.appovalStatus === "APPROVED" ? "selected" : ''}>✅ Approved</option>
+                        <option value="CANCELLED" ${s.appovalStatus === "CANCELLED" ? "selected" : ''}>❌ Cancelled</option>
                     </select>
                 </div>
             </div>
             <div class="statuses">
                 <p>Section Status</p>
-                <div class="status-value section-type">
-                    <select id="edit-section-status" name="edit-section-status">
-                        <option value="COMPLETED" ${s.sectionStatus === "COMPLETED" ? 'selected' : ''}>Compeleted</option>
+                <div>
+                    <select class="edit-section-status" name="edit-section-status">
+                        <option value="COMPLETED" ${s.sectionStatus === "COMPLETED" ? 'selected' : ''}>Completed</option>
                         <option value="ONGOING" ${s.sectionStatus === "ONGOING" ? 'selected' : ''}>Ongoing</option>
                         <option value="OPEN_REGISTRATION" ${s.sectionStatus === "OPEN_REGISTRATION" ? 'selected' : ''}>Open for Registration</option>
                     </select>

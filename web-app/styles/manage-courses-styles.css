@@ -270,6 +270,15 @@ th {
     }
 }
 
+.edit-section-approval, .edit-section-status {
+    margin-top: 5px;
+    
+
+    select{
+        font-size: .7rem;
+    }
+}
+
 @media (min-width: 600px) {
     .section-list {
         display: grid;
