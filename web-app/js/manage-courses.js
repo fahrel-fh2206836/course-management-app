@@ -135,7 +135,6 @@ function onSaveCourseEdit() {
 const sectionList = document.querySelector(".section-list");
 
 function renderCourseSection(selectedSections) {
-    console.log(selectedSections.length);
     if(selectedSections.length === 0) {
         sectionList.innerHTML = `<div class="empty-section">
                                     <i class='bx bxs-error-circle'></i>
@@ -147,10 +146,16 @@ function renderCourseSection(selectedSections) {
     sectionList.innerHTML = selectedSections.map(s => convertSectionHTML(s)).join('\n');
 }
 
-function convertSectionHTML(s) {
-    const i = users.find(u => u.userId===s.instructorId);
+function convertStatusAppearance(s) {
     const approvalStatus = s.approvalStatus.charAt(0) + s.approvalStatus.substring(1).toLowerCase();
     const sectionStatus = s.sectionStatus === "OPEN_REGISTRATION" ? "Open for Registration" : s.sectionStatus.charAt(0) + s.sectionStatus.substring(1).toLowerCase();
+    return [approvalStatus, sectionStatus];
+}
+
+function convertSectionHTML(s) {
+    const i = users.find(u => u.userId===s.instructorId);
+    const [approvalStatus, sectionStatus] = convertStatusAppearance(s);
+    
     return `<div class="course-card">
                 <div class="card-flag"><p>${selectedCourse.courseCode}</p></div>
                 <div class="card-seats">
@@ -163,7 +168,7 @@ function convertSectionHTML(s) {
                 <hr>
                 <div class="card-course-sem-schedule"><p><i class='bx bx-calendar'></i>${s.semester}</p><p><i class='bx bx-calendar-week'></i>${s.schedule.days}</p><p><i class='bx bx-time'></i>${s.schedule.time}</p></div>
                 <hr>
-                <div class="card-course-statuses">
+                <div id="card-course-statuses-${s.sectionId}" class="card-course-statuses">
                     <div class="statuses">
                         <p>Approval Status</p>
                         <div class="status-value approval-type">
@@ -178,8 +183,8 @@ function convertSectionHTML(s) {
                         </div>
                     </div>
                 </div>
-                <div class="section-btns">
-                    <button id="edit-section-btn" class="edit-btn section-btn" onclick="onEditSection()">
+                <div id="section-btns-${s.sectionId}" class="section-btns">
+                    <button id="edit-section-btn" class="edit-btn section-btn" onclick="onEditSection('${s.sectionId}')">
                         <i class='bx bxs-edit'></i>
                     </button>
                 </div>
@@ -215,3 +220,77 @@ function handleFilter(e) {
     renderCourseSection(selectedSections);
 }
 
+// Editing Sections
+let sectionBtns;
+let cardCourseStatus;
+
+function setReferences(id) {
+    sectionBtns = document.querySelector(`#section-btns-${id}`);
+    cardCourseStatus = document.querySelector(`#card-course-statuses-${id}`);
+}
+
+function convertEditableSectionHTML(s) {
+    return `<div class="statuses">
+                <p>Approval Status</p>
+                <div class="status-value approval-type">
+                    <select id="edit-section-approval" name="edit-section-approval">
+                        <option value="PENDING" ${s.approvalStatus === "PENDING" ? 'selected' : ''}>Pending</option>
+                        <option value="APPROVED" ${s.appovalStatus === "APPROVED" ? 'selected' : ''}>Approved</option>
+                        <option value="CANCELLED" ${s.appovalStatus === "CANCELLED" ? 'selected' : ''}>Cancelled</option>
+                    </select>
+                </div>
+            </div>
+            <div class="statuses">
+                <p>Section Status</p>
+                <div class="status-value section-type">
+                    <select id="edit-section-status" name="edit-section-status">
+                        <option value="COMPLETED" ${s.sectionStatus === "COMPLETED" ? 'selected' : ''}>Compeleted</option>
+                        <option value="ONGOING" ${s.sectionStatus === "ONGOING" ? 'selected' : ''}>Ongoing</option>
+                        <option value="OPEN_REGISTRATION" ${s.sectionStatus === "OPEN_REGISTRATION" ? 'selected' : ''}>Open for Registration</option>
+                    </select>
+                </div>
+            </div>`;
+}
+
+function convertUneditableSectionHTML(s) {
+    const [approvalStatus, sectionStatus] = convertStatusAppearance(s);
+    return `<div class="statuses">
+                <p>Approval Status</p>
+                <div class="status-value approval-type">
+                        ${s.approvalStatus === "APPROVED" ? "<i class='bx bxs-check-circle'></i>" : s.approvalStatus === "CANCELLED" ? "<i class='bx bxs-x-circle'></i>" : "<i class='bx bx-time-five'></i>"}       
+                        <p>${approvalStatus}</p>
+                    </div>
+                </div>
+                <div class="statuses">
+                    <p>Section Status</p>
+                    <div class="status-value section-type ${s.sectionStatus === "COMPLETED" ? 'completed-card' : s.sectionStatus === "ONGOING" ? 'ongoing-card' : 'open-for-reg-card'}">
+                        <p>${sectionStatus}</p>
+                    </div>
+            </div>`
+}
+
+function onEditSection(sectionId) {
+    setReferences(sectionId);
+    const section = sections.find(s => s.sectionId === sectionId);
+    cardCourseStatus.innerHTML = convertEditableSectionHTML(section);
+    sectionBtns.innerHTML = `<button id="save-section-btn" class="save-btn green-bg section-btn" onclick="onSaveSectionEdit('${section.sectionId}')">
+                            <i class='bx bxs-save'></i>
+                        </button>
+                        <button id="cancel-section-btn" class="cancel-btn red-bg section-btn" onclick="onCancelSectionEdit('${section.sectionId}')">
+                            <i class='bx bxs-x-circle'></i>
+                        </button>`
+    sectionBtns.style.display = 'flex';
+    sectionBtns.style.flexDirection = 'column';
+    sectionBtns.style.gap = '5px'
+}
+
+
+
+function onCancelSectionEdit(sectionId) {
+    const section = sections.find(s => s.sectionId === sectionId);
+    cardCourseStatus.innerHTML = convertUneditableSectionHTML(section);
+    sectionBtns.innerHTML = `<button id="edit-section-btn" class="edit-btn section-btn" onclick="onEditSection('${section.sectionId}')">
+                        <i class='bx bxs-edit'></i>
+                        </button>
+                        `;
+}
