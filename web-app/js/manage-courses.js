@@ -133,11 +133,14 @@ const sectionList = document.querySelector(".section-list");
 
 function renderCourseSection() {
     selectedSections = sections.filter(s => s.courseId===selectedCourse.id);
+    console.log(selectedSections.length);
     if(selectedSections.length === 0) {
-        sectionList.innerHTML = `<div>
+        sectionList.innerHTML = `<div class="empty-section">
                                     <i class='bx bxs-error-circle'></i>
-                                </div>
-                                `
+                                    <p>This course has no sections.</p>
+                                 </div>
+                                `;
+        return;
     }
     sectionList.innerHTML = selectedSections.map(s => convertSectionHTML(s)).join('\n');
 }

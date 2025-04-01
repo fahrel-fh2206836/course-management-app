@@ -148,7 +148,7 @@ th {
     flex-direction: column;
     border-radius: 15px;
     border: 1px solid var(--bistre-);
-    padding: 10px;
+    padding: 20px;
     background-color: var(--beige-);
     gap: 10px;
 }
@@ -173,6 +173,9 @@ th {
     flex-direction: column;
     gap: 10px;
     padding: 10px;
+    background-color: #f0e6cc;
+    border: 1px solid var(--bistre-);
+    border-radius: 15px;
 }
 
 .card-course-statuses {
@@ -246,8 +249,17 @@ th {
     right: 10px;
 }
 
-.section-empty {
-    
+.empty-section {
+    text-align: center;
+    i {
+        font-size: 5rem;
+        color: var(--bistre-);
+    }
+
+    p {
+        font-weight: 500;
+        font-size: 2rem;
+    }
 }
 
 @media (min-width: 600px) {
