@@ -61,17 +61,15 @@
             </table>
         </div>
 
-        <div class="section-header">
-            <i class='bx bx-list-ul'></i>
-            <h1>Course's Sections</h1>
-        </div>
-
         <div class="course-section">
+            <div class="section-header">
+                <h1>{Course} Sections</h1>
+            </div>
             <div class="section-filters">
                 <div class="semester-filter">
                     <label for="semester-filter">Select Semester</label>
                     <select id="semester-filter" name="semester">
-                        <option value="" selected>All Semester</option>
+                        <option value="All" selected>All Semester</option>
                         <option value="Spring 2024">Spring 2024</option>
                         <option value="Fall 2024">Fall 2024</option>
                         <option value="Spring 2025">Spring 2025</option>
@@ -81,7 +79,7 @@
                 <div class="approval-filter">
                     <label for="approval-filter">Select Approval Status</label>
                     <select id="approval-filter" name="approval">
-                        <option value="" selected>None</option>
+                        <option value="None" selected>None</option>
                         <option value="PENDING">Pending</option>
                         <option value="APPROVED">Approved</option>
                         <option value="CANCELLED">Cancelled</option>
@@ -90,7 +88,7 @@
                 <div class="section-status-filter">
                     <label for="section-status-filter">Select Section Status</label>
                     <select id="section-status-filter" name="section-status">
-                        <option value="" selected>None</option>
+                        <option value="None" selected>None</option>
                         <option value="COMPLETED">Compeleted</option>
                         <option value="ONGOING">Ongoing</option>
                         <option value="OPEN_REGISTRATION">Open for Registration</option>

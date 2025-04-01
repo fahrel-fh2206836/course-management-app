@@ -5,6 +5,9 @@ const users = JSON.parse(localStorage.users);
 const selectedCourse = JSON.parse(localStorage.selectedCourse);
 const table = document.querySelector("#course-table");
 const majorName = majors.find(m => m.majorId===selectedCourse.majorId).majorName
+const sectionHeaderH1 = document.querySelector(".section-header").querySelector("h1");
+
+sectionHeaderH1.innerText = `${selectedCourse.courseCode} Sections`;
 
 function convertPrereqToHTML() {
     const prereqsName = courses.filter(c => selectedCourse.prerequisitesCoursesId.includes(c.id)).map(c => c.courseName);
@@ -131,8 +134,7 @@ function onSaveCourseEdit() {
 // List of Sections
 const sectionList = document.querySelector(".section-list");
 
-function renderCourseSection() {
-    selectedSections = sections.filter(s => s.courseId===selectedCourse.id);
+function renderCourseSection(selectedSections) {
     console.log(selectedSections.length);
     if(selectedSections.length === 0) {
         sectionList.innerHTML = `<div class="empty-section">
@@ -149,8 +151,6 @@ function convertSectionHTML(s) {
     const i = users.find(u => u.userId===s.instructorId);
     const approvalStatus = s.approvalStatus.charAt(0) + s.approvalStatus.substring(1).toLowerCase();
     const sectionStatus = s.sectionStatus === "OPEN_REGISTRATION" ? "Open for Registration" : s.sectionStatus.charAt(0) + s.sectionStatus.substring(1).toLowerCase();
-
-    
     return `<div class="course-card">
                 <div class="card-flag"><p>${selectedCourse.courseCode}</p></div>
                 <div class="card-seats">
@@ -186,4 +186,32 @@ function convertSectionHTML(s) {
             </div>`;
 }
 
-renderCourseSection();
+renderCourseSection(sections.filter(s => s.courseId===selectedCourse.id));
+
+
+// Filters
+const semFilter = document.querySelector("#semester-filter");
+const approvalFilter = document.querySelector("#approval-filter");
+const sectionStatusFilter = document.querySelector('#section-status-filter')
+
+semFilter.addEventListener('change', handleFilter);
+approvalFilter.addEventListener('change', handleFilter);
+sectionStatusFilter.addEventListener('change', handleFilter);
+
+function handleFilter(e) {
+    let selectedSections = sections.filter(s => s.courseId===selectedCourse.id);
+    if(semFilter.value !== "All") {
+        selectedSections = selectedSections.filter(s => s.semester === semFilter.value);
+    }
+
+    if(approvalFilter.value !== "None") {
+        selectedSections = selectedSections.filter(s => s.approvalStatus === approvalFilter.value);
+    }
+
+    if(sectionStatusFilter.value !== "None") {
+        selectedSections = selectedSections.filter(s => s.sectionStatus === sectionStatusFilter.value);
+    }
+
+    renderCourseSection(selectedSections);
+}
+

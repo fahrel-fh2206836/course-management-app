@@ -21,20 +21,29 @@ main {
     gap: 20px;
 }
 
+h1{
+    font-size: 1.7rem
+}
 
-.page-header, .section-header {
+.page-header {
     display: flex;
     align-items: center;
     gap: 5px;
 
-    h1{
-        font-size: 1.7rem
-    }
-    
     i {
         cursor: default;
         color: var(--bistre-);
         font-size: 1.7rem;
+    }
+}
+
+.section-header {
+    width: fit-content;
+    background-color: var(--chamoisse-);
+    border-radius: 15px;
+    padding: 5px 10px;
+    h1 {
+        color: var(--beige-);
     }
 }
 
@@ -163,7 +172,6 @@ th {
     }
     select {
         padding: 5px;
-        outline: none;
         border-radius: 5px;
     }
 }
