@@ -35,8 +35,13 @@ main {
     }
 }
 
+.header-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .course-info {
-    position: relative;
     width: 100%;
     padding: 10px;
     border-radius: 10px;
@@ -47,18 +52,33 @@ main {
     background-color: var(--beige-);
 }
 
-.edit-course-btn {
+.course-btn {
     cursor: pointer;
-    position: absolute;
-    top: 15px;
-    right: 7px; 
     border-radius: 5px;
     padding: 2px 5px;
+    border: none;
+    i {
+        font-size: 1.1rem;
+    }
+}
+
+.edit-course-btn {
     background-color: var(--chamoisse-);
     i {
         color: var(--beige-);
-        font-size: 1.1rem;
     }
+}
+
+.save-btn:hover {
+    background-color: darkgreen;
+}
+
+.cancel-btn:hover {
+    background-color: crimson;
+}
+
+.edit-course-btn:hover {
+    background-color: var(--coffee-);
 }
 
 .prerequisite-list {
@@ -73,10 +93,6 @@ main {
         border-radius: 15px;
         padding: 5px 10px;
     }
-}
-
-.edit-course-btn:hover {
-    background-color: var(--coffee-);
 }
 
 .info-header {
@@ -95,11 +111,11 @@ main {
     border: 1.5px solid black;
 }
 
-.red-box {
+.red-bg {
     background-color: red;
 }
 
-.green-box {
+.green-bg {
     background-color: green;
 }
 
