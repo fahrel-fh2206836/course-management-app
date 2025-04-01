@@ -1,5 +1,7 @@
 const majors = JSON.parse(localStorage.majors);
 const courses = JSON.parse(localStorage.courses);
+const sections = JSON.parse(localStorage.sections);
+const users = JSON.parse(localStorage.users);
 const selectedCourse = JSON.parse(localStorage.selectedCourse);
 const table = document.querySelector("#course-table");
 const majorName = majors.find(m => m.majorId===selectedCourse.majorId).majorName
@@ -55,7 +57,7 @@ renderTable();
 
 // Editing Course Functionality
 
-const editBtn = document.querySelector(".edit-course-btn");
+const editBtn = document.querySelector("#edit-course-btn");
 const buttons = document.querySelector(".btns");
 
 function convertTableEditableHTML() {
@@ -98,25 +100,25 @@ function convertTableEditableHTML() {
 
 function onCourseEdit() {
     table.innerHTML = convertTableEditableHTML();
-    buttons.innerHTML = `<div class="save-btn green-bg course-btn" onclick="onSaveEdit()">
+    buttons.innerHTML = `<button id="save-course-btn" class="save-btn green-bg course-btn" onclick="onSaveCourseEdit()">
                             <i class='bx bxs-save'></i>
-                        </div>
-                        <div class="cancel-btn red-bg course-btn" onclick="onCancelEdit()">
+                        </button>
+                        <button id="cancel-course-btn" class="cancel-btn red-bg course-btn" onclick="onCancelCourseEdit()">
                             <i class='bx bxs-x-circle'></i>
-                        </div>`
+                        </button>`
     buttons.style.display = 'flex';
     buttons.style.gap = '5px'
 }
 
-function onCancelEdit() {
+function onCancelCourseEdit() {
     renderTable();
-    buttons.innerHTML = `<div class="edit-course-btn course-btn" onclick="onCourseEdit()">
+    buttons.innerHTML = `<button id="edit-course-btn" class="edit-btn course-btn" onclick="onCourseEdit()">
                         <i class='bx bxs-edit'></i>
-                        </div>
+                        </button>
                         `
 }
 
-function onSaveEdit() {
+function onSaveCourseEdit() {
     let index = courses.findIndex(c => selectedCourse.id === c.id);
     courses[index].isOngoing = selectedCourse.isOngoing = document.querySelector("#ongoing-check").checked
     courses[index].isRegistration = selectedCourse.isRegistration = document.querySelector("#reg-check").checked 
@@ -125,3 +127,60 @@ function onSaveEdit() {
     onCancelEdit()
     alert(`${selectedCourse.courseName} status has been updated!`);
 }
+
+// List of Sections
+const sectionList = document.querySelector(".section-list");
+
+function renderCourseSection() {
+    selectedSections = sections.filter(s => s.courseId===selectedCourse.id);
+    if(selectedSections.length === 0) {
+        sectionList.innerHTML = `<div>
+                                    <i class='bx bxs-error-circle'></i>
+                                </div>
+                                `
+    }
+    sectionList.innerHTML = selectedSections.map(s => convertSectionHTML(s)).join('\n');
+}
+
+function convertSectionHTML(s) {
+    const i = users.find(u => u.userId===s.instructorId);
+    const approvalStatus = s.approvalStatus.charAt(0) + s.approvalStatus.substring(1).toLowerCase();
+    const sectionStatus = s.sectionStatus === "OPEN_REGISTRATION" ? "Open for Registration" : s.sectionStatus.charAt(0) + s.sectionStatus.substring(1).toLowerCase();
+
+    
+    return `<div class="course-card">
+                <div class="card-flag"><p>${selectedCourse.courseCode}</p></div>
+                <div class="card-seats">
+                    <i class='bx bxs-group'></i>
+                    <p>${s.currentSeats}/${s.totalSeats}</p>
+                </div>
+                <div class="card-course-name"><p>${selectedCourse.courseName}</p></div>
+                <div class="card-course-instructor"><p>Instructor: ${i.firstName} ${i.lastName}</p></div>
+                <div class="card-course-section-location"><p>Section ID: ${s.sectionId}</p><p>Class Location: ${s.location}</p></div>
+                <hr>
+                <div class="card-course-sem-schedule"><p><i class='bx bx-calendar'></i>${s.semester}</p><p><i class='bx bx-calendar-week'></i>${s.schedule.days}</p><p><i class='bx bx-time'></i>${s.schedule.time}</p></div>
+                <hr>
+                <div class="card-course-statuses">
+                    <div class="statuses">
+                        <p>Approval Status</p>
+                        <div class="status-value approval-type">
+                            ${s.approvalStatus === "APPROVED" ? "<i class='bx bxs-check-circle'></i>" : s.approvalStatus === "CANCELLED" ? "<i class='bx bxs-x-circle'></i>" : "<i class='bx bx-time-five'></i>"}       
+                            <p>${approvalStatus}</p>
+                        </div>
+                    </div>
+                    <div class="statuses">
+                        <p>Section Status</p>
+                        <div class="status-value section-type ${s.sectionStatus === "COMPLETED" ? 'completed-card' : s.sectionStatus === "ONGOING" ? 'ongoing-card' : 'open-for-reg-card'}">
+                            <p>${sectionStatus}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-btns">
+                    <button id="edit-section-btn" class="edit-btn section-btn" onclick="onEditSection()">
+                        <i class='bx bxs-edit'></i>
+                    </button>
+                </div>
+            </div>`;
+}
+
+renderCourseSection();

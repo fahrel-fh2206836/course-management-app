@@ -37,6 +37,30 @@
     }
 }
 
+.card-seats {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    position: absolute;
+    top: 5px;
+    right: 40px;
+    border-radius: 15px;
+    background-color: var(--chamoisse-);
+    padding: 4px 10px;
+    i, p{
+        color: var(--beige-);
+    }
+
+    i{
+        cursor: default;
+        font-size: 1rem;
+    }
+
+    p{
+        font-size: .7rem;
+    }
+}
+
 .card-course-section-location, .card-course-instructor {
     p, span{
         font-size: .8rem; 
@@ -69,3 +93,5 @@
         }
     }
 }
+
+
