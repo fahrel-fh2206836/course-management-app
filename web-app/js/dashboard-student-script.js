@@ -29,12 +29,21 @@ progressBar.style.width = progress + "%";
 
 function renderRegisteredCourses() {
     let html = ``;
-    registeredSections.forEach(regSec => {
-        let section = sections.find(s => regSec.sectionId === s.sectionId); 
-        let course = courses.find(c => c.id === section.courseId);
-        let instructor = users.find(u => u.userId === section.instructorId);
-        html+=generateCourseListHTML(section, course, instructor)+'\n';
-    })
+    if(registeredSections.length === 0) {
+        html = `<div class="empty-section">
+                                    <i class='bx bxs-error-circle'></i>
+                                    <p>No Registered Section.</p>
+                                 </div>
+                                `;
+    } else {
+        registeredSections.forEach(regSec => {
+            let section = sections.find(s => regSec.sectionId === s.sectionId); 
+            let course = courses.find(c => c.id === section.courseId);
+            let instructor = users.find(u => u.userId === section.instructorId);
+            html+=generateCourseListHTML(section, course, instructor)+'\n';
+        })
+    }
+    console.log(html); 
     registeredList.innerHTML = html;
 }
 
@@ -44,9 +53,9 @@ function generateCourseListHTML(s, c, i) {
                 <div class="card-flag"><p>${c.courseCode}</p></div>
                 <div class="card-course-name"><p>${c.courseName}</p></div>
                 <div class="card-course-instructor"><p>Instructor: ${i.firstName} ${i.lastName}</p></div>
-                <div class="card-course-section-location"><p>Section ID: ${s.sectionId}</p><p>Class Location: ${s.location}</p></div>
+                <div class="card-course-section-location"><p>Section ID: ${s.sectionId}</p><p>Class Location: ${s.location !== '' ? s.location : 'None'}</p></div>
                 <hr>
-                <div class="card-course-sem-schedule"><p><i class='bx bx-calendar'></i>${s.semester}</p><p><i class='bx bx-calendar-week'></i>${s.schedule.days}</p><p><i class='bx bx-time'></i>${s.schedule.time}</p></div>
+                <div class="card-course-sem-schedule"><p><i class='bx bx-calendar'></i>${s.semester}</p><p><i class='bx bx-calendar-week'></i>${s.schedule.days !== '' ? s.schedule.day : 'None'}</p><p><i class='bx bx-time'></i>${s.schedule.time !== '' ? s.schedule.time : 'None'}</p></div>
             </div>        
         `
 }

@@ -7,3 +7,16 @@
     --bistre-: #3d211a;
     --font-theme-: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+.empty-section {
+    text-align: center;
+    i {
+        font-size: 5rem;
+        color: var(--bistre-);
+    }
+
+    p {
+        font-weight: 500;
+        font-size: 2rem;
+    }
+}

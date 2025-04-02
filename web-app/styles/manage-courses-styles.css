@@ -257,25 +257,12 @@ th {
     right: 10px;
 }
 
-.empty-section {
-    text-align: center;
-    i {
-        font-size: 5rem;
-        color: var(--bistre-);
-    }
-
-    p {
-        font-weight: 500;
-        font-size: 2rem;
-    }
-}
-
 .edit-section-approval, .edit-section-status {
     margin-top: 5px;
-    
-
-    select{
-        font-size: .7rem;
+    padding: 3px 5px;
+    font-size: .65rem;
+    option {
+        font-size: .65rem;
     }
 }
 
@@ -284,5 +271,14 @@ th {
         display: grid;
         gap: 30px;
         grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    }
+}
+
+@media (max-width: 350px) {
+    .edit-section-approval, .edit-section-status {
+        font-size: .5rem;
+        option {
+            font-size: .5rem;
+        }
     }
 }

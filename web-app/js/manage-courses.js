@@ -127,7 +127,7 @@ function onSaveCourseEdit() {
     courses[index].isRegistration = selectedCourse.isRegistration = document.querySelector("#reg-check").checked 
     localStorage.selectedCourse = JSON.stringify(selectedCourse);
     localStorage.courses =  JSON.stringify(courses);
-    onCancelEdit()
+    onCancelCourseEdit()
     alert(`${selectedCourse.courseName} status has been updated!`);
 }
 
@@ -154,7 +154,6 @@ function convertStatusAppearance(s) {
 
 function convertSectionHTML(s) {
     const i = users.find(u => u.userId===s.instructorId);
-    const [approvalStatus, sectionStatus] = convertStatusAppearance(s);
     
     return `<div class="course-card">
                 <div class="card-flag"><p>${selectedCourse.courseCode}</p></div>
@@ -164,24 +163,12 @@ function convertSectionHTML(s) {
                 </div>
                 <div class="card-course-name"><p>${selectedCourse.courseName}</p></div>
                 <div class="card-course-instructor"><p>Instructor: ${i.firstName} ${i.lastName}</p></div>
-                <div class="card-course-section-location"><p>Section ID: ${s.sectionId}</p><p>Class Location: ${s.location}</p></div>
+                <div class="card-course-section-location"><p>Section ID: ${s.sectionId}</p><p>Class Location: ${s.location !== '' ? s.location : 'None'}</p></div>
                 <hr>
-                <div class="card-course-sem-schedule"><p><i class='bx bx-calendar'></i>${s.semester}</p><p><i class='bx bx-calendar-week'></i>${s.schedule.days}</p><p><i class='bx bx-time'></i>${s.schedule.time}</p></div>
+                <div class="card-course-sem-schedule"><p><i class='bx bx-calendar'></i>${s.semester}</p><p><i class='bx bx-calendar-week'></i>${s.schedule.days !== '' ? s.schedule.days : 'None'}</p><p><i class='bx bx-time'></i>${s.schedule.time !== '' ? s.schedule.time : 'None'}</p></div>
                 <hr>
                 <div id="card-course-statuses-${s.sectionId}" class="card-course-statuses">
-                    <div class="statuses">
-                        <p>Approval Status</p>
-                        <div class="status-value approval-type">
-                            ${s.approvalStatus === "APPROVED" ? "<i class='bx bxs-check-circle'></i>" : s.approvalStatus === "CANCELLED" ? "<i class='bx bxs-x-circle'></i>" : "<i class='bx bx-time-five'></i>"}       
-                            <p>${approvalStatus}</p>
-                        </div>
-                    </div>
-                    <div class="statuses">
-                        <p>Section Status</p>
-                        <div class="status-value section-type ${s.sectionStatus === "COMPLETED" ? 'completed-card' : s.sectionStatus === "ONGOING" ? 'ongoing-card' : 'open-for-reg-card'}">
-                            <p>${sectionStatus}</p>
-                        </div>
-                    </div>
+                    ${convertUneditableSectionHTML(s)}
                 </div>
                 <div id="section-btns-${s.sectionId}" class="section-btns">
                     <button id="edit-section-btn" class="edit-btn section-btn" onclick="onEditSection('${s.sectionId}')">
@@ -235,8 +222,8 @@ function convertEditableSectionHTML(s) {
                 <div>
                     <select class="edit-section-approval" name="edit-section-approval">
                         <option value="PENDING" ${s.approvalStatus === "PENDING" ? "selected" : ''}>⏳ Pending</option>
-                        <option value="APPROVED" ${s.appovalStatus === "APPROVED" ? "selected" : ''}>✅ Approved</option>
-                        <option value="CANCELLED" ${s.appovalStatus === "CANCELLED" ? "selected" : ''}>❌ Cancelled</option>
+                        <option value="APPROVED" ${s.approvalStatus === "APPROVED" ? "selected" : ''}>✅ Approved</option>
+                        <option value="CANCELLED" ${s.approvalStatus === "CANCELLED" ? "selected" : ''}>❌ Cancelled</option>
                     </select>
                 </div>
             </div>
@@ -270,6 +257,7 @@ function convertUneditableSectionHTML(s) {
 }
 
 function onEditSection(sectionId) {
+    console.log(sectionId);
     setReferences(sectionId);
     const section = sections.find(s => s.sectionId === sectionId);
     cardCourseStatus.innerHTML = convertEditableSectionHTML(section);
@@ -287,10 +275,41 @@ function onEditSection(sectionId) {
 
 
 function onCancelSectionEdit(sectionId) {
+    setReferences(sectionId);
     const section = sections.find(s => s.sectionId === sectionId);
     cardCourseStatus.innerHTML = convertUneditableSectionHTML(section);
     sectionBtns.innerHTML = `<button id="edit-section-btn" class="edit-btn section-btn" onclick="onEditSection('${section.sectionId}')">
                         <i class='bx bxs-edit'></i>
                         </button>
                         `;
+}
+
+function onSaveSectionEdit(sectionId) {
+    setReferences(sectionId);
+    let index = sections.findIndex(s => sectionId === s.sectionId);
+
+    let newApprovalStatus =  cardCourseStatus.querySelector(".edit-section-approval").value;
+    sections[index].approvalStatus = newApprovalStatus;
+
+    if(newApprovalStatus !== "APPROVED") {
+        sections[index].sectionStatus = "OPEN_REGISTRATION";
+    }
+
+    let newSectionStatus = cardCourseStatus.querySelector(".edit-section-status").value;
+    let doUpdateSectionStatus = false;
+
+    if(newSectionStatus === 'ONGOING' || newSectionStatus === "COMPLETED") {
+        if(sections[index].approvalStatus !== "APPROVED") {
+            alert(`Section ID: ${sectionId} status cannot be ${newSectionStatus}. (NOT APPROVED STATUS YET)`);
+        } else {
+            doUpdateSectionStatus = true;
+        }
+    } else {
+        doUpdateSectionStatus = true;
+    }
+
+    sections[index].sectionStatus = doUpdateSectionStatus === true ? newSectionStatus : sections[index].sectionStatus;
+    
+    onCancelSectionEdit(sectionId)
+    localStorage.sections =  JSON.stringify(sections);
 }
