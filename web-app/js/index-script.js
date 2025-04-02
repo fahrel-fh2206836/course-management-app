@@ -13,6 +13,7 @@ async function loadLocalStorages() {
     // delete localStorage.sections;
     // delete localStorage.registrations;
     // delete localStorage.users;
+    // delete localStorage.currentSem;
 
     if(!localStorage.majors) {
         localStorage.majors = await retrieveJSONData('../assets/data/majors.json');
@@ -25,6 +26,9 @@ async function loadLocalStorages() {
     }
     if(!localStorage.sections) {
         localStorage.sections = await retrieveJSONData('../assets/data/sections.json');
+    }
+    if(!localStorage.currentSem) {
+        localStorage.currentSem = "Fall 2025";
     }
 }
 

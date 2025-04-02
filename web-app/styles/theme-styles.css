@@ -1,3 +1,12 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: var(--bistre-);
+    box-sizing: border-box;
+    font-family: var(--font-theme-);
+    font-size: 1.0rem;
+}
+
 :root{
     --light-beige- : #fafaf3;
     --beige- : #f5f5DC;

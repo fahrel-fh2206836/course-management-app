@@ -3,9 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Add Section</title>
+    <link rel="stylesheet" href="../styles/navbar-styles.css">
+    <link rel="stylesheet" href="../styles/dialog-styles.css">
+    <link rel="stylesheet" href="../styles/add-page-styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
+    <header>
+        <nav id="navbar">
+            <div id="nav-img-header">        
+                <a href="dashboard-admin.html">
+                    <img src="../assets/images/qu_logo_white.png" alt="" id="long-qu-logo">
+                    <img src="../assets/images/qu_logo_white3.png" alt="" id="short-qu-logo">
+                </a>
+                <p id="nav-title">Course Management System</p></div>
+            <ul id="menulist">
+                <div class="nav-index">
+                    <li><i class='bx bxs-home'></i> <a href="dashboard-admin.html">Dashboard</a></li>
+                </div>
+                <div class="nav-index">
+                    <li><i class='bx bxs-book-add'></i> <a href="add-courses.html">Add Course</a></li>
+                </div>
+                <div class="nav-index active">
+                    <li><i class='bx bxs-plus-circle'></i> <a href="add-section.html">Add Section</a></li>
+                </div>
+                <div class="nav-index">
+                <li><i class='bx bx-power-off'></i> <a onclick="openLogoutDialog()">Logout</a></li>
+            </div>
+            </ul>
+            <div class="nav-index" id="menu-icon" onclick="toggleMenu()">
+                <i class='bx bx-menu'></i>
+            </div>
+        </nav>   
+    </header>
+
+    <main>
+        <div class="form-container">
+            <h2>Add New Section {Next Sem}</h2>
+            <form action="" id="add-section-form">
+                <div class="form-group">
+                    <label for="section-course">Select Course</label>
+                    <select id="section-course" name="courseId" required>
+                        <!-- Added thru js -->
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="section-instructor">Select Instructor</label>
+                    <select id="section-instructor" name="instructorId" required>
+                        <!-- Added thru js -->
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="section-seats">Total Seats</label>
+                    <input type="number" id="section-seats" name="totalSeats" placeholder="Enter Total Seats" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="section-location">Location</label>
+                    <input type="text" id="section-location" name="location" placeholder="Enter Location (Optional)">
+                </div>
+
+                <div class="form-group">
+                    <label for="section-time">Set Timing (Optional)</label>
+                    <input type="time" id="section-time" name="time" min="08:00" max="20:00">
+                </div>
+
+                <div class="form-group">
+                    <label for="">Select Days (Optional)</label>
+                    <div class="day-select">
+                        <input type="checkbox" id="sun" name="days" value="SUN" class="day-checkbox">
+                        <label for="sun" class="day-label">SUN</label>
+                    
+                        <input type="checkbox" id="mon" name="days" value="MON" class="day-checkbox" >
+                        <label for="mon" class="day-label">MON</label>
+                    
+                        <input type="checkbox" id="tue" name="days" value="TUE" class="day-checkbox">
+                        <label for="tue" class="day-label">TUE</label>
+                    
+                        <input type="checkbox" id="wed" name="days" value="WED" class="day-checkbox">
+                        <label for="wed" class="day-label">WED</label>
+                    
+                        <input type="checkbox" id="thu" name="days" value="THU" class="day-checkbox">
+                        <label for="thu" class="day-label">THU</label>
+                    
+                        <input type="checkbox" id="fri" name="days" value="FRI" class="day-checkbox">
+                        <label for="fri" class="day-label">FRI</label>
+                    
+                        <input type="checkbox" id="sat" name="days" value="SAT" class="day-checkbox">
+                        <label for="sat" class="day-label">SAT</label>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button type="submit">Add Section</button>
+                    <button type="reset">Clear All</button>
+                </div>
+
+            </form>
+        </div>
+    </main>
+
+    <script src="../js/logout-dialog.js"></script>
+    <script src="../js/navbar-script.js"></script>
+    <script src="../js/add-section.js"></script>
     
 </body>
 </html>

@@ -1,13 +1,5 @@
 @import url(theme-styles.css);
 
-*{
-    margin: 0;
-    padding: 0;
-    color: var(--bistre-);
-    box-sizing: border-box;
-    font-family: var(--font-theme-);
-}
-
 body {
     background-color: var(--light-beige-);
 }
@@ -29,6 +21,7 @@ main {
 .form-container h2 {
     padding-bottom: 10px;
     margin-bottom: 10px;
+    font-size: 1.5rem;
     text-align: center;
     color: var(--coffee-);
     border-bottom: 3px solid var(--chamoisse-);
@@ -71,20 +64,6 @@ input, select {
     outline: none;
 }
 
-button {
-    padding: 10px;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.05rem;
-    cursor: pointer;
-    width: 100%;
-}
-
-button:hover {
-    background-color: var(--coffee-);
-}
-
 .checkbox-group {
     padding: 10px;
     border: 1px solid var(--chamoisse-);
@@ -108,18 +87,64 @@ button:hover {
     display: flex;
     justify-content: space-between; 
     gap: 15px;
-    button:first-child {
+    button:first-child{
         background-color: green;
     }
 
     button:last-child {
         background-color: red;
     }
+
+    button {
+        padding: 10px;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.05rem;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    button:first-child:hover {
+        background-color: darkgreen;
+    }
+
+    button:last-child:hover {
+        background-color: crimson;
+    }
+    
 }
 
 .prerequisites-dropdown {
     height: 150px;
     overflow-x: auto;
+}
+
+.day-select {
+    display: flex;
+    gap: 5px;
+}
+
+.day-checkbox {
+    display: none;
+}
+
+.day-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    border: 1px solid var(--chamoisse-);
+    border-radius: 5px;
+    font-weight: bold;
+    background-color: var(--light-beige-);
+    color: black;
+    cursor: pointer;
+}
+
+.day-checkbox:checked + .day-label {
+    background-color: var(--chamoisse-);
+    color: white;
 }
 
 
@@ -134,7 +159,8 @@ button:hover {
         align-self: center;
     }
     .form-group input,
-    .form-group select {
+    .form-group select, 
+    .day-select {
         width: 70%;
     }
 }

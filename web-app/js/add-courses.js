@@ -35,7 +35,13 @@ function handleAddCourse(e) {
         alert("CREDIT HOUR SHOULD BE A POSITIVE INTEGER! (CH>0)");
         return;
     }
+
     //Check if the course already exist.
+    if(courses.map(c => c.courseCode.toLowerCase().replace(/\s+/g, '')).includes(course.courseCode.toLowerCase().replace(/\s+/g, ''))) {
+        alert("Course Already Exist!");
+        return;
+    }
+
     course.id = (courses.length + 100).toString();
     course.prerequisitesCoursesId = Array.from(prerequisitesDropdown.selectedOptions).map(option => option.value);
     course.isOngoing = course.isOngoing === "on" ? true : false;
@@ -44,7 +50,6 @@ function handleAddCourse(e) {
     localStorage.courses = JSON.stringify(courses);
     form.reset();
 
-    //Will change to snack bar.
     alert(`${course.courseCode} is Added to the System.`);
 }
 
