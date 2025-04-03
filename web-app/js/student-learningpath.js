@@ -6,25 +6,24 @@ document.addEventListener("DOMContentLoaded", () => {
     let section = JSON.parse(localStorage.sections)
     let course = JSON.parse(localStorage.courses)
     let completedcourses=0;
-    console.log(student);
 
     //student details
     if (!student || student.role !== "Student") {
         console.log("User not found or not a student.");
         return;
     }
-    console.log("Logged-in Student:", student);
 
     let studentMajor = majors.find(m => m.majorId == student.majorId);
 
-    document.querySelector(".major").innerHTML = `Major: ${studentMajor.majorName}`;
-    document.querySelector(".gpa").innerHTML = `CGPA: ${student.gpa.toFixed(2)}`;
-    document.querySelector(".completed_CH").innerHTML = `Completed Credit Hours: ${student.finishedCreditHour}`;
+    document.querySelector("#name").innerHTML = `${student.firstName} ${student.lastName}`;
+    document.querySelector("#stats-major").innerHTML = studentMajor.majorName;
+    document.querySelector("#stats-CGPA").innerHTML = student.gpa.toFixed(2);
+    document.querySelector("#stats-completed-ch").innerHTML = `${student.finishedCreditHour}/${studentMajor.totalCreditHour}`;
     
     let progress = (student.finishedCreditHour / studentMajor.totalCreditHour) * 100;
     
-    document.querySelector(".progress-bar").style.width = progress + "%";
-    document.querySelector(".percentage").innerHTML = `${progress.toFixed(2)}%`;
+    document.querySelector("#progress-bar").querySelector("div").style.width = progress + "%";
+    document.querySelector("#bar-percentage").innerHTML = `${progress.toFixed(1)}%`;
 
 
     //prereq img
@@ -66,12 +65,14 @@ document.addEventListener("DOMContentLoaded", () => {
             if (completed) {
                 completed.innerHTML += `
                     <div class="scrolling">
+                        
                         <div class="course-card">
                             <div class="course-header">
                                 <span class="course-code">${studentCourse.courseCode}</span>
                                 <span class="course-title">${studentCourse.courseName}</span>
                                 <span class="course-ch">${studentCourse.creditHour} CH</span>
                             </div>
+                            <div class="course-grade"><span>Grade: ${registration.grade}</span></div>
                         </div>
                     </div>`;
             }
@@ -104,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    document.querySelector(".completed_courses").innerHTML = `Completed Courses: ${completedcourses}`; 
+    document.querySelector("#stats-completed-courses").innerHTML = completedcourses; 
     
     allCoursesIds.filter(id => !takenCourseIds.includes(id)).forEach(courseId => {
         let pendingCourse = course.find(c => c.id === courseId);
