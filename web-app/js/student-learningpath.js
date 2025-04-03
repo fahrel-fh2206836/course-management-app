@@ -65,7 +65,6 @@ document.addEventListener("DOMContentLoaded", () => {
             if (completed) {
                 completed.innerHTML += `
                     <div class="scrolling">
-                        
                         <div class="course-card">
                             <div class="course-header">
                                 <span class="course-code">${studentCourse.courseCode}</span>
