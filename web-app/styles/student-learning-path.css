@@ -189,7 +189,6 @@ h1 {
 .course-grade {
     background-color: var(--chamoisse-);
     padding: 2px 10px;
-    border-top: 1px solid var(--coffee-);
     span {
         color: var(--beige-);
         font-weight: 500;
