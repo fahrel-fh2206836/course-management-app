@@ -4,7 +4,7 @@ main {
     display: flex;
     flex-direction: column;
     margin: 10px;
-    gap: 40px;
+    gap: 20px;
 }
 
 main>h1 {
@@ -24,12 +24,15 @@ h1 {
 .achievements-header {
     display: grid;
     gap: 10px;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 1.5fr 1fr;
     grid-template-areas: "stats image";
 }
 
-.achievements-header img {
+.achievements-header {
     grid-area: image;
+}
+
+.achievements-header img {
     width: 300px;
     align-self: center;
     justify-self: center;
@@ -60,7 +63,7 @@ h1 {
 
 .img-prerequiste {
     width: 100%;
-    padding: 5px;
+    padding: 20px;
     border-radius: 15px;
     background-color: var(--beige-);
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
@@ -93,6 +96,7 @@ h1 {
 
 .container {
     display: flex;
+    justify-content: space-evenly;
     gap: 10px;
 }
 
@@ -103,10 +107,12 @@ h1 {
     overflow-y: auto;
     background: white;
     border-radius: 10px;
+    border: 1px solid var(--bistre-);
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     text-align: center;
     display: flex;
     flex-direction: column;
+    background-color: #f0e6cc;
 }
 
 
