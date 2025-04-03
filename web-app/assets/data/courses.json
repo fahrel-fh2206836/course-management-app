@@ -6,7 +6,7 @@
         "creditHour" : 3,
         "courseName" : "Programming Concepts",
         "prerequisitesCoursesId" : [],
-        "isOngoing" : true,
+        "isOngoing" : false,
         "isRegistration" : true
     },
 
@@ -28,7 +28,7 @@
         "creditHour" : 3,
         "courseName" : "Discrete Mathematics",
         "prerequisitesCoursesId" : [],
-        "isOngoing" : true,
+        "isOngoing" : false,
         "isRegistration" : true
     },
 
@@ -104,7 +104,7 @@
         "creditHour": 4,
         "courseName": "Database Fundamentals",
         "prerequisitesCoursesId": ["2"],
-        "isOngoing": true,
+        "isOngoing": false,
         "isRegistration": false
       },
       {
@@ -124,7 +124,7 @@
         "creditHour": 4,
         "courseName": "Operating Systems",
         "prerequisitesCoursesId": ["6", "52"],
-        "isOngoing": true,
+        "isOngoing": false,
         "isRegistration": true
       },
       {
@@ -134,7 +134,7 @@
         "creditHour": 3,
         "courseName": "Senior Project I",
         "prerequisitesCoursesId": ["8","9","4"],
-        "isOngoing": true,
+        "isOngoing": false,
         "isRegistration": true
       },
       {
@@ -174,7 +174,7 @@
         "creditHour": 3,
         "courseName": "Networks II",
         "prerequisitesCoursesId": ["53"],
-        "isOngoing": true,
+        "isOngoing": false,
         "isRegistration": false
       },
       {
@@ -184,7 +184,7 @@
         "creditHour": 4,
         "courseName": "Micro Processor Based Design",
         "prerequisitesCoursesId": ["52"],
-        "isOngoing": true,
+        "isOngoing": false,
         "isRegistration": false
       },
       {
@@ -204,7 +204,7 @@
         "creditHour": 3,
         "courseName": "Design Project I",
         "prerequisitesCoursesId": ["53", "54", "55"],
-        "isOngoing": true,
+        "isOngoing": false,
         "isRegistration": true
       }
 ]

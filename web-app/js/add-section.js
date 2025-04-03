@@ -13,36 +13,52 @@ h2.innerText = `Add New Section (${currentSem})`;
 
 function renderCourses() {
     courseSelect.innerHTML = `<option label="Select Course" value="" selected disabled></option>
-                             ${courses.map(c => `<option label="${c.courseName}" value="${c.id}"></option>`)};`
+                             ${courses.filter(c => c.isRegistration === true).sort((a, b) => a.courseName.localeCompare(b.courseName)).map(c => `<option label="${c.courseName}" value="${c.id}"></option>`)};`
 }
 
 function renderInstructor() {
     const instructors = users.filter(u => u.role === "Instructor");
     instructorSelect.innerHTML = `<option label="Select Instructor" value="" selected disabled></option>
-                        ${instructors.map(i =>  `<option label="${i.firstName} ${i.lastName}" value="${i.userId}"></option>`)}`
+                        ${instructors.sort((a, b) => a.firstName.localeCompare(b.firstName)).map(i =>  `<option label="${i.firstName} ${i.lastName}" value="${i.userId}"></option>`)}`
 }
 
 renderCourses();
 renderInstructor();
 
-// form.addEventListener('submit', handleAddSection);
+form.addEventListener('submit', handleAddSection);
 
-// function handleAddSection(e) {
-//     e.preventDefault();
+function handleAddSection(e) {
+    e.preventDefault();
 
-//     const formData = new FormData(e.target);
-//     const section = Object.fromEntries(formData);
-//     if(section.totalSeats <= 0) {
-//         alert("CREDIT HOUR SHOULD BE A POSITIVE INTEGER! (CH>0)");
-//         return;
-//     }
-//     //Check if the course already exist.
-//     section.id = (sections.length + 25).toString();
-//     section.prerequisitesCoursesId = Array.from(prerequisitesDropdown.selectedOptions).map(option => option.value);
-//     courses.push(course);
-//     localStorage.courses = JSON.stringify(courses);
-//     form.reset();
+    const formData = new FormData(e.target);
+    const section = Object.fromEntries(formData);
+    if(section.totalSeats <= 0) {
+        alert("TOTAL SEATS SHOULD BE A POSITIVE INTEGER! (CH>0)");
+        return;
+    }
 
-//     //Will change to snack bar.
-//     alert(`${course.courseCode} is Added to the System.`);
-// }
+    section.totalSeats = parseInt(section.totalSeats);
+    section.sectionId = (sections.length + 25).toString();
+    section.currentSeats = 0;
+    section.semester = currentSem;
+    section.approvalStatus = "PENDING";
+    section.sectionStatus = "OPEN_REGISTRATION";
+
+    let checkedDays = Array.from(document.querySelectorAll('input[name="days"]:checked')).map(chbox => chbox.value).join('-');
+    
+    let time = [section.startTime, section.endTime].join('-');
+    section.schedule = {
+        days: checkedDays,
+        time: time,
+    }
+
+    delete section.days;
+    delete section.endTime;
+    delete section.startTime;
+
+    sections.push(section);
+    localStorage.sections = JSON.stringify(sections);
+    form.reset();
+
+    alert(`Section ID: ${section.sectionId} is Added to the System.`);
+}

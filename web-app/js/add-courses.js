@@ -1,5 +1,6 @@
 //Local Storages
 const courses = JSON.parse(localStorage.courses);
+const majors = JSON.parse(localStorage.majors);
 
 //Inputs
 const form = document.querySelector("#add-courses-form");
@@ -45,9 +46,26 @@ function handleAddCourse(e) {
     course.id = (courses.length + 100).toString();
     course.prerequisitesCoursesId = Array.from(prerequisitesDropdown.selectedOptions).map(option => option.value);
     course.isOngoing = course.isOngoing === "on" ? true : false;
-    course.isRegistration = course.isRegistration === "on"? true : false;
+    course.isRegistration = course.isRegistration === "on" ? true : false;
+
+    let includeBoth = course.bothMajorProgram === "on" ? true : false;
+    delete course.bothMajorProgram;
+
     courses.push(course);
     localStorage.courses = JSON.stringify(courses);
+
+    let index = majors.findIndex(m => m.majorId === course.majorId);
+    majors[index].allCourses.push(course.id);
+    majors[index].totalCreditHour+=parseInt(course.creditHour);
+
+    if(includeBoth) {
+        let otherMajorIndex = +!index;
+        majors[otherMajorIndex].allCourses.push(course.id);
+        majors[otherMajorIndex].totalCreditHour+=parseInt(course.creditHour);
+    }
+
+    localStorage.majors = JSON.stringify(majors);
+
     form.reset();
 
     alert(`${course.courseCode} is Added to the System.`);

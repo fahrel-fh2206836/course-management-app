@@ -121,8 +121,10 @@ input, select {
 }
 
 .day-select {
+    width: 100%;
     display: flex;
     gap: 5px;
+    margin-top: 5px;
 }
 
 .day-checkbox {
@@ -130,6 +132,7 @@ input, select {
 }
 
 .day-label {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -162,5 +165,6 @@ input, select {
     .form-group select, 
     .day-select {
         width: 70%;
+        margin-top: 0px
     }
 }
