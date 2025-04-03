@@ -2,6 +2,7 @@ const majors = JSON.parse(localStorage.majors);
 const courses = JSON.parse(localStorage.courses);
 const sections = JSON.parse(localStorage.sections);
 const users = JSON.parse(localStorage.users);
+const registrations = JSON.parse(localStorage.registrations);
 const selectedCourse = JSON.parse(localStorage.selectedCourse);
 const table = document.querySelector("#course-table");
 const majorName = majors.find(m => m.majorId===selectedCourse.majorId).majorName
@@ -217,14 +218,22 @@ function setReferences(id) {
 }
 
 function convertEditableSectionHTML(s) {
+    const approvalStatus = convertStatusAppearance(s)[0];
     return `<div class="statuses">
                 <p>Approval Status</p>
                 <div>
-                    <select class="edit-section-approval" name="edit-section-approval">
-                        <option value="PENDING" ${s.approvalStatus === "PENDING" ? "selected" : ''}>⏳ Pending</option>
-                        <option value="APPROVED" ${s.approvalStatus === "APPROVED" ? "selected" : ''}>✅ Approved</option>
-                        <option value="CANCELLED" ${s.approvalStatus === "CANCELLED" ? "selected" : ''}>❌ Cancelled</option>
-                    </select>
+                    ${s.sectionStatus === "ONGOING" || s.sectionStatus === "COMPLETED" ?  
+                        `<div class="status-value approval-type">
+                            ${s.approvalStatus === "APPROVED" ? "<i class='bx bxs-check-circle'></i>" : s.approvalStatus === "CANCELLED" ? "<i class='bx bxs-x-circle'></i>" : "<i class='bx bx-time-five'></i>"}       
+                                <p>${approvalStatus}</p>
+                        </div>`
+                        : 
+                        `<select class="edit-section-approval" name="edit-section-approval">
+                            <option value="PENDING" ${s.approvalStatus === "PENDING" ? "selected" : ''}>⏳ Pending</option>
+                            <option value="APPROVED" ${s.approvalStatus === "APPROVED" ? "selected" : ''}>✅ Approved</option>
+                            <option value="CANCELLED" ${s.approvalStatus === "CANCELLED" ? "selected" : ''}>❌ Cancelled</option>
+                        </select>`
+                    } 
                 </div>
             </div>
             <div class="statuses">
@@ -257,7 +266,6 @@ function convertUneditableSectionHTML(s) {
 }
 
 function onEditSection(sectionId) {
-    console.log(sectionId);
     setReferences(sectionId);
     const section = sections.find(s => s.sectionId === sectionId);
     cardCourseStatus.innerHTML = convertEditableSectionHTML(section);
@@ -288,11 +296,17 @@ function onSaveSectionEdit(sectionId) {
     setReferences(sectionId);
     let index = sections.findIndex(s => sectionId === s.sectionId);
 
-    let newApprovalStatus =  cardCourseStatus.querySelector(".edit-section-approval").value;
-    sections[index].approvalStatus = newApprovalStatus;
+    let newApprovalStatus;
+    let newApprovalStatusDiv =  cardCourseStatus.querySelector(".edit-section-approval");
 
-    if(newApprovalStatus !== "APPROVED") {
-        sections[index].sectionStatus = "OPEN_REGISTRATION";
+    if(newApprovalStatusDiv !== null) {
+        newApprovalStatus = newApprovalStatusDiv.value;
+        sections[index].approvalStatus = newApprovalStatus;
+    }
+
+    if(newApprovalStatus === "CANCELLED") {
+        sections[index].currentSeats = 0;
+        localStorage.registrations = JSON.stringify(registrations.filter(r => r.sectionId !== sectionId));
     }
 
     let newSectionStatus = cardCourseStatus.querySelector(".edit-section-status").value;
