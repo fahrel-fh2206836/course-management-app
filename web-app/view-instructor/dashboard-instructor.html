@@ -7,7 +7,7 @@
     <title>Dashboard-Instructor</title>
     <link rel="stylesheet" href="../styles/navbar-styles.css">
     <link rel="stylesheet" href="../styles/dialog-styles.css">
-    <link rel="stylesheet" href="../styles/dashboard-styles.css">
+    <link rel="stylesheet" href="../styles/dashboard-instructor-styles.css">
     <link rel="stylesheet" href="../styles/course-card-styles.css">
 </head>
 <body>
@@ -44,14 +44,14 @@
             <p>Your personalized dashboard is here to help you manage your courses and streamline your teaching experience</p>
             
             <div class="stats-card">
-                <div><span>Current Classes:</span><span>{3}</span></div>
-                <div><span>Total Students:</span><span>{90}</span></div>
+                <div><span>Current Classes:</span><span id="Noclasses">{3}</span></div>
+                <div><span>Total Students:</span><span id="totalStud">{90}</span></div>
             </div>
         </div>
         <div class="welcome-img">
             <img src="../assets/images/welcome2.jpg" alt="">
         </div>
-        <h1 id="ongoing-text">Active Courses Taught</h1>
+        <h1 id="ongoing-text">Registered Courses</h1>
         <div class="registered-courses section-style">
             <ul class="course-card-list">
                 <!-- Need to dynamically add data here -->
