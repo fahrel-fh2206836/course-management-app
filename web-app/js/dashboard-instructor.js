@@ -1,19 +1,42 @@
 const user = JSON.parse(localStorage.getItem("loggedInUser"));
-const majors = JSON.parse(localStorage.majors);
 const registrations = JSON.parse(localStorage.registrations);
 const sections = JSON.parse(localStorage.sections);
 const courses = JSON.parse(localStorage.courses);
 const users = JSON.parse(localStorage.users);
 
 const nameSpan = document.querySelector("#name");
-const numberOfClasses = document.querySelector("#NoClasses")
 const teachingList = document.querySelector(".course-card-list");
+const Activeclass = document.querySelector("#Activeclass");
+const totalStud = document.querySelector("#totalStud")
+const numberOfClasses = document.querySelector("#Noclasses");
 const instructorSections = sections.filter(section => section.instructorId === user.userId);
 
 nameSpan.innerText = `${user.firstName} ${user.lastName}`;
+Activeclass.innerHTML = `${countClasses()}`;
+totalStud.innerHTML = `${countStudents()}`;
+numberOfClasses.innerHTML = `${instructorSections.length}`;
 
+function countClasses(){
+    let count = 0;
+    instructorSections.forEach( instSec => {
+        let section = sections.find(s => instSec.sectionId === s.sectionId);
+        if (section.sectionStatus === 'ONGOING') {
+            count+=1;
+        }
+    })
+    return count;
+}
 
-
+function countStudents(){
+    let count=0;
+    instructorSections.forEach( instSec => {
+        let section = sections.find(s => instSec.sectionId === s.sectionId);
+        if (section.sectionStatus === 'ONGOING') {
+            count+=registrations.filter(r => r.sectionId === section.sectionId).length;
+        }
+    })
+    return count;
+}
 function renderActiveCourses(){
     let ongoingHTML = '';
     let futureHTML = '';
@@ -29,7 +52,7 @@ function renderActiveCourses(){
     instructorSections.forEach(instSec => {
         let section = sections.find(s => instSec.sectionId === s.sectionId); 
         let course = courses.find(c => c.id === section.courseId);
-        let NoStud = registrations.filter(r => r.sectionId === section.sectionId).length;;
+        let NoStud = registrations.filter(r => r.sectionId === section.sectionId).length;
         const cardHTML = generateCourseListHTML(section, course, NoStud)+'\n';
         if (section.sectionStatus === 'ONGOING') {
             ongoingHTML += cardHTML;
