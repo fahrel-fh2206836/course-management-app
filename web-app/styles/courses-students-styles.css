@@ -8,16 +8,31 @@ body{
     background-color: var(--light-beige-);
 }
 
-#main-content{
-    padding: 2rem;
-    justify-content: center;
+main {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    gap: 20px;
+}
+
+main>h1 {
+    text-align: center; 
+    font-size: 1.5rem;
+    margin-top: 10px;
+    background-color: var(--chamoisse-);
+    color: var(--beige-);
+    padding: 6px 10px;
+    border-radius: 10px;
+}
+
+h1 {
+    font-size: 1.5rem;
 }
 
 .search-bar{
     display: flex;
     align-items: center;
     border: 3px black solid;
-    margin-top: 1rem;
     width: 100%;
 }
 
@@ -123,6 +138,6 @@ body{
     transition: transform 0.5s ease;
     min-width: 240px;
     min-height: 100%;
-    z-index: 1;
+    z-index: 0;
 }
 
