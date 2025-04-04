@@ -12,7 +12,6 @@
     padding: 35px 10px 10px;
     background-color: white;
     transition: transform 0.5s ease;
-    cursor: pointer;
 }
 
 .course-card:hover{
@@ -21,6 +20,11 @@
 
 .hover-underline:hover .card-course-name{
     text-decoration: underline;
+    
+}
+
+.hover-underline {
+    cursor: pointer;
 }
 
 .card-flag {
