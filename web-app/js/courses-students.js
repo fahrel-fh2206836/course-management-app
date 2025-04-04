@@ -5,8 +5,13 @@ let dropdownInput = document.querySelector("#dropdown-text");
 let search = document.querySelector("#search-input");
 let listItems = document.querySelectorAll(".dropdown-list-item");
 let displayCourse = document.querySelector("#display-courses");
+
+//Use this to navigate to register screen --to do--
+let courseCard = document.querySelector(".student-course-card");
+
 const courses = JSON.parse(localStorage.courses);
 
+//Dropdwon Functions
 dropDownBtn.addEventListener("click", (e) => showList(e))
 
 function showList(e){
@@ -32,6 +37,7 @@ function makeChange(e){
     }
 };
 
+//Search Bar
 function searchBarText(e){
     dropdownInput.innerText = e.target.innerText;
     if(e.target.innerText !== "All"){
@@ -63,18 +69,13 @@ search.addEventListener('input', (e) => filterCourse(e));
 
 function filterCourse(e){
     let text = e.target.value.toLowerCase();
-    
     let newCourses = [];
     newCourses = courses.filter((course) => course.courseName.toLowerCase().includes(text));
-
-    console.log(courses);
-    
-    console.log(newCourses);
-
     displayCourses(newCourses);
-
-    
 }
+
+
+
 
 
 
