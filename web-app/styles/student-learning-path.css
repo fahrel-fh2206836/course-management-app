@@ -21,6 +21,11 @@ h1 {
     font-size: 1.5rem;
 }
 
+.prerequisite i, .tracker i {
+    font-size: 1.5em;
+    color: var(--bistre-)
+}
+
 .achievements-header {
     display: grid;
     gap: 10px;
@@ -42,7 +47,7 @@ h1 {
     grid-area: stats;
 }
 
-.prerequsite  {
+.prerequisite  {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -50,14 +55,10 @@ h1 {
     padding: 10px;
     h1 {
         width: 100%;
-        font-size: 1.2em;
         font-weight: bold;
         text-align: center;
         padding-bottom: 5px;
         border-bottom: 2px solid var(--bistre-);
-    }
-    i {
-        color: var(--bistre-)
     }
 }
 
@@ -87,10 +88,6 @@ h1 {
         align-items: center;
         border-bottom: 2px solid var(--bistre-);
         padding-bottom: 3px;
-        i {
-            color: var(--bistre-);
-            font-size: 1.2rem;
-        }
     }
 }
 
