@@ -26,11 +26,10 @@ function mapCoursesToHTML(cl) {
 
 function generateCoursesHTML(c) {
     return `<div class="course-card">
-                        <div class="manage-class-btn" onclick="manageCourse('${c.id}')"><i class='bx bxs-cog'></i><p>Manage Course</p></div>
-                        <div class="card-flag"><p>${c.courseCode}</p></div>
-                        <div class="card-course-name"><p>Course ID: ${c.id} - ${c.courseName}</p></div>
-                </div>
-            `;
+                <div class="manage-class-btn" onclick="manageCourse('${c.id}')"><i class='bx bxs-cog'></i><p>Manage Course</p></div>
+                <div class="card-flag"><p>${c.courseCode}</p></div>
+                <div class="card-course-name"><p>Course ID: ${c.id} - ${c.courseName}</p></div>
+            </div>`;
 }
 
 function manageCourse(id) {
@@ -172,6 +171,5 @@ function convertRowToHTML(s) {
                 </td>
                 <td>${s.schedule.time}</td>   
                 <td>${s.location}</td>
-            </tr>
-            `;
+            </tr>`;
 }

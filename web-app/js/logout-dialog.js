@@ -9,8 +9,7 @@ function openLogoutDialog() {
                     <button class="cancel-btn" onclick="closeLogoutDialog()">Cancel</button>
                 </div>
             </div>
-        </div>
-    `;
+        </div>`;
     document.body.insertAdjacentHTML("beforeend", logoutDialogHTML);
 }
 

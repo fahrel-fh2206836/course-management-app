@@ -66,40 +66,39 @@ const buttons = document.querySelector(".btns");
 
 function convertTableEditableHTML() {
     return `<tbody>
-                    <tr>
-                    <th>Course ID</th>
-                    <td>${selectedCourse.id}</td>
-                    </tr>
-                    <tr>
-                    <th>Course Name</th>
-                    <td>${selectedCourse.courseName}</td>
-                    </tr>
-                    <tr>
-                    <th>Course Code</th>
-                    <td>${selectedCourse.courseCode}</td>
-                    </tr>
-                    <tr>
-                    <th>Major</th>
-                    <td colspan="3">${majorName}</td>
-                    </tr>
-                    <tr>
-                    <th>Credit Hour</th>
-                    <td colspan="3">${selectedCourse.creditHour}</td>
-                    </tr>
-                    <tr>
-                    <th>Status - Ongoing</th>
-                    <td colspan="3"><input type="checkbox" id='ongoing-check' ${selectedCourse.isOngoing ? 'checked' : ''}></td>
-                    </tr>
-                    <tr>
-                    <th>Status - Registration</th>
-                    <td colspan="3"><input type="checkbox" id='reg-check' ${selectedCourse.isRegistration ? 'checked' : ''}></td>
-                    </tr>
-                    <tr>
-                    <th>Prerequisites</th>
-                    <td colspan="3"><div class="prerequisite-list">${convertPrereqToHTML()}</div></td>
-                    </tr>
-                </tbody>
-                `;
+                <tr>
+                <th>Course ID</th>
+                <td>${selectedCourse.id}</td>
+                </tr>
+                <tr>
+                <th>Course Name</th>
+                <td>${selectedCourse.courseName}</td>
+                </tr>
+                <tr>
+                <th>Course Code</th>
+                <td>${selectedCourse.courseCode}</td>
+                </tr>
+                <tr>
+                <th>Major</th>
+                <td colspan="3">${majorName}</td>
+                </tr>
+                <tr>
+                <th>Credit Hour</th>
+                <td colspan="3">${selectedCourse.creditHour}</td>
+                </tr>
+                <tr>
+                <th>Status - Ongoing</th>
+                <td colspan="3"><input type="checkbox" id='ongoing-check' ${selectedCourse.isOngoing ? 'checked' : ''}></td>
+                </tr>
+                <tr>
+                <th>Status - Registration</th>
+                <td colspan="3"><input type="checkbox" id='reg-check' ${selectedCourse.isRegistration ? 'checked' : ''}></td>
+                </tr>
+                <tr>
+                <th>Prerequisites</th>
+                <td colspan="3"><div class="prerequisite-list">${convertPrereqToHTML()}</div></td>
+                </tr>
+            </tbody>`;
 }
 
 function onCourseEdit() {
@@ -109,7 +108,7 @@ function onCourseEdit() {
                         </button>
                         <button id="cancel-course-btn" class="cancel-btn red-bg course-btn" onclick="onCancelCourseEdit()">
                             <i class='bx bxs-x-circle'></i>
-                        </button>`
+                        </button>`;
     buttons.style.display = 'flex';
     buttons.style.gap = '5px'
 }
@@ -119,7 +118,7 @@ function onCancelCourseEdit() {
     buttons.innerHTML = `<button id="edit-course-btn" class="edit-btn course-btn" onclick="onCourseEdit()">
                         <i class='bx bxs-edit'></i>
                         </button>
-                        `
+                        `;
 }
 
 function onSaveCourseEdit() {
@@ -255,14 +254,14 @@ function convertUneditableSectionHTML(s) {
                 <div class="status-value approval-type">
                         ${s.approvalStatus === "APPROVED" ? "<i class='bx bxs-check-circle'></i>" : s.approvalStatus === "CANCELLED" ? "<i class='bx bxs-x-circle'></i>" : "<i class='bx bx-time-five'></i>"}       
                         <p>${approvalStatus}</p>
-                    </div>
                 </div>
-                <div class="statuses">
-                    <p>Section Status</p>
-                    <div class="status-value section-type ${s.sectionStatus === "COMPLETED" ? 'completed-card' : s.sectionStatus === "ONGOING" ? 'ongoing-card' : 'open-for-reg-card'}">
+            </div>
+            <div class="statuses">
+                <p>Section Status</p>
+                <div class="status-value section-type ${s.sectionStatus === "COMPLETED" ? 'completed-card' : s.sectionStatus === "ONGOING" ? 'ongoing-card' : 'open-for-reg-card'}">
                         <p>${sectionStatus}</p>
-                    </div>
-            </div>`
+                </div>
+            </div>`;
 }
 
 function onEditSection(sectionId) {
@@ -270,11 +269,11 @@ function onEditSection(sectionId) {
     const section = sections.find(s => s.sectionId === sectionId);
     cardCourseStatus.innerHTML = convertEditableSectionHTML(section);
     sectionBtns.innerHTML = `<button id="save-section-btn" class="save-btn green-bg section-btn" onclick="onSaveSectionEdit('${section.sectionId}')">
-                            <i class='bx bxs-save'></i>
-                        </button>
-                        <button id="cancel-section-btn" class="cancel-btn red-bg section-btn" onclick="onCancelSectionEdit('${section.sectionId}')">
-                            <i class='bx bxs-x-circle'></i>
-                        </button>`
+                                <i class='bx bxs-save'></i>
+                            </button>
+                            <button id="cancel-section-btn" class="cancel-btn red-bg section-btn" onclick="onCancelSectionEdit('${section.sectionId}')">
+                                <i class='bx bxs-x-circle'></i>
+                            </button>`;
     sectionBtns.style.display = 'flex';
     sectionBtns.style.flexDirection = 'column';
     sectionBtns.style.gap = '5px'
@@ -287,9 +286,8 @@ function onCancelSectionEdit(sectionId) {
     const section = sections.find(s => s.sectionId === sectionId);
     cardCourseStatus.innerHTML = convertUneditableSectionHTML(section);
     sectionBtns.innerHTML = `<button id="edit-section-btn" class="edit-btn section-btn" onclick="onEditSection('${section.sectionId}')">
-                        <i class='bx bxs-edit'></i>
-                        </button>
-                        `;
+                                <i class='bx bxs-edit'></i>
+                            </button>`;
 }
 
 function onSaveSectionEdit(sectionId) {
