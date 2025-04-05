@@ -164,7 +164,7 @@ h1 {
 
 .course-card {
     width: 100%;
-    border: 2px solid black;
+    border: 2px solid var(--coffee-);
     border-radius: 10px;
     overflow: hidden;
     display: flex;
