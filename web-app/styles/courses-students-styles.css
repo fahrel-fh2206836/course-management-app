@@ -139,6 +139,14 @@ h1 {
     min-width: 240px;
     min-height: 100%;
     z-index: 0;
-    
+}
+
+.student-course-card:hover{
+    cursor: pointer;
+    transform: translateY(-5px);
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 10px 20px;
+    .card-course-name > p{
+        text-decoration: underline;
+    }
 }
 
