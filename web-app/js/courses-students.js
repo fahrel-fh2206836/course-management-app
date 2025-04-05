@@ -13,7 +13,6 @@ const courses = JSON.parse(localStorage.courses);
 
 //Dropdwon Functions
 dropDownBtn.addEventListener("click", (e) => showList(e));
-dropdownInput.addEventListener("click", (e) => showList(e));
 
 function showList(e){
 
@@ -76,7 +75,7 @@ function displayCourses(courses){
 displayCourses(courses);
 
 function courseHTML(course){
-    return `<div class="student-course-card" onclick="goToRegistration(${course})">
+    return `<div class="student-course-card" onclick="goToRegistration('${course.id}')">
                 <div class="card-flag"><p>${course.courseCode}</p></div>                
                 <div class="card-course-name"><p>${course.courseName}</p></div>
                 <hr>
@@ -102,8 +101,9 @@ function filterCourse(e){
     displayCourses(newCourses);
 }
 
-function goToRegistration(course){
-    localStorage.selectedCourse = course;
+function goToRegistration(id){
+    const c = courses.find(c => c.id === id);
+    localStorage.selectedCourse = JSON.stringify(c);
     window.location.href = '../view-student/registration.html';
 }
 
