@@ -14,6 +14,7 @@ async function loadLocalStorages() {
     // delete localStorage.registrations;
     // delete localStorage.users;
     // delete localStorage.currentSem;
+    // delete localStorage.currentPage;
 
     if(!localStorage.majors) {
         localStorage.majors = await retrieveJSONData('../assets/data/majors.json');
@@ -58,6 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const user = users.find(user => user.username === username && user.password === password.value);
         if (user) {
             localStorage.setItem("loggedInUser", JSON.stringify(user));
+            localStorage.currentPage = 'dashboard';
             if (user.role === 'Student') {
                 window.location.href = '/view-student/dashboard-student.html';
             }else if (user.role === 'Instructor') {
