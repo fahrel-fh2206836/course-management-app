@@ -109,7 +109,7 @@ h1 {
     text-align: center;
     display: flex;
     flex-direction: column;
-    background-color: #f0e6cc;
+    background-color: var(--beige-);
 }
 
 
