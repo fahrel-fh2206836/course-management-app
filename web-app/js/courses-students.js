@@ -37,13 +37,28 @@ function makeChange(e){
     }
 };
 
-//Search Bar
+
 function searchBarText(e){
+    let newCourses = [];
     dropdownInput.innerText = e.target.innerText;
     if(e.target.innerText !== "All"){
         search.placeholder = `Search for ${e.target.innerText} Courses`;
     }else{
         search.placeholder = `Search for Courses`;
+    }
+
+    if (e.target.innerText !== "All"){
+        if(e.target.innerText === "Computer Science"){
+            newCourses = courses.filter((course) => course.majorId === "1");
+            displayCourses(newCourses);
+        }
+        else{
+            newCourses = courses.filter((course) => course.majorId === "2");
+            displayCourses(newCourses);
+        }
+    }
+    else{
+        displayCourses(courses);
     }
 }
 
@@ -52,6 +67,7 @@ for(item of listItems){
 }
 
 
+// Search Bar
 function displayCourses(courses){
     displayCourse.innerHTML = courses.map((course) => courseHTML(course)).join("\n");
 }
