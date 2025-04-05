@@ -1,7 +1,7 @@
 let dropDownBtn = document.querySelector("#dropdown-btn");
 let list = document.querySelector("#list");
 let icon = document.querySelector("#drop-icon");
-let dropdownInput = document.querySelector("#dropdown-text");
+let dropdownInput = document.querySelector("#dropdown");
 let search = document.querySelector("#search-input");
 let listItems = document.querySelectorAll(".dropdown-list-item");
 let displayCourse = document.querySelector("#display-courses");
@@ -12,7 +12,8 @@ let courseCard = document.querySelector(".student-course-card");
 const courses = JSON.parse(localStorage.courses);
 
 //Dropdwon Functions
-dropDownBtn.addEventListener("click", (e) => showList(e))
+dropDownBtn.addEventListener("click", (e) => showList(e));
+dropdownInput.addEventListener("click", (e) => showList(e));
 
 function showList(e){
 
@@ -75,18 +76,18 @@ function displayCourses(courses){
 displayCourses(courses);
 
 function courseHTML(course){
-    return `<div class="student-course-card">
+    return `<div class="student-course-card" onclick="goToRegistration(${course})">
                 <div class="card-flag"><p>${course.courseCode}</p></div>                
                 <div class="card-course-name"><p>${course.courseName}</p></div>
                 <hr>
                 <div class="sub-card-styling">
                     <div class="onGoing">
                         <span>OnGoing</span>
-                        ${course.isOngoing ? "<i class='bx bxs-check-circle'></i>" : "<i class='bx bxs-x-circle'></i>"}
+                        ${course.isOngoing ? "<i class='bx bxs-check-circle green' ></i>" : "<i class='bx bxs-x-circle red'></i>"}
                     </div>
                     <div class="onGoing">
                         <span>Registration</span>
-                        ${course.isRegistration ? "<i class='bx bxs-check-circle'></i>" : "<i class='bx bxs-x-circle'></i>"}
+                        ${course.isRegistration ? "<i class='bx bxs-check-circle green'></i>" : "<i class='bx bxs-x-circle red'></i>"}
                     </div>
                 </div>
             </div>`;
@@ -99,5 +100,10 @@ function filterCourse(e){
     let newCourses = [];
     newCourses = courses.filter((course) => course.courseName.toLowerCase().includes(text));
     displayCourses(newCourses);
+}
+
+function goToRegistration(course){
+    localStorage.selectedCourse = course;
+    window.location.href = '../view-student/registration.html';
 }
 
