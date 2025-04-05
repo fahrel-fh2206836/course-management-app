@@ -1,7 +1,7 @@
 let dropDownBtn = document.querySelector("#dropdown-btn");
 let list = document.querySelector("#list");
 let icon = document.querySelector("#drop-icon");
-let dropdownInput = document.querySelector("#dropdown");
+let dropdownInput = document.querySelector("#dropdown-span");
 let search = document.querySelector("#search-input");
 let listItems = document.querySelectorAll(".dropdown-list-item");
 let displayCourse = document.querySelector("#display-courses");
@@ -29,7 +29,7 @@ window.addEventListener("click", (e) => makeChange(e))
 
 function makeChange(e){
     if(e.target.id !== "dropdown-btn" &&
-        e.target.id !== "dropdownInput" &&
+        e.target.id !== "dropdown-span" &&
         e.target.id !== "drop-icon"
     ){
         icon.style.rotate = "0deg"
@@ -38,8 +38,7 @@ function makeChange(e){
 };
 
 
-function searchBarText(e){
-    let newCourses = [];
+function dropDownMajor(e){
     dropdownInput.innerText = e.target.innerText;
     if(e.target.innerText !== "All"){
         search.placeholder = `Search for ${e.target.innerText} Courses`;
@@ -47,58 +46,63 @@ function searchBarText(e){
         search.placeholder = `Search for Courses`;
     }
 
-    if (e.target.innerText !== "All"){
-        if(e.target.innerText === "Computer Science"){
-            newCourses = courses.filter((course) => course.majorId === "1");
-            displayCourses(newCourses);
-        }
-        else{
-            newCourses = courses.filter((course) => course.majorId === "2");
-            displayCourses(newCourses);
-        }
-    }
-    else{
-        displayCourses(courses);
-    }
+    let filteredCourses = filterCourses();
+    displayCourses(filteredCourses);
 }
 
 for(item of listItems){
-    item.addEventListener('click', (e) => searchBarText(e));
+    item.addEventListener('click', (e) => dropDownMajor(e));
 }
 
 
 // Search Bar
-function displayCourses(courses){
-    displayCourse.innerHTML = courses.map((course) => courseHTML(course)).join("\n");
+function displayCourses(filteredCourses){
+    filteredCourses.sort((a, b) => a.courseName.localeCompare(b.courseName))
+    displayCourse.innerHTML = filteredCourses.map((course) => courseHTML(course)).join("\n");
 }
 
 displayCourses(courses);
 
 function courseHTML(course){
-    return `<div class="student-course-card" onclick="goToRegistration('${course.id}')">
+    return `<div class="course-card hover-underline" onclick="goToRegistration('${course.id}')">
                 <div class="card-flag"><p>${course.courseCode}</p></div>                
                 <div class="card-course-name"><p>${course.courseName}</p></div>
                 <hr>
                 <div class="sub-card-styling">
-                    <div class="onGoing">
-                        <span>OnGoing</span>
+                    <div class="course-status">
+                        <span>Ongoing Status</span>
                         ${course.isOngoing ? "<i class='bx bxs-check-circle green' ></i>" : "<i class='bx bxs-x-circle red'></i>"}
                     </div>
-                    <div class="onGoing">
-                        <span>Registration</span>
+                    <div class="course-status">
+                        <span>Registration Status</span>
                         ${course.isRegistration ? "<i class='bx bxs-check-circle green'></i>" : "<i class='bx bxs-x-circle red'></i>"}
                     </div>
                 </div>
             </div>`;
 }
 
-search.addEventListener('input', (e) => filterCourse(e));
+search.addEventListener('input', (e) => searchCourse(e));
 
-function filterCourse(e){
+function searchCourse(e){
     let text = e.target.value.toLowerCase();
-    let newCourses = [];
-    newCourses = courses.filter((course) => course.courseName.toLowerCase().includes(text));
-    displayCourses(newCourses);
+    let filteredCourses = filterCourses();
+    filteredCourses = filteredCourses.filter((course) => course.courseName.toLowerCase().includes(text));
+    displayCourses(filteredCourses);
+}
+
+function filterCourses() {
+    let filteredCourses = [];
+    if (dropdownInput.innerText !== "All"){
+        if(dropdownInput.innerText === "CMPS"){
+            filteredCourses = courses.filter((course) => course.majorId === "1");
+        }
+        else{
+            filteredCourses = courses.filter((course) => course.majorId === "2");
+        }
+    } else {
+        filteredCourses = [...courses];
+    }
+    return filteredCourses;
 }
 
 function goToRegistration(id){

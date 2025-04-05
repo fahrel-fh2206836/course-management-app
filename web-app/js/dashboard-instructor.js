@@ -39,10 +39,9 @@ function countStudents(){
 }
 function renderActiveCourses(){
     let ongoingHTML = '';
-    let futureHTML = '';
-    let pastHTML = '';
+    let notOngoingHTML = '';
     if(instructorSections.length === 0) {
-        html = `<div class="empty-section">
+        teachingList.innerHTML = `<div class="empty-section">
                                     <i class='bx bxs-error-circle'></i>
                                     <p>No Courses found.</p>
                                  </div>
@@ -56,35 +55,36 @@ function renderActiveCourses(){
         const cardHTML = generateCourseListHTML(section, course, NoStud)+'\n';
         if (section.sectionStatus === 'ONGOING') {
             ongoingHTML += cardHTML;
-          } else if (section.sectionStatus === 'OPEN_REGISTRATION') {
-            futureHTML += cardHTML;
-          } else if (section.sectionStatus === 'COMPLETED') {
-            pastHTML += cardHTML;
+          } else if (section.sectionStatus === 'OPEN_REGISTRATION' || section.sectionStatus === 'COMPLETED') {
+            notOngoingHTML += cardHTML;
           }
         })
         teachingList.innerHTML = `
             <h3>Ongoing Courses</h3>
-            <div class="card-group">${ongoingHTML || '<p>No ongoing courses.</p>'}</div>
+            <div class="card-group">${ongoingHTML || `<div class="empty-section"><i class='bx bxs-error-circle'></i><p>No Ongoing Courses found.</p> </div>`}</div>
             
-            <h3>Future Courses</h3>
-            <div class="card-group">${futureHTML || '<p>No upcoming courses.</p>'}</div>
-            
-            <h3>Completed Courses</h3>
-            <div class="card-group">${pastHTML || '<p>No completed courses.</p>'}</div>
+            <h3>Previous/Future Courses</h3>
+            <div class="card-group">${notOngoingHTML || `<div class="empty-section"><i class='bx bxs-error-circle'></i><p>No Previous/Future Courses found.</p> </div>`}</div>
         `;
 }
 
 function generateCourseListHTML(s, c, n) {
     return `
-            <div class="course-card hover-underline" onclick="location.href='grade-allocation.html'">
+            <div class="course-card hover-underline" onclick="goToGradeAllocation(${s.sectionId})">
                 <div class="card-flag"><p>${c.courseCode}</p></div>
                 <div class="card-course-name"><p>${c.courseName}</p></div>
-                <div class="card-course-instructor"><p>Number of students:</p><p>${n}</p></div>
+                <div class="card-course-instructor"><p>Number of students: ${n}</p></div>
                 <div class="card-course-section-location"><p>Section ID: ${s.sectionId}</p><p>Class Location: ${s.location !== '' ? s.location : 'None'}</p></div>
                 <hr>
 <div class="card-course-sem-schedule"><p><i class='bx bx-calendar'></i>${s.semester}</p><p><i class='bx bx-calendar-week'></i>${s.schedule.days !== '' ? s.schedule.days : 'None'}</p><p><i class='bx bx-time'></i>${s.schedule.time !== '' ? s.schedule.time : 'None'}</p></div>
             </div>         
         `
+}
+
+function goToGradeAllocation(sectionId) {
+    const s = sections.find(s => s.sectionId === sectionId);
+    localStorage.selectedCourse = s;
+    window.location.href='grade-allocation.html';
 }
 
 renderActiveCourses()

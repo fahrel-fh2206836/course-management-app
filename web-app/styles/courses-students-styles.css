@@ -114,13 +114,6 @@ h1 {
     color: var(--coffee-);
 }
 
-.display-courses{
-    padding-top: 1rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1rem;
-}
-
 .student-course-card{
     display: flex;
     flex-direction: column;
@@ -152,7 +145,7 @@ h1 {
     justify-content: space-around;
 }
 
-.onGoing{
+.course-status{
     display: flex;
     flex-direction: column;
     gap: 0.2rem;
@@ -168,4 +161,21 @@ h1 {
     color: red;
 }
 
+.display-course {
+    display: flex;
+
+}
+
+.course-status span {
+    font-size: .9rem;
+}
+
+@media (min-width: 768px){
+    .display-courses{
+        padding-top: 1rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 1rem;
+    }
+}
 

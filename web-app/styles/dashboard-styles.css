@@ -30,8 +30,6 @@ main {
     gap: 20px;
 }
 
-
-
 @media (min-width: 1024px) {
 
     main {
@@ -68,12 +66,6 @@ main {
 
     .registered-courses {
         grid-area: courses;
-    }
-
-    .course-card-list {
-        display: grid;
-        gap: 30px;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     }
 }
 
