@@ -161,8 +161,10 @@ h1 {
     color: red;
 }
 
-.display-course {
+.display-courses {
     display: flex;
+    flex-direction: column;
+    gap: 10px;
 
 }
 
