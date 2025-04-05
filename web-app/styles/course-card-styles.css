@@ -42,13 +42,22 @@
     }
 }
 
+.position-slight-top-left {
+    top: 5px;
+    right: 40px;
+}
+
+.position-corner-top-left {
+    top: 5px;
+    right: 5px;
+}
+
 .card-seats {
     display: flex;
     align-items: center;
     gap: 2px;
     position: absolute;
-    top: 5px;
-    right: 40px;
+    
     border-radius: 15px;
     background-color: var(--chamoisse-);
     padding: 4px 10px;

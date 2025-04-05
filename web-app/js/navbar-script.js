@@ -62,13 +62,8 @@ function navbarHTML() {
                     <div class="nav-index ${currPage === 'learningPath' ? 'active' : ''}">           
                         <li><i class='bx bxs-graduation'></i> <a href="learning-path.html" onclick="setCurrPage('learningPath')">Learning Path</a></li>
                     </div>
-                    <div class="nav-index">
-                    <li><i class='bx bx-power-off'></i> <a onclick="openLogoutDialog()">Logout</a></li>
-                </div>
-                </ul>
-                <div class="nav-index" id="menu-icon">
-                    <i class='bx bx-menu'></i>
-                </div>`;
+                    ${logoutAndMenuHTML()}`;
+                    
     } else if (user.role === "Instructor") {
         return `<div id="nav-img-header">        
                 <a href="dashboard-instructor.html">
@@ -83,13 +78,7 @@ function navbarHTML() {
                 <div class="nav-index">
                     <li><i class='bx bxs-cog'></i> <a href="#">Course Instructor Allocation</a></li>
                 </div>
-                <div class="nav-index">
-                    <li><i class='bx bx-power-off'></i> <a onclick="openLogoutDialog()">Logout</a></li>
-                </div>
-            </ul>
-            <div class="nav-index" id="menu-icon">
-                <i class='bx bx-menu'></i>
-            </div>`;
+                ${logoutAndMenuHTML()}`;
     }
 
     // If admin
@@ -109,9 +98,14 @@ function navbarHTML() {
                 <div class="nav-index ${currPage === 'addSection' ? 'active' : ''}">
                     <li><i class='bx bxs-plus-circle'></i> <a href="add-section.html" onclick="setCurrPage('addSection')">Add Section</a></li>
                 </div>
-                <div class="nav-index">
+                ${logoutAndMenuHTML()}
+                `;
+}
+
+function logoutAndMenuHTML() {
+    return `<div class="nav-index">
                 <li><i class='bx bx-power-off'></i> <a onclick="openLogoutDialog()">Logout</a></li>
-            </div>
+                </div>
             </ul>
             <div class="nav-index" id="menu-icon">
                 <i class='bx bx-menu'></i>

@@ -71,9 +71,12 @@ function renderActiveCourses(){
 function generateCourseListHTML(s, c, n) {
     return `
             <div class="course-card hover-underline" onclick="goToGradeAllocation(${s.sectionId})">
+                <div class="card-seats position-corner-top-left">
+                    <i class='bx bxs-group'></i>
+                    <p>${s.currentSeats}/${s.totalSeats}</p>
+                </div>
                 <div class="card-flag"><p>${c.courseCode}</p></div>
                 <div class="card-course-name"><p>${c.courseName}</p></div>
-                <div class="card-course-instructor"><p>Number of students: ${n}</p></div>
                 <div class="card-course-section-location"><p>Section ID: ${s.sectionId}</p><p>Class Location: ${s.location !== '' ? s.location : 'None'}</p></div>
                 <hr>
 <div class="card-course-sem-schedule"><p><i class='bx bx-calendar'></i>${s.semester}</p><p><i class='bx bx-calendar-week'></i>${s.schedule.days !== '' ? s.schedule.days : 'None'}</p><p><i class='bx bx-time'></i>${s.schedule.time !== '' ? s.schedule.time : 'None'}</p></div>

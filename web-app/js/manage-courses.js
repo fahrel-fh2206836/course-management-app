@@ -158,7 +158,7 @@ function convertSectionHTML(s) {
     
     return `<div class="course-card">
                 <div class="card-flag"><p>${selectedCourse.courseCode}</p></div>
-                <div class="card-seats">
+                <div class="card-seats position-slight-top-left">
                     <i class='bx bxs-group'></i>
                     <p>${s.currentSeats}/${s.totalSeats}</p>
                 </div>
