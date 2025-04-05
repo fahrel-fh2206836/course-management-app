@@ -40,6 +40,7 @@ function makeChange(e){
 
 function dropDownMajor(e){
     dropdownInput.innerText = e.target.innerText;
+    search.value = '';
     if(e.target.innerText !== "All"){
         search.placeholder = `Search for ${e.target.innerText} Courses`;
     }else{
