@@ -150,3 +150,15 @@ h1 {
     }
 }
 
+.sub-card-styling{
+    display: flex;
+    justify-content: space-around;
+}
+
+.onGoing{
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    justify-content: center;
+}
+

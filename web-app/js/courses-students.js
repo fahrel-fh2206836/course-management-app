@@ -78,6 +78,17 @@ function courseHTML(course){
     return `<div class="student-course-card">
                 <div class="card-flag"><p>${course.courseCode}</p></div>                
                 <div class="card-course-name"><p>${course.courseName}</p></div>
+                <hr>
+                <div class="sub-card-styling">
+                    <div class="onGoing">
+                        <span>OnGoing</span>
+                        ${course.isOngoing ? "<i class='bx bxs-check-circle'></i>" : "<i class='bx bxs-x-circle'></i>"}
+                    </div>
+                    <div class="onGoing">
+                        <span>Registration</span>
+                        ${course.isRegistration ? "<i class='bx bxs-check-circle'></i>" : "<i class='bx bxs-x-circle'></i>"}
+                    </div>
+                </div>
             </div>`;
 }
 
@@ -89,18 +100,4 @@ function filterCourse(e){
     newCourses = courses.filter((course) => course.courseName.toLowerCase().includes(text));
     displayCourses(newCourses);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
