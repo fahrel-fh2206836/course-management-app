@@ -32,7 +32,7 @@ function countStudents(){
     instructorSections.forEach( instSec => {
         let section = sections.find(s => instSec.sectionId === s.sectionId);
         if (section.sectionStatus === 'ONGOING') {
-            count+=registrations.filter(r => r.sectionId === section.sectionId).length;
+            count+=section.currentSeats;
         }
     })
     return count;
