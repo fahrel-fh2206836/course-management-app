@@ -1,10 +1,12 @@
-const selectedCourse = JSON.parse(localStorage.selectedCourse);
-const title = document.querySelector("#title");
-const courseId = document.querySelector("#course-id");
-const courseCode = document.querySelector("#course-code");
-const courseName = document.querySelector("#course-name");
-const courseHours = document.querySelector("#course-hour");
-const preReqCoursesDisplay = document.querySelector("#pre-courses");
+document.addEventListener("DOMContentLoaded", () =>{
+
+    const selectedCourse = JSON.parse(localStorage.selectedCourse);
+    const title = document.querySelector("#title");
+    const courseId = document.querySelector("#course-id");
+    const courseCode = document.querySelector("#course-code");
+    const courseName = document.querySelector("#course-name");
+    const courseHours = document.querySelector("#course-hour");
+    const preReqCoursesDisplay = document.querySelector("#pre-courses");
 
 title.innerHTML = `View Sections for ${selectedCourse.courseName}`;
 
@@ -36,4 +38,21 @@ function courseHTML(course){
 }
 
 displayPreCourses(preCourses);
+
+
+const allSections = JSON.parse(localStorage.sections);
+let courseSections = [];
+
+function getCourseSections(){
+    courseSections = allSections.filter((section) => section.courseId === selectedCourse.id && section.approvalStatus === "APPROVED");
+}
+
+getCourseSections();
+
+function displaySections(sections){
+    
+}
+
+
+})
 
