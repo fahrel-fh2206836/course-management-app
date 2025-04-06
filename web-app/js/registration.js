@@ -23,7 +23,10 @@ getPreCourses();
 
 function displayPreCourses(preCourse){
     preCourse.sort((a, b) => a.courseName.localeCompare(b.courseName));
-    preReqCoursesDisplay.innerHTML = preCourse.length === 0 ? `There are no prerequisites for this course` : preCourse.map((course) => courseHTML(course)).join("\n");
+    preReqCoursesDisplay.innerHTML = preCourse.length === 0 ? `<div class="empty-section">
+                                                                <i class='bx bxs-error-circle'></i>
+                                                                <p>This course has no sections.</p>
+                                                               </div>` : preCourse.map((course) => courseHTML(course)).join("\n");
 }
 
 function courseHTML(course){
