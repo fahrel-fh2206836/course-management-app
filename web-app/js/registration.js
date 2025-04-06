@@ -1,11 +1,13 @@
 const selectedCourse = JSON.parse(localStorage.selectedCourse);
 const users = JSON.parse(localStorage.users);
 let student = JSON.parse(localStorage.getItem("loggedInUser"));
+const majors = JSON.parse(localStorage.majors);
+const allSections = JSON.parse(localStorage.sections);
 const title = document.querySelector("#title");
 const preReqCoursesDisplay = document.querySelector("#pre-courses");
 const sectionsDisplay = document.querySelector(".section-list");
 const table = document.querySelector("#course-table");
-const majors = JSON.parse(localStorage.majors);
+
 const majorName = majors.find(m => m.majorId===selectedCourse.majorId).majorName
 const sectionHeaderH1 = document.querySelector(".section-header").querySelector("h1");
 
@@ -37,8 +39,6 @@ function courseHTML(course){
 
 displayPreCourses(preCourses);
 
-
-const allSections = JSON.parse(localStorage.sections);
 let courseSections = [];
 
 function getCourseSections(){
@@ -127,3 +127,24 @@ function convertSemesterOptionHTML() {
 }
 
 renderSemesterDropdown()
+
+const semFilter = document.querySelector("#semester-filter");
+
+semFilter.addEventListener('change', handleFilter);
+
+function handleFilter(e) {
+    let selectedSections = allSections.filter(s => s.courseId===selectedCourse.id);
+    if(semFilter.value !== "All") {
+        selectedSections = selectedSections.filter(s => s.semester === semFilter.value);
+    }
+
+    if(approvalFilter.value !== "None") {
+        selectedSections = selectedSections.filter(s => s.approvalStatus === approvalFilter.value);
+    }
+
+    if(sectionStatusFilter.value !== "None") {
+        selectedSections = selectedSections.filter(s => s.sectionStatus === sectionStatusFilter.value);
+    }
+
+    displaySections(selectedSections);
+}
