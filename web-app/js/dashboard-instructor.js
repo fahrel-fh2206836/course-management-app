@@ -63,7 +63,10 @@ function renderActiveCourses(){
             <h3>Ongoing Courses</h3>
             <div class="card-group">${ongoingHTML || `<div class="empty-section"><i class='bx bxs-error-circle'></i><p>No Ongoing Courses found.</p> </div>`}</div>
             
-            <h3>Previous/Future Courses</h3>
+            <div class="pFcourses">
+                <h3>Previous/Future Courses</h3>
+                <i class='bx bx-filter' ></i>
+            </div>
             <div class="card-group">${notOngoingHTML || `<div class="empty-section"><i class='bx bxs-error-circle'></i><p>No Previous/Future Courses found.</p> </div>`}</div>
         `;
 }
