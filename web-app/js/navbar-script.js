@@ -51,7 +51,8 @@ function navbarHTML() {
                         <img src="../assets/images/qu_logo_white.png" alt="" id="long-qu-logo">
                         <img src="../assets/images/qu_logo_white3.png" alt="" id="short-qu-logo">
                     </a>
-                    <p id="nav-title">Course Management System</p></div>
+                    <p id="nav-title">Course Management System</p>
+                </div>
                     <ul id="menulist">
                         <div class="nav-index ${currPage === 'dashboard' ? 'active' : ''}">
                             <li><i class='bx bxs-home'></i> <a href="dashboard-student.html" onclick="setCurrPage('dashboard')">Dashboard</a></li>
@@ -70,7 +71,8 @@ function navbarHTML() {
                         <img src="../assets/images/qu_logo_white.png" alt="" id="long-qu-logo">
                         <img src="../assets/images/qu_logo_white3.png" alt="" id="short-qu-logo">
                     </a>
-                    <p id="nav-title">Course Management System</p></div>
+                    <p id="nav-title">Course Management System</p>
+                </div>
                     <ul id="menulist">
                         <div class="nav-index ${currPage === 'dashboard' ? 'active' : ''}">
                             <li><i class='bx bxs-home'></i> <a href="dashboard-instructor.html" onclick="setCurrPage('dashboard')">Dashboard</a></li>
@@ -87,7 +89,8 @@ function navbarHTML() {
                     <img src="../assets/images/qu_logo_white.png" alt="" id="long-qu-logo">
                     <img src="../assets/images/qu_logo_white3.png" alt="" id="short-qu-logo">
                 </a>
-                <p id="nav-title">Course Management System</p></div>
+                <p id="nav-title">Course Management System</p>
+            </div>
                 <ul id="menulist">
                     <div class="nav-index ${currPage === 'dashboard' ? 'active' : ''}">
                         <li><i class='bx bxs-home'></i> <a href="dashboard-admin.html" onclick="setCurrPage('dashboard')">Dashboard</a></li>
@@ -98,8 +101,7 @@ function navbarHTML() {
                     <div class="nav-index ${currPage === 'addSection' ? 'active' : ''}">
                         <li><i class='bx bxs-plus-circle'></i> <a href="add-section.html" onclick="setCurrPage('addSection')">Add Section</a></li>
                     </div>
-                ${logoutAndMenuHTML()}
-            <div>`;
+                ${logoutAndMenuHTML()}`;
 }
 
 function logoutAndMenuHTML() {
