@@ -3,8 +3,8 @@ let list = document.querySelector("#list");
 let icon = document.querySelector("#drop-icon");
 let dropdownInput = document.querySelector("#dropdown-span");
 let search = document.querySelector("#search-input");
-let listItems = document.querySelectorAll(".dropdown-list-item");
 let displayCourse = document.querySelector("#display-courses");
+const majors = JSON.parse(localStorage.majors)
 
 //Use this to navigate to register screen --to do--
 let courseCard = document.querySelector(".student-course-card");
@@ -15,7 +15,6 @@ const courses = JSON.parse(localStorage.courses);
 dropDownBtn.addEventListener("click", (e) => showList(e));
 
 function showList(e){
-
     if(list.classList.contains("show-list")){
         icon.style.rotate = "0deg";
     } else {
@@ -50,11 +49,6 @@ function dropDownMajor(e){
     let filteredCourses = filterCourses();
     displayCourses(filteredCourses);
 }
-
-for(item of listItems){
-    item.addEventListener('click', (e) => dropDownMajor(e));
-}
-
 
 // Search Bar
 function displayCourses(filteredCourses){
@@ -94,12 +88,8 @@ function searchCourse(e){
 function filterCourses() {
     let filteredCourses = [];
     if (dropdownInput.innerText !== "All"){
-        if(dropdownInput.innerText === "CMPS"){
-            filteredCourses = courses.filter((course) => course.majorId === "1");
-        }
-        else{
-            filteredCourses = courses.filter((course) => course.majorId === "2");
-        }
+        let majorId = majors.find(m => m.majorCode === dropdownInput.innerText).majorId;
+        filteredCourses = courses.filter((course) => course.majorId === majorId);
     } else {
         filteredCourses = [...courses];
     }
@@ -111,4 +101,19 @@ function goToRegistration(id){
     localStorage.selectedCourse = JSON.stringify(c);
     window.location.href = '../view-student/registration.html';
 }
+
+function renderMajorDropdown() {
+    list.innerHTML = convertMajorOptionHTML();
+    let listItems = document.querySelectorAll(".dropdown-list-item");
+    for(item of listItems){
+        item.addEventListener('click', (e) => dropDownMajor(e));
+    }
+}
+
+function convertMajorOptionHTML() {
+    return `<li class="dropdown-list-item">All</li>
+            ${majors.map(m => `<li class="dropdown-list-item">${m.majorCode}</li>`).join('\n')}`
+}
+
+renderMajorDropdown();
 

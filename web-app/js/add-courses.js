@@ -71,6 +71,11 @@ function handleAddCourse(e) {
     alert(`${course.courseCode} is Added to the System.`);
 }
 
+function renderMajorDropdown() {
+    const majorDropdown = document.querySelector('#major')
+    majorDropdown.innerHTML = `<option value="" selected disabled>Select Major</option>
+                                ${majors.map(m => `<option value="${m.majorId}">${m.majorName} (${m.majorCode})</option>`).join('\n')}`;
+}
 
 
-
+renderMajorDropdown();

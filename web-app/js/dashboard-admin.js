@@ -2,6 +2,7 @@ const courseListGeneral = document.querySelector("#course-list-general");
 const courses = JSON.parse(localStorage.courses);
 const statusDropdown = document.querySelector('#status');
 const sections = JSON.parse(localStorage.sections);
+const majors = JSON.parse(localStorage.majors);
 const users = JSON.parse(localStorage.users);
 
 if (window.matchMedia("(max-width: 1023px)").matches) {
@@ -62,11 +63,9 @@ function onMajorChange(e, s) {
         courseListHTML = filterNotOffered();
     }
 
-    if(major === "CMPS") {
-        courseListHTML = mapCoursesToHTML(courseListHTML.filter(c => c.majorId === "1"));
-    } else if (major === "CMPE") {
-        courseListHTML = mapCoursesToHTML(courseListHTML.filter(c => c.majorId === "2"));
-    } else if (major === "all") {        
+    if(major !== "all") {
+        courseListHTML = mapCoursesToHTML(courseListHTML.filter(c => c.majorId === major));
+    } else {        
         courseListHTML = mapCoursesToHTML(courseListHTML);
     }
 
@@ -173,3 +172,15 @@ function convertRowToHTML(s) {
                 <td>${s.location}</td>
             </tr>`;
 }
+
+function renderMajorDropdown() {
+    const majorDropdowns = document.querySelectorAll('#major, #major-ongoing, #major-reg, #major-not');
+    majorDropdowns.forEach(m => m.innerHTML = convertMajorOptionHTML());
+}
+
+function convertMajorOptionHTML() {
+    return `<option value="all" selected>All Majors</option>
+            ${majors.map(m => `<option value="${m.majorId}">${m.majorName}</option>`).join('\n')}`
+}
+
+renderMajorDropdown();

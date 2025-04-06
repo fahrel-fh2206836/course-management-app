@@ -325,3 +325,17 @@ function onSaveSectionEdit(sectionId) {
     onCancelSectionEdit(sectionId)
     localStorage.sections =  JSON.stringify(sections);
 }
+
+// Render Semester Filter
+
+function renderSemesterDropdown() {
+    const semesterDropdown = document.querySelector('#semester-filter');
+    semesterDropdown.innerHTML = convertSemesterOptionHTML();
+}
+
+function convertSemesterOptionHTML() {
+    return `<option value="All" selected>All Semester</option>
+            ${JSON.parse(localStorage.semesters).map(s => `<option value="${s}">${s}</option>`).join('\n')}`
+}
+
+renderSemesterDropdown()
