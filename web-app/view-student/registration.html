@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="../styles/dialog-styles.css">
     <link rel="stylesheet" href="../styles/course-card-styles.css">
     <link rel="stylesheet" href="../styles/registration-styles.css">
+    <link rel="stylesheet" href="../styles/course-description-styles.css">
+    <link rel="stylesheet" href="../styles/section-list-styles.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
@@ -24,23 +26,39 @@
         </h1>
 
         <div class="course-info">
-            <h2>Course Details: </h2>
-            <div><span>Course ID: </span><span id="course-id"></span></div>
-            <div><span>Course Code: </span><span id="course-code"></span></div>
-            <div><span>Course Name: </span><span id="course-name"></span></div>
-            <div><span>Credit Hours: </span><span id="course-hour"></span></div>
+            <div>
+                <div class="info-header">
+                    <i class='bx bxs-info-circle'></i>
+                    <h2>Course Description</h2>
+                </div>
+            </div>
+            <table id="course-table">
+                <!-- Added thru javascript -->
+            </table>
             <h3>Prerequiste Courses: </h3>
             <div id="pre-courses">
                 <!--Added through JS-->
             </div>
         </div>
 
-        <div class="sections-list">
-            <h2>Sections for the Course: </h2>
-            <div id="sections-display">
-                <!--Added through js-->
+        <div class="course-section">
+            <div class="section-header">
+                <h1>{Course} Sections</h1>
             </div>
-        </div>
+            <div class="section-filters">
+                <div class="semester-filter">
+                    <label for="semester-filter">Select Semester</label>
+                    <select id="semester-filter" name="semester">
+                        <!-- Added thru js -->
+                    </select>
+                </div>
+            </div>
+            <div class="sections-list">
+                <h2>Sections for the Course: </h2>
+                <div id="sections-display">
+                    <!--Added through js-->
+                </div>
+            </div>
 
         <div class="registered-courses">
             

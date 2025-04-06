@@ -1,0 +1,55 @@
+@import url(theme-styles.css);
+
+.course-info {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid var(--bistre-);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: var(--beige-);
+}
+
+.info-header {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    i, h2 {
+        font-size: 1.3rem;
+        color: var(--bistre-);
+    }
+}
+
+table {
+    border-collapse: collapse;
+    border-radius: 10px;
+    border-style: hidden;
+    background-color: var(--light-beige-);
+    box-shadow: 0 0 0 1px #666;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px;
+}
+  
+th {
+    background-color: #f0e6cc;
+    width: 35%;
+    text-align: left;
+}
+
+.red-box , .green-box{
+    width: 1.05rem;
+    height: 1.05rem;
+    border: 1.5px solid black;
+}
+
+.red-bg {
+    background-color: red;
+}
+
+.green-bg {
+    background-color: green;
+}

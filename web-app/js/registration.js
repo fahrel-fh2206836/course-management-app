@@ -1,23 +1,16 @@
-document.addEventListener("DOMContentLoaded", () =>{
+const selectedCourse = JSON.parse(localStorage.selectedCourse);
+const users = JSON.parse(localStorage.users);
+let student = JSON.parse(localStorage.getItem("loggedInUser"));
+const title = document.querySelector("#title");
+const preReqCoursesDisplay = document.querySelector("#pre-courses");
+const sectionsDisplay = document.querySelector("#sections-display");
+const table = document.querySelector("#course-table");
+const majors = JSON.parse(localStorage.majors);
+const majorName = majors.find(m => m.majorId===selectedCourse.majorId).majorName
+const sectionHeaderH1 = document.querySelector(".section-header").querySelector("h1");
 
-    const selectedCourse = JSON.parse(localStorage.selectedCourse);
-    const users = JSON.parse(localStorage.users);
-    let student = JSON.parse(localStorage.getItem("loggedInUser"));
-    const title = document.querySelector("#title");
-    const courseId = document.querySelector("#course-id");
-    const courseCode = document.querySelector("#course-code");
-    const courseName = document.querySelector("#course-name");
-    const courseHours = document.querySelector("#course-hour");
-    const preReqCoursesDisplay = document.querySelector("#pre-courses");
-    const sectionsDisplay = document.querySelector("#sections-display");
-
+sectionHeaderH1.innerText = `${selectedCourse.courseCode} Sections`;
 title.innerHTML = `View Sections for ${selectedCourse.courseName}`;
-
-courseId.innerHTML = `${selectedCourse.id}`
-courseCode.innerHTML = `${selectedCourse.courseCode}`
-courseName.innerHTML = `${selectedCourse.courseName}`
-courseHours.innerHTML = `${selectedCourse.creditHour}`
-
 
 const coursePrerequisites = selectedCourse.prerequisitesCoursesId;
 const allCourses = JSON.parse(localStorage.courses);
@@ -58,7 +51,7 @@ function displaySections(sections){
     sectionsDisplay.innerHTML = sections.length === 0 ? `There are no sections for this course` : sections.map((section) => sectionHTML(section)).join("\n");
 }
 
-function sectionHTML(section){
+function sectionHTML(section) {
     const i = users.find(u => u.userId===section.instructorId);
 
     return `<div class="course-card">
@@ -78,6 +71,56 @@ function sectionHTML(section){
 
 displaySections(courseSections);
 
+// Javascript I added (Remove this comment later)
 
-})
+function convertTableToHTML() {
+    return `<tbody>
+                    <tr>
+                    <th>Course ID</th>
+                    <td>${selectedCourse.id}</td>
+                    </tr>
+                    <tr>
+                    <th>Course Name</th>
+                    <td>${selectedCourse.courseName}</td>
+                    </tr>
+                    <tr>
+                    <th>Course Code</th>
+                    <td>${selectedCourse.courseCode}</td>
+                    </tr>
+                    <tr>
+                    <th>Major</th>
+                    <td colspan="3">${majorName}</td>
+                    </tr>
+                    <tr>
+                    <th>Credit Hour</th>
+                    <td colspan="3">${selectedCourse.creditHour}</td>
+                    </tr>
+                    <tr>
+                    <th>Status - Ongoing</th>
+                    <td colspan="3"><div class="${selectedCourse.isOngoing ? 'green-box green-bg' : 'red-box red-bg'}"></div></td>
+                    </tr>
+                    <tr>
+                    <th>Status - Registration</th>
+                    <td colspan="3"><div class="${selectedCourse.isRegistration ? 'green-box green-bg' : 'red-box red-bg'}"></div></td>
+                    </tr>
+                </tbody>
+                `;
+}
 
+function renderTable() {
+    table.innerHTML = convertTableToHTML();
+}
+
+renderTable();
+
+function renderSemesterDropdown() {
+    const semesterDropdown = document.querySelector('#semester-filter');
+    semesterDropdown.innerHTML = convertSemesterOptionHTML();
+}
+
+function convertSemesterOptionHTML() {
+    return `<option value="All" selected>All Semester</option>
+            ${JSON.parse(localStorage.semesters).map(s => `<option value="${s}">${s}</option>`).join('\n')}`
+}
+
+renderSemesterDropdown()
