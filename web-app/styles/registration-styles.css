@@ -59,7 +59,13 @@ h1 {
 
 .sections-list{
     padding-left: 1rem;
-    
+}
+
+#sections-display{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px,300px));
+    gap: 1rem;
+    justify-content: flex-start;
 }
 
 
