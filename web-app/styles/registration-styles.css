@@ -36,3 +36,16 @@ h1 {
     justify-content: flex-start;
 }
 
+.course-completed{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.green{
+    color: green;
+}
+
+.red{
+    color: red;
+}

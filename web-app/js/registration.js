@@ -1,4 +1,5 @@
 const selectedCourse = JSON.parse(localStorage.selectedCourse);
+const allRegistrations = JSON.parse(localStorage.registrations);
 const users = JSON.parse(localStorage.users);
 let student = JSON.parse(localStorage.getItem("loggedInUser"));
 const majors = JSON.parse(localStorage.majors);
@@ -11,9 +12,12 @@ const table = document.querySelector("#course-table");
 const majorName = majors.find(m => m.majorId===selectedCourse.majorId).majorName
 const sectionHeaderH1 = document.querySelector(".section-header").querySelector("h1");
 
+//Header Codee
 sectionHeaderH1.innerText = `${selectedCourse.courseCode} Sections`;
 title.innerHTML = `View Sections for ${selectedCourse.courseName}`;
 
+
+// Course Details code
 const coursePrerequisites = selectedCourse.prerequisitesCoursesId;
 const allCourses = JSON.parse(localStorage.courses);
 let preCourses = [];
@@ -33,12 +37,25 @@ function courseHTML(course){
                 <div class="card-flag"><p>${course.courseCode}</p></div>                
                 <div class="card-course-name"><p>${course.courseName}</p></div>
                 <hr>
-                <!--To dooooo-->
+                ${courseDone(course.id) ? "<div class='course-completed'><p>Course has been completed</p><i class='bx bxs-check-circle green'></i></div>" : "<div class='course-completed'><p>Course has not been completed</p><i class='bx bxs-x-circle red'></i></div>"}
             </div>`;
 }
 
 displayPreCourses(preCourses);
 
+function courseDone(courseID){
+
+    for(let i = 0; i<allRegistrations.length ; i++){
+
+        if(allRegistrations[i].studentId === student.userId && allRegistrations[i].courseId === courseID){
+            return true;
+        }
+    }
+    return false;
+}
+
+
+// Sections code
 let courseSections = [];
 
 function getCourseSections(){
