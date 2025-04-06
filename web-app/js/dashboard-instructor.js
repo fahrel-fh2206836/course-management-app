@@ -51,8 +51,7 @@ function renderActiveCourses(){
     instructorSections.forEach(instSec => {
         let section = sections.find(s => instSec.sectionId === s.sectionId); 
         let course = courses.find(c => c.id === section.courseId);
-        let NoStud = registrations.filter(r => r.sectionId === section.sectionId).length;
-        const cardHTML = generateCourseListHTML(section, course, NoStud)+'\n';
+        const cardHTML = generateCourseListHTML(section, course)+'\n';
         if (section.sectionStatus === 'ONGOING') {
             ongoingHTML += cardHTML;
           } else if (section.sectionStatus === 'OPEN_REGISTRATION' || section.sectionStatus === 'COMPLETED') {
@@ -71,7 +70,7 @@ function renderActiveCourses(){
         `;
 }
 
-function generateCourseListHTML(s, c, n) {
+function generateCourseListHTML(s, c) {
     return `
             <div class="course-card hover-underline" onclick="goToGradeAllocation(${s.sectionId})">
                 <div class="card-seats position-corner-top-left">
