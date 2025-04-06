@@ -60,7 +60,7 @@
         "majorId" : "2",
         "creditHour" : 3,
         "courseName" : "Computer Architecture I",
-        "prerequisitesCoursesId" : ["1,3"],
+        "prerequisitesCoursesId" : ["1","3"],
         "isOngoing" : true,
         "isRegistration" : false
     },

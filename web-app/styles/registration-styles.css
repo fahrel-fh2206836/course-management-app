@@ -37,6 +37,7 @@ h1 {
     border-radius: 5px;
     background-color: var(--beige-);
     padding: 1rem;
+    color: var(--coffee-);
 }
 
 .course-info > div{
@@ -49,5 +50,10 @@ h1 {
     font-weight: bold;
 }
 
+#pre-courses{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+}
 
 
