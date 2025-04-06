@@ -72,7 +72,7 @@ function renderActiveCourses(){
 
 function generateCourseListHTML(s, c) {
     return `
-            <div class="course-card hover-underline" onclick="goToGradeAllocation(${s.sectionId})">
+            <div class="course-card hover-underline" onclick="goToGradeAllocation('${s.sectionId}')">
                 <div class="card-seats position-corner-top-left">
                     <i class='bx bxs-group'></i>
                     <p>${s.currentSeats}/${s.totalSeats}</p>
@@ -87,7 +87,9 @@ function generateCourseListHTML(s, c) {
 
 function goToGradeAllocation(sectionId) {
     const s = sections.find(s => s.sectionId === sectionId);
-    localStorage.selectedCourse = s;
+    localStorage.selectedCourse = JSON.stringify(s);
+    console.log(s);
+    
     window.location.href='grade-allocation.html';
 }
 
