@@ -49,7 +49,7 @@ const allSections = JSON.parse(localStorage.sections);
 let courseSections = [];
 
 function getCourseSections(){
-    courseSections = allSections.filter((section) => section.courseId === selectedCourse.id && section.approvalStatus === "APPROVED");
+    courseSections = allSections.filter((section) => section.courseId === selectedCourse.id && (section.approvalStatus === "APPROVED" || section.approvalStatus === "PENDING"));
 }
 
 getCourseSections();
