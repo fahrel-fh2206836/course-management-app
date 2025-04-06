@@ -1,5 +1,15 @@
 @import url(theme-styles.css);
 
+.section-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    background-color: #f0e6cc;
+    border: 1px solid var(--bistre-);
+    border-radius: 15px;
+}
+
 .course-section {
     width: 100%;
     display: flex;
@@ -32,5 +42,13 @@
     select {
         padding: 5px;
         border-radius: 5px;
+    }
+}
+
+@media (min-width: 600px) {
+    .section-list {
+        display: grid;
+        gap: 30px;
+        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
     }
 }

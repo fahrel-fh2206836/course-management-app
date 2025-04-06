@@ -3,7 +3,7 @@ const users = JSON.parse(localStorage.users);
 let student = JSON.parse(localStorage.getItem("loggedInUser"));
 const title = document.querySelector("#title");
 const preReqCoursesDisplay = document.querySelector("#pre-courses");
-const sectionsDisplay = document.querySelector("#sections-display");
+const sectionsDisplay = document.querySelector(".section-list");
 const table = document.querySelector("#course-table");
 const majors = JSON.parse(localStorage.majors);
 const majorName = majors.find(m => m.majorId===selectedCourse.majorId).majorName
@@ -23,10 +23,7 @@ getPreCourses();
 
 function displayPreCourses(preCourse){
     preCourse.sort((a, b) => a.courseName.localeCompare(b.courseName));
-    preReqCoursesDisplay.innerHTML = preCourse.length === 0 ? `<div class="empty-section">
-                                                                <i class='bx bxs-error-circle'></i>
-                                                                <p>This course has no sections.</p>
-                                                               </div>` : preCourse.map((course) => courseHTML(course)).join("\n");
+    preReqCoursesDisplay.innerHTML = preCourse.length === 0 ? `There are no prerequisites for this course` : preCourse.map((course) => courseHTML(course)).join("\n");
 }
 
 function courseHTML(course){
@@ -51,7 +48,10 @@ function getCourseSections(){
 getCourseSections();
 
 function displaySections(sections){
-    sectionsDisplay.innerHTML = sections.length === 0 ? `There are no sections for this course` : sections.map((section) => sectionHTML(section)).join("\n");
+    sectionsDisplay.innerHTML = sections.length === 0 ? `<div class="empty-section">
+                                                            <i class='bx bxs-error-circle'></i>
+                                                            <p>This course has no sections.</p>
+                                                         </div>` : sections.map((section) => sectionHTML(section)).join("\n");
 }
 
 function sectionHTML(section) {
