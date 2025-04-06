@@ -137,14 +137,5 @@ function handleFilter(e) {
     if(semFilter.value !== "All") {
         selectedSections = selectedSections.filter(s => s.semester === semFilter.value);
     }
-
-    if(approvalFilter.value !== "None") {
-        selectedSections = selectedSections.filter(s => s.approvalStatus === approvalFilter.value);
-    }
-
-    if(sectionStatusFilter.value !== "None") {
-        selectedSections = selectedSections.filter(s => s.sectionStatus === sectionStatusFilter.value);
-    }
-
     displaySections(selectedSections);
 }
