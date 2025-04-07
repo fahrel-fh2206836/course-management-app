@@ -9,7 +9,7 @@ const courseSpan = document.querySelector("#stats-major");
 const sectionID = document.querySelector("#stats-ID");
 const NoOfStudents = document.querySelector("#stats-no-stud");
 const semester = document.querySelector("#stats-sem");
-const main = document.querySelector("main");
+const main = document.querySelector(".searchStud");
 
 checkForNotOngoingCourse();
 
