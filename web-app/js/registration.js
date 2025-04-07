@@ -1,5 +1,6 @@
 const selectedCourse = JSON.parse(localStorage.selectedCourse);
 const allRegistrations = JSON.parse(localStorage.registrations);
+const currentSem = localStorage.currentSem;
 const users = JSON.parse(localStorage.users);
 let student = JSON.parse(localStorage.getItem("loggedInUser"));
 const majors = JSON.parse(localStorage.majors);
@@ -55,6 +56,7 @@ function courseDone(courseID){
 }
 
 
+
 // Sections code
 let courseSections = [];
 
@@ -86,6 +88,9 @@ function sectionHTML(section) {
                 <hr>
                 <div class="card-course-sem-schedule"><p><i class='bx bx-calendar'></i>${section.semester}</p><p><i class='bx bx-calendar-week'></i>${section.schedule.days !== '' ? section.schedule.days : 'None'}</p><p><i class='bx bx-time'></i>${section.schedule.time !== '' ? section.schedule.time : 'None'}</p></div>
                 <hr>
+                <div id="registration-handle" onclick = "handleRegistration()">
+                    <button id="reg-btn">Register</button>
+                </div>
             </div>`;
 }
 
@@ -156,3 +161,8 @@ function handleFilter(e) {
     }
     displaySections(selectedSections);
 }
+
+function handleRegistration(){
+    
+}
+

@@ -38,8 +38,9 @@ h1 {
 
 .course-completed{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
+    
 }
 
 .green{
@@ -48,4 +49,17 @@ h1 {
 
 .red{
     color: red;
+}
+
+#reg-btn{
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--coffee-);
+    color: white;
+    border-radius: 20px;
+    border: 1px solid var(--coffee-);
+}
+
+#reg-btn:hover{
+    cursor: pointer;
 }
