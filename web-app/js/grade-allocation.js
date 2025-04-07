@@ -10,6 +10,8 @@ const sectionID = document.querySelector("#stats-ID");
 const NoOfStudents = document.querySelector("#stats-no-stud");
 const semester = document.querySelector("#stats-sem");
 const main = document.querySelector(".searchStud");
+const searchInput = document.getElementById("search-input");
+const tbody = document.querySelector("tbody");
 
 checkForNotOngoingCourse();
 
@@ -32,3 +34,60 @@ function checkForNotOngoingCourse(){
         `;
     }
 }
+
+renderStudents("");
+
+searchInput.addEventListener("input", () => {
+  const query = searchInput.value.trim().toLowerCase();
+  renderStudents(query);
+});
+
+function renderStudents(filter){
+    tbody.innerHTML = "";
+    const sectionId = selectedSection.sectionId;
+    const studentRows = registrations
+        .filter(r => r.sectionId === sectionId)
+        .map(r => {
+            const student = users.find(u => u.userId === r.studentId);
+            if (!student) return null;
+            const fullName = `${student.firstName} ${student.lastName}`.toLowerCase();
+            const matches = student.userId.toLowerCase().includes(filter) || fullName.includes(filter);
+            if (!filter || matches) {
+                return `
+                  <tr>
+                    <td>${student.userId}</td>
+                    <td>${student.firstName} ${student.lastName}</td>
+                    <td><select data-student-id="${student.userId}" class="grade-dropdown">
+                        ${renderGradeOptions(r.grade)}
+                    </td>
+                  </tr>
+                `;
+              }
+        
+              return null;
+            });     
+        tbody.innerHTML = studentRows.join("") || "<tr><td colspan='3'>No students found</td></tr>";
+}
+
+function renderGradeOptions(currentGrade) {
+    const grades = ["A", "B", "C", "D", "F", "I", "W"];
+    return grades.map(g => 
+      `<option value="${g}" ${g === currentGrade ? "selected" : ""}>${g}</option>`
+    ).join("");
+  }
+
+document.addEventListener("change", (e) => {
+    if (e.target.classList.contains("grade-dropdown")) {
+      const studentId = e.target.dataset.studentId;
+      const newGrade = e.target.value;
+      const registration = registrations.find(r => 
+        r.studentId === studentId && r.sectionId === selectedSection.sectionId
+      );
+  
+      if (registration) {
+        registration.grade = newGrade;
+        localStorage.setItem("registrations", JSON.stringify(registrations));
+        console.log(`Updated grade for ${studentId} to ${newGrade}`);
+      }
+    }
+});
