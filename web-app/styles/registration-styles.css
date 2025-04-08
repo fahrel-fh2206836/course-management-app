@@ -49,3 +49,7 @@ main {
 #reg-btn:hover{
     cursor: pointer;
 }
+
+#note {
+    font-weight: 500;
+}

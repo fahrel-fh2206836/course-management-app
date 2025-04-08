@@ -9,6 +9,7 @@ const title = document.querySelector("#title");
 const preReqCoursesDisplay = document.querySelector("#pre-courses");
 const sectionsDisplay = document.querySelector(".section-list");
 const table = document.querySelector("#course-table");
+const semesters = JSON.parse(localStorage.semesters);
 
 const majorName = majors.find(m => m.majorId===selectedCourse.majorId).majorName
 const sectionHeaderH1 = document.querySelector(".section-header").querySelector("h1");
@@ -17,6 +18,10 @@ const sectionHeaderH1 = document.querySelector(".section-header").querySelector(
 sectionHeaderH1.innerText = `${selectedCourse.courseCode} Sections`;
 title.innerHTML = `View Sections for ${selectedCourse.courseName}`;
 
+
+//Note for Open Registration
+const note = document.querySelector("#note");
+note.innerText = `Note: ${semesters[semesters.length-1]} Sections are Open for Registration!`
 
 // Course Details code
 const coursePrerequisites = selectedCourse.prerequisitesCoursesId;
@@ -145,7 +150,7 @@ function renderSemesterDropdown() {
 
 function convertSemesterOptionHTML() {
     return `<option value="All" selected>All Semester</option>
-            ${JSON.parse(localStorage.semesters).map(s => `<option value="${s}">${s}</option>`).join('\n')}`
+            $.map(s => ${semesters.map(s => `<option value="${s}">${s}</option>`).join('\n')}`
 }
 
 renderSemesterDropdown()
