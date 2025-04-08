@@ -29,7 +29,7 @@ async function loadLocalStorages() {
         localStorage.sections = await retrieveJSONData('../assets/data/sections.json');
     }
     if(!localStorage.currentSem) {
-        localStorage.currentSem = "Fall 2025";
+        localStorage.currentSem = "Spring 2025";
     }if(!localStorage.semesters) {
         localStorage.semesters = JSON.stringify(["Spring 2024", "Fall 2024", "Spring 2025", "Fall 2025"]);
     }

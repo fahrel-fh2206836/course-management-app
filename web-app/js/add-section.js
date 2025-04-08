@@ -2,7 +2,8 @@
 const sections = JSON.parse(localStorage.sections);
 const courses = JSON.parse(localStorage.courses);
 const users = JSON.parse(localStorage.users);
-const currentSem = localStorage.currentSem;
+const semesters = JSON.parse(localStorage.semesters);
+const currentSem = semesters[semesters.length-1];
 
 const form = document.querySelector("#add-section-form");
 const h2 = document.querySelector(".form-container").querySelector("h2");
