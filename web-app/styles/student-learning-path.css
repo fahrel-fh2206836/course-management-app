@@ -1,14 +1,23 @@
 @import url(theme-styles.css);
 
 main {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+        "header header"
+        "stats prerequisite"
+        "path path"
+    ;
     margin: 10px;
     gap: 20px;
 }
 
-h1 {
-    font-size: 1.5rem;
+main>h1 {
+    grid-area: header;
+}
+
+.stat-card {
+    grid-area: stats;
 }
 
 .prerequisite i, .tracker i {
@@ -16,28 +25,8 @@ h1 {
     color: var(--bistre-)
 }
 
-.achievements-header {
-    display: grid;
-    gap: 10px;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "stats image";
-}
-
-.achievements-header {
-    grid-area: image;
-}
-
-.achievements-header img {
-    width: 300px;
-    align-self: center;
-    justify-self: center;
-}
-
-.achievements-header {
-    grid-area: stats;
-}
-
 .prerequisite  {
+    grid-area: prerequisite;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -66,6 +55,7 @@ h1 {
 }
 
 .tracker {
+    grid-area: path;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -242,6 +232,11 @@ h1 {
     border-radius: 5px;
     border: 1px solid black;
     background: white;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
 }
     
 }
