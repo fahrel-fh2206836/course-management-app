@@ -12,20 +12,8 @@ main {
     gap: 20px;
 }
 
-h1{
-    font-size: 1.7rem
-}
-
-.page-header {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-
-    i {
-        cursor: default;
-        color: var(--bistre-);
-        font-size: 1.7rem;
-    }
+main>h1 {
+    width: 100%;
 }
 
 .header-btn {

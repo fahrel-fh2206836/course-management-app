@@ -161,13 +161,6 @@ select:hover {
     }
 }
 
-.status-header {
-    padding-top: 20px;
-    text-align: center;
-    h1 {
-        font-size: 1.5rem;
-    }
-}
 
 .schedule-container {
     display: flex;
@@ -202,7 +195,7 @@ select:hover {
         display: none;
     }
 
-    .status-header {
+    main>h1 {
         grid-area: header;
     }
 

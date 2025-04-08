@@ -100,3 +100,13 @@
     border-radius: 10px;
   }
 }
+
+main>h1:first-child {
+    text-align: center; 
+    font-size: 1.5rem;
+    margin-top: 10px;
+    background-color: var(--chamoisse-);
+    color: var(--beige-);
+    padding: 3px 10px;
+    border-radius: 10px;
+}
