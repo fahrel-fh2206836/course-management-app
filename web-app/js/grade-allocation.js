@@ -70,7 +70,7 @@ function renderStudents(filter){
 }
 
 function renderGradeOptions(currentGrade) {
-    const grades = ["A", "B", "C", "D", "F", "I", "W"];
+    const grades = ["A", "B+", "B-", "C+", "C-", "D+", "D-", "E", "F"];
     return grades.map(g => 
       `<option value="${g}" ${g === currentGrade ? "selected" : ""}>${g}</option>`
     ).join("");
