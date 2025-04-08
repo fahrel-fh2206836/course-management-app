@@ -19,7 +19,7 @@ h1 {
 .achievements-header {
     display: grid;
     gap: 10px;
-    grid-template-columns: 1.5fr 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-areas: "stats image";
 }
 
