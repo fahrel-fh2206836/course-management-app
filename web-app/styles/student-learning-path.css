@@ -16,6 +16,11 @@ main>h1 {
     grid-area: header;
 }
 
+.achievements img {
+    align-self: center;
+    width: 60%;
+}
+
 .stat-card {
     grid-area: stats;
 }
@@ -188,11 +193,8 @@ main>h1 {
     width: 100%;
 }
 
-.achievements-header{
-    display: block;
-    img {
-        display: none;
-    }
+.achievements img{
+    display: none;
 }
 
 .course-list {
