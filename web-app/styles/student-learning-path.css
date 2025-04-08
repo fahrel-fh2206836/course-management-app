@@ -12,6 +12,10 @@ main {
     gap: 20px;
 }
 
+i {
+    cursor: default;
+}
+
 main>h1 {
     grid-area: header;
 }
