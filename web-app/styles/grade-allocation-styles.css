@@ -8,7 +8,7 @@ main {
     display: flex;
     flex-direction: column;
     row-gap: 10px;
-    margin: 20px;
+    margin: 5px 20px 0px 20px; 
 }
 
 .section-style {
@@ -124,7 +124,7 @@ table {
   th {
     width: 33.33%;
     text-align: center;
-    padding: 10px; 
+    padding: 20px; 
     border-bottom: 2px solid rgb(72, 71, 71);
   }
   tbody{
@@ -188,6 +188,7 @@ button{
 button:hover{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
 }
+
 .cancel-button{
     background-color: rgb(220, 220, 220);
     color: rgb(53, 52, 52);
@@ -196,4 +197,27 @@ button:hover{
     background-color: var(--chamoisse-);
     color: var(--beige-);
 }
+.save-button:active{
+    background-color: rgb(161, 135, 112);
+}
+.cancel-button:active{
+    background-color: rgb(182, 180, 180);
+}
+
+.notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    transform: translateX(150%);
+    transition: transform 0.4s ease;
+}
+  .notification.show {
+    transform: translateX(0%);
+  }
   

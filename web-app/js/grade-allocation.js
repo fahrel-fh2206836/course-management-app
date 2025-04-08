@@ -5,6 +5,7 @@ const courses = JSON.parse(localStorage.courses);
 const users = JSON.parse(localStorage.users);
 const selectedSection = JSON.parse(localStorage.selectedCourse);
 
+
 const courseSpan = document.querySelector("#stats-major");
 const sectionID = document.querySelector("#stats-ID");
 const NoOfStudents = document.querySelector("#stats-no-stud");
@@ -12,6 +13,7 @@ const semester = document.querySelector("#stats-sem");
 const main = document.querySelector(".searchStud");
 const searchInput = document.getElementById("search-input");
 const tbody = document.querySelector("tbody");
+const notif = document.getElementById("save-notification");
 
 checkForNotOngoingCourse();
 
@@ -83,11 +85,41 @@ document.addEventListener("change", (e) => {
       const registration = registrations.find(r => 
         r.studentId === studentId && r.sectionId === selectedSection.sectionId
       );
-  
-      if (registration) {
-        registration.grade = newGrade;
-        localStorage.setItem("registrations", JSON.stringify(registrations));
-        console.log(`Updated grade for ${studentId} to ${newGrade}`);
-      }
+      localStorage.setItem("reg",JSON.stringify(registration));
+      localStorage.setItem("newGrade",JSON.stringify(newGrade));
     }
 });
+
+function cancelFunction(){
+  localStorage.removeItem('reg');
+  localStorage.removeItem('newGrade');
+  window.location.href = 'dashboard-instructor.html';
+
+}
+
+function saveFunction(){
+  const reg = JSON.parse(localStorage.getItem('reg'));
+  const newGrade = JSON.parse(localStorage.getItem('newGrade'));
+  if (reg) {
+    const index = registrations.findIndex(r =>
+      r.studentId === reg.studentId && r.sectionId === reg.sectionId
+    );
+  if(index !== -1){
+    registrations[index].grade = newGrade;
+    localStorage.setItem("registrations", JSON.stringify(registrations));
+  }
+  }
+  // alert("Grade saved successfully!");
+
+  localStorage.removeItem('reg');
+  localStorage.removeItem('newGrade');
+  showNotification();
+}
+
+function showNotification() {
+  notif.classList.add("show");
+
+  setTimeout(() => {
+      notif.classList.remove("show");
+  }, 2500);
+}
