@@ -37,6 +37,10 @@ main {
     color: red;
 }
 
+.yellow{
+    color: rgb(185, 185, 7);
+}
+
 #reg-btn{
     width: 100%;
     padding: 1rem;

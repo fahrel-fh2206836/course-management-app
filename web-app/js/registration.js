@@ -43,7 +43,7 @@ function courseHTML(course){
                 <div class="card-flag"><p>${course.courseCode}</p></div>                
                 <div class="card-course-name"><p>${course.courseName}</p></div>
                 <hr>
-                ${courseDone(course.id) ? "<div class='course-completed'><p>Course has been completed</p><i class='bx bxs-check-circle green'></i></div>" : "<div class='course-completed'><p>Course has not been completed</p><i class='bx bxs-x-circle red'></i></div>"}
+                ${courseDone(course.id) === 1 ? "<div class='course-completed'><p>Course has been completed</p><i class='bx bxs-check-circle green'></i></div>" : courseDone(course.id) === 2 ? "<div class='course-completed'><p>Course in progress</p><i class='bx bxs-check-circle yellow'></i></div>" :  "<div class='course-completed'><p>Course has not been completed</p><i class='bx bxs-x-circle red'></i></div>"}
             </div>`;
 }
 
@@ -52,12 +52,15 @@ displayPreCourses(preCourses);
 function courseDone(courseID){
 
     for(let i = 0; i<allRegistrations.length ; i++){
-
-        if(allRegistrations[i].studentId === student.userId && allRegistrations[i].courseId === courseID){
-            return true;
+        
+        if(allRegistrations[i].studentId === student.userId && allRegistrations[i].courseId === courseID && allRegistrations[i].grade === ""){
+            return 1;
+        }
+        else if(allRegistrations[i].studentId === student.userId && allRegistrations[i].courseId === courseID && allRegistrations[i].grade !== "F"){
+            return 2;
         }
     }
-    return false;
+    return 3;
 }
 
 
@@ -168,6 +171,6 @@ function handleFilter(e) {
 }
 
 function handleRegistration(){
-    
+
 }
 
