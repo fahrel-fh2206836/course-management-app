@@ -151,5 +151,12 @@
         "courseId": "4",
         "sectionId": "11",
         "grade": ""
+    },
+
+    {
+        "studentId": "5001",
+        "courseId": "8",
+        "sectionId": "18",
+        "grade": ""
     }
 ]
