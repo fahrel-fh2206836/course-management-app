@@ -41,7 +41,7 @@ main {
     color: rgb(185, 185, 7);
 }
 
-#reg-btn{
+.reg-btn{
     width: 100%;
     padding: 1rem;
     background-color: var(--coffee-);
@@ -50,7 +50,12 @@ main {
     border: 1px solid var(--coffee-);
 }
 
-#reg-btn:hover{
+.grey{
+    background-color: lightgray;
+    border: gray;
+}
+
+.reg-btn:hover{
     cursor: pointer;
 }
 
