@@ -223,10 +223,11 @@ async function handleRegistration(sectionId){
 // Get Registered sections
 
 let registeredSections = [];
-const currentlyRegistered = allRegistrations.filter((registration) => registration.studentId === student.userId && registration.grade === "");
 getCurrentlyRegistered();
 
 function getCurrentlyRegistered() {
+    registeredSections = [];
+    let currentlyRegistered = allRegistrations.filter((registration) => registration.studentId === student.userId && registration.grade === "");
     for(r of currentlyRegistered){
         let sec = allSections.find((section) => section.sectionId === r.sectionId);
         if(sec.sectionStatus === "OPEN_REGISTRATION"){
