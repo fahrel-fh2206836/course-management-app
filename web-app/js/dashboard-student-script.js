@@ -17,18 +17,26 @@ const registeredList = document.querySelector("#course-card-list");
 
 const studentMajor = majors.find(m => m.majorId === user.majorId)
 const progress = (user.finishedCreditHour/studentMajor.totalCreditHour) * 100;
-const registeredSections = registrations.filter(r => r.studentId === user.userId && r.grade === "");
+const studentsRegistrations = registrations.filter(r => r.studentId === user.userId && r.grade === "");
 
 nameSpan.innerText = `${user.firstName} ${user.lastName}`;
 majorSpan.innerText = studentMajor.majorName;
 cgpaSpan.innerText = user.gpa.toString();
-coursesSpan.innerText = registeredSections.length;
+
 completedSpan.innerText = `${user.finishedCreditHour}/${studentMajor.totalCreditHour}`
 percentSpan.innerText = `${progress.toFixed(1)}%`
 progressBar.style.width = progress + "%";
 
 function renderRegisteredCourses() {
     let html = ``;
+    let registeredSections = [];
+    for(r of studentsRegistrations){
+        let sec = sections.find((section) => section.sectionId === r.sectionId);
+        if(sec.sectionStatus === "ONGOING"){
+            registeredSections.push(sec);
+        }
+    }
+    coursesSpan.innerText = registeredSections.length;
     if(registeredSections.length === 0) {
         html = `<div class="empty-section">
                     <i class='bx bxs-error-circle'></i>

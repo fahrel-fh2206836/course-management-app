@@ -37,16 +37,19 @@ main {
     color: red;
 }
 
-.yellow{
-    color: rgb(185, 185, 7);
+.orange{
+    color: orange;
 }
 
 .reg-btn{
     width: 100%;
     padding: 1rem;
-    background-color: var(--coffee-);
     color: white;
     border-radius: 20px;
+}
+
+.active-reg-btn {
+    background-color: var(--coffee-);
     border: 1px solid var(--coffee-);
 }
 
@@ -55,7 +58,7 @@ main {
     border: gray;
 }
 
-.reg-btn:hover{
+.active-reg-btn:hover{
     cursor: pointer;
 }
 
@@ -70,10 +73,52 @@ main {
     padding: 15px;
     border: 1px solid var(--coffee-);
     border-radius: 20px ;
+    background-color: var(--light-beige-);
 }
 
 .delete-button{
     position: absolute;
     padding: 2px 5px;
     border-radius: 10px;
+}
+
+
+.displayed-registered {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+@media (min-width: 1024px) {
+    main {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-areas: 
+        "title title"
+        "info info"
+        "section registered"
+        ;
+    }
+
+    #title {
+        grid-area: title;
+    }
+
+    .course-info {
+        grid-area: info;
+    }
+
+    .course-section {
+        grid-area: section;
+    }
+
+    .registered-courses {
+        grid-area: registered;
+    }
+
+    .displayed-registered {
+        display: grid;
+        gap: 30px;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
 }

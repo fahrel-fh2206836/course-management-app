@@ -22,7 +22,7 @@ window.addEventListener('resize', function(event) {
 })
 
 function mapCoursesToHTML(cl) {
-    return cl.map(c => generateCoursesHTML(c)).join('\n');
+    return cl.sort((a, b) => a.courseName.localeCompare(b.courseName)).map(c => generateCoursesHTML(c)).join('\n');
 }
 
 function generateCoursesHTML(c) {
