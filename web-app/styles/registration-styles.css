@@ -62,3 +62,9 @@ main {
 #note {
     font-weight: 500;
 }
+
+.registered-courses{
+    padding: 15px;
+    border: 1px solid var(--coffee-);
+    border-radius: 20px ;
+}

@@ -8,6 +8,7 @@ const allSections = JSON.parse(localStorage.sections);
 const title = document.querySelector("#title");
 const preReqCoursesDisplay = document.querySelector("#pre-courses");
 const sectionsDisplay = document.querySelector(".section-list");
+const registeredDisplay = document.querySelector("#display-registered");
 const table = document.querySelector("#course-table");
 const semesters = JSON.parse(localStorage.semesters);
 
@@ -173,6 +174,26 @@ function handleFilter(e) {
 function handleRegistration(){
     
 }
+
+
+// Get Registered sections
+
+let registeredSections = [];
+const registered = allRegistrations.filter((registration) => registration.studentId === student.userId && registration.grade === "");
+
+function getRegistered(){
+    for(r of registered){
+        let sec = allSections.find((section) => section.sectionId === r.sectionId);
+        if(sec.sectionStatus === "OPEN_REGISTRATION"){
+            registeredSections.push(sec);
+        }
+    }
+}
+
+getRegistered();
+
+console.log(registeredSections);
+
 
 
 
