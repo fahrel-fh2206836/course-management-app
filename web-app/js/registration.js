@@ -10,7 +10,6 @@ const preReqCoursesDisplay = document.querySelector("#pre-courses");
 const sectionsDisplay = document.querySelector(".section-list");
 const table = document.querySelector("#course-table");
 const semesters = JSON.parse(localStorage.semesters);
-const sections = JSON.parse(localStorage.sections)
 
 const majorName = majors.find(m => m.majorId===selectedCourse.majorId).majorName
 const sectionHeaderH1 = document.querySelector(".section-header").querySelector("h1");
@@ -97,7 +96,7 @@ function sectionHTML(section) {
                 <hr>
                 <div class="card-course-sem-schedule"><p><i class='bx bx-calendar'></i>${section.semester}</p><p><i class='bx bx-calendar-week'></i>${section.schedule.days !== '' ? section.schedule.days : 'None'}</p><p><i class='bx bx-time'></i>${section.schedule.time !== '' ? section.schedule.time : 'None'}</p></div>
                 <hr>
-                ${section.sectionStatus === "OPEN_REGISTRATION" ? `<button class="reg-btn" onclick = "handleRegistration('${section.id}')">Register</button>`
+                ${section.sectionStatus === "OPEN_REGISTRATION" ? `<button class="reg-btn" onclick = "handleRegistration()">Register</button>`
                  : `<button class="reg-btn grey">Register</button>`
             }
             </div>`;
@@ -171,8 +170,8 @@ function handleFilter(e) {
     displaySections(selectedSections);
 }
 
-function handleRegistration(sectionId){
-    let selectedSection = sections.find()
+function handleRegistration(){
+    
 }
 
 
