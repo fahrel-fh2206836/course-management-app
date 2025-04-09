@@ -189,11 +189,53 @@ function getRegistered(){
         }
     }
 }
-
 getRegistered();
 
-console.log(registeredSections);
+function displayRegisteredSections(sections){
+        registeredDisplay.innerHTML = sections.length === 0 ? `<div class="empty-section">
+                                                                <i class='bx bxs-error-circle'></i>
+                                                                <p>You have not registered for any courses.</p>
+                                                             </div>` : sections.map((section) => registeredHTML(section)).join("\n");
+}
 
+function registeredHTML(section){
+    const i = users.find(u => u.userId===section.instructorId);
+
+    return `<div class="course-card">
+                <div class="card-flag"><p>${selectedCourse.courseCode}</p></div>
+                <div class="card-seats position-slight-top-left">
+                    <i class='bx bxs-group'></i>
+                    <p>${section.currentSeats}/${section.totalSeats}</p>
+                </div>
+                <div class="delete-button position-corner-top-left red-bg" onclick = "removeRegistered('${section.sectionId}')">
+                    <i class='bx bxs-trash-alt' ></i>
+                </div>
+                <div class="card-course-name"><p>${selectedCourse.courseName}</p></div>
+                <div class="card-course-instructor"><p>Instructor: ${i.firstName} ${i.lastName}</p></div>
+                <div class="card-course-section-location"><p>Section ID: ${section.sectionId}</p><p>Class Location: ${section.location !== '' ? section.location : 'None'}</p></div>
+                <hr>
+                <div class="card-course-sem-schedule"><p><i class='bx bx-calendar'></i>${section.semester}</p><p><i class='bx bx-calendar-week'></i>${section.schedule.days !== '' ? section.schedule.days : 'None'}</p><p><i class='bx bx-time'></i>${section.schedule.time !== '' ? section.schedule.time : 'None'}</p></div>
+                <hr>
+                
+            </div>`;
+}
+
+displayRegisteredSections(registeredSections);
+console.log(JSON.parse(localStorage.registrations).length);
+function removeRegistered(sectionId){
+
+    let registeredSectionIndex = registeredSections.findIndex((section) => section.sectionId === sectionId);
+    registeredSections.splice(registeredSectionIndex,1);
+    displayRegisteredSections(registeredSections);
+
+    let sectionIndex = allSections.findIndex((section) => section.sectionId === sectionId);
+    allSections[sectionIndex].currentSeats -= 1;
+    localStorage.sections = JSON.stringify(allSections);
+
+    let registeredIndex = allRegistrations.findIndex((r) => r.studentId === student.userId && r.sectionId === sectionId);
+    allRegistrations.splice(registeredIndex,1);
+    localStorage.registrations = JSON.stringify(allRegistrations);
+} 
 
 
 

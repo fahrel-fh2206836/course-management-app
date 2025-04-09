@@ -64,7 +64,16 @@ main {
 }
 
 .registered-courses{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
     padding: 15px;
     border: 1px solid var(--coffee-);
     border-radius: 20px ;
+}
+
+.delete-button{
+    position: absolute;
+    padding: 2px 5px;
+    border-radius: 10px;
 }
