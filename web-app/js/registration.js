@@ -210,6 +210,11 @@ async function handleRegistration(sectionId){
         return;
     }
 
+    // Check if he registered over 18
+    if(countRegisteredCH(selectedSection, registeredSections) > 18){
+        alert("⚠️ You will be over the max limit of 18 CH!");
+        return;
+    }
 
     let newRegistration = {
         studentId: student.userId,
@@ -229,6 +234,15 @@ async function handleRegistration(sectionId){
     displaySections(courseSections);
 
     alert(`✅ You have registered for section ${sectionId}`)
+}
+
+function countRegisteredCH(newSection, regSections) {
+    let totalCh = 0;
+    let regCoursesId = regSections.map(r => r.courseId);
+    regCoursesId.push(newSection.courseId);
+    let regCoursesCh = allCourses.filter(c => regCoursesId.includes(c.id)).map(c => c.creditHour);
+    regCoursesCh.forEach(rch => totalCh+=rch);
+    return totalCh;
 }
 
 function hasTimeConflict(newSection, registeredSections) {
@@ -265,8 +279,8 @@ let registeredSections = [];
 
 function getCurrentlyRegistered() {
     registeredSections = [];
-    let currentlyRegistered = allRegistrations.filter((registration) => registration.studentId === student.userId && registration.grade === "");
-    for(r of currentlyRegistered){
+    let ongoingAndRegistered = allRegistrations.filter((registration) => registration.studentId === student.userId && registration.grade === "");
+    for(r of ongoingAndRegistered){
         let sec = allSections.find((section) => section.sectionId === r.sectionId);
         if(sec.sectionStatus === "OPEN_REGISTRATION"){
             registeredSections.push(sec);
