@@ -128,7 +128,7 @@ function onSaveCourseEdit() {
     localStorage.selectedCourse = JSON.stringify(selectedCourse);
     localStorage.courses =  JSON.stringify(courses);
     onCancelCourseEdit()
-    alert(`${selectedCourse.courseName} status has been updated!`);
+    alert(`✅ ${selectedCourse.courseName} status has been updated!`);
 }
 
 // List of Sections
@@ -305,6 +305,8 @@ function onSaveSectionEdit(sectionId) {
     if(newApprovalStatus === "CANCELLED") {
         sections[index].currentSeats = 0;
         localStorage.registrations = JSON.stringify(registrations.filter(r => r.sectionId !== sectionId));
+        //Re-render section list
+        renderCourseSection(sections.filter(s => s.courseId===selectedCourse.id))
     }
 
     let newSectionStatus = cardCourseStatus.querySelector(".edit-section-status").value;
@@ -312,7 +314,7 @@ function onSaveSectionEdit(sectionId) {
 
     if(newSectionStatus === 'ONGOING' || newSectionStatus === "COMPLETED") {
         if(sections[index].approvalStatus !== "APPROVED") {
-            alert(`Section ID: ${sectionId} status cannot be ${newSectionStatus}. (NOT APPROVED STATUS YET)`);
+            alert(`⚠️ Section ID: ${sectionId} status cannot be ${newSectionStatus}. (NOT APPROVED STATUS YET)`);
         } else {
             doUpdateSectionStatus = true;
         }

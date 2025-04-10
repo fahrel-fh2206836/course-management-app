@@ -33,13 +33,13 @@ function handleAddCourse(e) {
     const formData = new FormData(e.target);
     const course = Object.fromEntries(formData);
     if(course.creditHour <= 0) {
-        alert("CREDIT HOUR SHOULD BE A POSITIVE INTEGER! (CH>0)");
+        alert("⚠️ CREDIT HOUR SHOULD BE A POSITIVE INTEGER! (CH>0)");
         return;
     }
 
     //Check if the course already exist.
     if(courses.map(c => c.courseCode.toLowerCase().replace(/\s+/g, '')).includes(course.courseCode.toLowerCase().replace(/\s+/g, ''))) {
-        alert("Course Already Exist!");
+        alert("⚠️ Course Already Exist!");
         return;
     }
 
@@ -68,7 +68,7 @@ function handleAddCourse(e) {
 
     form.reset();
 
-    alert(`${course.courseCode} is Added to the System.`);
+    alert(`✅ ${course.courseCode} is Added to the System.`);
 }
 
 function renderMajorDropdown() {

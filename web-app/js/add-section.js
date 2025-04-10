@@ -34,7 +34,7 @@ function handleAddSection(e) {
     const formData = new FormData(e.target);
     const section = Object.fromEntries(formData);
     if(section.totalSeats <= 0) {
-        alert("TOTAL SEATS SHOULD BE A POSITIVE INTEGER! (CH>0)");
+        alert("⚠️ TOTAL SEATS SHOULD BE A POSITIVE INTEGER! (CH>0)");
         return;
     }
 
@@ -61,5 +61,5 @@ function handleAddSection(e) {
     localStorage.sections = JSON.stringify(sections);
     form.reset();
 
-    alert(`Section ID: ${section.sectionId} is Added to the System.`);
+    alert(`✅ Section ID: ${section.sectionId} is Added to the System.`);
 }

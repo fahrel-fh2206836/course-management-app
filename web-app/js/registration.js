@@ -40,7 +40,7 @@ function displayPreCourses(preCourse){
 }
 
 function courseHTML(course){
-    return `<div class="course-card hover-underline">
+    return `<div class="course-card">
                 <div class="card-flag"><p>${course.courseCode}</p></div>                
                 <div class="card-course-name"><p>${course.courseName}</p></div>
                 <hr>
@@ -53,11 +53,11 @@ displayPreCourses(preCourses);
 function courseDone(courseID){
 
     for(let i = 0; i<allRegistrations.length ; i++){
-        
-        if(allRegistrations[i].studentId === student.userId && allRegistrations[i].courseId === courseID && allRegistrations[i].grade === ""){
+        let isRegistered = allRegistrations[i].studentId === student.userId && allRegistrations[i].courseId === courseID;
+        if( isRegistered && allRegistrations[i].grade === ""){
             return 2;
         }
-        else if(allRegistrations[i].studentId === student.userId && allRegistrations[i].courseId === courseID && allRegistrations[i].grade !== "F"){
+        else if(isRegistered && allRegistrations[i].grade !== "F"){
             return 1;
         }
     }
@@ -174,12 +174,12 @@ async function handleRegistration(sectionId){
     const selectedSection = allSections[index];
 
     if (selectedSection.currentSeats === selectedSection.totalSeats) {
-        alert("Section is Full!");
+        alert("⚠️ Section is Full!");
         return;
     }
 
     if(registeredSections.find(s => s.courseId === selectedSection.courseId)) {
-        alert("You have already registered this section or another section of the same course!");
+        alert("⚠️ You have already registered this section or another section of the same course!");
         return;
     }
 
@@ -188,21 +188,28 @@ async function handleRegistration(sectionId){
     let preReqCheck = [];
     preCourses.forEach(pc => preReqCheck.push(courseDone(pc.id)));
     if (preReqCheck[0] !== 1 && preReqCheck[1] !== 1 && preReqCheck[2] !== 1) {
-        alert("You have not compeleted all the prerequisites");
+        alert("⚠️ You have not compeleted all the prerequisites!");
         return;
     }
 
     // Check if he has already completed the course before
     if(courseDone(selectedSection.courseId) === 1) {
-        alert("You have compeleted this course already!");
+        alert("⚠️ You have compeleted this course already!");
         return;
     }
 
     // Checks if course is in their program.
     if(!majors.find(m => m.majorId === student.majorId).allCourses.includes(selectedSection.courseId)) {
-        alert("Course is not in your program of study!")
+        alert("⚠️ Course is not in your program of study!")
         return;
     }
+
+    // Check for time conflict
+    if (hasTimeConflict(selectedSection, registeredSections)) {
+        alert("⚠️ Time Conflict detected!");
+        return;
+    }
+
 
     let newRegistration = {
         studentId: student.userId,
@@ -221,9 +228,36 @@ async function handleRegistration(sectionId){
     getCourseSections();
     displaySections(courseSections);
 
-    alert(`You have registered for section ${sectionId}`)
+    alert(`✅ You have registered for section ${sectionId}`)
 }
 
+function hasTimeConflict(newSection, registeredSections) {
+    const newDays = newSection.schedule.days.split("-");
+    const [newStart, newEnd] = newSection.schedule.time.split("-").map(toMinutes);
+  
+    for (let r of registeredSections) {
+        if (!r.schedule || !r.schedule.days || !r.schedule.time) {
+            continue;
+        }
+        let regDays = r.schedule.days.split("-");
+        let [regStart, regEnd] = r.schedule.time.split("-").map(toMinutes);
+
+        let overlappingDays = newDays.some(day => regDays.includes(day));
+
+        if (overlappingDays) {
+            let isTimeOverlapping = newEnd >= regStart && newStart <= regEnd;
+            if (isTimeOverlapping) {
+                return true;
+            }
+        }
+    }
+    return false;
+  }
+
+function toMinutes(timeString) {
+    const [hours, minutes] = timeString.split(":").map(n => parseInt(n));
+    return hours * 60 + minutes;
+}
 
 // Get Registered sections
 
