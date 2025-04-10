@@ -320,6 +320,7 @@ function onSaveSectionEdit(sectionId) {
         if(sections[index].approvalStatus !== "APPROVED") {
             document.querySelector("#not-approved-notif").innerText = `⚠️ Status cannot be ${newSectionStatus}. (NOT APPROVED STATUS YET)`;
             showNotification("not-approved-notif");
+            return;
         } else {
             doUpdateSectionStatus = true;
         }
