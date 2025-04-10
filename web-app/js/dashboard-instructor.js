@@ -3,6 +3,9 @@ const registrations = JSON.parse(localStorage.registrations);
 const sections = JSON.parse(localStorage.sections);
 const courses = JSON.parse(localStorage.courses);
 const users = JSON.parse(localStorage.users);
+const semesters = JSON.parse(localStorage.semesters);
+const currentSem = localStorage.currentSem;
+
 
 const nameSpan = document.querySelector("#name");
 const teachingList = document.querySelector(".course-card-list");
@@ -64,7 +67,13 @@ function renderActiveCourses(){
             
             <div class="pFcourses">
                 <h3>Previous/Future Courses</h3>
-                <i class='bx bx-filter' ></i>
+                <div class="section-filters">
+                    <div class="semester-filter">
+                        <select id="semester-filter" name="semester">
+                            <!-- Added thru js -->
+                        </select>
+                    </div>
+                </div>
             </div>
             <div class="card-group">${notOngoingHTML || `<div class="empty-section"><i class='bx bxs-error-circle'></i><p>No Previous/Future Courses found.</p> </div>`}</div>
         `;
@@ -94,3 +103,15 @@ function goToGradeAllocation(sectionId) {
 }
 
 renderActiveCourses()
+
+function renderSemesterDropdown() {
+    const semesterDropdown = document.querySelector('#semester-filter');
+    semesterDropdown.innerHTML = convertSemesterOptionHTML();
+}
+function convertSemesterOptionHTML() {
+    let relevantsemesters = semesters.filter(s => s !== currentSem);
+    return `<option value="All" selected>All Semester</option>
+            $.map(s => ${relevantsemesters.map(s => `<option value="${s}">${s}</option>`).join('\n')}`;
+}
+
+renderSemesterDropdown()

@@ -7,7 +7,7 @@ async function retrieveJSONData(url) {
 
 async function loadLocalStorages() {
 
-    //Uncomment this for 2 sec if you changed any data in the json files then comment it again.
+    // Uncomment this for 2 sec if you changed any data in the json files then comment it again.
     // delete localStorage.majors;
     // delete localStorage.courses;
     // delete localStorage.sections;
