@@ -190,7 +190,7 @@ async function handleRegistration(sectionId){
     //Check if all Prerequisite are fullfilled
     let preReqCheck = [];
     preCourses.forEach(pc => preReqCheck.push(courseDone(pc.id)));
-    if (preReqCheck[0] !== 1 && preReqCheck[1] !== 1 && preReqCheck[2] !== 1) {
+    if (!(preReqCheck.length === 0) && !(arr.every(val => val === 1))) {
         alert("⚠️ You have not compeleted all the prerequisites!");
         return;
     }
