@@ -64,7 +64,6 @@ main {
     width: 100%;
     border-radius: 15px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px; 
-    
 }
 
 .registered-courses {
@@ -76,6 +75,7 @@ main {
     flex-direction: column;
     gap: 20px;
 }
+
 .search-bar{
     display: flex;
     align-items: center;
@@ -119,33 +119,38 @@ main {
 table {
     width: 100%;
     border-collapse: collapse;
-  }
-  
-  th {
+}
+
+th {
     width: 33.33%;
     text-align: center;
     padding: 20px; 
     border-bottom: 2px solid rgb(72, 71, 71);
-  }
-  tbody{
+}
+
+tbody{
     text-align: center;
-  }
-  tbody tr:nth-child(odd) {
+}
+
+tbody tr:nth-child(odd) {
     background-color: #F3EBDD;
     height: 50px;
     border-bottom: 1px solid gray;
-  }
-  
-  tbody tr:nth-child(even) {
+}
+
+tbody tr:nth-child(even) {
     background-color: #FCFAF6;
     height: 50px;
-    border-bottom: 1px solid gray;
-  }
-  
-  tbody tr:hover {
+}
+
+tbody tr:hover {
     background-color: #e8e0d1;
-  }
-  
+}
+
+tbody tr {
+    border: 1px solid gray;
+}
+
 select {
     background-color: #F3EBDD;
     border: 1px solid #D6C2A5;
@@ -163,18 +168,20 @@ select {
     background-position: right 10px center;
     background-size: 12px;
 }
-  
+
 select:focus {
     outline: none;
     border-color: #B99E7A;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
 }
+
 .buttons{
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
-button{
+
+.buttons button{
     width: 7rem;
     height: 2.6rem;
     margin: 18px;
@@ -183,9 +190,9 @@ button{
     cursor: pointer;
     font-weight: 700;
     font-size: 17px;
-
 }
-button:hover{
+
+.buttons button:hover{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
 }
 
@@ -193,13 +200,16 @@ button:hover{
     background-color: rgb(220, 220, 220);
     color: rgb(53, 52, 52);
 }
+
 .save-button{
     background-color: var(--chamoisse-);
     color: var(--beige-);
 }
+
 .save-button:active{
     background-color: rgb(161, 135, 112);
 }
+
 .cancel-button:active{
     background-color: rgb(182, 180, 180);
 }
@@ -217,7 +227,7 @@ button:hover{
     transform: translateX(150%);
     transition: transform 0.4s ease;
 }
-  .notification.show {
+
+.notification.show {
     transform: translateX(0%);
-  }
-  
+}

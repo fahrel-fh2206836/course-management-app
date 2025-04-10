@@ -20,7 +20,6 @@ const notif = document.getElementById("save-notification");
 
 checkForNotOngoingCourse();
 
-
 courseSpan.innerHTML = `${getCourseName()}`;
 sectionID.innerHTML = `${selectedSection.sectionId}`;
 NoOfStudents.innerHTML = `${selectedSection.currentSeats}`;
@@ -75,52 +74,79 @@ function renderStudents(filter){
 }
 
 function renderGradeOptions(currentGrade) {
-    const grades = ["A", "B+", "B-", "C+", "C-", "D+", "D-", "E", "F"];
+    const grades = ["", "A", "B", "C", "D", "F"];
     return grades.map(g => 
       `<option value="${g}" ${g === currentGrade ? "selected" : ""}>${g}</option>`
     ).join("");
-  }
+}
+
+let tempGradeChange = []
 
 document.addEventListener("change", (e) => {
-    let registrationArray=JSON.parse(localStorage.getItem("reg"))
-    if(!registrationArray){
-        registrationArray = [];
-    }
-    if (e.target.classList.contains("grade-dropdown")) {
-      const studentId = e.target.dataset.studentId;
-      const newGrade = e.target.value;
-      registrationArray.push({
-        studentId: studentId,
-        sectionId: selectedSection.sectionId,
-        grade: newGrade
-      });
-      localStorage.setItem("reg",JSON.stringify(registrationArray));
-    }
+  const studentId = e.target.dataset.studentId;
+  let index = tempGradeChange.findIndex(g => g.studentId === studentId);
+  if(index == -1) {
+    tempGradeChange.push({
+      studentId: studentId,
+      newGrade: e.target.value,
+      sectionId: selectedSection.sectionId
+    })
+  } else {
+    tempGradeChange[index].newGrade = e.target.value;
+  }
 });
 
 function cancelFunction(){
-  localStorage.removeItem('reg');
-  localStorage.removeItem('newGrade');
-  window.location.href = 'dashboard-instructor.html';
-
+  searchInput.value = "";
+  renderStudents("");
 }
 
 function saveFunction() {
-  const registrationArray = JSON.parse(localStorage.getItem('reg'));
-  if (registrationArray) {
-    registrationArray.forEach(change => {
-      const index = registrations.findIndex(r =>
-        r.studentId === change.studentId && r.sectionId === change.sectionId
-      );
-      if (index !== -1) {
-        registrations[index].grade = change.grade;
-      }
-    });
-    localStorage.setItem("registrations", JSON.stringify(registrations));
-    localStorage.removeItem("reg");
-    showNotification();
+  for (temp of tempGradeChange) {
+  
+    // Update registration local storage
+    let regIndex = registrations.findIndex(r => r.studentId === temp.studentId && r.sectionId === temp.sectionId);
+    registrations[regIndex].grade = temp.newGrade;
+    localStorage.registrations = JSON.stringify(registrations);
+
+
+    let userIndex = users.findIndex(u => u.userId === temp.studentId);
+    console.log(userIndex);
+    // Updating Finsihed Credit Hour of User
+    let courseId = sections.find(s => s.sectionId === temp.sectionId).courseId;
+    let courseCh = courses.find(c => c.id === courseId).creditHour;
+    users[userIndex].finishedCreditHour+=courseCh;
+
+
+    // Update GPA of User
+    let regsOfUser = registrations.filter(r => r.studentId === temp.studentId && r.grade!="");
+    users[userIndex].gpa = calculateGPA(regsOfUser, users[userIndex].finishedCreditHour);
+
+    localStorage.users = JSON.stringify(users);
   }
+  showNotification();
 }
+
+function calculateGPA(regsOfUser, finishedCreditHour) {
+    let gpa = 0.0;
+    for (r of regsOfUser) {
+      let courseCh = courses.find(c => c.id === r.courseId).creditHour;
+      if(r.grade === "A") {
+        gpa+=courseCh*4; 
+      } else if (r.grade === "B") {
+        gpa+=courseCh*3;
+      } else if (r.grade === "C") {
+        gpa+=courseCh*2;
+      } else if (r.grade === "D") {
+        gpa+=courseCh*1;
+      }
+      else if (r.grade === "F") {
+        gpa+=courseCh*0;
+      }
+    }
+    return parseFloat((gpa/finishedCreditHour).toFixed(2));
+}
+
 
 
 function showNotification() {
@@ -128,5 +154,8 @@ function showNotification() {
 
   setTimeout(() => {
       notif.classList.remove("show");
-  }, 2500);
+  }, 3000);
 }
+
+
+console.log(users);

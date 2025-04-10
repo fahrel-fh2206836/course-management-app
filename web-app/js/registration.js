@@ -197,7 +197,7 @@ async function handleRegistration(sectionId){
 
     // Check if he has already completed the course before
     if(courseDone(selectedSection.courseId) === 1) {
-        alert("⚠️ You have compeleted this course already!");
+        alert("⚠️ You have passed this course already!");
         return;
     }
 
