@@ -3,6 +3,11 @@
     flex-direction: column;
     gap: 10px;
 }
+.pFcard-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 .pFcourses{
     display: flex;
     flex-direction: row;
@@ -21,6 +26,11 @@
 @media (min-width: 1024px) {
 
     .card-group{
+        display: grid;
+        gap: 30px;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+    .pFcard-group{
         display: grid;
         gap: 30px;
         grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));

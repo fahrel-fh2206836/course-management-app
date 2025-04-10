@@ -10,12 +10,15 @@ const semesters = JSON.parse(localStorage.semesters);
 const currentSem = localStorage.currentSem;
 
 
+
 const nameSpan = document.querySelector("#name");
 const teachingList = document.querySelector(".course-card-list");
 const Activeclass = document.querySelector("#Activeclass");
 const totalStud = document.querySelector("#totalStud")
 const numberOfClasses = document.querySelector("#Noclasses");
 const instructorSections = sections.filter(section => section.instructorId === user.userId);
+
+
 
 nameSpan.innerText = `${user.firstName} ${user.lastName}`;
 Activeclass.innerHTML = `${countClasses()}`;
@@ -78,9 +81,11 @@ function renderActiveCourses(){
                     </div>
                 </div>
             </div>
-            <div class="card-group">${notOngoingHTML || `<div class="empty-section"><i class='bx bxs-error-circle'></i><p>No Previous/Future Courses found.</p> </div>`}</div>
+            <div class="pFcard-group">${notOngoingHTML || `<div class="empty-section"><i class='bx bxs-error-circle'></i><p>No Previous/Future Courses found.</p> </div>`}</div>
         `;
 }
+
+renderActiveCourses();
 
 function generateCourseListHTML(s, c) {
     return `
@@ -105,8 +110,6 @@ function goToGradeAllocation(sectionId) {
     window.location.href='grade-allocation.html';
 }
 
-renderActiveCourses()
-
 function renderSemesterDropdown() {
     const semesterDropdown = document.querySelector('#semester-filter');
     semesterDropdown.innerHTML = convertSemesterOptionHTML();
@@ -118,3 +121,24 @@ function convertSemesterOptionHTML() {
 }
 
 renderSemesterDropdown()
+
+const pFcardGroup = document.querySelector(".pFcard-group");
+const semFilter = document.querySelector("#semester-filter");
+semFilter.addEventListener('change', handleFilter);
+
+function handleFilter(e){
+    let selectedSections;
+    if(semFilter.value !== "All") {
+        selectedSections = instructorSections.filter(s => s.semester === semFilter.value);
+    }else{
+        selectedSections = instructorSections.filter(s => s.sectionStatus !== "ONGOING");
+    }
+    
+    pFcardGroup.innerHTML = '';
+    if(selectedSections){
+        selectedSections.forEach(section => {
+            let course = courses.find(c => c.id === section.courseId);
+            pFcardGroup.innerHTML += generateCourseListHTML(section,course);
+        })
+    }
+}
