@@ -224,22 +224,6 @@
     },
 
     {
-        "sectionId": "15",
-        "courseId": "4",
-        "instructorId": "1002",
-        "currentSeats": 0,
-        "totalSeats": 15,
-        "semester": "Fall 2025",
-        "location": "H07-B203",
-        "approvalStatus": "PENDING",
-        "sectionStatus": "OPEN_REGISTRATION",
-        "schedule": {
-            "days": "SUN-TUE-THU",
-            "time": "8:00-8:50"
-        }
-    },
-
-    {
         "sectionId": "16",
         "courseId": "53",
         "instructorId": "1003",

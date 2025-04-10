@@ -95,7 +95,7 @@
         "courseName": "Data Structures",
         "prerequisitesCoursesId": ["2"],
         "isOngoing": true,
-        "isRegistration": true
+        "isRegistration": false
       },
       {
         "id": "7",
