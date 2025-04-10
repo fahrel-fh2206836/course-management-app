@@ -1,9 +1,5 @@
 const currPage = localStorage.currentPage;
 
-function setCurrPage(page){
-    localStorage.currentPage = page;
-}
-
 function loadNavbar() {
     let navbar = document.querySelector("#navbar");
     navbar.innerHTML = navbarHTML();
@@ -55,13 +51,13 @@ function navbarHTML() {
                 </div>
                     <ul id="menulist">
                         <div class="nav-index ${currPage === 'dashboard' ? 'active' : ''}">
-                            <li><i class='bx bxs-home'></i> <a href="dashboard-student.html" onclick="setCurrPage('dashboard')">Dashboard</a></li>
+                            <li><i class='bx bxs-home'></i> <a href="dashboard-student.html">Dashboard</a></li>
                         </div>
                         <div class="nav-index ${currPage === 'courses' ? 'active' : ''}">
-                            <li><i class='bx bxs-book'></i> <a href="courses-students.html" onclick="setCurrPage('courses')">Courses</a></li>
+                            <li><i class='bx bxs-book'></i> <a href="courses-students.html">Courses</a></li>
                         </div>
                         <div class="nav-index ${currPage === 'learningPath' ? 'active' : ''}">           
-                            <li><i class='bx bxs-graduation'></i> <a href="learning-path.html" onclick="setCurrPage('learningPath')">Learning Path</a></li>
+                            <li><i class='bx bxs-graduation'></i> <a href="learning-path.html">Learning Path</a></li>
                         </div>
                     ${logoutAndMenuHTML()}`;
                     
@@ -75,7 +71,7 @@ function navbarHTML() {
                 </div>
                     <ul id="menulist">
                         <div class="nav-index ${currPage === 'dashboard' ? 'active' : ''}">
-                            <li><i class='bx bxs-home'></i> <a href="dashboard-instructor.html" onclick="setCurrPage('dashboard')">Dashboard</a></li>
+                            <li><i class='bx bxs-home'></i> <a href="dashboard-instructor.html">Dashboard</a></li>
                         </div>
                         <div class="nav-index">
                             <li><i class='bx bxs-cog'></i> <a href="#">Course Instructor Allocation</a></li>
@@ -93,13 +89,13 @@ function navbarHTML() {
             </div>
                 <ul id="menulist">
                     <div class="nav-index ${currPage === 'dashboard' ? 'active' : ''}">
-                        <li><i class='bx bxs-home'></i> <a href="dashboard-admin.html" onclick="setCurrPage('dashboard')">Dashboard</a></li>
+                        <li><i class='bx bxs-home'></i> <a href="dashboard-admin.html">Dashboard</a></li>
                     </div>
                     <div class="nav-index ${currPage === 'addCourses' ? 'active' : ''}">
-                        <li><i class='bx bxs-book-add'></i> <a href="add-courses.html" onclick="setCurrPage('addCourses')">Add Course</a></li>
+                        <li><i class='bx bxs-book-add'></i> <a href="add-courses.html">Add Course</a></li>
                     </div>
                     <div class="nav-index ${currPage === 'addSection' ? 'active' : ''}">
-                        <li><i class='bx bxs-plus-circle'></i> <a href="add-section.html" onclick="setCurrPage('addSection')">Add Section</a></li>
+                        <li><i class='bx bxs-plus-circle'></i> <a href="add-section.html">Add Section</a></li>
                     </div>
                 ${logoutAndMenuHTML()}`;
 }
@@ -115,5 +111,3 @@ function logoutAndMenuHTML() {
 }
 
 loadNavbar();
-
- 

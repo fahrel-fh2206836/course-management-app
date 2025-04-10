@@ -1,3 +1,6 @@
+// Set localstorage.currentpage
+localStorage.currentPage = "registration";
+
 const selectedCourse = JSON.parse(localStorage.selectedCourse);
 const allRegistrations = JSON.parse(localStorage.registrations);
 const currentSem = localStorage.currentSem;

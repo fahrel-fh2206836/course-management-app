@@ -1,3 +1,6 @@
+// Set localstorage.currentpage
+localStorage.currentPage = "dashboard";
+
 const courseListGeneral = document.querySelector("#course-list-general");
 const courses = JSON.parse(localStorage.courses);
 const statusDropdown = document.querySelector('#status');

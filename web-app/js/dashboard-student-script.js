@@ -1,3 +1,6 @@
+// Set localstorage.currentpage
+localStorage.currentPage = "dashboard";
+
 const user = JSON.parse(localStorage.getItem("loggedInUser"));
 const majors = JSON.parse(localStorage.majors);
 const registrations = JSON.parse(localStorage.registrations);

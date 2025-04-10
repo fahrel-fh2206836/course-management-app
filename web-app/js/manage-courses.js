@@ -1,3 +1,6 @@
+// Set localstorage.currentpage
+localStorage.currentPage = "manageCourse";
+
 const majors = JSON.parse(localStorage.majors);
 const courses = JSON.parse(localStorage.courses);
 const sections = JSON.parse(localStorage.sections);

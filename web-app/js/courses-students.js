@@ -1,3 +1,6 @@
+// Set localstorage.currentpage
+localStorage.currentPage = "courses";
+
 let dropDownBtn = document.querySelector("#dropdown-btn");
 let list = document.querySelector("#list");
 let icon = document.querySelector("#drop-icon");
