@@ -143,6 +143,7 @@ input, select {
     background-color: var(--light-beige-);
     color: black;
     cursor: pointer;
+    font-size: .7rem;
 }
 
 .day-checkbox:checked + .day-label {
@@ -166,5 +167,9 @@ input, select {
     .day-select {
         width: 70%;
         margin-top: 0px
+    }
+
+    .day-label {
+        font-size: 1rem;
     }
 }
