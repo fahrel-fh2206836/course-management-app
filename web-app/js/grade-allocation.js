@@ -79,14 +79,19 @@ function renderGradeOptions(currentGrade) {
   }
 
 document.addEventListener("change", (e) => {
+    let registrationArray=JSON.parse(localStorage.getItem("reg"))
+    if(!registrationArray){
+        registrationArray = [];
+    }
     if (e.target.classList.contains("grade-dropdown")) {
       const studentId = e.target.dataset.studentId;
       const newGrade = e.target.value;
-      const registration = registrations.find(r => 
-        r.studentId === studentId && r.sectionId === selectedSection.sectionId
-      );
-      localStorage.setItem("reg",JSON.stringify(registration));
-      localStorage.setItem("newGrade",JSON.stringify(newGrade));
+      registrationArray.push({
+        studentId: studentId,
+        sectionId: selectedSection.sectionId,
+        grade: newGrade
+      });
+      localStorage.setItem("reg",JSON.stringify(registrationArray));
     }
 });
 
@@ -97,24 +102,23 @@ function cancelFunction(){
 
 }
 
-function saveFunction(){
-  const reg = JSON.parse(localStorage.getItem('reg'));
-  const newGrade = JSON.parse(localStorage.getItem('newGrade'));
-  if (reg) {
-    const index = registrations.findIndex(r =>
-      r.studentId === reg.studentId && r.sectionId === reg.sectionId
-    );
-  if(index !== -1){
-    registrations[index].grade = newGrade;
+function saveFunction() {
+  const registrationArray = JSON.parse(localStorage.getItem('reg'));
+  if (registrationArray) {
+    registrationArray.forEach(change => {
+      const index = registrations.findIndex(r =>
+        r.studentId === change.studentId && r.sectionId === change.sectionId
+      );
+      if (index !== -1) {
+        registrations[index].grade = change.grade;
+      }
+    });
     localStorage.setItem("registrations", JSON.stringify(registrations));
+    localStorage.removeItem("reg");
+    showNotification();
   }
-  }
-  // alert("Grade saved successfully!");
-
-  localStorage.removeItem('reg');
-  localStorage.removeItem('newGrade');
-  showNotification();
 }
+
 
 function showNotification() {
   notif.classList.add("show");
