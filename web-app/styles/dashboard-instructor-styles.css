@@ -10,9 +10,9 @@
 }
 .pFcourses{
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
 }
+
 .bx-filter{
     color: #a07856;
     font-size: 30px;
