@@ -135,10 +135,12 @@ function handleFilter(e){
     }
     
     pFcardGroup.innerHTML = '';
-    if(selectedSections){
+    if(selectedSections.length >= 1){
         selectedSections.forEach(section => {
             let course = courses.find(c => c.id === section.courseId);
             pFcardGroup.innerHTML += generateCourseListHTML(section,course);
         })
+    }else{
+        pFcardGroup.innerHTML = `<div class="empty-section"><i class='bx bxs-error-circle'></i><p>No Courses found.</p> </div>`;
     }
 }
