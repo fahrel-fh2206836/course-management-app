@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <title>Add-Courses</title>
+    <title>Add Courses</title>
     <link rel="stylesheet" href="../styles/navbar-styles.css">
     <link rel="stylesheet" href="../styles/dialog-styles.css">
     <link rel="stylesheet" href="../styles/add-page-styles.css">
+    <link rel="stylesheet" href="../styles/notification-styles.css">
 </head>
 <body>
     <header>
@@ -69,6 +70,11 @@
                 </div>
 
             </form>
+
+            <!-- Notifications -->
+            <div id="negative-seats-notif" class="fail notification">⚠️ TOTAL SEATS SHOULD BE A POSITIVE INTEGER! (CH>0)!</div>
+            <div id="exist-notif" class="fail notification">⚠️ Course Already Exist!</div>
+            <div id="added-notif" class="success notification"></div>
         </div>
     </main>
     <script src="../js/add-courses.js"></script>

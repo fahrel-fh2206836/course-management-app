@@ -213,21 +213,3 @@ select:focus {
 .cancel-button:active{
     background-color: rgb(182, 180, 180);
 }
-
-.notification {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #4CAF50;
-    color: white;
-    padding: 12px 20px;
-    border-radius: 6px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    font-size: 14px;
-    transform: translateX(150%);
-    transition: transform 0.4s ease;
-}
-
-.notification.show {
-    transform: translateX(0%);
-}

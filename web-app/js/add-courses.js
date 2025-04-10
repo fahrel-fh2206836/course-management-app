@@ -36,13 +36,13 @@ function handleAddCourse(e) {
     const formData = new FormData(e.target);
     const course = Object.fromEntries(formData);
     if(course.creditHour <= 0) {
-        alert("⚠️ CREDIT HOUR SHOULD BE A POSITIVE INTEGER! (CH>0)");
+        showNotification("negative-seats-notif");
         return;
     }
 
     //Check if the course already exist.
     if(courses.map(c => c.courseCode.toLowerCase().replace(/\s+/g, '')).includes(course.courseCode.toLowerCase().replace(/\s+/g, ''))) {
-        alert("⚠️ Course Already Exist!");
+        showNotification("exist-notif");
         return;
     }
 
@@ -71,7 +71,8 @@ function handleAddCourse(e) {
 
     form.reset();
 
-    alert(`✅ ${course.courseCode} is Added to the System.`);
+    document.querySelector('#added-notif').innerText = `✅ ${course.courseCode} is Added to the System.`;
+    showNotification("added-notif");
 }
 
 function renderMajorDropdown() {
@@ -80,5 +81,12 @@ function renderMajorDropdown() {
                                 ${majors.map(m => `<option value="${m.majorId}">${m.majorName} (${m.majorCode})</option>`).join('\n')}`;
 }
 
-
 renderMajorDropdown();
+
+function showNotification(elementId) {
+    document.querySelector(`#${elementId}`).classList.add("show");
+
+    setTimeout(() => {
+        document.querySelector(`#${elementId}`).classList.remove("show");
+    }, 3000);
+}

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../styles/registration-styles.css">
     <link rel="stylesheet" href="../styles/course-description-styles.css">
     <link rel="stylesheet" href="../styles/section-list-styles.css">
+    <link rel="stylesheet" href="../styles/notification-styles.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
@@ -65,6 +66,16 @@
             </div>
         </div>
 
+        <!-- Notifications -->
+        <div id="full-notif" class="fail notification">⚠️ Section is Full!</div>
+        <div id="same-course-notif" class="fail notification">⚠️ You have already registered this section or another section of the same course!</div>
+        <div id="prerequisite-notif" class="fail notification">⚠️ You have not compeleted all the prerequisites!</div>
+        <div id="max-ch-notif" class="fail notification">⚠️ You will be over the max limit of 18 CH!</div>
+        <div id="not-program-notif" class="fail notification">⚠️ Course is not in your program of study!</div>
+        <div id="passed-notif" class="fail notification">⚠️ You have passed this course already!</div>
+        <div id="conflict-notif" class="fail notification">⚠️ Time Conflict detected!</div>
+        <div id="registered-notif" class="success notification">✅ You have sucessfully registered!</div>
+        <div id="unregistered-notif" class="success notification">✅ You have sucessfully dropped the section!</div>
     </main>
 
     <script src="../js/registration.js"></script>

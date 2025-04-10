@@ -131,7 +131,8 @@ function onSaveCourseEdit() {
     localStorage.selectedCourse = JSON.stringify(selectedCourse);
     localStorage.courses =  JSON.stringify(courses);
     onCancelCourseEdit()
-    alert(`✅ ${selectedCourse.courseName} status has been updated!`);
+    document.querySelector("#updated-course-notif").innerText = `✅ ${selectedCourse.courseName} status has been updated!`;
+    showNotification("updated-course-notif");
 }
 
 // List of Sections
@@ -317,7 +318,8 @@ function onSaveSectionEdit(sectionId) {
 
     if(newSectionStatus === 'ONGOING' || newSectionStatus === "COMPLETED") {
         if(sections[index].approvalStatus !== "APPROVED") {
-            alert(`⚠️ Section ID: ${sectionId} status cannot be ${newSectionStatus}. (NOT APPROVED STATUS YET)`);
+            document.querySelector("#not-approved-notif").innerText = `⚠️ Status cannot be ${newSectionStatus}. (NOT APPROVED STATUS YET)`;
+            showNotification("not-approved-notif");
         } else {
             doUpdateSectionStatus = true;
         }
@@ -329,6 +331,7 @@ function onSaveSectionEdit(sectionId) {
     
     onCancelSectionEdit(sectionId)
     localStorage.sections =  JSON.stringify(sections);
+    showNotification("updated-section-notif");
 }
 
 // Render Semester Filter
@@ -344,3 +347,11 @@ function convertSemesterOptionHTML() {
 }
 
 renderSemesterDropdown()
+
+function showNotification(elementId) {
+    document.querySelector(`#${elementId}`).classList.add("show");
+
+    setTimeout(() => {
+        document.querySelector(`#${elementId}`).classList.remove("show");
+    }, 3000);
+}

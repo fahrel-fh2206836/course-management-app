@@ -176,46 +176,45 @@ async function handleRegistration(sectionId){
     const index = allSections.findIndex(s => s.sectionId === sectionId);
     const selectedSection = allSections[index];
 
-    if (selectedSection.currentSeats === selectedSection.totalSeats) {
-        alert("⚠️ Section is Full!");
-        return;
-    }
-
-    if(registeredSections.find(s => s.courseId === selectedSection.courseId)) {
-        alert("⚠️ You have already registered this section or another section of the same course!");
-        return;
-    }
-
-    
-    //Check if all Prerequisite are fullfilled
-    let preReqCheck = [];
-    preCourses.forEach(pc => preReqCheck.push(courseDone(pc.id)));
-    if (!(preReqCheck.length === 0) && !(preReqCheck.every(val => val === 1))) {
-        alert("⚠️ You have not compeleted all the prerequisites!");
-        return;
-    }
-
-    // Check if he has already completed the course before
-    if(courseDone(selectedSection.courseId) === 1) {
-        alert("⚠️ You have passed this course already!");
+    // Check if he registered over 18
+    if(countRegisteredCH(selectedSection, registeredSections) > 18){
+        showNotification("max-ch-notif");
         return;
     }
 
     // Checks if course is in their program.
     if(!majors.find(m => m.majorId === student.majorId).allCourses.includes(selectedSection.courseId)) {
-        alert("⚠️ Course is not in your program of study!")
+        showNotification("not-program-notif");
+        return;
+    }
+
+    // Check if he has already completed the course before
+    if(courseDone(selectedSection.courseId) === 1) {
+        showNotification("passed-notif");
+        return;
+    }
+
+    if (selectedSection.currentSeats === selectedSection.totalSeats) {
+        showNotification("full-notif");
+        return;
+    }
+
+    if(registeredSections.find(s => s.courseId === selectedSection.courseId)) {
+        showNotification("same-course-notif");
+        return;
+    }
+
+    //Check if all Prerequisite are fullfilled
+    let preReqCheck = [];
+    preCourses.forEach(pc => preReqCheck.push(courseDone(pc.id)));
+    if (!(preReqCheck.length === 0) && !(preReqCheck.every(val => val === 1))) {
+        showNotification("prerequisite-notif")
         return;
     }
 
     // Check for time conflict
     if (hasTimeConflict(selectedSection, registeredSections)) {
-        alert("⚠️ Time Conflict detected!");
-        return;
-    }
-
-    // Check if he registered over 18
-    if(countRegisteredCH(selectedSection, registeredSections) > 18){
-        alert("⚠️ You will be over the max limit of 18 CH!");
+        showNotification("conflict-notif");
         return;
     }
 
@@ -236,7 +235,7 @@ async function handleRegistration(sectionId){
     getCourseSections();
     displaySections(courseSections);
 
-    alert(`✅ You have registered for section ${sectionId}`)
+    showNotification('registered-notif');
 }
 
 function countRegisteredCH(newSection, regSections) {
@@ -350,7 +349,14 @@ function removeRegistered(sectionId){
     displayRegisteredSections(registeredSections);
     getCourseSections();
     displaySections(courseSections);
+    showNotification("unregistered-notif");
 } 
 
+function showNotification(elementId) {
+    document.querySelector(`#${elementId}`).classList.add("show");
 
+    setTimeout(() => {
+        document.querySelector(`#${elementId}`).classList.remove("show");
+    }, 3000);
+}
 
