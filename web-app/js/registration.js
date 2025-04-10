@@ -194,8 +194,13 @@ async function handleRegistration(sectionId){
 
     // Check if he has already completed the course before
     if(courseDone(selectedSection.courseId) === 1) {
-        console.log(courseDone(selectedSection.courseId))
         alert("You have compeleted this course already!");
+        return;
+    }
+
+    // Checks if course is in their program.
+    if(!majors.find(m => m.majorId === student.majorId).allCourses.includes(selectedSection.courseId)) {
+        alert("Course is not in your program of study!")
         return;
     }
 
@@ -223,7 +228,6 @@ async function handleRegistration(sectionId){
 // Get Registered sections
 
 let registeredSections = [];
-getCurrentlyRegistered();
 
 function getCurrentlyRegistered() {
     registeredSections = [];
@@ -235,6 +239,8 @@ function getCurrentlyRegistered() {
         }
     }
 }
+
+getCurrentlyRegistered();
 
 function displayRegisteredSections(sections){
     let html = "";
