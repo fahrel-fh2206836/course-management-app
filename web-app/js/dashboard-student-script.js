@@ -52,8 +52,7 @@ function renderRegisteredCourses() {
             let instructor = users.find(u => u.userId === section.instructorId);
             html+=generateCourseListHTML(section, course, instructor)+'\n';
         })
-    }
-    console.log(html); 
+    } 
     registeredList.innerHTML = html;
 }
 

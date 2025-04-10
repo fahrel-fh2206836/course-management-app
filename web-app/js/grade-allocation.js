@@ -76,7 +76,7 @@ function renderStudents(filter){
 function renderGradeOptions(currentGrade) {
     const grades = ["", "A", "B", "C", "D", "F"];
     return grades.map(g => 
-      `<option value="${g}" ${g === currentGrade ? "selected" : ""}>${g}</option>`
+      `<option value="${g === "" ? 'None' : g}" ${g === currentGrade ? "selected" : ""}>${g}</option>`
     ).join("");
 }
 
@@ -88,15 +88,16 @@ document.addEventListener("change", (e) => {
   if(index == -1) {
     tempGradeChange.push({
       studentId: studentId,
-      newGrade: e.target.value,
+      newGrade: e.target.value === "None" ? "" : e.target.value,
       sectionId: selectedSection.sectionId
     })
   } else {
-    tempGradeChange[index].newGrade = e.target.value;
+    tempGradeChange[index].newGrade = e.target.value === "None" ? "" : e.target.value;
   }
 });
 
 function cancelFunction(){
+  tempGradeChange = [];
   searchInput.value = "";
   renderStudents("");
 }
@@ -106,18 +107,24 @@ function saveFunction() {
   
     // Update registration local storage
     let regIndex = registrations.findIndex(r => r.studentId === temp.studentId && r.sectionId === temp.sectionId);
+    let oldGrade = registrations[regIndex].grade;
     registrations[regIndex].grade = temp.newGrade;
     localStorage.registrations = JSON.stringify(registrations);
 
 
     let userIndex = users.findIndex(u => u.userId === temp.studentId);
-    console.log(userIndex);
     // Updating Finsihed Credit Hour of User
     let courseId = sections.find(s => s.sectionId === temp.sectionId).courseId;
     let courseCh = courses.find(c => c.id === courseId).creditHour;
-    users[userIndex].finishedCreditHour+=courseCh;
 
-
+    if(temp.newGrade === "F" || temp.newGrade === "") {
+      if(["A", "B", "C", "D"].includes(oldGrade)) {
+        users[userIndex].finishedCreditHour-=courseCh;
+      }
+    } else {
+      users[userIndex].finishedCreditHour+=courseCh;
+    }
+    
     // Update GPA of User
     let regsOfUser = registrations.filter(r => r.studentId === temp.studentId && r.grade!="");
     users[userIndex].gpa = calculateGPA(regsOfUser, users[userIndex].finishedCreditHour);
@@ -140,14 +147,9 @@ function calculateGPA(regsOfUser, finishedCreditHour) {
       } else if (r.grade === "D") {
         gpa+=courseCh*1;
       }
-      else if (r.grade === "F") {
-        gpa+=courseCh*0;
-      }
     }
     return parseFloat((gpa/finishedCreditHour).toFixed(2));
 }
-
-
 
 function showNotification() {
   notif.classList.add("show");
@@ -156,6 +158,3 @@ function showNotification() {
       notif.classList.remove("show");
   }, 3000);
 }
-
-
-console.log(users);
