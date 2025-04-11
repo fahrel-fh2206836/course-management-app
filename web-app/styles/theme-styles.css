@@ -21,6 +21,7 @@
 
 .empty-section {
     text-align: center;
+    align-self: center;
     i {
         font-size: 5rem;
         color: var(--bistre-);

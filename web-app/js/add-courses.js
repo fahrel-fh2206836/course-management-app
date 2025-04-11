@@ -35,6 +35,7 @@ function handleAddCourse(e) {
 
     const formData = new FormData(e.target);
     const course = Object.fromEntries(formData);
+    course.creditHour = parseInt(course.creditHour);
     if(course.creditHour <= 0) {
         showNotification("negative-seats-notif");
         return;

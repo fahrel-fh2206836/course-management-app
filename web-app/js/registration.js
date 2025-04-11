@@ -177,7 +177,7 @@ async function handleRegistration(sectionId){
     const selectedSection = allSections[index];
 
     // Check if he registered over 18
-    if(countRegisteredCH(selectedSection, registeredSections) > 18){
+    if(countNewSecAndRegisteredCh(selectedSection, registeredSections) > 18){
         showNotification("max-ch-notif");
         return;
     }
@@ -238,10 +238,15 @@ async function handleRegistration(sectionId){
     showNotification('registered-notif');
 }
 
-function countRegisteredCH(newSection, regSections) {
+function countNewSecAndRegisteredCh(newSection, regSections) {
+    let totalCh = countRegisteredCH(regSections);
+    totalCh += allCourses.find(c => c.id === newSection.courseId).creditHour;
+    return totalCh;
+}
+
+function countRegisteredCH(regSections) {
     let totalCh = 0;
     let regCoursesId = regSections.map(r => r.courseId);
-    regCoursesId.push(newSection.courseId);
     let regCoursesCh = allCourses.filter(c => regCoursesId.includes(c.id)).map(c => c.creditHour);
     regCoursesCh.forEach(rch => totalCh+=rch);
     return totalCh;
@@ -291,6 +296,8 @@ function getCurrentlyRegistered() {
 }
 
 getCurrentlyRegistered();
+
+document.querySelector("#curr-ch").innerText = ` Your CH: ${countRegisteredCH(registeredSections)}`
 
 function displayRegisteredSections(sections){
     let html = "";
@@ -359,4 +366,3 @@ function showNotification(elementId) {
         document.querySelector(`#${elementId}`).classList.remove("show");
     }, 3000);
 }
-
