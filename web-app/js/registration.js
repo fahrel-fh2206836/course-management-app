@@ -194,11 +194,13 @@ async function handleRegistration(sectionId){
         return;
     }
 
+    // Check if seats are full
     if (selectedSection.currentSeats === selectedSection.totalSeats) {
         showNotification("full-notif");
         return;
     }
 
+    // Checks if he has already registered in the same section or another section of the same course.
     if(registeredSections.find(s => s.courseId === selectedSection.courseId)) {
         showNotification("same-course-notif");
         return;
@@ -218,6 +220,8 @@ async function handleRegistration(sectionId){
         return;
     }
 
+
+    // Creating new registration    
     let newRegistration = {
         studentId: student.userId,
         courseId: selectedSection.courseId,
