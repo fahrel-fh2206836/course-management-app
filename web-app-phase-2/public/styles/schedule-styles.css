@@ -1,0 +1,68 @@
+@import url(theme-styles.css);
+
+.week-days {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+.day {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1rem;
+    border: 1px solid var(--bistre-);
+    border-radius: 3px;
+    background-color: white;
+    color: black;
+}
+
+.day.selected {
+    background-color: var(--coffee-);
+    color: white;
+}
+
+h2 {
+    color: var(--bistre-);
+    font-size: 1.1rem;
+}
+
+table {
+    display: block;
+    border-collapse: collapse;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    overflow-y: auto;
+    max-height: 500px;
+}
+
+th, td {
+    padding: 12px;
+    border: .5px solid var(--bistre-);
+    text-align: center;
+}
+
+th {
+    background-color: var(--khaki-);
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:nth-child(odd) {
+    background-color: white;
+}
+
+/* Responsive Table */
+@media (max-width: 900px) {
+    table {
+        overflow-x: auto;
+        width: 100%;
+    }
+}

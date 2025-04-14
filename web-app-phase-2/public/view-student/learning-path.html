@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Path</title>
+    <link rel="stylesheet" href="../styles/navbar-styles.css">
+    <link rel="stylesheet" href="../styles/dialog-styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../styles/student-learning-path.css">
+</head>
+<body>
+    <header>
+        <nav id="navbar">
+            <!-- Added thru js -->
+        </nav>    
+    </header> 
+    <main>
+        <h1>Track your Progress</h1>
+        
+        <div class="achievements section-style">
+            <p>Hello, <span id="name">{First Name} {Last Name}</span> Here’s a summary of your <span>Academic Performance</span> so far:</p>
+            <img src="../assets/images/track_achievements_wide.png" alt="">
+            <div class="stats-card">
+                <div><span>Major:</span><span id="stats-major">{Major}</span></div>
+                <div><span>CGPA:</span><span id="stats-CGPA">{CGPA}</span></div>
+                <div><span>Completed Courses:</span><span id="stats-completed-courses">{5}</span></div>
+                <div><span>Completed Credit Hours:</span><span id="stats-completed-ch">{CH}/{MAJOR CH}</span></div>
+                <div><div id="progress-bar"><div></div></div><span id="bar-percentage">{40%}</span></div>
+            </div>
+        </div>
+        
+        
+        <div class="tracker section-style">
+            <h1> Track your Learning Path <i class='bx bx-trending-up'></i></h1>
+
+            <label for="status-filter" class="status-label">Select Status:</label>
+            <select id="status-filter" class="status-dropdown">
+                <option value="completed">Completed</option>
+                <option value="in_progress">In progress</option>
+                <option value="pending">Pending</option>
+            </select>
+            
+            <div class="container">
+                <div class="status-completed">
+                    <h2><span class="status-dot completed-dot"></span> Completed</h2>
+                    <div class="course-list">
+                        <!-- Added thru js -->
+                    </div>
+                </div>
+
+                <div class="status-pending">
+                    <h2><span class="status-dot pending-dot"></span> Pending</h2>
+                    <div class="course-list">
+                        <!-- Added thru js -->
+                    </div>
+                </div>
+                <div class="status-in_progress">
+                    <h2><span class="status-dot in_progress-dot"></span> In progress</h2>
+                    <div class="course-list">
+                        <!-- Added thru js -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class = "prerequisite section-style">
+            <h1>Your Program's Prerequiste Flowchart <i class='bx bx-sitemap'></i></h1>
+            <div class = "img-prerequiste">
+                <img id="picture" src="" alt="">
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/student-learningpath.js"></script>
+    <script src="../js/navbar-script.js"></script>
+    <script src="../js/logout-dialog.js"></script>
+</body>
+</html>

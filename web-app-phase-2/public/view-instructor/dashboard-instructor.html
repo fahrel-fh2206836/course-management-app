@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Dashboard-Instructor</title>
+    <link rel="stylesheet" href="../styles/navbar-styles.css">
+    <link rel="stylesheet" href="../styles/dialog-styles.css">
+    <link rel="stylesheet" href="../styles/dashboard-styles.css">
+    <link rel="stylesheet" href="../styles/dashboard-instructor-styles.css">
+    <link rel="stylesheet" href="../styles/course-card-styles.css">
+    <link rel="stylesheet" href="../styles/section-list-styles.css">
+</head>
+<body>
+    <header>
+        <nav id="navbar">
+            <!-- Added thru js -->
+        </nav>     
+    </header> 
+    <main>
+        <h1>Course Management System</h1>
+        <div class="welcome-stats section-style">
+            <p><span>Welcome</span>, <span id="name">{First Name} {Last Name}</span>, to Qatar University's Course Management System.</p>
+            <p>Your personalized dashboard is here to help you manage your courses and streamline your teaching experience</p>
+            
+            <div class="stats-card">
+                <div><span>Active Classes:</span><span id="Activeclass">{3}</span></div>
+                <div><span>Number of Active Students:</span><span id="totalStud">{90}</span></div>
+                <div><span>Total Classes:</span><span id="Noclasses">{3}</span></div>
+            </div>
+        </div>
+        <div class="welcome-img">
+            <img src="../assets/images/welcome2.jpg" alt="">
+        </div>
+        <h1 id="ongoing-text">Teaching Sections</h1>
+        <div class="registered-courses section-style">
+            <ul class="course-card-list">
+                <!-- Need to dynamically add data here -->
+            </ul>
+        </div>
+    </main>
+    <script src="../js/dashboard-instructor.js"></script>
+    <script src="../js/navbar-script.js"></script>
+    <script src="../js/logout-dialog.js"></script>
+</body>
+</html>

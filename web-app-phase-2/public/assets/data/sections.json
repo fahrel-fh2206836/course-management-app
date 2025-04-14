@@ -1,0 +1,337 @@
+[
+    {
+        "sectionId": "1",
+        "courseId": "1",
+        "instructorId": "1005",
+        "currentSeats": 2,
+        "totalSeats": 30,
+        "semester": "Spring 2024",
+        "location": "H07-BL024",
+        "approvalStatus": "APPROVED",
+        "sectionStatus": "COMPLETED",
+        "schedule": {
+            "days": "MON-WED",
+            "time": "9:30-10:45"
+        }
+    },
+
+    {
+        "sectionId": "2",
+        "courseId": "3",
+        "instructorId": "1006",
+        "currentSeats": 2,
+        "totalSeats": 20,
+        "semester": "Spring 2024",
+        "location": "H07-BL026",
+        "approvalStatus": "APPROVED",
+        "sectionStatus": "COMPLETED",
+        "schedule": {
+            "days": "SUN-TUE-THU",
+            "time": "9:00-9:50"
+        }
+    },
+
+    {
+        "sectionId": "3",
+        "courseId": "1",
+        "instructorId": "1005",
+        "currentSeats": 2,
+        "totalSeats": 25,
+        "semester": "Fall 2024",
+        "location": "H07-C203",
+        "approvalStatus": "APPROVED",
+        "sectionStatus": "COMPLETED",
+        "schedule": {
+            "days": "SUN-TUE",
+            "time": "14:00-15:15"
+        }
+    },
+
+    {
+        "sectionId": "4",
+        "courseId": "3",
+        "instructorId": "1006",
+        "currentSeats": 2,
+        "totalSeats": 25,
+        "semester": "Fall 2024",
+        "location": "H07-B209",
+        "approvalStatus": "APPROVED",
+        "sectionStatus": "COMPLETED",
+        "schedule": {
+            "days": "SUN-TUE-THU",
+            "time": "10:00-10:50"
+        }
+    },
+
+    {
+        "sectionId": "5",
+        "courseId": "5",
+        "instructorId": "1001",
+        "currentSeats": 2,
+        "totalSeats": 5,
+        "semester": "Fall 2024",
+        "location": "H07-A122",
+        "approvalStatus": "APPROVED",
+        "sectionStatus": "COMPLETED",
+        "schedule": {
+            "days": "SUN",
+            "time": "8:00-8:50"
+        }
+    },
+
+    {
+        "sectionId": "6",
+        "courseId": "2",
+        "instructorId": "1002",
+        "currentSeats": 2,
+        "totalSeats": 10,
+        "semester": "Fall 2024",
+        "location": "H07-C111",
+        "approvalStatus": "APPROVED",
+        "sectionStatus": "COMPLETED",
+        "schedule": {
+            "days": "MON-WED",
+            "time": "8:00-9:15"
+        }
+    },
+
+    {
+        "sectionId": "7",
+        "courseId": "51",
+        "instructorId": "1003",
+        "currentSeats": 1,
+        "totalSeats": 8,
+        "semester": "Fall 2024",
+        "location": "H07-C113",
+        "approvalStatus": "APPROVED",
+        "sectionStatus": "COMPLETED",
+        "schedule": {
+            "days": "MON-WED",
+            "time": "9:30-10:45"
+        }
+    },
+
+    {
+        "sectionId": "8",
+        "courseId": "2",
+        "instructorId": "1005",
+        "currentSeats": 2,
+        "totalSeats": 12,
+        "semester": "Spring 2025",
+        "location": "H07-C115",
+        "approvalStatus": "APPROVED",
+        "sectionStatus": "ONGOING",
+        "schedule": {
+            "days": "MON-WED",
+            "time": "9:30-10:45"
+        }
+    },
+
+    {
+        "sectionId": "9",
+        "courseId": "52",
+        "instructorId": "1004",
+        "currentSeats": 4,
+        "totalSeats": 15,
+        "semester": "Spring 2025",
+        "location": "H07-C105",
+        "approvalStatus": "APPROVED",
+        "sectionStatus": "ONGOING",
+        "schedule": {
+            "days": "SUN-TUE-THU",
+            "time": "9:00-9:50"
+        }
+    },
+
+    {
+        "sectionId": "10",
+        "courseId": "6",
+        "instructorId": "1001",
+        "currentSeats": 2,
+        "totalSeats": 10,
+        "semester": "Spring 2025",
+        "location": "H07-C103",
+        "approvalStatus": "APPROVED",
+        "sectionStatus": "ONGOING",
+        "schedule": {
+            "days": "SUN-TUE-THU",
+            "time": "10:00-10:50"
+        }
+    },
+
+    {
+        "sectionId": "11",
+        "courseId": "4",
+        "instructorId": "1002",
+        "currentSeats": 1,
+        "totalSeats": 5,
+        "semester": "Spring 2025",
+        "location": "H07-A122",
+        "approvalStatus": "APPROVED",
+        "sectionStatus": "ONGOING",
+        "schedule": {
+            "days": "SUN-TUE-THU",
+            "time": "12:00-12:50"
+        }
+    },
+
+    {
+        "sectionId": "12",
+        "courseId": "1",
+        "instructorId": "1006",
+        "currentSeats": 0,
+        "totalSeats": 20,
+        "semester": "Fall 2025",
+        "location": "H07-BL024",
+        "approvalStatus": "PENDING",
+        "sectionStatus": "OPEN_REGISTRATION",
+        "schedule": {
+            "days": "SUN-TUE-THU",
+            "time": "12:00-12:50"
+        }
+    },
+
+    {
+        "sectionId": "13",
+        "courseId": "2",
+        "instructorId": "1001",
+        "currentSeats": 0,
+        "totalSeats": 25,
+        "semester": "Fall 2025",
+        "location": "H07-BL026",
+        "approvalStatus": "PENDING",
+        "sectionStatus": "OPEN_REGISTRATION",
+        "schedule": {
+            "days": "MON-WED",
+            "time": "11:00-12:15"
+        }
+    },
+
+    {
+        "sectionId": "14",
+        "courseId": "3",
+        "instructorId": "1006",
+        "currentSeats": 0,
+        "totalSeats": 15,
+        "semester": "Fall 2025",
+        "location": "H07-C104",
+        "approvalStatus": "PENDING",
+        "sectionStatus": "OPEN_REGISTRATION",
+        "schedule": {
+            "days": "MON-WED",
+            "time": "14:00-15:15"
+        }
+    },
+
+    {
+        "sectionId": "16",
+        "courseId": "53",
+        "instructorId": "1003",
+        "currentSeats": 0,
+        "totalSeats": 15,
+        "semester": "Fall 2025",
+        "location": "H07-C107",
+        "approvalStatus": "PENDING",
+        "sectionStatus": "OPEN_REGISTRATION",
+        "schedule": {
+            "days": "SUN-TUE",
+            "time": "15:30-16:45"
+        }
+    },
+
+    {
+        "sectionId": "17",
+        "courseId": "5",
+        "instructorId": "1005",
+        "currentSeats": 0,
+        "totalSeats": 15,
+        "semester": "Fall 2025",
+        "location": "H07-C103",
+        "approvalStatus": "PENDING",
+        "sectionStatus": "OPEN_REGISTRATION",
+        "schedule": {
+            "days": "SUN",
+            "time": "10:00-10:50"
+        }
+    },
+
+    {
+        "sectionId": "18",
+        "courseId": "8",
+        "instructorId": "1006",
+        "currentSeats": 1,
+        "totalSeats": 15,
+        "semester": "Fall 2025",
+        "location": "H07-C106",
+        "approvalStatus": "PENDING",
+        "sectionStatus": "OPEN_REGISTRATION",
+        "schedule": {
+            "days": "MON-WED",
+            "time": "8:00-9:15"
+        }
+    },
+
+    {
+        "sectionId": "19",
+        "courseId": "9",
+        "instructorId": "1001",
+        "currentSeats": 0,
+        "totalSeats": 15,
+        "semester": "Fall 2025",
+        "location": "H07-B209",
+        "approvalStatus": "PENDING",
+        "sectionStatus": "OPEN_REGISTRATION",
+        "schedule": {
+            "days": "SUN-TUE-THU",
+            "time": "12:00-12:50"
+        }
+    },
+
+    {
+        "sectionId": "20",
+        "courseId": "10",
+        "instructorId": "1002",
+        "currentSeats": 0,
+        "totalSeats": 2,
+        "semester": "Fall 2025",
+        "location": "",
+        "approvalStatus": "PENDING",
+        "sectionStatus": "OPEN_REGISTRATION",
+        "schedule": {
+            "days": "",
+            "time": ""
+        }
+    },
+
+    {
+        "sectionId": "21",
+        "courseId": "55",
+        "instructorId": "1003",
+        "currentSeats": 0,
+        "totalSeats": 5,
+        "semester": "Fall 2025",
+        "location": "H07-C212",
+        "approvalStatus": "PENDING",
+        "sectionStatus": "OPEN_REGISTRATION",
+        "schedule": {
+            "days": "SUN",
+            "time": "12:00-14:50"
+        }
+    },
+
+    {
+        "sectionId": "22",
+        "courseId": "59",
+        "instructorId": "1004",
+        "currentSeats": 0,
+        "totalSeats": 2,
+        "semester": "Fall 2025",
+        "location": "",
+        "approvalStatus": "PENDING",
+        "sectionStatus": "OPEN_REGISTRATION",
+        "schedule": {
+            "days": "",
+            "time": ""
+        }
+    }
+]

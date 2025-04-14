@@ -1,0 +1,150 @@
+@import url(theme-styles.css);
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding: 20px 30px;
+    background-color: var(--khaki-);
+    box-shadow: 0 0 15px;
+    border-bottom-left-radius: 15px ;
+    border-bottom-right-radius: 15px ;
+    height: 100px;
+}
+
+#nav-img-header{
+    display: flex;
+    column-gap: 5em;
+    a{
+        display: flex;
+    }
+}
+
+.nav-index:hover{
+    background-color: var(--chamoisse-);
+    padding: 10px;
+    border-radius: 10px;
+    transition: .5s;
+    i, a{
+    font-size: 20px;
+    }
+}
+
+.active {
+    background-color: maroon;
+    padding: 10px;
+    border-radius: 10px;
+    transition: .5s;
+    i, a{
+        font-size: 20px;
+        }
+}
+
+nav ul li a, i {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: .7s;
+    cursor: pointer;
+}
+
+.large-menulist {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 30px;
+}
+
+#nav-title{
+    display: none;
+}
+
+#menu-icon {
+    display: none;
+}
+
+#short-qu-logo {
+    display: none;
+}
+
+.open-menulist{
+    display: flex;
+    flex-direction: column; 
+    list-style: none;
+    align-items: center;
+    gap: 30px;
+    position: absolute;
+    top: 100px;
+    left: 0px;
+    right: 0px;
+    background-color: var(--khaki-);
+    border-bottom-left-radius: 15px ;
+    border-bottom-right-radius: 15px ;
+    overflow: hidden;
+    padding: 20px;
+    box-shadow: 0 4px 2px -2px grey;
+    max-height: 350px;
+    transition: 1s;
+    z-index: 2;
+}
+
+
+.close-menulist {
+    opacity: 0;
+    transform: translateY(-400px);
+}  
+
+/* For Smaller than Desktops Screes (Tablets/Phones)*/
+@media (max-width: 1024px) {
+    #menu-icon {
+        display: block;
+        margin-top: auto;
+        margin-bottom: auto;
+        i{
+            color: white;
+            text-decoration: none;
+            font-size: 30px;
+            font-weight: bold;
+        }
+    }
+    #nav-title{
+        display: block;
+        margin-top: auto;
+        margin-bottom: auto;
+        font-size: 20px;
+        color: white;
+        font-weight: bold;
+    }
+
+}
+
+/* For Phone (Landscape) and Tablet (Portrait)*/
+@media (max-width: 768px) {
+    #long-qu-logo {
+        display: block;
+    }
+
+    #short-qu-logo {
+        display: none;
+    }
+
+    #nav-title{
+        display: none;
+    }
+}
+
+/* For Phone (Portrait)*/
+@media (max-width: 480px) {
+    #long-qu-logo {
+        display: none;
+    }
+
+    #short-qu-logo {
+        display: block;
+    }
+
+    #nav-title{
+        display: none;
+    }
+}

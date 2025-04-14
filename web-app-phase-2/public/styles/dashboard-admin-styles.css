@@ -1,0 +1,221 @@
+@import url(theme-styles.css);
+
+body {
+    background-color: white;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    margin: 20px;
+}
+
+h2 i {
+    font-size: 1.5rem;
+    color: var(--bistre-);
+}
+
+#course-ongoing {
+    display: none;
+}
+
+#course-registration {
+    display: none;
+}
+
+#course-not-offered {
+    display: none;
+}
+
+.status-container {
+    padding: 10px;
+    background-color: var(--light-beige-);
+    border-radius: 15px;
+    border: 1px solid var(--bistre-);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.icon-circle {
+    font-size: 25px;
+    background-color: white;
+    border-radius: 50%;
+    padding: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+i {
+    cursor: default;
+}
+
+.ongoing {
+    color: orange;
+}
+
+.registration {
+    color: blue;
+}
+
+.not-offered {
+ color: red;
+}
+
+label {
+    font-weight: bold;
+}
+
+select {
+    padding: 10px 15px;
+    border: 2px solid var(--bistre-);
+    border-radius: 6px;
+    cursor: pointer;
+    outline: none;
+}
+
+select:hover {
+    border-color: var(--chamoisse-);
+}
+
+.course-container {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    border: 1px solid var(--bistre-);
+    border-radius: 15px;
+    padding: 10px;
+    height: 650px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: var(--light-beige-);
+}
+
+.c-status-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    p{
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+}
+
+.search-filter {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.major-filter{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    select {
+        width: 100%;
+    }
+
+    i{
+        color: var(--bistre-);
+    }
+}
+
+.course-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+    padding: 5px 10px;
+    overflow: auto;
+}
+
+.manage-class-btn {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 5px;
+    right: 7px; 
+    gap: 5px;
+    border-radius: 5px;
+    padding: 2px 5px;
+    border: 1px solid var(--bistre-);
+    i {
+        color: var(--bistre-);
+        font-size: .7rem;
+    }
+
+    p {
+        font-size: .7rem;
+        font-weight: bold;
+    }
+}
+
+.manage-class-btn:hover {
+    border: none;
+    cursor: pointer;
+    background-color: var(--coffee-);
+    i, p{
+        color: var(--beige-);
+    }
+}
+
+
+.schedule-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    background-color: var(--light-beige-);
+    border: 1px solid var(--bistre-);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+@media (min-width: 1024px) {
+    main {
+        display: grid;
+        gap: 30px;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: 
+            "header header header"
+            "ongoing registration not-offered"
+            "schedule schedule schedule"
+        ;
+    }
+
+    .status-container {
+        display: none;
+    }
+
+
+    #course-general {
+        display: none;
+    }
+
+    main>h1 {
+        grid-area: header;
+    }
+
+    #course-ongoing {
+        display: flex;
+        grid-area: ongoing;
+    }
+
+    #course-registration {
+        display: flex;
+        grid-area: registration;
+    }
+
+    #course-not-offered {
+        display: flex;
+        grid-area: not-offered;
+    }
+
+    .schedule-container {
+        grid-area: schedule;
+    }
+}
+

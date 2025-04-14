@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <title>Student Grades</title>
+        <link rel="stylesheet" href="../styles/navbar-styles.css">
+        <link rel="stylesheet" href="../styles/dialog-styles.css">
+        <link rel="stylesheet" href="../styles/grade-allocation-styles.css">
+        <link rel="stylesheet" href="../styles/course-card-styles.css">
+        <link rel="stylesheet" href="../styles/notification-styles.css">
+    </head>
+    <body>
+        <header>
+            <nav id="navbar">
+                <!-- Added thru js -->
+            </nav>     
+        </header> 
+        <main>
+            <h1>Class Description</h1>
+            <div class="welcome-stats section-style">
+                <div class="stats-card">
+                    <div><span>Course:</span><span id="stats-major">{Course}</span></div>
+                    <div><span>Section ID:</span><span id="stats-ID">{SectionID}</span></div>
+                    <div><span>No. of Current students:</span><span id="stats-no-stud">{5}</span></div>
+                    <div><span>Semester:</span><span id="stats-sem">{Semester}</span></div>
+                </div>
+            </div>
+            <div class="searchStud">
+                <h2>Search for Student</h2>
+                <div class="search-bar">           
+                    <div class="search-box">
+                        <input type="text" id="search-input" placeholder="Search for Student by ID or Name">
+                        <i class='bx bx-search' ></i> 
+                    </div>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Student ID</th>
+                            <th>Student name</th>
+                            <th>Student Grade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Dynamically Add Rows -->
+                    </tbody>
+                </table>
+                <div class="buttons">
+                    <button class="cancel-button" onclick="cancelFunction()">Cancel</button>
+                    <button class="save-button" onclick="saveFunction()">Save</button>
+                </div>
+            </div>
+            <div id="save-notification" class="success notification">
+                ✅ Grade saved successfully!
+            </div>
+        </main>
+    </body>
+    
+    <script src="../js/grade-allocation.js"></script>
+    <script src="../js/logout-dialog.js"></script>
+    <script src="../js/navbar-script.js"></script>
+</html>

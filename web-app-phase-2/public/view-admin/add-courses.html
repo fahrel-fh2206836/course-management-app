@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Add Courses</title>
+    <link rel="stylesheet" href="../styles/navbar-styles.css">
+    <link rel="stylesheet" href="../styles/dialog-styles.css">
+    <link rel="stylesheet" href="../styles/add-page-styles.css">
+    <link rel="stylesheet" href="../styles/notification-styles.css">
+</head>
+<body>
+    <header>
+        <nav id="navbar">
+            <!-- Added thru js -->
+        </nav>   
+    </header> 
+    <main>
+        <div class="form-container">
+            <h2>Add New Course</h2>
+            <form action="" id="add-courses-form">
+                <div class="form-group">
+                    <label for="course-code">Course Code</label>
+                    <input type="text" id="course-code" name="courseCode" placeholder="e.g. CMPS 151" required>
+                </div>
+                <div class="form-group">
+                    <label for="course-name">Course Name</label>
+                    <input type="text" id="course-name" name="courseName" placeholder="e.g. Programming Concepts" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="credit-hour">Credit Hour</label>
+                    <input type="number" id="credit-hour" name="creditHour" placeholder="Enter Credit Hour" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="major">Select Major</label>
+                    <select id="major" name="majorId" required>
+                        <!-- Added thru js -->
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="prerequisites">Select Prerequisites Courses<p>Note: Hold Ctrl Key for Windows and CMD key for Mac to select multiple options</p></label>
+                    <select id="prerequisites" name="prerequisitesCoursesId" class="prerequisites-dropdown" multiple >
+                        <optgroup label="Computer Sci. Courses" id="cs-courses">      
+                            <!-- Added with js -->
+                        </optgroup>
+                        <optgroup label="--------------------------------------------------------------"></optgroup>
+                        <optgroup label="Computer Eng. Courses" id="ce-courses">
+                            <!-- Added with js -->
+                        </optgroup>
+                    </select>
+                </div>
+            
+                <div class="checkbox-group">
+                    <p>Set Course Status and Curriculum</p>
+                    <input type="hidden" name="isOngoing" value="off">
+                    <label id="ongoing"><input type="checkbox" id="ongoing" name="isOngoing">  Ongoing Course</label>
+                    <input type="hidden" name="isRegistration" value="off">
+                    <label id="registration"><input type="checkbox" id="registration" name="isRegistration">  Open for Registration</label>
+                    <input type="hidden" name="bothMajorProgram" value="off">
+                    <label id="both-majors-prog"><input type="checkbox" id="both-majors-prog" name="bothMajorProgram">  Include in both CE AND CS Curriculum</label>
+                </div>
+
+                <div class="button-group">
+                    <button type="submit">Add Course</button>
+                    <button type="reset">Clear All</button>
+                </div>
+
+            </form>
+
+            <!-- Notifications -->
+            <div id="negative-seats-notif" class="fail notification">⚠️ TOTAL SEATS SHOULD BE A POSITIVE INTEGER! (CH>0)!</div>
+            <div id="exist-notif" class="fail notification">⚠️ Course Already Exist!</div>
+            <div id="added-notif" class="success notification"></div>
+        </div>
+    </main>
+    <script src="../js/add-courses.js"></script>
+    <script src="../js/navbar-script.js"></script>
+    <script src="../js/logout-dialog.js"></script>
+</body>
+</html>

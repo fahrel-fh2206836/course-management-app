@@ -1,0 +1,118 @@
+[
+    {
+        "userId": "5001",
+        "firstName": "Ghanim",
+        "lastName": "Al-Kuwari",
+        "username": "Ghanim",
+        "password": "Ghanim123",
+        "role": "Student",
+        "majorId": "1",
+        "gpa": 3.36,
+        "finishedCreditHour": 11
+    },
+
+    {
+        "userId": "5002",
+        "firstName": "Mansib",
+        "lastName": "Alam",
+        "username": "Mansib",
+        "password": "Mansib123",
+        "role": "Student",
+        "majorId": "2",
+        "gpa": 3.28,
+        "finishedCreditHour": 14
+    },
+
+    {
+        "userId": "5003",
+        "firstName": "Fahrel",
+        "lastName": "Hidayat",
+        "username": "Fahrel",
+        "password": "Fahrel123",
+        "role": "Student",
+        "majorId": "1",
+        "gpa": 2.42,
+        "finishedCreditHour": 7
+    },
+
+    {
+        "userId": "5004",
+        "firstName": "Abdul",
+        "lastName": "Wasay",
+        "username": "Abdul",
+        "password": "Abdul123",
+        "role": "Student",
+        "majorId": "2",
+        "gpa": 2.5,
+        "finishedCreditHour": 6
+    },
+
+    {
+        "userId": "1001",
+        "firstName": "Abdelkarim",
+        "lastName": "Erradi",
+        "username": "Abdelkarim",
+        "password": "Abdelkarim123",
+        "role": "Instructor",
+        "majorId": "1"
+    },
+
+    {
+        "userId": "1002",
+        "firstName": "Mahmoud",
+        "lastName": "Barhamgi",
+        "username": "Mahmoud",
+        "password": "Mahmoud123",
+        "role": "Instructor",
+        "majorId": "1"
+    },
+
+    {
+        "userId": "1003",
+        "firstName": "Ahmed",
+        "lastName": "Badawy",
+        "username": "Ahmed",
+        "password": "Ahmed123",
+        "role": "Instructor",
+        "majorId": "2"
+    },
+
+    {
+        "userId": "1004",
+        "firstName": "Uvais",
+        "lastName": "Qidwai",
+        "username": "Uvais",
+        "password": "Uvais123",
+        "role": "Instructor",
+        "majorId": "2"
+    },
+
+    {
+        "userId": "1005",
+        "firstName": "Osama",
+        "lastName": "Halabi",
+        "username": "Osama",
+        "password": "Osama123",
+        "role": "Instructor",
+        "majorId": "1"
+    },
+
+    {
+        "userId": "1006",
+        "firstName": "Hela",
+        "lastName": "Chamkhia",
+        "username": "Hela",
+        "password": "Hela123",
+        "role": "Instructor",
+        "majorId": "2"
+    },
+
+    {
+        "userId": "1",
+        "firstName": "Ali",
+        "lastName": "Parker",
+        "username": "admin",
+        "password": "admin123",
+        "role": "Admin"
+    }
+]

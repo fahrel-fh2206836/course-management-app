@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Manage Course</title>
+    <link rel="stylesheet" href="../styles/navbar-styles.css">
+    <link rel="stylesheet" href="../styles/dialog-styles.css">
+    <link rel="stylesheet" href="../styles/manage-courses-styles.css">
+    <link rel="stylesheet" href="../styles/course-card-styles.css">
+    <link rel="stylesheet" href="../styles/course-description-styles.css">
+    <link rel="stylesheet" href="../styles/section-list-styles.css">
+    <link rel="stylesheet" href="../styles/notification-styles.css">
+</head>
+<body>
+    <header>
+        <nav id="navbar">
+            <!-- Added thru js -->
+        </nav>    
+    </header>
+    <main>
+        <h1><i class='bx bxs-cog'></i>   Manage Course</h1>
+        
+        <div class="course-info">
+            <div class="header-btn">
+                <div class="info-header">
+                    <i class='bx bxs-info-circle'></i>
+                    <h2>Course Description</h2>
+                </div>
+                <div class="btns">
+                    <button class="edit-btn course-btn" onclick="onCourseEdit()">
+                        <i class='bx bxs-edit'></i>
+                    </button>
+                </div>
+            </div>
+            <table id="course-table">
+                <!-- Added thru javascript -->
+            </table>
+        </div>
+
+        <div class="course-section">
+            <div class="section-header">
+                <h1>{Course} Sections</h1>
+            </div>
+            <div class="section-filters">
+                <div class="semester-filter">
+                    <label for="semester-filter">Select Semester</label>
+                    <select id="semester-filter" name="semester">
+                        <!-- Added thru js -->
+                    </select>
+                </div>
+                <div class="approval-filter">
+                    <label for="approval-filter">Select Approval Status</label>
+                    <select id="approval-filter" name="approval">
+                        <option value="None" selected>None</option>
+                        <option value="PENDING">Pending</option>
+                        <option value="APPROVED">Approved</option>
+                        <option value="CANCELLED">Cancelled</option>
+                    </select>
+                </div>
+                <div class="section-status-filter">
+                    <label for="section-status-filter">Select Section Status</label>
+                    <select id="section-status-filter" name="section-status">
+                        <option value="None" selected>None</option>
+                        <option value="COMPLETED">Completed</option>
+                        <option value="ONGOING">Ongoing</option>
+                        <option value="OPEN_REGISTRATION">Open for Registration</option>
+                    </select>
+                </div>
+            </div>
+            <div class="section-list">
+                <!-- Added thru javascript -->
+            </div> 
+        </div>
+
+        <!-- Notifications -->
+        <div id="updated-course-notif" class="success notification"></div>
+        <div id="not-approved-notif" class="fail notification"></div>
+        <div id="updated-section-notif" class="success notification">✅ Section status has been updated!</div>
+
+    </main>
+
+    <script src="../js/manage-courses.js"></script>
+    <script src="../js/navbar-script.js"></script>
+    <script src="../js/logout-dialog.js"></script>
+</body>
+</html>
