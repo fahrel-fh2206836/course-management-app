@@ -1,211 +1,540 @@
-[
-    {
-        "id" : "1",
-        "courseCode" : "CMPS 151",
-        "majorId" : "1",
-        "creditHour" : 3,
-        "courseName" : "Programming Concepts",
-        "prerequisitesCoursesId" : [],
-        "isOngoing" : false,
-        "isRegistration" : true
-    },
-
-    {
-        "id" : "2",
-        "courseCode" : "CMPS 251",
-        "majorId" : "1",
-        "creditHour" : 4,
-        "courseName" : "Object-Oriented Programming",
-        "prerequisitesCoursesId" : ["1"],
-        "isOngoing" : true,
-        "isRegistration" : true
-    },
-
-    {
-        "id" : "3",
-        "courseCode" : "CMPS 205",
-        "majorId" : "1",
-        "creditHour" : 3,
-        "courseName" : "Discrete Mathematics",
-        "prerequisitesCoursesId" : [],
-        "isOngoing" : false,
-        "isRegistration" : true
-    },
-
-    {
-        "id" : "4",
-        "courseCode" : "CMPS 350",
-        "majorId" : "1",
-        "creditHour" : 3,
-        "courseName" : "Web Development Fundamentals",
-        "prerequisitesCoursesId" : ["2"],
-        "isOngoing" : true,
-        "isRegistration" : false
-    },
-
-    {
-        "id" : "51",
-        "courseCode" : "CMPE 261",
-        "majorId" : "2",
-        "creditHour" : 4,
-        "courseName" : "Digital Logic Design",
-        "prerequisitesCoursesId" : ["3"],
-        "isOngoing" : false,
-        "isRegistration" : true
-    },
-    
-    {
-        "id" : "52",
-        "courseCode" : "CMPE 263",
-        "majorId" : "2",
-        "creditHour" : 3,
-        "courseName" : "Computer Architecture I",
-        "prerequisitesCoursesId" : ["1","3"],
-        "isOngoing" : true,
-        "isRegistration" : false
-    },
-
-    {
-        "id" : "53",
-        "courseCode" : "CMPE 355",
-        "majorId" : "2",
-        "creditHour" : 4,
-        "courseName" : "Networks I",
-        "prerequisitesCoursesId" : ["52"],
-        "isOngoing" : false,
-        "isRegistration" : true
-    },
-
-    {
-        "id": "5",
-        "courseCode": "CMPS 200",
-        "majorId": "1",
-        "creditHour": 1,
-        "courseName": "Computer Ethics",
-        "prerequisitesCoursesId": [],
-        "isOngoing": false,
-        "isRegistration": true
-      },
-
-      {
-        "id": "6",
-        "courseCode": "CMPS 303",
-        "majorId": "1",
-        "creditHour": 4,
-        "courseName": "Data Structures",
-        "prerequisitesCoursesId": ["2"],
-        "isOngoing": true,
-        "isRegistration": false
-      },
-      {
-        "id": "7",
-        "courseCode": "CMPS 351",
-        "majorId": "1",
-        "creditHour": 4,
-        "courseName": "Database Fundamentals",
-        "prerequisitesCoursesId": ["2"],
-        "isOngoing": false,
-        "isRegistration": false
-      },
-      {
-        "id": "8",
-        "courseCode": "CMPS 310",
-        "majorId": "1",
-        "creditHour": 4,
-        "courseName": "Software Engineering",
-        "prerequisitesCoursesId": ["2"],
-        "isOngoing": false,
-        "isRegistration": true
-      },
-      {
-        "id": "9",
-        "courseCode": "CMPS 405",
-        "majorId": "1",
-        "creditHour": 4,
-        "courseName": "Operating Systems",
-        "prerequisitesCoursesId": ["6", "52"],
-        "isOngoing": false,
-        "isRegistration": true
-      },
-      {
-        "id": "10",
-        "courseCode": "CMPS 493",
-        "majorId": "1",
-        "creditHour": 3,
-        "courseName": "Senior Project I",
-        "prerequisitesCoursesId": ["8","9","4"],
-        "isOngoing": false,
-        "isRegistration": true
-      },
-      {
-        "id": "54",
-        "courseCode": "CMPE 363",
-        "majorId": "2",
-        "creditHour": 3,
-        "courseName": "Computer Architecture II",
-        "prerequisitesCoursesId": ["52"],
-        "isOngoing": false,
-        "isRegistration": true
-      },
-      {
-        "id": "55",
-        "courseCode": "CMPE 370",
-        "majorId": "2",
-        "creditHour": 1,
-        "courseName": "Computer Engineering Practicum",
-        "prerequisitesCoursesId": ["51"],
-        "isOngoing": false,
-        "isRegistration": true
-      },
-      {
-        "id": "56",
-        "courseCode": "CMPE 480",
-        "majorId": "2",
-        "creditHour": 3,
-        "courseName": "Computer Vision",
-        "prerequisitesCoursesId": ["2"],
-        "isOngoing": false,
-        "isRegistration": false
-      },
-      {
-        "id": "57",
-        "courseCode": "CMPE 457",
-        "majorId": "2",
-        "creditHour": 3,
-        "courseName": "Networks II",
-        "prerequisitesCoursesId": ["53"],
-        "isOngoing": false,
-        "isRegistration": false
-      },
-      {
-        "id": "58",
-        "courseCode": "CMPE 364",
-        "majorId": "2",
-        "creditHour": 4,
-        "courseName": "Micro Processor Based Design",
-        "prerequisitesCoursesId": ["52"],
-        "isOngoing": false,
-        "isRegistration": false
-      },
-      {
-        "id": "11",
-        "courseCode": "CMPS 460",
-        "majorId": "1",
-        "creditHour": 3,
-        "courseName": "Machine Learning",
-        "prerequisitesCoursesId": ["6"],
-        "isOngoing": false,
-        "isRegistration": false
-      },
-      {
-        "id": "59",
-        "courseCode": "CMPE 498",
-        "majorId": "2",
-        "creditHour": 3,
-        "courseName": "Design Project I",
-        "prerequisitesCoursesId": ["53", "54", "55"],
-        "isOngoing": false,
-        "isRegistration": true
-      }
+[ 
+  {
+    "id": "1",
+    "courseCode": "CMPS 151",
+    "majorId": "1",
+    "creditHour": 3,
+    "courseName": "Programming Concepts",
+    "prerequisitesCoursesId": [],
+    "isOngoing": false,
+    "isRegistration": true
+  },
+  {
+    "id": "2",
+    "courseCode": "CMPS 251",
+    "majorId": "1",
+    "creditHour": 4,
+    "courseName": "Object-Oriented Programming",
+    "prerequisitesCoursesId": [
+      "1"
+    ],
+    "isOngoing": true,
+    "isRegistration": true
+  },
+  {
+    "id": "3",
+    "courseCode": "CMPS 205",
+    "majorId": "1",
+    "creditHour": 3,
+    "courseName": "Discrete Mathematics",
+    "prerequisitesCoursesId": [],
+    "isOngoing": false,
+    "isRegistration": true
+  },
+  {
+    "id": "4",
+    "courseCode": "CMPS 350",
+    "majorId": "1",
+    "creditHour": 3,
+    "courseName": "Web Development Fundamentals",
+    "prerequisitesCoursesId": [
+      "2"
+    ],
+    "isOngoing": true,
+    "isRegistration": false
+  },
+  {
+    "id": "51",
+    "courseCode": "CMPE 261",
+    "majorId": "2",
+    "creditHour": 4,
+    "courseName": "Digital Logic Design",
+    "prerequisitesCoursesId": [
+      "3"
+    ],
+    "isOngoing": false,
+    "isRegistration": true
+  },
+  {
+    "id": "52",
+    "courseCode": "CMPE 263",
+    "majorId": "2",
+    "creditHour": 3,
+    "courseName": "Computer Architecture I",
+    "prerequisitesCoursesId": [
+      "1",
+      "3"
+    ],
+    "isOngoing": true,
+    "isRegistration": false
+  },
+  {
+    "id": "53",
+    "courseCode": "CMPE 355",
+    "majorId": "2",
+    "creditHour": 4,
+    "courseName": "Networks I",
+    "prerequisitesCoursesId": [
+      "52"
+    ],
+    "isOngoing": false,
+    "isRegistration": true
+  },
+  {
+    "id": "5",
+    "courseCode": "CMPS 200",
+    "majorId": "1",
+    "creditHour": 1,
+    "courseName": "Computer Ethics",
+    "prerequisitesCoursesId": [],
+    "isOngoing": false,
+    "isRegistration": true
+  },
+  {
+    "id": "6",
+    "courseCode": "CMPS 303",
+    "majorId": "1",
+    "creditHour": 4,
+    "courseName": "Data Structures",
+    "prerequisitesCoursesId": [
+      "2"
+    ],
+    "isOngoing": true,
+    "isRegistration": false
+  },
+  {
+    "id": "7",
+    "courseCode": "CMPS 351",
+    "majorId": "1",
+    "creditHour": 4,
+    "courseName": "Database Fundamentals",
+    "prerequisitesCoursesId": [
+      "2"
+    ],
+    "isOngoing": false,
+    "isRegistration": false
+  },
+  {
+    "id": "8",
+    "courseCode": "CMPS 310",
+    "majorId": "1",
+    "creditHour": 4,
+    "courseName": "Software Engineering",
+    "prerequisitesCoursesId": [
+      "2"
+    ],
+    "isOngoing": false,
+    "isRegistration": true
+  },
+  {
+    "id": "9",
+    "courseCode": "CMPS 405",
+    "majorId": "1",
+    "creditHour": 4,
+    "courseName": "Operating Systems",
+    "prerequisitesCoursesId": [
+      "6",
+      "52"
+    ],
+    "isOngoing": false,
+    "isRegistration": true
+  },
+  {
+    "id": "10",
+    "courseCode": "CMPS 493",
+    "majorId": "1",
+    "creditHour": 3,
+    "courseName": "Senior Project I",
+    "prerequisitesCoursesId": [
+      "8",
+      "9",
+      "4"
+    ],
+    "isOngoing": false,
+    "isRegistration": true
+  },
+  {
+    "id": "54",
+    "courseCode": "CMPE 363",
+    "majorId": "2",
+    "creditHour": 3,
+    "courseName": "Computer Architecture II",
+    "prerequisitesCoursesId": [
+      "52"
+    ],
+    "isOngoing": false,
+    "isRegistration": true
+  },
+  {
+    "id": "55",
+    "courseCode": "CMPE 370",
+    "majorId": "2",
+    "creditHour": 1,
+    "courseName": "Computer Engineering Practicum",
+    "prerequisitesCoursesId": [
+      "51"
+    ],
+    "isOngoing": false,
+    "isRegistration": true
+  },
+  {
+    "id": "56",
+    "courseCode": "CMPE 480",
+    "majorId": "2",
+    "creditHour": 3,
+    "courseName": "Computer Vision",
+    "prerequisitesCoursesId": [
+      "2"
+    ],
+    "isOngoing": false,
+    "isRegistration": false
+  },
+  {
+    "id": "57",
+    "courseCode": "CMPE 457",
+    "majorId": "2",
+    "creditHour": 3,
+    "courseName": "Networks II",
+    "prerequisitesCoursesId": [
+      "53"
+    ],
+    "isOngoing": false,
+    "isRegistration": false
+  },
+  {
+    "id": "58",
+    "courseCode": "CMPE 364",
+    "majorId": "2",
+    "creditHour": 4,
+    "courseName": "Micro Processor Based Design",
+    "prerequisitesCoursesId": [
+      "52"
+    ],
+    "isOngoing": false,
+    "isRegistration": false
+  },
+  {
+    "id": "11",
+    "courseCode": "CMPS 460",
+    "majorId": "1",
+    "creditHour": 3,
+    "courseName": "Machine Learning",
+    "prerequisitesCoursesId": [
+      "6"
+    ],
+    "isOngoing": false,
+    "isRegistration": false
+  },
+  {
+    "id": "59",
+    "courseCode": "CMPE 498",
+    "majorId": "2",
+    "creditHour": 3,
+    "courseName": "Design Project I",
+    "prerequisitesCoursesId": [
+      "53",
+      "54",
+      "55"
+    ],
+    "isOngoing": false,
+    "isRegistration": true
+  },
+  {
+    "id": "60",
+    "courseCode": "CMPS 323",
+    "majorId": "1",
+    "creditHour": 3,
+    "courseName": "Design & Analysis of Algorithms",
+    "prerequisitesCoursesId": [
+      "6"
+    ],
+    "isOngoing": false,
+    "isRegistration": true
+  },
+  {
+    "id": "61",
+    "courseCode": "CMPS 411",
+    "majorId": "1",
+    "creditHour": 3,
+    "courseName": "Compiler Construction",
+    "prerequisitesCoursesId": [
+      "6"
+    ],
+    "isOngoing": false,
+    "isRegistration": true
+  },
+  {
+    "id": "62",
+    "courseCode": "CMPS 430",
+    "majorId": "1",
+    "creditHour": 3,
+    "courseName": "Artificial Intelligence",
+    "prerequisitesCoursesId": [
+      "6"
+    ],
+    "isOngoing": false,
+    "isRegistration": true
+  },
+  {
+    "id": "63",
+    "courseCode": "CMPS 431",
+    "majorId": "1",
+    "creditHour": 3,
+    "courseName": "Deep Learning",
+    "prerequisitesCoursesId": [
+      "11"
+    ],
+    "isOngoing": false,
+    "isRegistration": true
+  },
+  {
+    "id": "64",
+    "courseCode": "CMPS 432",
+    "majorId": "1",
+    "creditHour": 3,
+    "courseName": "Natural Language Processing",
+    "prerequisitesCoursesId": [
+      "11"
+    ],
+    "isOngoing": false,
+    "isRegistration": true
+  },
+  {
+    "id": "65",
+    "courseCode": "CMPS 442",
+    "majorId": "1",
+    "creditHour": 3,
+    "courseName": "Mobile App Development",
+    "prerequisitesCoursesId": [
+      "6"
+    ],
+    "isOngoing": false,
+    "isRegistration": true
+  },
+  {
+    "id": "66",
+    "courseCode": "CMPS 471",
+    "majorId": "1",
+    "creditHour": 3,
+    "courseName": "Software Testing",
+    "prerequisitesCoursesId": [
+      "8"
+    ],
+    "isOngoing": false,
+    "isRegistration": true
+  },
+  {
+    "id": "67",
+    "courseCode": "CMPS 472",
+    "majorId": "1",
+    "creditHour": 3,
+    "courseName": "Agile Software Development",
+    "prerequisitesCoursesId": [
+      "8"
+    ],
+    "isOngoing": false,
+    "isRegistration": true
+  },
+  {
+    "id": "68",
+    "courseCode": "CMPS 481",
+    "majorId": "1",
+    "creditHour": 3,
+    "courseName": "Cybersecurity Fundamentals",
+    "prerequisitesCoursesId": [
+      "6"
+    ],
+    "isOngoing": false,
+    "isRegistration": true
+  },
+  {
+    "id": "69",
+    "courseCode": "CMPS 482",
+    "majorId": "1",
+    "creditHour": 3,
+    "courseName": "Penetration Testing",
+    "prerequisitesCoursesId": [
+      "481"
+    ],
+    "isOngoing": false,
+    "isRegistration": true
+  },
+  {
+    "id": "70",
+    "courseCode": "CMPS 494",
+    "majorId": "1",
+    "creditHour": 3,
+    "courseName": "Senior Project II",
+    "prerequisitesCoursesId": [
+      "10"
+    ],
+    "isOngoing": false,
+    "isRegistration": true
+  },
+  {
+    "id": "71",
+    "courseCode": "CMPE 211",
+    "majorId": "2",
+    "creditHour": 3,
+    "courseName": "Introduction to Electrical Circuits",
+    "prerequisitesCoursesId": [],
+    "isOngoing": false,
+    "isRegistration": true
+  },
+  {
+    "id": "72",
+    "courseCode": "CMPE 311",
+    "majorId": "2",
+    "creditHour": 3,
+    "courseName": "Signal Processing",
+    "prerequisitesCoursesId": [
+      "211"
+    ],
+    "isOngoing": false,
+    "isRegistration": true
+  },
+  {
+    "id": "73",
+    "courseCode": "CMPE 456",
+    "majorId": "2",
+    "creditHour": 3,
+    "courseName": "Embedded Systems",
+    "prerequisitesCoursesId": [
+      "58"
+    ],
+    "isOngoing": false,
+    "isRegistration": true
+  },
+  {
+    "id": "74",
+    "courseCode": "CMPE 481",
+    "majorId": "2",
+    "creditHour": 3,
+    "courseName": "Digital Image Processing",
+    "prerequisitesCoursesId": [
+      "56"
+    ],
+    "isOngoing": false,
+    "isRegistration": true
+  },
+  {
+    "id": "75",
+    "courseCode": "CMPE 482",
+    "majorId": "2",
+    "creditHour": 3,
+    "courseName": "IoT Systems",
+    "prerequisitesCoursesId": [
+      "53"
+    ],
+    "isOngoing": false,
+    "isRegistration": true
+  },
+  {
+    "id": "76",
+    "courseCode": "CMPE 483",
+    "majorId": "2",
+    "creditHour": 3,
+    "courseName": "Advanced Robotics",
+    "prerequisitesCoursesId": [
+      "56"
+    ],
+    "isOngoing": false,
+    "isRegistration": true
+  },
+  {
+    "id": "77",
+    "courseCode": "CMPE 484",
+    "majorId": "2",
+    "creditHour": 3,
+    "courseName": "Control Systems",
+    "prerequisitesCoursesId": [
+      "211"
+    ],
+    "isOngoing": false,
+    "isRegistration": true
+  },
+  {
+    "id": "78",
+    "courseCode": "CMPE 485",
+    "majorId": "2",
+    "creditHour": 3,
+    "courseName": "FPGA Design",
+    "prerequisitesCoursesId": [
+      "51"
+    ],
+    "isOngoing": false,
+    "isRegistration": true
+  },
+  {
+    "id": "79",
+    "courseCode": "CMPE 486",
+    "majorId": "2",
+    "creditHour": 3,
+    "courseName": "Advanced Computer Architecture",
+    "prerequisitesCoursesId": [
+      "54"
+    ],
+    "isOngoing": false,
+    "isRegistration": true
+  },
+  {
+    "id": "80",
+    "courseCode": "CMPE 487",
+    "majorId": "2",
+    "creditHour": 3,
+    "courseName": "Real-Time Systems",
+    "prerequisitesCoursesId": [
+      "456"
+    ],
+    "isOngoing": false,
+    "isRegistration": true
+  },
+  {
+    "id": "81",
+    "courseCode": "CMPE 488",
+    "majorId": "2",
+    "creditHour": 3,
+    "courseName": "Wireless Communications",
+    "prerequisitesCoursesId": [
+      "53"
+    ],
+    "isOngoing": false,
+    "isRegistration": true
+  },
+  {
+    "id": "82",
+    "courseCode": "CMPE 489",
+    "majorId": "2",
+    "creditHour": 3,
+    "courseName": "Computer Forensics",
+    "prerequisitesCoursesId": [
+      "53"
+    ],
+    "isOngoing": false,
+    "isRegistration": true
+  },
+  {
+    "id": "83",
+    "courseCode": "CMPE 490",
+    "majorId": "2",
+    "creditHour": 3,
+    "courseName": "Network Security",
+    "prerequisitesCoursesId": [
+      "53"
+    ],
+    "isOngoing": false,
+    "isRegistration": true
+  },
+  {
+    "id": "84",
+    "courseCode": "CMPE 491",
+    "majorId": "2",
+    "creditHour": 3,
+    "courseName": "Advanced Networking",
+    "prerequisitesCoursesId": [
+      "53"
+    ],
+    "isOngoing": false,
+    "isRegistration": true
+  }
 ]
-
