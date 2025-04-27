@@ -81,12 +81,11 @@ CREATE TABLE "Section" (
 
 -- CreateTable
 CREATE TABLE "Registration" (
+    "id" TEXT NOT NULL PRIMARY KEY,
     "sectionId" TEXT NOT NULL,
     "studentId" TEXT NOT NULL,
     "courseId" TEXT NOT NULL,
     "grade" TEXT NOT NULL,
-
-    PRIMARY KEY ("sectionId", "studentId"),
     CONSTRAINT "Registration_sectionId_fkey" FOREIGN KEY ("sectionId") REFERENCES "Section" ("sectionId") ON DELETE RESTRICT ON UPDATE CASCADE,
     CONSTRAINT "Registration_studentId_fkey" FOREIGN KEY ("studentId") REFERENCES "Student" ("userId") ON DELETE RESTRICT ON UPDATE CASCADE,
     CONSTRAINT "Registration_courseId_fkey" FOREIGN KEY ("courseId") REFERENCES "Course" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
@@ -94,3 +93,6 @@ CREATE TABLE "Registration" (
 
 -- CreateIndex
 CREATE UNIQUE INDEX "User_username_key" ON "User"("username");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "Registration_sectionId_studentId_key" ON "Registration"("sectionId", "studentId");
