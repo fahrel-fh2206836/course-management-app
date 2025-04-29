@@ -1,95 +1,78 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+'use client';
+import React, { useContext, useState } from 'react';
+import styles from './page.module.css';
+import Link from 'next/link';
+import { UserContext } from './context/UserContext';
 
-export default function Home() {
+
+export default function Login() {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState(false);
+  const { user, login, logout, updateUser } = useContext(UserContext);
+
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+
+  //   const foundUser = users.find(
+  //     (user) => user.username === username && user.password === password
+  //   );
+
+  //   if (foundUser) {
+  //     localStorage.setItem('loggedInUser', JSON.stringify(foundUser));
+  //     localStorage.setItem('currentPage', 'dashboard');
+
+  //     if (foundUser.role === 'Student') {
+  //       window.location.href = '/view-student/dashboard-student.html';
+  //     } else if (foundUser.role === 'Instructor') {
+  //       window.location.href = '/view-instructor/dashboard-instructor.html';
+  //     } else {
+  //       window.location.href = '/view-admin/dashboard-admin.html';
+  //     }
+  //   } else {
+  //     setPassword('');
+  //     setError(true);
+  //   }
+  // };
+
+  function toggleViewPassword() {
+    setShowPassword(!showPassword);
+  };
+
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className={styles.bodyWrapper}>
+      <div className={styles.wrapper}>
+        <form id="LoginForm" onSubmit={handleSubmit}>
+          <header>
+            <img src="/assets/images/qu_logo.png" alt="QU Logo" className={styles.image} />
+            <h1>Course Management System</h1>
+            <p className={styles.quote}>Empowering learning, one course at a time.</p>
+          </header>
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+          <main>
+            <div className={styles.inputBox}>
+              <input type="text" id="username" name="username" placeholder="Username" required className={styles.input} />
+              <i className={`bx bx-user ${styles.icon}`}></i>
+            </div>
+
+            <div className={styles.inputBox}>
+              <input type={showPassword ? 'text' : 'password'} id="password" name="password" placeholder="Password" required className={styles.input}/>
+              <i id="toggle-btn" className={`bx ${showPassword ? 'bx-hide' : 'bx-show'} ${styles.icon}`} onClick={toggleViewPassword}></i>
+            </div>
+
+            {error && (<p id="wrong-pass" className={styles.error}> <i className="bx bx-error-circle"></i> Incorrect Username or Password.</p>)}
+
+            <div className={styles.rememberForgot}>
+              <label><input type="checkbox" /> Remember Me</label>
+              <Link href="#">Forgot Password?</Link>
+            </div>
+
+            <button type="submit" className={styles.submitButton}>Sign In</button>
+          </main>
+        </form>
+      </div>
     </div>
   );
 }

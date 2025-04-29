@@ -1,0 +1,32 @@
+[
+  {
+    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9",
+    "majorCode": "MAJ001",
+    "majorName": "Computer Science",
+    "totalCreditHour": 123
+  },
+  {
+    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6",
+    "majorCode": "MAJ002",
+    "majorName": "Computer Engineering",
+    "totalCreditHour": 132
+  },
+  {
+    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674",
+    "majorCode": "MAJ003",
+    "majorName": "Administrator",
+    "totalCreditHour": 136
+  },
+  {
+    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa",
+    "majorCode": "MAJ004",
+    "majorName": "Sales executive",
+    "totalCreditHour": 138
+  },
+  {
+    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41",
+    "majorCode": "MAJ005",
+    "majorName": "Research officer, trade union",
+    "totalCreditHour": 122
+  }
+]
