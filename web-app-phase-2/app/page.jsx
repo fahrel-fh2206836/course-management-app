@@ -10,7 +10,7 @@ export default function Login() {
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState(false);
-  const { user, login } = useContext(UserContext);
+  const { login } = useContext(UserContext);
   const router = useRouter();
 
 
