@@ -1,32 +1,26 @@
 [
   {
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9",
-    "majorCode": "MAJ001",
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3",
+    "majorCode": "CMPS",
     "majorName": "Computer Science",
-    "totalCreditHour": 123
+    "totalCreditHour": 120
   },
   {
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6",
-    "majorCode": "MAJ002",
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b",
+    "majorCode": "CMPE",
     "majorName": "Computer Engineering",
-    "totalCreditHour": 132
+    "totalCreditHour": 128
   },
   {
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674",
-    "majorCode": "MAJ003",
-    "majorName": "Administrator",
-    "totalCreditHour": 136
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6",
+    "majorCode": "ELEC",
+    "majorName": "Electrical Engineering",
+    "totalCreditHour": 131
   },
   {
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa",
-    "majorCode": "MAJ004",
-    "majorName": "Sales executive",
-    "totalCreditHour": 138
-  },
-  {
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41",
-    "majorCode": "MAJ005",
-    "majorName": "Research officer, trade union",
-    "totalCreditHour": 122
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4",
+    "majorCode": "MATH",
+    "majorName": "Mathematics",
+    "totalCreditHour": 120
   }
 ]

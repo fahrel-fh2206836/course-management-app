@@ -294,6 +294,10 @@ nav ul li a, i {
   background-color: rgb(233, 233, 233);
 }
 
+.bistre {
+  color: var(--bistre-);
+}
+
 /* For Phone (Landscape) and Tablet (Portrait)*/
 @media (max-width: 768px) {
   #long-qu-logo {

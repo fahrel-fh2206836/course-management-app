@@ -1,4 +1,4 @@
-    /* page.module.css */
+/* page.module.css */
 
 .bodyWrapper {
     display: flex;
@@ -68,7 +68,6 @@
     top: 25%;
     transform: translate(-50%);
     font-size: 25px;
-    color: var(--bistre-);
 }
 
 .rememberForgot {
@@ -102,7 +101,6 @@
 
 .error {
     color: red;
-    display: none;
 }
 
 .toggleBtn:hover {

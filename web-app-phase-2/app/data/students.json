@@ -1,3002 +1,3002 @@
 [
   {
-    "userId": "2f0d1e2a-79c8-4032-9056-2c936c8d9223",
-    "gpa": 3.82,
-    "finishedCreditHour": 102,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
+    "userId": "77edd4eb-fcfe-47d4-a992-6c535704d041",
+    "gpa": 2.31,
+    "finishedCreditHour": 81,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
   },
   {
-    "userId": "b88211b5-e463-4a81-8f52-619ef79693fa",
-    "gpa": 2.28,
-    "finishedCreditHour": 87,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
+    "userId": "75f36119-c5f0-4389-9a3f-6c676a1fac2a",
+    "gpa": 3.32,
+    "finishedCreditHour": 114,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
   },
   {
-    "userId": "ac688bca-bca7-453c-953b-07f3744b0e1b",
-    "gpa": 2.2,
-    "finishedCreditHour": 57,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
+    "userId": "ec47c219-cec6-4649-9cc7-7486c6918f45",
+    "gpa": 2.85,
+    "finishedCreditHour": 81,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
   },
   {
-    "userId": "e80b0119-231e-4515-9ded-ff382ce6969e",
-    "gpa": 2.83,
-    "finishedCreditHour": 120,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
+    "userId": "5d687c37-a192-4b92-b8aa-31d858348c73",
+    "gpa": 3.22,
+    "finishedCreditHour": 46,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
   },
   {
-    "userId": "057aaeac-7e0d-4e74-85b1-b441c2367c88",
-    "gpa": 2.68,
-    "finishedCreditHour": 106,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "34141a29-8901-4a95-8b63-7b0e3b699b01",
-    "gpa": 3.11,
-    "finishedCreditHour": 115,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "dcebfb1e-6638-44d1-b794-94bd67040d14",
-    "gpa": 2.2,
-    "finishedCreditHour": 88,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "b0e42e7d-7e55-4c17-a90c-4aacfceffc3e",
-    "gpa": 2.99,
-    "finishedCreditHour": 58,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "a30c5eef-21e3-45eb-912e-f9851d9e7625",
-    "gpa": 3.93,
-    "finishedCreditHour": 94,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "a54311c5-6a41-429f-bf9e-03fe32dc66a1",
-    "gpa": 3.43,
-    "finishedCreditHour": 71,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "08fc9e73-a731-46e2-9b9e-eb4c086458d7",
-    "gpa": 3.03,
-    "finishedCreditHour": 91,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "2d4d09d2-a975-4279-b764-3fcd538a2767",
-    "gpa": 2.7,
-    "finishedCreditHour": 58,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "876801d1-8dfb-44b4-a24b-6c1adb36a0c5",
-    "gpa": 2.21,
+    "userId": "d5966daa-4a88-432c-8c8a-6b5466d4c06f",
+    "gpa": 3.08,
     "finishedCreditHour": 50,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
   },
   {
-    "userId": "f50aad26-6671-43c4-8c9a-b5833486d130",
+    "userId": "6aec8da5-e6c4-4de5-9213-df0e8358b1bd",
+    "gpa": 3.38,
+    "finishedCreditHour": 46,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "833a57a5-41eb-4d77-992a-0d0e30caccc1",
+    "gpa": 3.74,
+    "finishedCreditHour": 62,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "ef5a1219-e5e7-409f-a1f1-c2df84cc9e19",
+    "gpa": 3.15,
+    "finishedCreditHour": 40,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "64b82529-c9f5-44b3-9732-5a55cdb444c2",
+    "gpa": 2.75,
+    "finishedCreditHour": 118,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "84e0bc5c-e586-4d1c-bb5c-bc726a9d546f",
+    "gpa": 3.02,
+    "finishedCreditHour": 101,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "64196e00-8eea-4786-a6de-a7f605ff8afc",
+    "gpa": 3.0,
+    "finishedCreditHour": 114,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "d491cedb-7d53-405c-85b6-373f057855c3",
+    "gpa": 3.88,
+    "finishedCreditHour": 104,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "3d5a56ca-1a07-4837-a96a-529925f46a2e",
+    "gpa": 2.64,
+    "finishedCreditHour": 30,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "8f0bc29b-814a-4f41-b123-6477f55debf1",
+    "gpa": 2.74,
+    "finishedCreditHour": 31,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "58b220fb-0906-400f-8201-cfe3a984c04c",
+    "gpa": 2.54,
+    "finishedCreditHour": 62,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "bd9f3046-1bf8-41c4-8719-029dbdc068b1",
+    "gpa": 2.28,
+    "finishedCreditHour": 66,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "3d0408e6-6322-4f42-8134-e064f164672d",
+    "gpa": 3.06,
+    "finishedCreditHour": 81,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "bb87bebd-e0c4-441b-847b-b8957731ab51",
+    "gpa": 3.88,
+    "finishedCreditHour": 50,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "480e915b-8d06-44b1-b717-f372c98747d4",
+    "gpa": 2.68,
+    "finishedCreditHour": 78,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "e62a2e1f-8472-426e-bdcc-2e855f891b5b",
+    "gpa": 3.14,
+    "finishedCreditHour": 43,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "e88056cf-9ff2-47b1-92e2-d9b683a3ae11",
+    "gpa": 3.33,
+    "finishedCreditHour": 117,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "4c007874-bc43-4150-8285-87edc888e2de",
+    "gpa": 2.64,
+    "finishedCreditHour": 65,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "d6f1f7eb-ce30-4516-9d6e-44f15b439643",
+    "gpa": 3.8,
+    "finishedCreditHour": 97,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "4bb4bd97-a765-4ab1-bab3-ea40e86cc827",
+    "gpa": 3.66,
+    "finishedCreditHour": 32,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "02d94e19-17d1-4255-a4d7-0e59876abde8",
+    "gpa": 3.59,
+    "finishedCreditHour": 82,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "465b1888-7ce6-429b-affc-a780e92d87a0",
+    "gpa": 3.15,
+    "finishedCreditHour": 52,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "a478462a-3972-4a19-b7ec-2c0f515ee8c3",
+    "gpa": 3.32,
+    "finishedCreditHour": 44,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "a08f4768-785b-491a-8263-7bacbe0d1eb2",
+    "gpa": 3.51,
+    "finishedCreditHour": 111,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "58b15375-2a48-46cb-bdce-4a003b9b3bb5",
+    "gpa": 2.72,
+    "finishedCreditHour": 39,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "60a3df31-10de-4474-8589-3190ddf5b829",
+    "gpa": 2.85,
+    "finishedCreditHour": 30,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "d14eb477-c405-47df-be4e-8d0d49f6efec",
+    "gpa": 3.54,
+    "finishedCreditHour": 97,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "927f76b8-67ee-4698-81ea-dcebe21dca9b",
+    "gpa": 2.37,
+    "finishedCreditHour": 35,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "41d83d6b-c9de-45d7-b85e-2a8ee7c7dc74",
+    "gpa": 3.56,
+    "finishedCreditHour": 105,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "a1867259-edc4-42b9-82b9-ca954ee380f4",
+    "gpa": 2.65,
+    "finishedCreditHour": 118,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "f412c668-fbee-4ae1-ba60-706ffd85fe37",
+    "gpa": 2.43,
+    "finishedCreditHour": 30,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "85867918-1b6d-4a13-b968-2e8352f6b970",
+    "gpa": 2.34,
+    "finishedCreditHour": 99,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "2100ca9a-d0fd-4d84-a6e2-4a9e47b9dd4a",
+    "gpa": 2.69,
+    "finishedCreditHour": 82,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "91f16040-2e2c-426c-b1fc-1d439d1686d3",
+    "gpa": 3.93,
+    "finishedCreditHour": 63,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "47939df1-b7c2-485e-b5e4-6542440acd7c",
+    "gpa": 3.51,
+    "finishedCreditHour": 97,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "0b879cb7-53ef-4934-b58d-f797046d6a3f",
+    "gpa": 2.05,
+    "finishedCreditHour": 116,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "3d8d866b-e52a-432c-9f51-5684819b0fba",
+    "gpa": 2.09,
+    "finishedCreditHour": 64,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "0904f85f-ca7b-4bd4-aae6-e7e5d2e6d218",
+    "gpa": 2.83,
+    "finishedCreditHour": 39,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "c8e20cfe-1a21-48d5-8da6-c8dc2530215b",
+    "gpa": 2.0,
+    "finishedCreditHour": 74,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "4e3607f5-952d-4dba-81ec-c9979b631038",
+    "gpa": 2.96,
+    "finishedCreditHour": 84,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "93872fc8-ce54-4d9a-a41d-25e9a484faa1",
+    "gpa": 3.34,
+    "finishedCreditHour": 92,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "7084afcb-6cd2-4abc-a4d2-5f94719655cd",
+    "gpa": 2.39,
+    "finishedCreditHour": 38,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "c4a15da7-13f0-4fa5-869f-ddca79a92078",
+    "gpa": 3.57,
+    "finishedCreditHour": 118,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "638112fc-8c5c-4b42-9b1b-2fce797f19e4",
+    "gpa": 2.79,
+    "finishedCreditHour": 56,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "db441bd0-7c54-4127-8e66-763476dc2d85",
+    "gpa": 3.76,
+    "finishedCreditHour": 82,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "f1909c46-f183-4677-986e-d6933d5ce8df",
+    "gpa": 3.68,
+    "finishedCreditHour": 76,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "73e0e121-70e0-40a3-84b9-5baf11dfe123",
+    "gpa": 2.29,
+    "finishedCreditHour": 46,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "9455e1fc-4a2b-4d7d-997a-a4afd4bb398a",
+    "gpa": 3.82,
+    "finishedCreditHour": 114,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "5e542be4-38c0-4cca-9dac-85f4c2faeb21",
+    "gpa": 3.55,
+    "finishedCreditHour": 79,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "4c51c8af-1ffd-406c-9804-b67fb40769b6",
+    "gpa": 2.3,
+    "finishedCreditHour": 93,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "7804b1a5-9324-4fc2-8c30-bdcf398c93fc",
+    "gpa": 3.37,
+    "finishedCreditHour": 49,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "dea14fa6-8ff2-435a-b823-86a4ac28dec1",
+    "gpa": 2.28,
+    "finishedCreditHour": 77,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "c5d56d32-8906-4640-8d2f-e05326cfa05c",
+    "gpa": 2.95,
+    "finishedCreditHour": 107,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "8cdc9c0a-58d4-459b-8ec0-7622b7fa4552",
+    "gpa": 3.76,
+    "finishedCreditHour": 82,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "709d1cba-6fe9-4f46-b6ab-6ef7f39ac0f3",
+    "gpa": 2.17,
+    "finishedCreditHour": 95,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "ec0c6b61-7309-4e0e-a5ea-3c47cfae71c1",
+    "gpa": 3.76,
+    "finishedCreditHour": 82,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "1e0b8904-eb67-422e-910f-4367783f66f4",
+    "gpa": 3.6,
+    "finishedCreditHour": 75,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "d8c55755-924a-4ca1-870c-307f327d1a39",
+    "gpa": 3.42,
+    "finishedCreditHour": 51,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "e266e0ee-3d2a-4b62-bd0d-8f51dcc0b1ae",
+    "gpa": 2.19,
+    "finishedCreditHour": 70,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "3e2ee885-f879-452d-b9c9-c75bb889685d",
+    "gpa": 2.9,
+    "finishedCreditHour": 105,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "1808b50e-5638-40e0-9ba4-218ca390b281",
+    "gpa": 3.02,
+    "finishedCreditHour": 48,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "a005f72f-2e43-4b66-b631-6addd6210830",
+    "gpa": 3.48,
+    "finishedCreditHour": 98,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "0f64f4dc-0139-4432-9096-aab4d6d9433d",
+    "gpa": 3.85,
+    "finishedCreditHour": 53,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "464709d1-c7c3-41a9-8195-aaae7b90edf3",
+    "gpa": 2.43,
+    "finishedCreditHour": 66,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "21b406c4-eac5-45fd-929c-a1d1b6913e80",
+    "gpa": 2.8,
+    "finishedCreditHour": 47,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "18cd233e-5fe6-4db1-8ee6-34762b9906e3",
+    "gpa": 2.3,
+    "finishedCreditHour": 49,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "8fe4c7fa-467b-407f-b086-dd0d434cf949",
+    "gpa": 2.47,
+    "finishedCreditHour": 50,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "1839fef1-1808-4ccf-a31b-a8aeb17a2ff7",
+    "gpa": 3.8,
+    "finishedCreditHour": 42,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "0aa70601-5edf-4909-8e63-529227586b74",
+    "gpa": 3.75,
+    "finishedCreditHour": 42,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "e5d38c6a-da40-4d85-95a1-bd6670c37127",
+    "gpa": 3.5,
+    "finishedCreditHour": 59,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "82189a1c-9197-42e2-a4e4-e9948896e031",
+    "gpa": 2.75,
+    "finishedCreditHour": 59,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "4f347e51-c2a7-4b08-938b-9b1c0b03e147",
+    "gpa": 2.67,
+    "finishedCreditHour": 43,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "7c206619-d45c-4b88-a2fa-d85c6a09d581",
+    "gpa": 2.82,
+    "finishedCreditHour": 102,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "beb9d3be-a30d-4c77-b43d-9acc59ad232a",
+    "gpa": 2.29,
+    "finishedCreditHour": 81,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "9d302131-ba70-4ca2-bfd5-af4802366432",
+    "gpa": 3.88,
+    "finishedCreditHour": 74,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "902c16c4-03f7-47f4-a861-44b4d27bbd0d",
+    "gpa": 2.91,
+    "finishedCreditHour": 66,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "da111d28-5006-40fb-87b9-6e5b8e7f0636",
+    "gpa": 3.4,
+    "finishedCreditHour": 109,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "d5423fb6-4360-4fc9-ad6c-2f2de8e68250",
+    "gpa": 2.94,
+    "finishedCreditHour": 72,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "600e423a-5b76-465d-aee0-4d2afbe7cd45",
+    "gpa": 2.66,
+    "finishedCreditHour": 80,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "b222cbe1-33fa-4332-8830-33ac5827c0ce",
+    "gpa": 2.73,
+    "finishedCreditHour": 63,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "fe624cfe-a175-483c-afb2-91b6c3a7abfa",
+    "gpa": 2.3,
+    "finishedCreditHour": 96,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "11c46438-497c-4020-9c3e-9101f447e51e",
+    "gpa": 2.1,
+    "finishedCreditHour": 35,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "0bbd89de-9c84-4156-b29c-5090e5946ad2",
+    "gpa": 2.4,
+    "finishedCreditHour": 102,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "d9279485-91fd-428e-99a6-cfbde49ef682",
+    "gpa": 3.09,
+    "finishedCreditHour": 61,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "ba587421-4b4b-4f95-94f0-7c3fff162899",
+    "gpa": 3.57,
+    "finishedCreditHour": 84,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "9aa07019-3874-4fd8-8b49-66a064a029ee",
+    "gpa": 2.8,
+    "finishedCreditHour": 46,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "659d3ce2-0a6c-4654-bee3-f509a3608821",
+    "gpa": 3.85,
+    "finishedCreditHour": 103,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "0a43c26a-b388-4deb-92f9-8419178a934c",
+    "gpa": 2.28,
+    "finishedCreditHour": 46,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "97c9ae73-e8e8-4548-b6da-1c1d622ea019",
+    "gpa": 2.54,
+    "finishedCreditHour": 84,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "cd0563b6-8a8b-4b46-ab8d-182b2fe00147",
+    "gpa": 3.99,
+    "finishedCreditHour": 31,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "fb82cf27-006e-49ad-9d4c-2e7aae0961a3",
+    "gpa": 3.71,
+    "finishedCreditHour": 120,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "b7eacca1-a801-47c6-a5e0-557442004eaf",
+    "gpa": 3.05,
+    "finishedCreditHour": 103,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "c397cfe8-b553-4e85-bcd5-9179a1518952",
+    "gpa": 2.59,
+    "finishedCreditHour": 32,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "47a68436-818f-4919-a65e-82b53c97782f",
+    "gpa": 2.32,
+    "finishedCreditHour": 116,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "b76398ad-b62d-489f-ad31-0dc73cb81791",
+    "gpa": 2.85,
+    "finishedCreditHour": 75,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "7b307f13-4711-4c7c-8c22-b4c92f4d79bb",
+    "gpa": 2.27,
+    "finishedCreditHour": 41,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "c3426a74-baa3-4fba-85d0-48b175d06712",
+    "gpa": 2.95,
+    "finishedCreditHour": 76,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "e55c50de-4c41-43e6-9fbc-3f56ab745c41",
+    "gpa": 3.72,
+    "finishedCreditHour": 76,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "5a32aeb0-5504-4ecb-b41a-734f15b2c673",
+    "gpa": 3.36,
+    "finishedCreditHour": 38,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "f6f32ed3-73fa-4685-a041-54a4deb9f9d8",
+    "gpa": 2.72,
+    "finishedCreditHour": 36,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "5e314327-a911-4864-b499-06f79d29b697",
+    "gpa": 2.73,
+    "finishedCreditHour": 72,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "e5958a47-b7e6-4468-9423-ab0278bc33c3",
+    "gpa": 2.28,
+    "finishedCreditHour": 99,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "308c7e40-adc8-4917-9e33-98b84da02557",
+    "gpa": 3.16,
+    "finishedCreditHour": 99,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "3074103a-fe8b-423e-a555-324235a33bd5",
+    "gpa": 3.08,
+    "finishedCreditHour": 63,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "db7dfa7b-627a-4dd3-9ddf-7b6d2ce36302",
+    "gpa": 3.81,
+    "finishedCreditHour": 86,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "4224475c-96b5-4b76-b232-566035ee359a",
+    "gpa": 2.5,
+    "finishedCreditHour": 96,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "62a62d7b-b8df-4673-b642-4ce1ea95f554",
+    "gpa": 2.76,
+    "finishedCreditHour": 114,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "54a3cfd2-84a2-4fad-8830-d6bf9a6c67ca",
+    "gpa": 2.15,
+    "finishedCreditHour": 58,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "19d8f1b3-36a9-440e-8a69-488f6f9f9a3a",
+    "gpa": 3.39,
+    "finishedCreditHour": 118,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "ef3cc7b8-f9dc-413e-ae83-111e4dbff29a",
+    "gpa": 2.76,
+    "finishedCreditHour": 104,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "82f6b647-feea-4ba7-97d8-212dfa151786",
+    "gpa": 2.64,
+    "finishedCreditHour": 113,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "4f44976e-4dba-414c-8dd6-6ccb454b5a7f",
+    "gpa": 3.66,
+    "finishedCreditHour": 90,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "cd1b46cd-1415-48ad-a690-75c645c3ad15",
+    "gpa": 3.56,
+    "finishedCreditHour": 54,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "78df3c45-250a-462a-8455-59e29bb438ef",
+    "gpa": 3.36,
+    "finishedCreditHour": 89,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "8ae26cf8-7cb5-48ec-883b-bcf418f82ef5",
+    "gpa": 2.53,
+    "finishedCreditHour": 70,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "2b46708f-ed4d-4a7b-a47a-d05210548efb",
+    "gpa": 3.47,
+    "finishedCreditHour": 108,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "0945edf4-aa1e-44e4-96b4-3de4ad26eaf6",
+    "gpa": 3.06,
+    "finishedCreditHour": 114,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "3a29e8f2-3b53-44be-9f31-9ae7e83be1c3",
+    "gpa": 3.31,
+    "finishedCreditHour": 44,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "1bf50605-af86-465d-a3e8-27a0631842fa",
+    "gpa": 3.64,
+    "finishedCreditHour": 35,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "952d9624-3b5d-4396-b242-f6f8d8d5991d",
+    "gpa": 3.75,
+    "finishedCreditHour": 38,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "3ab2de69-92f4-4de6-bdae-c95c44893ade",
+    "gpa": 2.72,
+    "finishedCreditHour": 109,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "153dad73-61b2-4494-9dec-1dbc0837ad7b",
+    "gpa": 2.03,
+    "finishedCreditHour": 73,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "43baf427-20b8-45f8-b499-c66a96fb4c20",
+    "gpa": 3.86,
+    "finishedCreditHour": 101,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "b3d6ae3f-ce8c-43b1-a2b6-f519a12d9a41",
+    "gpa": 2.12,
+    "finishedCreditHour": 33,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "0252d549-4bed-4cf9-834f-64dcf9572c73",
+    "gpa": 2.57,
+    "finishedCreditHour": 45,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "820f6fa0-548f-4434-9f9f-92495ae61e29",
+    "gpa": 2.56,
+    "finishedCreditHour": 66,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "c2e4ffe4-5bfe-4cec-a860-c0665f663bb1",
+    "gpa": 2.02,
+    "finishedCreditHour": 34,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "3089050d-5625-4013-a5dc-667e93be9b59",
+    "gpa": 2.88,
+    "finishedCreditHour": 86,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "f6d99046-acd1-45b8-8a0a-c4687e44cfd1",
+    "gpa": 3.47,
+    "finishedCreditHour": 74,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "72ab63a7-f900-4a28-a14d-d671ee9dfb27",
+    "gpa": 3.32,
+    "finishedCreditHour": 95,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "4c851441-d2ec-44ea-81aa-e01327851c4c",
+    "gpa": 3.47,
+    "finishedCreditHour": 61,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "e640c409-9c17-4bda-b3ec-3ad450de57b8",
+    "gpa": 3.9,
+    "finishedCreditHour": 101,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "8e274df2-629d-4dc4-bdaa-01f31df454a3",
+    "gpa": 3.62,
+    "finishedCreditHour": 112,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "ecd45ae0-71c8-41b7-97ba-b4ea5c5374e9",
+    "gpa": 2.03,
+    "finishedCreditHour": 97,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "2fe4dcb3-b12d-4332-84ad-11fcbd56225b",
+    "gpa": 2.71,
+    "finishedCreditHour": 46,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "3caaa9dd-60ca-4379-8f96-72aee839481f",
+    "gpa": 2.26,
+    "finishedCreditHour": 119,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "c9796c07-9578-4d96-91ab-93319323ba05",
+    "gpa": 2.03,
+    "finishedCreditHour": 108,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "c35d1406-3892-4897-bb5d-cf173ed097ef",
+    "gpa": 2.07,
+    "finishedCreditHour": 48,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "9acc0932-622a-4aac-bcc4-1a7f7f25d1fb",
+    "gpa": 3.71,
+    "finishedCreditHour": 105,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "09bb362c-3113-4aa1-af7b-3eb7bb4b6100",
+    "gpa": 3.88,
+    "finishedCreditHour": 33,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "369c3712-ee30-4ac2-b0f9-68d7618346d1",
+    "gpa": 2.62,
+    "finishedCreditHour": 78,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "4d637716-65eb-4870-bd64-d92c5831a241",
+    "gpa": 2.69,
+    "finishedCreditHour": 107,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "947f1a08-2ad0-4496-a702-08fd938fabac",
+    "gpa": 2.11,
+    "finishedCreditHour": 34,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "29d148fd-c3e4-4527-bbb5-032624d96a9f",
+    "gpa": 2.37,
+    "finishedCreditHour": 48,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "4d4e31d5-4a21-4cfe-85a2-3a6ee1c37428",
+    "gpa": 3.27,
+    "finishedCreditHour": 100,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "38904b94-14ec-44b3-8ff9-2b45018b8859",
+    "gpa": 2.53,
+    "finishedCreditHour": 33,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "6fe094c0-26e4-493f-9275-25be84a89cc4",
+    "gpa": 3.07,
+    "finishedCreditHour": 72,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "edf267ad-4366-4346-b421-b8b8cc33c7ba",
+    "gpa": 3.39,
+    "finishedCreditHour": 32,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "8a7918a5-e571-4a41-afe0-6020a1020328",
+    "gpa": 2.77,
+    "finishedCreditHour": 103,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "d8cebb11-8d79-4837-8daf-e284adcd4ffa",
+    "gpa": 2.73,
+    "finishedCreditHour": 76,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "78dcf4df-4d6e-414c-ab5f-7e3580465241",
+    "gpa": 2.56,
+    "finishedCreditHour": 64,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "399436f6-b27d-4ded-a5d6-7e79b662654a",
+    "gpa": 2.67,
+    "finishedCreditHour": 107,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "67cd48b0-cc57-47ac-b70d-892fe841db0e",
+    "gpa": 3.33,
+    "finishedCreditHour": 83,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "7d41f528-9287-4246-a713-b635249e81dc",
+    "gpa": 3.73,
+    "finishedCreditHour": 91,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "030f67e9-5ca4-4162-8d17-45dd317a26e2",
+    "gpa": 3.86,
+    "finishedCreditHour": 55,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "5625ccb2-995d-40d9-9181-6f392ca308d7",
+    "gpa": 3.97,
+    "finishedCreditHour": 97,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "5863d8fc-8cb8-4c1f-9918-0fa04072328e",
+    "gpa": 2.02,
+    "finishedCreditHour": 103,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "ee860b8b-5113-4d1b-b854-75cd37329545",
+    "gpa": 3.1,
+    "finishedCreditHour": 91,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "554bdb31-bb46-4933-b9cf-f3c992348a2d",
+    "gpa": 2.29,
+    "finishedCreditHour": 65,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "743f30db-2e4c-4634-9115-464de9ed6e43",
+    "gpa": 3.54,
+    "finishedCreditHour": 104,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "361d9d3a-82d9-4c71-b1db-d5126c3d81a3",
+    "gpa": 2.64,
+    "finishedCreditHour": 52,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "ba05243a-2da8-4aec-9669-c377d5d918bf",
+    "gpa": 3.8,
+    "finishedCreditHour": 77,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "e17c9366-43ab-489d-a980-fa24923d4d75",
+    "gpa": 3.45,
+    "finishedCreditHour": 104,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "5cc88617-92c7-45bd-b1f5-ecb1304708e9",
+    "gpa": 3.14,
+    "finishedCreditHour": 107,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "ddeb09b8-a547-454f-8dd2-abaa6795a135",
+    "gpa": 3.51,
+    "finishedCreditHour": 38,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "3e93c9ae-c395-44c5-9e8f-159c61c11abc",
+    "gpa": 2.03,
+    "finishedCreditHour": 80,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "bb0f77c1-e14d-4684-8248-dcd6669080b7",
+    "gpa": 2.82,
+    "finishedCreditHour": 60,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "861a34bb-bbeb-4fbb-a767-d533218b2fdf",
+    "gpa": 2.38,
+    "finishedCreditHour": 81,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "a4144076-3d35-4ca8-ab34-9982be5c61e7",
+    "gpa": 2.69,
+    "finishedCreditHour": 87,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "fc1f6410-86f5-4589-9de2-439ce92e3539",
+    "gpa": 2.91,
+    "finishedCreditHour": 33,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "09dc4300-4995-4c48-989a-b83ccbb7c222",
+    "gpa": 3.59,
+    "finishedCreditHour": 57,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "f3a68a26-c1ec-4ec7-bc41-993a741b5c30",
+    "gpa": 3.54,
+    "finishedCreditHour": 46,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "f231e035-6eed-4672-a798-7389d54981ab",
+    "gpa": 3.42,
+    "finishedCreditHour": 118,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "ab05043c-9182-4339-b3a6-30b8cb7fe5e2",
+    "gpa": 2.74,
+    "finishedCreditHour": 101,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "df040d73-a1ba-46ff-94b9-f702e4a33891",
+    "gpa": 2.88,
+    "finishedCreditHour": 89,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "fc098248-bfbe-4923-8d21-13a5b9266342",
+    "gpa": 3.77,
+    "finishedCreditHour": 115,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "2e46e257-3c6a-4ddb-921a-ed4972c87c0a",
+    "gpa": 2.66,
+    "finishedCreditHour": 96,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "a5017995-a57b-41c8-8422-e63f449a6fb5",
+    "gpa": 2.58,
+    "finishedCreditHour": 84,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "315a221a-99d0-48b4-867c-07342ea99132",
+    "gpa": 2.74,
+    "finishedCreditHour": 36,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "861f009b-db46-4d52-96a1-0ae9bdc345cd",
+    "gpa": 3.17,
+    "finishedCreditHour": 36,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "8410da62-dfdf-4f3a-b47e-ccb123ec1133",
+    "gpa": 2.41,
+    "finishedCreditHour": 34,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "2d1cab9d-1c2c-4eb1-a44b-4b20b92c77ba",
+    "gpa": 3.72,
+    "finishedCreditHour": 113,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "20e2f9f1-91ba-4894-a004-86e2db6b396d",
+    "gpa": 3.59,
+    "finishedCreditHour": 84,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "98e1beeb-c221-4413-888e-2d847207c954",
+    "gpa": 3.16,
+    "finishedCreditHour": 50,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "f65f1596-384e-4ede-9106-c5132cd90a61",
+    "gpa": 2.34,
+    "finishedCreditHour": 100,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "de19c698-a996-4fa5-a079-d82a24de74bf",
+    "gpa": 3.66,
+    "finishedCreditHour": 56,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "ef8d90f8-6183-46d0-beeb-717bbb570d3d",
+    "gpa": 3.95,
+    "finishedCreditHour": 118,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "9c3ce3b3-99b7-4724-a67d-1bfc1688c77a",
     "gpa": 3.18,
     "finishedCreditHour": 41,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
   },
   {
-    "userId": "ef1016dd-10a9-4855-a4f1-1e1910a40ac7",
-    "gpa": 3.35,
-    "finishedCreditHour": 77,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "fb45c068-f992-4bc0-9d72-d8356d772275",
-    "gpa": 2.04,
-    "finishedCreditHour": 119,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "80993a6a-50eb-4df0-971d-283832d37ff3",
-    "gpa": 2.14,
-    "finishedCreditHour": 101,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "948011f6-1f4e-40e2-94f4-1e95afe1346c",
-    "gpa": 3.26,
-    "finishedCreditHour": 87,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "f5d50d1b-447e-46c0-abdc-83bd0620c590",
-    "gpa": 2.63,
-    "finishedCreditHour": 60,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "c855ff1d-acfa-4f75-a68c-b23c15169a20",
-    "gpa": 3.89,
-    "finishedCreditHour": 75,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "36e70d37-fdd1-4cdb-9059-bc4fbc2eb66a",
-    "gpa": 2.32,
-    "finishedCreditHour": 74,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "22695098-974a-44a2-be83-5219fa10b551",
-    "gpa": 3.38,
-    "finishedCreditHour": 80,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "edc4f8ad-cbc7-4539-8232-a7d2659bd1da",
-    "gpa": 2.06,
+    "userId": "4aaebc84-d548-47c0-827a-85f04541132c",
+    "gpa": 2.12,
     "finishedCreditHour": 43,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
   },
   {
-    "userId": "5644125e-d317-496b-8554-016e28bc9b28",
-    "gpa": 2.45,
-    "finishedCreditHour": 54,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "589fc081-3552-4c61-b9d7-324d100519f1",
-    "gpa": 2.12,
-    "finishedCreditHour": 76,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "7a1ea448-822c-464f-8874-24f00ebec2d7",
-    "gpa": 3.96,
-    "finishedCreditHour": 89,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "8168b1c8-d964-4809-9d17-e446babad732",
-    "gpa": 3.08,
-    "finishedCreditHour": 73,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "c7b249db-cde6-450e-be94-37b168aa3a73",
-    "gpa": 3.52,
-    "finishedCreditHour": 86,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "b77b72d3-7644-489f-bcaa-70da864b6782",
-    "gpa": 3.63,
-    "finishedCreditHour": 120,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "fabcf762-7d0f-4528-9160-0957a363f447",
-    "gpa": 2.05,
-    "finishedCreditHour": 97,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "24562f12-ecfb-416f-bba6-7ef320c97e1c",
-    "gpa": 2.52,
-    "finishedCreditHour": 64,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "d38f5bf1-2ebf-451c-b199-e5a58853ae81",
-    "gpa": 4.0,
-    "finishedCreditHour": 34,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "e3a2db9e-da94-4e1a-9c45-5c60ee231957",
-    "gpa": 2.73,
-    "finishedCreditHour": 119,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "bc3e0ea7-9634-4f07-9753-8bf079c67be6",
-    "gpa": 2.33,
-    "finishedCreditHour": 47,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "4d235cde-e9bd-4aa8-86d6-530118847402",
-    "gpa": 3.22,
-    "finishedCreditHour": 76,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "7d268283-14ae-48a9-b440-42ecef0518cf",
-    "gpa": 2.87,
-    "finishedCreditHour": 49,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "ffc6ec70-0c57-4f9d-a499-b9d0e58e8432",
-    "gpa": 3.56,
-    "finishedCreditHour": 72,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "515bcc57-7b44-45fd-aa30-1b199da2eaaa",
-    "gpa": 3.83,
-    "finishedCreditHour": 37,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "fc2f857c-89bd-4508-bf1c-89ae6d8a5598",
-    "gpa": 2.6,
-    "finishedCreditHour": 96,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "42bb87d7-6e94-4430-8f7d-c109a5143a77",
-    "gpa": 2.69,
-    "finishedCreditHour": 91,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "8378910d-3e97-475d-ad2c-6fdb3cf20cdd",
-    "gpa": 3.78,
-    "finishedCreditHour": 40,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "2130c8d8-331d-47d2-bb7d-df70801de951",
-    "gpa": 3.97,
-    "finishedCreditHour": 39,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "1fa6ee1d-b291-4a6e-9e2c-c46dc6b1b52e",
-    "gpa": 2.12,
-    "finishedCreditHour": 106,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "b5cd69f0-0dd0-4823-8bee-46a3102143a5",
-    "gpa": 3.8,
-    "finishedCreditHour": 77,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "ad04d018-976f-4236-99dc-27f8aa4521c7",
-    "gpa": 2.66,
-    "finishedCreditHour": 106,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "299f6420-fcc7-4d35-ae79-df7c8c9fa138",
-    "gpa": 3.87,
-    "finishedCreditHour": 110,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "20b21e66-3ec7-4519-8926-e9068157c065",
-    "gpa": 2.95,
-    "finishedCreditHour": 96,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "b8daf46d-40b7-4e9e-a45f-78b89ddc4a86",
-    "gpa": 2.69,
-    "finishedCreditHour": 111,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "27961f34-af4c-4a26-918a-dc000effa6ed",
-    "gpa": 2.06,
-    "finishedCreditHour": 42,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "b365551c-1b6f-4437-8179-766cc584ef78",
-    "gpa": 3.83,
-    "finishedCreditHour": 84,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "97c814e0-cf9e-444c-ada4-a4b18740f5cd",
-    "gpa": 3.73,
-    "finishedCreditHour": 65,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "514ba4ae-87ec-45c3-ac27-b2ea36ba6077",
-    "gpa": 2.52,
-    "finishedCreditHour": 109,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "25e959e0-5192-4ee0-9b11-d58af08fb9cd",
-    "gpa": 3.46,
-    "finishedCreditHour": 65,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "60c0d0dd-5675-4e5c-8abe-e80a93a0054e",
-    "gpa": 2.54,
-    "finishedCreditHour": 79,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "582de821-ce05-49a1-aae3-94f6144de983",
-    "gpa": 2.36,
-    "finishedCreditHour": 89,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "020f71d7-f11a-4984-8f80-52fda4bc3afe",
-    "gpa": 3.67,
-    "finishedCreditHour": 115,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "33f4e7fa-13b3-4059-9309-14e280c7ec4a",
-    "gpa": 3.43,
-    "finishedCreditHour": 52,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "805a7544-e725-40dd-a069-78a56b086ec8",
-    "gpa": 3.92,
-    "finishedCreditHour": 95,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "982eb6f8-444d-4414-9bbc-e82011e05678",
-    "gpa": 2.96,
-    "finishedCreditHour": 30,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "2c882a58-f676-4d77-ac7b-922f8e78473e",
-    "gpa": 2.98,
-    "finishedCreditHour": 109,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "e9dad1e0-5dce-471b-ac73-7c6baeaa314a",
-    "gpa": 3.55,
-    "finishedCreditHour": 102,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "5592d1e9-741e-43cc-a013-bad3a11b8516",
-    "gpa": 3.44,
-    "finishedCreditHour": 51,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "127d8876-8112-427a-bb7f-85d0fc097958",
-    "gpa": 3.79,
-    "finishedCreditHour": 65,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "a81e1169-f49d-4e87-b33b-af7815943768",
-    "gpa": 2.93,
-    "finishedCreditHour": 87,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "8381aaf0-9115-4dff-bc13-85ab9cd2917d",
-    "gpa": 2.3,
-    "finishedCreditHour": 111,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "4709be35-0e15-4df7-a02a-9b9674471110",
-    "gpa": 3.79,
-    "finishedCreditHour": 96,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "18eab3d2-c74e-401c-8190-02851d5fb72c",
-    "gpa": 2.4,
-    "finishedCreditHour": 64,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "54376714-9908-47f1-9740-2742e22a8a8d",
-    "gpa": 2.29,
-    "finishedCreditHour": 57,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "a0848643-c2d0-4ce4-82ab-1cd151092262",
-    "gpa": 3.33,
-    "finishedCreditHour": 67,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "6c0df22b-7938-4ca7-957b-ea37f3be7200",
-    "gpa": 3.46,
-    "finishedCreditHour": 109,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "f8ea5648-f59b-4592-a690-068e691993eb",
-    "gpa": 3.51,
-    "finishedCreditHour": 75,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "928adb3a-6f37-435c-82c3-df5744e8bdfc",
-    "gpa": 2.24,
-    "finishedCreditHour": 83,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "4c57d3d3-d1a6-4cd6-ae77-19fefefce77c",
-    "gpa": 2.85,
-    "finishedCreditHour": 58,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "e9a94165-e1f7-4aaf-8413-65845ae98ae2",
-    "gpa": 3.76,
-    "finishedCreditHour": 31,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "a901fda6-4fbf-4904-8f50-de7e6b4ad739",
-    "gpa": 3.83,
-    "finishedCreditHour": 92,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "4d9f7d1c-0f40-45a8-9f8e-e0edc6c05c54",
-    "gpa": 2.21,
-    "finishedCreditHour": 106,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "0cf06e2e-b907-463f-802e-98a1405da6be",
-    "gpa": 2.86,
-    "finishedCreditHour": 45,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "ce022609-f2f5-434f-ad21-cb8d32023b49",
-    "gpa": 2.09,
-    "finishedCreditHour": 74,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "88da6d43-13d5-4456-a354-cd0c5125e994",
-    "gpa": 2.19,
-    "finishedCreditHour": 36,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "f883be9c-dd5a-4c75-bcee-63db74fd433f",
-    "gpa": 3.69,
-    "finishedCreditHour": 117,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "45350028-c0b5-4966-b7b9-5f6f6bc298d0",
-    "gpa": 3.44,
-    "finishedCreditHour": 116,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "b55340ff-62a3-47a8-8213-b6fcb92f2be9",
-    "gpa": 3.34,
-    "finishedCreditHour": 102,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "317f1dfd-d57e-4a6d-9580-37b981957f60",
-    "gpa": 3.26,
-    "finishedCreditHour": 60,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "31ef813c-ec19-4a37-822c-cc79febd7f0f",
-    "gpa": 2.23,
-    "finishedCreditHour": 82,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "ac050e77-e49b-4157-a4a7-b0c91bad6664",
-    "gpa": 2.47,
-    "finishedCreditHour": 36,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "5b6b5ee2-29c8-4176-a647-73b67331b741",
-    "gpa": 3.17,
-    "finishedCreditHour": 50,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "1b14c7c7-93e5-4a72-9175-71546fe93f4c",
-    "gpa": 2.34,
+    "userId": "b46a2e7e-0583-468b-9415-082576485970",
+    "gpa": 2.58,
     "finishedCreditHour": 81,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
   },
   {
-    "userId": "f321958f-bbf5-48bd-b1f5-da6caa38b085",
-    "gpa": 2.27,
-    "finishedCreditHour": 44,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
+    "userId": "ddd449c4-5ca2-4f5b-bbed-63daf9dee068",
+    "gpa": 3.39,
+    "finishedCreditHour": 89,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
   },
   {
-    "userId": "c8f1cef5-a974-443a-a74c-cf31d531f054",
-    "gpa": 2.11,
-    "finishedCreditHour": 68,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "5a171b2e-6187-40df-9583-82a30c5ea4b1",
-    "gpa": 3.28,
-    "finishedCreditHour": 55,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "73b6e08d-4067-4f36-8ab0-bcc79a286b49",
-    "gpa": 2.94,
-    "finishedCreditHour": 107,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "ed12e6dd-47ff-4fa3-8e4e-503998608936",
-    "gpa": 3.04,
-    "finishedCreditHour": 97,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "cc2bdfeb-edc1-464d-aa90-d110b6aad2ac",
-    "gpa": 2.54,
-    "finishedCreditHour": 120,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "d4c46578-3d74-4e8e-853d-76b8b551c63b",
-    "gpa": 2.23,
-    "finishedCreditHour": 71,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "8ee9a007-2511-4a0e-a233-8cb06e2616b2",
+    "userId": "675089c2-2b29-4bc8-96c2-954ea99ae7d7",
     "gpa": 2.19,
-    "finishedCreditHour": 52,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
+    "finishedCreditHour": 35,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
   },
   {
-    "userId": "2c00809c-9294-4440-a5a5-e1bf3192153b",
+    "userId": "09dcd920-0818-4632-92c6-f77d51d67985",
+    "gpa": 3.78,
+    "finishedCreditHour": 92,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "84e690af-1413-4fd5-950d-6de17a8f5e38",
+    "gpa": 2.16,
+    "finishedCreditHour": 85,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "48f23516-2203-4e05-b4c2-0bbd9b9e6591",
+    "gpa": 2.03,
+    "finishedCreditHour": 115,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "33945813-3053-475b-a2e8-718994c80365",
+    "gpa": 3.44,
+    "finishedCreditHour": 91,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "a918a7e2-b882-4cad-826e-8667e4d5b2da",
+    "gpa": 3.81,
+    "finishedCreditHour": 69,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "f8de3196-2a8d-4c6d-a32d-6778f8842ea0",
+    "gpa": 3.8,
+    "finishedCreditHour": 34,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "3f590b00-718d-41fa-a22c-4bf25baabf65",
+    "gpa": 2.12,
+    "finishedCreditHour": 72,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "e1261b85-da2e-4c33-b79e-a5948811c898",
+    "gpa": 2.62,
+    "finishedCreditHour": 106,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "d491cd87-8b3a-4a4d-82d2-2224d458e765",
+    "gpa": 3.18,
+    "finishedCreditHour": 42,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "67bdb418-6fda-461e-a602-f1ccdad74030",
+    "gpa": 2.23,
+    "finishedCreditHour": 79,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "47187024-9858-462b-a5da-018bcdc6bf89",
+    "gpa": 3.25,
+    "finishedCreditHour": 45,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "41cdc99a-b17d-4e07-bcd0-19e41b771193",
+    "gpa": 3.03,
+    "finishedCreditHour": 61,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "9eeec612-ad24-46bb-9640-f0ce52beca3e",
+    "gpa": 2.36,
+    "finishedCreditHour": 46,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "8630204d-6cda-41db-9d3e-d45035d3a7d1",
+    "gpa": 2.87,
+    "finishedCreditHour": 114,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "04e654a7-bce9-4227-b486-96297b61a99e",
+    "gpa": 2.99,
+    "finishedCreditHour": 52,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "745413a2-9ffb-4847-b1af-a4401740055b",
+    "gpa": 2.15,
+    "finishedCreditHour": 53,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "f59ea40f-53ac-44a9-bd6c-94f66a869238",
+    "gpa": 2.92,
+    "finishedCreditHour": 57,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "b61e4567-3b87-427d-806a-d4972c46572a",
+    "gpa": 3.08,
+    "finishedCreditHour": 33,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "04270b1e-d11a-486d-8c95-701c73ecd7f9",
+    "gpa": 2.04,
+    "finishedCreditHour": 80,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "643e3290-3439-4f81-a12b-0217a97a1861",
+    "gpa": 2.54,
+    "finishedCreditHour": 103,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "8825a7d7-7cab-49ee-b88a-793621efdaf4",
+    "gpa": 2.97,
+    "finishedCreditHour": 60,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "53838b46-181a-4546-9f15-43cee64f6095",
+    "gpa": 3.2,
+    "finishedCreditHour": 113,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "2cd1916b-2616-46bc-9f81-fa8ebd616cf4",
+    "gpa": 2.59,
+    "finishedCreditHour": 39,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "b168f171-92bf-482c-9df2-4bd26c25d332",
+    "gpa": 3.99,
+    "finishedCreditHour": 95,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "f87d14b3-377a-463b-a991-d63c50692699",
+    "gpa": 3.9,
+    "finishedCreditHour": 72,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "3f1d2cf9-cf06-4c5a-911c-9fbc004ff2f4",
+    "gpa": 3.35,
+    "finishedCreditHour": 100,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "0f97d84d-6353-4fda-ba6d-cc075bd959eb",
+    "gpa": 2.19,
+    "finishedCreditHour": 74,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "0ceca28c-2941-4469-8c31-ccd0601c55cc",
+    "gpa": 3.4,
+    "finishedCreditHour": 80,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "1e9e5f61-3785-4243-bcd4-d7d3ff7e10c5",
+    "gpa": 3.95,
+    "finishedCreditHour": 104,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "f8b2b5a7-541f-4f74-8569-445b0613b4d2",
+    "gpa": 3.89,
+    "finishedCreditHour": 45,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "981efde9-93d6-463b-bf77-3ccf5cdf4109",
+    "gpa": 2.79,
+    "finishedCreditHour": 54,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "41d667df-0999-4bf5-9f27-79ff3533fea2",
+    "gpa": 2.85,
+    "finishedCreditHour": 84,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "c104c391-982a-430c-9cf7-6d521893b2a0",
+    "gpa": 3.61,
+    "finishedCreditHour": 91,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "3f7190a0-3be4-4bed-8adb-499a7c5867ec",
+    "gpa": 2.86,
+    "finishedCreditHour": 48,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "c6e442fd-ad6a-40f6-a97a-b9a41d462372",
+    "gpa": 3.95,
+    "finishedCreditHour": 94,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "2d6ed45b-7c40-47c7-8fe8-1cde14f5cb07",
+    "gpa": 2.01,
+    "finishedCreditHour": 50,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "28749131-fe9f-4629-9708-81d1a8e199cf",
+    "gpa": 2.63,
+    "finishedCreditHour": 46,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "07f4731a-4198-4b50-863c-19b26af662ac",
+    "gpa": 2.21,
+    "finishedCreditHour": 117,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "4e4b8980-ac71-41e2-8cba-46bf415ab7af",
+    "gpa": 2.72,
+    "finishedCreditHour": 95,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "3efe7693-eaf8-4922-a10e-8e354838d7d1",
+    "gpa": 2.75,
+    "finishedCreditHour": 54,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "2a79d5f7-cbca-4f75-911b-e04ec8780f32",
+    "gpa": 2.63,
+    "finishedCreditHour": 48,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "ceb8457e-d4a7-4b11-93e5-82c874d2c1e5",
+    "gpa": 3.2,
+    "finishedCreditHour": 44,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "f1a3e865-7fca-448b-a471-aff490469f0c",
+    "gpa": 3.8,
+    "finishedCreditHour": 106,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "7f55acb9-47d7-4ac3-a235-0a2f141e9ed3",
+    "gpa": 3.12,
+    "finishedCreditHour": 48,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "6e1581e0-ca27-4d24-b276-fd7c587833b6",
+    "gpa": 2.65,
+    "finishedCreditHour": 74,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "2d825834-9d83-49ad-bb11-32b71ed7a9c1",
+    "gpa": 2.23,
+    "finishedCreditHour": 86,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "3fd4d19f-8ea8-441b-a668-094c413a06d6",
+    "gpa": 3.34,
+    "finishedCreditHour": 118,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "dd3caf7d-bcb4-4414-b506-739edd8fa2d6",
+    "gpa": 3.18,
+    "finishedCreditHour": 106,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "57446d80-81a9-4ba8-9fe5-b41f19af205f",
+    "gpa": 2.18,
+    "finishedCreditHour": 76,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "a5812f59-6c72-42f5-a4b6-f48da0123912",
+    "gpa": 3.62,
+    "finishedCreditHour": 93,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "f46c06e0-ffd4-4174-a6d4-7e8ac4b0aa92",
+    "gpa": 2.98,
+    "finishedCreditHour": 59,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "340fc3f4-e37d-4687-90d7-69f1df5be690",
+    "gpa": 3.29,
+    "finishedCreditHour": 85,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "471f8dc9-3258-4927-86c5-f71513dcace8",
+    "gpa": 3.88,
+    "finishedCreditHour": 79,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "d18337bf-d692-47fd-b861-121d3e849e16",
+    "gpa": 2.94,
+    "finishedCreditHour": 73,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "988916d9-d465-486b-8dc9-505406fb9f5a",
+    "gpa": 2.26,
+    "finishedCreditHour": 47,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "9490ad72-cd3b-4443-b6a1-a504717ec447",
+    "gpa": 3.9,
+    "finishedCreditHour": 118,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "ac06537e-d143-4135-a569-04c62d1e6287",
+    "gpa": 3.86,
+    "finishedCreditHour": 52,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "0a698e3b-0fe6-49f5-bca5-edb992ad01f4",
+    "gpa": 2.15,
+    "finishedCreditHour": 77,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "f9d8ba40-67d7-4a79-9d0f-1c775d359d5b",
+    "gpa": 2.22,
+    "finishedCreditHour": 40,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "12a74d01-16af-418d-a172-70113e2023e6",
+    "gpa": 3.33,
+    "finishedCreditHour": 52,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "190efc45-c18d-4bac-878c-f523fb5b8129",
+    "gpa": 3.73,
+    "finishedCreditHour": 41,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "7dd586e0-25ae-41f1-8e93-f74b49330430",
+    "gpa": 3.25,
+    "finishedCreditHour": 92,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "bd6e17c4-2391-4ed9-887b-5295ab994426",
+    "gpa": 3.25,
+    "finishedCreditHour": 118,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "ad0b1976-9a74-4b21-b8fb-954a2cc9410c",
+    "gpa": 3.76,
+    "finishedCreditHour": 92,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "0d927d4a-e722-482e-b0f2-8707f180c6ab",
+    "gpa": 2.04,
+    "finishedCreditHour": 42,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "ae599c5d-7924-44f6-b40e-a97de9ec1c5e",
+    "gpa": 2.73,
+    "finishedCreditHour": 43,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "f0dee60c-60df-4c45-83ef-178750ceb538",
+    "gpa": 3.09,
+    "finishedCreditHour": 84,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "c355775c-4f88-45e5-8d55-7f14970e758d",
+    "gpa": 2.28,
+    "finishedCreditHour": 82,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "92ccc23f-55c3-4d2a-8df5-2bc5adebd7c1",
+    "gpa": 2.72,
+    "finishedCreditHour": 61,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "f148a6e9-5d3e-40ec-86b8-6e16504a250c",
+    "gpa": 2.76,
+    "finishedCreditHour": 40,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "1af10d4e-26bf-4e8f-a959-35d0e9e8893e",
+    "gpa": 2.62,
+    "finishedCreditHour": 65,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "d6421da7-d084-4f6b-ad53-adc2886b0fad",
+    "gpa": 3.48,
+    "finishedCreditHour": 73,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "701e81ff-9d2b-4435-a27c-c136a063b433",
+    "gpa": 3.53,
+    "finishedCreditHour": 103,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "53927558-032d-45b3-9d7b-0a85391108f6",
+    "gpa": 3.68,
+    "finishedCreditHour": 79,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "8f593b55-a8aa-4daa-a55e-5a8822ba3488",
+    "gpa": 3.53,
+    "finishedCreditHour": 93,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "5174c82b-a1b2-4668-b183-3f98d9d96c0c",
+    "gpa": 3.37,
+    "finishedCreditHour": 67,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "f8838761-4104-4664-9d20-a533102168c3",
+    "gpa": 2.12,
+    "finishedCreditHour": 46,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "867dee5d-db66-4358-9665-acee88262886",
+    "gpa": 2.47,
+    "finishedCreditHour": 30,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "83d4f5a1-4825-4435-8cd0-f58a4c3a7782",
+    "gpa": 2.15,
+    "finishedCreditHour": 50,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "f3df73ab-cf2a-424d-b602-e766c87bdd9f",
+    "gpa": 2.3,
+    "finishedCreditHour": 51,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "4e9c5b8d-bd40-48da-b972-ac331799df18",
+    "gpa": 2.57,
+    "finishedCreditHour": 94,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "679924c0-5a2f-40be-b7dd-71c3963f316d",
+    "gpa": 2.75,
+    "finishedCreditHour": 81,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "303818ff-130a-422f-9cf8-bbaa170e9ef2",
+    "gpa": 2.66,
+    "finishedCreditHour": 69,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "aee85bc7-3c26-4185-9fca-cbcef7982f74",
+    "gpa": 4.0,
+    "finishedCreditHour": 113,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "475719a3-a27c-462d-8191-4b10e7445130",
+    "gpa": 2.02,
+    "finishedCreditHour": 47,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "b58b7382-cd0a-4e85-a518-8de8330b5beb",
+    "gpa": 3.84,
+    "finishedCreditHour": 60,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "4b3ee25c-2886-4ff1-8abf-e5d851dd4c7d",
+    "gpa": 2.79,
+    "finishedCreditHour": 99,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "577a7e64-265a-4368-90a7-fe644b7d7524",
+    "gpa": 3.57,
+    "finishedCreditHour": 84,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "11c07853-c1cd-476e-8d31-baaa99b17259",
+    "gpa": 2.94,
+    "finishedCreditHour": 112,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "a374c221-742a-4a40-b250-193cb0f773aa",
+    "gpa": 3.68,
+    "finishedCreditHour": 44,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "9dbf4fa4-d788-4043-93e4-5f32e1c546c7",
+    "gpa": 3.69,
+    "finishedCreditHour": 113,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "9ede171d-ef9f-4bb3-b584-066d587babdb",
+    "gpa": 2.87,
+    "finishedCreditHour": 58,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "ceded878-07d8-4b69-bbfe-8a3a292cddce",
+    "gpa": 3.13,
+    "finishedCreditHour": 108,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "e97c9d9f-fbaa-4296-8bfe-0f4bb95a0f77",
+    "gpa": 3.43,
+    "finishedCreditHour": 98,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "123330fe-37f0-4d34-b6e4-c487792a7c2d",
+    "gpa": 3.3,
+    "finishedCreditHour": 107,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "96f1728a-ae51-458e-80a2-6a2165294d49",
+    "gpa": 3.03,
+    "finishedCreditHour": 80,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "cece1ac2-e3aa-46ad-99a6-a44632986d8b",
     "gpa": 2.55,
     "finishedCreditHour": 95,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
   },
   {
-    "userId": "5ca776e0-ad31-4fac-a275-5d19c4224c5c",
-    "gpa": 3.96,
-    "finishedCreditHour": 82,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "36a1a4f5-b13c-48e5-9b11-07692a1e5a81",
-    "gpa": 2.2,
-    "finishedCreditHour": 85,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "ebdfa9dd-03a8-46e9-b362-1480b0559263",
-    "gpa": 3.14,
-    "finishedCreditHour": 90,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "9faf9790-2660-4828-b454-15cd3485528c",
-    "gpa": 2.3,
-    "finishedCreditHour": 44,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "2824e17d-02f4-441d-abe6-7dc767f2e14d",
-    "gpa": 3.58,
-    "finishedCreditHour": 100,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "12f85318-4096-4e83-a71e-91c450cb5ea8",
-    "gpa": 2.37,
-    "finishedCreditHour": 71,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "3232e925-ba66-4bd9-b4c6-92f9802e3cbe",
-    "gpa": 2.21,
-    "finishedCreditHour": 89,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "71a84386-4a20-4113-9ec2-934922dc96ef",
-    "gpa": 2.67,
-    "finishedCreditHour": 65,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "90e93e37-fd80-4fa8-9b21-78b885e2ae9d",
-    "gpa": 3.51,
-    "finishedCreditHour": 40,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "7b9a7941-967c-4fdd-96ed-f3c4013a9d01",
-    "gpa": 3.59,
+    "userId": "e6e95217-d683-4836-ab31-2a7e9fca9cae",
+    "gpa": 3.98,
     "finishedCreditHour": 68,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
   },
   {
-    "userId": "3cce269a-0a32-4e90-9354-f01d03b9908e",
-    "gpa": 2.24,
-    "finishedCreditHour": 57,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "0c270656-b08c-4f70-a003-613b0f8f7c94",
-    "gpa": 2.87,
-    "finishedCreditHour": 99,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "88615183-e897-43bd-9d5c-8c4f913295f2",
-    "gpa": 3.39,
-    "finishedCreditHour": 36,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "f67158b3-343c-47db-a8e8-00b8d20b3ccd",
-    "gpa": 2.34,
-    "finishedCreditHour": 71,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "0ec40bb9-312f-48ed-8a95-e8bfa772fa87",
-    "gpa": 2.69,
-    "finishedCreditHour": 68,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "9568dc21-2beb-4af0-9067-8ed911c28d77",
-    "gpa": 2.41,
-    "finishedCreditHour": 40,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "54d9ddaf-f649-4738-b2af-c0a89cd9dda7",
-    "gpa": 2.3,
-    "finishedCreditHour": 81,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "0fd5be47-1fe2-40b9-a944-1f72ed39b0ff",
-    "gpa": 3.26,
-    "finishedCreditHour": 110,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "c632e84a-754e-4fc4-8011-25e49e914666",
-    "gpa": 3.56,
-    "finishedCreditHour": 45,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "8b9a644b-d8d2-42ee-9874-e94f143a4a3b",
-    "gpa": 2.88,
-    "finishedCreditHour": 74,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "bdf030f9-c5ec-46b2-a4d3-a2320588c63f",
-    "gpa": 3.8,
-    "finishedCreditHour": 86,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "db9aff29-a7a1-4ced-8a1c-930ced387136",
-    "gpa": 2.84,
-    "finishedCreditHour": 85,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "9bd2d41c-41c1-43de-adc3-e546d076ead0",
-    "gpa": 3.59,
-    "finishedCreditHour": 82,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "197d7911-b264-4d55-a567-c8d7d35fa421",
-    "gpa": 2.8,
-    "finishedCreditHour": 64,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "60f9df2f-4b44-4981-85ee-7ea0e90a4ad1",
-    "gpa": 2.06,
-    "finishedCreditHour": 115,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "ea0b51d5-757f-442e-9d12-952bc2e027c1",
-    "gpa": 2.47,
-    "finishedCreditHour": 89,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "5a89a5d5-c4f2-464a-b0eb-a8aa80bfcaf0",
-    "gpa": 3.35,
-    "finishedCreditHour": 81,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "d429a509-1e23-4c7f-81ac-2872bda59c00",
-    "gpa": 3.95,
-    "finishedCreditHour": 115,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "562316e8-b25f-499a-b00a-3bb77691ee45",
-    "gpa": 2.46,
-    "finishedCreditHour": 96,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "597be8c0-81e9-4ff1-846b-0769ccf2fef7",
-    "gpa": 2.04,
-    "finishedCreditHour": 65,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "132c3570-eda8-4609-b044-f2a1fdd03389",
-    "gpa": 2.86,
-    "finishedCreditHour": 75,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "7caff797-c519-4a3c-a670-ea0ca7f12fd8",
-    "gpa": 3.46,
-    "finishedCreditHour": 56,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "b0a34c5b-5539-4713-8605-689c438f5233",
-    "gpa": 2.19,
-    "finishedCreditHour": 102,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "52cb3aa4-3821-473a-8f09-804d3aa7397a",
-    "gpa": 2.88,
-    "finishedCreditHour": 37,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "1e386256-8313-4d01-920d-df0f0318e045",
-    "gpa": 2.56,
-    "finishedCreditHour": 100,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "c298da9a-0ebc-4c75-8023-8708775acba8",
-    "gpa": 3.12,
-    "finishedCreditHour": 47,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "0f8e619f-85e7-43f4-9dc9-9d40b2e51413",
-    "gpa": 2.87,
-    "finishedCreditHour": 89,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "1fb1119d-e944-41a1-9b41-491d3c746b41",
-    "gpa": 2.15,
-    "finishedCreditHour": 57,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "07d8ab29-60b5-4062-a548-d43429a8bb20",
-    "gpa": 2.54,
-    "finishedCreditHour": 69,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "352d2b32-841f-4cbf-b00d-80d332096382",
-    "gpa": 2.84,
-    "finishedCreditHour": 113,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "bad0bbda-4edd-4dfc-9574-8d201a6f9fab",
-    "gpa": 2.45,
-    "finishedCreditHour": 49,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "78ea81e7-2c8f-4219-8963-dc5137f11e19",
-    "gpa": 3.34,
-    "finishedCreditHour": 31,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "3294d9f2-3fc9-4676-912a-f6c663974897",
-    "gpa": 3.95,
-    "finishedCreditHour": 67,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "51530df4-9a91-43ae-9c7c-de8ca4ebec1b",
+    "userId": "66115f82-742c-486e-a4b8-179172ded001",
     "gpa": 3.53,
-    "finishedCreditHour": 95,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "3a4847ba-9415-440d-973f-8d524233946f",
-    "gpa": 2.02,
-    "finishedCreditHour": 67,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "adea9d8c-881a-430f-838c-7d15f1ee99ff",
-    "gpa": 3.29,
-    "finishedCreditHour": 63,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "3048da9d-2ba6-44ba-8a86-7b141e932370",
-    "gpa": 3.17,
-    "finishedCreditHour": 55,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "18b3de1f-7552-4fe9-80ac-04a5eec503a0",
-    "gpa": 3.69,
-    "finishedCreditHour": 85,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "6706eb40-3258-42b2-bb8e-7537a250d2ec",
-    "gpa": 3.63,
-    "finishedCreditHour": 46,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "14f57d71-d39b-4c29-ab7c-c1bcd1091fb1",
-    "gpa": 3.93,
-    "finishedCreditHour": 83,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "803bc439-479d-4e2a-a622-c822d99b7a2e",
-    "gpa": 2.24,
-    "finishedCreditHour": 95,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "5294b38f-eb56-4bcf-8a57-56a6bcbd0caf",
-    "gpa": 3.14,
-    "finishedCreditHour": 108,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "76053060-a289-40fc-a286-76cf385b0901",
-    "gpa": 3.31,
-    "finishedCreditHour": 34,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "5a2e7520-7eba-483b-97c3-729b2635f72b",
-    "gpa": 2.14,
-    "finishedCreditHour": 86,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "46c93df3-627c-4180-a211-807eba734216",
-    "gpa": 3.2,
     "finishedCreditHour": 81,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
   },
   {
-    "userId": "1ea4bf11-5e4f-46aa-b0e7-256a6785508c",
-    "gpa": 3.61,
-    "finishedCreditHour": 82,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "5b235ac5-8a3a-41af-9e66-0cbea96808d7",
-    "gpa": 3.93,
-    "finishedCreditHour": 114,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "33011d52-ac1b-4080-98fc-08fe21257036",
-    "gpa": 3.94,
-    "finishedCreditHour": 31,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "316555be-f4ab-44d1-9741-d8d4e2fd1845",
-    "gpa": 2.62,
-    "finishedCreditHour": 91,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "c697bb2b-3cdd-4ee3-86a2-211286209c71",
-    "gpa": 2.34,
-    "finishedCreditHour": 96,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "e59a1695-efb2-4f50-93d5-d8f406d0221e",
-    "gpa": 3.92,
-    "finishedCreditHour": 50,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "778cb778-df4b-4bdd-9ee1-48b1e1f7a769",
-    "gpa": 2.81,
-    "finishedCreditHour": 72,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "2ae7d844-ba83-4952-9a18-0f5c508fbfd9",
-    "gpa": 3.34,
-    "finishedCreditHour": 61,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "729898f2-ba75-4366-8bfd-9b9b75e1d859",
-    "gpa": 2.8,
-    "finishedCreditHour": 52,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "275e7da3-4cc0-44e4-a17a-d95f9b740b44",
-    "gpa": 3.06,
-    "finishedCreditHour": 82,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "ba2236bf-9e9a-4930-b28f-4a7150ed660b",
-    "gpa": 2.81,
-    "finishedCreditHour": 71,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "7cfc2bdd-b51a-476a-8ea8-1a8bd7b8523e",
-    "gpa": 3.59,
-    "finishedCreditHour": 87,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "bace615f-b533-4838-8aba-d4dcd3e1c0f6",
-    "gpa": 3.22,
-    "finishedCreditHour": 99,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "76f04ed4-2c21-4851-814c-47c6c896ff34",
-    "gpa": 2.12,
-    "finishedCreditHour": 93,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "85e0f5a5-4549-414f-a019-85f168c03857",
-    "gpa": 2.52,
-    "finishedCreditHour": 49,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "f0586492-07d5-4bcc-9a17-d0e7116230cf",
-    "gpa": 3.15,
-    "finishedCreditHour": 40,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "fd3bc435-346a-40b8-b1ff-4b777a1758cb",
-    "gpa": 2.9,
-    "finishedCreditHour": 65,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "673c4aab-690e-4734-8774-a71acca0078e",
-    "gpa": 2.8,
-    "finishedCreditHour": 34,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "46c3349b-26b5-4bfa-839a-fc88456d9128",
-    "gpa": 3.42,
-    "finishedCreditHour": 115,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "fbc7fccd-352b-4d6a-93ff-ceb0f9dd6bdc",
-    "gpa": 2.26,
-    "finishedCreditHour": 73,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "db60329d-7af8-495e-97d0-979758f512d7",
-    "gpa": 3.36,
-    "finishedCreditHour": 50,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "18f4eac0-4890-4276-98d6-a3ba53814895",
-    "gpa": 2.22,
-    "finishedCreditHour": 33,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "dc002d65-b3b0-40a8-8d9d-9890d0f8cc9b",
-    "gpa": 2.89,
-    "finishedCreditHour": 50,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "6c58f812-8d66-4525-a72c-44c1540c9124",
-    "gpa": 2.96,
-    "finishedCreditHour": 63,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "da837825-5b63-40d1-bdab-3481438db25c",
-    "gpa": 3.13,
-    "finishedCreditHour": 113,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "1982e0ea-2315-4f84-b42f-1bb67d2711d1",
-    "gpa": 3.33,
-    "finishedCreditHour": 58,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "73c5b071-294a-411b-863b-ea5faec6e45c",
-    "gpa": 2.24,
-    "finishedCreditHour": 106,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "26e8f615-e031-4ddf-83bd-75825a95eb4f",
-    "gpa": 3.94,
-    "finishedCreditHour": 79,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "fb8ad527-cd19-48ed-9e5f-a7c1a17a7dc4",
-    "gpa": 2.69,
+    "userId": "77dba4bf-0dd6-4455-aba6-831bf2d33bdd",
+    "gpa": 3.72,
     "finishedCreditHour": 80,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
   },
   {
-    "userId": "ec66de36-2235-4326-9e97-c1d4b4a52fde",
+    "userId": "677c4fd3-9f8f-4264-92a6-5d61eaa67af0",
+    "gpa": 2.42,
+    "finishedCreditHour": 94,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "a5bcd97c-7b12-4ed1-858d-1d039c3dc082",
+    "gpa": 3.6,
+    "finishedCreditHour": 48,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "7477c7ca-5bf9-445e-8ccf-70bd694ac299",
+    "gpa": 2.98,
+    "finishedCreditHour": 71,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "485780fb-27e8-49da-bfd0-649d8390e396",
+    "gpa": 2.97,
+    "finishedCreditHour": 82,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "3ed9311f-d950-42fb-a22c-8bdd28374d86",
     "gpa": 3.64,
     "finishedCreditHour": 72,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
   },
   {
-    "userId": "fe601529-2c0c-4c71-837e-14aa42636eb6",
-    "gpa": 2.58,
-    "finishedCreditHour": 65,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "a8d539f7-4dff-48cb-9ddf-d8997eb0258e",
-    "gpa": 2.32,
-    "finishedCreditHour": 69,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "922cb621-502b-4f36-9336-ac7a5dcd6f08",
-    "gpa": 2.3,
-    "finishedCreditHour": 82,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "bc2d2e16-f400-4735-8b08-5988d9276b54",
-    "gpa": 2.95,
-    "finishedCreditHour": 82,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "b171ca56-c1ba-4940-be2b-157a782eb34b",
-    "gpa": 2.25,
-    "finishedCreditHour": 103,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "7d387460-df6c-466c-a7c3-52e86dffe48f",
-    "gpa": 2.7,
-    "finishedCreditHour": 77,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "be8ca1f5-1cce-43a5-92d9-254befa514c8",
-    "gpa": 3.11,
-    "finishedCreditHour": 94,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "090be9ce-68c8-49cc-8f50-8fad212252b5",
-    "gpa": 3.56,
-    "finishedCreditHour": 113,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "aa3135f9-9948-455c-a4fd-a384f2e33ac0",
-    "gpa": 2.62,
-    "finishedCreditHour": 70,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "b37cc6bd-77c4-4e44-bafa-1959afad6400",
-    "gpa": 2.33,
-    "finishedCreditHour": 73,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "68fcdd4a-d65b-4c9a-90f1-052ebd3f6bac",
-    "gpa": 2.89,
-    "finishedCreditHour": 105,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "995276dc-6cec-4090-85ec-fcda7478cba4",
-    "gpa": 2.75,
-    "finishedCreditHour": 76,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "63e08162-b60c-4cd0-a675-9896d4a0ebd0",
-    "gpa": 2.84,
-    "finishedCreditHour": 67,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "90ef77cd-3e9e-4ca6-9418-747ca4e61310",
-    "gpa": 2.47,
-    "finishedCreditHour": 113,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "9efa7f93-c333-41f6-b4a0-d22a851328b3",
-    "gpa": 2.68,
-    "finishedCreditHour": 99,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "f278298f-263e-4122-8c73-cd140b75eb8b",
-    "gpa": 2.66,
-    "finishedCreditHour": 78,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "dfebc00c-9cbd-4629-b356-d2b2ca130f20",
-    "gpa": 2.21,
-    "finishedCreditHour": 36,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "8d327e59-5872-4490-b8b4-6a5ba31134bf",
-    "gpa": 2.27,
-    "finishedCreditHour": 104,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "e16d81b1-7485-413b-a9ed-1c9d91146507",
-    "gpa": 3.46,
-    "finishedCreditHour": 80,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "967c42f1-5de0-4493-9333-0ae879d5f706",
-    "gpa": 2.13,
-    "finishedCreditHour": 47,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "ab5fbf7b-d05e-4943-bab2-fe406d196604",
-    "gpa": 2.9,
-    "finishedCreditHour": 110,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "1b6fb04c-1129-4c6b-9c59-a5a33ee78c24",
-    "gpa": 3.59,
-    "finishedCreditHour": 99,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "d2618705-3ec1-45a9-a399-f49fee0a5d23",
-    "gpa": 2.26,
-    "finishedCreditHour": 42,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "43ff69b8-b766-4cc1-b529-b7c12fce040d",
-    "gpa": 3.21,
-    "finishedCreditHour": 59,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "facd37d1-f7ba-4e9f-be5f-fa82b694be46",
-    "gpa": 3.31,
-    "finishedCreditHour": 106,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "88052462-2681-4631-8d9a-9f0d194bdac5",
-    "gpa": 2.11,
-    "finishedCreditHour": 79,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "8c249b38-ea13-49ae-a4d1-5fa8237223de",
-    "gpa": 2.39,
+    "userId": "cfae9e0d-c8be-408a-b444-a18054cfe607",
+    "gpa": 3.55,
     "finishedCreditHour": 86,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
   },
   {
-    "userId": "4653504a-00fa-46b6-bf68-3ae3f775fbe8",
-    "gpa": 3.49,
-    "finishedCreditHour": 41,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "cfa87f63-9eda-4355-a63a-1b4932f044ad",
-    "gpa": 2.52,
-    "finishedCreditHour": 52,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "acb49420-ba0c-4527-81b9-f1bf318e40b4",
-    "gpa": 2.62,
-    "finishedCreditHour": 112,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "9eba7a83-d45b-4d3a-943c-e1256c29ef73",
-    "gpa": 2.17,
-    "finishedCreditHour": 40,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "f0352430-ef55-4672-b92a-0ff4a73a0c64",
-    "gpa": 2.89,
-    "finishedCreditHour": 95,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "bed02dd5-a75f-4da8-909d-33caebb57ab7",
-    "gpa": 2.93,
-    "finishedCreditHour": 67,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "688754e2-e45e-449e-941a-c6d12eb74e65",
-    "gpa": 2.56,
-    "finishedCreditHour": 62,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "07a1bf42-408e-406d-8ab2-49e47398a6e7",
-    "gpa": 2.5,
-    "finishedCreditHour": 48,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "270e4c71-1a7a-484c-a10b-6ca96921fae1",
-    "gpa": 2.64,
-    "finishedCreditHour": 101,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "cf35647d-ccee-4ff5-b1b7-3a93401c4002",
-    "gpa": 3.86,
-    "finishedCreditHour": 115,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "5738d6e8-d855-4a40-85b9-7c525ab62424",
-    "gpa": 2.97,
-    "finishedCreditHour": 92,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "f10797d3-398e-41f6-b53f-e30dca71455d",
-    "gpa": 3.19,
-    "finishedCreditHour": 83,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "d252858b-5960-4223-a8b6-dbe06ca1f043",
-    "gpa": 3.78,
-    "finishedCreditHour": 67,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "f7c383f5-d552-4ec9-95c3-11a7cae7774b",
-    "gpa": 2.8,
-    "finishedCreditHour": 40,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "9e9ad6d7-2c6d-4343-8400-25edca8054db",
-    "gpa": 3.66,
-    "finishedCreditHour": 112,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "093244d5-146e-43c1-b9be-edf542fdbc63",
-    "gpa": 2.18,
-    "finishedCreditHour": 110,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "5e286d31-b5ee-44b3-8945-a2c1c3407c73",
-    "gpa": 2.95,
-    "finishedCreditHour": 112,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "f143b041-39c0-4fbf-94f6-09225c3d467a",
-    "gpa": 3.87,
-    "finishedCreditHour": 76,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "96de6782-9ac0-437d-8bcd-5b12fba441d2",
-    "gpa": 3.11,
-    "finishedCreditHour": 62,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "fb33c754-db0a-4319-8b49-67a475c73a21",
-    "gpa": 3.1,
-    "finishedCreditHour": 118,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "39fcc6d0-5cff-43ce-ab05-9e74caab71aa",
-    "gpa": 2.5,
-    "finishedCreditHour": 56,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "fc016ed9-aae3-4a90-a132-e7f27b0d7634",
-    "gpa": 3.17,
-    "finishedCreditHour": 80,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "5fb90157-6a97-426e-8128-8db0906d061c",
-    "gpa": 3.56,
-    "finishedCreditHour": 32,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "812f501f-5378-435a-801d-562ef60fcc9c",
-    "gpa": 2.89,
-    "finishedCreditHour": 30,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "89106bf0-646b-4627-8d00-6c7d9e3a008e",
-    "gpa": 2.78,
-    "finishedCreditHour": 100,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "fdc138d6-fff2-4ba1-9875-5c6d223397d5",
-    "gpa": 3.83,
-    "finishedCreditHour": 33,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "8c89e194-b339-433f-8a66-3d1a30aab9be",
-    "gpa": 3.76,
-    "finishedCreditHour": 97,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "5281df0f-e739-4cb0-9462-33676a9fcbf1",
-    "gpa": 3.15,
-    "finishedCreditHour": 60,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "28105f78-c4e6-4603-995e-b5f19670a025",
-    "gpa": 2.88,
-    "finishedCreditHour": 61,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "4639176b-b36f-457b-95dc-932dada7eaef",
-    "gpa": 2.44,
-    "finishedCreditHour": 85,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "9dcb6802-6623-4051-84fd-5b9e1eaf67ef",
-    "gpa": 3.75,
-    "finishedCreditHour": 114,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "a9d11035-e98f-43e3-b546-43fb9a78061e",
-    "gpa": 2.53,
-    "finishedCreditHour": 102,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "3a0b572c-07c0-4eac-85f6-e81d3dd85a44",
-    "gpa": 2.38,
-    "finishedCreditHour": 106,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "247273a0-e8c8-466a-99fc-6306827c1459",
-    "gpa": 3.09,
-    "finishedCreditHour": 53,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "06df7852-564a-42ca-bf9b-13b598fa4522",
-    "gpa": 2.11,
-    "finishedCreditHour": 103,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "e49042b0-24b8-454f-b1d0-5597077c7f38",
-    "gpa": 2.63,
-    "finishedCreditHour": 35,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "ed23ad0f-8fa0-4eee-b795-87cb97f8fa74",
-    "gpa": 3.69,
-    "finishedCreditHour": 54,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "1bb795a3-ed24-471a-93a8-73a336dadbd5",
-    "gpa": 2.48,
-    "finishedCreditHour": 95,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "1d20685a-f15c-4836-ab96-fe294e20e331",
-    "gpa": 2.0,
-    "finishedCreditHour": 64,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "11cc514a-227e-456e-8b2f-1f1b96c27863",
-    "gpa": 3.19,
-    "finishedCreditHour": 46,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "8d7aba2c-e7fc-4e21-a2af-06e4d8c7caa6",
-    "gpa": 3.98,
-    "finishedCreditHour": 104,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "dffa2405-a5d5-4114-a2cd-182d72dc777d",
-    "gpa": 2.15,
-    "finishedCreditHour": 116,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "c57fd0ae-0514-4085-b434-794dc9fd0ba1",
-    "gpa": 2.71,
-    "finishedCreditHour": 47,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "740f58ed-6f05-4f76-beda-0e1b72e88688",
-    "gpa": 2.11,
-    "finishedCreditHour": 94,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "0f3673ef-1707-4833-9c0c-ab00c88ef4ba",
-    "gpa": 3.48,
-    "finishedCreditHour": 117,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "da99015a-187c-44b4-8cba-8f64e576fe0d",
-    "gpa": 3.96,
-    "finishedCreditHour": 32,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "9d52d8ff-c4b6-4b58-96da-da8c3ca9cc33",
-    "gpa": 3.75,
-    "finishedCreditHour": 102,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "b6b0f123-726f-4e42-8dd1-ea43752ecf77",
-    "gpa": 3.32,
-    "finishedCreditHour": 88,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "f0cf574f-aaac-46a0-a243-1ed1562abd3c",
-    "gpa": 3.72,
-    "finishedCreditHour": 110,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "efdfbc1f-c3f9-41d2-a7e7-784bc3913ed4",
-    "gpa": 3.14,
-    "finishedCreditHour": 97,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "41eab5c4-d122-4c3f-98fd-74f7a56e98d3",
-    "gpa": 3.28,
-    "finishedCreditHour": 32,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "1d86ba98-2777-4dbd-83d1-47f9dc124dc4",
-    "gpa": 3.05,
-    "finishedCreditHour": 73,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "5e34588e-507a-4662-a53b-ad7d8d27e99e",
+    "userId": "dafc5823-c471-487d-95d6-12147596c92e",
     "gpa": 2.76,
-    "finishedCreditHour": 114,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
+    "finishedCreditHour": 43,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
   },
   {
-    "userId": "92df3c04-ac26-4daf-89c5-676635918555",
-    "gpa": 3.05,
-    "finishedCreditHour": 89,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "77c42300-64f1-4e04-8b57-1779ef14a522",
-    "gpa": 3.94,
-    "finishedCreditHour": 114,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "0a91d9d6-45e9-412b-90a0-674d114226a3",
-    "gpa": 2.68,
-    "finishedCreditHour": 53,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "af5c0ef7-3b24-43c5-be2b-0c5e3fb81c79",
-    "gpa": 3.05,
-    "finishedCreditHour": 47,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "c1c2ffa9-816a-4243-82c5-6cf0972dce7b",
-    "gpa": 3.87,
-    "finishedCreditHour": 85,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "060c8967-105d-4359-ab46-09031d3d0e43",
-    "gpa": 2.57,
-    "finishedCreditHour": 90,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "b01a13d6-6638-4402-8914-1330c94c184a",
-    "gpa": 2.16,
-    "finishedCreditHour": 104,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "f6773d50-2485-40fe-a632-c96d3e39b29c",
-    "gpa": 2.74,
-    "finishedCreditHour": 81,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "03e18b1d-166c-4806-903f-f989dffbf7e9",
-    "gpa": 2.89,
-    "finishedCreditHour": 51,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "351232ba-6748-463e-a4eb-b739e931199a",
-    "gpa": 3.57,
-    "finishedCreditHour": 59,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "c5c95913-5de6-42c8-b005-225fab577263",
-    "gpa": 2.15,
-    "finishedCreditHour": 69,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "a9156a84-966f-4460-95f5-2cddb97367df",
-    "gpa": 3.06,
-    "finishedCreditHour": 31,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "35f7d90e-3e18-45e0-be9a-6a63c72b3903",
-    "gpa": 3.61,
-    "finishedCreditHour": 38,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "513916f9-c6ea-4ac0-9f6d-d73565854903",
-    "gpa": 3.21,
-    "finishedCreditHour": 99,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "bb2edffd-a5d2-4202-9a0c-ad2b952d5db0",
-    "gpa": 2.16,
-    "finishedCreditHour": 78,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "f3d553a8-2428-49f5-9e5b-c5603d35fd5f",
-    "gpa": 2.76,
-    "finishedCreditHour": 40,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "3105c967-2043-4d6f-b420-8831a605c195",
-    "gpa": 2.28,
-    "finishedCreditHour": 97,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "64033a31-6c54-4f43-bca5-5acf12989fec",
-    "gpa": 2.03,
-    "finishedCreditHour": 38,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "0f1a3847-d774-4a0c-8c12-f2ecdeb228cb",
-    "gpa": 3.24,
-    "finishedCreditHour": 68,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "36d3ffe7-f36b-4f7c-b8a5-ff689a8200ff",
+    "userId": "9030543d-75d0-47a0-a3c5-d6e56be4e720",
     "gpa": 2.26,
-    "finishedCreditHour": 100,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
+    "finishedCreditHour": 77,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
   },
   {
-    "userId": "49365f37-23ae-4a14-af60-e1e2ca8d8612",
-    "gpa": 3.74,
-    "finishedCreditHour": 76,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
+    "userId": "e6c727c9-f5a4-4235-8366-5955f2ece612",
+    "gpa": 2.26,
+    "finishedCreditHour": 35,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
   },
   {
-    "userId": "66abfddf-7023-4670-bd90-4b01339b3ea3",
-    "gpa": 3.67,
+    "userId": "079b0537-a017-467d-a331-749f3cd68e31",
+    "gpa": 3.73,
+    "finishedCreditHour": 70,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "3af8d5e9-6816-4c07-836a-74d36434f257",
+    "gpa": 3.23,
+    "finishedCreditHour": 56,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "21d1b044-5217-48a0-87a3-d94632700a22",
+    "gpa": 2.42,
+    "finishedCreditHour": 111,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "f7cc1977-97f8-4f1f-8ed8-c9518f0595b5",
+    "gpa": 3.91,
+    "finishedCreditHour": 60,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "2670b382-750e-4c59-9159-b28012bc4fe8",
+    "gpa": 3.02,
+    "finishedCreditHour": 106,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "493f535d-b9ea-4eec-80d9-fbdd945261ce",
+    "gpa": 3.36,
+    "finishedCreditHour": 60,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "481dca74-b200-45d5-ba9f-a39fdb7a8c7e",
+    "gpa": 2.2,
+    "finishedCreditHour": 54,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "bf851093-0330-4b27-81a6-12122eb79f66",
+    "gpa": 2.58,
+    "finishedCreditHour": 78,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "65562112-ee96-4bf7-9ff1-3b3572361703",
+    "gpa": 3.0,
+    "finishedCreditHour": 116,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "e64bdb60-6e63-42bc-9a9c-4e8270d82f5c",
+    "gpa": 3.88,
+    "finishedCreditHour": 70,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "615e874c-c014-40de-bbda-b6d149671f03",
+    "gpa": 2.8,
+    "finishedCreditHour": 47,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "6642f407-842b-4758-b817-86a48c00a9cf",
+    "gpa": 3.14,
+    "finishedCreditHour": 68,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "ed0ac332-e89b-4c31-bc3f-673e23eaafec",
+    "gpa": 2.4,
+    "finishedCreditHour": 113,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "87b8064a-9357-4495-b542-812f343e7670",
+    "gpa": 3.56,
+    "finishedCreditHour": 64,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "e9ecdbba-60fa-4a0a-9150-a349e1fddeb1",
+    "gpa": 3.83,
+    "finishedCreditHour": 94,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "6ecca094-4726-48e6-ac25-9be68e845498",
+    "gpa": 3.92,
+    "finishedCreditHour": 91,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "60e59b78-776f-4745-a793-de2ba46d06a9",
+    "gpa": 2.57,
+    "finishedCreditHour": 66,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "009ccd0d-e82c-44e7-81c1-cdd0f96b3d01",
+    "gpa": 2.53,
+    "finishedCreditHour": 55,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "31772a37-139e-4ef5-9da1-e26113cde814",
+    "gpa": 2.23,
+    "finishedCreditHour": 56,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "8484615d-c891-4959-840b-0b48681a1ba1",
+    "gpa": 2.23,
+    "finishedCreditHour": 103,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "54458c80-8b0a-4376-b1ff-22417d9a788a",
+    "gpa": 2.99,
+    "finishedCreditHour": 80,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "9b85b02f-75de-4a19-8249-af53d00b8e02",
+    "gpa": 3.16,
+    "finishedCreditHour": 107,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "074af859-1213-42f3-89fb-3a8d7d6c2c8d",
+    "gpa": 3.34,
+    "finishedCreditHour": 43,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "0f3a1d60-69ec-44e2-8f97-04c6ef6ef6f5",
+    "gpa": 2.78,
+    "finishedCreditHour": 86,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "71589634-89b6-4d5a-b0af-d5446d0909e2",
+    "gpa": 3.39,
+    "finishedCreditHour": 80,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "b1d925fe-7487-4b75-b655-d8e9a953d6e7",
+    "gpa": 2.38,
+    "finishedCreditHour": 117,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "29db34ae-60de-4b06-9936-b0871892f91e",
+    "gpa": 3.25,
+    "finishedCreditHour": 70,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "969c40b4-175b-45f0-a129-23dd405131e0",
+    "gpa": 2.8,
+    "finishedCreditHour": 93,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "780dc788-4a0a-4694-9136-23990f6cac7a",
+    "gpa": 2.23,
+    "finishedCreditHour": 55,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "dabc75ff-9c81-4b46-9f61-983a1e968b32",
+    "gpa": 2.07,
+    "finishedCreditHour": 102,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "adc62869-44cf-47c8-88bf-446d077853b2",
+    "gpa": 3.12,
+    "finishedCreditHour": 63,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "8f9a6dc9-6468-4fbc-8ef4-0184fd425828",
+    "gpa": 2.61,
+    "finishedCreditHour": 68,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "e918dab1-d569-42fd-b15d-1e10d9b6b3fe",
+    "gpa": 2.21,
+    "finishedCreditHour": 58,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "d2562ca2-48aa-4f48-a9c7-75a7c3cbae8a",
+    "gpa": 2.38,
+    "finishedCreditHour": 81,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "6bf58c02-6e21-485c-b677-4ebfa8ac73f1",
+    "gpa": 2.26,
     "finishedCreditHour": 57,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
   },
   {
-    "userId": "0b8d2b95-3c5e-46c9-a0b8-90a016af6db2",
+    "userId": "fb632308-2542-439d-ba63-d49118a8fc55",
+    "gpa": 3.23,
+    "finishedCreditHour": 31,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "621a8b38-07a6-4686-bf27-f4155aa8c081",
+    "gpa": 2.78,
+    "finishedCreditHour": 31,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "1b1bff27-28e4-4503-899b-e7061dcbe03f",
+    "gpa": 3.75,
+    "finishedCreditHour": 95,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "9df7dfd2-806c-4601-9dcf-ef60d6d90760",
+    "gpa": 2.59,
+    "finishedCreditHour": 102,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "ce4ede2c-a826-4bdc-95f4-b361b919cf42",
+    "gpa": 3.05,
+    "finishedCreditHour": 55,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "068910d3-6320-45a9-9238-3d6981455438",
+    "gpa": 2.3,
+    "finishedCreditHour": 44,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "c2bf6f43-094c-4090-8408-7e01549a539e",
+    "gpa": 3.99,
+    "finishedCreditHour": 45,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "37a8d800-7ac2-4505-8e69-d76fd4de81b0",
+    "gpa": 2.29,
+    "finishedCreditHour": 36,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "0bd9fbf0-a365-4b3a-80fc-ecb774657785",
+    "gpa": 3.18,
+    "finishedCreditHour": 59,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "59b22a46-a7df-4e61-8cf0-b01841b11e35",
+    "gpa": 3.9,
+    "finishedCreditHour": 38,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "a854bdf3-1b64-412c-823e-0dc72434a6e9",
+    "gpa": 2.57,
+    "finishedCreditHour": 111,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "0521b54d-15b0-4414-b70a-183e0c375947",
+    "gpa": 3.7,
+    "finishedCreditHour": 118,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "a90c56ad-97d1-450d-b67c-8bbf74c8596a",
     "gpa": 3.49,
     "finishedCreditHour": 47,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
   },
   {
-    "userId": "977dc32a-8ced-4001-9ea8-31b9e83c997e",
-    "gpa": 3.28,
-    "finishedCreditHour": 56,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
+    "userId": "82a7e682-79f9-4464-be75-b14269500f0a",
+    "gpa": 2.77,
+    "finishedCreditHour": 34,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
   },
   {
-    "userId": "657517f8-b52c-4f3c-95a5-4aff93015a0f",
+    "userId": "60c39f52-88e9-4aa0-b892-51f252affb50",
+    "gpa": 2.62,
+    "finishedCreditHour": 55,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "a0c02980-d48a-4957-bdb2-2aaa2ac17bc2",
+    "gpa": 2.81,
+    "finishedCreditHour": 99,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "0930dc21-ec2b-4b22-b90a-1c18a8413660",
+    "gpa": 2.02,
+    "finishedCreditHour": 91,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "ced06a49-d5d7-4483-b8bc-02909b43b96f",
+    "gpa": 2.11,
+    "finishedCreditHour": 50,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "6e30290c-ce64-4316-bb5f-da0c17aa5208",
+    "gpa": 3.29,
+    "finishedCreditHour": 57,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "adae74c1-0fb9-4fdd-90f0-399ce6036196",
+    "gpa": 3.17,
+    "finishedCreditHour": 105,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "22dec77c-37a4-4235-abb1-f23784095a8d",
+    "gpa": 3.85,
+    "finishedCreditHour": 113,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "f62d75b8-6812-40a5-bbaf-3d293329dc5c",
+    "gpa": 2.87,
+    "finishedCreditHour": 72,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "062cd5f5-ebb6-4396-9a25-8cacd601dd25",
+    "gpa": 2.48,
+    "finishedCreditHour": 52,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "af773175-6484-45dc-9c9c-90b2f2e2357f",
+    "gpa": 2.84,
+    "finishedCreditHour": 110,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "04408cd4-40b7-498c-92e0-5cdb6585851c",
+    "gpa": 3.69,
+    "finishedCreditHour": 105,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "d3fd3878-ee43-4ad0-ba79-13bed83f8f66",
+    "gpa": 2.31,
+    "finishedCreditHour": 120,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "f7bcdd7d-73e7-4415-89e1-926702d4ece3",
+    "gpa": 2.38,
+    "finishedCreditHour": 84,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "84ca8ee0-9cce-4203-9979-2741d6929c56",
+    "gpa": 2.78,
+    "finishedCreditHour": 33,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "cbe76b5e-1a47-4e96-ab7a-4e3d5681fd76",
+    "gpa": 2.68,
+    "finishedCreditHour": 105,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "cf117557-f4c3-4ba9-bce9-3627f0699a03",
+    "gpa": 3.13,
+    "finishedCreditHour": 69,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "0397b78f-158a-48a9-b557-52ea2f227f67",
+    "gpa": 3.12,
+    "finishedCreditHour": 78,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "7933c993-cd41-4d87-8752-6a8c3443e7d3",
+    "gpa": 2.95,
+    "finishedCreditHour": 55,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "d04ddb3f-b6d7-410e-801b-50361e7d570f",
+    "gpa": 3.57,
+    "finishedCreditHour": 52,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "64ae0a45-8ef6-46c3-bada-00fcc31f9f4f",
+    "gpa": 3.96,
+    "finishedCreditHour": 65,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "720215f1-d772-41f3-8085-a049a4f40b77",
+    "gpa": 3.27,
+    "finishedCreditHour": 105,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "2b631966-b78e-4372-a799-bf587adbecf2",
+    "gpa": 2.52,
+    "finishedCreditHour": 59,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "d1b9b563-ce55-4c33-b1f8-570621ec51a7",
+    "gpa": 3.85,
+    "finishedCreditHour": 108,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "8f573c8d-ca41-436f-b2f1-dbee1e05f417",
+    "gpa": 3.06,
+    "finishedCreditHour": 71,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "ea0cc0e5-bff6-45e8-9269-bcf9fd011d91",
+    "gpa": 3.98,
+    "finishedCreditHour": 45,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "6715b8b8-75a0-42ee-a4cf-7e1c83e082fa",
+    "gpa": 2.85,
+    "finishedCreditHour": 37,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "95d4bd99-c9c9-4690-9171-ec34636c168d",
+    "gpa": 3.0,
+    "finishedCreditHour": 45,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "66b0a9ff-1021-444c-a181-e3660c6b5177",
+    "gpa": 2.6,
+    "finishedCreditHour": 113,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "b3defe22-fd1a-412d-9123-9190f8d80407",
+    "gpa": 2.92,
+    "finishedCreditHour": 48,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "69460231-7926-4235-bbcb-23ec94ef6255",
+    "gpa": 2.65,
+    "finishedCreditHour": 53,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "ed59769d-c63e-4529-b966-1421efb79c77",
+    "gpa": 3.03,
+    "finishedCreditHour": 47,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "796bc91d-a9e0-4ea4-9091-da0536452a26",
+    "gpa": 2.7,
+    "finishedCreditHour": 64,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "afbcc808-126a-4b29-91f3-0a2605d32792",
+    "gpa": 2.35,
+    "finishedCreditHour": 89,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "2b7f1676-122d-4130-b99c-692305739c81",
+    "gpa": 3.56,
+    "finishedCreditHour": 112,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "09806132-2489-434f-902e-be6f61b86f13",
+    "gpa": 2.46,
+    "finishedCreditHour": 76,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "bed80a30-acc7-440f-bf9c-911616620efa",
+    "gpa": 2.11,
+    "finishedCreditHour": 50,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "4af85e2b-a95d-4006-a4b0-53e03ac465db",
+    "gpa": 2.45,
+    "finishedCreditHour": 65,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "5fa01bef-9426-42ba-9b8f-761e0c3dc96e",
+    "gpa": 2.52,
+    "finishedCreditHour": 116,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "ca5dea47-06d6-4efe-9da6-67a0b3ccbcf6",
+    "gpa": 2.92,
+    "finishedCreditHour": 45,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "ef2f42c6-c3c0-4cd4-b75b-40792d829845",
+    "gpa": 2.34,
+    "finishedCreditHour": 115,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "a96e5532-5389-4cc8-9fed-1e105a569232",
+    "gpa": 2.86,
+    "finishedCreditHour": 85,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "b8e0936e-9579-422d-9813-5cbd1abe029c",
+    "gpa": 3.57,
+    "finishedCreditHour": 108,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "98263d0b-2838-4e7d-bccd-8a6a85ce68de",
+    "gpa": 3.7,
+    "finishedCreditHour": 96,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "f303310c-4590-40e1-ab15-fcf10db4d63a",
+    "gpa": 3.94,
+    "finishedCreditHour": 33,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "3de785cb-1de2-4757-bc66-870f8ace9d49",
+    "gpa": 2.63,
+    "finishedCreditHour": 32,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "a8a377ad-2258-49fe-b5d5-39f1952697d9",
     "gpa": 2.94,
     "finishedCreditHour": 89,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
   },
   {
-    "userId": "531c8265-1404-4755-9a3e-f6f09fd926db",
-    "gpa": 2.35,
-    "finishedCreditHour": 47,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "f5490f56-d90d-4243-8e5a-fde45ce74edd",
-    "gpa": 3.27,
-    "finishedCreditHour": 51,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "462deafa-edae-4c77-88a4-8eadafc1c4fd",
-    "gpa": 3.36,
-    "finishedCreditHour": 72,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "735a0658-fce8-4e31-be95-fd1e07f4d81a",
-    "gpa": 3.51,
-    "finishedCreditHour": 102,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "7157c0e7-97e1-48d3-a69c-a2fc22f64b97",
-    "gpa": 3.42,
-    "finishedCreditHour": 103,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "97328d24-306f-4ff6-afdc-2095ebf3a74b",
-    "gpa": 3.73,
-    "finishedCreditHour": 51,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "24832276-5163-4de8-a87f-80c2a707f068",
-    "gpa": 3.81,
-    "finishedCreditHour": 84,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "995432e6-3e0d-4647-82ff-2d93b1802f7d",
-    "gpa": 2.05,
-    "finishedCreditHour": 83,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "16966f50-b552-4d8c-ab89-1e8e87b32238",
-    "gpa": 2.29,
-    "finishedCreditHour": 57,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "255c0ff1-d312-4333-94ff-0dcfacc99abb",
-    "gpa": 2.32,
-    "finishedCreditHour": 105,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "79e32eba-c241-4d0a-b83d-3dd0f44062ed",
-    "gpa": 3.76,
-    "finishedCreditHour": 67,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "232db000-134a-4550-8a94-b63b4c5768dd",
-    "gpa": 3.99,
-    "finishedCreditHour": 69,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "d082a2ee-6cf3-49d1-969e-3c10567d5a7a",
-    "gpa": 3.48,
-    "finishedCreditHour": 88,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "1776e4a0-4503-4bfd-ac9d-1dfa7fc1f866",
-    "gpa": 3.1,
-    "finishedCreditHour": 105,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "e99ac309-1807-46df-8180-8649112b6caf",
-    "gpa": 3.76,
-    "finishedCreditHour": 91,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "9ec8ff98-e253-4007-9701-ae499e7f03c4",
-    "gpa": 3.01,
-    "finishedCreditHour": 113,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "0e47d80c-23a1-4689-87bc-ef5ae125991f",
-    "gpa": 2.22,
-    "finishedCreditHour": 60,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "7fcb175d-ee5c-4abd-96fd-fcf150fcc7b8",
-    "gpa": 2.39,
-    "finishedCreditHour": 107,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "008ffbee-13b7-428c-8a92-9607dc3a8e72",
-    "gpa": 2.09,
-    "finishedCreditHour": 79,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "990492fa-cae1-4b57-ac58-a6ef01db4a89",
-    "gpa": 2.49,
-    "finishedCreditHour": 91,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "e4660ec1-23d0-40e2-a44b-b6bd4f0f5d27",
-    "gpa": 3.43,
-    "finishedCreditHour": 71,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "000609be-547f-4df9-89f8-e131a8536519",
-    "gpa": 2.13,
-    "finishedCreditHour": 37,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "1c4ed8d2-45b8-474d-a64d-ff6cbb032143",
-    "gpa": 3.74,
-    "finishedCreditHour": 120,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "6bf7f022-0e17-45fe-85fb-8e59409a882f",
-    "gpa": 2.47,
-    "finishedCreditHour": 86,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "c3a84e9c-fb99-4c82-ba52-f6979b062cfc",
-    "gpa": 3.81,
-    "finishedCreditHour": 64,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "69cbc6b3-d638-4ac4-9f9b-28904d1c0a8c",
-    "gpa": 2.56,
-    "finishedCreditHour": 36,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "cfc7fce2-e201-4d55-b3cf-63e5b834085d",
-    "gpa": 2.51,
-    "finishedCreditHour": 58,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "88e3dc59-39c0-4be9-b441-1f068f61d363",
-    "gpa": 3.09,
-    "finishedCreditHour": 115,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "75a7b9b2-bd6f-4a4d-ba6d-db1e604d4d4b",
-    "gpa": 2.19,
-    "finishedCreditHour": 75,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "e02a9caa-8a7f-4d54-a275-55849fd87582",
-    "gpa": 3.92,
-    "finishedCreditHour": 47,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "833ac733-514c-4eb8-aecd-6c078e6a9276",
-    "gpa": 2.66,
-    "finishedCreditHour": 111,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "cd0f32e9-05a4-4f4d-86de-635098ce3f32",
-    "gpa": 2.03,
-    "finishedCreditHour": 110,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "68e7430a-9c15-4a7d-9ed0-3f6346920225",
-    "gpa": 3.5,
-    "finishedCreditHour": 118,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "d89f07cc-0e40-49b2-869d-0e588f883ad6",
-    "gpa": 3.76,
-    "finishedCreditHour": 73,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "fff7ea63-42dc-4182-a78e-b01633ae7a75",
-    "gpa": 2.9,
-    "finishedCreditHour": 43,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "8f3fc571-bfcd-45d3-9fdc-6a5cf5f9e47e",
-    "gpa": 2.99,
-    "finishedCreditHour": 73,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "be63357e-0ea5-41c3-8b84-de3e09b202ad",
-    "gpa": 2.95,
-    "finishedCreditHour": 99,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "09a4f5dd-6552-4b65-977b-38e4b42a2e4d",
-    "gpa": 2.01,
-    "finishedCreditHour": 88,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "a75ad717-65ff-4d49-93a2-6b3adb2dd1dd",
-    "gpa": 2.79,
-    "finishedCreditHour": 69,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "7066e41e-d70b-4ac7-b857-5a1624bbb359",
-    "gpa": 2.15,
-    "finishedCreditHour": 59,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "57261fa0-1381-4712-a0be-935e87c88b7b",
-    "gpa": 3.04,
-    "finishedCreditHour": 70,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "0090ca40-e115-44c6-9d72-8b846c47d949",
-    "gpa": 3.7,
-    "finishedCreditHour": 36,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "97345d5d-2f17-400c-8c6f-cb18c741051a",
-    "gpa": 3.06,
-    "finishedCreditHour": 36,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "9db9255a-0403-4e86-81bf-254d7fe6db18",
-    "gpa": 3.15,
-    "finishedCreditHour": 31,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "4d15d498-37fe-4df3-a3ef-4ba8074e59ba",
-    "gpa": 3.7,
-    "finishedCreditHour": 38,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "6c954033-2e76-4549-b969-d445343b4a1d",
-    "gpa": 3.33,
-    "finishedCreditHour": 110,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "6b8ff75d-3ca0-48dd-896a-4ca68cb33bee",
-    "gpa": 2.42,
-    "finishedCreditHour": 80,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "24f1ea18-215a-41fc-b434-4e56dc4ea07b",
-    "gpa": 2.79,
-    "finishedCreditHour": 38,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "a77dfa12-a16e-4626-813c-c78e47d30b64",
-    "gpa": 2.68,
-    "finishedCreditHour": 74,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "7de10311-6ea5-4e04-861b-97d55a23de43",
-    "gpa": 3.78,
-    "finishedCreditHour": 35,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "3fbf159a-d5b2-4dfe-9d08-97574dc27783",
-    "gpa": 2.32,
-    "finishedCreditHour": 49,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "724b86f9-1961-4c39-a98e-d977b4eade3c",
-    "gpa": 3.65,
-    "finishedCreditHour": 88,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "fdce457d-e713-4843-ba5e-0560dd2cde40",
-    "gpa": 3.38,
-    "finishedCreditHour": 95,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "bf0e781b-0e55-4019-9907-1d7d22002e5e",
-    "gpa": 2.61,
-    "finishedCreditHour": 76,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "6096a88f-4209-4b7e-a30e-a118f2ec3b36",
-    "gpa": 3.87,
-    "finishedCreditHour": 51,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "ff1031f2-a1f0-4a0a-b044-ca6e1eacc847",
-    "gpa": 2.8,
-    "finishedCreditHour": 104,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "0d87f87a-91d5-4965-9dee-ca5bac14efed",
-    "gpa": 3.15,
-    "finishedCreditHour": 114,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "84e81d3a-f890-4ac4-93c1-05a40c63854b",
-    "gpa": 2.84,
-    "finishedCreditHour": 67,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "d5554ab1-37d9-4c9a-9184-2a12d2af921e",
-    "gpa": 3.78,
-    "finishedCreditHour": 44,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "19637968-ddc3-4b0d-a4df-18be45ebc19d",
-    "gpa": 3.89,
-    "finishedCreditHour": 118,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "15b8787e-cd41-4a94-a5d0-4fed0ad87537",
-    "gpa": 2.16,
-    "finishedCreditHour": 53,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "8535c4ee-9955-4d7e-b457-12a2e48f109b",
-    "gpa": 2.04,
-    "finishedCreditHour": 44,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "295906d6-0d5c-4e97-97bc-d572bc491a5f",
-    "gpa": 3.5,
-    "finishedCreditHour": 89,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "9b2aeae0-e5d1-416b-88ba-2e6c38cd5503",
-    "gpa": 3.29,
-    "finishedCreditHour": 75,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "bfb2170a-ea7b-4508-b447-f22f4422889a",
-    "gpa": 3.78,
-    "finishedCreditHour": 118,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "23ecde89-e5d2-44e7-9a9e-494ee2a6b8b1",
-    "gpa": 2.84,
-    "finishedCreditHour": 43,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "b6ffb5d8-f669-46cc-a9c1-e5686382d3d3",
-    "gpa": 2.13,
-    "finishedCreditHour": 113,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "86226de3-e6c1-4287-b60c-05f383c1f679",
-    "gpa": 2.84,
-    "finishedCreditHour": 78,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "438b331a-25b9-4fbc-a58c-380d1955afb2",
-    "gpa": 2.26,
-    "finishedCreditHour": 43,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "1c236035-effd-4015-b9c3-026c68e92c91",
-    "gpa": 3.09,
-    "finishedCreditHour": 53,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "4bff7b34-95fe-4834-9bb9-7ff816cb7c20",
-    "gpa": 2.39,
-    "finishedCreditHour": 31,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "5bcf055b-3127-4d34-871c-2a4e26bb7da5",
-    "gpa": 3.17,
-    "finishedCreditHour": 68,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "55c2bb74-86d0-4937-a8dd-45a58aac493d",
-    "gpa": 2.05,
-    "finishedCreditHour": 74,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "f0b5d3e8-b215-48ff-8dec-a8185c023b18",
-    "gpa": 3.35,
-    "finishedCreditHour": 109,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "04a2a1cb-7ea7-4102-bf90-7a48dd2f01f3",
-    "gpa": 2.33,
-    "finishedCreditHour": 61,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "a464baa7-ec2d-4e28-a368-8315453fc103",
-    "gpa": 3.91,
-    "finishedCreditHour": 97,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "bb5d31eb-2226-4f5a-b178-891e2b9e84c1",
-    "gpa": 2.57,
-    "finishedCreditHour": 100,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "e212e895-566a-425b-8e4e-6245338964c4",
-    "gpa": 3.87,
-    "finishedCreditHour": 41,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "718c7f94-79c6-400c-a976-30fe91123541",
-    "gpa": 3.4,
-    "finishedCreditHour": 73,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "8cfa6a66-47ff-4990-8d9b-f7f0541204c4",
-    "gpa": 2.43,
-    "finishedCreditHour": 36,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "96f650f6-218b-4e94-8592-2cd76f43bdc2",
-    "gpa": 2.29,
-    "finishedCreditHour": 83,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "808a515d-635b-43c8-9e93-088871dbcd3e",
-    "gpa": 3.91,
-    "finishedCreditHour": 98,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "65e3bcf1-d0a1-4143-a036-b70b896e7a1c",
-    "gpa": 2.71,
-    "finishedCreditHour": 116,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "65dfd81b-88b1-48a5-ba59-bfa9b7518df0",
-    "gpa": 2.13,
-    "finishedCreditHour": 99,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "e396aa33-eb65-462f-a7a2-383f466d1928",
-    "gpa": 3.24,
-    "finishedCreditHour": 54,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "f686354a-f401-495f-8411-5f9c95150694",
-    "gpa": 2.79,
-    "finishedCreditHour": 57,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "954ae7d7-11f6-40fc-a6a9-0e9120b8e0c8",
-    "gpa": 3.15,
-    "finishedCreditHour": 85,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "4c8669ee-3762-483a-8955-afb119992452",
-    "gpa": 3.89,
-    "finishedCreditHour": 69,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "ff39cd76-7742-4951-b27b-4c35636c4743",
-    "gpa": 3.33,
-    "finishedCreditHour": 85,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "8eb19213-19f9-4a7b-8690-eceb1ef9ec4d",
-    "gpa": 2.01,
-    "finishedCreditHour": 99,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "29822959-cace-47c2-99ef-2c6966e83a0a",
-    "gpa": 2.97,
-    "finishedCreditHour": 47,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "c6769a73-9a05-4e76-98bd-c662899c79a4",
-    "gpa": 2.11,
-    "finishedCreditHour": 89,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "8bce6d67-aaf9-4cbb-998a-7496b62f4340",
-    "gpa": 3.65,
-    "finishedCreditHour": 106,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "c4d59860-6df0-4053-a3fb-724654af6203",
-    "gpa": 2.82,
-    "finishedCreditHour": 37,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "4bdf4327-f6c8-4662-9536-7d0d7ae1cb5d",
-    "gpa": 3.98,
-    "finishedCreditHour": 113,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "dd03c002-5b77-4c0b-8509-f7c90411aae4",
-    "gpa": 2.57,
-    "finishedCreditHour": 90,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "a4dd2dfd-0711-499d-a8ad-aa35dbe5d982",
-    "gpa": 3.86,
-    "finishedCreditHour": 88,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "0f9e89e7-0880-47a4-84ec-b7a576ccd203",
-    "gpa": 2.15,
-    "finishedCreditHour": 54,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "4bf3f986-b35e-4f9f-ba1f-f4d4797b5cae",
-    "gpa": 3.46,
-    "finishedCreditHour": 66,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "45366885-c9ee-47bd-8e62-4ead8e0459be",
-    "gpa": 3.2,
-    "finishedCreditHour": 38,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "7c91865c-dba3-4ce5-a31c-305e02d19b39",
-    "gpa": 3.78,
-    "finishedCreditHour": 43,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "5ffa38ba-319e-4953-b119-1e448066a7c3",
-    "gpa": 3.07,
-    "finishedCreditHour": 63,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "89d0fa5b-db58-4fb5-adf4-acf8dc98d0f2",
-    "gpa": 2.69,
-    "finishedCreditHour": 70,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "6a9b8368-9dce-427f-aef8-4aa6ff6675cc",
-    "gpa": 3.93,
-    "finishedCreditHour": 52,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "f03660b7-21e1-4b78-93d3-b17fa46861db",
-    "gpa": 2.02,
-    "finishedCreditHour": 66,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "42700a9a-85c0-4842-9dcd-70ec7081052f",
-    "gpa": 3.81,
-    "finishedCreditHour": 61,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "b25cc54d-a596-4536-911b-9cfc66970290",
-    "gpa": 2.98,
-    "finishedCreditHour": 102,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "b2de9fbc-a1a6-4b01-a787-376b265095f2",
-    "gpa": 2.85,
-    "finishedCreditHour": 105,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "50499dd2-dea5-44c6-bc36-6eaf460dfca2",
-    "gpa": 3.13,
-    "finishedCreditHour": 83,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "0f0a84d2-002b-4687-88df-bc6c1d6eb08e",
-    "gpa": 2.86,
-    "finishedCreditHour": 75,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "850c83e4-8ff6-4eb1-8949-71cec9c691f6",
-    "gpa": 3.45,
-    "finishedCreditHour": 67,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "b5e89e4d-95c9-41ae-9348-4cd1c6ac5dc3",
-    "gpa": 3.77,
-    "finishedCreditHour": 60,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "40c895dc-af62-4da1-9475-1b1eb94da0cb",
-    "gpa": 3.58,
-    "finishedCreditHour": 58,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "006e4774-0330-402a-883c-5aca66566097",
-    "gpa": 3.61,
-    "finishedCreditHour": 40,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "63e34b16-fea5-4f83-8d12-100dff66657f",
-    "gpa": 3.39,
-    "finishedCreditHour": 34,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "1bb5afed-f03b-475f-8c1e-ed1904d663a5",
-    "gpa": 3.26,
-    "finishedCreditHour": 68,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "e082e2e9-7a74-4c50-9457-6f1fce7c7351",
-    "gpa": 2.19,
-    "finishedCreditHour": 94,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "d4278ef6-1b8b-4c65-be65-ee123443f795",
-    "gpa": 3.95,
-    "finishedCreditHour": 51,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "f40333eb-95af-4bcd-950f-767d095ef901",
-    "gpa": 3.72,
-    "finishedCreditHour": 58,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "d9934574-dbdd-4bbd-ac6c-10dc6d5eebed",
-    "gpa": 2.4,
-    "finishedCreditHour": 97,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "87b9ce43-626c-4dd1-bdd0-cdc19209de2d",
-    "gpa": 3.19,
-    "finishedCreditHour": 57,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "b30a1632-d62c-434e-9ae7-515ee02b8c87",
-    "gpa": 2.22,
-    "finishedCreditHour": 119,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "249bfee5-18c4-4fe3-95ea-aee98ac851ab",
-    "gpa": 3.6,
-    "finishedCreditHour": 64,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "57a6b160-ab0e-4c21-82a4-2cef433c31d4",
-    "gpa": 2.0,
-    "finishedCreditHour": 118,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "a68ef65b-0f80-4644-bed3-9d103114066c",
-    "gpa": 3.96,
-    "finishedCreditHour": 92,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "1df20311-bb95-40aa-a535-115093b5c2be",
-    "gpa": 3.32,
-    "finishedCreditHour": 38,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "9489a507-ef28-44eb-88b6-3db86ac113ce",
-    "gpa": 2.18,
-    "finishedCreditHour": 84,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "8c9e5641-ded5-4c8a-8255-a412dcb01bd9",
-    "gpa": 2.32,
-    "finishedCreditHour": 115,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "261dfe2e-6ca3-414e-9575-9fc4ff29d5bc",
-    "gpa": 2.65,
-    "finishedCreditHour": 56,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "b1c47b85-707f-4c4c-896c-ffde00496765",
-    "gpa": 3.48,
-    "finishedCreditHour": 96,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "d18bee0b-0fdb-4703-92ed-549ab57b6fdc",
-    "gpa": 2.93,
-    "finishedCreditHour": 98,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "b0f5c287-ccd1-412e-890f-d35873ab2ff5",
-    "gpa": 3.11,
-    "finishedCreditHour": 118,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "ebf674df-51f0-4729-8390-95add3c33641",
-    "gpa": 2.78,
-    "finishedCreditHour": 61,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "8d629dab-79cb-438f-8089-2c3a5d53ad0f",
-    "gpa": 3.2,
-    "finishedCreditHour": 103,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "0ef4db9f-8ee0-4ffc-b652-b86bf0b2fac7",
-    "gpa": 3.09,
-    "finishedCreditHour": 52,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "91673207-10ba-4ba2-b36d-a9dc37f878cb",
-    "gpa": 2.37,
-    "finishedCreditHour": 89,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "ba10ec01-88ea-4a6a-b092-28cd403161d4",
-    "gpa": 2.83,
-    "finishedCreditHour": 79,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "a91187ec-a77a-40df-9292-f2ccc53a4846",
-    "gpa": 3.53,
-    "finishedCreditHour": 30,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "9f26954c-5674-4191-a735-cb778e918d6d",
-    "gpa": 3.06,
-    "finishedCreditHour": 73,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "b8407d36-711b-490e-b598-f18afd5f16fd",
+    "userId": "ef58cb37-ffcd-4ebe-8206-5e54c353c429",
     "gpa": 2.07,
-    "finishedCreditHour": 101,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "71792d17-791d-4527-af5b-35b9c3d7ffab",
-    "gpa": 3.12,
-    "finishedCreditHour": 50,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "9724d727-7920-4ddc-8cd7-e36d68d8b4c4",
-    "gpa": 3.29,
-    "finishedCreditHour": 49,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "c5de414e-e80f-41f0-b5e1-dd925a679718",
-    "gpa": 2.67,
-    "finishedCreditHour": 47,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "516ad6dd-2101-497f-8bab-a384c7f05b8b",
-    "gpa": 2.96,
-    "finishedCreditHour": 45,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "5d221fac-9678-4996-8696-a3bb4c46a9c5",
-    "gpa": 3.28,
-    "finishedCreditHour": 50,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "ce8d7cd1-26b7-412b-837f-6561c1f2d00c",
-    "gpa": 2.79,
-    "finishedCreditHour": 32,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "069ee0ad-a008-4732-80ac-dccf5ddd264f",
-    "gpa": 3.47,
-    "finishedCreditHour": 119,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "752c04c6-a3fb-49ac-9488-6a8fde8aafb8",
-    "gpa": 3.31,
-    "finishedCreditHour": 74,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "762f5f9c-3df6-43fd-9b04-3abdcf4a9279",
-    "gpa": 3.02,
-    "finishedCreditHour": 110,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "fd471dee-02ac-4b66-b09a-35778a63ad7d",
-    "gpa": 3.85,
     "finishedCreditHour": 39,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
   },
   {
-    "userId": "64fd63e9-5216-441d-b8de-3670c5496fda",
-    "gpa": 3.8,
-    "finishedCreditHour": 92,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
+    "userId": "fc22b524-3917-4b20-b123-70c007c1ec60",
+    "gpa": 2.54,
+    "finishedCreditHour": 104,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
   },
   {
-    "userId": "014666db-5b32-4ea4-b05b-8e994b3b3e1d",
-    "gpa": 2.99,
-    "finishedCreditHour": 68,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
+    "userId": "d600331e-ec7c-4707-a997-ec5d2db7f89c",
+    "gpa": 2.18,
+    "finishedCreditHour": 81,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
   },
   {
-    "userId": "bdf66ba8-15bd-4f8d-b442-b671a10dec6c",
-    "gpa": 3.04,
-    "finishedCreditHour": 70,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
+    "userId": "1b908efc-e569-4235-86ee-15d4ba6aa028",
+    "gpa": 2.54,
+    "finishedCreditHour": 42,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
   },
   {
-    "userId": "9ff82fe4-68f0-4f58-aecb-de6a5795abde",
-    "gpa": 3.77,
-    "finishedCreditHour": 55,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
+    "userId": "f85e9007-a570-480b-8c69-8400e17703a2",
+    "gpa": 2.27,
+    "finishedCreditHour": 41,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
   },
   {
-    "userId": "fb930b61-9e35-4860-a5f3-76fe2d3505a2",
-    "gpa": 3.97,
-    "finishedCreditHour": 35,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "e298ee22-6976-4648-b24f-92aecee71a21",
-    "gpa": 3.2,
-    "finishedCreditHour": 76,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "207ad3e7-d671-4231-bca9-dbe24eede8e9",
-    "gpa": 3.08,
-    "finishedCreditHour": 78,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "2aa549cf-59bc-40cb-9ce4-e8cdf90c0b1e",
-    "gpa": 2.84,
-    "finishedCreditHour": 105,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "922e9f67-d052-47c9-bb64-7bb8d6fbda16",
-    "gpa": 3.21,
-    "finishedCreditHour": 116,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "419eb2ee-4f13-487d-8ddf-3fc1b3df275d",
-    "gpa": 3.54,
-    "finishedCreditHour": 59,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "24d0e10b-bf83-46e8-b6ef-50c6cfbc3142",
-    "gpa": 2.49,
+    "userId": "3752a873-902d-4dc4-82af-af34698f00d6",
+    "gpa": 3.96,
     "finishedCreditHour": 94,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
   },
   {
-    "userId": "1e642a28-ce27-433d-aad4-2ea579f67586",
-    "gpa": 2.35,
-    "finishedCreditHour": 68,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
+    "userId": "cb956520-1fe9-4a1a-8a2f-3f7898e9fde2",
+    "gpa": 3.12,
+    "finishedCreditHour": 72,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
   },
   {
-    "userId": "d0ecf1c2-3689-451b-8edf-d61d12773e53",
-    "gpa": 3.22,
-    "finishedCreditHour": 65,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "212b8c90-066d-4ced-99d8-743281e88eab",
-    "gpa": 3.88,
-    "finishedCreditHour": 108,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "ba137686-e28c-4fc7-b872-bf2160f48f8f",
+    "userId": "46a01991-35f4-4d38-9c00-9f7752ea292f",
     "gpa": 2.01,
-    "finishedCreditHour": 99,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "539b21b4-7c71-4229-b4ef-c62e4f431c8f",
-    "gpa": 3.39,
-    "finishedCreditHour": 67,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "a676ca29-a68c-4cc7-b542-c9e97cb6e0a7",
-    "gpa": 2.25,
-    "finishedCreditHour": 47,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "1989d329-8603-4938-b5bc-f35ece17a44f",
-    "gpa": 2.69,
-    "finishedCreditHour": 30,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "b3a8b5bc-a8b2-44cf-9bd9-2c2d95c1e25f",
-    "gpa": 3.69,
-    "finishedCreditHour": 118,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "afd16ab6-cc99-466b-b42e-dfb446df3bfa",
-    "gpa": 3.52,
-    "finishedCreditHour": 76,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "75178f35-97ed-4be5-8f46-cc09fa3e7cd5",
-    "gpa": 2.14,
-    "finishedCreditHour": 82,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "d4f31ef5-be7b-4f6e-a2c3-f539a2582f17",
-    "gpa": 2.85,
-    "finishedCreditHour": 62,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "801bd242-38d3-413d-a266-adfcf2c01a36",
-    "gpa": 2.44,
-    "finishedCreditHour": 34,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "8a8bed2a-c508-4760-aa86-f89fb6155f63",
-    "gpa": 2.4,
     "finishedCreditHour": 117,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
   },
   {
-    "userId": "15e6f443-1772-49f2-95da-35e2195a632c",
-    "gpa": 2.38,
-    "finishedCreditHour": 62,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
+    "userId": "2cdd9397-a563-4af9-9869-0ea4a0be81f6",
+    "gpa": 3.47,
+    "finishedCreditHour": 110,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
   },
   {
-    "userId": "192c2e73-4a51-4d1e-a692-552c32fd3035",
-    "gpa": 3.54,
+    "userId": "be52f4b9-446e-40b5-8ab2-950722fad6bf",
+    "gpa": 2.99,
+    "finishedCreditHour": 56,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "3c9661a0-2976-4100-b065-030009ba9171",
+    "gpa": 3.91,
+    "finishedCreditHour": 116,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "3ce96775-3281-4501-8721-5088a27e2262",
+    "gpa": 3.38,
+    "finishedCreditHour": 47,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "6bb2636d-0b32-48b8-9a32-2705346c8ec7",
+    "gpa": 2.77,
+    "finishedCreditHour": 38,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "2fb7b74a-4945-42a3-a68f-23e9142236fb",
+    "gpa": 3.3,
+    "finishedCreditHour": 30,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "fca63e89-7e16-4a5c-854f-8af0a112963e",
+    "gpa": 3.58,
+    "finishedCreditHour": 34,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "3fc308d7-47eb-4951-befc-b0413967a7a3",
+    "gpa": 3.4,
+    "finishedCreditHour": 113,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "279d4a89-d280-4986-8980-0931e78bea8f",
+    "gpa": 3.75,
+    "finishedCreditHour": 71,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "e90a5087-0997-4759-a6b5-41a532cf0be5",
+    "gpa": 3.31,
+    "finishedCreditHour": 48,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "0d6ef449-a618-4707-b4fa-28e232144cc8",
+    "gpa": 3.13,
+    "finishedCreditHour": 105,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "324ee03d-a4f9-4f86-af7e-9544fe015e60",
+    "gpa": 3.82,
+    "finishedCreditHour": 56,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "c6f9b5c9-168a-4475-99bb-0a120ce01848",
+    "gpa": 3.84,
     "finishedCreditHour": 74,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
   },
   {
-    "userId": "175c3223-9aab-43aa-8648-166ec6688692",
-    "gpa": 2.89,
-    "finishedCreditHour": 118,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
+    "userId": "7a738cd5-36f2-4b95-bfd9-6814f3712af8",
+    "gpa": 2.74,
+    "finishedCreditHour": 36,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
   },
   {
-    "userId": "c24654e6-e80d-42e5-9ca7-80c61f44909c",
-    "gpa": 2.26,
+    "userId": "1955bcdb-2e97-4535-95e5-de4b6df0c122",
+    "gpa": 2.91,
     "finishedCreditHour": 44,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
   },
   {
-    "userId": "c329d747-1bcd-4a09-8479-d6dd09d1fd37",
-    "gpa": 2.26,
-    "finishedCreditHour": 112,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
+    "userId": "b41eb6e0-4a2d-4bb9-aa8e-94b502689eb1",
+    "gpa": 3.93,
+    "finishedCreditHour": 111,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
   },
   {
-    "userId": "a214cd60-83d4-4f05-94f2-bd28e4ce3dbf",
-    "gpa": 3.94,
-    "finishedCreditHour": 62,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
+    "userId": "2c100a62-8175-4ad5-9de3-50ebae9eee02",
+    "gpa": 3.35,
+    "finishedCreditHour": 52,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
   },
   {
-    "userId": "82f8055e-bc6c-4b94-a6d3-da7ee86c1ab9",
-    "gpa": 3.02,
-    "finishedCreditHour": 55,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
+    "userId": "338a3004-8375-47a4-b10f-874e2757eb34",
+    "gpa": 2.41,
+    "finishedCreditHour": 59,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
   },
   {
-    "userId": "048c54a4-eaba-44d4-9b5c-cd3da6106873",
-    "gpa": 3.86,
-    "finishedCreditHour": 97,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "acfbcd36-4402-4edc-8253-0df717b719a7",
-    "gpa": 2.03,
+    "userId": "e3ec601f-b162-4e54-85e4-d14ae2df6cc5",
+    "gpa": 2.85,
     "finishedCreditHour": 94,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
   },
   {
-    "userId": "4b5d943e-7a16-4277-a5c2-ab2accdcf4a7",
+    "userId": "d5cd17b9-1e01-47bd-a095-6d8014238dc8",
+    "gpa": 2.25,
+    "finishedCreditHour": 45,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "2b0c925d-519f-4a6e-b3a9-7cd383719286",
+    "gpa": 2.51,
+    "finishedCreditHour": 90,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "14a93543-8f75-4a49-b35b-7cfeba19103d",
+    "gpa": 3.98,
+    "finishedCreditHour": 68,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "89674eb8-935b-4a43-8a23-2786fe04bb62",
+    "gpa": 2.4,
+    "finishedCreditHour": 34,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "fdb87095-f58e-4c8c-9b10-9a3d6c64c4d2",
+    "gpa": 2.94,
+    "finishedCreditHour": 94,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "02e284e7-b510-4462-8a8d-f0e39414ccaa",
+    "gpa": 2.02,
+    "finishedCreditHour": 35,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "21c2e82f-36f3-4843-b774-60eac0a32370",
+    "gpa": 2.81,
+    "finishedCreditHour": 87,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "cb4f4374-b2ed-49ac-9735-f8273daba648",
+    "gpa": 2.53,
+    "finishedCreditHour": 56,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "9c9ec9c5-d649-4852-ab6c-bc3ff1ba9e4d",
+    "gpa": 2.83,
+    "finishedCreditHour": 46,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "a21cfb1d-f796-49dc-90a2-b2c71f235116",
     "gpa": 3.61,
     "finishedCreditHour": 83,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
   },
   {
-    "userId": "c09eaef2-b3f2-40d1-92cc-8035680308df",
-    "gpa": 2.66,
-    "finishedCreditHour": 99,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
+    "userId": "443b2180-c240-4efa-a867-01eb387c1b3c",
+    "gpa": 3.05,
+    "finishedCreditHour": 89,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
   },
   {
-    "userId": "267e11d6-d8c9-4843-9933-88024345ff0f",
-    "gpa": 2.42,
-    "finishedCreditHour": 77,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
+    "userId": "570aaee0-21b7-44db-9625-d0d7f7b0ba92",
+    "gpa": 3.01,
+    "finishedCreditHour": 37,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
   },
   {
-    "userId": "1a8f31fd-9bc4-48b4-9759-fbe8b7a246bc",
-    "gpa": 3.14,
-    "finishedCreditHour": 93,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "d05d5db2-c5bd-4de4-8527-8ba41ae22c76",
-    "gpa": 3.2,
-    "finishedCreditHour": 61,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "9fa66e8e-33d3-4fd0-8e28-46adbe47d6d3",
-    "gpa": 2.01,
-    "finishedCreditHour": 109,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "6c1ddad1-19ea-4119-8d69-de2b417c9152",
-    "gpa": 2.49,
-    "finishedCreditHour": 85,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "cb4f2160-51e4-4fc1-9815-535cd8dc25aa",
-    "gpa": 2.84,
-    "finishedCreditHour": 111,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "cd17d450-2eac-4a9e-9072-6b62c197d1b0",
-    "gpa": 2.52,
-    "finishedCreditHour": 90,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "0229aea4-b99b-4089-af26-1f124a507b35",
-    "gpa": 2.98,
-    "finishedCreditHour": 35,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
-  },
-  {
-    "userId": "d113550d-2ae7-4cb4-a280-e633d975c94b",
-    "gpa": 3.22,
-    "finishedCreditHour": 79,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "61bfeba0-bcaf-43e3-b534-fc7033e04a7d",
-    "gpa": 3.56,
-    "finishedCreditHour": 103,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
-  },
-  {
-    "userId": "1f1aa4bd-3ccb-4b69-a052-fc16baa7474c",
-    "gpa": 3.48,
-    "finishedCreditHour": 86,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "f8be60de-f245-4aed-a588-46d66263f0d3",
-    "gpa": 2.12,
-    "finishedCreditHour": 111,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "01813787-9b99-493e-8f63-1855b658e977",
-    "gpa": 2.78,
-    "finishedCreditHour": 97,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "92d048ed-0aad-4360-a4da-c5eeee339325",
-    "gpa": 3.43,
-    "finishedCreditHour": 85,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "50b110e4-41b9-4b8e-b06a-4f552b350bfa",
-    "gpa": 3.72,
-    "finishedCreditHour": 106,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "3e312a00-123c-4ecf-a0b5-aedc17ab66ed",
-    "gpa": 3.9,
-    "finishedCreditHour": 109,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "cfa1141f-b93c-43dd-9666-e85a478876da",
-    "gpa": 3.14,
-    "finishedCreditHour": 45,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "f13303e5-b421-464b-ae09-4ae9390ff460",
-    "gpa": 2.15,
-    "finishedCreditHour": 45,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "4a689b80-3532-4f6c-964a-368cf779ccba",
-    "gpa": 3.21,
-    "finishedCreditHour": 54,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
-  },
-  {
-    "userId": "9f76b6bb-e3f3-44eb-a96f-34974bb7b1ed",
-    "gpa": 3.64,
-    "finishedCreditHour": 90,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
-  },
-  {
-    "userId": "c12b5388-90b1-4e15-b399-671dc1fd9aea",
-    "gpa": 2.19,
-    "finishedCreditHour": 42,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
-  },
-  {
-    "userId": "ca520edc-4b19-4c27-a116-8fc482b3a462",
+    "userId": "dd615a5d-8bad-4dcd-8490-56b878e977c9",
     "gpa": 2.54,
-    "finishedCreditHour": 31,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
+    "finishedCreditHour": 77,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
   },
   {
-    "userId": "3faf7502-18f6-4332-b6ca-d9f2229fe78d",
+    "userId": "41b370f6-f483-4fed-98db-aacdbee613da",
+    "gpa": 2.02,
+    "finishedCreditHour": 112,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "35b8d101-39ec-49b4-ac11-d904664796d3",
+    "gpa": 2.43,
+    "finishedCreditHour": 102,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "c6c813f6-20fb-4632-a6be-57f59d12d199",
+    "gpa": 2.55,
+    "finishedCreditHour": 60,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "61ff1b75-2914-480d-a0a9-01fcae4c701d",
     "gpa": 2.6,
-    "finishedCreditHour": 107,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
+    "finishedCreditHour": 120,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
   },
   {
-    "userId": "13bedf8c-8114-468b-9938-db7ca2d9f60c",
-    "gpa": 2.83,
-    "finishedCreditHour": 47,
-    "majorId": "50c6d759-9406-465c-9bf8-cfa5375da674"
+    "userId": "55c73bd0-9e01-4074-b8b0-e8e22a902a9b",
+    "gpa": 2.19,
+    "finishedCreditHour": 99,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
   },
   {
-    "userId": "ad679188-160a-47a1-a54e-0501a7e70db7",
-    "gpa": 2.42,
-    "finishedCreditHour": 52,
-    "majorId": "b15efbbe-0595-4bb6-b785-e49a796eaeaa"
+    "userId": "cf372d48-d566-4f83-afcf-a7e24e8045e0",
+    "gpa": 3.4,
+    "finishedCreditHour": 83,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
   },
   {
-    "userId": "20e20f9d-ef8b-4386-93af-0adf88c4a2e2",
-    "gpa": 2.73,
+    "userId": "e48e6e0f-2509-4284-952b-5e7dbcf1caec",
+    "gpa": 3.76,
+    "finishedCreditHour": 111,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "40b8fb27-73fe-4dd1-8df3-726c8cfba615",
+    "gpa": 2.61,
+    "finishedCreditHour": 36,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "674ef845-134d-4288-a216-b018117d7cd7",
+    "gpa": 2.35,
+    "finishedCreditHour": 38,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "8aef1b79-955e-48ac-add6-b12a3050e15b",
+    "gpa": 3.32,
+    "finishedCreditHour": 45,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "27fae306-a2c5-4694-8914-a15556b68d3d",
+    "gpa": 3.55,
+    "finishedCreditHour": 45,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "a1a7fde0-215d-45a2-822d-be2f37e38317",
+    "gpa": 2.22,
+    "finishedCreditHour": 54,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "b53fc9a4-6a9c-4600-ae4b-b765e45efcae",
+    "gpa": 3.67,
+    "finishedCreditHour": 84,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "8bcf2d26-ed92-446b-bcad-c551fc344712",
+    "gpa": 2.95,
+    "finishedCreditHour": 44,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "3168ee7d-2433-42fc-9164-aee2cc97d804",
+    "gpa": 2.58,
+    "finishedCreditHour": 79,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "4f74ebf0-12c6-494b-a838-ab81eb73f028",
+    "gpa": 2.77,
+    "finishedCreditHour": 66,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "0b1de24a-3b54-492b-b8d1-1da839f3b287",
+    "gpa": 3.28,
+    "finishedCreditHour": 120,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "cbfa6f01-dc36-4da4-a909-f465f4a327a0",
+    "gpa": 2.4,
     "finishedCreditHour": 110,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
   },
   {
-    "userId": "96777f5f-e603-4340-bf61-f4d0c78700f7",
-    "gpa": 3.11,
-    "finishedCreditHour": 33,
-    "majorId": "dfec89b2-f7e5-44bb-9f89-fb24043be6b9"
+    "userId": "205cbc88-1472-4df5-bf4c-824e7d1b8c08",
+    "gpa": 2.06,
+    "finishedCreditHour": 101,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
   },
   {
-    "userId": "f9f877eb-92b4-40b3-a447-d47ed044f89d",
-    "gpa": 3.61,
-    "finishedCreditHour": 30,
-    "majorId": "ab008534-2ea7-48f5-b8e8-4603d5ea08b6"
+    "userId": "96d2fd9d-992a-4d50-a90d-061feda75b85",
+    "gpa": 2.99,
+    "finishedCreditHour": 40,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
   },
   {
-    "userId": "deed2704-43fc-4245-8dc2-d383b0f0e7d8",
-    "gpa": 3.89,
+    "userId": "3f856306-8915-4596-a984-1c6af5a56791",
+    "gpa": 2.19,
+    "finishedCreditHour": 59,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "66da6e89-13da-4a27-8efc-071dd8e5701b",
+    "gpa": 3.19,
+    "finishedCreditHour": 104,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "952bbfb7-86d2-4252-bcb0-4b4f17f30844",
+    "gpa": 3.14,
+    "finishedCreditHour": 108,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "ee90579f-4f34-4ca9-9b48-04803a9a7628",
+    "gpa": 3.84,
     "finishedCreditHour": 117,
-    "majorId": "f5e80f12-3981-4229-bc6f-a8100857ee41"
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "63791a55-46a5-4878-9d36-ab271e0e4dcd",
+    "gpa": 2.1,
+    "finishedCreditHour": 62,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "c453a927-e613-40ed-95b2-5df749be9c2d",
+    "gpa": 3.93,
+    "finishedCreditHour": 80,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "fbf360bf-376f-45a0-af62-0cfc16e640d8",
+    "gpa": 2.39,
+    "finishedCreditHour": 115,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "72a3b7ca-0a02-4232-b9cb-d7cf4bb26988",
+    "gpa": 2.86,
+    "finishedCreditHour": 53,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "deb491b8-1f28-4ad8-84af-800af05eb1a4",
+    "gpa": 3.75,
+    "finishedCreditHour": 82,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "0fa7b7b9-166f-4882-8d94-fc9e7073ff2e",
+    "gpa": 2.42,
+    "finishedCreditHour": 57,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "21205584-3973-4c9a-8112-3bb7502729be",
+    "gpa": 3.41,
+    "finishedCreditHour": 35,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "17ea99a3-d649-4627-b235-50096a0c5f63",
+    "gpa": 3.96,
+    "finishedCreditHour": 44,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "683e0c67-0f28-41ff-91ad-0caa171c9b76",
+    "gpa": 2.77,
+    "finishedCreditHour": 119,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "c2342d96-48ec-44c8-9dc3-1e18cba39266",
+    "gpa": 3.33,
+    "finishedCreditHour": 52,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "622b85e2-32a6-472b-ab70-4e5f41e00fad",
+    "gpa": 3.83,
+    "finishedCreditHour": 53,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "cc65cd68-709c-4f51-807b-f442e0256c35",
+    "gpa": 3.76,
+    "finishedCreditHour": 109,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "7dfc9195-c56c-455e-a7e7-23a343bc11c4",
+    "gpa": 2.72,
+    "finishedCreditHour": 117,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "cc728799-a816-460b-b0c8-2731e8f33d11",
+    "gpa": 3.92,
+    "finishedCreditHour": 73,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "b7528f78-b3c3-4a55-89df-f9460a67d45a",
+    "gpa": 4.0,
+    "finishedCreditHour": 72,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "d071c8f2-caf5-4076-98f2-8f5a9b2e175e",
+    "gpa": 2.63,
+    "finishedCreditHour": 88,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "77879758-4545-422a-8709-3184b92a205d",
+    "gpa": 3.56,
+    "finishedCreditHour": 118,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "10cc96a2-7008-4518-b13e-c639ee5624fe",
+    "gpa": 2.31,
+    "finishedCreditHour": 47,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "748a752d-72e5-4c68-8797-ee76a5476e1a",
+    "gpa": 2.73,
+    "finishedCreditHour": 72,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "e3041630-14ce-4eae-8ef9-a52971fb77a2",
+    "gpa": 3.6,
+    "finishedCreditHour": 39,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "94577934-9120-4170-8e2d-b3171300aeee",
+    "gpa": 3.45,
+    "finishedCreditHour": 75,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "b3873a18-b583-45b5-a402-6fca987fde58",
+    "gpa": 3.02,
+    "finishedCreditHour": 94,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "403ed157-882a-4c2c-81d9-43222f85594c",
+    "gpa": 2.76,
+    "finishedCreditHour": 51,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "a5188bb5-5616-4a3c-a683-7d81563f1133",
+    "gpa": 3.89,
+    "finishedCreditHour": 102,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "323d1848-5de9-4439-852c-be492f7ed970",
+    "gpa": 2.33,
+    "finishedCreditHour": 70,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "044e0796-722a-4c9f-99bc-c18cc1659d6f",
+    "gpa": 3.25,
+    "finishedCreditHour": 115,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "b11c5a7c-bf62-4d66-81f1-982e12be2fc2",
+    "gpa": 2.16,
+    "finishedCreditHour": 113,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "21ac1ba6-8282-40a0-9989-8294daf67eff",
+    "gpa": 2.46,
+    "finishedCreditHour": 67,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "userId": "f0067ab5-75e3-43ac-a51e-8caa2802d974",
+    "gpa": 3.29,
+    "finishedCreditHour": 70,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "7940fe7f-0783-4a2d-abe6-a58c8fbe1ce1",
+    "gpa": 3.54,
+    "finishedCreditHour": 44,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "9f77512b-5f70-4f12-a53a-18cd08a1c450",
+    "gpa": 2.37,
+    "finishedCreditHour": 84,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "72d50f69-2307-416f-9819-c2e2ade84270",
+    "gpa": 2.27,
+    "finishedCreditHour": 60,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "userId": "81a3278e-4887-4667-95b7-2a82e5824cc6",
+    "gpa": 3.98,
+    "finishedCreditHour": 41,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "cff255be-ff96-4276-8d22-f88c61ba8f1c",
+    "gpa": 2.82,
+    "finishedCreditHour": 89,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "userId": "510176b6-cb5c-4e4c-818d-f8c7e153998c",
+    "gpa": 3.47,
+    "finishedCreditHour": 57,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "userId": "33b0096e-6773-4a4a-92bd-49410f8904c5",
+    "gpa": 3.24,
+    "finishedCreditHour": 112,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
   }
 ]
