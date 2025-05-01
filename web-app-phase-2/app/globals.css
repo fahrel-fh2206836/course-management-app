@@ -207,30 +207,6 @@ nav ul li a, i {
   transform: translateY(-400px);
 }  
 
-/* For Smaller than Desktops Screes (Tablets/Phones)*/
-@media (max-width: 1024px) {
-  #menu-icon {
-      display: block;
-      margin-top: auto;
-      margin-bottom: auto;
-      i{
-          color: white;
-          text-decoration: none;
-          font-size: 30px;
-          font-weight: bold;
-      }
-  }
-  #nav-title{
-      display: block;
-      margin-top: auto;
-      margin-bottom: auto;
-      font-size: 20px;
-      color: white;
-      font-weight: bold;
-  }
-
-}
-
 .dialog {
   display: block;
   position: fixed;
@@ -298,6 +274,47 @@ nav ul li a, i {
   color: var(--bistre-);
 }
 
+.notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  
+  color: white;
+  padding: 12px 20px;
+  border-radius: 6px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  transform: translateX(150%);
+  transition: transform 0.4s ease;
+}
+
+.fail {
+  background-color: rgb(245, 52, 52);
+}
+
+.success {
+  background-color: #4CAF50;
+}
+
+.notification.show {
+  transform: translateX(0%);
+}
+
+@media (min-width: 768px) {
+
+  .dialog p {
+      display: block;
+  }
+
+  .dialog-content {
+      width: 50%;
+  }
+
+  .dialog-buttons {
+      justify-content: end;
+  }
+}
+
 /* For Phone (Landscape) and Tablet (Portrait)*/
 @media (max-width: 768px) {
   #long-qu-logo {
@@ -310,18 +327,6 @@ nav ul li a, i {
 
   #nav-title{
       display: none;
-  }
-
-  .dialog p {
-    display: block;
-  }
-
-  .dialog-content {
-      width: 50%;
-  }
-
-  .dialog-buttons {
-      justify-content: end;
   }
 }
 
@@ -338,4 +343,28 @@ nav ul li a, i {
   #nav-title{
       display: none;
   }
+}
+
+/* For Smaller than Desktops Screes (Tablets/Phones)*/
+@media (max-width: 1024px) {
+  #menu-icon {
+      display: block;
+      margin-top: auto;
+      margin-bottom: auto;
+      i{
+          color: white;
+          text-decoration: none;
+          font-size: 30px;
+          font-weight: bold;
+      }
+  }
+  #nav-title{
+      display: block;
+      margin-top: auto;
+      margin-bottom: auto;
+      font-size: 20px;
+      color: white;
+      font-weight: bold;
+  }
+
 }
