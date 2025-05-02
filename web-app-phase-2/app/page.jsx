@@ -14,7 +14,7 @@ export default function Login() {
   const router = useRouter();
 
 
-  async function handleSubmit(e) {
+  async function handleLogin(e) {
     e.preventDefault();
 
     const formData = new FormData(e.target);
@@ -23,6 +23,7 @@ export default function Login() {
     const foundUser = await getUserAction(userData.username, userData.password);
     
     if (!foundUser.error) {
+      localStorage.setItem('loggedInUser', JSON.stringify(foundUser));
       login(foundUser);
       if (foundUser.role === 'Student') {
         router.push('/dashboard/student');
@@ -44,7 +45,7 @@ export default function Login() {
   return (
     <div className={styles.bodyWrapper}>
       <div className={styles.wrapper}>
-        <form id="LoginForm" onSubmit={handleSubmit}>
+        <form id="LoginForm" onSubmit={handleLogin}>
           <header>
             <img src="/assets/images/qu_logo.png" alt="QU Logo" className={styles.image} />
             <h1>Course Management System</h1>

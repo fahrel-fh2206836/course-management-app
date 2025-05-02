@@ -44,24 +44,24 @@ export default function Navbar() {
     if (user.role === 'Student') {
       return (
         <>
-          <NavItem href="/view-student/dashboard-student.html" label="Dashboard" icon="bxs-home" active={pathname.includes('student')} />
-          <NavItem href="/view-student/courses-students.html" label="Courses" icon="bxs-book" active={pathname.includes('courses-students')} />
-          <NavItem href="/view-student/learning-path.html" label="Learning Path" icon="bxs-graduation" active={pathname.includes('learning-path')} />
+          <NavItem href="/dashboard/student" label="Dashboard" icon="bxs-home" active={pathname.split("/").length == 3} />
+          <NavItem href="/dashboard/student/courses" label="Courses" icon="bxs-book" active={pathname.includes('courses')} />
+          <NavItem href="/dashboard/student/learningPaths" label="Learning Path" icon="bxs-graduation" active={pathname.includes('learningPaths')} />
         </>
       );
     } else if (user.role === 'Instructor') {
       return (
         <>
-          <NavItem href="/view-instructor/dashboard-instructor.html" label="Dashboard" icon="bxs-home" active={pathname.includes('instructor')} />
+          <NavItem href="/dashboard/instructor" label="Dashboard" icon="bxs-home" active={pathname.split("/").length == 3} />
           <NavItem href="#" label="Course Instructor Allocation" icon="bxs-cog" />
         </>
       );
     } else {
       return (
         <>
-          <NavItem href="/view-admin/dashboard-admin.html" label="Dashboard" icon="bxs-home" active={pathname.includes('admin')} />
-          <NavItem href="/view-admin/add-courses.html" label="Add Course" icon="bxs-book-add" active={pathname.includes('add-courses')} />
-          <NavItem href="/view-admin/add-section.html" label="Add Section" icon="bxs-plus-circle" active={pathname.includes('add-section')} />
+          <NavItem href="/dashboard/admin" label="Dashboard" icon="bxs-home" active={pathname.split("/").length == 3} />
+          <NavItem href="/dashboard/admin/addCourse" label="Add Course" icon="bxs-book-add" active={pathname.includes('addCourse')} />
+          <NavItem href="/dashboard/admin/addSection" label="Add Section" icon="bxs-plus-circle" active={pathname.includes('addSection')} />
         </>
       );
     }
