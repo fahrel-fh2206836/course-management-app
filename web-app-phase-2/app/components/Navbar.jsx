@@ -33,14 +33,12 @@ export default function Navbar() {
   };
 
   const confirmLogout = () => {
-    router.replace("/")
+    logout();
+    router.push('/');
   };
 
-
-  // if (!user) return null;
-
   const navLinks = () => {
-    if (user.role === 'Student') {
+    if (user?.role === 'Student') {
       return (
         <>
           <NavItem href="/dashboard/student" label="Dashboard" icon="bxs-home" active={pathname.split("/").length == 3} />
@@ -48,7 +46,7 @@ export default function Navbar() {
           <NavItem href="/dashboard/student/learningPaths" label="Learning Path" icon="bxs-graduation" active={pathname.includes('learningPaths')} />
         </>
       );
-    } else if (user.role === 'Instructor') {
+    } else if (user?.role === 'Instructor') {
       return (
         <>
           <NavItem href="/dashboard/instructor" label="Dashboard" icon="bxs-home" active={pathname.split("/").length == 3} />
@@ -70,7 +68,7 @@ export default function Navbar() {
     <>
       <nav id="navbar">
         <div id="nav-img-header">
-          <Link href={`/dashboard-${user.role.toLowerCase()}`}>
+          <Link href={`/dashboard-${user?.role.toLowerCase()}`}>
             <img src="/assets/images/qu_logo_white.png" alt="QU Logo" id="long-qu-logo" />
             <img src="/assets/images/qu_logo_white3.png" alt="QU Logo" id="short-qu-logo" />
           </Link>

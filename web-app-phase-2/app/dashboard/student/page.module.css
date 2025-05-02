@@ -1,0 +1,9 @@
+@media (min-width: 1024px) {
+
+    .courseCardList {
+        display: grid;
+        gap: 30px;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+
+}

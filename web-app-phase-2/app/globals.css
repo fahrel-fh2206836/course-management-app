@@ -304,6 +304,132 @@ nav ul li a, i {
   color: var(--bistre-);
 }
 
+.course-card{
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
+  border: .5px solid var(--bistre-);
+  border-left: 10px solid var(--coffee-);
+  position: relative;
+  padding: 35px 10px 10px;
+  background-color: white;
+  transition: transform 0.5s ease;
+}
+
+.course-card:hover{
+  transform: scale(1.015);
+}
+
+.hover-underline:hover .card-course-name{
+  text-decoration: underline;
+  
+}
+
+.hover-underline {
+  cursor: pointer;
+}
+
+.card-flag {
+  position: absolute;
+  top: 0;
+  left: 15px;
+  display: block;
+  padding: 1px 10px 4px;
+  background-color: var(--chamoisse-);
+  border-radius: 0px 0px 10px 10px;
+  p {
+      font-size: .9rem;
+      color: var(--beige-);
+      
+  }
+}
+
+.position-slight-top-left {
+  top: 5px;
+  right: 40px;
+}
+
+.position-corner-top-left {
+  top: 5px;
+  right: 5px;
+}
+
+.card-seats {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  position: absolute;
+  
+  border-radius: 15px;
+  background-color: var(--chamoisse-);
+  padding: 4px 10px;
+  i, p{
+      color: var(--beige-);
+  }
+
+  i{
+      cursor: default;
+      font-size: 1rem;
+  }
+
+  p{
+      font-size: .7rem;
+  }
+}
+
+.card-course-section-location, .card-course-instructor {
+  p, span{
+      font-size: .8rem; 
+  }
+}
+
+.card-course-section-location {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-course-name {
+ p {
+  font-size: .95rem;
+  font-weight: bold;
+ } 
+}
+
+.card-course-sem-schedule {
+  display: flex;
+  justify-content: space-between;
+  p {
+      width: 4.8rem;
+      font-size: .65rem;
+      border-radius: 5px;
+      text-align: center;
+      i{
+          color: var(--bistre-);
+          display: block;
+      }
+  }
+}
+
+.welcome-img img{
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px; 
+  
+}
+
+.registered-courses {
+  padding: 15px;
+}
+
+.main-dashboard {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  margin: 20px;
+}
+
 @media (min-width: 768px) {
 
   .dialog p {
@@ -371,4 +497,43 @@ nav ul li a, i {
       font-weight: bold;
   }
 
+}
+
+@media (min-width: 1024px) {
+
+  .main-dashboard{
+      display: grid;
+      gap: 15px;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto 1fr auto auto;
+      grid-template-areas: 
+      "title title"
+      "welcome-stats welcome-img"
+      "courses-header courses-header"
+      "courses courses"
+      ;
+      >h1:nth-child(1) {
+          grid-area: title;
+      }
+      >h1:nth-child(2) {
+          grid-area: courses-header;
+      }
+  }
+
+  .welcome-stats {
+      grid-area: welcome-stats;
+  }
+
+  .welcome-img {
+      grid-area: welcome-img;
+      align-self: center;
+      justify-self: center;
+      img{
+          height: 27vw;
+      }
+  }
+
+  .registered-courses {
+      grid-area: courses;
+  }
 }

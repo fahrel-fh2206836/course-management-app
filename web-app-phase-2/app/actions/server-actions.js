@@ -23,3 +23,7 @@ export async function getUsersAction() {
 export async function getUserAction(username, password) {
     return await appRepo.getUser(username, password);
 }
+
+export async function getRegSecAction(studentId, sem) {
+    return await appRepo.getRegSecBySem(studentId, sem);
+}   

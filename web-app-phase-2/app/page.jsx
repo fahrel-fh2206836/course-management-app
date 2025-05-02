@@ -18,9 +18,9 @@ export default function Login() {
     e.preventDefault();
 
     const formData = new FormData(e.target);
-    const userData = Object.fromEntries(formData);
+    const userData = Object.fromEntries(formData);  
 
-    const foundUser = await getUserAction(userData.username, userData.password);
+    const foundUser = await getUserAction(userData.username.trim(), userData.password.trim());
     
     if (!foundUser.error) {
       localStorage.setItem('loggedInUser', JSON.stringify(foundUser));

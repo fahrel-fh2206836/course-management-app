@@ -22,6 +22,29 @@ class AppRepo {
         return user;
     }
 
+    async getRegSecBySem(studentId, sem) {
+        return await prisma.registration.findMany({
+            where: {
+              studentId: studentId,
+              section: {
+                semester: sem,
+              }
+            },
+            include: {
+              section: {
+                include: {
+                  course: true,
+                  instructor: {
+                    include: {
+                      user: true
+                    }
+                  }
+                }
+              }
+            }
+          }); 
+    }
+
 }
 
 export default new AppRepo();
