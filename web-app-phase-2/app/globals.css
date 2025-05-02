@@ -300,6 +300,10 @@ nav ul li a, i {
   transform: translateX(0%);
 }
 
+.bistre {
+  color: var(--bistre-);
+}
+
 @media (min-width: 768px) {
 
   .dialog p {

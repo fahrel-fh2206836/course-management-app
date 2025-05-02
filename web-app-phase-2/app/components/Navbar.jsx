@@ -33,8 +33,7 @@ export default function Navbar() {
   };
 
   const confirmLogout = () => {
-    logout(user);
-    router.push("/");
+    router.replace("/")
   };
 
 

@@ -55,12 +55,12 @@ export default function Login() {
           <main>
             <div className={styles.inputBox}>
               <input type="text" id="username" name="username" placeholder="Username" required className={styles.input} />
-              <i className={`bx bx-user ${styles.icon}`}></i>
+              <i className={`bx bx-user ${styles.icon} bistre`}></i>
             </div>
 
             <div className={styles.inputBox}>
               <input type={showPassword ? 'text' : 'password'} id="password" name="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required className={styles.input}/>
-              <i id="toggle-btn" className={`bx ${showPassword ? 'bx-hide' : 'bx-show'} ${styles.icon}`} onClick={toggleViewPassword}></i>
+              <i id="toggle-btn" className={`bx ${showPassword ? 'bx-hide' : 'bx-show'} ${styles.icon} bistre`} onClick={toggleViewPassword}></i>
             </div>
 
             {error ? <p className={styles.error}> <i className={`bx bx-error-circle ${styles.error}`}></i> Incorrect Username or Password. </p> : <></>}
