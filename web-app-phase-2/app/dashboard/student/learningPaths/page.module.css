@@ -1,4 +1,4 @@
-:global(main) {
+.mainLearningPath {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
@@ -9,11 +9,11 @@
     gap: 20px;
   }
   
-  :global(main) > h1 {
+  .mainLearningPath > h1 {
     grid-area: header;
   }
   
-  :global(i) {
+  .defaultCursor {
     cursor: default;
   }
   
@@ -227,7 +227,7 @@
       background: white;
     }
   
-    :global(main) {
+    .mainLearningPath {
       display: flex;
       flex-direction: column;
     }

@@ -76,7 +76,7 @@ export default function LearningPathPage() {
       : '/assets/images/flowchart_ce.png'
 
   return (
-    <main className={styles.main}>
+    <main className={styles.mainLearningPath}>
       <h1>Track your Progress</h1>
 
       <div className={styles.achievements}>
@@ -102,7 +102,7 @@ export default function LearningPathPage() {
 
       <div className={styles.tracker}>
         <h1 className={styles.trackerHeading}>
-          Track your Learning Path <i className='bx bx-trending-up'></i>
+          Track your Learning Path <i className={`bx bx-trending-up ${styles.defaultCursor}`}></i>
         </h1>
 
         <label htmlFor="status-filter" className={styles.statusLabel}>Select Status:</label>
@@ -144,7 +144,7 @@ export default function LearningPathPage() {
 
       <div className={styles.prerequisite}>
         <h1 className={styles.prerequisiteHeading}>
-          Your Program's Prerequisite Flowchart <i className='bx bx-sitemap'></i>
+          Your Program's Prerequisite Flowchart <i className={`bx bx-sitemap ${styles.defaultCursor}`}></i>
         </h1>
         <div className={styles.imgPrerequisite}>
           <img id="picture" src={flowchartImage} alt={`${major.majorName} Flowchart`} />
