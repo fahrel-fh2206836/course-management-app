@@ -22,17 +22,21 @@ export default function AdminCourses({ majors, ongoingCourse, regCourse, notOffe
         notOffered: notOfferedCourse
     });
 
-    const [isSmallScreen, setIsSmallScreen] = useState(() =>
-        typeof window !== 'undefined' && window.matchMedia("(max-width: 1023px)").matches
-      );
-      
-      useEffect(() => {
-        const handleResize = () => {
-          setIsSmallScreen(window.matchMedia("(max-width: 1023px)").matches);
-        };
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-      }, []);
+    const [hasMounted, setHasMounted] = useState(false);
+    const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+    useEffect(() => {
+    setHasMounted(true);
+    const handleResize = () => {
+        setIsSmallScreen(window.matchMedia("(max-width: 1023px)").matches);
+    };
+
+    handleResize(); // check immediately on mount
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+if (!hasMounted) return null; // ← prevents mismatch
     
 
     async function handleChangeStatus(e) {
