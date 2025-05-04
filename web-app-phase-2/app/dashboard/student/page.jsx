@@ -1,5 +1,5 @@
 'use client'
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState, useRef } from 'react'
 import { UserContext } from '@/app/context/UserContext'
 import styles from './page.module.css'
 import CourseCard1 from '@/app/components/CourseCard1'
@@ -9,21 +9,30 @@ import { getRegSecBySemAction, getMajorByIdAction } from '@/app/actions/server-a
 export default function page() {
   const [regSections, setRegSections] = useState([]);
   const [major, setMajor] = useState("");
+  const [progress, setProgress] = useState(0);
   const { user } =  useContext(UserContext);
+  const progressBarRef =  useRef(null);
 
   useEffect (()  => {
-    const fetchRegSec = async () => {
-      const regSec = await getRegSecBySemAction(user?.userId, "Spring 2025");
-      setRegSections(regSec);
-    };
-    const fetchMajor = async () => {
-      const m = await getMajorByIdAction(user?.Student.majorId)
-      setMajor(m);
+    if(user) {
+      const fetchRegSec = async () => {
+        const regSec = await getRegSecBySemAction(user.userId, "Spring 2025");
+        setRegSections(regSec);
+      };
+      const fetchMajor = async () => {
+        const m = await getMajorByIdAction(user.Student.majorId)
+        setMajor(m);
+        if (progressBarRef.current) {
+          const progress = Math.round((user.Student.finishedCreditHour / m.totalCreditHour) * 100);
+          setProgress(progress);
+          progressBarRef.current.style.width = `${progress}%`;
+        }
+      }
+      fetchRegSec();
+      fetchMajor();
     }
-    fetchRegSec();
-    fetchMajor();
+
   }, [user]);
-  console.log(user)
 
   return (
     <main className='main-dashboard'>
@@ -37,7 +46,7 @@ export default function page() {
                 <div><span>CGPA:</span><span id="stats-CGPA">{user?.Student.gpa}</span></div>
                 <div><span>No. of Current Courses:</span><span id="stats-no-courses">{regSections.length}</span></div>
                 <div><span>Completed Credit Hours:</span><span id="stats-completed">{user?.Student.finishedCreditHour}</span></div>
-                <div><div id="progress-bar"><div></div></div><span id="bar-percentage">40%</span></div>
+                <div><div id="progress-bar"><div ref={progressBarRef}></div></div><span id="bar-percentage">{progress}%</span></div>
             </div>
         </div>
         <div className="welcome-img">
