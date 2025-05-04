@@ -112,7 +112,6 @@ model Section {
   sectionId      String         @id @default(cuid())
   currentSeats   Int
   totalSeats     Int
-  semester       String
   days           String?
   time           String?
   location       String?
@@ -121,6 +120,8 @@ model Section {
 
   courseId     String
   instructorId String
+  semester     String
+  sem          Semester   @relation(fields: [semester], references: [semester])
   course       Course     @relation(fields: [courseId], references: [id])
   instructor   Instructor @relation(fields: [instructorId], references: [userId])
 
@@ -139,4 +140,9 @@ model Registration {
   course  Course  @relation(fields: [courseId], references: [id])
 
   @@unique([sectionId, studentId])
+}
+
+model Semester {
+  semester String @id 
+  sections Section[]
 }

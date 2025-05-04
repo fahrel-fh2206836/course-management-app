@@ -22,6 +22,7 @@ async function seed() {
     const sections = await getData(`${baseUrl}sections.json`);
     const registrations = await getData(`${baseUrl}registrations.json`);
   
+    await prisma.semester.createMany({data: [{semester: "Spring 2024"}, {semester: "Fall 2024"}, {semester: "Spring 2025"}, {semester: "Fall 2025"}]});
     await prisma.major.createMany({ data: majors });
     await prisma.user.createMany({ data: users });
     await prisma.admin.createMany({ data: admins });

@@ -1,10 +1,10 @@
 import React from 'react'
 
-export default function EmptySection() {
+export default function EmptySection({ text }) {
   return (
-    <div class="empty-section">
-        <i class='bx bxs-error-circle'></i>
-        <p>No Registered Section.</p>
+    <div className="empty-section">
+        <i className='bx bxs-error-circle'></i>
+        <p>{text}</p>
     </div>
   )
 }

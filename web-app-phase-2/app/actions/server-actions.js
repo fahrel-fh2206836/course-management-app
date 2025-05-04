@@ -16,6 +16,10 @@ function removeServerActionProperty(data) {
     return data;
 }
 
+export async function getSemestersAction() {
+    return await appRepo.getSemesters();
+}
+
 export async function getUsersAction() {
     return await appRepo.getUsers();
 }
@@ -31,3 +35,11 @@ export async function getMajorByIdAction(majorId) {
 export async function getRegSecBySemAction(studentId, sem) {
     return await appRepo.getRegSecBySem(studentId, sem);
 }   
+
+export async function getInstructorSecBySemAction(instructorId, sem, notSem) {
+    return await appRepo.getInstructorSecBySem(instructorId, sem, notSem);
+}
+
+export async function getInstructorTotalStudentSemAction(instructorId, sem) {
+    return await appRepo.getInstructorTotalStudentSem(instructorId, sem);
+}

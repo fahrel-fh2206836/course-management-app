@@ -8,6 +8,10 @@ class AppRepo {
         return await prisma.user.findMany();
     }
 
+    async getSemesters() {
+      return await prisma.semester.findMany();
+    }
+
     async getUser(username, password) {
         const user = await prisma.user.findUnique({
             where: {
@@ -61,6 +65,49 @@ class AppRepo {
               }
             }
           }); 
+    }
+
+    async getInstructorSecBySem(instructorId, sem, notSem) {
+      if(notSem) {
+        return await prisma.section.findMany({
+          where: {
+            instructorId: instructorId,
+            semester: sem
+          },
+          include: {
+            course: true
+          },
+        });
+      }
+
+      return await prisma.section.findMany({
+        where: {
+          instructorId: instructorId,
+          semester: {
+            not: sem
+          }
+        },
+        include: {
+          course: true
+        },
+      });
+    }
+
+    async getInstructorTotalStudentSem(instructorId, sem) {
+      let result = await prisma.section.aggregate({
+        _sum: {
+          currentSeats: true
+        },
+        where: {
+          instructorId: instructorId,
+          semester: sem
+        }
+      });
+
+      if(!result) {
+        result = 0;
+      }
+      return result;
     }
 
 }

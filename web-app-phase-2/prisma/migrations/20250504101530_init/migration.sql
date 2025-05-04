@@ -91,6 +91,11 @@ CREATE TABLE "Registration" (
     CONSTRAINT "Registration_courseId_fkey" FOREIGN KEY ("courseId") REFERENCES "Course" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
+-- CreateTable
+CREATE TABLE "Semester" (
+    "semester" TEXT NOT NULL PRIMARY KEY
+);
+
 -- CreateIndex
 CREATE UNIQUE INDEX "User_username_key" ON "User"("username");
 

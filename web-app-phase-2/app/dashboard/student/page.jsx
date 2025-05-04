@@ -3,7 +3,8 @@ import React, { useContext, useEffect, useState, useRef } from 'react'
 import { UserContext } from '@/app/context/UserContext'
 import styles from './page.module.css'
 import CourseCard1 from '@/app/components/CourseCard1'
-import { getRegSecBySemAction, getMajorByIdAction } from '@/app/actions/server-actions'
+import { getRegSecBySemAction, getMajorByIdAction, getSemestersAction } from '@/app/actions/server-actions'
+import EmptySection from '@/app/components/EmptySection'
 
 
 export default function page() {
@@ -16,7 +17,8 @@ export default function page() {
   useEffect (()  => {
     if(user) {
       const fetchRegSec = async () => {
-        const regSec = await getRegSecBySemAction(user.userId, "Spring 2025");
+        const semesters = await getSemestersAction();
+        const regSec = await getRegSecBySemAction(user.userId, semesters[semesters.length-2].semester);
         setRegSections(regSec);
       };
       const fetchMajor = async () => {
@@ -55,7 +57,8 @@ export default function page() {
         <h1 id="ongoing-text">Ongoing Registered Courses</h1>
         <div className="registered-courses   section-style">
             <ul className={`course-card-list ${styles.courseCardList}`} id="course-card-list"> 
-                {regSections.map((rs) => <CourseCard1 key={rs.id} c={rs.section.course} s={rs.section} i={rs.section.instructor}></CourseCard1>)}
+                {regSections.length === 0 ? <EmptySection text={"No Registered Section!"}></EmptySection> :
+                regSections.map((rs) => <CourseCard1 key={rs.id} c={rs.section.course} s={rs.section} i={rs.section.instructor}></CourseCard1>)}
             </ul>
         </div>
     </main>

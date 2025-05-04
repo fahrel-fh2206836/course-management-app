@@ -1,0 +1,39 @@
+.cardGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.pFcardGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.pFcourses{
+    display: flex;
+    flex-direction: column;
+}
+
+.bxFilter{
+    color: #a07856;
+    font-size: 30px;
+    transition: all 0.3s ease;
+}
+.bxFilter:hover{
+    text-shadow: 0 0 5px rgba(163, 111, 67, 0.6);
+    transform: scale(1.2);
+}
+
+@media (min-width: 1024px) {
+
+    .cardGroup{
+        display: grid;
+        gap: 30px;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+    .pFcardGroup{
+        display: grid;
+        gap: 30px;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+
+}
