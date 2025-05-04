@@ -7,15 +7,15 @@ import { getRegSecAction } from '@/app/actions/server-actions'
 
 
 export default function page() {
-  // const [regSections, setRegSections] = useState([]);
+  const [regSections, setRegSections] = useState([]);
   const { user } =  useContext(UserContext);
 
   useEffect (()  => {
-    // const fetchRegSec =async () => {
-    //   const regSec = await getRegSecAction();
-    //   setRegSections(regSec);
-    // };
-    // fetchRegSec();
+    const fetchRegSec =async () => {
+      const regSec = await getRegSecAction();
+      setRegSections(regSec);
+    };
+    fetchRegSec();
   }, []);
 
 
@@ -40,7 +40,7 @@ export default function page() {
         <h1 id="ongoing-text">Ongoing Registered Courses</h1>
         <div className="registered-courses   section-style">
             <ul className={`course-card-list ${styles.courseCardList}`} id="course-card-list"> 
-                {/* {regSections.map((rs) => <CourseCard1 key={rs.id} c={rs.section.course} s={rs.section} i={rs.instructor}></CourseCard1>)} */}
+                {regSections.map((rs) => <CourseCard1 key={rs.id} c={rs.section.course} s={rs.section} i={rs.instructor}></CourseCard1>)}
             </ul>
         </div>
     </main>

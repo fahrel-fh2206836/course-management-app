@@ -1,767 +1,470 @@
 [
   {
-    "id": "e130d712-8e02-4edf-b54e-f94e5da27ac4",
-    "courseCode": "CSE1000",
-    "creditHour": 2,
-    "courseName": "Re-engineered dedicated installation",
-    "isOngoing": true,
-    "isRegistration": true,
-    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
-  },
-  {
-    "id": "ab8778eb-a2cd-4f28-a213-ded30ac60363",
-    "courseCode": "CSE1001",
-    "creditHour": 2,
-    "courseName": "Vision-oriented local implementation",
-    "isOngoing": true,
-    "isRegistration": false,
-    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
-  },
-  {
-    "id": "f6848ad5-d77e-484f-bfa1-1fee9e7649a7",
-    "courseCode": "CSE1002",
-    "creditHour": 2,
-    "courseName": "Extended systematic task-force",
-    "isOngoing": true,
-    "isRegistration": true,
-    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
-  },
-  {
-    "id": "175b46b9-28a1-45dc-b8fa-35c7e273dba2",
-    "courseCode": "CSE1003",
-    "creditHour": 3,
-    "courseName": "Vision-oriented fault-tolerant algorithm",
-    "isOngoing": false,
-    "isRegistration": false,
-    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
-  },
-  {
-    "id": "5dc38583-09ab-451e-9bdd-f3d5a90f2b57",
-    "courseCode": "CSE1004",
-    "creditHour": 3,
-    "courseName": "Persevering system-worthy productivity",
-    "isOngoing": true,
-    "isRegistration": false,
-    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
-  },
-  {
-    "id": "57d393f5-fc19-4ffd-8d6d-67ffe3e23e32",
-    "courseCode": "CSE1005",
-    "creditHour": 2,
-    "courseName": "Multi-channeled zero tolerance info-mediaries",
-    "isOngoing": false,
-    "isRegistration": true,
-    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
-  },
-  {
-    "id": "5bf13464-90b1-42d0-8e0e-64ccdee027bb",
-    "courseCode": "CSE1006",
-    "creditHour": 2,
-    "courseName": "Business-focused local Local Area Network",
-    "isOngoing": false,
-    "isRegistration": true,
-    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
-  },
-  {
-    "id": "f27b7891-09b7-4e14-96a6-c4566d68c89f",
-    "courseCode": "CSE1007",
+    "id": "335472a2-466f-4806-96bc-1759e36d23cd",
+    "courseCode": "CMPS100",
     "creditHour": 4,
-    "courseName": "Multi-tiered bottom-line encoding",
-    "isOngoing": true,
-    "isRegistration": false,
-    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
-  },
-  {
-    "id": "cb9fafcd-2f29-4344-9212-4415f0e0299f",
-    "courseCode": "CSE1008",
-    "creditHour": 3,
-    "courseName": "Distributed directional structure",
+    "courseName": "Intro to Computer Science 100",
     "isOngoing": true,
     "isRegistration": true,
     "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
   },
   {
-    "id": "eb628c6b-042a-4b43-a618-7aa3ef212243",
-    "courseCode": "CSE1009",
-    "creditHour": 2,
-    "courseName": "Reverse-engineered non-volatile framework",
-    "isOngoing": false,
-    "isRegistration": true,
-    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
-  },
-  {
-    "id": "864f44d4-affd-4674-9869-5fbf4da3d009",
-    "courseCode": "CSE1010",
-    "creditHour": 2,
-    "courseName": "Universal upward-trending intranet",
-    "isOngoing": false,
-    "isRegistration": false,
-    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
-  },
-  {
-    "id": "d4fe027e-5fde-4b8b-8315-3111fabb2f9c",
-    "courseCode": "CSE1011",
-    "creditHour": 2,
-    "courseName": "Customizable 24hour methodology",
-    "isOngoing": true,
-    "isRegistration": false,
-    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
-  },
-  {
-    "id": "710a24f3-9e76-4ca5-a7df-d2978523de0a",
-    "courseCode": "CSE1012",
+    "id": "37c8f8ba-4b11-421f-84d1-ca72af72d1d4",
+    "courseCode": "CMPS101",
     "creditHour": 3,
-    "courseName": "Cross-platform contextually-based interface",
-    "isOngoing": true,
-    "isRegistration": true,
-    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
-  },
-  {
-    "id": "2b6a162d-a5e1-432b-9ca4-2aa12a3b0d8e",
-    "courseCode": "CSE1013",
-    "creditHour": 2,
-    "courseName": "Organic solution-oriented solution",
+    "courseName": "Intro to Computer Science 101",
     "isOngoing": true,
     "isRegistration": false,
     "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
   },
   {
-    "id": "56f5b861-be87-4c84-b601-0b3f4c5b152a",
-    "courseCode": "CSE1014",
+    "id": "101aac88-2833-4f0a-9189-b537e1a1a315",
+    "courseCode": "CMPS102",
     "creditHour": 3,
-    "courseName": "Front-line eco-centric data-warehouse",
-    "isOngoing": false,
-    "isRegistration": true,
-    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
-  },
-  {
-    "id": "808bfb1d-c2a9-4939-ab44-a68d44be54a9",
-    "courseCode": "CSE1015",
-    "creditHour": 3,
-    "courseName": "Polarized directional application",
-    "isOngoing": false,
-    "isRegistration": false,
-    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
-  },
-  {
-    "id": "e99bfd52-51e5-42fd-b5a1-8b29543b4119",
-    "courseCode": "CSE1016",
-    "creditHour": 3,
-    "courseName": "Front-line content-based application",
+    "courseName": "Intro to Computer Science 102",
     "isOngoing": true,
-    "isRegistration": true,
-    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
-  },
-  {
-    "id": "38417bac-f0f7-497e-b4f1-cd1919f78f4e",
-    "courseCode": "CSE1017",
-    "creditHour": 3,
-    "courseName": "Seamless solution-oriented neural-net",
-    "isOngoing": false,
     "isRegistration": false,
     "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
   },
   {
-    "id": "50841404-b074-4e8d-b9e4-ab1e1fd6b2f6",
-    "courseCode": "CSE1018",
+    "id": "524d7704-6aea-4432-93c4-44e9fba0b417",
+    "courseCode": "CMPS103",
     "creditHour": 3,
-    "courseName": "Synchronized 5thgeneration leverage",
+    "courseName": "Intro to Computer Science 103",
     "isOngoing": true,
     "isRegistration": true,
     "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
   },
   {
-    "id": "3e02791a-e042-48b5-a587-25db47e41d7c",
-    "courseCode": "CSE1019",
+    "id": "35dba9dd-745f-4ada-87fa-8c03e6ea9723",
+    "courseCode": "CMPS104",
     "creditHour": 3,
-    "courseName": "Up-sized encompassing utilization",
-    "isOngoing": false,
-    "isRegistration": true,
-    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
-  },
-  {
-    "id": "ad1646e1-bbb2-454a-b368-13b01ba53513",
-    "courseCode": "CSE1020",
-    "creditHour": 3,
-    "courseName": "Seamless directional matrices",
-    "isOngoing": false,
+    "courseName": "Intro to Computer Science 104",
+    "isOngoing": true,
     "isRegistration": false,
     "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
   },
   {
-    "id": "fb5903a2-10ba-4a35-9d73-a8e7569a40c3",
-    "courseCode": "CSE1021",
-    "creditHour": 3,
-    "courseName": "Open-source radical throughput",
-    "isOngoing": true,
-    "isRegistration": false,
-    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
-  },
-  {
-    "id": "8e197f6f-b24d-4cdc-956e-277e5f8e7634",
-    "courseCode": "CSE1022",
-    "creditHour": 3,
-    "courseName": "Re-contextualized static standardization",
-    "isOngoing": true,
-    "isRegistration": false,
-    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
-  },
-  {
-    "id": "4a2c703c-9991-4fe7-a1b8-98fec15eb3a6",
-    "courseCode": "CSE1023",
-    "creditHour": 2,
-    "courseName": "Future-proofed 24/7 projection",
-    "isOngoing": true,
-    "isRegistration": false,
-    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
-  },
-  {
-    "id": "a13de1c8-d1f4-40fd-82ba-93fe732d7c51",
-    "courseCode": "CSE1024",
+    "id": "60461e82-6b98-4cd0-bda5-d89f17d31e1b",
+    "courseCode": "CMPS105",
     "creditHour": 4,
-    "courseName": "Inverse multimedia alliance",
+    "courseName": "Intro to Computer Science 105",
+    "isOngoing": true,
+    "isRegistration": true,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "id": "c41e59de-106d-4ccb-9c1d-81568b89ed2c",
+    "courseCode": "CMPS106",
+    "creditHour": 3,
+    "courseName": "Intro to Computer Science 106",
+    "isOngoing": false,
+    "isRegistration": false,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "id": "7529ab25-b807-44dc-91b9-56c7b5a0d4a0",
+    "courseCode": "CMPS107",
+    "creditHour": 3,
+    "courseName": "Intro to Computer Science 107",
     "isOngoing": true,
     "isRegistration": false,
     "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
   },
   {
-    "id": "00c12e86-4051-48f8-b612-7b7324663bfa",
-    "courseCode": "CSE1025",
-    "creditHour": 4,
-    "courseName": "Secured intangible Graphical User Interface",
-    "isOngoing": true,
-    "isRegistration": false,
-    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
-  },
-  {
-    "id": "1f65105d-9e28-4dae-8839-0fcf348db556",
-    "courseCode": "CSE1026",
-    "creditHour": 2,
-    "courseName": "Configurable analyzing frame",
-    "isOngoing": true,
-    "isRegistration": false,
-    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
-  },
-  {
-    "id": "a1986b48-d380-4321-be01-5f1d9142f07f",
-    "courseCode": "CSE1027",
+    "id": "6d6919cc-c0f2-4e32-8866-42b10c18bf13",
+    "courseCode": "CMPS108",
     "creditHour": 3,
-    "courseName": "Function-based clear-thinking definition",
-    "isOngoing": true,
-    "isRegistration": false,
-    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
-  },
-  {
-    "id": "a0a96fa4-45d9-4899-aba8-ec43cbcd2189",
-    "courseCode": "CSE1028",
-    "creditHour": 4,
-    "courseName": "Cloned needs-based Internet solution",
-    "isOngoing": false,
-    "isRegistration": false,
-    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
-  },
-  {
-    "id": "1f75ccba-12c3-4698-bac3-84f888197995",
-    "courseCode": "CSE1029",
-    "creditHour": 2,
-    "courseName": "Assimilated even-keeled encoding",
-    "isOngoing": true,
-    "isRegistration": false,
-    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
-  },
-  {
-    "id": "c5d12770-6098-4c1f-b2cd-463bcd9e3be8",
-    "courseCode": "CSE1030",
-    "creditHour": 3,
-    "courseName": "Fully-configurable interactive approach",
-    "isOngoing": true,
-    "isRegistration": true,
-    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
-  },
-  {
-    "id": "8acd3705-2278-4e1d-843b-c23ce6c60d9f",
-    "courseCode": "CSE1031",
-    "creditHour": 3,
-    "courseName": "Streamlined needs-based definition",
-    "isOngoing": true,
-    "isRegistration": false,
-    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
-  },
-  {
-    "id": "740d489c-efe6-4694-b47e-971fa50176d3",
-    "courseCode": "CSE1032",
-    "creditHour": 3,
-    "courseName": "Upgradable bifurcated contingency",
-    "isOngoing": true,
-    "isRegistration": true,
-    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
-  },
-  {
-    "id": "7b74ab22-d2c8-4e44-9046-0e0b15959710",
-    "courseCode": "CSE1033",
-    "creditHour": 4,
-    "courseName": "Seamless context-sensitive definition",
-    "isOngoing": false,
-    "isRegistration": true,
-    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
-  },
-  {
-    "id": "6ef86e1f-18cc-41b0-84ea-c1c92646438a",
-    "courseCode": "CSE1034",
-    "creditHour": 4,
-    "courseName": "Distributed multi-tasking pricing structure",
-    "isOngoing": true,
-    "isRegistration": false,
-    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
-  },
-  {
-    "id": "26dfb049-6f65-4f5c-a90c-ce805fddddb5",
-    "courseCode": "CSE1035",
-    "creditHour": 3,
-    "courseName": "Automated 5thgeneration groupware",
-    "isOngoing": true,
-    "isRegistration": true,
-    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
-  },
-  {
-    "id": "9874cf26-1961-483e-89cc-abbf2b56b648",
-    "courseCode": "CSE1036",
-    "creditHour": 4,
-    "courseName": "Vision-oriented asymmetric system engine",
-    "isOngoing": false,
-    "isRegistration": false,
-    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
-  },
-  {
-    "id": "02abb886-9387-46e6-9b84-d20f593650c1",
-    "courseCode": "CSE1037",
-    "creditHour": 2,
-    "courseName": "Visionary disintermediate neural-net",
-    "isOngoing": false,
-    "isRegistration": true,
-    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
-  },
-  {
-    "id": "4bca67f4-148e-4cf8-b1ba-c6d61f4f7c34",
-    "courseCode": "CSE1038",
-    "creditHour": 4,
-    "courseName": "Stand-alone exuding productivity",
-    "isOngoing": true,
-    "isRegistration": false,
-    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
-  },
-  {
-    "id": "25f029cb-c38e-4188-8b80-83ff705645c9",
-    "courseCode": "CSE1039",
-    "creditHour": 2,
-    "courseName": "Total hybrid software",
+    "courseName": "Intro to Computer Science 108",
     "isOngoing": false,
     "isRegistration": true,
     "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
   },
   {
-    "id": "de6caade-7b4c-4307-ac79-77ded66b4b27",
-    "courseCode": "CSE1040",
-    "creditHour": 3,
-    "courseName": "Reactive bifurcated forecast",
-    "isOngoing": true,
-    "isRegistration": false,
-    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
-  },
-  {
-    "id": "76f78e88-56fc-41df-89bf-575cb6bfbb87",
-    "courseCode": "CSE1041",
-    "creditHour": 2,
-    "courseName": "Fundamental interactive monitoring",
-    "isOngoing": false,
-    "isRegistration": false,
-    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
-  },
-  {
-    "id": "55da4d62-fe67-4200-aac2-ea2c86984e96",
-    "courseCode": "CSE1042",
-    "creditHour": 3,
-    "courseName": "Optimized contextually-based implementation",
-    "isOngoing": true,
-    "isRegistration": false,
-    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
-  },
-  {
-    "id": "209743dc-c8c9-437c-a694-b59a97861ba3",
-    "courseCode": "CSE1043",
-    "creditHour": 3,
-    "courseName": "Customizable uniform middleware",
-    "isOngoing": false,
-    "isRegistration": false,
-    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
-  },
-  {
-    "id": "0513e9a4-d128-44cf-9215-7e4cf60106dc",
-    "courseCode": "CSE1044",
+    "id": "69421dd2-1f75-4a23-a72d-4c2e7d040f53",
+    "courseCode": "CMPS109",
     "creditHour": 4,
-    "courseName": "Digitized uniform algorithm",
+    "courseName": "Intro to Computer Science 109",
+    "isOngoing": true,
+    "isRegistration": false,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "id": "2925c3a4-7121-449b-ac10-e6dd4a328282",
+    "courseCode": "CMPS110",
+    "creditHour": 4,
+    "courseName": "Intro to Computer Science 110",
+    "isOngoing": true,
+    "isRegistration": true,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "id": "ae848d40-b6f3-40f4-af55-96ed401f6dfa",
+    "courseCode": "CMPS111",
+    "creditHour": 4,
+    "courseName": "Intro to Computer Science 111",
+    "isOngoing": false,
+    "isRegistration": false,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "id": "7f6c4d46-432c-4a90-abef-eccb512cceb0",
+    "courseCode": "CMPS112",
+    "creditHour": 4,
+    "courseName": "Intro to Computer Science 112",
+    "isOngoing": false,
+    "isRegistration": true,
+    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+  },
+  {
+    "id": "6e8c40aa-cfb5-45bb-8632-77d56dbcc2cf",
+    "courseCode": "CMPE100",
+    "creditHour": 4,
+    "courseName": "Intro to Computer Engineering 100",
+    "isOngoing": false,
+    "isRegistration": true,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "id": "74ff033e-7cbe-4334-bda4-22d1310323ab",
+    "courseCode": "CMPE101",
+    "creditHour": 4,
+    "courseName": "Intro to Computer Engineering 101",
     "isOngoing": true,
     "isRegistration": true,
     "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
   },
   {
-    "id": "c33bd6e2-c591-4b7a-b35a-09806fc6723c",
-    "courseCode": "CSE1045",
+    "id": "a3a63426-2807-441f-b27e-9d21dc6842cb",
+    "courseCode": "CMPE102",
+    "creditHour": 4,
+    "courseName": "Intro to Computer Engineering 102",
+    "isOngoing": true,
+    "isRegistration": true,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "id": "400221ec-2077-4541-b575-4a54248509a9",
+    "courseCode": "CMPE103",
     "creditHour": 3,
-    "courseName": "Public-key optimizing parallelism",
+    "courseName": "Intro to Computer Engineering 103",
+    "isOngoing": false,
+    "isRegistration": true,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "id": "72c3c11b-67ee-4b6f-969f-10784c9c411b",
+    "courseCode": "CMPE104",
+    "creditHour": 3,
+    "courseName": "Intro to Computer Engineering 104",
+    "isOngoing": true,
+    "isRegistration": false,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "id": "291ca52c-dd0d-4174-a334-3ac32d1a4c15",
+    "courseCode": "CMPE105",
+    "creditHour": 4,
+    "courseName": "Intro to Computer Engineering 105",
+    "isOngoing": false,
+    "isRegistration": true,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "id": "a6a1b2f0-b814-4018-9266-ce9bed63e38b",
+    "courseCode": "CMPE106",
+    "creditHour": 3,
+    "courseName": "Intro to Computer Engineering 106",
+    "isOngoing": true,
+    "isRegistration": true,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "id": "c0ebb30c-5b80-4c47-97d2-7b0a14ec3253",
+    "courseCode": "CMPE107",
+    "creditHour": 4,
+    "courseName": "Intro to Computer Engineering 107",
+    "isOngoing": false,
+    "isRegistration": false,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "id": "94d80901-4e8a-4c43-8e36-5d81a2a29213",
+    "courseCode": "CMPE108",
+    "creditHour": 4,
+    "courseName": "Intro to Computer Engineering 108",
+    "isOngoing": true,
+    "isRegistration": true,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "id": "07e7b3ec-a28a-45d9-b3d2-17e85f199779",
+    "courseCode": "CMPE109",
+    "creditHour": 3,
+    "courseName": "Intro to Computer Engineering 109",
+    "isOngoing": false,
+    "isRegistration": false,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "id": "e7892f3d-70e0-4cfa-a187-09f63187afae",
+    "courseCode": "CMPE110",
+    "creditHour": 3,
+    "courseName": "Intro to Computer Engineering 110",
+    "isOngoing": true,
+    "isRegistration": false,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "id": "40141bb6-bb6f-4cfa-a2ff-44521d98488e",
+    "courseCode": "CMPE111",
+    "creditHour": 3,
+    "courseName": "Intro to Computer Engineering 111",
+    "isOngoing": false,
+    "isRegistration": false,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "id": "6e30dbcb-d799-490c-b442-e0585b8c969f",
+    "courseCode": "CMPE112",
+    "creditHour": 4,
+    "courseName": "Intro to Computer Engineering 112",
+    "isOngoing": false,
+    "isRegistration": false,
+    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
+  },
+  {
+    "id": "5bd135ac-cf3b-498e-9d1e-d5d0c5e72805",
+    "courseCode": "ELEC100",
+    "creditHour": 4,
+    "courseName": "Intro to Electrical Engineering 100",
     "isOngoing": false,
     "isRegistration": true,
     "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
   },
   {
-    "id": "60481141-8303-43e1-bc76-de07111b7de9",
-    "courseCode": "CSE1046",
+    "id": "733e09f0-4c1e-42a3-9be2-84a13f2e74ea",
+    "courseCode": "ELEC101",
     "creditHour": 3,
-    "courseName": "Object-based optimal complexity",
-    "isOngoing": true,
-    "isRegistration": false,
-    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
-  },
-  {
-    "id": "7f04a67d-1642-4c2e-8ee8-e9466265df6f",
-    "courseCode": "CSE1047",
-    "creditHour": 2,
-    "courseName": "Enterprise-wide multimedia Internet solution",
+    "courseName": "Intro to Electrical Engineering 101",
     "isOngoing": false,
-    "isRegistration": false,
-    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
-  },
-  {
-    "id": "cca614cb-6919-4e85-92d0-e8e17efdecba",
-    "courseCode": "CSE1048",
-    "creditHour": 2,
-    "courseName": "Right-sized content-based instruction set",
-    "isOngoing": true,
-    "isRegistration": false,
-    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
-  },
-  {
-    "id": "f8b5f15a-b00e-49b6-9347-c487f5b7724d",
-    "courseCode": "CSE1049",
-    "creditHour": 3,
-    "courseName": "Seamless background customer loyalty",
-    "isOngoing": true,
-    "isRegistration": false,
-    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
-  },
-  {
-    "id": "375dd96a-b2f6-4580-ac96-78443ec0d277",
-    "courseCode": "CSE1050",
-    "creditHour": 3,
-    "courseName": "Proactive asynchronous knowledgebase",
-    "isOngoing": true,
-    "isRegistration": false,
-    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
-  },
-  {
-    "id": "520e071e-4c53-401a-b31f-ba8bfb5bfa29",
-    "courseCode": "CSE1051",
-    "creditHour": 3,
-    "courseName": "Open-source asymmetric capability",
-    "isOngoing": false,
-    "isRegistration": true,
-    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
-  },
-  {
-    "id": "f2f2e853-02ca-4b72-9a5e-3c87403427bb",
-    "courseCode": "CSE1052",
-    "creditHour": 2,
-    "courseName": "Extended contextually-based parallelism",
-    "isOngoing": true,
-    "isRegistration": true,
-    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
-  },
-  {
-    "id": "3b883dd7-63ec-47d7-b6b4-044a5f1563ca",
-    "courseCode": "CSE1053",
-    "creditHour": 3,
-    "courseName": "Secured 6thgeneration customer loyalty",
-    "isOngoing": false,
-    "isRegistration": true,
-    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
-  },
-  {
-    "id": "4f042a48-bdc3-40c7-930d-4d5aacc8b952",
-    "courseCode": "CSE1054",
-    "creditHour": 2,
-    "courseName": "Ergonomic national time-frame",
-    "isOngoing": false,
-    "isRegistration": true,
-    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
-  },
-  {
-    "id": "eed9b07c-5b6d-48a7-8747-8e3f8d856d5e",
-    "courseCode": "CSE1055",
-    "creditHour": 2,
-    "courseName": "Front-line executive methodology",
-    "isOngoing": true,
     "isRegistration": false,
     "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
   },
   {
-    "id": "4f641c21-2a41-402b-acff-a2bbccd1e111",
-    "courseCode": "CSE1056",
-    "creditHour": 2,
-    "courseName": "Reduced empowering circuit",
-    "isOngoing": false,
-    "isRegistration": false,
-    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
-  },
-  {
-    "id": "f1d67865-cb39-440b-8a96-a01253173502",
-    "courseCode": "CSE1057",
+    "id": "91b70b11-d689-49f0-9904-f7d75ddc7a60",
+    "courseCode": "ELEC102",
     "creditHour": 3,
-    "courseName": "Seamless transitional superstructure",
-    "isOngoing": true,
-    "isRegistration": false,
-    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
-  },
-  {
-    "id": "e265b533-57b3-47d2-96a3-2904fd81e585",
-    "courseCode": "CSE1058",
-    "creditHour": 3,
-    "courseName": "Down-sized contextually-based Local Area Network",
-    "isOngoing": true,
-    "isRegistration": false,
-    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
-  },
-  {
-    "id": "6b343ece-9a65-41c7-8e42-74258cf48e01",
-    "courseCode": "CSE1059",
-    "creditHour": 4,
-    "courseName": "Multi-tiered composite architecture",
-    "isOngoing": true,
-    "isRegistration": true,
-    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
-  },
-  {
-    "id": "ab57a049-b8f3-4e6e-b689-43b5cb8123d3",
-    "courseCode": "CSE1060",
-    "creditHour": 2,
-    "courseName": "Compatible analyzing ability",
-    "isOngoing": false,
-    "isRegistration": true,
-    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
-  },
-  {
-    "id": "25073097-0a99-4070-82c9-f235e71654d6",
-    "courseCode": "CSE1061",
-    "creditHour": 2,
-    "courseName": "Sharable scalable Internet solution",
-    "isOngoing": false,
-    "isRegistration": true,
-    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
-  },
-  {
-    "id": "3939b314-3001-4a0b-9b6b-47160ad890bb",
-    "courseCode": "CSE1062",
-    "creditHour": 2,
-    "courseName": "Down-sized discrete core",
-    "isOngoing": false,
-    "isRegistration": true,
-    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
-  },
-  {
-    "id": "d213387f-2a21-445e-a235-00ce8316f12c",
-    "courseCode": "CSE1063",
-    "creditHour": 3,
-    "courseName": "Organized content-based ability",
-    "isOngoing": true,
-    "isRegistration": false,
-    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
-  },
-  {
-    "id": "95055fe3-2d1b-4904-8deb-932409233d2b",
-    "courseCode": "CSE1064",
-    "creditHour": 4,
-    "courseName": "Innovative full-range secured line",
-    "isOngoing": false,
-    "isRegistration": false,
-    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
-  },
-  {
-    "id": "d2143bbd-4d7b-4114-bfc2-4d0b76ae1575",
-    "courseCode": "CSE1065",
-    "creditHour": 2,
-    "courseName": "Down-sized client-server alliance",
-    "isOngoing": true,
-    "isRegistration": true,
-    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
-  },
-  {
-    "id": "a3fb8efa-44f2-4137-aaf9-4a68904aebdf",
-    "courseCode": "CSE1066",
-    "creditHour": 2,
-    "courseName": "Phased system-worthy analyzer",
-    "isOngoing": true,
-    "isRegistration": false,
-    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
-  },
-  {
-    "id": "f255d546-f3ff-4210-b2c4-e9ba68ae7081",
-    "courseCode": "CSE1067",
-    "creditHour": 4,
-    "courseName": "Monitored hybrid productivity",
-    "isOngoing": false,
-    "isRegistration": true,
-    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
-  },
-  {
-    "id": "22e076ff-63eb-43d5-b601-84ebd5c88ce3",
-    "courseCode": "CSE1068",
-    "creditHour": 4,
-    "courseName": "Open-source stable hardware",
+    "courseName": "Intro to Electrical Engineering 102",
     "isOngoing": false,
     "isRegistration": true,
     "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
   },
   {
-    "id": "47f7ecc0-6a6e-483a-b04b-b57ac4cc0380",
-    "courseCode": "CSE1069",
+    "id": "74c55db1-6e6f-4122-81e9-443a2d0e02d3",
+    "courseCode": "ELEC103",
     "creditHour": 3,
-    "courseName": "Implemented intermediate core",
+    "courseName": "Intro to Electrical Engineering 103",
     "isOngoing": true,
     "isRegistration": false,
     "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
   },
   {
-    "id": "36fedd84-6a7f-4760-9ea4-fc8590dfc460",
-    "courseCode": "CSE1070",
+    "id": "b4f31028-61e4-4f94-8714-f421b40f6107",
+    "courseCode": "ELEC104",
     "creditHour": 3,
-    "courseName": "Synergistic high-level flexibility",
-    "isOngoing": true,
-    "isRegistration": true,
-    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
-  },
-  {
-    "id": "391c16c5-a8f5-42ab-9f13-19e8a5cadab8",
-    "courseCode": "CSE1071",
-    "creditHour": 2,
-    "courseName": "Streamlined multi-tasking synergy",
-    "isOngoing": true,
-    "isRegistration": false,
-    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
-  },
-  {
-    "id": "dcc4c677-52c0-40ee-af32-03f6b39de9ab",
-    "courseCode": "CSE1072",
-    "creditHour": 2,
-    "courseName": "Cross-group object-oriented definition",
-    "isOngoing": true,
-    "isRegistration": false,
-    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
-  },
-  {
-    "id": "54793b51-4a46-4b37-8c09-0fafde968e4f",
-    "courseCode": "CSE1073",
-    "creditHour": 4,
-    "courseName": "Intuitive systemic monitoring",
+    "courseName": "Intro to Electrical Engineering 104",
     "isOngoing": false,
-    "isRegistration": true,
-    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
-  },
-  {
-    "id": "25f70ce5-fd4c-4abc-8b87-fac48421f944",
-    "courseCode": "CSE1074",
-    "creditHour": 4,
-    "courseName": "Focused neutral open architecture",
-    "isOngoing": true,
-    "isRegistration": false,
-    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
-  },
-  {
-    "id": "641be654-2f77-44b2-9749-6a0ff00518a7",
-    "courseCode": "CSE1075",
-    "creditHour": 4,
-    "courseName": "De-engineered tangible conglomeration",
-    "isOngoing": false,
-    "isRegistration": false,
-    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
-  },
-  {
-    "id": "91c31a98-07ab-4672-aa12-5c4f11fecfab",
-    "courseCode": "CSE1076",
-    "creditHour": 3,
-    "courseName": "Mandatory grid-enabled definition",
-    "isOngoing": true,
-    "isRegistration": true,
-    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
-  },
-  {
-    "id": "88b1b7c3-7166-4ac0-b37c-65b07b24fb1d",
-    "courseCode": "CSE1077",
-    "creditHour": 2,
-    "courseName": "Grass-roots stable instruction set",
-    "isOngoing": true,
-    "isRegistration": false,
-    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
-  },
-  {
-    "id": "980229e8-7044-452c-8ad3-6ce531d3fe96",
-    "courseCode": "CSE1078",
-    "creditHour": 4,
-    "courseName": "Adaptive motivating focus group",
-    "isOngoing": true,
     "isRegistration": false,
     "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
   },
   {
-    "id": "5faa565c-030d-4ff7-a5a0-5e7e0dadfa3f",
-    "courseCode": "CSE1079",
-    "creditHour": 3,
-    "courseName": "Managed optimizing knowledge user",
-    "isOngoing": false,
-    "isRegistration": true,
-    "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b"
-  },
-  {
-    "id": "90fbd314-b15b-4c77-b610-8bcd0f5e4c12",
-    "courseCode": "CSE1080",
-    "creditHour": 2,
-    "courseName": "Re-contextualized value-added task-force",
-    "isOngoing": false,
-    "isRegistration": true,
-    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
-  },
-  {
-    "id": "8c51df0d-e5ab-48e2-9ec2-63832e937bc1",
-    "courseCode": "CSE1081",
+    "id": "60db84cb-b34c-4772-8c97-5fa1361cbe08",
+    "courseCode": "ELEC105",
     "creditHour": 4,
-    "courseName": "Devolved secondary functionalities",
+    "courseName": "Intro to Electrical Engineering 105",
     "isOngoing": false,
-    "isRegistration": true,
-    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
-  },
-  {
-    "id": "0269bcee-462a-44ab-b5d9-8ca312babfc2",
-    "courseCode": "CSE1082",
-    "creditHour": 4,
-    "courseName": "Face-to-face eco-centric intranet",
-    "isOngoing": true,
     "isRegistration": false,
-    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
   },
   {
-    "id": "a741d39a-2ede-46bb-a318-14ed392a0be0",
-    "courseCode": "CSE1083",
+    "id": "35323726-e16b-4d99-952a-3b48994c8147",
+    "courseCode": "ELEC106",
     "creditHour": 4,
-    "courseName": "Reactive non-volatile Graphic Interface",
+    "courseName": "Intro to Electrical Engineering 106",
     "isOngoing": false,
     "isRegistration": true,
     "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
   },
   {
-    "id": "3f7a0ce8-eb16-4578-ab0b-168be06331bc",
-    "courseCode": "CSE1084",
-    "creditHour": 2,
-    "courseName": "Stand-alone 6thgeneration framework",
+    "id": "b6a46913-8394-410a-95c9-8d34d149455f",
+    "courseCode": "ELEC107",
+    "creditHour": 3,
+    "courseName": "Intro to Electrical Engineering 107",
+    "isOngoing": false,
+    "isRegistration": true,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "id": "e1cbdc4b-009c-4eb1-97f4-0539ab146646",
+    "courseCode": "ELEC108",
+    "creditHour": 4,
+    "courseName": "Intro to Electrical Engineering 108",
+    "isOngoing": true,
+    "isRegistration": true,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "id": "2a26d4b1-fa1f-45e2-a1af-b556b3a8c110",
+    "courseCode": "ELEC109",
+    "creditHour": 4,
+    "courseName": "Intro to Electrical Engineering 109",
+    "isOngoing": true,
+    "isRegistration": false,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "id": "1ec5a2cc-f572-4cf7-849e-c15dac1dd573",
+    "courseCode": "ELEC110",
+    "creditHour": 3,
+    "courseName": "Intro to Electrical Engineering 110",
+    "isOngoing": true,
+    "isRegistration": true,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "id": "bde810ac-77ea-4792-b02a-eca76dbee20f",
+    "courseCode": "ELEC111",
+    "creditHour": 4,
+    "courseName": "Intro to Electrical Engineering 111",
+    "isOngoing": true,
+    "isRegistration": false,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "id": "f84c4b20-8217-43c4-b63f-33387d35f3a7",
+    "courseCode": "ELEC112",
+    "creditHour": 4,
+    "courseName": "Intro to Electrical Engineering 112",
+    "isOngoing": true,
+    "isRegistration": true,
+    "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6"
+  },
+  {
+    "id": "61a105da-56b5-482b-99c7-1dcc64355dcf",
+    "courseCode": "MATH100",
+    "creditHour": 4,
+    "courseName": "Intro to Mathematics 100",
+    "isOngoing": false,
+    "isRegistration": true,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "id": "ce558fb5-0b7d-4834-b495-18110b7b7643",
+    "courseCode": "MATH101",
+    "creditHour": 4,
+    "courseName": "Intro to Mathematics 101",
+    "isOngoing": true,
+    "isRegistration": true,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "id": "96a1ebbb-0d02-4603-8c5f-8bf348cd871c",
+    "courseCode": "MATH102",
+    "creditHour": 3,
+    "courseName": "Intro to Mathematics 102",
+    "isOngoing": false,
+    "isRegistration": true,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "id": "dd6e4a5b-c5ef-471e-9216-44ec315756a9",
+    "courseCode": "MATH103",
+    "creditHour": 3,
+    "courseName": "Intro to Mathematics 103",
     "isOngoing": false,
     "isRegistration": false,
-    "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3"
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "id": "d4bcb716-d23e-4ccd-b42e-dac8ccbdfb82",
+    "courseCode": "MATH104",
+    "creditHour": 4,
+    "courseName": "Intro to Mathematics 104",
+    "isOngoing": true,
+    "isRegistration": false,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "id": "dba27d5c-0d02-41e9-bc51-3d6d2aadd2de",
+    "courseCode": "MATH105",
+    "creditHour": 3,
+    "courseName": "Intro to Mathematics 105",
+    "isOngoing": false,
+    "isRegistration": false,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "id": "2c69ac92-2004-4b5c-b031-7a036833d608",
+    "courseCode": "MATH106",
+    "creditHour": 3,
+    "courseName": "Intro to Mathematics 106",
+    "isOngoing": false,
+    "isRegistration": true,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "id": "70ef5009-5437-4036-9f74-3f9ef7bc4064",
+    "courseCode": "MATH107",
+    "creditHour": 3,
+    "courseName": "Intro to Mathematics 107",
+    "isOngoing": true,
+    "isRegistration": false,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "id": "4f169774-72fe-4c21-b365-ecf3e63a4386",
+    "courseCode": "MATH108",
+    "creditHour": 3,
+    "courseName": "Intro to Mathematics 108",
+    "isOngoing": true,
+    "isRegistration": true,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "id": "a89e2ecf-9857-46d3-8b6d-6c304d602d37",
+    "courseCode": "MATH109",
+    "creditHour": 3,
+    "courseName": "Intro to Mathematics 109",
+    "isOngoing": true,
+    "isRegistration": true,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "id": "ea6533be-d97a-4e4a-a71f-8bb77187bd5e",
+    "courseCode": "MATH110",
+    "creditHour": 4,
+    "courseName": "Intro to Mathematics 110",
+    "isOngoing": false,
+    "isRegistration": false,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "id": "2ddf8787-7dc5-4a0f-9827-47fe9930a589",
+    "courseCode": "MATH111",
+    "creditHour": 3,
+    "courseName": "Intro to Mathematics 111",
+    "isOngoing": true,
+    "isRegistration": false,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
+  },
+  {
+    "id": "9e17efcf-4bd2-40cf-81dc-67a8c9223d2a",
+    "courseCode": "MATH112",
+    "creditHour": 4,
+    "courseName": "Intro to Mathematics 112",
+    "isOngoing": true,
+    "isRegistration": true,
+    "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4"
   }
 ]
