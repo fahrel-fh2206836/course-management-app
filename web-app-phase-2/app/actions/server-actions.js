@@ -24,6 +24,10 @@ export async function getUserAction(username, password) {
     return await appRepo.getUser(username, password);
 }
 
-export async function getRegSecAction(studentId, sem) {
+export async function getMajorByIdAction(majorId) {
+    return await appRepo.getMajorById(majorId);
+}
+
+export async function getRegSecBySemAction(studentId, sem) {
     return await appRepo.getRegSecBySem(studentId, sem);
 }   

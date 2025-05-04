@@ -13,6 +13,11 @@ class AppRepo {
             where: {
               username: username,
               password: password
+            },
+            include: {
+              Student: true,
+              Instructor: true,
+              Admin: true
             }
           });
         
@@ -20,6 +25,19 @@ class AppRepo {
             return { error: "Wrong credentials" }
         }
         return user;
+    }
+
+    async getMajorById(majorId) {
+      if (!majorId) {
+        majorId = "N/A";
+      }
+      
+      const major = await prisma.major.findUnique({where: {majorId}});
+
+      if(!major) {
+        return { error: "Major does not exist" }
+      }
+      return major;
     }
 
     async getRegSecBySem(studentId, sem) {
