@@ -1,0 +1,126 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    margin: 20px;
+  }
+  
+  .h2Icon {
+    font-size: 1.5rem;
+    color: var(--bistre-);
+  }
+  
+  .statusContainer {
+    padding: 10px;
+    background-color: var(--light-beige-);
+    border-radius: 15px;
+    border: 1px solid var(--bistre-);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  
+  .ongoing { color: orange; }
+  .registration { color: blue; }
+  .notOffered { color: red; }
+  
+  .label { font-weight: bold; }
+  
+  .select {
+    padding: 10px 15px;
+    border: 2px solid var(--bistre-);
+    border-radius: 6px;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .select:hover {
+    border-color: var(--chamoisse-);
+  }
+  
+  .courseContainer {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    border: 1px solid var(--bistre-);
+    border-radius: 15px;
+    padding: 10px;
+    height: 650px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: var(--light-beige-);
+  }
+  
+  .statusTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  
+  .searchFilter {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .majorFilter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .majorFilter select {
+    width: 100%;
+    padding: 5px;
+  }
+  
+  .majorFilter i {
+    color: var(--bistre-);
+  }
+  
+  .courseList {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+    padding: 5px 10px;
+    overflow: auto;
+  }
+  
+  .scheduleContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    background-color: var(--light-beige-);
+    border: 1px solid var(--bistre-);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  
+  @media (min-width: 1024px) {
+    .main {
+      display: grid;
+      gap: 30px;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-areas: 
+        "header header header"
+        "ongoing registration not-offered"
+        "schedule schedule schedule";
+    }
+  
+    .statusContainer {
+      display: none;
+    }
+  
+    .header { grid-area: header; }
+    .ongoingContainer { grid-area: ongoing; }
+    .registrationContainer { grid-area: registration; }
+    .notOfferedContainer { grid-area: not-offered; }
+    .scheduleContainer { grid-area: schedule; }
+  }

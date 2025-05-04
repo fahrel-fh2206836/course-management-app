@@ -12,6 +12,10 @@ class AppRepo {
       return await prisma.semester.findMany();
     }
 
+    async getMajors() {
+      return await prisma.major.findMany();
+    }
+ 
     async getUser(username, password) {
         const user = await prisma.user.findUnique({
             where: {
@@ -108,6 +112,75 @@ class AppRepo {
       return result;
     }
 
+    async getSectionBySem(sem) {
+      return await prisma.section.findMany({
+        where: {
+          semester: sem
+        }, 
+        include: {
+          course: true,
+          instructor: {
+            include: {
+              user: true
+            }
+          }
+        }
+      });
+    }
+
+    async getCourseByStatus(status) {
+      const statusLow = status.toLowerCase()
+      if(statusLow === "ongoing") {
+        return await prisma.course.findMany(
+          {
+            where: {
+              isOngoing: true,
+          }
+        });
+      } else if(statusLow === "registration") {
+        return await prisma.course.findMany(
+          {
+            where: {
+              isRegistration: true,
+          }
+        });
+      }
+      return await prisma.course.findMany(
+        {
+          where: {
+            isRegistration: false,
+            isOngoing: false
+        }
+      });
+    }
+
+    async getCourseByMajorStatus(majorId, status) {
+      const statusLow = status.toLowerCase()
+      if(statusLow === "ongoing") {
+        return await prisma.course.findMany(
+          {
+            where: {
+              majorId: majorId,
+              isOngoing: true,
+          }
+        });
+      } else if(statusLow === "registration") {
+        return await prisma.course.findMany(
+          {
+            where: {
+              majorId: majorId,
+              isRegistration: true,
+          }
+        });
+      }
+      return await prisma.course.findMany({
+        where: {
+          majorId: majorId,
+          isOngoing: false,
+          isRegistration: false
+        }
+      });
+    }
 }
 
 export default new AppRepo();

@@ -475,6 +475,48 @@ nav ul li a, i {
     }
 }
 
+h3 {
+  padding: 10px;
+}
+
+.icon-circle {
+  font-size: 25px;
+  background-color: white;
+  border-radius: 50%;
+  padding: 5px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.manage-class-btn {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 5px;
+  right: 7px; 
+  gap: 5px;
+  border-radius: 5px;
+  padding: 2px 5px;
+  border: 1px solid var(--bistre-);
+  i {
+      color: var(--bistre-);
+      font-size: .7rem;
+  }
+
+  p {
+      font-size: .7rem;
+      font-weight: bold;
+  }
+}
+
+.manage-class-btn:hover {
+  border: none;
+  cursor: pointer;
+  background-color: var(--coffee-);
+  i, p{
+      color: var(--beige-);
+  }
+}
+
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
@@ -591,5 +633,67 @@ nav ul li a, i {
     display: grid;
     gap: 30px;
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  }
+}
+
+.week-days {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  border-radius: 5px;
+  background-color: transparent;
+}
+
+.day {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1rem;
+  border: 1px solid var(--bistre-);
+  border-radius: 3px;
+  background-color: white;
+  color: black;
+}
+
+.day.selected {
+  background-color: var(--coffee-);
+  color: white;
+}
+
+#schedule-table {
+  display: block;
+  border-collapse: collapse;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  overflow-y: auto;
+  max-height: 500px;
+}
+
+#schedule-table th, #schedule-table td {
+  padding: 12px;
+  border: .5px solid var(--bistre-);
+  text-align: center;
+}
+
+#schedule-table th {
+  background-color: var(--khaki-);
+  font-weight: bold;
+}
+
+#schedule-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+#schedule-table tr:nth-child(odd) {
+  background-color: white;
+}
+
+/* Responsive Table */
+@media (max-width: 900px) {
+  #schedule-table {
+      overflow-x: auto;
+      width: 100%;
   }
 }

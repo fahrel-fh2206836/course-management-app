@@ -43,3 +43,11 @@ export async function getInstructorSecBySemAction(instructorId, sem, notSem) {
 export async function getInstructorTotalStudentSemAction(instructorId, sem) {
     return await appRepo.getInstructorTotalStudentSem(instructorId, sem);
 }
+
+export async function getCourseByStatusAction(status) {
+    return await appRepo.getCourseByStatus(status);
+}
+
+export async function getCourseByMajorStatusAction(majorId, status) {
+    return await appRepo.getCourseByMajorStatus(majorId, status);
+}
