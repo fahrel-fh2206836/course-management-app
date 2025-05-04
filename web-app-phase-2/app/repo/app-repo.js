@@ -68,18 +68,7 @@ class AppRepo {
     }
 
     async getInstructorSecBySem(instructorId, sem, notSem) {
-      if(notSem) {
-        return await prisma.section.findMany({
-          where: {
-            instructorId: instructorId,
-            semester: sem
-          },
-          include: {
-            course: true
-          },
-        });
-      }
-
+      if(notSem)
       return await prisma.section.findMany({
         where: {
           instructorId: instructorId,
@@ -91,6 +80,15 @@ class AppRepo {
           course: true
         },
       });
+        return await prisma.section.findMany({
+          where: {
+            instructorId: instructorId,
+            semester: sem
+          },
+          include: {
+            course: true
+          },
+        });
     }
 
     async getInstructorTotalStudentSem(instructorId, sem) {

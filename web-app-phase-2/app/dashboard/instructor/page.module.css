@@ -13,15 +13,10 @@
     flex-direction: column;
 }
 
-.bxFilter{
-    color: #a07856;
-    font-size: 30px;
-    transition: all 0.3s ease;
+.pFcardGroup, .cardGroup {
+    padding: 10px;
 }
-.bxFilter:hover{
-    text-shadow: 0 0 5px rgba(163, 111, 67, 0.6);
-    transform: scale(1.2);
-}
+
 
 @media (min-width: 1024px) {
 

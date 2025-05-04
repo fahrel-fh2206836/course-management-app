@@ -1,12 +1,17 @@
 'use client'
 import { getInstructorSecBySemAction, getInstructorTotalStudentSemAction, getSemestersAction } from '@/app/actions/server-actions';
+import CourseCard2 from '@/app/components/CourseCard2';
+import EmptySection from '@/app/components/EmptySection';
 import { UserContext } from '@/app/context/UserContext';
-import React, { useContext, useState, useEffect, useRef } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
+import styles from './page.module.css'
+import LoadingSpinner from '@/app/components/LoadingSpinner';
+
 
 export default function page() {
   const { user } =  useContext(UserContext);
-  const [activeSecs, setActiveSecs] = useState([]);
-  const [nonActiveSecs, setNonActiveSecs] = useState([]);
+  const [ongoingSecs, setOngoingSecs] = useState(null);
+  const [nonOngoingSecs, setNonOngoingSecs] = useState(null);
   const [currStudents, setCurrStudents] = useState(0);
 
   useEffect (()  => {
@@ -14,12 +19,12 @@ export default function page() {
         const fetchActiveSecs = async () => {
           const semesters = await getSemestersAction();
           const activeSecs = await getInstructorSecBySemAction(user.userId, semesters[semesters.length-2].semester, false);
-          setActiveSecs(activeSecs);
+          setOngoingSecs(activeSecs);
         };
         const fetchNonActiveSecs = async () => {
           const semesters = await getSemestersAction();
           const nonActiveSecs = await getInstructorSecBySemAction(user.userId,  semesters[semesters.length-2].semester, true);
-          setNonActiveSecs(nonActiveSecs);
+          setNonOngoingSecs(nonActiveSecs);
         }
         const fetchCurrStudent = async () => {
           const semesters = await getSemestersAction();
@@ -29,8 +34,6 @@ export default function page() {
         fetchActiveSecs();
         fetchNonActiveSecs();
         fetchCurrStudent();
-
-        
       }
     }, [user]);
 
@@ -42,9 +45,9 @@ export default function page() {
             <p>Your personalized dashboard is here to help you manage your courses and streamline your teaching experience</p>
             
             <div className="stats-card">
-                <div><span>Active Classes:</span><span id="Activeclass">{activeSecs.length}</span></div>
+                <div><span>Active Classes:</span><span id="Activeclass">{ongoingSecs?.length}</span></div>
                 <div><span>Number of Active Students:</span><span id="totalStud">{currStudents}</span></div>
-                <div><span>Total Classes:</span><span id="Noclasses">{nonActiveSecs.length + activeSecs.length}</span></div>
+                <div><span>Total Classes:</span><span id="Noclasses">{!nonOngoingSecs ? "N/A" : nonOngoingSecs?.length + ongoingSecs?.length}</span></div>
             </div>
         </div>
         <div className="welcome-img">
@@ -52,8 +55,17 @@ export default function page() {
         </div>
         <h1 id="ongoing-text">Teaching Sections</h1>
         <div className="registered-courses section-style">
-            <ul className="course-card-list">
 
+            <ul className="course-card-list">
+              <h3>Ongoing Courses</h3>
+              <div className={styles.cardGroup}>{!ongoingSecs ? <LoadingSpinner></LoadingSpinner> : ongoingSecs?.length === 0 ? <EmptySection text="No Ongoing Courses"></EmptySection> : 
+                                      ongoingSecs?.map(s => <CourseCard2 key={s.sectionId} s={s} c={s.course}></CourseCard2>)}</div>
+              
+              <div className={styles.pFcourses}>
+                  <h3>Previous/Future Courses</h3>
+              </div>
+              <div className={styles.pFcardGroup}>{!nonOngoingSecs ? <LoadingSpinner></LoadingSpinner> : nonOngoingSecs?.length === 0 ? <EmptySection text="No Non-Active Courses"></EmptySection> :
+                                        nonOngoingSecs?.map(s => <CourseCard2 key={s.sectionId} s={s} c={s.course}></CourseCard2>)}</div>
             </ul>
         </div>
     </main>
