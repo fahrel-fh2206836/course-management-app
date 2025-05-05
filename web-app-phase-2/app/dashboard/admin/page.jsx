@@ -3,7 +3,6 @@ import styles from './page.module.css';
 import Schedule from '@/app/components/Schedule';
 import AdminCourses from '@/app/components/AdminCourses';
 
-
 export default async function CourseStatusPage() {
   const semester = await appRepo.getSemesters();
   const majors = await appRepo.getMajors();

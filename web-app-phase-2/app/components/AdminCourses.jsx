@@ -1,16 +1,14 @@
 'use client'
 
 import styles from "@/app/dashboard/admin/page.module.css"
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { getCourseByMajorStatusAction, getCourseByStatusAction } from "../actions/server-actions";
 import { useRouter } from "next/navigation";
-import { CourseContext } from "../context/CourseContext";
 
 
 export default function AdminCourses({ majors, ongoingCourse, regCourse, notOfferedCourse}) {
   const router = useRouter();
   const [status, setStatus] = useState('ongoing');
-  const { setNewSelectedCourse } = useContext(CourseContext);
 
   const [selectedMajor, setSelectedMajors] = useState({
     smallScreen: "all",
@@ -70,8 +68,7 @@ export default function AdminCourses({ majors, ongoingCourse, regCourse, notOffe
     }
 
   function handleNavigateToCourse(course) {
-    setNewSelectedCourse(course);
-    router.push("/dashboard/admin/manageCourse");
+    router.push(`/dashboard/admin/manage/${course.id}`);
   }
     
   return (
