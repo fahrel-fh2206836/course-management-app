@@ -1,15 +1,12 @@
 'use client'
 import React, { useContext } from 'react'
 import { useRouter } from 'next/navigation'
-import { SectionContext } from '@/app/context/SectionContext';
 
 export default function CourseCard2({ s, c }) {
   const router = useRouter();
-  const { setNewSelectedSection } = useContext(SectionContext);
 
   function goToGradesHandler(s) {
-    setNewSelectedSection(s);
-    router.push('/dashboard/instructor/grades');
+    router.push(`/dashboard/instructor/grades/${s.sectionId}`);
   }
 
   return (
