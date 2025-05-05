@@ -5,10 +5,10 @@ import { SectionContext } from '@/app/context/SectionContext';
 
 export default function CourseCard2({ s, c }) {
   const router = useRouter();
-  const { setSelectedSection } = useContext(SectionContext);
+  const { setNewSelectedSection } = useContext(SectionContext);
 
   function goToGradesHandler(s) {
-    setSelectedSection(s);
+    setNewSelectedSection(s);
     router.push('/dashboard/instructor/grades');
   }
 

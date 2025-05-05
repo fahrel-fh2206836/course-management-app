@@ -4,14 +4,14 @@ import React, { createContext, useState } from 'react'
 export const SectionContext = createContext();
 
 export default function SectionProvider({ children }) {
-    const [section, setSection] = useState(null);
+    const [selectedSection, setSelectedSection] = useState(null);
 
-    const setSelectedSection = (section) => {
-        setSection(section);
+    const setNewSelectedSection = (section) => {
+        setSelectedSection(section);
     }
 
     return (
-        <SectionContext.Provider value={{ section, setSelectedSection }}>
+        <SectionContext.Provider value={{ selectedSection, setNewSelectedSection }}>
           {children}
         </SectionContext.Provider>
       );

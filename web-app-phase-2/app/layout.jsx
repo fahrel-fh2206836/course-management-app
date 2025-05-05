@@ -11,6 +11,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'/>
+        <title>QU Course Management System</title>
       </head>
       <body>
         <UserProvider>

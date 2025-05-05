@@ -1,4 +1,5 @@
 import Navbar from "../components/Navbar";
+import CourseProvider from "../context/CourseContext";
 
 export default function layout({ children }) {
   return (
@@ -6,7 +7,9 @@ export default function layout({ children }) {
       <header>
         <Navbar/>
       </header>
-      {children}
+      <CourseProvider>
+          {children}
+      </CourseProvider>
     </>
   );
 }
