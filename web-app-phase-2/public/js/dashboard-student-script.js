@@ -31,41 +31,29 @@ async function loadStudentongoingRegs() {
     const responseSem = await fetch(`${baseUrl}/semester`);
     const semesters = await responseSem.json();
     const ongoingSem = semesters[semesters.length-2].semester;
-    const responseSec = await fetch(`/api/student-sections?studentId=${user.userId}&semester=${ongoingSem}`);
+    const responseSec = await fetch(`/api/section?studentId=${user.userId}&semester=${ongoingSem}`);
     const ongoingSections = await responseSec.json();
     renderRegisteredCourses(ongoingSections);
 }
 
 async function dataLoaderApi() {
     loadStudentMajor();
+    loadStudentongoingRegs();
 }
 
 dataLoaderApi();
 
-
-
-
 function renderRegisteredCourses(studentsRegistrations) {
     let html = ``;
-    let registeredSections = [];
-    for(r of studentsRegistrations){
-        let sec = sections.find((section) => section.sectionId === r.sectionId);
-        if(sec.sectionStatus === "ONGOING"){
-            registeredSections.push(sec);
-        }
-    }
-    coursesSpan.innerText = registeredSections.length;
-    if(registeredSections.length === 0) {
+    coursesSpan.innerText = studentsRegistrations.length;
+    if(studentsRegistrations.length === 0) {
         html = `<div class="empty-section">
                     <i class='bx bxs-error-circle'></i>
                     <p>No Registered Section.</p>
                 </div>`;
     } else {
-        registeredSections.forEach(regSec => {
-            let section = sections.find(s => regSec.sectionId === s.sectionId); 
-            let course = courses.find(c => c.id === section.courseId);
-            let instructor = users.find(u => u.userId === section.instructorId);
-            html+=generateCourseListHTML(section, course, instructor)+'\n';
+        studentsRegistrations.forEach(regSec => {
+            html+=generateCourseListHTML(regSec.section, regSec.section.course, regSec.section.instructor.user)+'\n';
         })
     } 
     registeredList.innerHTML = html;
@@ -79,7 +67,7 @@ function generateCourseListHTML(s, c, i) {
                 <div class="card-course-instructor"><p>Instructor: ${i.firstName} ${i.lastName}</p></div>
                 <div class="card-course-section-location"><p>Section ID: ${s.sectionId}</p><p>Class Location: ${s.location !== '' ? s.location : 'None'}</p></div>
                 <hr>
-                <div class="card-course-sem-schedule"><p><i class='bx bx-calendar'></i>${s.semester}</p><p><i class='bx bx-calendar-week'></i>${s.schedule.days !== '' ? s.schedule.days : 'None'}</p><p><i class='bx bx-time'></i>${s.schedule.time !== '' ? s.schedule.time : 'None'}</p></div>
+                <div class="card-course-sem-schedule"><p><i class='bx bx-calendar'></i>${s.semester}</p><p><i class='bx bx-calendar-week'></i>${s.days !== '' ? s.days : 'None'}</p><p><i class='bx bx-time'></i>${s.time !== '' ? s.time : 'None'}</p></div>
             </div>`;
 }
 
