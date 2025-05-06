@@ -1,11 +1,13 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+import { NotifContext } from '../context/NotifContext';
 
 export default function AddCourse({ majors, csCourse, ceCourse, eeCourse, mathCourse}) {
     const [selectedMajorId, setSelectedMajorId] = useState("");
     const [selectedMajor, setSelectedMajor] = useState(null);
     const [prerequisitesList, setPrerequisitesList] = useState([]);
     const [hasMounted, setHasMounted] = useState(false);
+    const { showNotif } = useContext(NotifContext);
 
     useEffect(() => {
         setHasMounted(true);
@@ -28,24 +30,53 @@ export default function AddCourse({ majors, csCourse, ceCourse, eeCourse, mathCo
         }
     }, [selectedMajorId]);
 
+    async function handleSubmit(e) {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const course = Object.fromEntries(formData);
+
+        course.creditHour = parseInt(course.creditHour);
+        if(course.creditHour <= 0) {
+            showNotif("Course CH are only positive integers.", "fail");
+            return;
+        }
+
+        //Check if the course already exist.
+        const courses = [...csCourse, ...ceCourse, ...eeCourse, ...mathCourse];
+        if(courses.map(c => c.courseCode.toLowerCase().replace(/\s+/g, '')).includes(course.courseCode.toLowerCase().replace(/\s+/g, ''))) {
+            showNotif("Course already exist.", "fail");
+            return;
+        }
+
+        course.courseCode = selectedMajor.majorCode + course.courseCode;
+        console.log(course);
+        // Add Course
+        // await fetch("/api/courses", {
+        //     method: "POST",
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify(course)
+        // })
+
+        // // Update Major
+        // await fetch(`/api/major/${selectedMajorId}`, {
+        //     method: "PUT",
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify({...selectedMajor, totalCreditHour: selectedMajor.creditHour + course.creditHour})
+        // })
+
+        course.prerequisitesCoursesId = formData.getAll("prerequisitesCoursesId");
+        
+        showNotif("Course added.");
+    }
+
     if(!hasMounted) return null;
 
     return (
-        <form action="" id="add-courses-form" className='add-page-form'>
-            <div className="form-group">
-                <label className="add-page-label" htmlFor="course-code">Course Code</label>
-                <input className="add-page-input" type="text" id="course-code" name="courseCode" placeholder="e.g. CMPS 151" required/>
-            </div>
-            <div className="form-group">
-                <label className="add-page-label" htmlFor="course-name">Course Name</label>
-                <input className="add-page-input" type="text" id="course-name" name="courseName" placeholder="e.g. Programming Concepts" required/>
-            </div>
-
-            <div className="form-group">
-                <label className="add-page-label" htmlFor="credit-hour">Credit Hour</label>
-                <input className="add-page-input" type="number" id="credit-hour" name="creditHour" placeholder="Enter Credit Hour" required/>
-            </div>
-
+        <form action="" id="add-courses-form" className='add-page-form' onSubmit={handleSubmit}>
             <div className="form-group">
                 <label className="add-page-label" htmlFor="major">Select Major</label>
                 <select id="major" name="majorId" defaultValue={""} onChange={(e) => setSelectedMajorId(e.target.value)} required>
@@ -56,6 +87,20 @@ export default function AddCourse({ majors, csCourse, ceCourse, eeCourse, mathCo
                         </option>
                     ))}
                 </select>
+            </div>
+
+            <div className="form-group">
+                <label className="add-page-label" htmlFor="course-code">Course Code No.</label>
+                <input className="add-page-input" type="number" id="course-code" name="courseCode" placeholder="e.g. 151" required/>
+            </div>
+            <div className="form-group">
+                <label className="add-page-label" htmlFor="course-name">Course Name</label>
+                <input className="add-page-input" type="text" id="course-name" name="courseName" placeholder="e.g. Programming Concepts" required/>
+            </div>
+
+            <div className="form-group">
+                <label className="add-page-label" htmlFor="credit-hour">Credit Hour</label>
+                <input className="add-page-input" type="number" id="credit-hour" name="creditHour" placeholder="Enter Credit Hour" required/>
             </div>
 
             <div className="form-group">

@@ -13,11 +13,7 @@ export default async function page() {
         <div className="form-container">
             <h2>Add New Course</h2>
             <AddCourse majors={majors} csCourse={cmpsCourse} ceCourse={cmpeCourse} eeCourse={elecCourse} mathCourse={mathCourse}/>
-            {/* <!-- Notifications --> */}
-            {/* <div id="negative-seats-notif" className="fail notification">⚠️ TOTAL SEATS SHOULD BE A POSITIVE INTEGER!</div>
-            <div id="exist-notif" className="fail notification">⚠️ Course Already Exist!</div>
-            <div id="added-notif" className="success notification"></div> */}
-        </div>
+            </div>
     </main>
   )
 }

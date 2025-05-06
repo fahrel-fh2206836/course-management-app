@@ -189,6 +189,16 @@ class AppRepo {
         }
       });
     }
+    
+    async addCourse(course) {
+      course.isOngoing = course.isOngoing === "on" ? true : false;
+      course.isRegistration = course.isRegistration === "on" ? true : false;
+      return await prisma.course.create({data: {course}});
+    }
+
+    async updateMajor(majorId, updatedMajor) {
+      return await prisma.major.update({where: {majorId: majorId}, data: {updatedMajor}});
+    }
 }
 
 export default new AppRepo();
