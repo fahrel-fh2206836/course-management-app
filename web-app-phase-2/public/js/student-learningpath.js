@@ -1,165 +1,153 @@
-// Set localstorage.currentpage
 localStorage.currentPage = "learningPath";
 
-let majors = JSON.parse(localStorage.majors);
-let student = JSON.parse(localStorage.getItem("loggedInUser"));
-let registration = JSON.parse(localStorage.registrations)
-let section = JSON.parse(localStorage.sections)
-let course = JSON.parse(localStorage.courses)
-let completedcourses=0;
 
-let studentMajor = majors.find(m => m.majorId == student.majorId);
+const nameElem = document.querySelector("#name");
+const majorElem = document.querySelector("#stats-major");
+const cgpaElem = document.querySelector("#stats-CGPA");
+const chElem = document.querySelector("#stats-completed-ch");
+const barElem = document.querySelector("#progress-bar").querySelector("div");
+const percentElem = document.querySelector("#bar-percentage");
+const completedCoursesElem = document.querySelector("#stats-completed-courses");
 
-document.querySelector("#name").innerHTML = `${student.firstName} ${student.lastName}`;
-document.querySelector("#stats-major").innerHTML = studentMajor.majorName;
-document.querySelector("#stats-CGPA").innerHTML = student.gpa.toFixed(2);
-document.querySelector("#stats-completed-ch").innerHTML = `${student.finishedCreditHour}/${studentMajor.totalCreditHour}`;
+const completedList = document.querySelector(".status-completed .course-list");
+const pendingList = document.querySelector(".status-pending .course-list");
+const inProgressList = document.querySelector(".status-in_progress .course-list");
 
-let progress = (student.finishedCreditHour / studentMajor.totalCreditHour) * 100;
-
-document.querySelector("#progress-bar").querySelector("div").style.width = progress + "%";
-document.querySelector("#bar-percentage").innerHTML = `${progress.toFixed(1)}%`;
+let completedCoursesCount = 0;
 
 
-//prereq img
-let image = document.querySelector(".img-prerequiste");
-if (studentMajor.majorName === "Computer Science") {
-    image.innerHTML = `<img src="../assets/images/flowchart_cs.png" alt="">`; 
-} else if (studentMajor.majorName === "Computer Engineering") {
-    image.innerHTML = `<img src="../assets/images/flowchart_ce.png" alt="">`;}
+async function loadLearningPath() {
+    const studentRes = await fetch("/api/student");
+    const student = await studentRes.json();
 
+    const majorsRes = await fetch("/api/majors");
+    const majors = await majorsRes.json();
 
+    const registrationsRes = await fetch("/api/registrations");
+    const registrations = await registrationsRes.json();
 
-//completed - pending - inprogress
-let completed = document.querySelector(".status-completed .course-list");
-let pending = document.querySelector(".status-pending .course-list");
-let in_progress = document.querySelector(".status-in_progress .course-list");
+    const sectionsRes = await fetch("/api/sections");
+    const sections = await sectionsRes.json();
 
-if (completed) 
-    completed.innerHTML = "";
-if (pending) 
-    pending.innerHTML = "";
-if (in_progress) 
-    in_progress.innerHTML = "";
+    const coursesRes = await fetch("/api/courses");
+    const courses = await coursesRes.json();
 
-let allCoursesIds = [];
+    const studentMajor = majors.find(m => m.majorId === student.majorId);
 
-if (studentMajor)
-    allCoursesIds = studentMajor.allCourses;
+    const allCourseIds = studentMajor?.allCourses || [];
 
-let studentRegistrations = registration.filter(m => m.studentId === student.userId);
-let takenCourseIds = [];
+    nameElem.textContent = `${student.firstName} ${student.lastName}`;
+    majorElem.textContent = studentMajor.majorName;
+    cgpaElem.textContent = student.gpa.toFixed(2);
+    chElem.textContent = `${student.finishedCreditHour}/${studentMajor.totalCreditHour}`;
 
-studentRegistrations.forEach(registration => {
-    let studentSection = section.find(m => m.sectionId === registration.sectionId);
-    let studentCourse = course.find(m => m.id === studentSection?.courseId);
-    takenCourseIds.push(studentCourse.id);
+    const progress = (student.finishedCreditHour / studentMajor.totalCreditHour) * 100;
 
-    if (registration.grade !== "" && registration.grade !== "F" && registration.grade !== "f") {
-        completedcourses+=1;
-        if (completed) {
-            completed.innerHTML += `
-                <div class="scrolling">
-                    <div class="course-card">
-                        <div class="course-header">
-                            <span class="course-code">${studentCourse.courseCode}</span>
-                            <span class="course-title">${studentCourse.courseName}</span>
-                            <span class="course-ch">${studentCourse.creditHour} CH</span>
-                        </div>
-                        <div class="course-grade"><span>Grade: ${registration.grade}</span></div>
-                    </div>
-                </div>`;
-        }
-    } else if (registration.grade === "F" || registration.grade === "f") {
-        if (pending) {
-            pending.innerHTML += `
-                <div class="scrolling">
-                    <div class="course-card">
-                        <div class="course-header">
-                            <span class="course-code">${studentCourse.courseCode}</span>
-                            <span class="course-title">${studentCourse.courseName}</span>
-                            <span class="course-ch">${studentCourse.creditHour} CH</span>
-                        </div>
-                    </div>
-                </div>`;
-        }
-    } else if (registration.grade === "" && studentCourse.isOngoing) {
-        if (in_progress) {
-            in_progress.innerHTML += `
-                <div class="scrolling">
-                    <div class="course-card">
-                        <div class="course-header">
-                            <span class="course-code">${studentCourse.courseCode}</span>
-                            <span class="course-title">${studentCourse.courseName}</span>
-                            <span class="course-ch">${studentCourse.creditHour} CH</span>
-                        </div>
-                    </div>
-                </div>`;
-        }
+    barElem.style.width = `${progress}%`;
+    percentElem.textContent = `${progress.toFixed(1)}%`;
+
+    // Flowchart image
+    const image = document.querySelector(".img-prerequiste");
+
+    if (studentMajor.majorName === "Computer Science") {
+        image.innerHTML = `<img src="../assets/images/flowchart_cs.png" alt="">`;
+    } else if (studentMajor.majorName === "Computer Engineering") {
+        image.innerHTML = `<img src="../assets/images/flowchart_ce.png" alt="">`;
     }
+
+    completedList.innerHTML = "";
+    pendingList.innerHTML = "";
+    inProgressList.innerHTML = "";
+
+    const takenCourseIds = [];
+
+    registrations
+        .filter(reg => reg.studentId === student.userId)
+        .forEach(reg => {
+            const sec = sections.find(s => s.sectionId === reg.sectionId);
+            const crs = courses.find(c => c.id === sec?.courseId);
+
+            if (!crs) return;
+
+            takenCourseIds.push(crs.id);
+
+            const courseHTML = `
+                <div class="scrolling">
+                    <div class="course-card">
+                        <div class="course-header">
+                            <span class="course-code">${crs.courseCode}</span>
+                            <span class="course-title">${crs.courseName}</span>
+                            <span class="course-ch">${crs.creditHour} CH</span>
+                        </div>
+                        ${reg.grade && reg.grade !== "F" && reg.grade !== "f" ? `<div class="course-grade"><span>Grade: ${reg.grade}</span></div>` : ""}
+                    </div>
+                </div>`;
+
+            if (reg.grade && reg.grade !== "F" && reg.grade !== "f") {
+                completedCoursesCount++;
+                completedList.innerHTML += courseHTML;
+            } else if (reg.grade === "F" || reg.grade === "f") {
+                pendingList.innerHTML += courseHTML;
+            } else if (reg.grade === "" && crs.isOngoing) {
+                inProgressList.innerHTML += courseHTML;
+            }
+        });
+
+    allCourseIds
+        .filter(id => !takenCourseIds.includes(id))
+        .forEach(id => {
+            const crs = courses.find(c => c.id === id);
+
+            if (crs) {
+                pendingList.innerHTML += `
+                    <div class="scrolling">
+                        <div class="course-card">
+                            <div class="course-header">
+                                <span class="course-code">${crs.courseCode}</span>
+                                <span class="course-title">${crs.courseName}</span>
+                                <span class="course-ch">${crs.creditHour} CH</span>
+                            </div>
+                        </div>
+                    </div>`;
+            }
+        });
+
+    completedCoursesElem.textContent = completedCoursesCount;
+}
+
+// Filter UI by status
+function filterCourses() {
+    const selectedStatus = document.querySelector('#status-filter').value;
+    const statuses = ["completed", "pending", "in_progress"];
+    const isMobile = window.innerWidth <= 900;
+
+    statuses.forEach(status => {
+        const section = document.querySelector(`.status-${status}`);
+        section.style.display = (isMobile && selectedStatus !== "all" && status !== selectedStatus)
+            ? "none"
+            : "block";
+    });
+}
+
+// Toggle filter visibility for small screens
+function toggleFilterVisibility() {
+    const label = document.querySelector(".status-label");
+    const dropdown = document.querySelector("#status-filter");
+    const isMobile = window.innerWidth <= 900;
+
+    label.style.display = isMobile ? "block" : "none";
+    dropdown.style.display = isMobile ? "block" : "none";
+}
+
+// Events
+document.querySelector("#status-filter").addEventListener("change", filterCourses);
+window.addEventListener("resize", () => {
+    filterCourses();
+    toggleFilterVisibility();
 });
 
-document.querySelector("#stats-completed-courses").innerHTML = completedcourses; 
-
-allCoursesIds.filter(id => !takenCourseIds.includes(id)).forEach(courseId => {
-    let pendingCourse = course.find(c => c.id === courseId);
-    if (pending) {
-        pending.innerHTML += `
-            <div class="scrolling">
-                <div class="course-card">
-                    <div class="course-header">
-                        <span class="course-code">${pendingCourse.courseCode}</span>
-                        <span class="course-title">${pendingCourse.courseName}</span>
-                        <span class="course-ch">${pendingCourse.creditHour} CH</span>
-                    </div>
-                </div>
-            </div>`;
-    }
-})
-
-function filterCourses() { // this is to select specific category when in small screen
-    let selectedStatus = document.querySelector('#status-filter').value;
-    let allStatuses = ["completed", "pending", "in_progress"];
-    let isMobile = window.innerWidth <= 900;
-
-    if (isMobile) {
-        allStatuses.forEach(status => {
-            let section = document.querySelector(`.status-${status}`);
-            section.style.display = "none";
-        });
-
-        if (selectedStatus !== "all") {
-            let selectedSection = document.querySelector(`.status-${selectedStatus}`);
-            selectedSection.style.display = "block";
-        } else {
-            allStatuses.forEach(status => {
-                let section = document.querySelector(`.status-${status}`);
-                section.style.display = "block";
-            });
-        }
-    } else {
-        allStatuses.forEach(status => {
-            let section = document.querySelector(`.status-${status}`);
-            section.style.display = "block";
-        });
-    }
-}
-document.querySelector("#status-filter").addEventListener("change", filterCourses);
-window.addEventListener("resize", filterCourses);
-filterCourses();
-
-function toggleFilterVisibility() { // this is to hide the dropdowns in big screen
-    let label = document.querySelector(".status-label");
-    let dropdown = document.querySelector("#status-filter");
-
-    if (window.innerWidth <= 900) {
-        label.style.display = "block"; 
-        dropdown.style.display = "block"; 
-    } else {
-        label.style.display = "none";    
-        dropdown.style.display = "none"; 
-    }
-}
-
-toggleFilterVisibility();
-window.addEventListener("resize", toggleFilterVisibility);
+// Initialize
+loadLearningPath().then(() => {
+    filterCourses();
+    toggleFilterVisibility();
+});
