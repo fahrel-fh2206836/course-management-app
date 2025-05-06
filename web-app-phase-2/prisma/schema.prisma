@@ -1,9 +1,5 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
-  // output   = "../generated/prisma-client"
 }
 
 datasource db {
@@ -30,12 +26,12 @@ enum ApprovalStatus {
 }
 
 model User {
-  userId    String @id @default(cuid())
+  userId    String   @id @default(cuid())
   firstName String
   lastName  String
-  username  String @unique
+  username  String   @unique
   password  String
-  role      Roles  @default(Student)
+  role      Roles    @default(Student)
 
   Admin      Admin?
   Student    Student?
@@ -48,13 +44,13 @@ model Admin {
 }
 
 model Student {
-  userId             String @id
+  userId             String   @id
   gpa                Float
   finishedCreditHour Int
 
   majorId String
-  major   Major  @relation(fields: [majorId], references: [majorId])
-  user    User   @relation(fields: [userId], references: [userId])
+  major   Major   @relation(fields: [majorId], references: [majorId])
+  user    User    @relation(fields: [userId], references: [userId])
 
   registrations Registration[]
 }
@@ -70,7 +66,7 @@ model Instructor {
 }
 
 model Major {
-  majorId         String @id @default(cuid())
+  majorId         String   @id @default(cuid())
   majorCode       String
   majorName       String
   totalCreditHour Int
@@ -97,7 +93,6 @@ model Course {
   prerequisiteFor CoursePrerequisite[] @relation("PrerequisiteToCourse")
 }
 
-// Essentially, self relationship with course.
 model CoursePrerequisite {
   courseId       String
   prerequisiteId String
@@ -143,6 +138,6 @@ model Registration {
 }
 
 model Semester {
-  semester String @id 
+  semester String   @id
   sections Section[]
 }
