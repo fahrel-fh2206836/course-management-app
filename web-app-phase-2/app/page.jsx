@@ -1,37 +1,56 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styles from './page.module.css';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { signIn } from 'next-auth/react';
+import { getUserAction } from './actions/server-actions';
 
 export default function Login() {
-  const [password, setPassword] = useState('');
+  const passwordRef = useRef('');
+  const usernameRef = useRef('');
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState(false);
-  const [username, setUsername] = useState('');
+  const [hasMounted, setHasMounted] = useState(false);
   const router = useRouter();
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, [])
+
+  if(!hasMounted) return null;
 
   async function handleLogin(e) {
     e.preventDefault();
 
-    const result = await signIn("credentials", {
-      redirect: false,
-      username,
-      password,
-    });
+    // const result = await signIn("credentials", {
+    //   redirect: false,
+    //   username,
+    //   password,
+    // });
 
-    if (result.ok) {
-      const sessionRes = await fetch("/api/auth/session");
-      const session = await sessionRes.json();
-      const role = session?.user?.role;
+    // if (result.ok) {
+    //   const sessionRes = await fetch("/api/auth/session");
+    //   const session = await sessionRes.json();
+    //   const role = session?.user?.role;
 
-      if (role === "Student") router.push("/dashboard/student");
-      else if (role === "Instructor") router.push("/dashboard/instructor");
-      else router.push("/dashboard/admin");
-    } else {
+    //   if (role === "Student") router.push("/dashboard/student");
+    //   else if (role === "Instructor") router.push("/dashboard/instructor");
+    //   else router.push("/view-admin/dashboard-admin.html");
+    // } 
+    
+    const user = await getUserAction(usernameRef.current, passwordRef.current);
+
+    if(!user.error) {
+      localStorage.setItem("loggedInUser", JSON.stringify(user));
+      localStorage.currentPage = 'dashboard';
+      if (user.role === "Student") router.push("/view-student/dashboard-student.html");
+      else if (user.role === "Instructor") router.push("/view-instructor/dashboard-instructor.html");
+      else router.push("/view-admin/dashboard-admin.html");
+    }
+    else {
       setError(true);
-      setPassword('');
+      passwordRef.current = "";
     }
   }
 
@@ -56,8 +75,7 @@ export default function Login() {
                 id="username"
                 name="username"
                 placeholder="Username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
+                onChange={(e) => {usernameRef.current = e.target.value;}}
                 required
                 className={styles.input}
               />
@@ -70,8 +88,7 @@ export default function Login() {
                 id="password"
                 name="password"
                 placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={(e) => {passwordRef.current = e.target.value;}}
                 required
                 className={styles.input}
               />

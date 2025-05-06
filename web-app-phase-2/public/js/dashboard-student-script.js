@@ -1,13 +1,8 @@
 // Set localstorage.currentpage
 localStorage.currentPage = "dashboard";
+baseUrl = "/api/"
 
 const user = JSON.parse(localStorage.getItem("loggedInUser"));
-const majors = JSON.parse(localStorage.majors);
-const registrations = JSON.parse(localStorage.registrations);
-const sections = JSON.parse(localStorage.sections);
-const courses = JSON.parse(localStorage.courses);
-const users = JSON.parse(localStorage.users);
-
 
 const nameSpan = document.querySelector("#name");
 const majorSpan = document.querySelector("#stats-major");
@@ -18,17 +13,36 @@ const progressBar = document.querySelector("#progress-bar").querySelector("div")
 const percentSpan = document.querySelector("#bar-percentage");
 const registeredList = document.querySelector("#course-card-list");
 
-const studentMajor = majors.find(m => m.majorId === user.majorId)
-const progress = (user.finishedCreditHour/studentMajor.totalCreditHour) * 100;
+async function loadStudentMajor() {
+    const response = await fetch(`${baseUrl}/major/${user.Student.majorId}`);
+    const studentMajor = await response.json();
+    majorSpan.innerText = studentMajor.majorName;
+
+    const progress = (user.Student.finishedCreditHour/studentMajor.totalCreditHour) * 100;
+    completedSpan.innerText = `${user.Student.finishedCreditHour}/${studentMajor.totalCreditHour}`
+    percentSpan.innerText = `${progress.toFixed(1)}%`
+    progressBar.style.width = progress + "%";
+
+    nameSpan.innerText = `${user.firstName} ${user.lastName}`;
+    cgpaSpan.innerText = user.Student.gpa.toString();
+}
+
+async function loadStudentongoingRegs() {
+    
+}
+
+async function dataLoaderApi() {
+    loadStudentMajor();
+}
+
+dataLoaderApi();
+
+
+
+
 const studentsRegistrations = registrations.filter(r => r.studentId === user.userId && r.grade === "");
 
-nameSpan.innerText = `${user.firstName} ${user.lastName}`;
-majorSpan.innerText = studentMajor.majorName;
-cgpaSpan.innerText = user.gpa.toString();
 
-completedSpan.innerText = `${user.finishedCreditHour}/${studentMajor.totalCreditHour}`
-percentSpan.innerText = `${progress.toFixed(1)}%`
-progressBar.style.width = progress + "%";
 
 function renderRegisteredCourses() {
     let html = ``;
@@ -67,8 +81,6 @@ function generateCourseListHTML(s, c, i) {
                 <div class="card-course-sem-schedule"><p><i class='bx bx-calendar'></i>${s.semester}</p><p><i class='bx bx-calendar-week'></i>${s.schedule.days !== '' ? s.schedule.days : 'None'}</p><p><i class='bx bx-time'></i>${s.schedule.time !== '' ? s.schedule.time : 'None'}</p></div>
             </div>`;
 }
-
-renderRegisteredCourses()
 
 
 
