@@ -28,7 +28,12 @@ async function loadStudentMajor() {
 }
 
 async function loadStudentongoingRegs() {
-    
+    const responseSem = await fetch(`${baseUrl}/semester`);
+    const semesters = await responseSem.json();
+    const ongoingSem = semesters[semesters.length-2].semester;
+    const responseSec = await fetch(`/api/student-sections?studentId=${user.userId}&semester=${ongoingSem}`);
+    const ongoingSections = await responseSec.json();
+    renderRegisteredCourses(ongoingSections);
 }
 
 async function dataLoaderApi() {
@@ -40,11 +45,7 @@ dataLoaderApi();
 
 
 
-const studentsRegistrations = registrations.filter(r => r.studentId === user.userId && r.grade === "");
-
-
-
-function renderRegisteredCourses() {
+function renderRegisteredCourses(studentsRegistrations) {
     let html = ``;
     let registeredSections = [];
     for(r of studentsRegistrations){
