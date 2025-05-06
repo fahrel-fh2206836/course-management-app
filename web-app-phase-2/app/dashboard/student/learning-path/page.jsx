@@ -10,7 +10,6 @@ import registrations from '@/app/data/registrations.json'
 import sections from '@/app/data/sections.json'
 import courses from '@/app/data/courses.json'
 
-
 export default function LearningPathPage() {
   const student = students[0]
   const user = users.find(u => u.userId === student.userId)
@@ -69,7 +68,6 @@ export default function LearningPathPage() {
     ))
   )
 
-  // Dynamically choose flowchart image
   const flowchartImage =
     major.majorName.toLowerCase().includes('science')
       ? '/assets/images/flowchart_cs.png'

@@ -13,9 +13,10 @@ export default function UserProvider({ children }) {
     }
   }, []);
 
-  const login = (userData) => {
-    setUser(userData);
-    localStorage.setItem('loggedInUser', JSON.stringify(userData));
+  const login = async (username, password) => {
+    const user = await getUserAction(username, password);
+    setUser(user);
+    localStorage.setItem('loggedInUser', JSON.stringify(user));
   };
 
   const logout = () => {
