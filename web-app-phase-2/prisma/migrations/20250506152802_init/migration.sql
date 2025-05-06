@@ -67,7 +67,6 @@ CREATE TABLE "Section" (
     "sectionId" TEXT NOT NULL PRIMARY KEY,
     "currentSeats" INTEGER NOT NULL,
     "totalSeats" INTEGER NOT NULL,
-    "semester" TEXT NOT NULL,
     "days" TEXT,
     "time" TEXT,
     "location" TEXT,
@@ -75,6 +74,8 @@ CREATE TABLE "Section" (
     "sectionStatus" TEXT NOT NULL DEFAULT 'OPEN_REGISTRATION',
     "courseId" TEXT NOT NULL,
     "instructorId" TEXT NOT NULL,
+    "semester" TEXT NOT NULL,
+    CONSTRAINT "Section_semester_fkey" FOREIGN KEY ("semester") REFERENCES "Semester" ("semester") ON DELETE RESTRICT ON UPDATE CASCADE,
     CONSTRAINT "Section_courseId_fkey" FOREIGN KEY ("courseId") REFERENCES "Course" ("id") ON DELETE RESTRICT ON UPDATE CASCADE,
     CONSTRAINT "Section_instructorId_fkey" FOREIGN KEY ("instructorId") REFERENCES "Instructor" ("userId") ON DELETE RESTRICT ON UPDATE CASCADE
 );
