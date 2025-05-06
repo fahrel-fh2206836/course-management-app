@@ -181,6 +181,14 @@ class AppRepo {
         }
       });
     }
+
+    async getCourseByMajorId(majorId) {
+      return await prisma.course.findMany({
+        where: {
+          majorId: majorId,
+        }
+      });
+    }
 }
 
 export default new AppRepo();

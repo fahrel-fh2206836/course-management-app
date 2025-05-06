@@ -28,14 +28,14 @@ export default function AdminCourses({ majors, ongoingCourse, regCourse, notOffe
   const [isSmallScreen, setIsSmallScreen] = useState(false);
 
   useEffect(() => {
-  setHasMounted(true);
-  const handleResize = () => {
-      setIsSmallScreen(window.matchMedia("(max-width: 1023px)").matches);
-  };
+    setHasMounted(true);
+    const handleResize = () => {
+        setIsSmallScreen(window.matchMedia("(max-width: 1023px)").matches);
+    };
 
-  handleResize();
-  window.addEventListener('resize', handleResize);
-  return () => window.removeEventListener('resize', handleResize);
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   if (!hasMounted) return null;

@@ -43,7 +43,7 @@ export default function Navbar() {
         <>
           <NavItem href="/dashboard/student" label="Dashboard" icon="bxs-home" active={pathname.split("/").length == 3} />
           <NavItem href="/dashboard/student/courses" label="Courses" icon="bxs-book" active={pathname.includes('courses')} />
-          <NavItem href="/dashboard/student/learningPaths" label="Learning Path" icon="bxs-graduation" active={pathname.includes('learningPaths')} />
+          <NavItem href="/dashboard/student/learning-path" label="Learning Path" icon="bxs-graduation" active={pathname.includes('learning-path')} />
         </>
       );
     } else if (user?.role === 'Instructor') {
@@ -57,8 +57,8 @@ export default function Navbar() {
       return (
         <>
           <NavItem href="/dashboard/admin" label="Dashboard" icon="bxs-home" active={pathname.split("/").length == 3} />
-          <NavItem href="/dashboard/admin/addCourse" label="Add Course" icon="bxs-book-add" active={pathname.includes('addCourse')} />
-          <NavItem href="/dashboard/admin/addSection" label="Add Section" icon="bxs-plus-circle" active={pathname.includes('addSection')} />
+          <NavItem href="/dashboard/admin/add-course" label="Add Course" icon="bxs-book-add" active={pathname.includes('add-course')} />
+          <NavItem href="/dashboard/admin/add-section" label="Add Section" icon="bxs-plus-circle" active={pathname.includes('add-section')} />
         </>
       );
     }
