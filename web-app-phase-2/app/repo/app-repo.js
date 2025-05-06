@@ -36,7 +36,17 @@ class AppRepo {
         return await prisma.section.findMany();
       }
 
-      async getInstructorSecBySem(instructorId, sem, notSem) {
+      async getSectionById(sectionId) {
+        return await prisma.section.findUnique({
+          where: {
+            sectionId: sectionId
+          }, include: {
+            course: true
+          }
+        });
+      }
+
+      async getInstructorSecBySem(instructorId, sem, notSem = false) {
         if(notSem)
         return await prisma.section.findMany({
           where: {
@@ -71,8 +81,8 @@ class AppRepo {
           }
         });
   
-        if(!result) {
-          result = 0;
+        if(result._sum.currentSeats == null) {
+          result._sum.currentSeats = 0;
         }
         return result;
       }

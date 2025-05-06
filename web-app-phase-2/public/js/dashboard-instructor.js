@@ -1,52 +1,45 @@
 // Set localstorage.currentpage
 localStorage.currentPage = "dashboard";
+const baseUrl = '/api/'
 
 const user = JSON.parse(localStorage.getItem("loggedInUser"));
-const registrations = JSON.parse(localStorage.registrations);
-const sections = JSON.parse(localStorage.sections);
-const courses = JSON.parse(localStorage.courses);
-const users = JSON.parse(localStorage.users);
-const semesters = JSON.parse(localStorage.semesters);
-const currentSem = localStorage.currentSem;
-
-
 
 const nameSpan = document.querySelector("#name");
 const teachingList = document.querySelector(".course-card-list");
-const Activeclass = document.querySelector("#Activeclass");
+const activeclass = document.querySelector("#Activeclass");
 const totalStud = document.querySelector("#totalStud")
 const numberOfClasses = document.querySelector("#Noclasses");
-const instructorSections = sections.filter(section => section.instructorId === user.userId);
-
-
 
 nameSpan.innerText = `${user.firstName} ${user.lastName}`;
-Activeclass.innerHTML = `${countClasses()}`;
-totalStud.innerHTML = `${countStudents()}`;
-numberOfClasses.innerHTML = `${instructorSections.length}`;
 
-function countClasses(){
-    let count = 0;
-    instructorSections.forEach( instSec => {
-        let section = sections.find(s => instSec.sectionId === s.sectionId);
-        if (section.sectionStatus === 'ONGOING') {
-            count+=1;
-        }
-    })
-    return count;
+async function loadInstructorSecs() {
+    const responseSem = await fetch(`${baseUrl}semester`);
+    const semesters = await responseSem.json();
+
+    const ongoingSem = semesters[semesters.length-2].semester;
+    const responseOngoing = await fetch(`${baseUrl}section?instructorId=${user.userId}&semester=${ongoingSem}&notSem=false`);
+    const ongoingSecs = await responseOngoing.json();
+    activeclass.innerHTML = ongoingSecs.length;
+
+    const responseNonOngoing = await fetch(`${baseUrl}section?instructorId=${user.userId}&semester=${ongoingSem}&notSem=true`);
+    const nonOngoingSecs = await responseNonOngoing.json();
+    numberOfClasses.innerHTML = `${ongoingSecs.length + nonOngoingSecs.length}`;
+
+    const responseNumStudent = await fetch(`${baseUrl}section?instructorId=${user.userId}&semester=${ongoingSem}`);
+    const numStudent = await responseNumStudent.json();
+    totalStud.innerHTML = `${numStudent._sum.currentSeats}`;
+    renderActiveCourses([...nonOngoingSecs, ...ongoingSecs])
+    renderSemesterDropdown(semesters, ongoingSem);
 }
 
-function countStudents(){
-    let count=0;
-    instructorSections.forEach( instSec => {
-        let section = sections.find(s => instSec.sectionId === s.sectionId);
-        if (section.sectionStatus === 'ONGOING') {
-            count+=section.currentSeats;
-        }
-    })
-    return count;
+
+async function dataLoaderApi() {
+    loadInstructorSecs();
 }
-function renderActiveCourses(){
+
+dataLoaderApi()
+
+function renderActiveCourses(instructorSections){
     let ongoingHTML = '';
     let notOngoingHTML = '';
     if(instructorSections.length === 0) {
@@ -57,10 +50,8 @@ function renderActiveCourses(){
                                 `;
                                 return;
     }
-    instructorSections.forEach(instSec => {
-        let section = sections.find(s => instSec.sectionId === s.sectionId); 
-        let course = courses.find(c => c.id === section.courseId);
-        const cardHTML = generateCourseListHTML(section, course)+'\n';
+    instructorSections.forEach(section => {
+        const cardHTML = generateCourseListHTML(section, section.course)+'\n';
         if (section.sectionStatus === 'ONGOING') {
             ongoingHTML += cardHTML;
           } else if (section.sectionStatus === 'OPEN_REGISTRATION' || section.sectionStatus === 'COMPLETED') {
@@ -85,8 +76,6 @@ function renderActiveCourses(){
         `;
 }
 
-renderActiveCourses();
-
 function generateCourseListHTML(s, c) {
     return `
             <div class="course-card hover-underline" onclick="goToGradeAllocation('${s.sectionId}')">
@@ -98,29 +87,27 @@ function generateCourseListHTML(s, c) {
                 <div class="card-course-name"><p>${c.courseName}</p></div>
                 <div class="card-course-section-location"><p>Section ID: ${s.sectionId}</p><p>Class Location: ${s.location !== '' ? s.location : 'None'}</p></div>
                 <hr>
-                <div class="card-course-sem-schedule"><p><i class='bx bx-calendar'></i>${s.semester}</p><p><i class='bx bx-calendar-week'></i>${s.schedule.days !== '' ? s.schedule.days : 'None'}</p><p><i class='bx bx-time'></i>${s.schedule.time !== '' ? s.schedule.time : 'None'}</p></div>
+                <div class="card-course-sem-schedule"><p><i class='bx bx-calendar'></i>${s.semester}</p><p><i class='bx bx-calendar-week'></i>${s.days !== '' ? s.days : 'None'}</p><p><i class='bx bx-time'></i>${s.time !== '' ? s.time : 'None'}</p></div>
             </div>`;
 }
 
-function goToGradeAllocation(sectionId) {
-    const s = sections.find(s => s.sectionId === sectionId);
+async function goToGradeAllocation(sectionId) {
+    const s = await fetch(`${baseUrl}section/${sectionId}`)
     localStorage.selectedCourse = JSON.stringify(s);
-    console.log(s);
-    
     window.location.href='grade-allocation.html';
 }
 
-function renderSemesterDropdown() {
+
+function renderSemesterDropdown(semesters, ongoingSem) {
     const semesterDropdown = document.querySelector('#semester-filter');
-    semesterDropdown.innerHTML = convertSemesterOptionHTML();
-}
-function convertSemesterOptionHTML() {
-    let relevantsemesters = semesters.filter(s => s !== currentSem);
-    return `<option value="All" selected>All Semester</option>
-            $.map(s => ${relevantsemesters.map(s => `<option value="${s}">${s}</option>`).join('\n')}`;
+    semesterDropdown.innerHTML = convertSemesterOptionHTML(semesters, ongoingSem);
 }
 
-renderSemesterDropdown()
+function convertSemesterOptionHTML(semesters, ongoingSem) {
+    let relevantsemesters = semesters.filter(s => s !== ongoingSem);
+    return `<option value="All" selected>All Semester</option>
+            $.map(s => ${relevantsemesters.map(s => `<option value="${s.semester}">${s.semester}</option>`).join('\n')}`;
+}
 
 const pFcardGroup = document.querySelector(".pFcard-group");
 const semFilter = document.querySelector("#semester-filter");

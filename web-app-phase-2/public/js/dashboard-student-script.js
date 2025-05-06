@@ -1,6 +1,6 @@
 // Set localstorage.currentpage
 localStorage.currentPage = "dashboard";
-baseUrl = "/api/"
+const baseUrl = "/api/"
 
 const user = JSON.parse(localStorage.getItem("loggedInUser"));
 
