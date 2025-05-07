@@ -11,7 +11,7 @@ import { getSession } from "next-auth/react"
 
 
 export default function Login() {
-  const passwordRef = useRef('');
+  const [password, setPassword] = useState('');
   const usernameRef = useRef('');
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState(false);
@@ -44,7 +44,7 @@ export default function Login() {
   async function handleLogin(e) {
     e.preventDefault();
     
-    const user = await getUserAction(usernameRef.current, passwordRef.current);
+    const user = await getUserAction(usernameRef.current, password);
 
     if(!user.error) {
       localStorage.setItem("loggedInUser", JSON.stringify(user));
@@ -55,7 +55,7 @@ export default function Login() {
     }
     else {
       setError(true);
-      passwordRef.current = "";
+      setPassword("");
     }
   }
 
@@ -94,7 +94,8 @@ export default function Login() {
                 id="password"
                 name="password"
                 placeholder="Password"
-                onChange={(e) => {passwordRef.current = e.target.value;}}
+                value={password}
+                onChange={(e) => {setPassword(e.target.value)}}
                 required
                 className={styles.input}
               />

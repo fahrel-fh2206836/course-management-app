@@ -12,59 +12,6 @@ const numberOfClasses = document.querySelector("#Noclasses");
 
 nameSpan.innerText = `${user.firstName} ${user.lastName}`;
 
-async function loadInstructorSecs(semesters, ongoingSem) {
-    const responseOngoing = await fetch(`${baseUrl}section?instructorId=${user.userId}&semester=${ongoingSem}&notSem=false`);
-    const ongoingSecs = await responseOngoing.json();
-    activeclass.innerHTML = ongoingSecs.length;
-
-    const responseNonOngoing = await fetch(`${baseUrl}section?instructorId=${user.userId}&semester=${ongoingSem}&notSem=true`);
-    const nonOngoingSecs = await responseNonOngoing.json();
-    numberOfClasses.innerHTML = `${ongoingSecs.length + nonOngoingSecs.length}`;
-
-    const responseNumStudent = await fetch(`${baseUrl}instructor/${user.userId}/total-student?semester=${ongoingSem}`);
-    const numStudent = await responseNumStudent.json();
-    totalStud.innerHTML = `${numStudent._sum.currentSeats}`;
-    renderActiveCourses([...nonOngoingSecs, ...ongoingSecs])
-
-    const pfSemesters = await (await fetch(`${baseUrl}semester?removeSem=${ongoingSem}`)).json();
-    renderSemesterDropdown(pfSemesters, ongoingSem);
-}
-
-
-async function dataLoaderApi() {
-    const responseSem = await fetch(`${baseUrl}semester`);
-    const semesters = await responseSem.json();
-    const ongoingSem = semesters[semesters.length-2].semester;
-
-    await loadInstructorSecs(semesters, ongoingSem);
-
-    const pFcardGroup = document.querySelector(".pFcard-group");
-    const semFilter = document.querySelector("#semester-filter");
-    semFilter.addEventListener('change', handleFilter);
-
-    async function handleFilter(e){
-        let selectedSections;
-        if(e.target.value !== "All") {
-            const response = await fetch(`${baseUrl}section?instructorId=${user.userId}&semester=${e.target.value}&notSem=false`);
-            selectedSections = await response.json();
-        }else{
-            const response = await fetch(`${baseUrl}section?instructorId=${user.userId}&semester=${ongoingSem}&notSem=true`);
-            selectedSections = await response.json();
-        }
-        
-        pFcardGroup.innerHTML = '';
-        if(selectedSections.length >= 1){
-            selectedSections.forEach(section => {
-                pFcardGroup.innerHTML += generateCourseListHTML(section,section.course);
-            })
-        }else{
-            pFcardGroup.innerHTML = `<div class="empty-section"><i class='bx bxs-error-circle'></i><p>No Courses found.</p> </div>`;
-        }
-    }
-}
-
-dataLoaderApi()
-
 function renderActiveCourses(instructorSections){
     let ongoingHTML = '';
     let notOngoingHTML = '';
@@ -124,12 +71,65 @@ async function goToGradeAllocation(sectionId) {
 }
 
 
-function renderSemesterDropdown(semesters, ongoingSem) {
+function renderSemesterDropdown(semesters) {
     const semesterDropdown = document.querySelector('#semester-filter');
-    semesterDropdown.innerHTML = convertSemesterOptionHTML(semesters, ongoingSem);
+    semesterDropdown.innerHTML = convertSemesterOptionHTML(semesters);
 }
 
-function convertSemesterOptionHTML(semesters, ongoingSem) {
+function convertSemesterOptionHTML(semesters) {
     return `<option value="All" selected>All Semester</option>
             $.map(s => ${semesters.map(s => `<option value="${s.semester}">${s.semester}</option>`).join('\n')}`;
 }
+
+async function loadInstructorSecs(ongoingSem) {
+    const responseOngoing = await fetch(`${baseUrl}section?instructorId=${user.userId}&semester=${ongoingSem}&notSem=false`);
+    const ongoingSecs = await responseOngoing.json();
+    activeclass.innerHTML = ongoingSecs.length;
+
+    const responseNonOngoing = await fetch(`${baseUrl}section?instructorId=${user.userId}&semester=${ongoingSem}&notSem=true`);
+    const nonOngoingSecs = await responseNonOngoing.json();
+
+    renderActiveCourses([...nonOngoingSecs, ...ongoingSecs])
+    numberOfClasses.innerHTML = `${ongoingSecs.length + nonOngoingSecs.length}`;
+
+    const responseNumStudent = await fetch(`${baseUrl}instructor/${user.userId}/total-student?semester=${ongoingSem}`);
+    const numStudent = await responseNumStudent.json();
+    totalStud.innerHTML = `${numStudent._sum.currentSeats}`;
+
+    const pfSemesters = await (await fetch(`${baseUrl}semester?removeSem=${ongoingSem}`)).json();
+    renderSemesterDropdown(pfSemesters, ongoingSem);
+}
+
+async function dataLoaderApi() {
+    const responseSem = await fetch(`${baseUrl}semester`);
+    const semesters = await responseSem.json();
+    const ongoingSem = semesters[semesters.length-2].semester;
+
+    await loadInstructorSecs(ongoingSem);
+
+    const pFcardGroup = document.querySelector(".pFcard-group");
+    const semFilter = document.querySelector("#semester-filter");
+    semFilter.addEventListener('change', handleFilter);
+
+    async function handleFilter(e){
+        let selectedSections;
+        if(e.target.value !== "All") {
+            const response = await fetch(`${baseUrl}section?instructorId=${user.userId}&semester=${e.target.value}&notSem=false`);
+            selectedSections = await response.json();
+        }else{
+            const response = await fetch(`${baseUrl}section?instructorId=${user.userId}&semester=${ongoingSem}&notSem=true`);
+            selectedSections = await response.json();
+        }
+        
+        pFcardGroup.innerHTML = '';
+        if(selectedSections.length >= 1){
+            selectedSections.forEach(section => {
+                pFcardGroup.innerHTML += generateCourseListHTML(section,section.course);
+            })
+        }else{
+            pFcardGroup.innerHTML = `<div class="empty-section"><i class='bx bxs-error-circle'></i><p>No Courses found.</p> </div>`;
+        }
+    }
+}
+
+dataLoaderApi()

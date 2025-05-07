@@ -50,8 +50,28 @@ class AppRepo {
 
     // ===================== Sections Methods ===================== 
 
-      async getSections() {
-        return await prisma.section.findMany();
+      async getSections(instructorId, sem, notSem = false) {
+        const whereClause = {};
+      
+        if (instructorId) {
+          whereClause.instructorId = instructorId;
+        }
+      
+        if (sem) {
+          whereClause.semester = notSem ? { not: sem } : sem;
+        }
+      
+        return await prisma.section.findMany({
+          where: whereClause,
+          include: {
+            course: true,
+            instructor: {
+              include: {
+                user: true
+              }
+            }
+          } 
+        });
       }
 
       async getSectionById(sectionId) {
@@ -64,30 +84,7 @@ class AppRepo {
         });
       }
 
-      async getInstructorSecBySem(instructorId, sem, notSem = false) {
-        if(notSem)
-        return await prisma.section.findMany({
-          where: {
-            instructorId: instructorId,
-            semester: {
-              not: sem
-            }
-          },
-          include: {
-            course: true
-          },
-        });
-          return await prisma.section.findMany({
-            where: {
-              instructorId: instructorId,
-              ...(sem && { semester: sem })
-            },
-            include: {
-              course: true
-            },
-          });
-      }
-  
+      
       async getInstructorTotalStudentSem(instructorId, sem) {
         let result = await prisma.section.aggregate({
           _sum: {
@@ -103,22 +100,6 @@ class AppRepo {
           result._sum.currentSeats = 0;
         }
         return result;
-      }
-  
-      async getSectionBySem(sem) {
-        return await prisma.section.findMany({
-          where: {
-            semester: sem
-          }, 
-          include: {
-            course: true,
-            instructor: {
-              include: {
-                user: true
-              }
-            }
-          }
-        });
       }
 
 
@@ -148,30 +129,8 @@ class AppRepo {
 
     // ===================== Course Methods =====================
 
-      async getCourseByStatus(status) {
-        const statusLow = status.toLowerCase()
-        if(statusLow === "ongoing") {
-          return await prisma.course.findMany(
-            {
-              where: {
-                isOngoing: true,
-            }
-          });
-        } else if(statusLow === "registration") {
-          return await prisma.course.findMany(
-            {
-              where: {
-                isRegistration: true,
-            }
-          });
-        }
-        return await prisma.course.findMany(
-          {
-            where: {
-              isRegistration: false,
-              isOngoing: false
-          }
-        });
+      async getCourses() {
+        return await prisma.course.findMany();
       }
 
       async getCourseByMajorStatus(majorId, status) {
@@ -180,7 +139,7 @@ class AppRepo {
           return await prisma.course.findMany(
             {
               where: {
-                majorId: majorId,
+                ...(majorId && { majorId: majorId }),
                 isOngoing: true,
             }
           });
@@ -188,14 +147,14 @@ class AppRepo {
           return await prisma.course.findMany(
             {
               where: {
-                majorId: majorId,
+                ...(majorId && { majorId: majorId }),
                 isRegistration: true,
             }
           });
         }
         return await prisma.course.findMany({
           where: {
-            majorId: majorId,
+            ...(majorId && { majorId: majorId }),
             isOngoing: false,
             isRegistration: false
           }
