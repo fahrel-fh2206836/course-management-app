@@ -80,7 +80,7 @@ class AppRepo {
           return await prisma.section.findMany({
             where: {
               instructorId: instructorId,
-              semester: sem
+              ...(sem && { semester: sem })
             },
             include: {
               course: true
@@ -250,8 +250,16 @@ class AppRepo {
 
     // ===================== Semesters Method =====================
 
-      async getSemesters() {
-        return await prisma.semester.findMany();
+      async getSemesters(removeSem) {
+        return await prisma.semester.findMany({
+          where: {
+            ...(removeSem?.length > 0 && {
+              semester: {
+                notIn: removeSem
+              }
+            })
+          }
+        });
       }
 
     // ===================== Learning Path Methods =====================

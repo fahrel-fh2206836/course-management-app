@@ -1,4 +1,4 @@
-const { default: appRepo } = require("@/app/repo/app-repo");
+import appRepo from "@/app/repo/app-repo";
 
 export async function GET(req, { params }) {
     const { searchParams } = new URL(req.url);
