@@ -18,10 +18,5 @@ export async function GET(req) {
         const instructorSecs = await appRepo.getInstructorSecBySem(instructorId, semester, parsedNotSem);
         return Response.json(instructorSecs, { status: 200 });
     }
-    else if(instructorId && semester) {
-        const numStudent = await appRepo.getInstructorTotalStudentSem(instructorId, semester);
-        return Response.json(numStudent, { status: 200 });
-    }
-
     return Response.json(await appRepo.getSections(), { status: 200 });
 }

@@ -203,6 +203,10 @@ class AppRepo {
 
     // ===================== Registrations Method =====================
 
+      async getRegistrations() {
+        return await prisma.registration.findMany();
+      }
+
       async getStudentRegSecBySem(studentId, sem) {
         return await prisma.registration.findMany({
             where: {

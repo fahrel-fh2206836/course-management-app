@@ -25,7 +25,7 @@ async function loadInstructorSecs() {
     const nonOngoingSecs = await responseNonOngoing.json();
     numberOfClasses.innerHTML = `${ongoingSecs.length + nonOngoingSecs.length}`;
 
-    const responseNumStudent = await fetch(`${baseUrl}section?instructorId=${user.userId}&semester=${ongoingSem}`);
+    const responseNumStudent = await fetch(`${baseUrl}isntructor/${user.userId}/total-student?semester=${ongoingSem}`);
     const numStudent = await responseNumStudent.json();
     totalStud.innerHTML = `${numStudent._sum.currentSeats}`;
     renderActiveCourses([...nonOngoingSecs, ...ongoingSecs])

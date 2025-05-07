@@ -31,7 +31,7 @@ async function loadStudentongoingRegs() {
     const responseSem = await fetch(`${baseUrl}/semester`);
     const semesters = await responseSem.json();
     const ongoingSem = semesters[semesters.length-2].semester;
-    const responseSec = await fetch(`/api/section?studentId=${user.userId}&semester=${ongoingSem}`);
+    const responseSec = await fetch(`/api/registration?studentId=${user.userId}&semester=${ongoingSem}`);
     const ongoingSections = await responseSec.json();
     renderRegisteredCourses(ongoingSections);
 }

@@ -3,7 +3,7 @@
     "userId": "77edd4eb-fcfe-47d4-a992-6c535704d041",
     "firstName": "Michael",
     "lastName": "Black",
-    "username": "student0@gmail.com",
+    "username": "mohammedwasay45@gmail.com",
     "password": "hashedpassword",
     "role": "Student"
   },
@@ -11,7 +11,7 @@
     "userId": "75f36119-c5f0-4389-9a3f-6c676a1fac2a",
     "firstName": "Lisa",
     "lastName": "Lopez",
-    "username": "student1@gmail.com",
+    "username": "abdul.wasay50363@gmail.com",
     "password": "hashedpassword",
     "role": "Student"
   },
@@ -19,7 +19,7 @@
     "userId": "ec47c219-cec6-4649-9cc7-7486c6918f45",
     "firstName": "Gregg",
     "lastName": "Ward",
-    "username": "student2@gmail.com",
+    "username": "jafm.projects@gmail.com",
     "password": "hashedpassword",
     "role": "Student"
   },
@@ -4011,7 +4011,7 @@
     "userId": "7bc1a87d-a510-4a7b-a3db-f2036c335922",
     "firstName": "Jeremy",
     "lastName": "Gardner",
-    "username": "instructor0@gmail.com",
+    "username": "thursdaynight51@gmail.com",
     "password": "hashedpassword",
     "role": "Instructor"
   },
