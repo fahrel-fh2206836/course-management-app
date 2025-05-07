@@ -47,6 +47,10 @@ class AppRepo {
       return user;
     }
 
+      async getInstructors() {
+        return await prisma.user.findMany({where: {role: "Instructor"}, orderBy: {firstName: 'asc'}});
+      }
+
 
     // ===================== Sections Methods ===================== 
 

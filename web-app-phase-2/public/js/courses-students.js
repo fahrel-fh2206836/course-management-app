@@ -1,5 +1,6 @@
 // Set localstorage.currentpage
 localStorage.currentPage = "courses";
+const baseUrl = "/api/";
 
 let dropDownBtn = document.querySelector("#dropdown-btn");
 let list = document.querySelector("#list");
@@ -7,12 +8,33 @@ let icon = document.querySelector("#drop-icon");
 let dropdownInput = document.querySelector("#dropdown-span");
 let search = document.querySelector("#search-input");
 let displayCourse = document.querySelector("#display-courses");
-const majors = JSON.parse(localStorage.majors)
+let majors = [];
+let courses = [];
+
 
 //Use this to navigate to register screen --to do--
 let courseCard = document.querySelector(".student-course-card");
 
-const courses = JSON.parse(localStorage.courses);
+
+async function loadMajors(){
+    const response = await fetch (`${baseUrl}/major`);
+    const majors = await response.json();
+    return majors;
+}
+
+async function loadCourses() {
+    const response = await fetch (`${baseUrl}/course`);
+    const courses = await response.json();
+    return courses;
+}
+
+window.addEventListener("DOMContentLoaded", async () => {
+    majors = await loadMajors();
+    courses = await loadCourses();
+
+    renderMajorDropdown();
+    displayCourses(courses);
+});
 
 //Dropdwon Functions
 dropDownBtn.addEventListener("click", (e) => showList(e));
@@ -28,6 +50,8 @@ function showList(e){
 };
 
 window.addEventListener("click", (e) => makeChange(e))
+
+
 
 function makeChange(e){
     if(e.target.id !== "dropdown-btn" &&
@@ -48,9 +72,7 @@ function dropDownMajor(e){
     }else{
         search.placeholder = `Search for Courses`;
     }
-
-    let filteredCourses = filterCourses();
-    displayCourses(filteredCourses);
+    filterCoursesByMajor(e.target.innerText);
 }
 
 // Search Bar
@@ -88,15 +110,21 @@ function searchCourse(e){
     displayCourses(filteredCourses);
 }
 
-function filterCourses() {
-    let filteredCourses = [];
-    if (dropdownInput.innerText !== "All"){
-        let majorId = majors.find(m => m.majorCode === dropdownInput.innerText).majorId;
-        filteredCourses = courses.filter((course) => course.majorId === majorId);
+async function filterCoursesByMajor(majorCode) {
+    if (majorCode === "All") {
+        courses = await loadCourses();
     } else {
-        filteredCourses = [...courses];
+        const selectedMajor = majors.find(m => m.majorCode === majorCode);
+        if (!selectedMajor) {
+            console.error("Invalid major selected");
+            return;
+        }
+
+        const response = await fetch(`${baseUrl}/course?majorId=${selectedMajor.majorId}`);
+        courses = await response.json();
     }
-    return filteredCourses;
+
+    displayCourses(courses);
 }
 
 function goToRegistration(id){
