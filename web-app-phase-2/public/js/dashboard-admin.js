@@ -17,6 +17,7 @@ window.addEventListener('resize', function(event) {
     } else {    
         onBigScreen();
     }
+    resetMajorDropdown();
 })
 
 function mapCoursesToHTML(cl) {
@@ -32,10 +33,11 @@ function generateCoursesHTML(c) {
             </div>`;
 }
 
-// function manageCourse(id) {
-//     localStorage.selectedCourse = JSON.stringify(courses.find(c => c.id === id));
-//     window.location.href = "../view-admin/manage-course.html";
-// }
+async function manageCourse(id) {
+    const response = await fetch(`${baseUrl}course/${id}`);
+    localStorage.selectedCourse = JSON.stringify(await response.json());
+    window.location.href = "../view-admin/manage-course.html";
+}
 
 async function filterOngoing() {
     const response = await fetch(`${baseUrl}course?course-status=ongoing`);
@@ -52,85 +54,79 @@ async function filterNotOffered() {
     return await response.json();
 }
 
-// function onMajorChange(e, s) {
-//     let courseListHTML;
-//     let status = window.matchMedia("(max-width: 1023px)").matches ? statusDropdown.value : s;
-//     let major = e.target.value;
+async function onMajorChange(e, s) {
+    let courseListHTML;
+    let status = window.matchMedia("(max-width: 1023px)").matches ? statusDropdown.value : s;
+    let major = e.target.value;
+
+    if(major !== "all") {
+        const response = await fetch(`${baseUrl}course?course-status=${status}`)
+        courseListHTML = mapCoursesToHTML(await response.json());
+    } else {        
+        const response = await fetch(`${baseUrl}course?majorId=${major.majorId}&course-status=${status}`)
+        courseListHTML = mapCoursesToHTML(await response.json());
+    }
+
+    if(window.matchMedia("(max-width: 1023px)").matches) {
+        courseListGeneral.innerHTML = courseListHTML;
+    }else if (status === "ongoing"){
+        document.querySelector("#course-list-ongoing").innerHTML = courseListHTML;
+    } else if(status === "registration") {
+        document.querySelector("#course-list-registration").innerHTML = courseListHTML;
+    } else if(status === "not-offered") {
+        document.querySelector("#course-list-not-offered").innerHTML = courseListHTML;
+    }
+}
+
+async function onSmallScreen() {
+    const statusIcon = document.querySelector("#status-icon");
+    const cStatusIcon = document.querySelector("#c-status-icon");
+    const cStatusText = document.querySelector("#c-status-text");
+    const majorDropDown = document.querySelector("#major");
     
-//     if(status === "ongoing") {
-//         courseListHTML = filterOngoing();
-//     } else if (status === "registration") {
-//         courseListHTML = filterRegistration();
-//     } else if(status === "not-offered") {
-//         courseListHTML = filterNotOffered();
-//     }
+    statusDropdown.addEventListener('change', onStatusChange);
 
-//     if(major !== "all") {
-//         courseListHTML = mapCoursesToHTML(courseListHTML.filter(c => c.majorId === major));
-//     } else {        
-//         courseListHTML = mapCoursesToHTML(courseListHTML);
-//     }
+    courseListGeneral.innerHTML = mapCoursesToHTML(await filterOngoing());
 
-//     if(window.matchMedia("(max-width: 1023px)").matches) {
-//         courseListGeneral.innerHTML = courseListHTML;
-//     }else if (status === "ongoing"){
-//         document.querySelector("#course-list-ongoing").innerHTML = courseListHTML;
-//     } else if(status === "registration") {
-//         document.querySelector("#course-list-registration").innerHTML = courseListHTML;
-//     } else if(status === "not-offered") {
-//         document.querySelector("#course-list-not-offered").innerHTML = courseListHTML;
-//     }
-// }
+    async function onStatusChange(e) {
+        if(e.target.value === "ongoing") {
+            statusIcon.classList.remove(...statusIcon.classList);
+            cStatusIcon.classList.remove(cStatusIcon.classList[2]);
+            cStatusText.classList.remove(...cStatusText.classList);
+            statusIcon.classList.add("bx", "bxs-hourglass-top", "icon-circle", "ongoing");
+            cStatusIcon.classList.add("ongoing")
+            cStatusText.classList.add("ongoing");
+            cStatusText.innerText = "Ongoing Courses";
 
-// function onSmallScreen() {
-//     const statusIcon = document.querySelector("#status-icon");
-//     const cStatusIcon = document.querySelector("#c-status-icon");
-//     const cStatusText = document.querySelector("#c-status-text");
-//     const majorDropDown = document.querySelector("#major");
-    
-//     statusDropdown.addEventListener('change', onStatusChange);
+            courseListGeneral.innerHTML = mapCoursesToHTML(await filterOngoing());
 
-//     courseListGeneral.innerHTML = mapCoursesToHTML(filterOngoing());
+        } else if (e.target.value === "registration") {
+            statusIcon.classList.remove(...statusIcon.classList);
+            cStatusIcon.classList.remove(cStatusIcon.classList[2]);            
+            cStatusText.classList.remove(...cStatusText.classList);
+            statusIcon.classList.add("bx", "bxs-check-circle", "icon-circle","registration");
+            cStatusIcon.classList.add("registration")
+            cStatusText.classList.add("registration");
+            cStatusText.innerText = "Open Courses";
 
-//     function onStatusChange(e) {
-//         if(e.target.value === "ongoing") {
-//             statusIcon.classList.remove(...statusIcon.classList);
-//             cStatusIcon.classList.remove(cStatusIcon.classList[2]);
-//             cStatusText.classList.remove(...cStatusText.classList);
-//             statusIcon.classList.add("bx", "bxs-hourglass-top", "icon-circle", "ongoing");
-//             cStatusIcon.classList.add("ongoing")
-//             cStatusText.classList.add("ongoing");
-//             cStatusText.innerText = "Ongoing Courses";
+            courseListGeneral.innerHTML = mapCoursesToHTML(await filterRegistration());
 
-//             courseListGeneral.innerHTML = mapCoursesToHTML(filterOngoing());
+        } else {
+            statusIcon.classList.remove(...statusIcon.classList);
+            cStatusIcon.classList.remove(cStatusIcon.classList[2]);
+            cStatusText.classList.remove(...cStatusText.classList);
+            statusIcon.classList.add("bx", "bxs-x-circle", "icon-circle", "not-offered");
+            cStatusIcon.classList.add("not-offered")
+            cStatusText.classList.add("not-offered");
+            cStatusText.innerText = "Not Offered Courses";
 
-//         } else if (e.target.value === "registration") {
-//             statusIcon.classList.remove(...statusIcon.classList);
-//             cStatusIcon.classList.remove(cStatusIcon.classList[2]);            
-//             cStatusText.classList.remove(...cStatusText.classList);
-//             statusIcon.classList.add("bx", "bxs-check-circle", "icon-circle","registration");
-//             cStatusIcon.classList.add("registration")
-//             cStatusText.classList.add("registration");
-//             cStatusText.innerText = "Open Courses";
+            courseListGeneral.innerHTML = mapCoursesToHTML(await filterNotOffered());
 
-//             courseListGeneral.innerHTML = mapCoursesToHTML(filterRegistration());
+        }
 
-//         } else {
-//             statusIcon.classList.remove(...statusIcon.classList);
-//             cStatusIcon.classList.remove(cStatusIcon.classList[2]);
-//             cStatusText.classList.remove(...cStatusText.classList);
-//             statusIcon.classList.add("bx", "bxs-x-circle", "icon-circle", "not-offered");
-//             cStatusIcon.classList.add("not-offered")
-//             cStatusText.classList.add("not-offered");
-//             cStatusText.innerText = "Not Offered Courses";
-
-//             courseListGeneral.innerHTML = mapCoursesToHTML(filterNotOffered());
-
-//         }
-
-//         majorDropDown.selectedIndex = 0;
-//     }
-// }
+        majorDropDown.selectedIndex = 0;
+    }
+}
 
 async function onBigScreen() {
     const courseReg = document.querySelector("#course-list-registration");
@@ -142,19 +138,6 @@ async function onBigScreen() {
     courseReg.innerHTML = mapCoursesToHTML(await filterRegistration());
     courseNotOffered.innerHTML = mapCoursesToHTML(await filterNotOffered());
 }
-
-// function renderMajorDropdown() {
-//     const majorDropdowns = document.querySelectorAll('#major, #major-ongoing, #major-reg, #major-not');
-//     majorDropdowns.forEach(m => m.innerHTML = convertMajorOptionHTML());
-// }
-
-// function convertMajorOptionHTML() {
-//     return `<option value="all" selected>All Majors</option>
-//             ${majors.map(m => `<option value="${m.majorId}">${m.majorName}</option>`).join('\n')}`
-// }
-
-// renderMajorDropdown();
-
 
 async function renderTable() {
     const responseSem = await fetch(`${baseUrl}semester`);
@@ -170,7 +153,6 @@ async function renderTable() {
 }
 
 function convertRowToHTML(s) {
-    console.log(s)
     const c = s.course
     let tempI = s.instructor.user
     const i = tempI ? tempI : '';
@@ -196,4 +178,22 @@ function convertRowToHTML(s) {
             </tr>`;
 }
 
+async function renderMajorDropdown() {
+    const majorDropdowns = document.querySelectorAll('#major, #major-ongoing, #major-reg, #major-not');
+    majorDropdowns.forEach(async (m) => m.innerHTML = await convertMajorOptionHTML());
+}
+
+async function convertMajorOptionHTML() {
+    const response = await fetch(`${baseUrl}major`) 
+    const majors = await response.json();
+    return `<option value="all" selected>All Majors</option>
+            ${majors.map(m => `<option value="${m.majorId}">${m.majorName}</option>`).join('\n')}`
+}
+
+function resetMajorDropdown() {
+    const majorDropdowns = document.querySelectorAll('#major, #major-ongoing, #major-reg, #major-not');
+    majorDropdowns.forEach(m => m.value = "all");
+}
+
+renderMajorDropdown();
 renderTable();

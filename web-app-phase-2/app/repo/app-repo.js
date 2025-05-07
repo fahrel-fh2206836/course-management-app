@@ -168,6 +168,20 @@ class AppRepo {
           }
         });
       }
+
+      async getCourseById(id) {
+        const course = await prisma.course.findUnique({
+          where: {
+            id: id
+          }
+        })
+
+        if(!course) {
+          return { error: "Course does not exist "}
+        }
+
+        return course;
+      }
       
       async addCourse(course) {
         course.isOngoing = course.isOngoing === "on" ? true : false;

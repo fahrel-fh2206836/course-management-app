@@ -9,5 +9,5 @@ export async function PUT(req, { params }) {
 
 export async function GET(req, { params }) {
    const major = await appRepo.getMajorById(params.majorId);
-   return Response.json(major, { status: 200 });
+   return Response.json(major, { status: major.error ? 404 : 200 });
 }
