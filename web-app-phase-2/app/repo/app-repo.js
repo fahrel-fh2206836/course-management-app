@@ -366,6 +366,146 @@ class AppRepo {
         registrations
       };
     }
-  }
+  
+
+
+  // ===================== Students Statistics =====================
+
+  
+
+        async getTotalStudentsPerMajor() {
+        return await prisma.student.groupBy({
+          by: ['majorId'],
+          _count: true
+        });
+      }
+
+
+      async getTop3MostEnrolledCourses() {
+        return await prisma.registration.groupBy({
+          by: ['courseId'],
+          _count: true,
+          orderBy: {
+            _count: {
+              courseId: 'desc'
+            }
+          },
+          take: 3
+        });
+      }
+
+
+      async getPassFailRatePerCourse() {
+        const passes = await prisma.registration.groupBy({
+          by: ['courseId'],
+          _count: {
+            _all: true
+          },
+          where: {
+            NOT: {
+              grade: {
+                in: ["F", "f", ""]
+              }
+            }
+          }
+        });
+
+        const fails = await prisma.registration.groupBy({
+          by: ['courseId'],
+          _count: {
+            _all: true
+          },
+          where: {
+            grade: {
+              in: ["F", "f"]
+            }
+          }
+        });
+
+        return { passes, fails };
+      }
+
+
+      async getAverageGPAperMajor() {
+        return await prisma.student.groupBy({
+          by: ['majorId'],
+          _avg: {
+            gpa: true
+          }
+        });
+      }
+
+
+      async getAverageGradePerCourse() {
+        return await prisma.registration.groupBy({
+          by: ['courseId'],
+          _avg: {
+            gradeNumeric: true 
+          }
+        });
+      }
+
+
+      async getCompletionRateByCourse() {
+        return await prisma.registration.groupBy({
+          by: ['courseId'],
+          _count: {
+            _all: true
+          }
+        });
+      }
+
+
+      async getHighestFailRateCourses() {
+        return await prisma.registration.groupBy({
+          by: ['courseId'],
+          _count: {
+            _all: true
+          },
+          where: {
+            grade: {
+              in: ["F", "f"]
+            }
+          },
+          orderBy: {
+            _count: {
+              courseId: 'desc'
+            }
+          },
+          take: 5
+        });
+      }
+
+
+      async getStudentsPerSemester() {
+        return await prisma.section.groupBy({
+          by: ['semester'],
+          _sum: {
+            currentSeats: true
+          }
+        });
+      }
+
+
+      async getTop3StudentsByGPA() {
+        return await prisma.student.findMany({
+          orderBy: {
+            gpa: 'desc'
+          },
+          take: 3,
+          include: {
+            user: true
+          }
+        });
+      }
+
+      async getAverageCreditsPerMajor() {
+        return await prisma.student.groupBy({
+          by: ['majorId'],
+          _avg: {
+            finishedCreditHour: true
+          }
+        });
+}}
 
 export default new AppRepo();
