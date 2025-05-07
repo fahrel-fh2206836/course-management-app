@@ -123,7 +123,7 @@ class AppRepo {
       }
 
       async updateMajor(majorId, updatedMajor) {
-        return await prisma.major.update({where: {majorId: majorId}, data: {updatedMajor}});
+        return await prisma.major.update({where: {majorId: majorId}, data: {...updatedMajor}});
       }
 
 
@@ -182,14 +182,34 @@ class AppRepo {
 
         return course;
       }
+
+      async getCourseByCode(code) {
+        const courses = await this.getCourses();
+        let comparableCode = code.toLowerCase().replace(/\s+/g, '');
+        let course = courses.map(c => c.courseCode.toLowerCase().replace(/\s+/g, '')).includes(comparableCode);
+        return course;
+      }
       
       async addCourse(course) {
         course.isOngoing = course.isOngoing === "on" ? true : false;
         course.isRegistration = course.isRegistration === "on" ? true : false;
-        return await prisma.course.create({data: {course}});
-      }
-
-
+    
+        const { prerequisitesCoursesId, ...courseData } = course;
+    
+        return await prisma.course.create({
+            data: {
+                ...courseData,
+                creditHour: parseInt(course.creditHour),
+                prerequisites: {
+                    create: prerequisitesCoursesId?.map(prereqId => ({
+                        prerequisite: {
+                            connect: { id: prereqId }
+                        }
+                    }))
+                }
+            }
+        });
+    }
 
 
     // ===================== Registrations Method =====================

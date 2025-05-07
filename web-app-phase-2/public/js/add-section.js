@@ -15,7 +15,7 @@ const instructorSelect = document.querySelector("#section-instructor");
 
 h2.innerText = `Add New Section (${currentSem})`;
 
-function renderCourses() {
+function handleMajorChange() {
     courseSelect.innerHTML = `<option label="Select Course" value="" selected disabled></option>
                              ${courses.filter(c => c.isRegistration === true).sort((a, b) => a.courseName.localeCompare(b.courseName)).map(c => `<option label="${c.courseName}" value="${c.id}"></option>`)};`
 }
@@ -26,7 +26,7 @@ function renderInstructor() {
                         ${instructors.sort((a, b) => a.firstName.localeCompare(b.firstName)).map(i =>  `<option label="${i.firstName} ${i.lastName}" value="${i.userId}"></option>`)}`
 }
 
-renderCourses();
+handleMajorChange();
 renderInstructor();
 
 form.addEventListener('submit', handleAddSection);

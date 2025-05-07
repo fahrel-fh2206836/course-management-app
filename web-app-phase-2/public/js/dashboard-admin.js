@@ -57,14 +57,14 @@ async function filterNotOffered() {
 async function onMajorChange(e, s) {
     let courseListHTML;
     let status = window.matchMedia("(max-width: 1023px)").matches ? statusDropdown.value : s;
-    let major = e.target.value;
+    let majorId = e.target.value;
 
-    if(major !== "all") {
+    if(majorId !== "all") {
+        const response = await fetch(`${baseUrl}course?majorId=${majorId}&course-status=${status}`)
+        courseListHTML = mapCoursesToHTML(await response.json());
+    } else {     
         const response = await fetch(`${baseUrl}course?course-status=${status}`)
-        courseListHTML = mapCoursesToHTML(await response.json());
-    } else {        
-        const response = await fetch(`${baseUrl}course?majorId=${major.majorId}&course-status=${status}`)
-        courseListHTML = mapCoursesToHTML(await response.json());
+        courseListHTML = mapCoursesToHTML(await response.json());   
     }
 
     if(window.matchMedia("(max-width: 1023px)").matches) {
@@ -193,6 +193,19 @@ async function convertMajorOptionHTML() {
 function resetMajorDropdown() {
     const majorDropdowns = document.querySelectorAll('#major, #major-ongoing, #major-reg, #major-not');
     majorDropdowns.forEach(m => m.value = "all");
+
+    const statusIcon = document.querySelector("#status-icon");
+    const cStatusIcon = document.querySelector("#c-status-icon");
+    const cStatusText = document.querySelector("#c-status-text");
+    const majorDropDown = document.querySelector("#major");
+    statusDropdown.value = "ongoing"
+    statusIcon.classList.remove(...statusIcon.classList);
+    cStatusIcon.classList.remove(cStatusIcon.classList[2]);
+    cStatusText.classList.remove(...cStatusText.classList);
+    statusIcon.classList.add("bx", "bxs-hourglass-top", "icon-circle", "ongoing");
+    cStatusIcon.classList.add("ongoing")
+    cStatusText.classList.add("ongoing");
+    cStatusText.innerText = "Ongoing Courses";
 }
 
 renderMajorDropdown();

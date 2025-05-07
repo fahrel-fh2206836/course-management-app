@@ -21,8 +21,15 @@
             <h2>Add New Course</h2>
             <form action="" id="add-courses-form">
                 <div class="form-group">
-                    <label for="course-code">Course Code</label>
-                    <input type="text" id="course-code" name="courseCode" placeholder="e.g. CMPS 151" required>
+                    <label for="major">Select Major</label>
+                    <select id="major" name="majorId" required>
+                        <!-- Added thru js -->
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="course-code">Course Code Number</label>
+                    <input type="number" id="course-code" name="courseCode" placeholder="e.g. 151" required>
                 </div>
                 <div class="form-group">
                     <label for="course-name">Course Name</label>
@@ -35,20 +42,9 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="major">Select Major</label>
-                    <select id="major" name="majorId" required>
-                        <!-- Added thru js -->
-                    </select>
-                </div>
-
-                <div class="form-group">
                     <label for="prerequisites">Select Prerequisites Courses<p>Note: Hold Ctrl Key for Windows and CMD key for Mac to select multiple options</p></label>
                     <select id="prerequisites" name="prerequisitesCoursesId" class="prerequisites-dropdown" multiple >
-                        <optgroup label="Computer Sci. Courses" id="cs-courses">      
-                            <!-- Added with js -->
-                        </optgroup>
-                        <optgroup label="--------------------------------------------------------------"></optgroup>
-                        <optgroup label="Computer Eng. Courses" id="ce-courses">
+                        <optgroup id="prerequisites-opt" label="">
                             <!-- Added with js -->
                         </optgroup>
                     </select>
@@ -60,8 +56,6 @@
                     <label id="ongoing"><input type="checkbox" id="ongoing" name="isOngoing">  Ongoing Course</label>
                     <input type="hidden" name="isRegistration" value="off">
                     <label id="registration"><input type="checkbox" id="registration" name="isRegistration">  Open for Registration</label>
-                    <input type="hidden" name="bothMajorProgram" value="off">
-                    <label id="both-majors-prog"><input type="checkbox" id="both-majors-prog" name="bothMajorProgram">  Include in both CE AND CS Curriculum</label>
                 </div>
 
                 <div class="button-group">
