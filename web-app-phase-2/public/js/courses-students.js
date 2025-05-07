@@ -1,5 +1,6 @@
 // Set localstorage.currentpage
 localStorage.currentPage = "courses";
+const baseUrl = "/api/";
 
 let dropDownBtn = document.querySelector("#dropdown-btn");
 let list = document.querySelector("#list");
@@ -7,12 +8,33 @@ let icon = document.querySelector("#drop-icon");
 let dropdownInput = document.querySelector("#dropdown-span");
 let search = document.querySelector("#search-input");
 let displayCourse = document.querySelector("#display-courses");
-const majors = JSON.parse(localStorage.majors)
+let majors = [];
+let courses = [];
+
 
 //Use this to navigate to register screen --to do--
 let courseCard = document.querySelector(".student-course-card");
 
-const courses = JSON.parse(localStorage.courses);
+
+async function loadMajors(){
+    const response = await fetch (`${baseUrl}/major`);
+    const majors = await response.json();
+    return majors;
+}
+
+async function loadCourses() {
+    const response = await fetch (`${baseUrl}/course`);
+    const courses = await response.json();
+    return courses;
+}
+
+window.addEventListener("DOMContentLoaded", async () => {
+    majors = await loadMajors();
+    courses = await loadCourses();
+
+    renderMajorDropdown();         // Safe to call now
+    displayCourses(courses);       // Initial display
+});
 
 //Dropdwon Functions
 dropDownBtn.addEventListener("click", (e) => showList(e));
@@ -28,6 +50,8 @@ function showList(e){
 };
 
 window.addEventListener("click", (e) => makeChange(e))
+
+
 
 function makeChange(e){
     if(e.target.id !== "dropdown-btn" &&
