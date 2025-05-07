@@ -32,8 +32,8 @@ window.addEventListener("DOMContentLoaded", async () => {
     majors = await loadMajors();
     courses = await loadCourses();
 
-    renderMajorDropdown();         // Safe to call now
-    displayCourses(courses);       // Initial display
+    renderMajorDropdown();
+    displayCourses(courses);
 });
 
 //Dropdwon Functions
@@ -72,9 +72,7 @@ function dropDownMajor(e){
     }else{
         search.placeholder = `Search for Courses`;
     }
-
-    let filteredCourses = filterCourses();
-    displayCourses(filteredCourses);
+    filterCoursesByMajor(e.target.innerText);
 }
 
 // Search Bar
@@ -112,15 +110,21 @@ function searchCourse(e){
     displayCourses(filteredCourses);
 }
 
-function filterCourses() {
-    let filteredCourses = [];
-    if (dropdownInput.innerText !== "All"){
-        let majorId = majors.find(m => m.majorCode === dropdownInput.innerText).majorId;
-        filteredCourses = courses.filter((course) => course.majorId === majorId);
+async function filterCoursesByMajor(majorCode) {
+    if (majorCode === "All") {
+        courses = await loadCourses();
     } else {
-        filteredCourses = [...courses];
+        const selectedMajor = majors.find(m => m.majorCode === majorCode);
+        if (!selectedMajor) {
+            console.error("Invalid major selected");
+            return;
+        }
+
+        const response = await fetch(`${baseUrl}/course?majorId=${selectedMajor.majorId}`);
+        courses = await response.json();
     }
-    return filteredCourses;
+
+    displayCourses(courses);
 }
 
 function goToRegistration(id){

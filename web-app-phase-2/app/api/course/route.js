@@ -15,7 +15,7 @@ export async function GET(req) {
         const courses = await appRepo.getCourseByMajorStatus(majorId, courseStatus);
         return Response.json(courses, { status: 200 });
       }
-    
+      
       if (majorId) {
         return Response.json(await appRepo.getCourseByMajorId(majorId), { status: 200 });
       }
