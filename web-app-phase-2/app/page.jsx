@@ -5,6 +5,10 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { signIn } from 'next-auth/react';
 import { getUserAction } from './actions/server-actions';
+import { getSession } from "next-auth/react"
+
+
+
 
 export default function Login() {
   const passwordRef = useRef('');
@@ -20,24 +24,25 @@ export default function Login() {
 
   if(!hasMounted) return null;
 
+  async function googleLogIn() {
+    const result = await signIn("google", { redirect: false });
+    if (result.ok) {
+      const session = await getSession()
+      if (session){
+        const role = session.user.role;
+        if (role === 'Student') router.push("/view-student/dashboard-student.html");
+        else if (role === "Instructor") router.push("/view-instructor/dashboard-instructor.html");
+        else router.push("/view-admin/dashboard-admin.html");
+      }else {
+        console.error("Google Sign-In failed.");
+      }
+    }else{
+      console.error("Session could not be verified")
+    }
+  }
+
   async function handleLogin(e) {
     e.preventDefault();
-
-    // const result = await signIn("credentials", {
-    //   redirect: false,
-    //   username,
-    //   password,
-    // });
-
-    // if (result.ok) {
-    //   const sessionRes = await fetch("/api/auth/session");
-    //   const session = await sessionRes.json();
-    //   const role = session?.user?.role;
-
-    //   if (role === "Student") router.push("/dashboard/student");
-    //   else if (role === "Instructor") router.push("/dashboard/instructor");
-    //   else router.push("/view-admin/dashboard-admin.html");
-    // } 
     
     const user = await getUserAction(usernameRef.current, passwordRef.current);
 
@@ -57,6 +62,7 @@ export default function Login() {
   function toggleViewPassword() {
     setShowPassword(!showPassword);
   }
+
 
   return (
     <div className={styles.bodyWrapper}>
@@ -116,7 +122,8 @@ export default function Login() {
 
             <button
               type="button"
-              onClick={() => signIn("google")}
+              onClick={() => googleLogIn()}
+
               className={styles.submitButton}
               style={{ backgroundColor: "#4285F4" }}
             >
@@ -127,4 +134,5 @@ export default function Login() {
       </div>
     </div>
   );
+
 }
