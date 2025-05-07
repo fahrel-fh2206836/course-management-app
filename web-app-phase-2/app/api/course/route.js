@@ -11,6 +11,13 @@ export async function GET(req) {
     const majorId = searchParams.get('majorId');
     const courseStatus = searchParams.get('course-status');
     const courseCode = searchParams.get('code');
+    const courseName = searchParams.get('name');
+    if (courseName && majorId) {
+      return Response.json(await appRepo.getCourseByNameAndMajor(courseName, majorId), { status: 200 });
+    }
+    if (courseName) {
+      return Response.json(await appRepo.getCourseByName(courseName), { status: 200 });
+    }
     if (courseStatus) {
         const courses = await appRepo.getCourseByMajorStatus(majorId, courseStatus);
         return Response.json(courses, { status: 200 });

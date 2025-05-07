@@ -103,11 +103,28 @@ function courseHTML(course){
 
 search.addEventListener('input', (e) => searchCourse(e));
 
-function searchCourse(e){
+async function searchCourse(e) {
+    e.preventDefault();
     let text = e.target.value.toLowerCase();
-    let filteredCourses = filterCourses();
-    filteredCourses = filteredCourses.filter((course) => course.courseName.toLowerCase().includes(text));
-    displayCourses(filteredCourses);
+
+    const majorCode = dropdownInput.innerText;
+    
+    if (text === '') {
+        filterCoursesByMajor(majorCode);
+        return;
+    }
+
+    let url = `${baseUrl}/course?name=${text}`;
+
+    if (majorCode !== "All") {
+        const selectedMajor = majors.find(m => m.majorCode === majorCode);
+        if (selectedMajor) {
+            url += `&majorId=${selectedMajor.majorId}`;
+        }
+    }
+    const response = await fetch(url);
+    const result = await response.json();
+    displayCourses(result);
 }
 
 async function filterCoursesByMajor(majorCode) {
@@ -115,11 +132,7 @@ async function filterCoursesByMajor(majorCode) {
         courses = await loadCourses();
     } else {
         const selectedMajor = majors.find(m => m.majorCode === majorCode);
-        if (!selectedMajor) {
-            console.error("Invalid major selected");
-            return;
-        }
-
+        
         const response = await fetch(`${baseUrl}/course?majorId=${selectedMajor.majorId}`);
         courses = await response.json();
     }

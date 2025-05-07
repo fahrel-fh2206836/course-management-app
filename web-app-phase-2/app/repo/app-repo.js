@@ -206,6 +206,27 @@ class AppRepo {
         let course = courses.map(c => c.courseCode.toLowerCase().replace(/\s+/g, '')).includes(comparableCode);
         return course;
       }
+
+      async getCourseByName(name) {
+        return await prisma.course.findMany({
+          where: {
+            courseName: {
+              contains: name,
+            }
+          }
+        });
+      }
+
+      async getCourseByNameAndMajor(name, majorId) {
+        return await prisma.course.findMany({
+          where: {
+            majorId: majorId,
+            courseName: {
+              contains: name,
+            }
+          }
+        });
+      }
       
       async addCourse(course) {
         course.isOngoing = course.isOngoing === "on" ? true : false;
