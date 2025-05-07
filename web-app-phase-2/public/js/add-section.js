@@ -30,45 +30,42 @@ loadRegistrationSem();
 renderRegistrationCourses();
 renderInstructor();
 
+form.addEventListener('submit', handleAddSection);
 
-// form.addEventListener('submit', handleAddSection);
+async function handleAddSection(e) {
+    e.preventDefault();
 
-// function handleAddSection(e) {
-//     e.preventDefault();
+    const formData = new FormData(e.target);
+    const section = Object.fromEntries(formData);
+    section.totalSeats = parseInt(section.totalSeats);
+    if(section.totalSeats <= 0) {
+        showNotification("negative-seats-notif");
+        return;
+    }
 
-//     const formData = new FormData(e.target);
-//     const section = Object.fromEntries(formData);
-//     if(section.totalSeats <= 0) {
-//         showNotification("negative-seats-notif");
-//         return;
-//     }
-
-//     section.totalSeats = parseInt(section.totalSeats);
-//     section.sectionId = (sections.length + 25).toString();
-//     section.currentSeats = 0;
-//     section.semester = currentSem;
-//     section.approvalStatus = "PENDING";
-//     section.sectionStatus = "OPEN_REGISTRATION";
-
-//     let checkedDays = Array.from(document.querySelectorAll('input[name="days"]:checked')).map(chbox => chbox.value).join('-');
+    let checkedDays = Array.from(document.querySelectorAll('input[name="days"]:checked')).map(chbox => chbox.value).join('-');
     
-//     let time = [section.startTime, section.endTime].join('-');
-//     section.schedule = {
-//         days: checkedDays,
-//         time: time,
-//     }
+    let time = [section.startTime, section.endTime].join('-');
+    section.days = checkedDays;
+    section.time = time;
 
-//     delete section.days;
-//     delete section.endTime;
-//     delete section.startTime;
+    delete section.endTime;
+    delete section.startTime;
 
-//     sections.push(section);
-//     localStorage.sections = JSON.stringify(sections);
-//     form.reset();
+    // Add Section
+    await fetch("/api/section", {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(section)
+    })
 
-//     document.querySelector("#added-notif").innerText = `✅ Section ID: ${section.sectionId} is Added to the System.`;
-//     showNotification("added-notif");
-// }
+    form.reset();
+
+    document.querySelector("#added-notif").innerText = `✅ Section is Added to the System.`;
+    showNotification("added-notif");
+}
 
 function showNotification(elementId) {
     document.querySelector(`#${elementId}`).classList.add("show");

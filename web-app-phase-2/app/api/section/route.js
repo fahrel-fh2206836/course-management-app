@@ -9,4 +9,10 @@ export async function GET(req) {
   
     const sections = await appRepo.getSections(instructorId, semester, notSem);
     return Response.json(sections, { status: 200 });
-  }
+}
+
+export async function POST(request) {
+    const section = await request.json();
+    const newSection = await appRepo.addSection(section);
+    return Response.json(newSection, {status: 201})
+}

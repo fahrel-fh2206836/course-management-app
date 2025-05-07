@@ -47,9 +47,13 @@ class AppRepo {
       return user;
     }
 
-      async getInstructors() {
-        return await prisma.user.findMany({where: {role: "Instructor"}, orderBy: {firstName: 'asc'}});
-      }
+    async getInstructors() {
+      return await prisma.user.findMany({
+        where: { role: "Instructor" }, 
+        orderBy: { firstName: 'asc' },
+        include: {Instructor: true}
+      });
+    }
 
 
     // ===================== Sections Methods ===================== 
@@ -106,6 +110,15 @@ class AppRepo {
         return result;
       }
 
+      async addSection(section) {
+        const regSems = await this.getSemesters();
+        section.semester = regSems[regSems.length-1].semester;
+        section.currentSeats = 0;
+  
+        return await prisma.section.create({
+          data: section
+        })
+      }
 
     // ===================== Majors Method =====================
 
