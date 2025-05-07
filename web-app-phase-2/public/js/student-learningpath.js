@@ -1,6 +1,5 @@
 localStorage.currentPage = "learningPath";
 
-
 const nameElem = document.querySelector("#name");
 const majorElem = document.querySelector("#stats-major");
 const cgpaElem = document.querySelector("#stats-CGPA");
@@ -15,45 +14,35 @@ const inProgressList = document.querySelector(".status-in_progress .course-list"
 
 let completedCoursesCount = 0;
 
-
 async function loadLearningPath() {
-    const studentRes = await fetch("/api/student");
-    const student = await studentRes.json();
+    const loggedInUser = JSON.parse(localStorage.loggedInUser);
+    const studentId = loggedInUser.userId;
 
-    const majorsRes = await fetch("/api/majors");
-    const majors = await majorsRes.json();
+    const res = await fetch(`/api/student/${studentId}`);
+    const data = await res.json();
 
-    const registrationsRes = await fetch("/api/registrations");
-    const registrations = await registrationsRes.json();
-
-    const sectionsRes = await fetch("/api/sections");
-    const sections = await sectionsRes.json();
-
-    const coursesRes = await fetch("/api/courses");
-    const courses = await coursesRes.json();
-
-    const studentMajor = majors.find(m => m.majorId === student.majorId);
-
-    const allCourseIds = studentMajor?.allCourses || [];
+    const { student, major, courses, registrations } = data;
 
     nameElem.textContent = `${student.firstName} ${student.lastName}`;
-    majorElem.textContent = studentMajor.majorName;
+    majorElem.textContent = major.majorName;
     cgpaElem.textContent = student.gpa.toFixed(2);
-    chElem.textContent = `${student.finishedCreditHour}/${studentMajor.totalCreditHour}`;
+    chElem.textContent = `${student.finishedCreditHour}/${major.totalCreditHour}`;
 
-    const progress = (student.finishedCreditHour / studentMajor.totalCreditHour) * 100;
-
+    const progress = (student.finishedCreditHour / major.totalCreditHour) * 100;
     barElem.style.width = `${progress}%`;
     percentElem.textContent = `${progress.toFixed(1)}%`;
 
-    // Flowchart image
     const image = document.querySelector(".img-prerequiste");
 
-    if (studentMajor.majorName === "Computer Science") {
-        image.innerHTML = `<img src="../assets/images/flowchart_cs.png" alt="">`;
-    } else if (studentMajor.majorName === "Computer Engineering") {
-        image.innerHTML = `<img src="../assets/images/flowchart_ce.png" alt="">`;
-    }
+    const flowchartMap = {
+        "Computer Science": "flowchart_cs.png",
+        "Computer Engineering": "flowchart_ce.png",
+        "Electrical Engineering": "Screenshot 2025-05-07 200319.jpg",
+        "Mathematics": "math-ug-curriculum-flowchart.png"
+    };
+
+    const flowchartFile = flowchartMap[major.majorName] || "default_flowchart.png";
+    image.innerHTML = `<img src="../assets/images/${flowchartFile}" alt="">`;
 
     completedList.innerHTML = "";
     pendingList.innerHTML = "";
@@ -61,43 +50,42 @@ async function loadLearningPath() {
 
     const takenCourseIds = [];
 
-    registrations
-        .filter(reg => reg.studentId === student.userId)
-        .forEach(reg => {
-            const sec = sections.find(s => s.sectionId === reg.sectionId);
-            const crs = courses.find(c => c.id === sec?.courseId);
+    registrations.forEach(reg => {
+        const sec = reg.section;
+        const crs = sec.course;
 
-            if (!crs) return;
+        if (!crs) return;
 
-            takenCourseIds.push(crs.id);
+        takenCourseIds.push(crs.id);
 
-            const courseHTML = `
-                <div class="scrolling">
-                    <div class="course-card">
-                        <div class="course-header">
-                            <span class="course-code">${crs.courseCode}</span>
-                            <span class="course-title">${crs.courseName}</span>
-                            <span class="course-ch">${crs.creditHour} CH</span>
-                        </div>
-                        ${reg.grade && reg.grade !== "F" && reg.grade !== "f" ? `<div class="course-grade"><span>Grade: ${reg.grade}</span></div>` : ""}
+        const courseHTML = `
+            <div class="scrolling">
+                <div class="course-card">
+                    <div class="course-header">
+                        <span class="course-code">${crs.courseCode}</span>
+                        <span class="course-title">${crs.courseName}</span>
+                        <span class="course-ch">${crs.creditHour} CH</span>
                     </div>
-                </div>`;
+                    ${reg.grade && reg.grade !== "F" && reg.grade !== "f" ? `<div class="course-grade"><span>Grade: ${reg.grade}</span></div>` : ""}
+                </div>
+            </div>`;
 
-            if (reg.grade && reg.grade !== "F" && reg.grade !== "f") {
-                completedCoursesCount++;
-                completedList.innerHTML += courseHTML;
-            } else if (reg.grade === "F" || reg.grade === "f") {
-                pendingList.innerHTML += courseHTML;
-            } else if (reg.grade === "" && crs.isOngoing) {
-                inProgressList.innerHTML += courseHTML;
-            }
-        });
+        if (reg.grade && reg.grade !== "F" && reg.grade !== "f") {
+            completedCoursesCount++;
+            completedList.innerHTML += courseHTML;
+        } else if (reg.grade === "F" || reg.grade === "f") {
+            pendingList.innerHTML += courseHTML;
+        } else if (reg.grade === "" && crs.isOngoing) {
+            inProgressList.innerHTML += courseHTML;
+        }
+    });
+
+    const allCourseIds = courses.map(c => c.id);
 
     allCourseIds
         .filter(id => !takenCourseIds.includes(id))
         .forEach(id => {
             const crs = courses.find(c => c.id === id);
-
             if (crs) {
                 pendingList.innerHTML += `
                     <div class="scrolling">

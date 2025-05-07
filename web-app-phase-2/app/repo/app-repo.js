@@ -257,71 +257,77 @@ class AppRepo {
 
     // ===================== Learning Path Methods =====================
 
-      async getStudentById(userId) {
-        return await prisma.user.findUnique({
-          where: { userId },
-          include: {
-            Student: true,
-            Instructor: true,
-            Admin: true
-          }
-        });
-      }
-
-      async getRegistrationsByStudentId(studentId) {
-        return await prisma.registration.findMany({
-          where: { studentId },
-          include: {
-            section: {
-              include: {
-                course: true,
-                instructor: {
-                  include: {
-                    user: true
-                  }
+    async getStudentById(userId) {
+      return await prisma.user.findUnique({
+        where: { userId },
+        include: {
+          Student: true
+        }
+      });
+    }
+    
+    async getRegistrationsByStudentId(studentId) {
+      return await prisma.registration.findMany({
+        where: { studentId },
+        include: {
+          section: {
+            include: {
+              course: true,
+              instructor: {
+                include: {
+                  user: true
                 }
               }
             }
           }
-        });
-      }
-
-      async getCoursesByMajor(majorId) {
-        return await prisma.course.findMany({
-          where: { majorId }
-        });
-      }
-
-      async getMajorById(majorId) {
-        return await prisma.major.findUnique({
-          where: { majorId }
-        });
-      }
-
-      async getLearningPathData(userId) {
-        const student = await this.getStudentById(userId);
-        if (!student || !student.Student) {
-          return { error: "Not a student or user not found" };
         }
-
-        const studentId = student.userId;
-        const majorId = student.majorId;
-
-        const major = await this.getMajorById(majorId);
-        if (!major) {
-          return { error: "Major not found" };
-        }
-
-        const courses = await this.getCoursesByMajor(majorId);
-        const registrations = await this.getRegistrationsByStudentId(studentId);
-
-        return {
-          student,
-          major,
-          courses,
-          registrations
-        };
+      });
+    }
+    
+    async getCoursesByMajor(majorId) {
+      return await prisma.course.findMany({
+        where: { majorId }
+      });
+    }
+    
+    async getMajorById(majorId) {
+      return await prisma.major.findUnique({
+        where: { majorId }
+      });
+    }
+    
+    async getLearningPathData(userId) {
+      const user = await this.getStudentById(userId);
+    
+      if (!user || !user.Student) {
+        return { error: "User not found or not a student" };
       }
-}
+    
+      const studentInfo = user.Student;
+      const major = await this.getMajorById(studentInfo.majorId);
+    
+      if (!major) {
+        return { error: "Major not found" };
+      }
+    
+      const courses = await this.getCoursesByMajor(studentInfo.majorId);
+      const registrations = await this.getRegistrationsByStudentId(user.userId);
+    
+      return {
+        student: {
+          userId: user.userId,
+          firstName: user.firstName,
+          lastName: user.lastName,
+          username: user.username,
+          gpa: studentInfo.gpa,
+          finishedCreditHour: studentInfo.finishedCreditHour,
+          majorId: studentInfo.majorId
+        },
+        major,
+        courses,
+        registrations
+      };
+    }
+  }
 
 export default new AppRepo();

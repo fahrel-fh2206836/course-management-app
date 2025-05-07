@@ -68,10 +68,21 @@ export default function LearningPathPage() {
     ))
   )
 
-  const flowchartImage =
-    major.majorName.toLowerCase().includes('science')
-      ? '/assets/images/flowchart_cs.png'
-      : '/assets/images/flowchart_ce.png'
+  const flowchartImage = (() => {
+    const majorName = major.majorName.toLowerCase()
+
+    if (majorName.includes('science')) {
+      return '/assets/images/flowchart_cs.png'
+    } else if (majorName.includes('engineering') && major.majorCode === 'CMPE') {
+      return '/assets/images/flowchart_ce.png'
+    } else if (major.majorCode === 'ELEC') {
+      return '/assets/images/Screenshot 2025-05-07 200319.jpg'
+    } else if (major.majorCode === 'MATH') {
+      return '/assets/images/math-ug-curriculum-flowchart.png'
+    } else {
+      return '/assets/images/default_flowchart.png'
+    }
+  })()
 
   return (
     <main className={styles.mainLearningPath}>
