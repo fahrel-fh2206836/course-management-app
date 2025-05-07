@@ -7,7 +7,7 @@ export async function GET(req) {
     const instructorId = searchParams.get('instructorId');
     const notSem = searchParams.get('notSem');
     if(semester && studentId) {
-        const ongoingRegSecs = await appRepo.getRegSecBySem(studentId, semester);
+        const ongoingRegSecs = await appRepo.getStudentRegSecBySem(studentId, semester);
         return Response.json(ongoingRegSecs, { status: 200 });
     }
     else if(semester && instructorId && notSem !== null) {

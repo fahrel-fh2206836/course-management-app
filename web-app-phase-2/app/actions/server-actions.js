@@ -33,7 +33,7 @@ export async function getMajorByIdAction(majorId) {
 }
 
 export async function getRegSecBySemAction(studentId, sem) {
-    return await appRepo.getRegSecBySem(studentId, sem);
+    return await appRepo.getStudentRegSecBySem(studentId, sem);
 }   
 
 export async function getInstructorSecBySemAction(instructorId, sem, notSem) {
