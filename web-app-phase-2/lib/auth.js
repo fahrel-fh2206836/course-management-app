@@ -79,9 +79,5 @@ export const authConfig = {
     strategy: "jwt",
   },
 
-  pages: {
-    signIn: "/login",
-  },
-
   secret: process.env.NEXTAUTH_SECRET,
 };

@@ -29,6 +29,24 @@ class AppRepo {
         return user;
     }
 
+    async getUserByEmail(username){
+      const user = await prisma.user.findUnique({
+        where: {
+          username: username
+        },
+        include:{
+          Student: true,
+          Instructor: true,
+          Admin: true
+        }
+      });
+
+      if (!user){
+        return { error: "Wrong credentials" }
+      }
+      return user;
+    }
+
 
     // ===================== Sections Methods ===================== 
 
