@@ -28,6 +28,10 @@ export async function getUserAction(username, password) {
     return await appRepo.getUser(username, password);
 }
 
+export async function getUserByEmailAction(username){
+    return await appRepo.getUserByEmail(username);
+}
+
 export async function getMajorByIdAction(majorId) {
     return await appRepo.getMajorById(majorId);
 }
