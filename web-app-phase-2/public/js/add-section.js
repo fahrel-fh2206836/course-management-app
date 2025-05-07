@@ -1,72 +1,74 @@
 // Set localstorage.currentpage
 localStorage.currentPage = "addSection";
-
-//Local Storages
-const sections = JSON.parse(localStorage.sections);
-const courses = JSON.parse(localStorage.courses);
-const users = JSON.parse(localStorage.users);
-const semesters = JSON.parse(localStorage.semesters);
-const currentSem = semesters[semesters.length-1];
+baseUrl = '/api/'
 
 const form = document.querySelector("#add-section-form");
 const h2 = document.querySelector(".form-container").querySelector("h2");
 const courseSelect = document.querySelector("#section-course");
 const instructorSelect = document.querySelector("#section-instructor");
 
-h2.innerText = `Add New Section (${currentSem})`;
+async function loadRegistrationSem() {
+    const regSems = await (await fetch(`${baseUrl}semester`)).json();
+    const regSem = regSems[regSems.length-1].semester
+    h2.innerText = `Add New Section (${regSem})`;
+}
 
-function handleMajorChange() {
+
+async function renderRegistrationCourses() {
+    const ongoingCourses = await (await fetch(`${baseUrl}course?course-status=registration`)).json();
     courseSelect.innerHTML = `<option label="Select Course" value="" selected disabled></option>
-                             ${courses.filter(c => c.isRegistration === true).sort((a, b) => a.courseName.localeCompare(b.courseName)).map(c => `<option label="${c.courseName}" value="${c.id}"></option>`)};`
+                             ${ongoingCourses.map(c => `<option label="${c.courseName}" value="${c.id}"></option>`)};`
 }
 
-function renderInstructor() {
-    const instructors = users.filter(u => u.role === "Instructor");
+async function renderInstructor() {
+    const instructors = await (await fetch(`${baseUrl}instructor`)).json();
     instructorSelect.innerHTML = `<option label="Select Instructor" value="" selected disabled></option>
-                        ${instructors.sort((a, b) => a.firstName.localeCompare(b.firstName)).map(i =>  `<option label="${i.firstName} ${i.lastName}" value="${i.userId}"></option>`)}`
+                        ${instructors.map(i =>  `<option label="${i.firstName} ${i.lastName}" value="${i.userId}"></option>`)}`
 }
 
-handleMajorChange();
+loadRegistrationSem();
+renderRegistrationCourses();
 renderInstructor();
 
-form.addEventListener('submit', handleAddSection);
 
-function handleAddSection(e) {
-    e.preventDefault();
+// form.addEventListener('submit', handleAddSection);
 
-    const formData = new FormData(e.target);
-    const section = Object.fromEntries(formData);
-    if(section.totalSeats <= 0) {
-        showNotification("negative-seats-notif");
-        return;
-    }
+// function handleAddSection(e) {
+//     e.preventDefault();
 
-    section.totalSeats = parseInt(section.totalSeats);
-    section.sectionId = (sections.length + 25).toString();
-    section.currentSeats = 0;
-    section.semester = currentSem;
-    section.approvalStatus = "PENDING";
-    section.sectionStatus = "OPEN_REGISTRATION";
+//     const formData = new FormData(e.target);
+//     const section = Object.fromEntries(formData);
+//     if(section.totalSeats <= 0) {
+//         showNotification("negative-seats-notif");
+//         return;
+//     }
 
-    let checkedDays = Array.from(document.querySelectorAll('input[name="days"]:checked')).map(chbox => chbox.value).join('-');
+//     section.totalSeats = parseInt(section.totalSeats);
+//     section.sectionId = (sections.length + 25).toString();
+//     section.currentSeats = 0;
+//     section.semester = currentSem;
+//     section.approvalStatus = "PENDING";
+//     section.sectionStatus = "OPEN_REGISTRATION";
+
+//     let checkedDays = Array.from(document.querySelectorAll('input[name="days"]:checked')).map(chbox => chbox.value).join('-');
     
-    let time = [section.startTime, section.endTime].join('-');
-    section.schedule = {
-        days: checkedDays,
-        time: time,
-    }
+//     let time = [section.startTime, section.endTime].join('-');
+//     section.schedule = {
+//         days: checkedDays,
+//         time: time,
+//     }
 
-    delete section.days;
-    delete section.endTime;
-    delete section.startTime;
+//     delete section.days;
+//     delete section.endTime;
+//     delete section.startTime;
 
-    sections.push(section);
-    localStorage.sections = JSON.stringify(sections);
-    form.reset();
+//     sections.push(section);
+//     localStorage.sections = JSON.stringify(sections);
+//     form.reset();
 
-    document.querySelector("#added-notif").innerText = `✅ Section ID: ${section.sectionId} is Added to the System.`;
-    showNotification("added-notif");
-}
+//     document.querySelector("#added-notif").innerText = `✅ Section ID: ${section.sectionId} is Added to the System.`;
+//     showNotification("added-notif");
+// }
 
 function showNotification(elementId) {
     document.querySelector(`#${elementId}`).classList.add("show");

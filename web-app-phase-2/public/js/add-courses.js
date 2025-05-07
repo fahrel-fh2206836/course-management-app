@@ -14,10 +14,10 @@ async function renderMajorDropdown() {
     majorDropdown.innerHTML = `<option value="" selected disabled>Select Major</option>
                                 ${majors.map(m => `<option value="${m.majorId}">${m.majorName} (${m.majorCode})</option>`).join('\n')}`;
 
-    majorDropdown.addEventListener('change', handleMajorChange);
+    majorDropdown.addEventListener('change', renderOngoingCourses);
 }
 
-async function handleMajorChange(e) {
+async function renderOngoingCourses(e) {
     const resOpt = await fetch(`${baseUrl}major/${e.target.value}`);
     const optLabel = await resOpt.json();
     prerequisitesOptGroup.label = optLabel.majorName + " Courses";
