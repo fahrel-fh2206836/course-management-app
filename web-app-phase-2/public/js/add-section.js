@@ -21,9 +21,10 @@ async function renderRegistrationCourses() {
 }
 
 async function renderInstructor() {
+    
     const instructors = await (await fetch(`${baseUrl}instructor`)).json();
     instructorSelect.innerHTML = `<option label="Select Instructor" value="" selected disabled></option>
-                        ${instructors.map(i =>  `<option label="${i.firstName} ${i.lastName}" value="${i.userId}"></option>`)}`
+                        ${instructors.map(i =>  `<option label="${i.firstName} ${i.lastName} (${i.Instructor.major.majorName})" value="${i.userId}"></option>`)}`
 }
 
 loadRegistrationSem();

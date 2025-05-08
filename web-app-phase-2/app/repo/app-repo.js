@@ -49,19 +49,21 @@ class AppRepo {
 
     async getInstructors() {
       return await prisma.user.findMany({
-        where: { role: "Instructor" }, 
+        where: { role: 'Instructor' },
         orderBy: { firstName: 'asc' },
-        include: {Instructor: true}
+        include: {
+          Instructor: {
+            include: {
+              major: true
+            }
+          }
+        }
       });
     }
 
 
     // ===================== Sections Methods ===================== 
-      async getAllSections(){
-        return prisma.section.findMany();
-      }
-
-
+    
       async getSections(instructorId, sem, notSem = false) {
         const whereClause = {};
       
@@ -253,8 +255,17 @@ class AppRepo {
         });
     }
 
-    async getCoursePreRequisites(){
-      return await prisma.coursePrerequisite.findMany();
+    async getCoursePrerequisites(id){
+      return await prisma.course.findUnique({
+        where: { id },
+        include: {
+          prerequisites: {
+            include: {
+              prerequisite: true  // This gets the full Course object for the prerequisite
+            }
+          }
+        }
+      });
     }
 
 
