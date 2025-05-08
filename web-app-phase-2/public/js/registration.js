@@ -1,26 +1,121 @@
 // Set localstorage.currentpage
-localStorage.currentPage = "registration";
+const baseUrl = "/api/"
 
-const selectedCourse = JSON.parse(localStorage.selectedCourse);
-const allRegistrations = JSON.parse(localStorage.registrations);
-const currentSem = localStorage.currentSem;
-const users = JSON.parse(localStorage.users);
-let student = JSON.parse(localStorage.getItem("loggedInUser"));
-const majors = JSON.parse(localStorage.majors);
-const allSections = JSON.parse(localStorage.sections);
+let student = '';
+let selectedCourse = '';
+let allRegistrations = [];
+let currentSem = '';
+let users = [];
+let majors = [];
+let allSections = [];
+let semesters = [];
+let allCourses = [];
+let allCoursePreRequisites = [];
+let majorName = '';
+
+async function loadCourses() {
+    const response = await fetch (`${baseUrl}/course`);
+    const courses = await response.json();
+    return courses;
+}
+
+async function laodAllCoursePreRequisites() {
+    const response = await fetch(`${baseUrl}/coursePreReq`);
+    const coursePreReqs = await response.json();
+    return coursePreReqs;
+}
+
+async function loadRegistrations() {
+    const response = await fetch(`${baseUrl}/registration`)
+    const registrations = await response.json();
+    return registrations;
+}
+
+async function loadCurrentSem() {
+    const response = await fetch(`${baseUrl}/semester`)
+    const semesters = await response.json()
+    const currentSem = semesters[semesters.length - 2];
+    return currentSem;
+}
+
+async function loadAllUsers() {
+    const response = await fetch(`${baseUrl}/user`)
+    const students = await response.json();
+    return students;
+}
+
+async function loadMajors(){
+    const response = await fetch (`${baseUrl}/major`);
+    const majors = await response.json();
+    return majors;
+}
+
+async function loadAllSemesters() {
+    const response = await fetch(`${baseUrl}/semester`);
+    const semesters = await response.json();
+    return semesters;
+}
+
+async function loadAllSections() {
+    const response = await fetch(`${baseUrl}/section`);
+    const sections = await response.json();
+    return sections;
+}
+
+window.addEventListener("DOMContentLoaded", async () => {
+    localStorage.currentPage = "registration";
+
+    allRegistrations = await loadRegistrations();
+    currentSem = await loadCurrentSem();
+    users = await loadAllUsers();
+    majors = await loadMajors();
+    allSections = await loadAllSections();
+    semesters = await loadAllSemesters();
+    allCourses = await loadCourses();
+    allCoursePreRequisites = await laodAllCoursePreRequisites();
+
+    selectedCourse = JSON.parse(localStorage.selectedCourse);
+    console.log(selectedCourse);
+    
+    student = JSON.parse(localStorage.getItem("loggedInUser"));
+    const courseId = selectedCourse.id;
+    const coursePrerequisites = allCoursePreRequisites.filter((course) => course.id == courseId).map((course) => course.prerequisiteId);
+
+    majorName = majors.find(m => m.majorId===selectedCourse.majorId).majorName
+    const sectionHeaderH1 = document.querySelector(".section-header").querySelector("h1");
+
+    //Header Codee
+    sectionHeaderH1.innerText = `${selectedCourse.courseCode} Sections`;
+    title.innerHTML = `View Sections for ${selectedCourse.courseName}`;
+
+    getPreCourses(coursePrerequisites);
+    displayPreCourses(preCourses);
+
+    getCourseSections();
+    displaySections(courseSections);
+
+    renderTable();
+    convertSemesterOptionHTML();
+    renderSemesterDropdown();
+    getCurrentlyRegistered();
+    displayRegisteredSections(registeredSections);
+    document.querySelector("#curr-ch").innerText = ` Your CH: ${countRegisteredCH(registeredSections)}`;
+    
+})
+
+
+
+
+
+
 const title = document.querySelector("#title");
 const preReqCoursesDisplay = document.querySelector("#pre-courses");
 const sectionsDisplay = document.querySelector(".section-list");
 const registeredDisplay = document.querySelector("#display-registered");
 const table = document.querySelector("#course-table");
-const semesters = JSON.parse(localStorage.semesters);
 
-const majorName = majors.find(m => m.majorId===selectedCourse.majorId).majorName
-const sectionHeaderH1 = document.querySelector(".section-header").querySelector("h1");
 
-//Header Codee
-sectionHeaderH1.innerText = `${selectedCourse.courseCode} Sections`;
-title.innerHTML = `View Sections for ${selectedCourse.courseName}`;
+
 
 
 //Note for Open Registration
@@ -28,14 +123,19 @@ const note = document.querySelector("#note");
 note.innerText = `Note: ${semesters[semesters.length-1]} Sections are Open for Registration!`
 
 // Course Details code
-const coursePrerequisites = selectedCourse.prerequisitesCoursesId;
-const allCourses = JSON.parse(localStorage.courses);
+
 let preCourses = [];
 
-function getPreCourses(){
+function getPreCourses(coursePrerequisites) {
+    if (!Array.isArray(coursePrerequisites)) {
+        console.warn("coursePrerequisites is not an array:", coursePrerequisites);
+        preCourses = [];
+        return;
+    }
+
     preCourses = allCourses.filter((course) => coursePrerequisites.includes(course.id));
 }
-getPreCourses();
+
 
 function displayPreCourses(preCourse){
     preCourse.sort((a, b) => a.courseName.localeCompare(b.courseName));
@@ -51,7 +151,7 @@ function courseHTML(course){
             </div>`;
 }
 
-displayPreCourses(preCourses);
+
 
 function courseDone(courseID){
 
@@ -76,7 +176,7 @@ function getCourseSections(){
     courseSections = allSections.filter((section) => section.courseId === selectedCourse.id && (section.approvalStatus === "APPROVED" || section.approvalStatus === "PENDING"));
 }
 
-getCourseSections();
+
 
 function displaySections(sections){
     sectionsDisplay.innerHTML = sections.length === 0 ? `<div class="empty-section">
@@ -98,7 +198,11 @@ function sectionHTML(section) {
                 <div class="card-course-instructor"><p>Instructor: ${i.firstName} ${i.lastName}</p></div>
                 <div class="card-course-section-location"><p>Section ID: ${section.sectionId}</p><p>Class Location: ${section.location !== '' ? section.location : 'None'}</p></div>
                 <hr>
-                <div class="card-course-sem-schedule"><p><i class='bx bx-calendar'></i>${section.semester}</p><p><i class='bx bx-calendar-week'></i>${section.schedule.days !== '' ? section.schedule.days : 'None'}</p><p><i class='bx bx-time'></i>${section.schedule.time !== '' ? section.schedule.time : 'None'}</p></div>
+                <div class="card-course-sem-schedule">
+                    <p><i class='bx bx-calendar'></i>${section.semester}</p>
+                    <p><i class='bx bx-calendar-week'></i>${section.days ? section.days : 'None'}</p>
+                    <p><i class='bx bx-time'></i>${section.time ? section.time : 'None'}</p>
+                </div>
                 <hr>
                 ${section.sectionStatus === "OPEN_REGISTRATION" ? `<button class="reg-btn active-reg-btn" onclick = "handleRegistration('${section.sectionId}')">Register</button>`
                  : `<button class="reg-btn grey">Register</button>`
@@ -106,7 +210,6 @@ function sectionHTML(section) {
             </div>`;
 }
 
-displaySections(courseSections);
 
 function convertTableToHTML() {
     return `<tbody>
@@ -146,7 +249,7 @@ function renderTable() {
     table.innerHTML = convertTableToHTML();
 }
 
-renderTable();
+
 
 function renderSemesterDropdown() {
     const semesterDropdown = document.querySelector('#semester-filter');
@@ -155,10 +258,9 @@ function renderSemesterDropdown() {
 
 function convertSemesterOptionHTML() {
     return `<option value="All" selected>All Semester</option>
-            $.map(s => ${semesters.map(s => `<option value="${s}">${s}</option>`).join('\n')}`
+            ${semesters.map(s => `<option value="${s}">${s}</option>`).join('\n')}`         
 }
 
-renderSemesterDropdown()
 
 const semFilter = document.querySelector("#semester-filter");
 
@@ -299,9 +401,6 @@ function getCurrentlyRegistered() {
     }
 }
 
-getCurrentlyRegistered();
-
-document.querySelector("#curr-ch").innerText = ` Your CH: ${countRegisteredCH(registeredSections)}`
 
 function displayRegisteredSections(sections){
     let html = "";
@@ -337,11 +436,14 @@ function registeredHTML(section){
                 <div class="card-course-instructor"><p>Instructor: ${i.firstName} ${i.lastName}</p></div>
                 <div class="card-course-section-location"><p>Section ID: ${section.sectionId}</p><p>Class Location: ${section.location !== '' ? section.location : 'None'}</p></div>
                 <hr>
-                <div class="card-course-sem-schedule"><p><i class='bx bx-calendar'></i>${section.semester}</p><p><i class='bx bx-calendar-week'></i>${section.schedule.days !== '' ? section.schedule.days : 'None'}</p><p><i class='bx bx-time'></i>${section.schedule.time !== '' ? section.schedule.time : 'None'}</p></div>                
+                <div class="card-course-sem-schedule">
+                    <p><i class='bx bx-calendar'></i>${section.semester}</p>
+                    <p><i class='bx bx-calendar-week'></i>${section.days ? section.days : 'None'}</p>
+                    <p><i class='bx bx-time'></i>${section.time ? section.time : 'None'}</p>
+                </div>                
             </div>`;
 }
 
-displayRegisteredSections(registeredSections);
 
 function removeRegistered(sectionId){
 

@@ -7,8 +7,11 @@ export async function GET(req) {
     const notSemParam = searchParams.get('notSem');
     const notSem = notSemParam === 'true';
   
-    const sections = await appRepo.getSections(instructorId, semester, notSem);
-    return Response.json(sections, { status: 200 });
+    if(semester && instructorId && notSem){
+        const sections = await appRepo.getSections(instructorId, semester, notSem);
+        return Response.json(sections, { status: 200 });
+    }
+    return Response.json(await appRepo.getAllSections(), {status : 200});
 }
 
 export async function POST(request) {
