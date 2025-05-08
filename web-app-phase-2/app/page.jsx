@@ -28,6 +28,10 @@ export default function Login() {
     await signIn("google", {callbackUrl: '/redirect'});
   }
 
+  async function githubLogIn() {
+    await signIn('github', { callbackUrl: '/redirect' });
+  }
+
   async function handleLogin(e) {
     e.preventDefault();
     
@@ -115,6 +119,16 @@ export default function Login() {
               style={{ backgroundColor: "#4285F4" }}
             >
               Sign in with Google
+            </button>
+
+            <button
+              type="button"
+              onClick={() => githubLogIn()}
+
+              className={styles.submitButton}
+              style={{ backgroundColor: "black" }}
+            >
+              Sign in with Github
             </button>
           </main>
         </form>
