@@ -57,6 +57,10 @@ class AppRepo {
 
 
     // ===================== Sections Methods ===================== 
+      async getAllSections(){
+        return prisma.section.findMany();
+      }
+
 
       async getSections(instructorId, sem, notSem = false) {
         const whereClause = {};
@@ -247,6 +251,10 @@ class AppRepo {
                 }
             }
         });
+    }
+
+    async getCoursePreRequisites(){
+      return await prisma.coursePrerequisite.findMany();
     }
 
 
