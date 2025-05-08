@@ -2,6 +2,7 @@
 import { useEffect } from 'react';
 import { getSession } from 'next-auth/react';
 import { redirect, useRouter } from 'next/navigation';
+import LoadingSpinner from '../components/LoadingSpinner';
 
 export default function RedirectPage() {
     const router = useRouter();
@@ -9,7 +10,6 @@ export default function RedirectPage() {
     const checkSession = async () => {
         const session = await getSession();
         const role = session?.user?.role;
-        alert(JSON.stringify(session.user, null, 2));
         localStorage.setItem("loggedInUser", JSON.stringify(session.user));
         localStorage.currentPage = 'dashboard';
         if (role === 'Student') router.push("/view-student/dashboard-student.html");
@@ -24,5 +24,10 @@ export default function RedirectPage() {
     checkSession();
   }, []);
 
-  return <p>Redirecting...</p>;
+  return (
+    <>
+    <LoadingSpinner/>
+    </>
+  )
+  
 }
