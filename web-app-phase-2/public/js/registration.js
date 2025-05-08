@@ -19,11 +19,11 @@ async function loadCourses() {
     return courses;
 }
 
-async function laodAllCoursePreRequisites() {
-    const response = await fetch(`${baseUrl}/coursePreReq`);
-    const coursePreReqs = await response.json();
-    return coursePreReqs;
-}
+// async function laodAllCoursePreRequisites() {
+//     const response = await fetch(`${baseUrl}/coursePreReq`);
+//     const coursePreReqs = await response.json();
+//     return coursePreReqs;
+// }
 
 async function loadRegistrations() {
     const response = await fetch(`${baseUrl}/registration`)
@@ -72,13 +72,12 @@ window.addEventListener("DOMContentLoaded", async () => {
     allSections = await loadAllSections();
     semesters = await loadAllSemesters();
     allCourses = await loadCourses();
-    allCoursePreRequisites = await laodAllCoursePreRequisites();
+    // allCoursePreRequisites = await laodAllCoursePreRequisites();
 
     selectedCourse = JSON.parse(localStorage.selectedCourse);
     
     student = JSON.parse(localStorage.getItem("loggedInUser"));
-    const courseId = selectedCourse.id;
-    const coursePrerequisites = allCoursePreRequisites.filter((course) => course.id == courseId).map((course) => course.prerequisiteId);
+    const coursePrerequisites = await (await fetch(`${baseUrl}course/${selectedCourse.id}/prerequisites`)).json();
 
     majorName = majors.find(m => m.majorId===selectedCourse.majorId).majorName
     const sectionHeaderH1 = document.querySelector(".section-header").querySelector("h1");
@@ -87,8 +86,8 @@ window.addEventListener("DOMContentLoaded", async () => {
     sectionHeaderH1.innerText = `${selectedCourse.courseCode} Sections`;
     title.innerHTML = `View Sections for ${selectedCourse.courseName}`;
 
-    getPreCourses(coursePrerequisites);
-    displayPreCourses(preCourses);
+    getPreCourses(coursePrerequisites.prerequisites);
+    displayPreCourses();
 
     getCourseSections();
     displaySections(courseSections);
@@ -101,20 +100,11 @@ window.addEventListener("DOMContentLoaded", async () => {
     
 })
 
-
-
-
-
-
 const title = document.querySelector("#title");
 const preReqCoursesDisplay = document.querySelector("#pre-courses");
 const sectionsDisplay = document.querySelector(".section-list");
 const registeredDisplay = document.querySelector("#display-registered");
 const table = document.querySelector("#course-table");
-
-
-
-
 
 //Note for Open Registration
 const note = document.querySelector("#note");
@@ -131,13 +121,13 @@ function getPreCourses(coursePrerequisites) {
         return;
     }
 
-    preCourses = allCourses.filter((course) => coursePrerequisites.includes(course.id));
+    preCourses = coursePrerequisites;
 }
 
 
-function displayPreCourses(preCourse){
-    preCourse.sort((a, b) => a.courseName.localeCompare(b.courseName));
-    preReqCoursesDisplay.innerHTML = preCourse.length === 0 ? `There are no prerequisites for this course` : preCourse.map((course) => courseHTML(course)).join("\n");
+function displayPreCourses(){
+    console.log(preCourses)
+    preReqCoursesDisplay.innerHTML = preCourses.length === 0 ? `There are no prerequisites for this course` : preCourses.map((c) => courseHTML(c.prerequisite));
 }
 
 function courseHTML(course){
