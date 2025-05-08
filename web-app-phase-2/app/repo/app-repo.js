@@ -268,6 +268,13 @@ class AppRepo {
       });
     }
 
+    async updateCourse(id, updatedStatus) {
+      return await prisma.course.update({
+        where: { id },
+        data: {...updatedStatus}
+      })
+    }
+
 
     // ===================== Registrations Method =====================
 

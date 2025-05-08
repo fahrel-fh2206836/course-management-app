@@ -49,20 +49,24 @@ function convertTableToHTML(major, prereqs) {
                 `;
 }
 
-async function renderTable() {
+async function renderCourseInfo() {
     const responseMajor = await fetch(`${baseUrl}major/${selectedCourse.majorId}`);
     const responsePrereq = await fetch(`${baseUrl}course/${selectedCourse.id}/prerequisites`);
     table.innerHTML = convertTableToHTML(await responseMajor.json(), await responsePrereq.json());
 }
 
-renderTable();
+renderCourseInfo();
 
 // Editing Course Functionality
 
 const editBtn = document.querySelector("#edit-course-btn");
 const buttons = document.querySelector(".btns");
 
-function convertTableEditableHTML() {
+async function convertTableEditableHTML() {
+    const responseMajor = await fetch(`${baseUrl}major/${selectedCourse.majorId}`);
+    const major = await responseMajor.json();
+    const responsePrereq = await fetch(`${baseUrl}course/${selectedCourse.id}/prerequisites`);
+    const prereq = await responsePrereq.json();
     return `<tbody>
                 <tr>
                 <th>Course ID</th>
@@ -78,7 +82,7 @@ function convertTableEditableHTML() {
                 </tr>
                 <tr>
                 <th>Major</th>
-                <td colspan="3">${majorName}</td>
+                <td colspan="3">${major.majorName}</td>
                 </tr>
                 <tr>
                 <th>Credit Hour</th>
@@ -94,13 +98,13 @@ function convertTableEditableHTML() {
                 </tr>
                 <tr>
                 <th>Prerequisites</th>
-                <td colspan="3"><div class="prerequisite-list">${convertPrereqToHTML()}</div></td>
+                <td colspan="3"><div class="prerequisite-list">${convertPrereqToHTML(prereq)}</div></td>
                 </tr>
             </tbody>`;
 }
 
-function onCourseEdit() {
-    table.innerHTML = convertTableEditableHTML();
+async function onCourseEdit() {
+    table.innerHTML = await convertTableEditableHTML();
     buttons.innerHTML = `<button id="save-course-btn" class="save-btn green-bg course-btn" onclick="onSaveCourseEdit()">
                             <i class='bx bxs-save'></i>
                         </button>
@@ -112,19 +116,33 @@ function onCourseEdit() {
 }
 
 function onCancelCourseEdit() {
-    renderTable();
+    renderCourseInfo();
     buttons.innerHTML = `<button id="edit-course-btn" class="edit-btn course-btn" onclick="onCourseEdit()">
                         <i class='bx bxs-edit'></i>
                         </button>
                         `;
 }
 
-function onSaveCourseEdit() {
-    let index = courses.findIndex(c => selectedCourse.id === c.id);
-    courses[index].isOngoing = selectedCourse.isOngoing = document.querySelector("#ongoing-check").checked
-    courses[index].isRegistration = selectedCourse.isRegistration = document.querySelector("#reg-check").checked 
+async function onSaveCourseEdit() {
+    // UI update
+    selectedCourse.isOngoing = document.querySelector("#ongoing-check").checked
+    selectedCourse.isRegistration = document.querySelector("#reg-check").checked 
     localStorage.selectedCourse = JSON.stringify(selectedCourse);
-    localStorage.courses =  JSON.stringify(courses);
+
+    const updatedStatus = {
+        isOngoing: selectedCourse.isOngoing,
+        isRegistration: selectedCourse.isRegistration
+    }
+
+    // Database update
+    await fetch(`/api/course/${selectedCourse.id}`, {
+        method: "PUT",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(updatedStatus)
+    })
+
     onCancelCourseEdit()
     document.querySelector("#updated-course-notif").innerText = `✅ ${selectedCourse.courseName} status has been updated!`;
     showNotification("updated-course-notif");
@@ -332,17 +350,18 @@ function onSaveCourseEdit() {
 
 // // Render Semester Filter
 
-// function renderSemesterDropdown() {
-//     const semesterDropdown = document.querySelector('#semester-filter');
-//     semesterDropdown.innerHTML = convertSemesterOptionHTML();
-// }
+async function renderSemesterDropdown() {
+    const response = await fetch(`${baseUrl}semester`)
+    const semesterDropdown = document.querySelector('#semester-filter');
+    semesterDropdown.innerHTML = convertSemesterOptionHTML(await response.json());
+}
 
-// function convertSemesterOptionHTML() {
-//     return `<option value="All" selected>All Semester</option>
-//             ${JSON.parse(localStorage.semesters).map(s => `<option value="${s}">${s}</option>`).join('\n')}`
-// }
+function convertSemesterOptionHTML(semesters) {
+    return `<option value="All" selected>All Semester</option>
+            ${semesters.map(s => `<option value="${s.semester}">${s.semester}</option>`).join('\n')}`
+}
 
-// renderSemesterDropdown()
+renderSemesterDropdown()
 
 function showNotification(elementId) {
     document.querySelector(`#${elementId}`).classList.add("show");
