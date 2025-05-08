@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { signIn } from 'next-auth/react';
 import { getUserAction } from './actions/server-actions';
-import { getSession } from "next-auth/react"
 
 
 

@@ -4,6 +4,7 @@ import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 const baseUrl = 'app/data/'
 
+
 async function getData(filename) {
     const filePath = path.join(process.cwd(), filename);
     return await fs.readJSON(filePath)

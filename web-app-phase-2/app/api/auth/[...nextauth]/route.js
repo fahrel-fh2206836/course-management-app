@@ -1,12 +1,3 @@
-// export const runtime = "nodejs";
-
-// import { authConfig } from "@/lib/auth";
-// import NextAuth from "next-auth/next";
-
-// const handler = NextAuth(authConfig);
-
-// export {handler as GET, handler as POST}
-
 import NextAuth from "next-auth";
 import GitHubProvider from 'next-auth/providers/github';
 import GoogleProvider from "next-auth/providers/google";
@@ -28,6 +19,7 @@ export const  authOptions = {
   ],
   callbacks : {
     async signIn({ account,profile }) {
+      console.log(profile)
       const user = await getUserByEmailAction(profile.email);
       if (!user) return false;
       const { password, ...safeUser } = user;
