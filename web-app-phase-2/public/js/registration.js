@@ -75,7 +75,6 @@ window.addEventListener("DOMContentLoaded", async () => {
     allCoursePreRequisites = await laodAllCoursePreRequisites();
 
     selectedCourse = JSON.parse(localStorage.selectedCourse);
-    console.log(selectedCourse);
     
     student = JSON.parse(localStorage.getItem("loggedInUser"));
     const courseId = selectedCourse.id;
@@ -95,7 +94,6 @@ window.addEventListener("DOMContentLoaded", async () => {
     displaySections(courseSections);
 
     renderTable();
-    convertSemesterOptionHTML();
     renderSemesterDropdown();
     getCurrentlyRegistered();
     displayRegisteredSections(registeredSections);
@@ -249,8 +247,6 @@ function renderTable() {
     table.innerHTML = convertTableToHTML();
 }
 
-
-
 function renderSemesterDropdown() {
     const semesterDropdown = document.querySelector('#semester-filter');
     semesterDropdown.innerHTML = convertSemesterOptionHTML();
@@ -258,7 +254,7 @@ function renderSemesterDropdown() {
 
 function convertSemesterOptionHTML() {
     return `<option value="All" selected>All Semester</option>
-            ${semesters.map(s => `<option value="${s}">${s}</option>`).join('\n')}`         
+            ${semesters.map(s => `<option value="${s.semester}">${s.semester}</option>`).join('\n')}`         
 }
 
 
