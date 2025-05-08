@@ -25,20 +25,32 @@ export default function Login() {
   if(!hasMounted) return null;
 
   async function googleLogIn() {
-    const result = await signIn("google", { redirect: false });
-    if (result.ok) {
-      const session = await getSession()
-      if (session){
-        const role = session.user.role;
-        if (role === 'Student') router.push("/view-student/dashboard-student.html");
-        else if (role === "Instructor") router.push("/view-instructor/dashboard-instructor.html");
-        else router.push("/view-admin/dashboard-admin.html");
-      }else {
-        console.error("Google Sign-In failed.");
-      }
-    }else{
-      console.error("Session could not be verified")
+    // const result = await signIn("google");
+    // alert("result Url: ",result.url)
+    // if (result.ok) {
+    //   const session = await getSession()
+    //   if (session){
+    //     const role = session.user.role;
+    //     if (role === 'Student') router.push("/view-student/dashboard-student.html");
+    //     else if (role === "Instructor") router.push("/view-instructor/dashboard-instructor.html");
+    //     else router.push("/view-admin/dashboard-admin.html");
+    //   }else {
+    //     console.error("Google Sign-In failed.");
+    //   }
+    // }else{
+    //   console.error("Session could not be verified")
+    // }
+    await signIn("google", {callbackUrl: '/redirect'});
+    const session = await getSession()
+    if (!session){
+      console.error("Session could not be verified");
+      return
     }
+    const role = session.user.role;
+    if (role === 'Student') router.push("/view-student/dashboard-student.html");
+    else if (role === "Instructor") router.push("/view-instructor/dashboard-instructor.html");
+    else router.push("/view-admin/dashboard-admin.html");
+
   }
 
   async function handleLogin(e) {
