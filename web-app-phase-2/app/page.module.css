@@ -107,6 +107,48 @@
     color: orange;
 }
 
+.oauthBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background-color 0.2s, box-shadow 0.2s;
+  }
+  
+  .oauthBtn img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  /* Google */
+  .googleBtn {
+    background-color: #fff;
+    color: #5e3a1f;
+    border: 2px solid #e0e0e0;
+  }
+  
+  .googleBtn:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* GitHub */
+  .githubBtn {
+    background-color: #24292f;
+    color: #fff;
+  }
+  
+  .githubBtn:hover {
+    background-color: #1b1f23;
+  }
+      
 @media (min-width: 480px) {
     .rememberForgot {
         flex-direction: row;

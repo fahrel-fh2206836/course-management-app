@@ -114,9 +114,9 @@ export default function Login() {
               type="button"
               onClick={() => googleLogIn()}
 
-              className={styles.submitButton}
-              style={{ backgroundColor: "#4285F4" }}
+              className={`${styles.oauthBtn} ${styles.googleBtn}`}
             >
+              <img src="/assets/images/google-icon.svg.webp" alt="Google" />
               Sign in with Google
             </button>
 
@@ -124,9 +124,9 @@ export default function Login() {
               type="button"
               onClick={() => githubLogIn()}
 
-              className={styles.submitButton}
-              style={{ backgroundColor: "black" }}
+              className={`${styles.oauthBtn} ${styles.githubBtn}`}
             >
+              <img src="/assets/images/github-icon.png" alt="GitHub" />
               Sign in with Github
             </button>
           </main>
