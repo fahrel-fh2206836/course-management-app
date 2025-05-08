@@ -22,21 +22,19 @@ export const  authOptions = {
     async signIn({ account,profile }) {
       const user = await getUserByEmailAction(profile.email);
       if (!user) return false;
-      account.role = user.role;
-      account.userId = user.userId;
+      const { password, ...safeUser } = user;
+      account.userData = safeUser;
       return true;
     },
     async jwt({ token, account }) {
-      if (account?.role) {
-        token.role = account.role;
-        token.userId = account.userId;
+      if (account?.userData) {
+        token.user = account.userData;
       }
       return token;
     },
     async session({ session, token }) {
       // Carry over the role and userId to session
-      session.user.role = token.role;
-      session.user.userId = token.userId;
+      session.user = token.user
       return session;
     }
   },

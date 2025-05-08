@@ -9,6 +9,8 @@ export default function RedirectPage() {
     const checkSession = async () => {
         const session = await getSession();
         const role = session?.user?.role;
+        localStorage.setItem("loggedInUser", JSON.stringify(session.user));
+        localStorage.currentPage = 'dashboard';
         if (role === 'Student') router.push("/view-student/dashboard-student.html");
         else if (role === "Instructor") router.push("/view-instructor/dashboard-instructor.html");
         else router.push("/view-admin/dashboard-admin.html");
@@ -17,5 +19,5 @@ export default function RedirectPage() {
     checkSession();
   }, []);
 
-  return <p>Redirecting based on your role...</p>;
+  return <p>Redirecting...</p>;
 }
