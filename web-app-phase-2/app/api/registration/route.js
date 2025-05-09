@@ -11,5 +11,13 @@ export async function GET(req) {
 export async function DELETE(req) {
     const { searchParams } = new URL(req.url);
     const sectionId = searchParams.get('sectionId');
+    const studentId = searchParams.get('studentId');
+    await appRepo.deleteRegistrations(sectionId, studentId);
     return Response.json({ message: `Registrations of ${sectionId} deleted` }, { status: 200 });
+}
+
+export async function POST(request) {
+    const reg = await request.json();
+    const newReg = await appRepo.addRegistration(reg);
+    return Response.json(newReg, {status: 201})
 }

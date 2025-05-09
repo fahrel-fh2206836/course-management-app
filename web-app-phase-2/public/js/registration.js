@@ -54,6 +54,10 @@ window.addEventListener("DOMContentLoaded", async () => {
     majorName = (await (await fetch(`${baseUrl}/major/${selectedCourse.majorId}`)).json()).majorName;
     const sectionHeaderH1 = document.querySelector(".section-header").querySelector("h1");
 
+    //Note for Open Registration
+    const note = document.querySelector("#note");
+    note.innerText = `Note: ${semesters[semesters.length-1].semester} Sections are Open for Registration!`
+
     //Header Codee
     sectionHeaderH1.innerText = `${selectedCourse.courseCode} Sections`;
     title.innerHTML = `View Sections for ${selectedCourse.courseName}`;
@@ -63,8 +67,7 @@ window.addEventListener("DOMContentLoaded", async () => {
     renderTable();
     renderSemesterDropdown();
     displayRegisteredSections(registeredSections);
-    // document.querySelector("#curr-ch").innerText = ` Your CH: ${countRegisteredCH(registeredSections)}`;
-    
+    // document.querySelector("#curr-ch").innerText = ` Your CH: ${countRegisteredCH(registeredSections)}`; 
 })
 
 const title = document.querySelector("#title");
@@ -73,40 +76,29 @@ const sectionsDisplay = document.querySelector(".section-list");
 const registeredDisplay = document.querySelector("#display-registered");
 const table = document.querySelector("#course-table");
 
-//Note for Open Registration
-const note = document.querySelector("#note");
-note.innerText = `Note: ${semesters[semesters.length-1]} Sections are Open for Registration!`
+async function displayPreCourses(){
+    if(preCourses.length === 0 ) {
+        preReqCoursesDisplay.innerHTML = `There are no prerequisites for this course`;
+        return;
+    }
+    preReqCoursesDisplay.innerHTML = (await Promise.all(preCourses.map(c => courseHTML(c.prerequisite)))).join('\n');
 
-function displayPreCourses(){
-    preReqCoursesDisplay.innerHTML = preCourses.length === 0 ? `There are no prerequisites for this course` : preCourses.map((c) => courseHTML(c.prerequisite));
 }
 
-function courseHTML(course){
+async function courseHTML(course){
     return `<div class="course-card">
                 <div class="card-flag"><p>${course.courseCode}</p></div>                
                 <div class="card-course-name"><p>${course.courseName}</p></div>
                 <hr>
-                ${courseDone(course.id) === 1 ? "<div class='course-completed'><p>Course has been completed</p><i class='bx bxs-check-circle green'></i></div>" : courseDone(course.id) === 2 ? "<div class='course-completed'><p>Course in progress</p><i class='bx bxs-time-five orange'></i></div>" :  "<div class='course-completed'><p>Course has not been completed</p><i class='bx bxs-x-circle red'></i></div>"}
+                ${await courseDone(course.id) ? "<div class='course-completed'><p>Course has been completed</p><i class='bx bxs-check-circle green'></i></div>" : "<div class='course-completed'><p>Course has not been completed</p><i class='bx bxs-x-circle red'></i></div>"}
             </div>`;
 }
 
 
 
-function courseDone(courseID){
-
-    for(let i = 0; i<allRegistrations.length ; i++){
-        let isRegistered = allRegistrations[i].studentId === student.userId && allRegistrations[i].courseId === courseID;
-        if( isRegistered && allRegistrations[i].grade === ""){
-            return 2;
-        }
-        else if(isRegistered && allRegistrations[i].grade !== "F"){
-            return 1;
-        }
-    }
-    return 3;
+async function courseDone(courseID){
+    return await (await fetch(`${baseUrl}/student/${student.userId}/completed-courses?courseId=${courseID}&check-completed=true`)).json(); 
 }
-
-
 
 // Sections code
 function displaySections(sections){
@@ -195,32 +187,31 @@ const semFilter = document.querySelector("#semester-filter");
 
 semFilter.addEventListener('change', handleFilter);
 
-function handleFilter(e) {
-    let selectedSections = allSections.filter(s => s.courseId===selectedCourse.id);
+async function handleFilter(e) {
     if(semFilter.value !== "All") {
-        selectedSections = selectedSections.filter(s => s.semester === semFilter.value);
+        displaySections(await (await fetch(`${baseUrl}/section?courseId=${selectedCourse.id}&semester=${semFilter.value}`)).json());
+        return;
     }
-    displaySections(selectedSections);
+    displaySections(courseSections);
 }
 
 async function handleRegistration(sectionId){
-    const index = allSections.findIndex(s => s.sectionId === sectionId);
-    const selectedSection = allSections[index];
+    const selectedSection = await (await fetch(`${baseUrl}/section/${sectionId}`)).json();
 
     // Check if he registered over 18
-    if(countNewSecAndRegisteredCh(selectedSection, registeredSections) > 18){
+    if(countNewSecAndRegisteredCh(selectedSection) > 18){
         showNotification("max-ch-notif");
         return;
     }
 
     // Checks if course is in their program.
-    if(!majors.find(m => m.majorId === student.majorId).allCourses.includes(selectedSection.courseId)) {
+    if(student.Student.majorId != selectedSection.course.majorId) {
         showNotification("not-program-notif");
         return;
     }
 
     // Check if he has already completed the course before
-    if(courseDone(selectedSection.courseId) === 1) {
+    if(courseDone(selectedSection.courseId) === true) {
         showNotification("passed-notif");
         return;
     }
@@ -239,14 +230,14 @@ async function handleRegistration(sectionId){
 
     //Check if all Prerequisite are fullfilled
     let preReqCheck = [];
-    preCourses.forEach(pc => preReqCheck.push(courseDone(pc.id)));
-    if (!(preReqCheck.length === 0) && !(preReqCheck.every(val => val === 1))) {
+    preCourses.forEach(async pc => preReqCheck.push(await courseDone(pc.id)));
+    if (!(preReqCheck.length === 0) && !(preReqCheck.every(val => val === true))) {
         showNotification("prerequisite-notif")
         return;
     }
 
     // Check for time conflict
-    if (hasTimeConflict(selectedSection, registeredSections)) {
+    if (hasTimeConflict(selectedSection)) {
         showNotification("conflict-notif");
         return;
     }
@@ -260,43 +251,57 @@ async function handleRegistration(sectionId){
         grade: ""
     }
 
-    allRegistrations.push(newRegistration);
-    localStorage.registrations = JSON.stringify(allRegistrations);
-    allSections[index].currentSeats+=1;
-    localStorage.sections = JSON.stringify(allSections);
+    // Add Course
+    await fetch("/api/registration", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newRegistration)
+    })
 
-    getCurrentlyRegistered();
+    selectedSection.currentSeats+=1;
+    // Update Section
+    await fetch(`${baseUrl}/section/${sectionId}`, {
+        method: "PUT",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(selectedSection)
+    })
+
+    // Re-render
+    registeredSections = await getCurrentlyRegistered();
+    courseSections = await loadCourseSections()
     displayRegisteredSections(registeredSections);
-    getCourseSections();
     displaySections(courseSections);
-
     showNotification('registered-notif');
 }
 
-function countNewSecAndRegisteredCh(newSection, regSections) {
-    let totalCh = countRegisteredCH(regSections);
-    totalCh += allCourses.find(c => c.id === newSection.courseId).creditHour;
+function countNewSecAndRegisteredCh(newSection) {
+    let totalCh = countRegisteredCH();
+    totalCh += newSection.course.creditHour;
     return totalCh;
 }
 
-function countRegisteredCH(regSections) {
+function countRegisteredCH() {
     let totalCh = 0;
-    let regCoursesId = regSections.map(r => r.courseId);
-    let regCoursesCh = allCourses.filter(c => regCoursesId.includes(c.id)).map(c => c.creditHour);
+    let regCoursesCh = registeredSections.map(r => r.section.course.creditHour);
     regCoursesCh.forEach(rch => totalCh+=rch);
     return totalCh;
 }
 
-function hasTimeConflict(newSection, registeredSections) {
-    const newDays = newSection.schedule.days.split("-");
-    const [newStart, newEnd] = newSection.schedule.time.split("-").map(toMinutes);
+function hasTimeConflict(newSection) {
+    const newDays = newSection.days.split("-");
+    const [newStart, newEnd] = newSection.time.split("-").map(toMinutes);
   
     for (let r of registeredSections) {
-        if (!r.schedule || !r.schedule.days || !r.schedule.time) {
+        const currSection = r.section;
+        if (!currSection.days || !currSection.time) {
             continue;
         }
-        let regDays = r.schedule.days.split("-");
-        let [regStart, regEnd] = r.schedule.time.split("-").map(toMinutes);
+        let regDays = currSection.days.split("-");
+        let [regStart, regEnd] = currSection.time.split("-").map(toMinutes);
 
         let overlappingDays = newDays.some(day => regDays.includes(day));
 
@@ -347,7 +352,8 @@ function registeredHTML(section){
                 </div>
                 <div class="card-course-name"><p>${registerdCourse.courseName}</p></div>
                 <div class="card-course-instructor"><p>Instructor: ${i.firstName} ${i.lastName}</p></div>
-                <div class="card-course-section-location"><p>Section ID: ${section.sectionId}</p><p>Class Location: ${section.location !== '' ? section.location : 'None'}</p></div>
+                <div class="card-course-section-location"><p>Section ID: ${section.sectionId}</p></div>
+                <div class="card-course-section-location"><p>Class Location: ${section.location !== '' ? section.location : 'None'}</p></div>
                 <hr>
                 <div class="card-course-sem-schedule">
                     <p><i class='bx bx-calendar'></i>${section.semester}</p>
@@ -358,22 +364,28 @@ function registeredHTML(section){
 }
 
 
-function removeRegistered(sectionId){
+async function removeRegistered(sectionId){
+    const section = await (await fetch(`${baseUrl}/section/${sectionId}`)).json();
+    section.currentSeats -= 1;
 
-    let registeredSectionIndex = registeredSections.findIndex((section) => section.sectionId === sectionId);
-    registeredSections.splice(registeredSectionIndex,1);
-    
+    // Update Section
+    await fetch(`${baseUrl}/section/${sectionId}`, {
+        method: "PUT",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(section)
+    })
 
-    let sectionIndex = allSections.findIndex((section) => section.sectionId === sectionId);
-    allSections[sectionIndex].currentSeats -= 1;
-    localStorage.sections = JSON.stringify(allSections);
+    // Delete Registration
+    await fetch(`/api/registration?sectionId=${sectionId}&studentId=${student.userId}`, {
+            method: 'DELETE'
+    });
 
-    let registeredIndex = allRegistrations.findIndex((r) => r.studentId === student.userId && r.sectionId === sectionId);
-    allRegistrations.splice(registeredIndex,1);
-    localStorage.registrations = JSON.stringify(allRegistrations);
-
+    // Re-render
+    registeredSections = await getCurrentlyRegistered();
+    courseSections = await loadCourseSections()
     displayRegisteredSections(registeredSections);
-    getCourseSections();
     displaySections(courseSections);
     showNotification("unregistered-notif");
 } 

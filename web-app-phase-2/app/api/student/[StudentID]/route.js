@@ -1,8 +1,6 @@
 import { NextResponse } from 'next/server'
 import AppRepo from '@/app/repo/app-repo'
 
-
-
 export async function GET(request, { params }) {
   const { StudentID } = params
 

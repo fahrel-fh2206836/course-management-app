@@ -341,11 +341,55 @@ class AppRepo {
         });
       }
 
-      async deleteRegsBySecId(sectionId) {
-        return await prisma.registration.deleteMany({
-          where: { sectionId }
-      });
-}
+      async deleteRegistrations(sectionId, studentId) {
+          return await prisma.registration.deleteMany({
+            where: { 
+              ...(sectionId && { sectionId }),
+              ...(studentId && { studentId })  
+            }
+        });
+      }
+
+      async getStudentCompletedCourses(studentId, courseId) {
+        const registration = await prisma.registration.findMany({
+          where: {
+            studentId,
+            ...(courseId && { courseId: courseId }),
+            grade: {
+              notIn: ['F', ''],
+            },
+          },
+        });
+
+        if(courseId && registration.length !== 0) {
+          return registration[0];
+        }
+
+        if(courseId && registration.length === 0) {
+          return null;
+        }
+
+        return registration;
+      }
+
+      async hasStudentCompletedCourse(studentId, courseId) {
+        const registration = await prisma.registration.findFirst({
+          where: {
+            studentId,
+            courseId,
+            grade: {
+              notIn: ['F', ''],
+            },
+          },
+        });
+
+        return registration !== null;
+      }
+
+      async addRegistration(reg){
+        return await prisma.registration.create({data: reg})
+      }
+
 
     // ===================== Semesters Method =====================
 
