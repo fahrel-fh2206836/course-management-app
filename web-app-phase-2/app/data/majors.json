@@ -3,24 +3,24 @@
     "majorId": "0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3",
     "majorCode": "CMPS",
     "majorName": "Computer Science",
-    "totalCreditHour": 120
+    "totalCreditHour": 45
   },
   {
     "majorId": "ae1662c5-9ad8-41a6-901c-eeed670b9a0b",
     "majorCode": "CMPE",
     "majorName": "Computer Engineering",
-    "totalCreditHour": 128
+    "totalCreditHour": 46
   },
   {
     "majorId": "20d6f7a0-73cd-4173-88c4-2927d145dfe6",
     "majorCode": "ELEC",
     "majorName": "Electrical Engineering",
-    "totalCreditHour": 131
+    "totalCreditHour": 46
   },
   {
     "majorId": "bc95010b-8cc1-450e-a690-0accff9f1cf4",
     "majorCode": "MATH",
     "majorName": "Mathematics",
-    "totalCreditHour": 120
+    "totalCreditHour": 44
   }
 ]
