@@ -10,3 +10,9 @@ export async function GET(req) {
     }
     return Response.json(await appRepo.getRegistrations(), { status: 200 });
 }
+
+export async function DELETE(req) {
+    const { searchParams } = new URL(req.url);
+    const sectionId = searchParams.get('sectionId');
+    return Response.json({ message: `Registrations of ${sectionId} deleted` }, { status: 200 });
+}

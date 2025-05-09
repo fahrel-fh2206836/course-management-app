@@ -4,10 +4,13 @@ export async function GET(req) {
     const { searchParams } = new URL(req.url);
     const semester = searchParams.get('semester');
     const instructorId = searchParams.get('instructorId');
+    const courseId = searchParams.get('courseId');
     const notSemParam = searchParams.get('notSem');
+    const approvalStatus = searchParams.get('approval');
+    const sectionStatus = searchParams.get('section-status');
     const notSem = notSemParam === 'true';
 
-    const sections = await appRepo.getSections(instructorId, semester, notSem);
+    const sections = await appRepo.getSections(instructorId, semester, notSem, courseId, approvalStatus, sectionStatus);
     return Response.json(sections, { status: 200 });
     
 }

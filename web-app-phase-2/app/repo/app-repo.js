@@ -64,7 +64,7 @@ class AppRepo {
 
     // ===================== Sections Methods ===================== 
     
-      async getSections(instructorId, sem, notSem = false) {
+      async getSections(instructorId, sem, notSem = false, courseId, approvalStatus, sectionStatus) {
         const whereClause = {};
       
         if (instructorId) {
@@ -73,6 +73,18 @@ class AppRepo {
       
         if (sem) {
           whereClause.semester = notSem ? { not: sem } : sem;
+        }
+
+        if(courseId) {
+          whereClause.courseId = courseId;
+        }
+
+        if(approvalStatus) {
+          whereClause.approvalStatus = approvalStatus;
+        }
+
+        if(sectionStatus) {
+          whereClause.sectionStatus = sectionStatus;
         }
       
         return await prisma.section.findMany({
@@ -125,6 +137,18 @@ class AppRepo {
           data: section
         })
       }
+
+      async updateSection(sectionId, updatedSection) {
+        const {approvalStatus, sectionStatus, currentSeats} = updatedSection;
+        return await prisma.section.update({
+        where: { sectionId },
+        data: {
+          approvalStatus,
+          sectionStatus,
+          currentSeats
+        }
+      })
+    }
 
     // ===================== Majors Method =====================
 
@@ -304,6 +328,12 @@ class AppRepo {
             }
           }); 
       }
+
+      async deleteRegsBySecId(sectionId) {
+        return await prisma.registration.deleteMany({
+          where: { sectionId }
+      });
+}
 
     // ===================== Semesters Method =====================
 
