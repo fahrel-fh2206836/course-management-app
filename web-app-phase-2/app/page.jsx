@@ -6,9 +6,6 @@ import { useRouter } from 'next/navigation';
 import { signIn } from 'next-auth/react';
 import { getUserAction } from './actions/server-actions';
 
-
-
-
 export default function Login() {
   const [password, setPassword] = useState('');
   const usernameRef = useRef('');

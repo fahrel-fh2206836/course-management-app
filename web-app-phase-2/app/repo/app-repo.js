@@ -65,30 +65,30 @@ class AppRepo {
     // ===================== Sections Methods ===================== 
     
       async getSections(instructorId, sem, notSem = false, courseId, approvalStatus, sectionStatus) {
-        const whereClause = {};
+        const whereOptions = {};
       
         if (instructorId) {
-          whereClause.instructorId = instructorId;
+          whereOptions.instructorId = instructorId;
         }
       
         if (sem) {
-          whereClause.semester = notSem ? { not: sem } : sem;
+          whereOptions.semester = notSem ? { not: sem } : sem;
         }
 
         if(courseId) {
-          whereClause.courseId = courseId;
+          whereOptions.courseId = courseId;
         }
 
         if(approvalStatus) {
-          whereClause.approvalStatus = approvalStatus;
+          whereOptions.approvalStatus = approvalStatus;
         }
 
         if(sectionStatus) {
-          whereClause.sectionStatus = sectionStatus;
+          whereOptions.sectionStatus = sectionStatus;
         }
       
         return await prisma.section.findMany({
-          where: whereClause,
+          where: whereOptions,
           include: {
             course: true,
             instructor: {
@@ -311,31 +311,34 @@ class AppRepo {
 
     // ===================== Registrations Method =====================
 
-      async getRegistrations() {
-        return await prisma.registration.findMany();
-      }
+      async getRegistrations(studentId, semester, sectionStatus) {
+        const whereOptions = {
+          ...(studentId && { studentId }),
+          ...(semester || sectionStatus
+            ? {
+                section: {
+                  ...(semester && { semester }),
+                  ...(sectionStatus && { sectionStatus }),
+                },
+              }
+            : {}),
+        };
 
-      async getStudentRegSecBySem(studentId, sem) {
         return await prisma.registration.findMany({
-            where: {
-              studentId: studentId,
-              section: {
-                semester: sem,
-              }
+          where: whereOptions,
+          include: {
+            section: {
+              include: {
+                course: true,
+                instructor: {
+                  include: {
+                    user: true,
+                  },
+                },
+              },
             },
-            include: {
-              section: {
-                include: {
-                  course: true,
-                  instructor: {
-                    include: {
-                      user: true
-                    }
-                  }
-                }
-              }
-            }
-          }); 
+          },
+        });
       }
 
       async deleteRegsBySecId(sectionId) {
