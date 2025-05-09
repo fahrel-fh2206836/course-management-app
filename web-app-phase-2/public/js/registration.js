@@ -32,7 +32,7 @@ async function loadAllSemesters() {
 }
 
 async function loadCourseSections() {
-    const response = await fetch(`${baseUrl}/section?courseId=${selectedCourse.id}`);
+    const response = await fetch(`${baseUrl}/section?courseId=${selectedCourse.id}&approval=CANCELLED&notApproval=true`);
     const sections = await response.json();
     return sections;
 }
@@ -67,7 +67,7 @@ window.addEventListener("DOMContentLoaded", async () => {
     renderTable();
     renderSemesterDropdown();
     displayRegisteredSections(registeredSections);
-    // document.querySelector("#curr-ch").innerText = ` Your CH: ${countRegisteredCH(registeredSections)}`; 
+    document.querySelector("#curr-ch").innerText = ` Your CH: ${countRegisteredCH(registeredSections)}`; 
 })
 
 const title = document.querySelector("#title");
@@ -189,7 +189,7 @@ semFilter.addEventListener('change', handleFilter);
 
 async function handleFilter(e) {
     if(semFilter.value !== "All") {
-        displaySections(await (await fetch(`${baseUrl}/section?courseId=${selectedCourse.id}&semester=${semFilter.value}`)).json());
+        displaySections(await (await fetch(`${baseUrl}/section?courseId=${selectedCourse.id}&semester=${semFilter.value}&approval=CANCELLED&notApproval=true`)).json());
         return;
     }
     displaySections(courseSections);
@@ -216,15 +216,15 @@ async function handleRegistration(sectionId){
         return;
     }
 
-    // Check if seats are full
-    if (selectedSection.currentSeats === selectedSection.totalSeats) {
-        showNotification("full-notif");
-        return;
-    }
-
     // Checks if he has already registered in the same section or another section of the same course.
     if(registeredSections.find(s => s.courseId === selectedSection.courseId)) {
         showNotification("same-course-notif");
+        return;
+    }
+
+    // Check if seats are full
+    if (selectedSection.currentSeats === selectedSection.totalSeats) {
+        showNotification("full-notif");
         return;
     }
 

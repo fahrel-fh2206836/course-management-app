@@ -8,9 +8,11 @@ export async function GET(req) {
     const notSemParam = searchParams.get('notSem');
     const approvalStatus = searchParams.get('approval');
     const sectionStatus = searchParams.get('section-status');
+    const notApprovalParam = searchParams.get('notApproval');
     const notSem = notSemParam === 'true';
+    const notApproval = notApprovalParam === 'true';
 
-    const sections = await appRepo.getSections(instructorId, semester, notSem, courseId, approvalStatus, sectionStatus);
+    const sections = await appRepo.getSections(instructorId, semester, notSem, courseId, approvalStatus, sectionStatus, notApproval);
     return Response.json(sections, { status: 200 });
     
 }

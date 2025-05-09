@@ -64,7 +64,7 @@ class AppRepo {
 
     // ===================== Sections Methods ===================== 
     
-      async getSections(instructorId, sem, notSem = false, courseId, approvalStatus, sectionStatus) {
+      async getSections(instructorId, sem, notSem = false, courseId, approvalStatus, sectionStatus, notApproval) {
         const whereOptions = {};
       
         if (instructorId) {
@@ -80,12 +80,14 @@ class AppRepo {
         }
 
         if(approvalStatus) {
-          whereOptions.approvalStatus = approvalStatus;
+          whereOptions.approvalStatus = notApproval ? { not: approvalStatus } : approvalStatus;
         }
 
         if(sectionStatus) {
           whereOptions.sectionStatus = sectionStatus;
         }
+
+        
       
         return await prisma.section.findMany({
           where: whereOptions,
