@@ -101,4 +101,7 @@ CREATE TABLE "Semester" (
 CREATE UNIQUE INDEX "User_username_key" ON "User"("username");
 
 -- CreateIndex
+CREATE UNIQUE INDEX "Major_majorCode_key" ON "Major"("majorCode");
+
+-- CreateIndex
 CREATE UNIQUE INDEX "Registration_sectionId_studentId_key" ON "Registration"("sectionId", "studentId");
