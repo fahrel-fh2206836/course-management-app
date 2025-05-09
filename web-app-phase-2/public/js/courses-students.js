@@ -51,8 +51,6 @@ function showList(e){
 
 window.addEventListener("click", (e) => makeChange(e))
 
-
-
 function makeChange(e){
     if(e.target.id !== "dropdown-btn" &&
         e.target.id !== "dropdown-span" &&
@@ -77,11 +75,8 @@ function dropDownMajor(e){
 
 // Search Bar
 function displayCourses(filteredCourses){
-    filteredCourses.sort((a, b) => a.courseName.localeCompare(b.courseName))
     displayCourse.innerHTML = filteredCourses.map((course) => courseHTML(course)).join("\n");
 }
-
-displayCourses(courses);
 
 function courseHTML(course){
     return `<div class="course-card hover-underline" onclick="goToRegistration('${course.id}')">
@@ -117,7 +112,7 @@ async function searchCourse(e) {
     let url = `${baseUrl}/course?name=${text}`;
 
     if (majorCode !== "All") {
-        const selectedMajor = majors.find(m => m.majorCode === majorCode);
+        const selectedMajor = await (await fetch(`${baseUrl}major?code=${majorCode}`)).json();
         if (selectedMajor) {
             url += `&majorId=${selectedMajor.majorId}`;
         }
@@ -131,7 +126,7 @@ async function filterCoursesByMajor(majorCode) {
     if (majorCode === "All") {
         courses = await loadCourses();
     } else {
-        const selectedMajor = majors.find(m => m.majorCode === majorCode);
+        const selectedMajor = await (await fetch(`${baseUrl}major?code=${majorCode}`)).json();
         
         const response = await fetch(`${baseUrl}/course?majorId=${selectedMajor.majorId}`);
         courses = await response.json();
@@ -140,8 +135,8 @@ async function filterCoursesByMajor(majorCode) {
     displayCourses(courses);
 }
 
-function goToRegistration(id){
-    const c = courses.find(c => c.id === id);
+async function goToRegistration(id){
+    const c =  await (await fetch(`${baseUrl}course/${id}`)).json();
     localStorage.selectedCourse = JSON.stringify(c);
     window.location.href = '../view-student/registration.html';
 }
@@ -158,6 +153,4 @@ function convertMajorOptionHTML() {
     return `<li class="dropdown-list-item">All</li>
             ${majors.map(m => `<li class="dropdown-list-item">${m.majorCode}</li>`).join('\n')}`
 }
-
-renderMajorDropdown();
 

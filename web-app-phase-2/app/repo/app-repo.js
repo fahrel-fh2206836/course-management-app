@@ -173,11 +173,20 @@ class AppRepo {
         return await prisma.major.update({where: {majorId: majorId}, data: {...updatedMajor}});
       }
 
+      async getMajorByCode(majorCode) {     
+        const major = await prisma.major.findUnique({where: {majorCode}});
+  
+        if(!major) {
+          return { error: "Major does not exist" }
+        }
+        return major;
+      }
+
 
     // ===================== Course Methods =====================
 
       async getCourses() {
-        return await prisma.course.findMany();
+        return await prisma.course.findMany({orderBy: {courseName: 'asc'}});
       }
 
       async getCourseByMajorStatus(majorId, status) {
