@@ -40,7 +40,7 @@
   },
   {
     "sectionId": "7b4e60f4-efc7-4c40-be1f-f886c1223d2d",
-    "currentSeats": 1,
+    "currentSeats": 0,
     "totalSeats": 23,
     "semester": "Spring 2025",
     "days": "TUE-THU",
@@ -53,7 +53,7 @@
   },
   {
     "sectionId": "eb41e80c-5ffb-45c0-9c34-9719f2f218d2",
-    "currentSeats": 13,
+    "currentSeats": 12,
     "totalSeats": 29,
     "semester": "Spring 2024",
     "days": "TUE-THU",
@@ -118,7 +118,7 @@
   },
   {
     "sectionId": "05d3ac74-a815-4ab0-b997-305d0b46981e",
-    "currentSeats": 2,
+    "currentSeats": 1,
     "totalSeats": 23,
     "semester": "Spring 2024",
     "days": "TUE-THU",
@@ -144,7 +144,7 @@
   },
   {
     "sectionId": "d0d7ba6b-2e93-4b8e-b0be-76ec79b382cd",
-    "currentSeats": 1,
+    "currentSeats": 0,
     "totalSeats": 23,
     "semester": "Spring 2025",
     "days": "SUN-TUE-THU",
@@ -157,7 +157,7 @@
   },
   {
     "sectionId": "867fccb1-cabd-4aa8-955d-5d290f59470d",
-    "currentSeats": 32,
+    "currentSeats": 11,
     "totalSeats": 32,
     "semester": "Spring 2024",
     "days": "MON-WED",
@@ -183,7 +183,7 @@
   },
   {
     "sectionId": "ae7616ad-b696-4a54-8741-9b029e13a78c",
-    "currentSeats": 33,
+    "currentSeats": 25,
     "totalSeats": 33,
     "semester": "Spring 2025",
     "days": "MON-THU",
@@ -196,7 +196,7 @@
   },
   {
     "sectionId": "50ec03b1-4798-409e-8c98-4b12b49f90fa",
-    "currentSeats": 33,
+    "currentSeats": 20,
     "totalSeats": 33,
     "semester": "Fall 2025",
     "days": "SUN-TUE-THU",
@@ -222,7 +222,7 @@
   },
   {
     "sectionId": "f852aec9-27b7-4e86-bb24-0198c6f9d9c8",
-    "currentSeats": 13,
+    "currentSeats": 2,
     "totalSeats": 35,
     "semester": "Spring 2025",
     "days": "SUN-TUE-THU",
@@ -261,7 +261,7 @@
   },
   {
     "sectionId": "90580c29-c85d-4aa4-997e-0b46cfb80e74",
-    "currentSeats": 37,
+    "currentSeats": 28,
     "totalSeats": 37,
     "semester": "Spring 2025",
     "days": "MON-THU",
@@ -352,7 +352,7 @@
   },
   {
     "sectionId": "f25e83b9-1d38-48ab-8382-5adca18c4233",
-    "currentSeats": 4,
+    "currentSeats": 0,
     "totalSeats": 27,
     "semester": "Spring 2025",
     "days": "TUE-THU",
@@ -365,7 +365,7 @@
   },
   {
     "sectionId": "1d630330-5828-498a-ac3a-a46bc7e8c7bd",
-    "currentSeats": 15,
+    "currentSeats": 7,
     "totalSeats": 21,
     "semester": "Spring 2024",
     "days": "SUN-WED",
@@ -391,7 +391,7 @@
   },
   {
     "sectionId": "65fe02f6-248c-4055-a344-f8490538a2c9",
-    "currentSeats": 8,
+    "currentSeats": 7,
     "totalSeats": 28,
     "semester": "Spring 2024",
     "days": "MON-THU",
@@ -443,7 +443,7 @@
   },
   {
     "sectionId": "a690a787-af3e-45e3-a51d-778adab2183d",
-    "currentSeats": 8,
+    "currentSeats": 3,
     "totalSeats": 35,
     "semester": "Spring 2025",
     "days": "MON-WED",
@@ -456,7 +456,7 @@
   },
   {
     "sectionId": "7a548464-5a7b-42bb-96ff-f2ec91d8cdda",
-    "currentSeats": 3,
+    "currentSeats": 1,
     "totalSeats": 35,
     "semester": "Spring 2024",
     "days": "SUN-WED",
@@ -482,7 +482,7 @@
   },
   {
     "sectionId": "93ef9bd4-69ef-474f-904c-b16066d1ae87",
-    "currentSeats": 3,
+    "currentSeats": 2,
     "totalSeats": 34,
     "semester": "Spring 2024",
     "days": "MON-WED",
@@ -495,7 +495,7 @@
   },
   {
     "sectionId": "1fcc49fb-6e0b-499e-b464-adb5dd6a198b",
-    "currentSeats": 7,
+    "currentSeats": 3,
     "totalSeats": 24,
     "semester": "Spring 2025",
     "days": "SUN-WED",
@@ -547,7 +547,7 @@
   },
   {
     "sectionId": "8069b429-d205-4bc6-aa39-819bc439ed4f",
-    "currentSeats": 20,
+    "currentSeats": 3,
     "totalSeats": 20,
     "semester": "Fall 2025",
     "days": "MON-WED",
@@ -560,7 +560,7 @@
   },
   {
     "sectionId": "04b9efb6-89d9-4e28-9efd-b29373a1d254",
-    "currentSeats": 5,
+    "currentSeats": 4,
     "totalSeats": 24,
     "semester": "Spring 2025",
     "days": "TUE-THU",
@@ -612,7 +612,7 @@
   },
   {
     "sectionId": "a01951f3-eb40-4f73-8a22-de89f5d9b169",
-    "currentSeats": 25,
+    "currentSeats": 5,
     "totalSeats": 28,
     "semester": "Spring 2025",
     "days": "TUE-THU",
@@ -638,7 +638,7 @@
   },
   {
     "sectionId": "984ed076-ba35-44a2-88bf-a900969267ef",
-    "currentSeats": 29,
+    "currentSeats": 21,
     "totalSeats": 29,
     "semester": "Fall 2025",
     "days": "SUN-WED",
@@ -651,7 +651,7 @@
   },
   {
     "sectionId": "5dd73e2c-2b0c-454a-afb2-7ed9c208dbe9",
-    "currentSeats": 34,
+    "currentSeats": 9,
     "totalSeats": 34,
     "semester": "Spring 2024",
     "days": "MON-THU",
@@ -664,7 +664,7 @@
   },
   {
     "sectionId": "8e2c7105-cfbd-4035-91e4-482da45c5b53",
-    "currentSeats": 39,
+    "currentSeats": 29,
     "totalSeats": 39,
     "semester": "Spring 2024",
     "days": "SUN-WED",
@@ -703,7 +703,7 @@
   },
   {
     "sectionId": "03050b9f-c713-401c-8380-23d6c2246185",
-    "currentSeats": 38,
+    "currentSeats": 22,
     "totalSeats": 38,
     "semester": "Spring 2025",
     "days": "TUE-THU",
@@ -716,7 +716,7 @@
   },
   {
     "sectionId": "1fd93c23-31e0-4dca-bff1-89b23f37a42c",
-    "currentSeats": 33,
+    "currentSeats": 14,
     "totalSeats": 33,
     "semester": "Fall 2025",
     "days": "MON-WED",
@@ -742,7 +742,7 @@
   },
   {
     "sectionId": "75d77805-baa8-4393-8808-0856651d70a1",
-    "currentSeats": 25,
+    "currentSeats": 16,
     "totalSeats": 25,
     "semester": "Spring 2024",
     "days": "MON-THU",
@@ -768,7 +768,7 @@
   },
   {
     "sectionId": "e1a3b005-aff3-4942-b3bc-5c0e4ab3623a",
-    "currentSeats": 34,
+    "currentSeats": 19,
     "totalSeats": 34,
     "semester": "Spring 2025",
     "days": "SUN-WED",
@@ -859,7 +859,7 @@
   },
   {
     "sectionId": "0cff763b-873b-42b1-ae2d-f9edd658bf72",
-    "currentSeats": 27,
+    "currentSeats": 12,
     "totalSeats": 27,
     "semester": "Spring 2024",
     "days": "SUN-TUE-THU",
@@ -937,7 +937,7 @@
   },
   {
     "sectionId": "3dbe2330-a6ee-4204-a123-1125c66e0d8b",
-    "currentSeats": 40,
+    "currentSeats": 18,
     "totalSeats": 40,
     "semester": "Fall 2025",
     "days": "MON-THU",
@@ -1041,7 +1041,7 @@
   },
   {
     "sectionId": "118d80e9-1e01-48b8-8960-401933f07ccf",
-    "currentSeats": 26,
+    "currentSeats": 7,
     "totalSeats": 26,
     "semester": "Spring 2025",
     "days": "MON-THU",
@@ -1054,7 +1054,7 @@
   },
   {
     "sectionId": "33bf4198-002f-4942-b05f-69aa59d93ec7",
-    "currentSeats": 36,
+    "currentSeats": 27,
     "totalSeats": 36,
     "semester": "Spring 2024",
     "days": "MON-THU",
@@ -1236,7 +1236,7 @@
   },
   {
     "sectionId": "c980b960-2158-42fd-a7cd-20cdb2c4c9b9",
-    "currentSeats": 37,
+    "currentSeats": 29,
     "totalSeats": 37,
     "semester": "Spring 2024",
     "days": "SUN-WED",
@@ -1249,7 +1249,7 @@
   },
   {
     "sectionId": "29fef825-63f1-400d-b273-33caa43e50c7",
-    "currentSeats": 21,
+    "currentSeats": 2,
     "totalSeats": 21,
     "semester": "Spring 2025",
     "days": "MON-THU",
@@ -1275,7 +1275,7 @@
   },
   {
     "sectionId": "7705761f-b249-4d7d-b6fe-1751ba76d752",
-    "currentSeats": 39,
+    "currentSeats": 34,
     "totalSeats": 39,
     "semester": "Fall 2025",
     "days": "SUN-TUE-THU",
@@ -1405,7 +1405,7 @@
   },
   {
     "sectionId": "31899132-9291-4ffe-8894-e6204ac4df7c",
-    "currentSeats": 15,
+    "currentSeats": 14,
     "totalSeats": 25,
     "semester": "Spring 2024",
     "days": "TUE-THU",
@@ -1418,7 +1418,7 @@
   },
   {
     "sectionId": "e843be06-b1ff-4a84-bb08-8bfadbac191f",
-    "currentSeats": 8,
+    "currentSeats": 2,
     "totalSeats": 36,
     "semester": "Spring 2025",
     "days": "TUE-THU",
@@ -1457,7 +1457,7 @@
   },
   {
     "sectionId": "fa40e9da-9639-4958-ba08-cf17cc3dfa80",
-    "currentSeats": 23,
+    "currentSeats": 9,
     "totalSeats": 23,
     "semester": "Spring 2024",
     "days": "SUN-TUE-THU",
@@ -1470,7 +1470,7 @@
   },
   {
     "sectionId": "c07ffc19-8905-4628-b03b-50abded9ed9e",
-    "currentSeats": 29,
+    "currentSeats": 18,
     "totalSeats": 29,
     "semester": "Fall 2025",
     "days": "MON-THU",
@@ -1483,7 +1483,7 @@
   },
   {
     "sectionId": "2fa636bf-9356-420d-b01b-60b2f20c0bff",
-    "currentSeats": 24,
+    "currentSeats": 12,
     "totalSeats": 24,
     "semester": "Spring 2025",
     "days": "MON-THU",
@@ -1496,7 +1496,7 @@
   },
   {
     "sectionId": "122c4986-8e2b-4271-9270-9269eeab6cde",
-    "currentSeats": 20,
+    "currentSeats": 10,
     "totalSeats": 20,
     "semester": "Fall 2025",
     "days": "SUN-TUE-THU",
@@ -1522,7 +1522,7 @@
   },
   {
     "sectionId": "3e01447a-e7df-4f62-aaab-968be044c6ef",
-    "currentSeats": 28,
+    "currentSeats": 13,
     "totalSeats": 28,
     "semester": "Spring 2025",
     "days": "SUN-TUE-THU",
