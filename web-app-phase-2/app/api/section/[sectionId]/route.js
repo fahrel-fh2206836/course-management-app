@@ -2,7 +2,7 @@ import appRepo from "@/app/repo/app-repo";
 
 export async function GET(req, { params }) {
   const { searchParams } = new URL(req.url);
-  const search = searchParams.get('search')?.toLowerCase() || '';
+  const search = searchParams.get('search');
 
   if (search) {
     const results = await appRepo.searchRegistrations(params.sectionId, search);

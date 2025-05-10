@@ -61,6 +61,18 @@ class AppRepo {
       });
     }
 
+    async updateStudent(studentId, updatedStudent) {
+      const { gpa, finishedCreditHour } = updatedStudent;
+      return await prisma.student.update({
+        where: {
+          userId: studentId
+        },
+        data: {
+          gpa,
+          finishedCreditHour
+        }
+      })
+    }
 
     // ===================== Sections Methods ===================== 
     
@@ -104,11 +116,17 @@ class AppRepo {
 
       async getSectionById(sectionId) {
         return await prisma.section.findUnique({
-          where: {
-            sectionId: sectionId
-          }, include: {
+          where: { sectionId },
+          include: {
             course: true,
             registrations: {
+              orderBy: {
+                student: {
+                  user: {
+                    firstName: 'asc'
+                  }
+                }
+              },
               include: {
                 student: {
                   include: {
@@ -120,7 +138,6 @@ class AppRepo {
           }
         });
       }
-
       
       async getInstructorTotalStudentSem(instructorId, sem) {
         let result = await prisma.section.aggregate({
@@ -402,19 +419,26 @@ class AppRepo {
       }
 
       async searchRegistrations(sectionId, search) {
-        return await prisma.registration.findMany({
+          const names = search.trim().split(" ");
+
+          return await prisma.registration.findMany({
           where: {
             sectionId,
             student: {
               user: {
-                OR: [
-                  {
-                    firstName: { contains: search }
-                  },
-                  {
-                    lastName: { contains: search }
-                  }
-                ]
+                AND: names.map(n => ({
+                  OR: [
+                    { firstName: { contains: n } },
+                    { lastName: { contains: n } }
+                  ]
+                }))
+              }
+            }
+          },
+          orderBy: {
+            student: {
+              user: {
+                firstName: 'asc'
               }
             }
           },
@@ -424,6 +448,39 @@ class AppRepo {
                 user: true
               }
             }
+          }
+        });
+      }
+
+      async getRegistration(studentId, sectionId) {
+        const registration = await prisma.registration.findUnique({
+          where: {
+            sectionId_studentId: {
+              sectionId,
+              studentId
+            }
+          },
+          include: {
+            student: {
+              include: {
+                user: true
+              }
+            }
+          }
+        });
+
+        if (!registration) {
+          return { error: 'Registration Not Found' };
+        }
+        return registration;
+      }
+
+      async updateRegistration(regId, updatedReg) {
+          const { grade } = updatedReg;
+          return await prisma.registration.update({
+          where: { regId },
+          data: {
+            grade
           }
         });
       }

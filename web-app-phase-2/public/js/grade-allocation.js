@@ -32,7 +32,7 @@ function checkForNotOngoingCourse(){
 renderStudents("");
 
 searchInput.addEventListener("input", () => {
-  const query = searchInput.value.trim().toLowerCase();
+  const query = searchInput.value.toLowerCase();
   renderStudents(query);
 });
 
@@ -96,34 +96,46 @@ function cancelFunction(){
   renderStudents("");
 }
 
-function saveFunction() {
+async function saveFunction() {
   for (temp of tempGradeChange) {
   
-    // Update registration local storage
-    let regIndex = registrations.findIndex(r => r.studentId === temp.studentId && r.sectionId === temp.sectionId);
-    let oldGrade = registrations[regIndex].grade;
-    registrations[regIndex].grade = temp.newGrade;
-    localStorage.registrations = JSON.stringify(registrations);
+    const reg = await (await fetch(`/api/registration?studentId=${temp.studentId}&sectionId=${temp.sectionId}`)).json();
+    console.log(reg);
+    let oldGrade = reg.grade;
+    reg.grade = temp.newGrade;
 
+    // Update registration
+    await fetch(`/api/registration/${reg.id}`, {
+        method: "PUT",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(reg)
+    })
 
-    let userIndex = users.findIndex(u => u.userId === temp.studentId);
+    const user = reg.student;
+    const courseCh = selectedSection.course.creditHour;
     // Updating Finsihed Credit Hour of User
-    let courseId = sections.find(s => s.sectionId === temp.sectionId).courseId;
-    let courseCh = courses.find(c => c.id === courseId).creditHour;
-
     if(temp.newGrade === "F" || temp.newGrade === "") {
       if(["A", "B", "C", "D"].includes(oldGrade)) {
-        users[userIndex].finishedCreditHour-=courseCh;
+        user.finishedCreditHour-=courseCh;
       }
     } else {
-      users[userIndex].finishedCreditHour+=courseCh;
+      user.finishedCreditHour+=courseCh;
     }
     
     // Update GPA of User
-    let regsOfUser = registrations.filter(r => r.studentId === temp.studentId && r.grade!="");
-    users[userIndex].gpa = calculateGPA(regsOfUser, users[userIndex].finishedCreditHour);
+    let regsOfUser = await (await fetch(`/api/student/${temp.studentId}/completed-courses`)).json();
+    user.gpa = calculateGPA(regsOfUser, user.finishedCreditHour);
 
-    localStorage.users = JSON.stringify(users);
+    // Update Student
+    await fetch(`/api/student/${temp.studentId}`, {
+        method: "PUT",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(user)
+    })
   }
   showNotification();
 }

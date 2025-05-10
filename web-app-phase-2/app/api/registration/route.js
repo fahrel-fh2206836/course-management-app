@@ -5,6 +5,10 @@ export async function GET(req) {
     const studentId = searchParams.get('studentId');
     const semester = searchParams.get('semester');
     const sectionStatus = searchParams.get('section-status');
+    const sectionId = searchParams.get('sectionId');
+    if(sectionId && studentId) {
+        return Response.json(await appRepo.getRegistration(studentId, sectionId), { status: 200 });
+    }
     return Response.json(await appRepo.getRegistrations(studentId, semester, sectionStatus), { status: 200 });
 }
 

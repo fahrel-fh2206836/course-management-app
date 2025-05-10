@@ -17,3 +17,9 @@ export async function GET(request, { params }) {
     return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 })
   }
 }
+
+export async function PUT(req, { params }) {
+  const student = await req.json()
+  const updatedStudent = await AppRepo.updateStudent(params.StudentID, student);
+  return Response.json(updatedStudent, {status: 200})
+}
