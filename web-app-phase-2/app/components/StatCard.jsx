@@ -6,12 +6,12 @@ export default function StatCard({ title, data }) {
       <CardContent className="stat-page-card-content">
         <h2 className="stat-page-title">{title}</h2>
         <ul className="stat-page-list">
-          {/* {data.map((item, idx) => (
-            <li key={idx} className="stat-page-list-item">
-              <span className="stat-page-label">{item.label}</span>
-              <span className="stat-page-value">{item.value}</span>
+          {/* {data.map((item, idx) => ( */}
+            <li /*key={idx}*/ className="stat-page-list-item">
+              <span className="stat-page-label">{/*item.label*/}Computer Science</span>
+              <span className="stat-page-value">{/*item.value*/}20</span>
             </li>
-          ))} */}
+          {/* ))} */}
         </ul>
       </CardContent>
     </Card>
