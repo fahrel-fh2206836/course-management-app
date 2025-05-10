@@ -401,6 +401,33 @@ class AppRepo {
         return await prisma.registration.create({data: reg})
       }
 
+      async searchRegistrations(sectionId, search) {
+        return await prisma.registration.findMany({
+          where: {
+            sectionId,
+            student: {
+              user: {
+                OR: [
+                  {
+                    firstName: { contains: search }
+                  },
+                  {
+                    lastName: { contains: search }
+                  }
+                ]
+              }
+            }
+          },
+          include: {
+            student: {
+              include: {
+                user: true
+              }
+            }
+          }
+        });
+      }
+
 
     // ===================== Semesters Method =====================
 

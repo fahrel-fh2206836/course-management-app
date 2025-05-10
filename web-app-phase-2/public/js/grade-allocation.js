@@ -2,12 +2,7 @@
 localStorage.currentPage = "gradeAllocation";
 
 const user = JSON.parse(localStorage.getItem("loggedInUser"));
-const registrations = JSON.parse(localStorage.registrations);
-const sections = JSON.parse(localStorage.sections);
-const courses = JSON.parse(localStorage.courses);
-const users = JSON.parse(localStorage.users);
 const selectedSection = JSON.parse(localStorage.selectedCourse);
-
 
 const courseSpan = document.querySelector("#stats-major");
 const sectionID = document.querySelector("#stats-ID");
@@ -20,15 +15,10 @@ const notif = document.getElementById("save-notification");
 
 checkForNotOngoingCourse();
 
-courseSpan.innerHTML = `${getCourseName()}`;
+courseSpan.innerHTML = `${selectedSection.course.courseName}`;
 sectionID.innerHTML = `${selectedSection.sectionId}`;
 NoOfStudents.innerHTML = `${selectedSection.currentSeats}`;
 semester.innerHTML = `${selectedSection.semester}`;
-
-function getCourseName(){
-    let course = courses.find(c => c.id === selectedSection.courseId);
-    return course.courseName;
-}
 
 function checkForNotOngoingCourse(){
     if (selectedSection.sectionStatus==="OPEN_REGISTRATION"){
@@ -46,31 +36,35 @@ searchInput.addEventListener("input", () => {
   renderStudents(query);
 });
 
-function renderStudents(filter){
-    tbody.innerHTML = "";
-    const sectionId = selectedSection.sectionId;
-    const studentRows = registrations
-        .filter(r => r.sectionId === sectionId)
-        .map(r => {
-            const student = users.find(u => u.userId === r.studentId);
-            if (!student) return null;
-            const fullName = `${student.firstName} ${student.lastName}`.toLowerCase();
-            const matches = student.userId.toLowerCase().includes(filter) || fullName.includes(filter);
-            if (!filter || matches) {
-                return `
-                  <tr>
-                    <td>${student.userId}</td>
-                    <td>${student.firstName} ${student.lastName}</td>
-                    <td><select data-student-id="${student.userId}" class="grade-dropdown">
-                        ${renderGradeOptions(r.grade)}
-                    </td>
-                  </tr>
-                `;
-              }
-        
-              return null;
-            });     
-        tbody.innerHTML = studentRows.join("") || "<tr><td colspan='3'>No students found</td></tr>";
+async function renderStudents(filter) {
+  tbody.innerHTML = "";
+  let data = selectedSection.registrations;
+  if(filter !== "") {
+    const res = await fetch(`/api/section/${selectedSection.sectionId}?search=${encodeURIComponent(filter)}`);
+    data = await res.json();
+  }
+
+  if (!data || data.length === 0) {
+    tbody.innerHTML = "<tr><td colspan='3'>No students found</td></tr>";
+    return;
+  }
+
+  const rows = data.map(r => {
+    const student = r.student.user;
+    return `
+      <tr>
+        <td>${student.userId}</td>
+        <td>${student.firstName} ${student.lastName}</td>
+        <td>
+          <select data-student-id="${student.userId}" class="grade-dropdown">
+            ${renderGradeOptions(r.grade)}
+          </select>
+        </td>
+      </tr>
+    `;
+  });
+
+  tbody.innerHTML = rows.join("");
 }
 
 function renderGradeOptions(currentGrade) {
