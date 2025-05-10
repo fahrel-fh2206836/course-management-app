@@ -13,7 +13,7 @@ export default function Login() {
   const [error, setError] = useState(false);
   const [hasMounted, setHasMounted] = useState(false);
   const router = useRouter();
-
+ 
   useEffect(() => {
     setHasMounted(true);
   }, [])
@@ -105,7 +105,7 @@ export default function Login() {
 
             <button type="submit" className={styles.submitButton}>Sign In</button>
 
-            <hr style={{ margin: "1rem 0" }} />
+            <p><b>OR</b></p>
 
             <button
               type="button"
@@ -117,6 +117,7 @@ export default function Login() {
               Sign in with Google
             </button>
 
+
             <button
               type="button"
               onClick={() => githubLogIn()}
@@ -126,6 +127,12 @@ export default function Login() {
               <img src="/assets/images/github-icon.png" alt="GitHub" />
               Sign in with Github
             </button>
+
+            <hr style={{ margin: "1rem 0" }} />
+
+            <Link href="/statistics" className='stats-button'>
+              📊 View Statistics
+            </Link>
           </main>
         </form>
       </div>
