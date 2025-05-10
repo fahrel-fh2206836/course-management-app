@@ -66,7 +66,7 @@ function generateCourseListHTML(s, c) {
 
 async function goToGradeAllocation(sectionId) {
     const s = await fetch(`${baseUrl}section/${sectionId}`)
-    localStorage.selectedCourse = JSON.stringify(s);
+    localStorage.selectedCourse = JSON.stringify(await s.json());
     window.location.href='grade-allocation.html';
 }
 

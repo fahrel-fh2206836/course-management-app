@@ -100,7 +100,7 @@ search.addEventListener('input', (e) => searchCourse(e));
 
 async function searchCourse(e) {
     e.preventDefault();
-    let text = e.target.value.toLowerCase();
+    let text = e.target.value.toLowerCase().trim();
 
     const majorCode = dropdownInput.innerText;
     

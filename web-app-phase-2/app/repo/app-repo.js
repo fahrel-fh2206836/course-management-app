@@ -107,7 +107,16 @@ class AppRepo {
           where: {
             sectionId: sectionId
           }, include: {
-            course: true
+            course: true,
+            registrations: {
+              include: {
+                student: {
+                  include: {
+                    user: true
+                  }
+                }
+              }
+            }
           }
         });
       }
