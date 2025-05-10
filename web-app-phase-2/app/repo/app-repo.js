@@ -387,6 +387,13 @@ class AppRepo {
               notIn: ['F', ''],
             },
           },
+          include: {
+            section: {
+              include: {
+                course: true,
+              },
+            },
+          },
         });
 
         if(courseId && registration.length !== 0) {
@@ -478,7 +485,7 @@ class AppRepo {
       async updateRegistration(regId, updatedReg) {
           const { grade } = updatedReg;
           return await prisma.registration.update({
-          where: { regId },
+          where: { id: regId },
           data: {
             grade
           }

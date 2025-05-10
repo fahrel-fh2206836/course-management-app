@@ -76,31 +76,30 @@ function renderGradeOptions(currentGrade) {
 
 let tempGradeChange = []
 
-document.addEventListener("change", (e) => {
-  const studentId = e.target.dataset.studentId;
-  let index = tempGradeChange.findIndex(g => g.studentId === studentId);
-  if(index == -1) {
-    tempGradeChange.push({
-      studentId: studentId,
-      newGrade: e.target.value === "None" ? "" : e.target.value,
-      sectionId: selectedSection.sectionId
-    })
-  } else {
-    tempGradeChange[index].newGrade = e.target.value === "None" ? "" : e.target.value;
+tbody.addEventListener("change", (e) => {
+  if (e.target.classList.contains("grade-dropdown")) {
+    const studentId = e.target.dataset.studentId;
+    let index = tempGradeChange.findIndex(g => g.studentId === studentId);
+    if(index === -1) {
+      tempGradeChange.push({
+        studentId: studentId,
+        newGrade: e.target.value === "None" ? "" : e.target.value,
+        sectionId: selectedSection.sectionId
+      });
+    } else {
+      tempGradeChange[index].newGrade = e.target.value === "None" ? "" : e.target.value;
+    }
   }
 });
 
 function cancelFunction(){
   tempGradeChange = [];
-  searchInput.value = "";
-  renderStudents("");
+  renderStudents(searchInput.value);
 }
 
 async function saveFunction() {
   for (temp of tempGradeChange) {
-  
     const reg = await (await fetch(`/api/registration?studentId=${temp.studentId}&sectionId=${temp.sectionId}`)).json();
-    console.log(reg);
     let oldGrade = reg.grade;
     reg.grade = temp.newGrade;
 
@@ -143,7 +142,7 @@ async function saveFunction() {
 function calculateGPA(regsOfUser, finishedCreditHour) {
     let gpa = 0.0;
     for (r of regsOfUser) {
-      let courseCh = courses.find(c => c.id === r.courseId).creditHour;
+      let courseCh = r.section.course.creditHour;
       if(r.grade === "A") {
         gpa+=courseCh*4; 
       } else if (r.grade === "B") {
