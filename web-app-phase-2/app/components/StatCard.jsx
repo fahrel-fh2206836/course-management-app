@@ -12,7 +12,7 @@ export default function StatCard({ title, data }) {
               <span className="stat-page-value">{/*item.value*/}20</span>
             </li>
           {/* ))} */}
-        </ul>
+        </ul> 
       </CardContent>
     </Card>
   );

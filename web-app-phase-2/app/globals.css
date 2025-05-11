@@ -915,41 +915,82 @@ h3 {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
-.stat-card {
-  border: 1px solid #e0d6ca;
-  border-radius: 16px;
-  background-color: #fffaf5;
-  box-shadow: 0 4px 8px rgba(91, 62, 43, 0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  overflow: hidden;
+.stats-page-main {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-.stat-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 12px rgba(91, 62, 43, 0.12);
+@media (min-width: 1024px) {
+  .stats-page-main {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "header header"
+      "stat-container stat-image";
+  }
+
+  .stats-page-main > h1 {
+    grid-area: header;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+    background-color: #8c6239;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  .stat-page-img {
+    grid-area: stat-image;
+    justify-self: center;
+    align-self: center;
+  }
+
+  .stat-page-intro-container {
+    grid-area: stat-container;
+  }
 }
 
-.stat-card-content {
-  padding: 1.5rem;
+.stat-page-intro-container {
+    background-color: wheat;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 15px;
+    height: 630px;
 }
 
 .stat-page-container {
-  padding: 2rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 1rem;
+  background-color: #f9f4ef;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  overflow: auto;
+  max-height: 500px;
 }
 
 .stat-page-card {
   border: 1px solid #e0d6ca;
   border-radius: 16px;
-  background-color: #fffaf5;
+  background: white;
   box-shadow: 0 4px 8px rgba(91, 62, 43, 0.08);
-  transition: transform 0.2s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  transform-origin: center;
+  cursor: pointer;
 }
 
 .stat-page-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px) scale(1.015);
+  box-shadow: 0 10px 16px rgba(91, 62, 43, 0.15);
+  background: linear-gradient(to bottom right, #fffaf5, #f0e6da);
 }
 
 .stat-page-card-content {
@@ -974,9 +1015,9 @@ h3 {
   display: flex;
   justify-content: space-between;
   padding: 0.5rem 0;
-  border-bottom: 1px dashed #ccc;
+  border-bottom: 1px dashed #c6b5a0;
   font-size: 0.95rem;
-  color: #44332a;
+  color: #5b3e2b;
 }
 
 .stat-page-label {
@@ -988,9 +1029,104 @@ h3 {
   color: #8b5e3c;
 }
 
-.stat-page-loading {
-  text-align: center;
-  font-size: 1rem;
-  padding: 3rem;
-  color: #5b3e2b;
+.stat-page-img {
+  display: none;
+  max-width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
+
+@media (min-width: 1024px) {
+  .stat-page-img {
+    display: block;
+    max-width: 100%;
+    height: 95vh;
+    max-height: 630px;
+  }
+}
+
+.qu-header {
+  position: relative;
+  height: 200px;
+  width: 100%;
+}
+
+.qu-header-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.85);
+}
+
+.qu-header-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.3));
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+  
+.qu-header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.qu-login-btn {
+  background-color: #fff;
+  color: #5b3e2b;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.qu-login-btn:hover {
+  background-color: #f1e5d4;
+  transform: translateY(-1px);
+}
+
+.qu-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-right: 1rem;
+}
+
+.qu-title {
+  color: #fff;
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.stat-page-intro {
+  background-color: #fffaf5;
+  border: 1px solid #e7d8c5;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(91, 62, 43, 0.05);
+  text-align: center;
+}
+
+.stat-page-intro h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #5b3e2b;
+  margin-bottom: 0.5rem;
+}
+
+.stat-page-intro p {
+  font-size: 0.95rem;
+  color: #6b4e34;
+  line-height: 1.5;
+}
+
+
+
