@@ -1,5 +1,6 @@
 'use client'
 import React, { useEffect, useState, useContext } from 'react';
+import { signOut } from "next-auth/react";
 import Link from 'next/link';
 import { UserContext } from '../context/UserContext';
 import { usePathname, useRouter } from 'next/navigation';
@@ -33,8 +34,10 @@ export default function Navbar() {
   };
 
   const confirmLogout = () => {
-    logout();
-    router.push('/');
+    localStorage.removeItem("loggedInUser")
+    signOut({ callbackUrl: "/" });
+    // logout();
+    // router.push('/');
   };
 
   const navLinks = () => {
