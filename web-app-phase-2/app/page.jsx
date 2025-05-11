@@ -21,11 +21,11 @@ export default function Login() {
   if(!hasMounted) return null;
 
   async function googleLogIn() {
-    await signIn("google", {callbackUrl: '/redirect'});
+    signIn("google", {callbackUrl: '/redirect'});
   }
 
   async function githubLogIn() {
-    await signIn('github', { callbackUrl: '/redirect' });
+    signIn('github', { callbackUrl: '/redirect' });
   }
 
   async function handleLogin(e) {
