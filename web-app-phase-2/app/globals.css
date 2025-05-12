@@ -905,10 +905,10 @@ h3 {
   border-radius: 999px;
   border: 2px solid #e0e0e0;
   background-color: white;
-  color: var(--bistre-);
+  color: var(--coffee-);
   cursor: pointer;
   text-decoration: none;
-  transition: all 0.2s ease-in-out; 
+  transition: 0.2s; 
 }
 
 .stats-button:hover {
@@ -949,13 +949,12 @@ h3 {
   border-radius: 16px;
   background: white;
   box-shadow: 0 4px 8px rgba(91, 62, 43, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-  transform-origin: center;
+  transition: 0.3s;
   cursor: pointer;
 }
 
 .stat-page-card:hover {
-  transform: translateY(-6px) scale(1.015);
+  transform: translateY(-3px) scale(1.015);
   box-shadow: 0 10px 16px rgba(91, 62, 43, 0.15);
   background: linear-gradient(to bottom right, #fffaf5, #f0e6da);
 }
@@ -967,24 +966,20 @@ h3 {
 .stat-page-title {
   font-size: 1.1rem;
   font-weight: 600;
-  color: #3d2b1f;
+  color: var(--bistre-);
   margin-bottom: 1rem;
-  text-align: center;
 }
 
 .stat-page-list {
   list-style: none;
-  padding: 0;
-  margin: 0;
 }
 
 .stat-page-list-item {
   display: flex;
   justify-content: space-between;
   padding: 0.5rem 0;
-  border-bottom: 1px dashed #c6b5a0;
+  border-bottom: 1px dashed var(--khaki-);
   font-size: 0.95rem;
-  color: #5b3e2b;
 }
 
 .stat-page-label {
@@ -993,7 +988,7 @@ h3 {
 
 .stat-page-value {
   font-weight: 600;
-  color: #8b5e3c;
+  color: var(--chamoisse-);
 }
 
 .stat-page-img {
@@ -1036,13 +1031,13 @@ h3 {
 }
 
 .qu-login-btn {
-  background-color: #fff;
-  color: #5b3e2b;
+  background-color: white;
+  color: var(--bistre-);
   font-weight: 600;
   padding: 0.5rem 1rem;
   border-radius: 8px;
   text-decoration: none;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  transition: 0.2s;
 }
 
 .qu-login-btn:hover {
@@ -1059,7 +1054,7 @@ h3 {
 
 .qu-title {
   display: none;
-  color: #fff;
+  color: white;
   font-size: 1.75rem;
   font-weight: 600;
   margin: 0;
@@ -1077,31 +1072,30 @@ h3 {
 .stat-page-intro h2 {
   font-size: 1.2rem;
   font-weight: 600;
-  color: #5b3e2b;
+  color: var(--bistre-);
   margin-bottom: 0.5rem;
 }
 
 .stat-page-intro p {
   font-size: 0.95rem;
-  color: #6b4e34;
+  color: var(--coffee-);
   line-height: 1.5;
 }
 
 .stat-page-title {
   font-size: 1.1rem;
   font-weight: 600;
-  color: #3d2b1f;
+  color: var(--bistre-);
   margin-bottom: 0.5rem;
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
 .stat-card-toggle {
   font-size: 0.9rem;
-  color: #a68a6d;
+  color: var(--chamoisse-);
   margin-left: 0.5rem;
-  transition: transform 0.3s ease;
+  transition: 0.3s;
 }
 
 .stat-card.open .stat-card-toggle {
@@ -1110,7 +1104,7 @@ h3 {
 
 .stat-card-description {
   font-size: 0.85rem;
-  color: #6a4b3c;
+  color: var(--coffee-);
   margin: 0.25rem 0 0.75rem;
 }
 
@@ -1132,14 +1126,6 @@ h3 {
 
   .stats-page-main > h1 {
     grid-area: header;
-    text-align: center;
-    font-size: 1.6rem;
-    font-weight: 700;
-    background-color: #8c6239;
-    color: white;
-    padding: 0.75rem 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   }
 
   .stat-page-img {
