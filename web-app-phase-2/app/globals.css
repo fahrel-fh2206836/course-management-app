@@ -922,39 +922,6 @@ h3 {
   gap: 1.5rem;
 }
 
-@media (min-width: 1024px) {
-  .stats-page-main {
-    display: grid;
-    gap: 2rem;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-      "header header"
-      "stat-container stat-image";
-  }
-
-  .stats-page-main > h1 {
-    grid-area: header;
-    text-align: center;
-    font-size: 1.6rem;
-    font-weight: 700;
-    background-color: #8c6239;
-    color: white;
-    padding: 0.75rem 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  }
-
-  .stat-page-img {
-    grid-area: stat-image;
-    justify-self: center;
-    align-self: center;
-  }
-
-  .stat-page-intro-container {
-    grid-area: stat-container;
-  }
-}
-
 .stat-page-intro-container {
     background-color: wheat;
     padding: 10px;
@@ -1037,15 +1004,6 @@ h3 {
   box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
-@media (min-width: 1024px) {
-  .stat-page-img {
-    display: block;
-    max-width: 100%;
-    height: 95vh;
-    max-height: 630px;
-  }
-}
-
 .qu-header {
   position: relative;
   height: 200px;
@@ -1100,6 +1058,7 @@ h3 {
 }
 
 .qu-title {
+  display: none;
   color: #fff;
   font-size: 1.75rem;
   font-weight: 600;
@@ -1126,6 +1085,76 @@ h3 {
   font-size: 0.95rem;
   color: #6b4e34;
   line-height: 1.5;
+}
+
+.stat-page-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #3d2b1f;
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stat-card-toggle {
+  font-size: 0.9rem;
+  color: #a68a6d;
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.stat-card.open .stat-card-toggle {
+  transform: rotate(180 deg);
+}
+
+.stat-card-description {
+  font-size: 0.85rem;
+  color: #6a4b3c;
+  margin: 0.25rem 0 0.75rem;
+}
+
+@media (min-width: 480px) {
+ .qu-title {
+  display: block;
+ }
+}
+
+@media (min-width: 1024px) {
+  .stats-page-main {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "header header"
+      "stat-container stat-image";
+  }
+
+  .stats-page-main > h1 {
+    grid-area: header;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+    background-color: #8c6239;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  .stat-page-img {
+    grid-area: stat-image;
+    justify-self: center;
+    align-self: center;
+    display: block;
+    max-width: 100%;
+    height: 95vh;
+    max-height: 630px;
+  }
+
+  .stat-page-intro-container {
+    grid-area: stat-container;
+  }
 }
 
 
