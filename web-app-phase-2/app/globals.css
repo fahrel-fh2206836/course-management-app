@@ -935,7 +935,7 @@ h3 {
 .stat-page-container {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 30px;
   padding: 1rem;
   background-color: #f9f4ef;
   border-radius: 15px;

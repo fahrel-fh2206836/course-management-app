@@ -19,12 +19,12 @@ export default function StatCard({ title, data, description }) {
 
         {isCollapse && (
           <ul className="stat-page-list">
-            {/* {data.map((item, idx) => ( */}
-              <li /*key={idx}*/ className="stat-page-list-item">
-                <span className="stat-page-label">{/*item.label*/}Computer Science</span>
-                <span className="stat-page-value">{/*item.value*/}20</span>
+            {data.map((item, index) => (
+              <li key={index} className="stat-page-list-item">
+                <span className="stat-page-label">{item.label}</span>
+                <span className="stat-page-value">{item.value}</span>
               </li>
-            {/* ))} */}
+            ))}
           </ul>
         )}
       </div>

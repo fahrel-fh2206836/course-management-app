@@ -1,8 +1,19 @@
 import React from "react";
 import StatCard from "../components/StatCard";
 import Link from "next/link";
+import appRepo from "../repo/app-repo";
 
 export default async function page() {
+  const top3EnrolledCourse = await appRepo.getTop3MostEnrolledCourses();
+  const top3StudentGPA = await appRepo.getTop3StudentsByGPA();
+  const avgGpaPerMajor = await appRepo.getAverageGPAperMajor();
+  const totalStudentsPerMajor = await appRepo.getTotalStudentsPerMajor();
+  const totalStudentPerSemester = await appRepo.getStudentsPerSemester();
+  const failRatePerCourse = await appRepo.getFailRatePerCourse();
+  const passRatePerCourse = await appRepo.getPassRatePerCourse();
+  const avgCreditsPerMajor = await appRepo.getAvgCompletedCHPerMajor();
+  const avgClassSizePerCourse = await appRepo.getAvgClassSizePerCourse();
+  const mostActiveInstructor = await appRepo.getMostActiveInstructor();
   return (
     <>
       <header>
@@ -41,61 +52,61 @@ export default async function page() {
             <StatCard
               title="Top 3 Most Enrolled Courses"
               description="The three courses with the highest number of student enrollments."
-              /* data={stats.top3Courses} */
+              data={top3EnrolledCourse} 
             />
 
             <StatCard
               title="Top 3 Students by GPA"
               description="The students with the highest cumulative GPA across all semesters."
-              /* data={stats.top3Students} */
+              data={top3StudentGPA}
             />
 
             <StatCard
               title="Average GPA per Major"
               description="The average GPA of students grouped by their declared majors."
-              /* data={stats.avgGpaPerMajor} */
+              data={avgGpaPerMajor}
             />
 
             <StatCard
               title="Total Students per Major"
               description="The number of students currently enrolled in each major."
-              /* data={stats.totalStudentsPerMajor} */
+              data={totalStudentsPerMajor}
             />
 
             <StatCard
               title="Total Students per Semester"
               description="The total number of students enrolled during each academic semester."
-              /* data={stats.studentsPerSemester} */
+              data={totalStudentPerSemester}
             />
 
             <StatCard
               title="Fail Rate Per Course"
               description="The percentage of students who received an 'F' in each course."
-              /* data={stats.highestFailRateCourses} */
+              data={failRatePerCourse}
             />
 
             <StatCard
               title="Pass Rate Per Course"
               description="The percentage of students who successfully passed each course."
-              /* data={} */
+              data={passRatePerCourse}
             />
 
             <StatCard
               title="Average Credits Completed per Major"
               description="The average number of credit hours completed by students in each major."
-              /* data={stats.avgGradePerCourse} */
+              data={avgCreditsPerMajor}
             />
 
             <StatCard
               title="Average Class Size Per Course"
               description="The average number of students registered in each course section."
-              /* data={stats.completionRateByCourse} */
+              data={avgClassSizePerCourse}
             />
 
             <StatCard
               title="Top 5 Most Active Instructor (Most Students)"
               description="Instructors with the highest number of total students across all their classes."
-              /* data={stats.avgCreditsPerMajor} */
+              data={mostActiveInstructor}
             />
           </div>
         </div>
