@@ -592,216 +592,226 @@ class AppRepo {
   // ===================== Statistics =====================
 
   async getTotalStudentsPerMajor() {
-  const grouped = await prisma.student.groupBy({
-    by: ["majorId"],
-    _count: true,
-  });
+    const grouped = await prisma.student.groupBy({
+      by: ["majorId"],
+      _count: true,
+    });
 
-  const majors = await prisma.major.findMany({
-    where: { majorId: { in: grouped.map(g => g.majorId) } },
-    select: { majorId: true, majorName: true },
-  });
+    const majors = await prisma.major.findMany({
+      where: { majorId: { in: grouped.map((g) => g.majorId) } },
+      select: { majorId: true, majorName: true },
+    });
 
-  const majorMap = new Map(majors.map(m => [m.majorId, m.majorName]));
+    const majorMap = new Map(majors.map((m) => [m.majorId, m.majorName]));
 
-  return grouped.map(g => ({
-    label: majorMap.get(g.majorId) || "Unknown",
-    value: g._count,
-  }));
-}
+    return grouped.map((g) => ({
+      label: majorMap.get(g.majorId),
+      value: g._count,
+    }));
+  }
 
-async getTop3MostEnrolledCourses() {
-  const grouped = await prisma.registration.groupBy({
-    by: ["courseId"],
-    _count: true,
-    orderBy: { _count: { courseId: "desc" } },
-    take: 3,
-  });
+  async getTop3MostEnrolledCourses() {
+    const grouped = await prisma.registration.groupBy({
+      by: ["courseId"],
+      _count: true,
+      orderBy: { _count: { courseId: "desc" } },
+      take: 3,
+    });
 
-  const courses = await prisma.course.findMany({
-    where: { id: { in: grouped.map(g => g.courseId) } },
-    select: { id: true, courseName: true },
-  });
+    const courses = await prisma.course.findMany({
+      where: { id: { in: grouped.map((g) => g.courseId) } },
+      select: { id: true, courseName: true },
+    });
 
-  const courseMap = new Map(courses.map(c => [c.id, c.courseName]));
+    const courseMap = new Map(courses.map((c) => [c.id, c.courseName]));
 
-  return grouped.map(g => ({
-    label: courseMap.get(g.courseId) || "Unknown",
-    value: g._count,
-  }));
-}
+    return grouped.map((g) => ({
+      label: courseMap.get(g.courseId),
+      value: g._count,
+    }));
+  }
 
-async getAverageGPAperMajor() {
-  const grouped = await prisma.student.groupBy({
-    by: ["majorId"],
-    _avg: { gpa: true },
-  });
+  async getAverageGPAperMajor() {
+    const grouped = await prisma.student.groupBy({
+      by: ["majorId"],
+      _avg: { gpa: true },
+    });
 
-  const majors = await prisma.major.findMany({
-    where: { majorId: { in: grouped.map(g => g.majorId) } },
-    select: { majorId: true, majorName: true },
-  });
+    const majors = await prisma.major.findMany({
+      where: { majorId: { in: grouped.map((g) => g.majorId) } },
+      select: { majorId: true, majorName: true },
+    });
 
-  const majorMap = new Map(majors.map(m => [m.majorId, m.majorName]));
+    const majorMap = new Map(majors.map((m) => [m.majorId, m.majorName]));
 
-  return grouped.map(g => ({
-    label: majorMap.get(g.majorId) || "Unknown",
-    value: Number(g._avg.gpa?.toFixed(2) || 0),
-  }));
-}
+    return grouped.map((g) => ({
+      label: majorMap.get(g.majorId),
+      value: Number(g._avg.gpa?.toFixed(2) || 0),
+    }));
+  }
 
-async getAvgCompletedCHPerMajor() {
-  const grouped = await prisma.student.groupBy({
-    by: ["majorId"],
-    _avg: { finishedCreditHour: true },
-  });
+  async getAvgCompletedCHPerMajor() {
+    const grouped = await prisma.student.groupBy({
+      by: ["majorId"],
+      _avg: { finishedCreditHour: true },
+    });
 
-  const majors = await prisma.major.findMany({
-    where: { majorId: { in: grouped.map(g => g.majorId) } },
-    select: { majorId: true, majorName: true },
-  });
+    const majors = await prisma.major.findMany({
+      where: { majorId: { in: grouped.map((g) => g.majorId) } },
+      select: { majorId: true, majorName: true },
+    });
 
-  const majorMap = new Map(majors.map(m => [m.majorId, m.majorName]));
+    const majorMap = new Map(majors.map((m) => [m.majorId, m.majorName]));
 
-  return grouped.map(g => ({
-    label: majorMap.get(g.majorId) || "Unknown",
-    value: Number(g._avg.finishedCreditHour?.toFixed(2) || 0),
-  }));
-}
+    return grouped.map((g) => ({
+      label: majorMap.get(g.majorId),
+      value: Number(g._avg.finishedCreditHour.toFixed(2)),
+    }));
+  }
 
-async getStudentsPerSemester() {
-  const grouped = await prisma.section.groupBy({
-    by: ["semester"],
-    _sum: { currentSeats: true },
-  });
+  async getStudentsPerSemester() {
+    const grouped = await prisma.section.groupBy({
+      by: ["semester"],
+      _sum: { currentSeats: true },
+    });
 
-  return grouped.map(g => ({
-    label: g.semester,
-    value: g._sum.currentSeats || 0,
-  }));
-}
+    return grouped.map((g) => ({
+      label: g.semester,
+      value: g._sum.currentSeats,
+    }));
+  }
 
-async getTop3StudentsByGPA() {
-  const students = await prisma.student.findMany({
-    orderBy: { gpa: "desc" },
-    take: 3,
-    include: { user: true },
-  });
+  async getTop3StudentsByGPA() {
+    const students = await prisma.student.findMany({
+      orderBy: { gpa: "desc" },
+      take: 3,
+      include: { user: true },
+    });
 
-  return students.map(s => ({
-    label: `${s.user.firstName} ${s.user.lastName}`,
-    value: Number(s.gpa?.toFixed(2) || 0),
-  }));
-}
+    return students.map((s) => ({
+      label: `${s.user.firstName} ${s.user.lastName}`,
+      value: Number(s.gpa.toFixed(2)),
+    }));
+  }
 
-async getMostActiveInstructor() {
-  const grouped = await prisma.section.groupBy({
-    by: ["instructorId"],
-    _sum: { currentSeats: true },
-    orderBy: { _sum: { currentSeats: "desc" } },
-    take: 5,
-  });
+  async getMostActiveInstructor() {
+    const grouped = await prisma.section.groupBy({
+      by: ["instructorId"],
+      _sum: { currentSeats: true },
+      orderBy: { _sum: { currentSeats: "desc" } },
+      take: 5,
+    });
 
-  const instructors = await prisma.user.findMany({
-    where: { userId: { in: grouped.map(g => g.instructorId) } },
-    select: { userId: true, firstName: true, lastName: true },
-  });
+    const instructors = await prisma.user.findMany({
+      where: { userId: { in: grouped.map((g) => g.instructorId) } },
+      select: { userId: true, firstName: true, lastName: true },
+    });
 
-  const instructorMap = new Map(
-    instructors.map(i => [i.userId, `${i.firstName} ${i.lastName}`])
-  );
+    const instructorMap = new Map(
+      instructors.map((i) => [i.userId, `${i.firstName} ${i.lastName}`])
+    );
 
-  return grouped.map(g => ({
-    label: instructorMap.get(g.instructorId) || "Unknown",
-    value: g._sum.currentSeats || 0,
-  }));
-}
+    return grouped.map((g) => ({
+      label: instructorMap.get(g.instructorId),
+      value: g._sum.currentSeats,
+    }));
+  }
 
-async getAvgClassSizePerCourse() {
-  const grouped = await prisma.section.groupBy({
-    by: ["courseId"],
-    _avg: { currentSeats: true },
-    orderBy: { _avg: { currentSeats: "desc" } },
-  });
+  async getAvgClassSizePerCourse() {
+    const grouped = await prisma.section.groupBy({
+      by: ["courseId"],
+      _avg: { currentSeats: true },
+      orderBy: { _avg: { currentSeats: "desc" } },
+    });
 
-  const courses = await prisma.course.findMany({
-    where: { id: { in: grouped.map(g => g.courseId) } },
-    select: { id: true, courseName: true },
-  });
+    const courses = await prisma.course.findMany({
+      where: { id: { in: grouped.map((g) => g.courseId) } },
+      select: { id: true, courseName: true },
+    });
 
-  const courseMap = new Map(courses.map(c => [c.id, c.courseName]));
+    const courseMap = new Map(courses.map((c) => [c.id, c.courseName]));
 
-  return grouped.map(g => ({
-    label: courseMap.get(g.courseId) || "Unknown",
-    value: Number(g._avg.currentSeats?.toFixed(2) || 0),
-  }));
-}
+    return grouped.map((g) => ({
+      label: courseMap.get(g.courseId),
+      value: Number(g._avg.currentSeats.toFixed(2)),
+    }));
+  }
 
-async getFailRatePerCourse() {
-  const total = await prisma.registration.groupBy({
-    by: ["courseId"],
-    _count: true,
-  });
-
-  const fails = await prisma.registration.groupBy({
-    by: ["courseId"],
-    _count: { _all: true },
-    where: { grade: { in: ["F", "f"] } },
-  });
-
-  const failMap = new Map(fails.map(f => [f.courseId, f._count._all]));
-
-  const courses = await prisma.course.findMany({
-    where: { id: { in: total.map(t => t.courseId) } },
-    select: { id: true, courseName: true },
-  });
-
-  const courseMap = new Map(courses.map(c => [c.id, c.courseName]));
-
-  return total.map(t => {
-    const failCount = failMap.get(t.courseId) || 0;
-    const rate = (failCount / t._count) * 100;
-    return {
-      label: courseMap.get(t.courseId) || "Unknown",
-      value: `${Number(rate.toFixed(2))} %`,
-    };
-  });
-}
-
-async getPassRatePerCourse() {
-  const total = await prisma.registration.groupBy({
-    by: ["courseId"],
-    _count: true,
-  });
-
-  const passes = await prisma.registration.groupBy({
-    by: ["courseId"],
-    _count: { _all: true },
-    where: {
-      NOT: {
-        grade: { in: ["F", "f", ""] },
+  async getFailRatePerCourse() {
+    const total = await prisma.registration.groupBy({
+      by: ["courseId"],
+      _count: true,
+      where: {
+        NOT: {
+          grade: "",
+        },
       },
-    },
-  });
+    });
 
-  const passMap = new Map(passes.map(p => [p.courseId, p._count._all]));
+    const fails = await prisma.registration.groupBy({
+      by: ["courseId"],
+      _count: { _all: true },
+      where: { grade: { in: ["F", "f"] } },
+    });
 
-  const courses = await prisma.course.findMany({
-    where: { id: { in: total.map(t => t.courseId) } },
-    select: { id: true, courseName: true },
-  });
+    const failMap = new Map(fails.map((f) => [f.courseId, f._count._all]));
 
-  const courseMap = new Map(courses.map(c => [c.id, c.courseName]));
+    const courses = await prisma.course.findMany({
+      where: { id: { in: total.map((t) => t.courseId) } },
+      select: { id: true, courseName: true },
+    });
 
-  return total.map(t => {
-    const passCount = passMap.get(t.courseId) || 0;
-    const rate = (passCount / t._count) * 100;
-    return {
-      label: courseMap.get(t.courseId) || "Unknown",
-      value: `${Number(rate.toFixed(2))} %`,
-    };
-  });
-}
+    const courseMap = new Map(courses.map((c) => [c.id, c.courseName]));
+
+    return total.map((t) => {
+      const failCount = failMap.get(t.courseId) || 0;
+      const rate = (failCount / t._count) * 100;
+      return {
+        label: courseMap.get(t.courseId) || "Unknown",
+        value: `${Number(rate.toFixed(2))} %`,
+      };
+    });
+  }
+
+  async getPassRatePerCourse() {
+    const total = await prisma.registration.groupBy({
+      by: ["courseId"],
+      _count: true,
+      where: {
+        NOT: {
+          grade: "",
+        },
+      },
+    });
+
+    const passes = await prisma.registration.groupBy({
+      by: ["courseId"],
+      _count: { _all: true },
+      where: {
+        NOT: {
+          grade: { in: ["F", "f", ""] },
+        },
+      },
+    });
+
+    const passMap = new Map(passes.map((p) => [p.courseId, p._count._all]));
+
+    const courses = await prisma.course.findMany({
+      where: { id: { in: total.map((t) => t.courseId) } },
+      select: { id: true, courseName: true },
+    });
+
+    const courseMap = new Map(courses.map((c) => [c.id, c.courseName]));
+
+    return total.map((t) => {
+      const passCount = passMap.get(t.courseId) || 0;
+      const rate = (passCount / t._count) * 100;
+      return {
+        label: courseMap.get(t.courseId) || "Unknown",
+        value: `${Number(rate.toFixed(2))} %`,
+      };
+    });
+  }
 }
 
 export default new AppRepo();
