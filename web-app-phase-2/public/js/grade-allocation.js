@@ -30,9 +30,11 @@ function checkForNotOngoingCourse(){
 }
 
 renderStudents("");
+let tempGradeChange = []
 
 searchInput.addEventListener("input", () => {
   const query = searchInput.value.toLowerCase();
+  tempGradeChange = []
   renderStudents(query);
 });
 
@@ -74,8 +76,6 @@ function renderGradeOptions(currentGrade) {
     ).join("");
 }
 
-let tempGradeChange = []
-
 tbody.addEventListener("change", (e) => {
   if (e.target.classList.contains("grade-dropdown")) {
     const studentId = e.target.dataset.studentId;
@@ -98,6 +98,10 @@ function cancelFunction(){
 }
 
 async function saveFunction() {
+  if (tempGradeChange.length == 0) {
+    showNotification("nochange-notification");
+    return;
+  }
   for (temp of tempGradeChange) {
     const reg = await (await fetch(`/api/registration?studentId=${temp.studentId}&sectionId=${temp.sectionId}`)).json();
     let oldGrade = reg.grade;
@@ -136,7 +140,7 @@ async function saveFunction() {
         body: JSON.stringify(user)
     })
   }
-  showNotification();
+  showNotification("save-notification");
 }
 
 function calculateGPA(regsOfUser, finishedCreditHour) {
@@ -156,10 +160,10 @@ function calculateGPA(regsOfUser, finishedCreditHour) {
     return parseFloat((gpa/finishedCreditHour).toFixed(2));
 }
 
-function showNotification() {
-  notif.classList.add("show");
+function showNotification(elementId) {
+    document.querySelector(`#${elementId}`).classList.add("show");
 
-  setTimeout(() => {
-      notif.classList.remove("show");
-  }, 3000);
+    setTimeout(() => {
+        document.querySelector(`#${elementId}`).classList.remove("show");
+    }, 3000);
 }
