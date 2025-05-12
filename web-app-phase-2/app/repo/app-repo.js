@@ -427,6 +427,8 @@ class AppRepo {
       },
     });
 
+    console.log("-----------------------------------------------------" + registration);
+    console.log(registration !== null)
     return registration !== null;
   }
 

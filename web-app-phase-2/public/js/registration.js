@@ -97,7 +97,7 @@ async function courseHTML(course){
 
 
 async function courseDone(courseID){
-    return await (await fetch(`${baseUrl}/student/${student.userId}/completed-courses?courseId=${courseID}&check-completed=true`)).json(); 
+    return await (await fetch(`${baseUrl}/student/${student.userId}/completed-courses?courseId=${courseID}&check-completed=true`)).json();
 }
 
 // Sections code
@@ -211,7 +211,7 @@ async function handleRegistration(sectionId){
     }
 
     // Check if he has already completed the course before
-    if(courseDone(selectedSection.courseId) === true) {
+    if(await courseDone(selectedSection.courseId) === true) {
         showNotification("passed-notif");
         return;
     }
@@ -229,8 +229,7 @@ async function handleRegistration(sectionId){
     }
 
     //Check if all Prerequisite are fullfilled
-    let preReqCheck = [];
-    preCourses.forEach(async pc => preReqCheck.push(await courseDone(pc.id)));
+    const preReqCheck = await Promise.all(preCourses.map(pc => courseDone(pc.id)));
     if (!(preReqCheck.length === 0) && !(preReqCheck.every(val => val === true))) {
         showNotification("prerequisite-notif")
         return;
@@ -275,6 +274,7 @@ async function handleRegistration(sectionId){
     courseSections = await loadCourseSections()
     displayRegisteredSections(registeredSections);
     displaySections(courseSections);
+    document.querySelector("#curr-ch").innerText = ` Your CH: ${countRegisteredCH(registeredSections)}`; 
     showNotification('registered-notif');
 }
 
@@ -387,6 +387,7 @@ async function removeRegistered(sectionId){
     courseSections = await loadCourseSections()
     displayRegisteredSections(registeredSections);
     displaySections(courseSections);
+    document.querySelector("#curr-ch").innerText = ` Your CH: ${countRegisteredCH(registeredSections)}`; 
     showNotification("unregistered-notif");
 } 
 
