@@ -544,18 +544,6 @@ class AppRepo {
     });
   }
 
-  async getCoursesByMajor(majorId) {
-    return await prisma.course.findMany({
-      where: { majorId },
-    });
-  }
-
-  async getMajorById(majorId) {
-    return await prisma.major.findUnique({
-      where: { majorId },
-    });
-  }
-
   async getLearningPathData(userId) {
     const user = await this.getStudentById(userId);
 
@@ -570,7 +558,7 @@ class AppRepo {
       return { error: "Major not found" };
     }
 
-    const courses = await this.getCoursesByMajor(studentInfo.majorId);
+    const courses = await this.getCourseByMajorId(studentInfo.majorId);
     const registrations = await this.getRegistrationsByStudentId(user.userId);
 
     return {
@@ -669,7 +657,7 @@ class AppRepo {
     }));
   }
 
-  async getStudentsPerSemester() {
+  async getTotalStudentsPerSemester() {
     const grouped = await prisma.section.groupBy({
       by: ["semester"],
       _sum: { currentSeats: true },
@@ -694,7 +682,7 @@ class AppRepo {
     }));
   }
 
-  async getMostActiveInstructor() {
+  async getTop5MostStudentInstructor() {
     const grouped = await prisma.section.groupBy({
       by: ["instructorId"],
       _sum: { currentSeats: true },
@@ -764,10 +752,10 @@ class AppRepo {
     const courseMap = new Map(courses.map((c) => [c.id, c.courseName]));
 
     return total.map((t) => {
-      const failCount = failMap.get(t.courseId) || 0;
+      const failCount = failMap.get(t.courseId);
       const rate = (failCount / t._count) * 100;
       return {
-        label: courseMap.get(t.courseId) || "Unknown",
+        label: courseMap.get(t.courseId),
         value: `${Number(rate.toFixed(2))} %`,
       };
     });
@@ -804,10 +792,10 @@ class AppRepo {
     const courseMap = new Map(courses.map((c) => [c.id, c.courseName]));
 
     return total.map((t) => {
-      const passCount = passMap.get(t.courseId) || 0;
+      const passCount = passMap.get(t.courseId);
       const rate = (passCount / t._count) * 100;
       return {
-        label: courseMap.get(t.courseId) || "Unknown",
+        label: courseMap.get(t.courseId),
         value: `${Number(rate.toFixed(2))} %`,
       };
     });
