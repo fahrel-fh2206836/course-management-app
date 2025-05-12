@@ -11,8 +11,8 @@ export default function StatCard({ title, data, description }) {
         onClick={() => setIsCollapse(!isCollapse)}
         style={{ cursor: 'pointer' }}
       >
-        <h2 className="stat-page-title">
-          {title} <span className="stat-card-toggle">{isCollapse ? '▲' : '▼'}</span>
+        <h2 className="stat-page-title"> 
+          {title} <span className="stat-card-toggle">▼</span>
         </h2>
 
         <p className="stat-card-description">{description}</p>
