@@ -1,2 +1,2 @@
-# student-management-app
+# Course-Student Management App
 Web Application managing student's courses
