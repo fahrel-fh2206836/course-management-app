@@ -14,7 +14,7 @@ export default function RedirectPage() {
         localStorage.currentPage = 'dashboard';
         if (role === 'Student') router.push("/view-student/dashboard-student.html");
         else if (role === "Instructor") router.push("/view-instructor/dashboard-instructor.html");
-        else if (role === "admin") router.push("/view-admin/dashboard-admin.html");
+        else if (role === "Admin") router.push("/view-admin/dashboard-admin.html");
         else {
             alert("Invalid account");
             redirect("/")
