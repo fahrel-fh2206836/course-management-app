@@ -755,7 +755,7 @@ class AppRepo {
 
     return total.map((t) => {
       const failCount = failMap.get(t.courseId);
-      const rate = (failCount / t._count) * 100;
+      const rate = ((failCount ?? 0) / t._count) * 100;
       return {
         label: courseMap.get(t.courseId),
         value: `${Number(rate.toFixed(2))} %`,
@@ -795,7 +795,7 @@ class AppRepo {
 
     return total.map((t) => {
       const passCount = passMap.get(t.courseId);
-      const rate = (passCount / t._count) * 100;
+      const rate = ((passCount ?? 0) / t._count) * 100;
       return {
         label: courseMap.get(t.courseId),
         value: `${Number(rate.toFixed(2))} %`,
