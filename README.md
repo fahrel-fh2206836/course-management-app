@@ -60,18 +60,6 @@ Before running this project, ensure you have the following installed:
 - **Node.js** (v18 or later) – for running the backend and Next.js frontend  
 - **npm** – Node package manager (comes with Node.js)
 
-## 📎 Setup & Run Locally
-
-```bash
-git clone https://github.com/fahrel-fh2206836/student-management-app.git
-cd student-management-app
-npm install
-npx prisma generate
-npx prisma db push
-node ./prisma/seed.js      # Populate database
-npx prisma studio          # View the database
-npm run dev                # Start the development server
-```
 ## 🧑‍🤝‍🧑 Team Contributions
 1. Fahrel Azki Hidayat
 2. Mohammed Alam
