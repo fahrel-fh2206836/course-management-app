@@ -1,4 +1,4 @@
-# 🎓 QU Student Management Application
+# 🎓 QU Course Management Application
 
 A full-stack web application built for the CSE department of Qatar University to manage students, courses, instructors, and administrators. Developed as part of the CMPS 350 Web Development course project.
 
