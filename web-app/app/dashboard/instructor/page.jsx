@@ -12,36 +12,120 @@ import CourseCard2 from "@/app/components/CourseCard2";
 import EmptySection from "@/app/components/EmptySection";
 import LoadingSpinner from "@/app/components/LoadingSpinner";
 import styles from "./page.module.css";
+import ErrorMessage from "@/app/components/ErrorMessage";
 
 export default function InstructorDashboard() {
   const { data: session, status } = useSession();
-  const user = session?.user; // comes from your NextAuth callbacks
-  const userId = user?.userId ?? user?.id; // support either field
+  const user = session?.user;
+  const userId = user?.userId ?? user?.id;
 
-  const [ongoingSecs, setOngoingSecs] = useState(null);
-  const [nonOngoingSecs, setNonOngoingSecs] = useState(null);
+  // Data
+  const [ongoingSecs, setOngoingSecs] = useState(null);       // array | null
+  const [nonOngoingSecs, setNonOngoingSecs] = useState(null); // array | null
   const [currStudents, setCurrStudents] = useState(0);
+
+  // Loading flags
+  const [loadingStats, setLoadingStats] = useState(true);
+  const [loadingOngoing, setLoadingOngoing] = useState(true);
+  const [loadingNonOngoing, setLoadingNonOngoing] = useState(true);
+
+  // Error flags
+  const [errorStats, setErrorStats] = useState(false);
+  const [errorOngoing, setErrorOngoing] = useState(false);
+  const [errorNonOngoing, setErrorNonOngoing] = useState(false);
 
   useEffect(() => {
     if (status !== "authenticated" || !userId) return;
 
-    const run = async () => {
-      const semesters = await getSemestersAction();
-      const targetSem = semesters[semesters.length - 2]?.semester;
-      if (!targetSem) return;
+    let cancelled = false;
 
-      const [activeSecs, nonActiveSecs, totalCurrStudent] = await Promise.all([
-        getSectionsAction(userId, targetSem, false),
-        getSectionsAction(userId, targetSem, true),
-        getInstructorTotalStudentSemAction(userId, targetSem),
-      ]);
+    (async () => {
+      try {
+        // Reset states
+        setLoadingStats(true);
+        setLoadingOngoing(true);
+        setLoadingNonOngoing(true);
+        setErrorStats(false);
+        setErrorOngoing(false);
+        setErrorNonOngoing(false);
 
-      setOngoingSecs(activeSecs);
-      setNonOngoingSecs(nonActiveSecs);
-      setCurrStudents(totalCurrStudent?._sum?.currentSeats ?? 0);
+        const semesters = await getSemestersAction();
+        const targetSem = semesters?.[semesters.length - 2]?.semester;
+        if (!targetSem) {
+          if (!cancelled) {
+            setErrorStats(true);
+            setErrorOngoing(true);
+            setErrorNonOngoing(true);
+            setLoadingStats(false);
+            setLoadingOngoing(false);
+            setLoadingNonOngoing(false);
+          }
+          return;
+        }
+
+        // Fetch in parallel
+        const [activeSecs, nonActiveSecs, totalCurrStudent] = await Promise.allSettled([
+          getSectionsAction(userId, targetSem, false),
+          getSectionsAction(userId, targetSem, true),
+          getInstructorTotalStudentSemAction(userId, targetSem),
+        ]);
+
+        // Ongoing
+        if (!cancelled) {
+          if (activeSecs.status === "fulfilled" && Array.isArray(activeSecs.value)) {
+            setOngoingSecs(activeSecs.value);
+            setErrorOngoing(false);
+          } else {
+            setOngoingSecs([]);
+            setErrorOngoing(true);
+          }
+          setLoadingOngoing(false);
+        }
+
+        // Non-ongoing
+        if (!cancelled) {
+          if (nonActiveSecs.status === "fulfilled" && Array.isArray(nonActiveSecs.value)) {
+            setNonOngoingSecs(nonActiveSecs.value);
+            setErrorNonOngoing(false);
+          } else {
+            setNonOngoingSecs([]);
+            setErrorNonOngoing(true);
+          }
+          setLoadingNonOngoing(false);
+        }
+
+        // Stats (depends on all three)
+        if (!cancelled) {
+          if (
+            activeSecs.status === "fulfilled" &&
+            nonActiveSecs.status === "fulfilled" &&
+            totalCurrStudent.status === "fulfilled" &&
+            totalCurrStudent.value !== null &&
+            totalCurrStudent.value !== undefined
+          ) {
+            setCurrStudents(totalCurrStudent.value?._sum?.currentSeats ?? 0);
+            setErrorStats(false);
+          } else {
+            setErrorStats(true);
+          }
+          setLoadingStats(false);
+        }
+      } catch (e) {
+        if (!cancelled) {
+          setErrorStats(true);
+          setErrorOngoing(true);
+          setErrorNonOngoing(true);
+          setLoadingStats(false);
+          setLoadingOngoing(false);
+          setLoadingNonOngoing(false);
+          console.error("Instructor dashboard fetch error:", e);
+        }
+      }
+    })();
+
+    return () => {
+      cancelled = true;
     };
-
-    run();
   }, [status, userId]);
 
   if (status === "loading") {
@@ -81,20 +165,26 @@ export default function InstructorDashboard() {
         </p>
 
         <div className="stats-card">
-          <div>
-            <span>Active Classes:</span>
-            <span id="Activeclass">{ongoingSecs?.length ?? "0"}</span>
-          </div>
-          <div>
-            <span>Number of Active Students:</span>
-            <span id="totalStud">{currStudents}</span>
-          </div>
-          <div>
-            <span>Total Classes:</span>
-            <span id="Noclasses">
-              {ongoingSecs && nonOngoingSecs ? totalClasses : "N/A"}
-            </span>
-          </div>
+          {loadingStats ? (
+            <LoadingSpinner />
+          ) : errorStats ? (
+            <ErrorMessage message="⚠️ Failed to load statistics. Please try again." />
+          ) : (
+            <>
+              <div>
+                <span>Active Classes:</span>
+                <span id="Activeclass">{ongoingSecs.length}</span>
+              </div>
+              <div>
+                <span>Number of Active Students:</span>
+                <span id="totalStud">{currStudents}</span>
+              </div>
+              <div>
+                <span>Total Classes:</span>
+                <span id="Noclasses">{totalClasses}</span>
+              </div>
+            </>
+          )}
         </div>
       </div>
 
@@ -107,8 +197,10 @@ export default function InstructorDashboard() {
         <ul className="course-card-list">
           <h3>Ongoing Courses</h3>
           <div className={styles.cardGroup}>
-            {ongoingSecs === null ? (
+            {loadingOngoing ? (
               <LoadingSpinner />
+            ) : errorOngoing ? (
+              <ErrorMessage message="⚠️ Failed to load ongoing courses." />
             ) : ongoingSecs.length === 0 ? (
               <EmptySection text="No Ongoing Courses" />
             ) : (
@@ -122,8 +214,10 @@ export default function InstructorDashboard() {
             <h3>Previous/Future Courses</h3>
           </div>
           <div className={styles.pFcardGroup}>
-            {nonOngoingSecs === null ? (
+            {loadingNonOngoing ? (
               <LoadingSpinner />
+            ) : errorNonOngoing ? (
+              <ErrorMessage message="⚠️ Failed to load previous/future courses." />
             ) : nonOngoingSecs.length === 0 ? (
               <EmptySection text="No Non-Active Courses" />
             ) : (
