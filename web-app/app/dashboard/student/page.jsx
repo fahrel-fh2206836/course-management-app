@@ -1,64 +1,71 @@
-'use client'
-import React, { useContext, useEffect, useState, useRef } from 'react'
-import { UserContext } from '@/app/context/UserContext'
-import styles from './page.module.css'
-import CourseCard1 from '@/app/components/CourseCard1'
-import { getRegSecBySemAction, getMajorByIdAction, getSemestersAction } from '@/app/actions/server-actions'
-import EmptySection from '@/app/components/EmptySection'
-import registrations from '@/app/data/registrations.json'
-import sections from '@/app/data/sections.json'
-import courses from '@/app/data/courses.json'
+// app/dashboard/page.jsx
+"use client";
 
-export default function page() {
+import { useEffect, useRef, useState } from "react";
+import { useSession } from "next-auth/react";
+import styles from "./page.module.css";
+import CourseCard1 from "@/app/components/CourseCard1";
+import { getRegSecBySemAction, getMajorByIdAction, getSemestersAction } from "@/app/actions/server-actions";
+import EmptySection from "@/app/components/EmptySection";
+import registrations from "@/app/data/registrations.json";
+import sections from "@/app/data/sections.json";
+import courses from "@/app/data/courses.json";
+
+export default function StudentDashboard() {
+  const { data: session, status } = useSession(); // <-- replaces UserContext
+  const user = session?.user; // expect user.id, user.name, etc.
+
   const [regSections, setRegSections] = useState([]);
   const [major, setMajor] = useState(null);
   const [progress, setProgress] = useState(0);
   const [completedCredits, setCompletedCredits] = useState(0);
-  const { user } = useContext(UserContext);
   const progressBarRef = useRef(null);
 
   useEffect(() => {
-    if (user) {
-      const fetchRegSec = async () => {
-        const semesters = await getSemestersAction();
-        const regSec = await getRegSecBySemAction(user.userId, semesters[semesters.length - 2].semester);
+    if (status !== "authenticated" || !user?.id) return;
+
+    const run = async () => {
+      const semesters = await getSemestersAction();
+      const prevSemester = semesters[semesters.length - 2]?.semester;
+
+      if (prevSemester) {
+        const regSec = await getRegSecBySemAction(user.id, prevSemester);
         setRegSections(regSec);
-      };
+      }
 
-      const fetchMajor = async () => {
-        const m = await getMajorByIdAction(user.Student?.majorId);
-        setMajor(m);
+      // === Learning Path-style credit calculation ===
+      const m = await getMajorByIdAction(user.Student?.majorId);
+      setMajor(m);
 
-        // === Learning Path-style credit calculation ===
-        const studentRegs = registrations.filter(r => r.studentId === user.userId);
-        let credits = 0;
+      const studentRegs = registrations.filter((r) => r.studentId === user.id);
+      let credits = 0;
 
-        studentRegs.forEach(reg => {
-          const course = courses.find(c => c.id === reg.courseId);
-          const section = sections.find(s => s.sectionId === reg.sectionId);
+      studentRegs.forEach((r) => {
+        const course = courses.find((c) => c.id === r.courseId);
+        const section = sections.find((s) => s.sectionId === r.sectionId);
+        if (!course || !section) return;
 
-          if (!course || !section) return;
+        const grade = r.grade?.toUpperCase();
+        const status = section.sectionStatus;
 
-          const grade = reg.grade?.toUpperCase();
-          const status = section.sectionStatus;
+        if (grade && grade !== "F") credits += course.creditHour;
+        else if (status === "COMPLETED") credits += course.creditHour;
+      });
 
-          if (grade && grade !== 'F') credits += course.creditHour;
-          else if (status === 'COMPLETED') credits += course.creditHour;
-        });
+      setCompletedCredits(credits);
 
-        setCompletedCredits(credits);
+      if (progressBarRef.current && m?.totalCreditHour > 0) {
+        const percent = Math.round((credits / m.totalCreditHour) * 100);
+        setProgress(percent);
+        progressBarRef.current.style.width = `${percent}%`;
+      }
+    };
 
-        if (progressBarRef.current && m.totalCreditHour > 0) {
-          const percent = Math.round((credits / m.totalCreditHour) * 100);
-          setProgress(percent);
-          progressBarRef.current.style.width = `${percent}%`;
-        }
-      };
+    run();
+  }, [status, user?.id, user?.Student?.majorId]);
 
-      fetchRegSec();
-      fetchMajor();
-    }
-  }, [user]);
+  if (status === "loading") return <main className="main-dashboard"><p>Loading…</p></main>;
+  if (status === "unauthenticated") return <main className="main-dashboard"><p>You must be signed in</p></main>;
 
   return (
     <main className="main-dashboard">

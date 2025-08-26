@@ -10,11 +10,9 @@ export default function RedirectPage() {
     const checkSession = async () => {
         const session = await getSession();
         const role = session?.user?.role;
-        localStorage.setItem("loggedInUser", JSON.stringify(session.user));
-        localStorage.currentPage = 'dashboard';
-        if (role === 'Student') router.push("/view-student/dashboard-student.html");
-        else if (role === "Instructor") router.push("/view-instructor/dashboard-instructor.html");
-        else if (role === "Admin") router.push("/view-admin/dashboard-admin.html");
+        if (role === 'Student') router.push("/dashboard/student");
+        else if (role === "Instructor") router.push("/dashboard/instructor");
+        else if (role === "Admin") router.push("/dashboard/admin");
         else {
             alert("Invalid account");
             redirect("/")

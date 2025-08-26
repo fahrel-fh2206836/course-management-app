@@ -1,5 +1,5 @@
+import SessionProviderWrapper from "./context/SessionProviderWrapper";
 import "./globals.css";
-import UserProvider from '@/app/context/UserContext';
 
 export const metadata = {
   title: "QU Course Management System",
@@ -10,12 +10,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'/>
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
       </head>
       <body>
-        {/* <UserProvider> */}
+        <SessionProviderWrapper>
           {children}
-        {/* </UserProvider> */}
+        </SessionProviderWrapper>
       </body>
     </html>
   );

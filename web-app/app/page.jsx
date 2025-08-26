@@ -30,16 +30,17 @@ export default function Login() {
 
   async function handleLogin(e) {
     e.preventDefault();
-    
-    const user = await getUserAction(usernameRef.current, password);
-    if(!user.error) {
-      localStorage.setItem("loggedInUser", JSON.stringify(user));
-      localStorage.currentPage = 'dashboard';
-      if (user.role === "Student") router.push("/view-student/dashboard-student.html");
-      else if (user.role === "Instructor") router.push("/view-instructor/dashboard-instructor.html");
-      else router.push("/view-admin/dashboard-admin.html");
-    }
-    else {
+    setError(false);
+    const result = await signIn('credentials', {
+      redirect: false,
+      username: usernameRef.current,
+      password,
+      callbackUrl: '/redirect'
+    });
+
+    if (result?.ok) {
+      router.push('/redirect');
+    } else {
       setError(true);
       setPassword("");
     }
