@@ -38,8 +38,8 @@ export async function getRegistrationsAction(studentId, sem) {
     return await appRepo.getRegistrations(studentId, sem);
 }   
 
-export async function getInstructorSecBySemAction(instructorId, sem, notSem) {
-    return await appRepo.getInstructorSecBySem(instructorId, sem, notSem);
+export async function getSectionsAction(instructorId, sem, notSem) {
+    return await appRepo.getSections(instructorId, sem, notSem);
 }
 
 export async function getInstructorTotalStudentSemAction(instructorId, sem) {
