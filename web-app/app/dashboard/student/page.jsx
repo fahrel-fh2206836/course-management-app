@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { useSession } from "next-auth/react";
 import styles from "./page.module.css";
 import CourseCard1 from "@/app/components/CourseCard1";
-import { getRegSecBySemAction, getMajorByIdAction, getSemestersAction } from "@/app/actions/server-actions";
+import { getRegistrationsAction, getMajorByIdAction, getSemestersAction } from "@/app/actions/server-actions";
 import EmptySection from "@/app/components/EmptySection";
 import registrations from "@/app/data/registrations.json";
 import sections from "@/app/data/sections.json";
@@ -29,7 +29,7 @@ export default function StudentDashboard() {
       const prevSemester = semesters[semesters.length - 2]?.semester;
 
       if (prevSemester) {
-        const regSec = await getRegSecBySemAction(user.id, prevSemester);
+        const regSec = await getRegistrationsAction(user.id, prevSemester);
         setRegSections(regSec);
       }
 

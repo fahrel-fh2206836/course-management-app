@@ -1,7 +1,5 @@
 'use server'
 
-import { revalidatePath } from 'next/cache'
-import { redirect } from 'next/navigation'
 import appRepo from '@/app/repo/app-repo';
 
 function removeServerActionProperty(data) {
@@ -36,8 +34,8 @@ export async function getMajorByIdAction(majorId) {
     return await appRepo.getMajorById(majorId);
 }
 
-export async function getRegSecBySemAction(studentId, sem) {
-    return await appRepo.getStudentRegSecBySem(studentId, sem);
+export async function getRegistrationsAction(studentId, sem) {
+    return await appRepo.getRegistrations(studentId, sem);
 }   
 
 export async function getInstructorSecBySemAction(instructorId, sem, notSem) {
