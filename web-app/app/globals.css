@@ -261,7 +261,6 @@ nav ul li a, i {
   background-color: var(--coffee-);
 }
 
-
 .cancel-btn {
   background-color: white;
 }
@@ -1144,5 +1143,14 @@ h3 {
   }
 }
 
+/* Loading Spinner Style */
+.loading-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
-
+.loading-center {
+  height: 100vh;
+}

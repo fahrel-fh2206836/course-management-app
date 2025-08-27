@@ -24,7 +24,7 @@ export default function RedirectPage() {
 
   return (
     <>
-    <LoadingSpinner/>
+    <LoadingSpinner center/>
     </>
   )
   

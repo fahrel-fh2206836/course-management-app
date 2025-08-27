@@ -1,8 +1,8 @@
 import React from 'react';
 
-export default function LoadingSpinner() {
+export default function LoadingSpinner({ center = false }) {
   return (
-    <div style={styles.wrapper}>
+    <div className={`${center ? 'loading-center' : ''} loading-wrapper`}>
       <div style={styles.spinner} />
       <p style={styles.text}>Loading...</p>
     </div>
@@ -10,14 +10,6 @@ export default function LoadingSpinner() {
 }
 
 const styles = {
-  wrapper: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: '100vh',
-    gap: '1rem'
-  },
   spinner: {
     width: '50px',
     height: '50px',
