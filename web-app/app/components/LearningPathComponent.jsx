@@ -119,7 +119,7 @@ export default function LearningPathComponent({ data, styles }) {
           <div className="status-completed">
             <h2>
               <span className="status-dot completed-dot" />
-              {statusFilter === "completed" ? "Completed" : "Completed (all)"}
+              Completed
             </h2>
             <div className={styles.courseList}>
               {statusFilter === "completed" ? renderCourseList(currentList) : renderCourseList(categorized.completed)}
@@ -129,7 +129,7 @@ export default function LearningPathComponent({ data, styles }) {
           <div className="status-pending">
             <h2>
               <span className="status-dot pending-dot" />
-              {statusFilter === "pending" ? "Pending" : "Pending (all)"}
+              Pending
             </h2>
             <div className={styles.courseList}>
               {statusFilter === "pending" ? renderCourseList(currentList) : renderCourseList(categorized.pending)}
@@ -139,7 +139,7 @@ export default function LearningPathComponent({ data, styles }) {
           <div className="status-in_progress">
             <h2>
               <span className="status-dot in_progress-dot" />
-              {statusFilter === "in_progress" ? "In progress" : "In progress (all)"}
+              In progress
             </h2>
             <div className={styles.courseList}>
               {statusFilter === "in_progress" ? renderCourseList(currentList) : renderCourseList(categorized.inProgress)}
