@@ -37,7 +37,7 @@ export async function getMajorByIdAction(majorId) {
     return await appRepo.getMajorById(majorId);
 }
 
-export async function getRegistrationsAction(studentId, sem) {
+export async function getRegistrationsByStudentIdandSemAction(studentId, sem) {
     return await appRepo.getRegistrations(studentId, sem);
 }
 
@@ -77,4 +77,8 @@ export async function fetchLearningPathForCurrentUser() {
 
 export async function fetchLearningPathByUserIdAction(userId) {
     return appRepo.getLearningPathByUserId(userId);
+}
+
+export async function getCompletedCreditsAction(userId) {
+    return appRepo.computeCompletedCredits(userId);
 }

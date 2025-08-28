@@ -5,17 +5,16 @@ import { useEffect, useRef, useState } from "react";
 import { useSession } from "next-auth/react";
 import styles from "./page.module.css";
 import CourseCard1 from "@/app/components/CourseCard1";
-import {
-  getRegistrationsAction,
-  getMajorByIdAction,
-  getSemestersAction,
-} from "@/app/actions/server-actions";
 import EmptySection from "@/app/components/EmptySection";
 import LoadingSpinner from "@/app/components/LoadingSpinner";
 import ErrorMessage from "@/app/components/ErrorMessage";
-import registrations from "@/app/data/registrations.json";
-import sections from "@/app/data/sections.json";
-import courses from "@/app/data/courses.json";
+
+import {
+  getSemestersAction,
+  getMajorByIdAction,
+  getRegistrationsByStudentIdandSemAction,
+  getCompletedCreditsAction,
+} from "@/app/actions/server-actions";
 
 export default function StudentDashboard() {
   const { data: session, status } = useSession();
@@ -24,6 +23,7 @@ export default function StudentDashboard() {
   // Data
   const [regSections, setRegSections] = useState(null); // null until fetched
   const [major, setMajor] = useState(null);
+  const progressBarRef = useRef(null);
   const [progress, setProgress] = useState(0);
   const [completedCredits, setCompletedCredits] = useState(0);
 
@@ -32,8 +32,6 @@ export default function StudentDashboard() {
   const [errorStats, setErrorStats] = useState(false);
   const [loadingSections, setLoadingSections] = useState(true);
   const [errorSections, setErrorSections] = useState(false);
-
-  const progressBarRef = useRef(null);
 
   useEffect(() => {
     if (status !== "authenticated" || !user?.id) return;
@@ -47,20 +45,19 @@ export default function StudentDashboard() {
         setErrorStats(false);
         setErrorSections(false);
 
+        // 1) Get semesters and pick the previous one (2nd last).
         const semesters = await getSemestersAction();
-        const prevSemester = semesters?.[semesters.length - 2]?.semester;
+        const len = Array.isArray(semesters) ? semesters.length : 0;
+        const prevSemester =
+          len >= 2 ? semesters[len - 2]?.semester : len === 1 ? semesters[0]?.semester : null;
 
-        // Sections list
+        // 2) Sections list for that semester
         if (prevSemester) {
           try {
-            const regSec = await getRegistrationsAction(user.id, prevSemester);
+            const regSec = await getRegistrationsByStudentIdandSemAction(user.id, prevSemester);
             if (!cancelled) {
-              if (Array.isArray(regSec)) {
-                setRegSections(regSec);
-              } else {
-                setRegSections([]);
-                setErrorSections(true);
-              }
+              setRegSections(Array.isArray(regSec) ? regSec : []);
+              if (!Array.isArray(regSec)) setErrorSections(true);
             }
           } catch {
             if (!cancelled) {
@@ -78,33 +75,20 @@ export default function StudentDashboard() {
           }
         }
 
-        // Stats (major + completedCredits + progress)
+        // 3) Stats: major + completedCredits (from repo) + progress
         try {
-          const m = await getMajorByIdAction(user.Student?.majorId);
-          if (!cancelled) setMajor(m ?? null);
-
-          // Completed credits from local data
-          const studentRegs = registrations.filter((r) => r.studentId === user.id);
-          let credits = 0;
-          studentRegs.forEach((r) => {
-            const course = courses.find((c) => c.id === r.courseId);
-            const section = sections.find((s) => s.sectionId === r.sectionId);
-            if (!course || !section) return;
-            const grade = r.grade?.toUpperCase();
-            const secStatus = section.sectionStatus;
-            if (grade && grade !== "F") credits += course.creditHour;
-            else if (secStatus === "COMPLETED") credits += course.creditHour;
-          });
+          const m = await getMajorByIdAction(user?.Student?.majorId);
+          const credits = await getCompletedCreditsAction(user.id);
 
           if (!cancelled) {
+            setMajor(m ?? null);
             setCompletedCredits(credits);
-            if (progressBarRef.current && m?.totalCreditHour > 0) {
-              const percent = Math.round((credits / m.totalCreditHour) * 100);
-              setProgress(percent);
+
+            const total = Number(m?.totalCreditHour ?? 0);
+            const percent = total > 0 ? Math.round((credits / total) * 100) : 0;
+            setProgress(percent);
+            if (progressBarRef.current) {
               progressBarRef.current.style.width = `${percent}%`;
-            } else {
-              setProgress(0);
-              if (progressBarRef.current) progressBarRef.current.style.width = "0%";
             }
           }
         } catch {
@@ -127,19 +111,21 @@ export default function StudentDashboard() {
     };
   }, [status, user?.id, user?.Student?.majorId]);
 
-  if (status === "loading")
+  if (status === "loading") {
     return (
       <main className="main-dashboard">
         <LoadingSpinner />
       </main>
     );
+  }
 
-  if (status === "unauthenticated")
+  if (status === "unauthenticated") {
     return (
       <main className="main-dashboard">
         <p>You must be signed in</p>
       </main>
     );
+  }
 
   return (
     <main className="main-dashboard">
@@ -204,7 +190,12 @@ export default function StudentDashboard() {
             <EmptySection text="No Registered Section!" />
           ) : (
             regSections.map((rs) => (
-              <CourseCard1 key={rs.id} c={rs.section.course} s={rs.section} i={rs.section.instructor} />
+              <CourseCard1
+                key={rs.id}
+                c={rs.section.course}
+                s={rs.section}
+                i={rs.section.instructor}
+              />
             ))
           )}
         </ul>

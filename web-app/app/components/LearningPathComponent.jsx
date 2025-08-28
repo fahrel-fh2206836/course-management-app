@@ -89,9 +89,9 @@ export default function LearningPathComponent({ data, styles }) {
               {completedCH}/{major.totalCreditHour}
             </span>
           </div>
-          <div className={styles.progressRow}>
-            <div id="progress-bar" className={styles.progressBar}>
-              <div ref={progressBarRef} className={styles.progressInner} />
+          <div>
+            <div id="progress-bar">
+              <div ref={progressBarRef} />
             </div>
             <span id="bar-percentage">{progress}%</span>
           </div>

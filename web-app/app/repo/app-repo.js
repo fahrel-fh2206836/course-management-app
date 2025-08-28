@@ -654,6 +654,39 @@ class AppRepo {
     };
   }
 
+  /**
+ * Compute completed credits using your rules:
+ *  - Count course.creditHour if (trim(grade) !== "" AND upper(grade) !== "F")
+ *  - OR section.sectionStatus === "COMPLETED"
+ */
+  async computeCompletedCredits(userId) {
+    if (!userId) return 0;
+
+    const regs = await prisma.registration.findMany({
+      where: { studentId: userId },
+      include: {
+        course: { select: { creditHour: true } },
+        section: { select: { sectionStatus: true } },
+      },
+    });
+
+    let credits = 0;
+
+    for (const r of regs) {
+      const rawGrade = (r.grade ?? "").trim();
+      const gradeUpper = rawGrade.toUpperCase();
+      const sectionCompleted = r.section?.sectionStatus === "COMPLETED";
+
+      const hasPassingGrade = rawGrade.length > 0 && gradeUpper !== "F";
+
+      if (hasPassingGrade && sectionCompleted) {
+        credits += Number(r.course?.creditHour ?? 0);
+      }
+    }
+
+    return credits;
+  }
+
   // ===================== Statistics =====================
 
   async getTotalStudentsPerMajor() {
