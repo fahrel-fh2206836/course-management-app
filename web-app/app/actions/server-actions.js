@@ -1,6 +1,9 @@
 'use server'
 
 import appRepo from '@/app/repo/app-repo';
+import { getServerSession } from "next-auth";
+import { unstable_noStore as noStore } from "next/cache";
+import { authOptions } from '../api/auth/[...nextauth]/route';
 
 function removeServerActionProperty(data) {
     // this is a helper function to remove the $ACTION_ID_ prefix from the keys
@@ -26,7 +29,7 @@ export async function getUserAction(username, password) {
     return await appRepo.getUser(username, password);
 }
 
-export async function getUserByEmailAction(username){
+export async function getUserByEmailAction(username) {
     return await appRepo.getUserByEmail(username);
 }
 
@@ -36,7 +39,7 @@ export async function getMajorByIdAction(majorId) {
 
 export async function getRegistrationsAction(studentId, sem) {
     return await appRepo.getRegistrations(studentId, sem);
-}   
+}
 
 export async function getSectionsAction(instructorId, sem, notSem) {
     return await appRepo.getSections(instructorId, sem, notSem);
@@ -52,4 +55,26 @@ export async function getCourseByStatusAction(status) {
 
 export async function getCourseByMajorStatusAction(majorId, status) {
     return await appRepo.getCourseByMajorStatus(majorId, status);
+}
+
+export async function fetchLearningPathForCurrentUser() {
+    const session = await getServerSession(authOptions);
+    const userId = session?.user?.userId ?? session?.user?.id ?? null;
+
+    if (!userId) {
+        return {
+            user: null,
+            student: null,
+            major: null,
+            categorized: { completed: [], inProgress: [], pending: [] },
+            status: "unauthenticated",
+        };
+    }
+
+    const data = await appRepo.getLearningPathByUserId(userId);
+    return { ...data, status: "authenticated" };
+}
+
+export async function fetchLearningPathByUserIdAction(userId) {
+    return appRepo.getLearningPathByUserId(userId);
 }

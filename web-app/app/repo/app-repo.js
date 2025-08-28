@@ -2,7 +2,7 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 class AppRepo {
-  constructor() {}
+  constructor() { }
 
   // ===================== User Methods =====================
 
@@ -353,11 +353,11 @@ class AppRepo {
       ...(studentId && { studentId }),
       ...(semester || sectionStatus
         ? {
-            section: {
-              ...(semester && { semester }),
-              ...(sectionStatus && { sectionStatus }),
-            },
-          }
+          section: {
+            ...(semester && { semester }),
+            ...(sectionStatus && { sectionStatus }),
+          },
+        }
         : {}),
     };
 
@@ -519,63 +519,138 @@ class AppRepo {
 
   // ===================== Learning Path Methods =====================
 
-  async getStudentById(userId) {
-    return await prisma.user.findUnique({
+  /**
+   * Builds categorized lists for the Learning Path dashboard.
+   * Rules:
+   *  - Completed: grade exists (after trim) AND grade !== "F" (case-insensitive).
+   *  - In progress: sectionStatus === "ONGOING" (grade must not be exposed).
+   *  - Pending: everything else (includes blank grade and "F"; grade must not be exposed).
+   *
+   * Returns:
+   *  {
+   *    user: { userId, firstName, lastName } | null,
+   *    student: { userId, gpa, finishedCreditHour } | null,
+   *    major: { majorId, majorCode, majorName, totalCreditHour } | null,
+   *    categorized: {
+   *      completed: [{ courseCode, courseName, days, time, status, grade }],
+   *      inProgress: [{ courseCode, courseName, days, time, status, grade: null }],
+   *      pending: [{ courseCode, courseName, days, time, status, grade: null }]
+   *    }
+   *  }
+   */
+  async getLearningPathByUserId(userId) {
+    // 1) User
+    const user = await prisma.user.findUnique({
       where: { userId },
-      include: {
-        Student: true,
+      select: { userId: true, firstName: true, lastName: true },
+    });
+
+    // 2) Student
+    const student = await prisma.student.findUnique({
+      where: { userId },
+      select: {
+        userId: true,
+        gpa: true,
+        finishedCreditHour: true,
+        majorId: true,
       },
     });
-  }
 
-  async getRegistrationsByStudentId(studentId) {
-    return await prisma.registration.findMany({
-      where: { studentId },
-      include: {
-        section: {
-          include: {
-            course: true,
-            instructor: {
-              include: {
-                user: true,
-              },
-            },
-          },
+    // 3) Major
+    const major = student
+      ? await prisma.major.findUnique({
+        where: { majorId: student.majorId },
+        select: {
+          majorId: true,
+          majorCode: true,
+          majorName: true,
+          totalCreditHour: true,
         },
-      },
-    });
-  }
+      })
+      : null;
 
-  async getLearningPathData(userId) {
-    const user = await this.getStudentById(userId);
+    // 4) Registrations with course + section
+    const regs = student
+      ? await prisma.registration.findMany({
+        where: { studentId: student.userId }, // Registration.studentId -> Student.userId (per your schema)
+        include: {
+          course: { select: { id: true, courseCode: true, courseName: true } },
+          section: { select: { days: true, time: true, sectionStatus: true } },
+        },
+      })
+      : [];
 
-    if (!user || !user.Student) {
-      return { error: "User not found or not a student" };
+    // 5) Categorize with explicit "blank or F is NOT completed"
+    const categorized = {
+      completed: [],
+      inProgress: [],
+      pending: [],
+    };
+
+    for (const r of regs) {
+      const status = r.section?.sectionStatus ?? null; // "COMPLETED" | "ONGOING" | "OPEN_REGISTRATION"
+
+      // Normalize grade: treat null/undefined/" "/whitespace as empty
+      const rawGrade = (r.grade ?? "").trim();
+      const gradeUpper = rawGrade.toUpperCase();
+
+      // Completed ONLY if there's a real grade AND it's not "F"
+      const hasValidPassingGrade = rawGrade.length > 0 && gradeUpper !== "F";
+
+      // Base shape; pending/in-progress MUST NOT expose grade
+      const base = {
+        courseCode: r.course?.courseCode ?? "N/A",
+        courseName: r.course?.courseName ?? "Unnamed Course",
+        days: r.section?.days ?? null,
+        time: r.section?.time ?? null,
+        status,
+      };
+
+      if (hasValidPassingGrade) {
+        // ✅ Completed (grade present AND not "F")
+        categorized.completed.push({
+          ...base,
+          grade: rawGrade, // only completed shows grade
+        });
+      } else if (status === "ONGOING") {
+        // 🔄 In progress (no grade exposed)
+        categorized.inProgress.push({
+          ...base,
+          grade: null,
+        });
+      } else {
+        // 🕒 Pending (includes blank grade and "F"; no grade exposed)
+        categorized.pending.push({
+          ...base,
+          grade: null,
+        });
+      }
     }
-
-    const studentInfo = user.Student;
-    const major = await this.getMajorById(studentInfo.majorId);
-
-    if (!major) {
-      return { error: "Major not found" };
-    }
-
-    const courses = await this.getCourseByMajorId(studentInfo.majorId);
-    const registrations = await this.getRegistrationsByStudentId(user.userId);
 
     return {
-      student: {
-        userId: user.userId,
-        firstName: user.firstName,
-        lastName: user.lastName,
-        username: user.username,
-        gpa: studentInfo.gpa,
-        finishedCreditHour: studentInfo.finishedCreditHour,
-        majorId: studentInfo.majorId,
-      },
-      major,
-      courses,
-      registrations,
+      user: user
+        ? {
+          userId: user.userId,
+          firstName: user.firstName,
+          lastName: user.lastName,
+        }
+        : null,
+      student: student
+        ? {
+          userId: student.userId,
+          gpa: Number(student.gpa ?? 0),
+          finishedCreditHour: Number(student.finishedCreditHour ?? 0),
+        }
+        : null,
+      major: major
+        ? {
+          majorId: major.majorId,
+          majorCode: major.majorCode,
+          majorName: major.majorName,
+          totalCreditHour: Number(major.totalCreditHour ?? 0),
+        }
+        : null,
+      categorized,
     };
   }
 
