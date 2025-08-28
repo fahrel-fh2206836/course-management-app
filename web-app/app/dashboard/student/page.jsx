@@ -23,7 +23,6 @@ export default function StudentDashboard() {
   // Data
   const [regSections, setRegSections] = useState(null); // null until fetched
   const [major, setMajor] = useState(null);
-  const progressBarRef = useRef(null);
   const [progress, setProgress] = useState(0);
   const [completedCredits, setCompletedCredits] = useState(0);
 
@@ -87,9 +86,6 @@ export default function StudentDashboard() {
             const total = Number(m?.totalCreditHour ?? 0);
             const percent = total > 0 ? Math.round((credits / total) * 100) : 0;
             setProgress(percent);
-            if (progressBarRef.current) {
-              progressBarRef.current.style.width = `${percent}%`;
-            }
           }
         } catch {
           if (!cancelled) setErrorStats(true);
@@ -165,8 +161,8 @@ export default function StudentDashboard() {
                 <span id="stats-completed">{completedCredits}</span>
               </div>
               <div>
-                <div id="progress-bar">
-                  <div ref={progressBarRef}></div>
+                <div id="progress-bar" aria-valuemin={0} aria-valuemax={100} aria-valuenow={progress}>
+                  <div style={{ width: `${progress}%` }} />
                 </div>
                 <span id="bar-percentage">{progress}%</span>
               </div>
