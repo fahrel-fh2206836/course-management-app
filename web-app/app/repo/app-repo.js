@@ -227,7 +227,7 @@ class AppRepo {
     return await prisma.course.findMany({ orderBy: { courseName: "asc" } });
   }
 
-  async getCourseByMajorStatus(majorId, status) {
+  async getCourseByMajorStatus({ majorId, status } = {}) {
     const statusLow = status.toLowerCase();
     if (statusLow === "ongoing") {
       return await prisma.course.findMany({
@@ -252,6 +252,7 @@ class AppRepo {
       },
     });
   }
+
 
   async getCourseByMajorId(majorId) {
     return await prisma.course.findMany({
@@ -303,6 +304,10 @@ class AppRepo {
         },
       },
     });
+  }
+
+  async getCourseByStatus(status) {
+
   }
 
   async addCourse(course) {

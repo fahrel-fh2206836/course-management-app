@@ -5,7 +5,6 @@ import React, { useEffect, useState } from 'react';
 import { getCourseByMajorStatusAction, getCourseByStatusAction } from "../actions/server-actions";
 import { useRouter } from "next/navigation";
 
-
 export default function AdminCourses({ majors, ongoingCourse, regCourse, notOfferedCourse}) {
   const router = useRouter();
   const [status, setStatus] = useState('ongoing');
@@ -42,6 +41,7 @@ export default function AdminCourses({ majors, ongoingCourse, regCourse, notOffe
   
   async function handleChangeStatus(e) {
       const courseStatus = e.target.value;
+      setSelectedMajors(prev => ({ ...prev, smallScreen: "all" }));
       const filteredCourses = await getCourseByStatusAction(courseStatus);
       setStatus(courseStatus);
       setCourses({...courses, smallScreen: filteredCourses});
@@ -90,7 +90,7 @@ export default function AdminCourses({ majors, ongoingCourse, regCourse, notOffe
               name="status"
               id="status"
               className={styles.select}
-              defaultValue={status}
+              value={status}
               onChange={(e) => handleChangeStatus(e)}
           >
               <option value="ongoing">Ongoing</option>
@@ -107,7 +107,7 @@ export default function AdminCourses({ majors, ongoingCourse, regCourse, notOffe
               </div>
               <div className={styles.majorFilter}>
               <label htmlFor="major"><i className='bx bxs-filter-alt icon-circle'></i></label>
-              <select id="major" name="major" defaultValue={selectedMajor.smallScreen} onChange={(e) => handleMajorChange("smallScreen", e.target.value)}>
+              <select id="major" name="major" value={selectedMajor.smallScreen} onChange={(e) => handleMajorChange("smallScreen", e.target.value)}>
                   {renderMajorOptions(majors)}
               </select>
               </div>

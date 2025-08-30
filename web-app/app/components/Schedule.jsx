@@ -3,7 +3,7 @@ import appRepo from '../repo/app-repo'
 import EmptySection from './EmptySection';
 
 export default async function Schedule({ ongoingSemester }) {
-  const ongoingSection = await appRepo.getSectionBySem(ongoingSemester);
+  const ongoingSection = await appRepo.getSections(null, ongoingSemester);
 
   return (
     <table id="schedule-table">

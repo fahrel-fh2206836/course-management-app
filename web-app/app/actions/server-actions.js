@@ -2,7 +2,6 @@
 
 import appRepo from '@/app/repo/app-repo';
 import { getServerSession } from "next-auth";
-import { unstable_noStore as noStore } from "next/cache";
 import { authOptions } from '../api/auth/[...nextauth]/route';
 
 function removeServerActionProperty(data) {
@@ -50,11 +49,11 @@ export async function getInstructorTotalStudentSemAction(instructorId, sem) {
 }
 
 export async function getCourseByStatusAction(status) {
-    return await appRepo.getCourseByStatus(status);
+    return await appRepo.getCourseByMajorStatus({ status: status });
 }
 
 export async function getCourseByMajorStatusAction(majorId, status) {
-    return await appRepo.getCourseByMajorStatus(majorId, status);
+    return await appRepo.getCourseByMajorStatus({majorId: majorId, status: status});
 }
 
 export async function fetchLearningPathForCurrentUser() {

@@ -19,7 +19,7 @@ export async function GET(req) {
       return Response.json(await appRepo.getCourseByName(courseName), { status: 200 });
     }
     if (courseStatus) {
-        const courses = await appRepo.getCourseByMajorStatus(majorId, courseStatus);
+        const courses = await appRepo.getCourseByMajorOrStatus(majorId, courseStatus);
         return Response.json(courses, { status: 200 });
       }
       
