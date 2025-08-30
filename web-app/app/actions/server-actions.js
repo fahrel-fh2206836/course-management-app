@@ -16,8 +16,8 @@ function removeServerActionProperty(data) {
     return data;
 }
 
-export async function getSemestersAction() {
-    return await appRepo.getSemesters();
+export async function getSemestersAction(removeSem) {
+    return await appRepo.getSemesters(removeSem);
 }
 
 export async function getUsersAction() {

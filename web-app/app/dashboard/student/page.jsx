@@ -48,12 +48,19 @@ export default function StudentDashboard() {
         const semesters = await getSemestersAction();
         const len = Array.isArray(semesters) ? semesters.length : 0;
         const prevSemester =
-          len >= 2 ? semesters[len - 2]?.semester : len === 1 ? semesters[0]?.semester : null;
+          len >= 2
+            ? semesters[len - 2]?.semester
+            : len === 1
+            ? semesters[0]?.semester
+            : null;
 
         // 2) Sections list for that semester
         if (prevSemester) {
           try {
-            const regSec = await getRegistrationsByStudentIdandSemAction(user.id, prevSemester);
+            const regSec = await getRegistrationsByStudentIdandSemAction(
+              user.id,
+              prevSemester
+            );
             if (!cancelled) {
               setRegSections(Array.isArray(regSec) ? regSec : []);
               if (!Array.isArray(regSec)) setErrorSections(true);
@@ -108,11 +115,7 @@ export default function StudentDashboard() {
   }, [status, user?.id, user?.Student?.majorId]);
 
   if (status === "loading") {
-    return (
-      <main className="main-dashboard">
-        <LoadingSpinner />
-      </main>
-    );
+    return <LoadingSpinner center />;
   }
 
   if (status === "unauthenticated") {
@@ -161,7 +164,12 @@ export default function StudentDashboard() {
                 <span id="stats-completed">{completedCredits}</span>
               </div>
               <div>
-                <div id="progress-bar" aria-valuemin={0} aria-valuemax={100} aria-valuenow={progress}>
+                <div
+                  id="progress-bar"
+                  aria-valuemin={0}
+                  aria-valuemax={100}
+                  aria-valuenow={progress}
+                >
                   <div style={{ width: `${progress}%` }} />
                 </div>
                 <span id="bar-percentage">{progress}%</span>
@@ -177,7 +185,10 @@ export default function StudentDashboard() {
 
       <h1 id="ongoing-text">Ongoing Registered Courses</h1>
       <div className="registered-courses section-style">
-        <ul className={`course-card-list ${styles.courseCardList}`} id="course-card-list">
+        <ul
+          className={`course-card-list ${styles.courseCardList}`}
+          id="course-card-list"
+        >
           {loadingSections ? (
             <LoadingSpinner />
           ) : errorSections ? (

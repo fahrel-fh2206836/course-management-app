@@ -161,7 +161,7 @@ export default function AddCourse({
           id="prerequisites"
           name="prerequisitesCoursesId"
           className="prerequisites-dropdown"
-          defaultValue={""}
+          defaultValue={[""]}
           multiple
         >
           <optgroup
