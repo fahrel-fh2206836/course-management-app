@@ -81,3 +81,11 @@ export async function fetchLearningPathByUserIdAction(userId) {
 export async function getCompletedCreditsAction(userId) {
     return appRepo.computeCompletedCredits(userId);
 }
+
+export async function addCourseAction(course) {
+    return appRepo.addCourse(course);
+}
+
+export async function updateMajorAction(majorId, updatedMajor) {
+    return appRepo.updateMajor(majorId, updatedMajor);
+}

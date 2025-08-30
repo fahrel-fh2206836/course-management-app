@@ -306,10 +306,6 @@ class AppRepo {
     });
   }
 
-  async getCourseByStatus(status) {
-
-  }
-
   async addCourse(course) {
     course.isOngoing = course.isOngoing === "on" ? true : false;
     course.isRegistration = course.isRegistration === "on" ? true : false;

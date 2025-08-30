@@ -1,6 +1,7 @@
 'use client'
 import React, { useContext, useEffect, useState } from 'react'
 import { NotifContext } from '../context/NotifContext';
+import { addCourseAction, updateMajorAction } from '../actions/server-actions';
 
 export default function AddCourse({ majors, csCourse, ceCourse, eeCourse, mathCourse}) {
     const [selectedMajorId, setSelectedMajorId] = useState("");
@@ -37,40 +38,25 @@ export default function AddCourse({ majors, csCourse, ceCourse, eeCourse, mathCo
 
         course.creditHour = parseInt(course.creditHour);
         if(course.creditHour <= 0) {
-            showNotif("Course CH are only positive integers.", "fail");
+            showNotif("⚠️ Course CH are only positive integers.", "fail");
             return;
         }
 
         //Check if the course already exist.
         const courses = [...csCourse, ...ceCourse, ...eeCourse, ...mathCourse];
         if(courses.map(c => c.courseCode.toLowerCase().replace(/\s+/g, '')).includes(course.courseCode.toLowerCase().replace(/\s+/g, ''))) {
-            showNotif("Course already exist.", "fail");
+            showNotif("⚠️ Course already exist.", "fail");
             return;
         }
 
         course.courseCode = selectedMajor.majorCode + course.courseCode;
-        console.log(course);
-        // Add Course
-        // await fetch("/api/courses", {
-        //     method: "POST",
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        //     body: JSON.stringify(course)
-        // })
-
-        // // Update Major
-        // await fetch(`/api/major/${selectedMajorId}`, {
-        //     method: "PUT",
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        //     body: JSON.stringify({...selectedMajor, totalCreditHour: selectedMajor.creditHour + course.creditHour})
-        // })
-
         course.prerequisitesCoursesId = formData.getAll("prerequisitesCoursesId");
+  
+        console.log(course)
+        addCourseAction(course);
+        updateMajorAction(selectedMajorId, {totalCreditHour: selectedMajor.totalCreditHour + course.creditHour});
         
-        showNotif("Course added.");
+        e.currentTarget.reset();
     }
 
     if(!hasMounted) return null;
@@ -106,7 +92,7 @@ export default function AddCourse({ majors, csCourse, ceCourse, eeCourse, mathCo
             <div className="form-group">
                 <label className="add-page-label" htmlFor="prerequisites">Select Prerequisites Courses<p>Note: Hold Ctrl Key for Windows and CMD key for Mac to select multiple options</p></label>
                 <select id="prerequisites" name="prerequisitesCoursesId" className="prerequisites-dropdown" multiple>
-                    <optgroup label={`${selectedMajor?.majorName || "Major"} Courses`}>
+                    <optgroup label={`${selectedMajor?.majorName || "(Select a Major)"} Courses`}>
                         {prerequisitesList.map((c) => (
                         <option key={c.id} value={c.id}>{c.courseName}</option>
                         ))}
