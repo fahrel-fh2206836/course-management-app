@@ -1,6 +1,6 @@
 // app/components/Navbar.jsx
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useSession, signOut } from "next-auth/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -22,7 +22,7 @@ export default function Navbar() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const toggleMenu = () => setShowMenu((prev) => !prev);
+  const toggleMenu = async () => setShowMenu(!showMenu);
   const handleLogout = () => setShowLogoutDialog(true);
   const confirmLogout = () => {
     signOut({ callbackUrl: "/" });
@@ -109,7 +109,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav id="navbar">
+      <nav id="navbar" style={{ borderRadius: showMenu ? "0px" : null }}>
         <div id="nav-img-header">
           <Link href={roleBasePath()}>
             <img src="/assets/images/qu_logo_white.png" alt="QU Logo" id="long-qu-logo" />
@@ -120,7 +120,7 @@ export default function Navbar() {
 
         <ul
           id="menulist"
-          className={`${isLargeScreen ? "large-menulist" : showMenu ? "open-menulist" : "close-menulist"}`}
+          className={`${isLargeScreen ? "large-menulist" : showMenu ? "open-menulist" : "open-menulist close-menulist"}`}
         >
           {navLinks()}
           <div className="nav-index">
