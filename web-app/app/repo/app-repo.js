@@ -2,7 +2,7 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 class AppRepo {
-  constructor() { }
+  constructor() {}
 
   // ===================== User Methods =====================
 
@@ -253,7 +253,6 @@ class AppRepo {
     });
   }
 
-
   async getCourseByMajorId(majorId) {
     return await prisma.course.findMany({
       where: {
@@ -354,11 +353,11 @@ class AppRepo {
       ...(studentId && { studentId }),
       ...(semester || sectionStatus
         ? {
-          section: {
-            ...(semester && { semester }),
-            ...(sectionStatus && { sectionStatus }),
-          },
-        }
+            section: {
+              ...(semester && { semester }),
+              ...(sectionStatus && { sectionStatus }),
+            },
+          }
         : {}),
     };
 
@@ -428,8 +427,10 @@ class AppRepo {
       },
     });
 
-    console.log("-----------------------------------------------------" + registration);
-    console.log(registration !== null)
+    console.log(
+      "-----------------------------------------------------" + registration
+    );
+    console.log(registration !== null);
     return registration !== null;
   }
 
@@ -560,25 +561,29 @@ class AppRepo {
     // 3) Major
     const major = student
       ? await prisma.major.findUnique({
-        where: { majorId: student.majorId },
-        select: {
-          majorId: true,
-          majorCode: true,
-          majorName: true,
-          totalCreditHour: true,
-        },
-      })
+          where: { majorId: student.majorId },
+          select: {
+            majorId: true,
+            majorCode: true,
+            majorName: true,
+            totalCreditHour: true,
+          },
+        })
       : null;
 
     // 4) Registrations with course + section
     const regs = student
       ? await prisma.registration.findMany({
-        where: { studentId: student.userId }, // Registration.studentId -> Student.userId (per your schema)
-        include: {
-          course: { select: { id: true, courseCode: true, courseName: true } },
-          section: { select: { days: true, time: true, sectionStatus: true } },
-        },
-      })
+          where: { studentId: student.userId }, // Registration.studentId -> Student.userId (per your schema)
+          include: {
+            course: {
+              select: { id: true, courseCode: true, courseName: true },
+            },
+            section: {
+              select: { days: true, time: true, sectionStatus: true },
+            },
+          },
+        })
       : [];
 
     // 5) Categorize with explicit "blank or F is NOT completed"
@@ -631,35 +636,35 @@ class AppRepo {
     return {
       user: user
         ? {
-          userId: user.userId,
-          firstName: user.firstName,
-          lastName: user.lastName,
-        }
+            userId: user.userId,
+            firstName: user.firstName,
+            lastName: user.lastName,
+          }
         : null,
       student: student
         ? {
-          userId: student.userId,
-          gpa: Number(student.gpa ?? 0),
-          finishedCreditHour: Number(student.finishedCreditHour ?? 0),
-        }
+            userId: student.userId,
+            gpa: Number(student.gpa ?? 0),
+            finishedCreditHour: Number(student.finishedCreditHour ?? 0),
+          }
         : null,
       major: major
         ? {
-          majorId: major.majorId,
-          majorCode: major.majorCode,
-          majorName: major.majorName,
-          totalCreditHour: Number(major.totalCreditHour ?? 0),
-        }
+            majorId: major.majorId,
+            majorCode: major.majorCode,
+            majorName: major.majorName,
+            totalCreditHour: Number(major.totalCreditHour ?? 0),
+          }
         : null,
       categorized,
     };
   }
 
   /**
- * Compute completed credits using your rules:
- *  - Count course.creditHour if (trim(grade) !== "" AND upper(grade) !== "F")
- *  - OR section.sectionStatus === "COMPLETED"
- */
+   * Compute completed credits using your rules:
+   *  - Count course.creditHour if (trim(grade) !== "" AND upper(grade) !== "F")
+   *  - OR section.sectionStatus === "COMPLETED"
+   */
   async computeCompletedCredits(userId) {
     if (!userId) return 0;
 

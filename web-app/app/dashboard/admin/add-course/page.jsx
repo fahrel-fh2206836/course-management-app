@@ -2,7 +2,7 @@ import AddCourse from '@/app/components/AddCourse'
 import appRepo from '@/app/repo/app-repo'
 import React from 'react'
 
-export default async function page() {
+export default async function AddCoursePage() {
   const majors = await appRepo.getMajors();
   const cmpsCourse = await appRepo.getCourseByMajorId("0fa71028-dcb7-4cec-a20a-df8b6f2ddbc3");
   const cmpeCourse = await appRepo.getCourseByMajorId("ae1662c5-9ad8-41a6-901c-eeed670b9a0b");
