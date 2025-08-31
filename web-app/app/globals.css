@@ -1365,7 +1365,236 @@ h3 {
   }
 
   /* …then show only the one that matches data-active */
-  [data-active="completed"] > .status-completed { display: block; }
-  [data-active="pending"] > .status-pending { display: block; }
-  [data-active="in_progress"] > .status-in_progress { display: block; }
+  [data-active="completed"]>.status-completed {
+    display: block;
+  }
+
+  [data-active="pending"]>.status-pending {
+    display: block;
+  }
+
+  [data-active="in_progress"]>.status-in_progress {
+    display: block;
+  }
+}
+
+.course-info {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid var(--bistre-);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: var(--light-beige-);
+}
+
+.info-header {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  i,
+  h2 {
+    font-size: 1.3rem;
+    color: var(--bistre-);
+  }
+}
+
+.course-desc-table {
+  border-collapse: collapse;
+  border-radius: 10px;
+  border-style: hidden;
+  background-color: white;
+  box-shadow: 0 0 0 1px #666;
+  overflow: hidden;
+}
+
+.course-desc-table th,
+.course-desc-table td {
+  padding: 12px;
+}
+
+.course-desc-table th {
+  background-color: #f0e6cc;
+  width: 35%;
+  text-align: left;
+}
+
+.red-box,
+.green-box {
+  width: 1.05rem;
+  height: 1.05rem;
+  border: 1.5px solid black;
+}
+
+.red-bg {
+  background-color: red;
+}
+
+.green-bg {
+  background-color: green;
+}
+
+.main-manage-courses {
+  margin: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.main-manage-courses>h1 {
+  width: 100%;
+}
+
+.header-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.course-btn {
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 2px 5px;
+  border: none;
+
+  i {
+    font-size: 1.1rem;
+  }
+}
+
+.edit-btn {
+  background-color: var(--chamoisse-);
+
+  i {
+    color: var(--beige-);
+  }
+}
+
+.save-btn:hover {
+  background-color: darkgreen;
+}
+
+.cancel-btn:hover {
+  background-color: crimson;
+}
+
+.edit-btn:hover {
+  background-color: var(--coffee-);
+}
+
+.prerequisite-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  p {
+    color: var(--beige-);
+  }
+
+  div {
+    background-color: var(--chamoisse-);
+    border-radius: 15px;
+    padding: 5px 10px;
+  }
+}
+
+.card-course-statuses {
+  display: flex;
+  justify-content: space-around;
+
+  p {
+    font-size: .65rem;
+  }
+}
+
+.statuses {
+  text-align: center;
+
+  >p {
+    font-weight: bold;
+  }
+}
+
+.status-value {
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border-radius: 15px;
+
+  i {
+    color: var(--bistre-);
+  }
+}
+
+.approval-type {
+  padding: 2px 7px;
+  border: 1px solid var(--bistre-);
+}
+
+.section-type {
+  border: none;
+  padding: 5px 10px;
+
+  p {
+    color: white;
+    font-weight: 500;
+  }
+}
+
+.completed-card {
+  background-color: green;
+}
+
+.ongoing-card {
+  background-color: orange;
+}
+
+.open-for-reg-card {
+  background-color: blue;
+}
+
+.section-btn {
+  cursor: pointer;
+  border-radius: 15px;
+  border: none;
+  padding: 1px 3px;
+
+  i {
+    font-size: 1rem;
+  }
+}
+
+.section-btns {
+  display: flex;
+  gap: 5px;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.edit-section-approval,
+.edit-section-status {
+  margin-top: 5px;
+  padding: 3px 5px;
+  font-size: .65rem;
+
+  option {
+    font-size: .65rem;
+  }
+}
+
+@media (max-width: 350px) {
+
+  .edit-section-approval,
+  .edit-section-status {
+    font-size: .5rem;
+
+    option {
+      font-size: .5rem;
+    }
+  }
 }
