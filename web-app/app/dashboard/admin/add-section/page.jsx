@@ -4,11 +4,17 @@ import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import AddSection from "@/app/components/AddSection";
 import appRepo from "@/app/repo/app-repo";
 import React from "react";
+import ClientRedirect from "@/app/components/ClientRedirect";
 
 export default async function AddSectionPage() {
   const session = await getServerSession(authOptions);
   if (!session) {
-    redirect("/");
+    return (
+      <main className="main-dashboard">
+        <p>Session expired. Redirecting in 5 seconds...</p>
+        <ClientRedirect to="/" delay={5000} />
+      </main>
+    );
   }
 
   const user = session.user;

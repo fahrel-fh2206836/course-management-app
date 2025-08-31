@@ -6,11 +6,17 @@ import appRepo from "@/app/repo/app-repo";
 import styles from "./page.module.css";
 import Schedule from "@/app/components/Schedule";
 import AdminCourses from "@/app/components/AdminCourses";
+import ClientRedirect from "@/app/components/ClientRedirect";
 
 export default async function AdminDashboard() {
   const session = await getServerSession(authOptions);
   if (!session) {
-    redirect("/");
+    return (
+      <main className="main-dashboard">
+        <p>Session expired. Redirecting in 5 seconds...</p>
+        <ClientRedirect to="/" delay={5000} />
+      </main>
+    );
   }
 
   const user = session.user;

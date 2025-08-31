@@ -8,7 +8,7 @@ import CourseCard1 from "@/app/components/CourseCard1";
 import EmptySection from "@/app/components/EmptySection";
 import LoadingSpinner from "@/app/components/LoadingSpinner";
 import ErrorMessage from "@/app/components/ErrorMessage";
-
+import ClientRedirect from "@/app/components/ClientRedirect";
 import {
   getSemestersAction,
   getMajorByIdAction,
@@ -18,6 +18,14 @@ import {
 
 export default function StudentDashboard() {
   const { data: session, status } = useSession();
+  if (!session) {
+    return (
+      <main className="main-dashboard">
+        <p>Session expired. Redirecting in 5 seconds...</p>
+        <ClientRedirect to="/" delay={5000} />
+      </main>
+    );
+  }
   const user = session?.user;
 
   // Data
