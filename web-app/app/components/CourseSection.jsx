@@ -1,12 +1,7 @@
 "use client";
-import React, {
-  useEffect,
-  useMemo,
-  useState,
-  useContext,
-  useCallback,
-} from "react";
+import React, { useEffect, useState, useContext, useCallback } from "react";
 import { NotifContext } from "@/app/context/NotifContext";
+import EmptySection from "./EmptySection";
 
 const BASE_URL = "/api/";
 
@@ -27,7 +22,6 @@ export default function CourseSection({ selectedCourse, courseSections }) {
   const [sectionStatusFilter, setSectionStatusFilter] = useState("None");
 
   // Editing state: allow multiple cards to be edited at once
-  // draft: { [sectionId]: { approvalStatus, sectionStatus } }
   const [editing, setEditing] = useState(new Set());
   const [draft, setDraft] = useState({});
 
@@ -98,7 +92,7 @@ export default function CourseSection({ selectedCourse, courseSections }) {
 
   useEffect(() => {
     if (!Array.isArray(courseSections)) {
-      fetchSections(); // initial, no filters
+      fetchSections();
     }
   }, [courseId, courseSections, fetchSections]);
 
@@ -237,7 +231,6 @@ export default function CourseSection({ selectedCourse, courseSections }) {
       sectionStatus: s.sectionStatus,
     };
 
-    // Match vanilla: if CURRENT sectionStatus is ONGOING/COMPLETED, approval is read-only (not editable)
     const approvalReadonly =
       s.sectionStatus === "ONGOING" || s.sectionStatus === "COMPLETED";
 
@@ -399,33 +392,18 @@ export default function CourseSection({ selectedCourse, courseSections }) {
     );
   }
 
-  const body = useMemo(() => {
-    if (loading) {
-      return (
-        <div className="empty-section">
-          <i className="bx bx-loader-alt bx-spin"></i>
-          <p>Loading sections…</p>
-        </div>
-      );
-    }
-    if (error) {
-      return (
-        <div className="empty-section">
-          <i className="bx bxs-error-circle"></i>
-          <p>Failed to load sections.</p>
-        </div>
-      );
-    }
-    if (!sections || sections.length === 0) {
-      return (
-        <div className="empty-section">
-          <i className="bx bxs-error-circle"></i>
-          <p>This course has no sections.</p>
-        </div>
-      );
-    }
-    return sections.map((s) => <SectionCard key={s.sectionId} s={s} />);
-  }, [loading, error, sections]);
+  const body = (() => {
+    if (loading) return <div className="empty-section">…</div>;
+    if (error) return <EmptySection text="Failed to load sections." />;
+    if (!sections?.length)
+      return <EmptySection text="This course has no sections." />;
+    return sections.map((s) => (
+      <SectionCard
+        key={`${s.sectionId}-${editing.has(s.sectionId) ? "edit" : "view"}`}
+        s={s}
+      />
+    ));
+  })();
 
   return (
     <div className="course-section">

@@ -1598,3 +1598,7 @@ h3 {
     }
   }
 }
+
+.loading-overlay {
+  pointer-events: none;
+}

@@ -172,111 +172,109 @@ export default function CourseInfo({ selectedCourse }) {
         </div>
       </div>
 
-      <table className="course-desc-table" id="course-table">
-        {loading ? (
-          <tbody>
-            <tr>
-              <LoadingSpinner />
-            </tr>
-          </tbody>
-        ) : error ? (
-          <tbody>
-            <tr>
-              <td colSpan={4}>⚠️ Failed to load course info.</td>
-            </tr>
-          </tbody>
-        ) : !course ? (
-          <tbody>
-            <tr>
-              <td colSpan={4}>Course not found.</td>
-            </tr>
-          </tbody>
-        ) : (
-          <tbody>
-            <tr>
-              <th>Course ID</th>
-              <td>{course.id}</td>
-            </tr>
-            <tr>
-              <th>Course Name</th>
-              <td>{course.courseName}</td>
-            </tr>
-            <tr>
-              <th>Course Code</th>
-              <td>{course.courseCode}</td>
-            </tr>
-            <tr>
-              <th>Major</th>
-              <td colSpan={3}>{major?.majorName ?? "—"}</td>
-            </tr>
-            <tr>
-              <th>Credit Hour</th>
-              <td colSpan={3}>{course.creditHour}</td>
-            </tr>
+      {loading ? (
+        <LoadingSpinner />
+      ) : (
+        <table className="course-desc-table" id="course-table">
+          {error ? (
+            <tbody>
+              <tr>
+                <td colSpan={4}>⚠️ Failed to load course info.</td>
+              </tr>
+            </tbody>
+          ) : !course ? (
+            <tbody>
+              <tr>
+                <td colSpan={4}>Course not found.</td>
+              </tr>
+            </tbody>
+          ) : (
+            <tbody>
+              <tr>
+                <th>Course ID</th>
+                <td>{course.id}</td>
+              </tr>
+              <tr>
+                <th>Course Name</th>
+                <td>{course.courseName}</td>
+              </tr>
+              <tr>
+                <th>Course Code</th>
+                <td>{course.courseCode}</td>
+              </tr>
+              <tr>
+                <th>Major</th>
+                <td colSpan={3}>{major?.majorName ?? "—"}</td>
+              </tr>
+              <tr>
+                <th>Credit Hour</th>
+                <td colSpan={3}>{course.creditHour}</td>
+              </tr>
 
-            {!editMode ? (
-              <>
-                <tr>
-                  <th>Status - Ongoing</th>
-                  <td colSpan={3}>
-                    <div
-                      className={
-                        course.isOngoing
-                          ? "green-box green-bg"
-                          : "red-box red-bg"
-                      }
-                    />
-                  </td>
-                </tr>
-                <tr>
-                  <th>Status - Registration</th>
-                  <td colSpan={3}>
-                    <div
-                      className={
-                        course.isRegistration
-                          ? "green-box green-bg"
-                          : "red-box red-bg"
-                      }
-                    />
-                  </td>
-                </tr>
-              </>
-            ) : (
-              <>
-                <tr>
-                  <th>Status - Ongoing</th>
-                  <td colSpan={3}>
-                    <input
-                      type="checkbox"
-                      id="ongoing-check"
-                      checked={!!isOngoing}
-                      onChange={(e) => setIsOngoing(e.target.checked)}
-                    />
-                  </td>
-                </tr>
-                <tr>
-                  <th>Status - Registration</th>
-                  <td colSpan={3}>
-                    <input
-                      type="checkbox"
-                      id="reg-check"
-                      checked={!!isRegistration}
-                      onChange={(e) => setIsRegistration(e.target.checked)}
-                    />
-                  </td>
-                </tr>
-              </>
-            )}
+              {!editMode ? (
+                <>
+                  <tr>
+                    <th>Status - Ongoing</th>
+                    <td colSpan={3}>
+                      <div
+                        className={
+                          course.isOngoing
+                            ? "green-box green-bg"
+                            : "red-box red-bg"
+                        }
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>Status - Registration</th>
+                    <td colSpan={3}>
+                      <div
+                        className={
+                          course.isRegistration
+                            ? "green-box green-bg"
+                            : "red-box red-bg"
+                        }
+                      />
+                    </td>
+                  </tr>
+                </>
+              ) : (
+                <>
+                  <tr>
+                    <th>Status - Ongoing</th>
+                    <td colSpan={3}>
+                      <input
+                        type="checkbox"
+                        id="ongoing-check"
+                        checked={!!isOngoing}
+                        onChange={(e) => setIsOngoing(e.target.checked)}
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>Status - Registration</th>
+                    <td colSpan={3}>
+                      <input
+                        type="checkbox"
+                        id="reg-check"
+                        checked={!!isRegistration}
+                        onChange={(e) => setIsRegistration(e.target.checked)}
+                      />
+                    </td>
+                  </tr>
+                </>
+              )}
 
-            <tr>
-              <th>Prerequisites</th>
-              <td colSpan={3}>
-                <div className="prerequisite-list">{prereqList}</div>
-              </td>
-            </tr>
-          </tbody>
-        )}
-      </table>
+              <tr>
+                <th>Prerequisites</th>
+                <td colSpan={3}>
+                  <div className="prerequisite-list">{prereqList}</div>
+                </td>
+              </tr>
+            </tbody>
+          )}
+        </table>
+      )}
     </div>
   );
 }
