@@ -102,7 +102,7 @@ export default function AddSection({ regCourses, instructors }) {
           defaultValue={""}
           required
         >
-          <option label="Select Instructor" value="" selected disabled></option>
+          <option label="Select Instructor" value="" disabled></option>
           {instructors?.map((i) => (
             <option key={i.userId} value={i.userId}>
               {i.firstName} {i.lastName}

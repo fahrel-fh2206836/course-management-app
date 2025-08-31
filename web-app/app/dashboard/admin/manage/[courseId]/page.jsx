@@ -1,7 +1,9 @@
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import ClientRedirect from "@/app/components/ClientRedirect";
 import CourseInfo from "@/app/components/CourseInfo";
 import CourseSection from "@/app/components/CourseSection";
 import appRepo from "@/app/repo/app-repo";
+import { getServerSession } from "next-auth";
 import React from "react";
 
 export default async function ManageCoursePage({ params }) {
