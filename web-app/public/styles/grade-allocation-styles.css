@@ -75,7 +75,7 @@ main {
     flex-direction: column;
     gap: 20px;
 }
-
+/*  */
 .search-bar{
     display: flex;
     align-items: center;
@@ -92,7 +92,8 @@ main {
     color: var(--bistre-);
 }
 
-.search-box input{
+/*  */
+.search-box-grades input{
     padding: 1rem;
     width: 100%;
     font-weight: 400;
