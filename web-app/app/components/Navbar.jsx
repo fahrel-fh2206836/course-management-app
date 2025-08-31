@@ -73,7 +73,12 @@ export default function Navbar() {
             icon="bxs-home"
             active={pathname === "/dashboard/instructor"}
           />
-          <NavItem href="#" label="Course Instructor Allocation" icon="bxs-cog" />
+          <NavItem
+            href="/dashboard/instructor/course-allocation"
+            label="Course Instructor Allocation"
+            icon="bxs-cog"
+            active={pathname === "/dashboard/instructor/course-allocation"}
+          />
         </>
       );
     } else {
@@ -112,20 +117,35 @@ export default function Navbar() {
       <nav id="navbar" style={{ borderRadius: showMenu ? "0px" : null }}>
         <div id="nav-img-header">
           <Link href={roleBasePath()}>
-            <img src="/assets/images/qu_logo_white.png" alt="QU Logo" id="long-qu-logo" />
-            <img src="/assets/images/qu_logo_white3.png" alt="QU Logo" id="short-qu-logo" />
+            <img
+              src="/assets/images/qu_logo_white.png"
+              alt="QU Logo"
+              id="long-qu-logo"
+            />
+            <img
+              src="/assets/images/qu_logo_white3.png"
+              alt="QU Logo"
+              id="short-qu-logo"
+            />
           </Link>
           <p id="nav-title">Course Management System</p>
         </div>
 
         <ul
           id="menulist"
-          className={`${isLargeScreen ? "large-menulist" : showMenu ? "open-menulist" : "open-menulist close-menulist"}`}
+          className={`${
+            isLargeScreen
+              ? "large-menulist"
+              : showMenu
+              ? "open-menulist"
+              : "open-menulist close-menulist"
+          }`}
         >
           {navLinks()}
           <div className="nav-index">
             <li>
-              <i className="bx bx-power-off" /> <a onClick={handleLogout}>Logout</a>
+              <i className="bx bx-power-off" />{" "}
+              <a onClick={handleLogout}>Logout</a>
             </li>
           </div>
         </ul>
@@ -139,12 +159,18 @@ export default function Navbar() {
         <div id="logoutDialog" className="dialog">
           <div className="dialog-content">
             <h3>Are you sure you want to logout?</h3>
-            <p>You will be signed out of your account and redirected to the login page.</p>
+            <p>
+              You will be signed out of your account and redirected to the login
+              page.
+            </p>
             <div className="dialog-buttons">
               <button className="logout-btn" onClick={confirmLogout}>
                 Logout
               </button>
-              <button className="cancel-btn" onClick={() => setShowLogoutDialog(false)}>
+              <button
+                className="cancel-btn"
+                onClick={() => setShowLogoutDialog(false)}
+              >
                 Cancel
               </button>
             </div>
