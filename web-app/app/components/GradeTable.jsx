@@ -3,6 +3,7 @@
 
 import React, { useEffect, useMemo, useRef, useState, useContext } from "react";
 import { NotifContext } from "@/app/context/NotifContext";
+import LoadingSpinner from "./LoadingSpinner";
 
 const BASE = "/api";
 const GRADES = ["None", "A", "B", "C", "D", "F"];
@@ -199,8 +200,7 @@ export default function GradeTable({ sectionId }) {
 
   return (
     <>
-      <h2>Grade Table</h2>
-
+      <h2>Students Table</h2>
       {notStarted ? (
         <div className="searchStud">
           <div className="empty-section">
@@ -210,7 +210,6 @@ export default function GradeTable({ sectionId }) {
         </div>
       ) : (
         <div className="searchStud">
-          <h3>Search for Student</h3>
           <div className="search-bar-grades bordered-search-bar">
             <div className="search-box">
               <input
@@ -224,59 +223,57 @@ export default function GradeTable({ sectionId }) {
             </div>
           </div>
 
-          <table>
-            <thead>
-              <tr>
-                <th>Student ID</th>
-                <th>Student name</th>
-                <th>Student Grade</th>
-              </tr>
-            </thead>
-            <tbody>
-              {loading ? (
+          {loading ? (
+            <LoadingSpinner />
+          ) : (
+            <table>
+              <thead>
                 <tr>
-                  <td colSpan={3}>
-                    <i className="bx bx-loader-alt bx-spin" /> Loading…
-                  </td>
+                  <th>Student ID</th>
+                  <th>Student name</th>
+                  <th>Student Grade</th>
                 </tr>
-              ) : registrations.length === 0 ? (
-                <tr>
-                  <td colSpan={3}>No students found</td>
-                </tr>
-              ) : (
-                registrations.map((r) => {
-                  const student = r.student?.user || r.student || {};
-                  const studentId = student.userId || r.studentId;
-                  const current = r.grade?.length ? r.grade : "None";
-                  const sel = pending[studentId] ?? current;
+              </thead>
+              <tbody>
+                {registrations.length === 0 ? (
+                  <tr>
+                    <td colSpan={3}>No students found</td>
+                  </tr>
+                ) : (
+                  registrations.map((r) => {
+                    const student = r.student?.user || r.student || {};
+                    const studentId = student.userId || r.studentId;
+                    const current = r.grade?.length ? r.grade : "None";
+                    const sel = pending[studentId] ?? current;
 
-                  return (
-                    <tr key={studentId}>
-                      <td>{studentId}</td>
-                      <td>
-                        {student.firstName} {student.lastName}
-                      </td>
-                      <td>
-                        <select
-                          className="grade-dropdown"
-                          value={sel}
-                          onChange={(e) =>
-                            onChangeGrade(studentId, e.target.value)
-                          }
-                        >
-                          {GRADES.map((g) => (
-                            <option key={g} value={g}>
-                              {g === "None" ? "" : g}
-                            </option>
-                          ))}
-                        </select>
-                      </td>
-                    </tr>
-                  );
-                })
-              )}
-            </tbody>
-          </table>
+                    return (
+                      <tr key={studentId}>
+                        <td>{studentId}</td>
+                        <td>
+                          {student.firstName} {student.lastName}
+                        </td>
+                        <td>
+                          <select
+                            className="grade-dropdown"
+                            value={sel}
+                            onChange={(e) =>
+                              onChangeGrade(studentId, e.target.value)
+                            }
+                          >
+                            {GRADES.map((g) => (
+                              <option key={g} value={g}>
+                                {g === "None" ? "" : g}
+                              </option>
+                            ))}
+                          </select>
+                        </td>
+                      </tr>
+                    );
+                  })
+                )}
+              </tbody>
+            </table>
+          )}
 
           <div className="buttons">
             <button className="cancel-button" onClick={onCancel}>
