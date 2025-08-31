@@ -571,10 +571,18 @@ class AppRepo {
         })
       : null;
 
-    // 4) Registrations with course + section
+    // 4) All courses in the student's major (for "remaining"/pending)
+    const majorCourses = student
+      ? await prisma.course.findMany({
+          where: { majorId: student.majorId },
+          select: { id: true, courseCode: true, courseName: true },
+        })
+      : [];
+
+    // 5) Registrations with course + section (to compute completed & inProgress)
     const regs = student
       ? await prisma.registration.findMany({
-          where: { studentId: student.userId }, // Registration.studentId -> Student.userId (per your schema)
+          where: { studentId: student.userId },
           include: {
             course: {
               select: { id: true, courseCode: true, courseName: true },
@@ -586,24 +594,17 @@ class AppRepo {
         })
       : [];
 
-    // 5) Categorize with explicit "blank or F is NOT completed"
-    const categorized = {
-      completed: [],
-      inProgress: [],
-      pending: [],
-    };
+    const categorized = { completed: [], inProgress: [], pending: [] };
+    const completedIds = new Set();
+    const inProgressIds = new Set();
 
+    // Build completed & inProgress from registrations
     for (const r of regs) {
-      const status = r.section?.sectionStatus ?? null; // "COMPLETED" | "ONGOING" | "OPEN_REGISTRATION"
-
-      // Normalize grade: treat null/undefined/" "/whitespace as empty
+      const status = r.section?.sectionStatus ?? null; // COMPLETED | ONGOING | OPEN_REGISTRATION
       const rawGrade = (r.grade ?? "").trim();
       const gradeUpper = rawGrade.toUpperCase();
-
-      // Completed ONLY if there's a real grade AND it's not "F"
       const hasValidPassingGrade = rawGrade.length > 0 && gradeUpper !== "F";
 
-      // Base shape; pending/in-progress MUST NOT expose grade
       const base = {
         courseCode: r.course?.courseCode ?? "N/A",
         courseName: r.course?.courseName ?? "Unnamed Course",
@@ -614,20 +615,25 @@ class AppRepo {
 
       if (hasValidPassingGrade) {
         // ✅ Completed (grade present AND not "F")
-        categorized.completed.push({
-          ...base,
-          grade: rawGrade, // only completed shows grade
-        });
+        categorized.completed.push({ ...base, grade: rawGrade });
+        if (r.course?.id) completedIds.add(r.course.id);
       } else if (status === "ONGOING") {
-        // 🔄 In progress (no grade exposed)
-        categorized.inProgress.push({
-          ...base,
-          grade: null,
-        });
-      } else {
-        // 🕒 Pending (includes blank grade and "F"; no grade exposed)
+        // 🔄 In progress (no grade shown)
+        categorized.inProgress.push({ ...base, grade: null });
+        if (r.course?.id) inProgressIds.add(r.course.id);
+      }
+      // NOTE: do NOT push pending here; we'll compute it from the major catalog.
+    }
+
+    // 6) Pending = all major courses NOT in completed or inProgress
+    for (const c of majorCourses) {
+      if (!completedIds.has(c.id) && !inProgressIds.has(c.id)) {
         categorized.pending.push({
-          ...base,
+          courseCode: c.courseCode ?? "N/A",
+          courseName: c.courseName ?? "Unnamed Course",
+          days: null,
+          time: null,
+          status: null,
           grade: null,
         });
       }

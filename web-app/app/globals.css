@@ -1742,7 +1742,6 @@ h3 {
   display: flex;
   flex-direction: column;
   gap: 10px;
-
 }
 
 .course-status span {
@@ -1763,5 +1762,117 @@ h3 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 1rem;
+  }
+}
+
+
+.main-registration {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  gap: 20px;
+}
+
+.course-completed {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.orange {
+  color: orange;
+}
+
+.reg-btn {
+  width: 100%;
+  padding: 1rem;
+  color: white;
+  border-radius: 20px;
+}
+
+.active-reg-btn {
+  background-color: var(--coffee-);
+  border: 1px solid var(--coffee-);
+}
+
+.grey {
+  background-color: lightgray;
+  border: gray;
+}
+
+.active-reg-btn:hover {
+  cursor: pointer;
+}
+
+#note {
+  font-weight: 500;
+}
+
+.registered-courses {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 15px;
+  border: 1px solid var(--coffee-);
+  border-radius: 20px;
+  background-color: var(--light-beige-);
+}
+
+.delete-button {
+  position: absolute;
+  padding: 2px 5px;
+  border-radius: 10px;
+}
+
+.displayed-registered {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.display-precourses {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@media (min-width: 1024px) {
+
+  .display-precourses {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+
+  .main-registration {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "title title"
+      "info info"
+      "section registered"
+    ;
+  }
+
+
+  .title-grid {
+    grid-area: title;
+  }
+
+  .course-info-grid {
+    grid-area: info;
+  }
+
+  .course-section-grid {
+    grid-area: section;
+  }
+
+  .registered-courses-grid {
+    grid-area: registered;
+  }
+
+  .displayed-registered {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 }

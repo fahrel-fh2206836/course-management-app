@@ -25,8 +25,10 @@ export default function LearningPathComponent({ data, styles }) {
     if (name.includes("science")) return "/assets/images/flowchart_cs.png";
     if (name.includes("engineering") && major?.majorCode === "CMPE")
       return "/assets/images/flowchart_ce.png";
-    if (major?.majorCode === "ELEC") return "/assets/images/Screenshot 2025-05-07 200319.jpg";
-    if (major?.majorCode === "MATH") return "/assets/images/math-ug-curriculum-flowchart.png";
+    if (major?.majorCode === "ELEC")
+      return "/assets/images/Screenshot 2025-05-07 200319.jpg";
+    if (major?.majorCode === "MATH")
+      return "/assets/images/math-ug-curriculum-flowchart.png";
     return "/assets/images/default_flowchart.png";
   }, [major?.majorName, major?.majorCode]);
 
@@ -51,8 +53,8 @@ export default function LearningPathComponent({ data, styles }) {
     statusFilter === "completed"
       ? categorized.completed
       : statusFilter === "in_progress"
-        ? categorized.inProgress
-        : categorized.pending;
+      ? categorized.inProgress
+      : categorized.pending;
 
   if (status === "unauthenticated") return <p>You must be signed in</p>;
   if (!student || !user || !major) return <p>Data missing for this student.</p>;
@@ -63,11 +65,17 @@ export default function LearningPathComponent({ data, styles }) {
 
       <div className={`section-style achievements ${styles.statCard}`}>
         <p>
-          Hello, <span id="name">{user?.firstName} {user?.lastName}</span>. Here’s a summary of your{" "}
-          <span>Academic Performance</span> so far:
+          Hello,{" "}
+          <span id="name">
+            {user?.firstName} {user?.lastName}
+          </span>
+          . Here’s a summary of your <span>Academic Performance</span> so far:
         </p>
 
-        <img src="/assets/images/track_achievements_wide.png" alt="Track achievements" />
+        <img
+          src="/assets/images/track_achievements_wide.png"
+          alt="Track achievements"
+        />
 
         <div className="stats-card">
           <div>
@@ -76,12 +84,13 @@ export default function LearningPathComponent({ data, styles }) {
           </div>
           <div>
             <span>CGPA:</span>
-            {/* gpa is on Student in your schema */}
             <span id="stats-CGPA">{student?.gpa ?? "N/A"}</span>
           </div>
           <div>
             <span>Completed Courses:</span>
-            <span id="stats-completed-courses">{categorized.completed.length}</span>
+            <span id="stats-completed-courses">
+              {categorized.completed.length}
+            </span>
           </div>
           <div>
             <span>Completed Credit Hours:</span>
@@ -100,10 +109,13 @@ export default function LearningPathComponent({ data, styles }) {
 
       <div className="section-style tracker">
         <h1>
-          Track your Learning Path <i className={`bx bx-trending-up ${styles.iconDefLearningPath}`} />
+          Track your Learning Path{" "}
+          <i className={`bx bx-trending-up ${styles.iconDefLearningPath}`} />
         </h1>
 
-        <label htmlFor="status-filter" className="status-label">Select Status:</label>
+        <label htmlFor="status-filter" className="status-label">
+          Select Status:
+        </label>
         <select
           id="status-filter"
           className="status-dropdown"
@@ -122,7 +134,9 @@ export default function LearningPathComponent({ data, styles }) {
               Completed
             </h2>
             <div className={styles.courseList}>
-              {statusFilter === "completed" ? renderCourseList(currentList) : renderCourseList(categorized.completed)}
+              {statusFilter === "completed"
+                ? renderCourseList(currentList)
+                : renderCourseList(categorized.completed)}
             </div>
           </div>
 
@@ -132,7 +146,9 @@ export default function LearningPathComponent({ data, styles }) {
               Pending
             </h2>
             <div className={styles.courseList}>
-              {statusFilter === "pending" ? renderCourseList(currentList) : renderCourseList(categorized.pending)}
+              {statusFilter === "pending"
+                ? renderCourseList(currentList)
+                : renderCourseList(categorized.pending)}
             </div>
           </div>
 
@@ -142,7 +158,9 @@ export default function LearningPathComponent({ data, styles }) {
               In progress
             </h2>
             <div className={styles.courseList}>
-              {statusFilter === "in_progress" ? renderCourseList(currentList) : renderCourseList(categorized.inProgress)}
+              {statusFilter === "in_progress"
+                ? renderCourseList(currentList)
+                : renderCourseList(categorized.inProgress)}
             </div>
           </div>
         </div>
@@ -150,7 +168,8 @@ export default function LearningPathComponent({ data, styles }) {
 
       <div className="section-style prerequisite">
         <h1>
-          Your Program&apos;s Prerequisite Flowchart <i className="bx bx-sitemap" />
+          Your Program&apos;s Prerequisite Flowchart{" "}
+          <i className="bx bx-sitemap" />
         </h1>
         <div className="img-prerequsite">
           <img src={flowchartImage} alt="Program prerequisite flowchart" />
