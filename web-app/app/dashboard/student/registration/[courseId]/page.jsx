@@ -1,13 +1,9 @@
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import ClientRedirect from "@/app/components/ClientRedirect";
 import RegistrationComponent from "@/app/components/RegistrationComponent";
 import appRepo from "@/app/repo/app-repo";
 import { getServerSession } from "next-auth";
-
-async function getPrereqs(courseId) {
-  if (!courseId) return { prerequisites: [] };
-  const res = await fetch(`/api/course/${courseId}/prerequisites`);
-  return res.ok ? res.json() : { prerequisites: [] };
-}
+import { redirect } from "next/navigation";
 
 export default async function RegistrationPage({ params }) {
   const session = await getServerSession(authOptions);

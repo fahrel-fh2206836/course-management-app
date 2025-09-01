@@ -3,6 +3,8 @@ import styles from "./pages.module.css";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import Link from "next/link";
+import ClientRedirect from "@/app/components/ClientRedirect";
+import { redirect } from "next/navigation";
 
 export default async function CourseAllocation() {
   const session = await getServerSession(authOptions);

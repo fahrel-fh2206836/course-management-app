@@ -1,45 +1,59 @@
-'use client';
-import { useEffect, useRef, useState } from 'react';
-import styles from './page.module.css';
-import Link from 'next/link';
-import { useRouter } from 'next/navigation';
-import { signIn } from 'next-auth/react';
-import { getUserAction } from './actions/server-actions';
+"use client";
+import { useEffect, useRef, useState } from "react";
+import styles from "./page.module.css";
+import Link from "next/link";
+import { redirect, useRouter } from "next/navigation";
+import { signIn, useSession } from "next-auth/react";
 
 export default function Login() {
-  const [password, setPassword] = useState('');
-  const usernameRef = useRef('');
+  const { data: session } = useSession();
+
+  const [password, setPassword] = useState("");
+  const usernameRef = useRef("");
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState(false);
   const [hasMounted, setHasMounted] = useState(false);
   const router = useRouter();
- 
+
   useEffect(() => {
     setHasMounted(true);
-  }, [])
+  }, []);
 
-  if(!hasMounted) return null;
+  if (!hasMounted) return null;
+
+  if (session) {
+    const user = session?.user;
+    const roleBase =
+      user?.role === "Admin"
+        ? "/dashboard/admin"
+        : user?.role === "Instructor"
+        ? "/dashboard/instructor"
+        : user?.role === "Student"
+        ? "/dashboard/student"
+        : "/";
+    redirect(roleBase);
+  }
 
   async function googleLogIn() {
-    signIn("google", {callbackUrl: '/redirect'});
+    signIn("google", { callbackUrl: "/redirect" });
   }
 
   async function githubLogIn() {
-    signIn('github', { callbackUrl: '/redirect' });
+    signIn("github", { callbackUrl: "/redirect" });
   }
 
   async function handleLogin(e) {
     e.preventDefault();
     setError(false);
-    const result = await signIn('credentials', {
+    const result = await signIn("credentials", {
       redirect: false,
       username: usernameRef.current,
       password,
-      callbackUrl: '/redirect'
+      callbackUrl: "/redirect",
     });
 
     if (result?.ok) {
-      router.push('/redirect');
+      router.push("/redirect");
     } else {
       setError(true);
       setPassword("");
@@ -50,15 +64,20 @@ export default function Login() {
     setShowPassword(!showPassword);
   }
 
-
   return (
     <div className={styles.bodyWrapper}>
       <div className={styles.wrapper}>
         <form id="LoginForm" onSubmit={handleLogin}>
           <header>
-            <img src="/assets/images/qu_logo.png" alt="QU Logo" className={styles.image} />
+            <img
+              src="/assets/images/qu_logo.png"
+              alt="QU Logo"
+              className={styles.image}
+            />
             <h1>Course Management System</h1>
-            <p className={styles.quote}>Empowering learning, one course at a time.</p>
+            <p className={styles.quote}>
+              Empowering learning, one course at a time.
+            </p>
           </header>
 
           <main>
@@ -68,7 +87,9 @@ export default function Login() {
                 id="username"
                 name="username"
                 placeholder="Username"
-                onChange={(e) => {usernameRef.current = e.target.value;}}
+                onChange={(e) => {
+                  usernameRef.current = e.target.value;
+                }}
                 required
                 className={styles.input}
               />
@@ -77,52 +98,60 @@ export default function Login() {
 
             <div className={styles.inputBox}>
               <input
-                type={showPassword ? 'text' : 'password'}
+                type={showPassword ? "text" : "password"}
                 id="password"
                 name="password"
                 placeholder="Password"
                 value={password}
-                onChange={(e) => {setPassword(e.target.value)}}
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                }}
                 required
                 className={styles.input}
               />
               <i
                 id="toggle-btn"
-                className={`bx ${showPassword ? 'bx-hide' : 'bx-show'} ${styles.icon} bistre`}
+                className={`bx ${showPassword ? "bx-hide" : "bx-show"} ${
+                  styles.icon
+                } bistre`}
                 onClick={toggleViewPassword}
               ></i>
             </div>
 
             {error && (
               <p className={styles.error}>
-                <i className={`bx bx-error-circle ${styles.error}`}></i> Incorrect Username or Password.
+                <i className={`bx bx-error-circle ${styles.error}`}></i>{" "}
+                Incorrect Username or Password.
               </p>
             )}
 
             <div className={styles.rememberForgot}>
-              <label><input type="checkbox" /> Remember Me</label>
+              <label>
+                <input type="checkbox" /> Remember Me
+              </label>
               <Link href="#">Forgot Password?</Link>
             </div>
 
-            <button type="submit" className={styles.submitButton}>Sign In</button>
+            <button type="submit" className={styles.submitButton}>
+              Sign In
+            </button>
 
-            <p><b>OR</b></p>
+            <p>
+              <b>OR</b>
+            </p>
 
             <button
               type="button"
               onClick={() => googleLogIn()}
-
               className={`${styles.oauthBtn} ${styles.googleBtn}`}
             >
               <img src="/assets/images/google-icon.svg.webp" alt="Google" />
               Sign in with Google
             </button>
 
-
             <button
               type="button"
               onClick={() => githubLogIn()}
-
               className={`${styles.oauthBtn} ${styles.githubBtn}`}
             >
               <img src="/assets/images/github-icon.png" alt="GitHub" />
@@ -131,7 +160,7 @@ export default function Login() {
 
             <hr style={{ margin: "1rem 0" }} />
 
-            <Link href="/statistics" className='stats-button'>
+            <Link href="/statistics" className="stats-button">
               📊 View Statistics
             </Link>
           </main>
@@ -139,5 +168,4 @@ export default function Login() {
       </div>
     </div>
   );
-
 }

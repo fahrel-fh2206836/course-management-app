@@ -4,6 +4,7 @@ import CourseInfo from "@/app/components/CourseInfo";
 import CourseSection from "@/app/components/CourseSection";
 import appRepo from "@/app/repo/app-repo";
 import { getServerSession } from "next-auth";
+import { redirect } from "next/navigation";
 import React from "react";
 
 export default async function ManageCoursePage({ params }) {

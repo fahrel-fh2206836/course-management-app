@@ -2,6 +2,7 @@
 "use client";
 
 import React, { useEffect, useMemo, useRef, useState } from "react";
+import EmptySection from "./EmptySection";
 
 export default function LearningPathComponent({ data, styles }) {
   const { user, student, major, categorized, status } = data;
@@ -32,8 +33,9 @@ export default function LearningPathComponent({ data, styles }) {
     return "/assets/images/default_flowchart.png";
   }, [major?.majorName, major?.majorCode]);
 
-  const renderCourseList = (list) =>
-    list.map((course, idx) => (
+  function renderCourseList(list) {
+    if (list.length === 0) return <EmptySection text={"No Courses"} />;
+    return list.map((course, idx) => (
       <div key={idx} className={styles.courseCard}>
         <div className={styles.courseHeader}>
           <span className={styles.courseCode}>{course.courseCode}</span>
@@ -48,6 +50,7 @@ export default function LearningPathComponent({ data, styles }) {
         </div>
       </div>
     ));
+  }
 
   const currentList =
     statusFilter === "completed"

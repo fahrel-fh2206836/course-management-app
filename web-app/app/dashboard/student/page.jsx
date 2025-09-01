@@ -15,17 +15,10 @@ import {
   getRegistrationsByStudentIdandSemAction,
   getCompletedCreditsAction,
 } from "@/app/actions/server-actions";
+import { redirect } from "next/navigation";
 
 export default function StudentDashboard() {
   const { data: session, status } = useSession();
-  if (!session) {
-    return (
-      <main className="main-dashboard">
-        <p>Session expired. Redirecting in 5 seconds...</p>
-        <ClientRedirect to="/" delay={5000} />
-      </main>
-    );
-  }
   const user = session?.user;
 
   // Data
@@ -121,6 +114,25 @@ export default function StudentDashboard() {
       cancelled = true;
     };
   }, [status, user?.id, user?.Student?.majorId]);
+
+  if (!session) {
+    return (
+      <main className="main-dashboard">
+        <p>Session expired. Redirecting in 5 seconds...</p>
+        <ClientRedirect to="/" delay={5000} />
+      </main>
+    );
+  }
+
+  if (user?.role !== "Student") {
+    const roleBase =
+      user?.role === "Admin"
+        ? "/dashboard/admin"
+        : user?.role === "Instructor"
+        ? "/dashboard/instructor"
+        : "/";
+    redirect(roleBase);
+  }
 
   if (status === "loading") {
     return <LoadingSpinner center />;

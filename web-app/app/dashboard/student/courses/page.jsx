@@ -1,8 +1,9 @@
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import ClientRedirect from "@/app/components/ClientRedirect";
 import CoursesSearch from "@/app/components/CourseSearch";
 import appRepo from "@/app/repo/app-repo";
 import { getServerSession } from "next-auth";
-import Link from "next/link";
+import { redirect } from "next/navigation";
 
 export default async function CoursesPage() {
   const session = await getServerSession(authOptions);

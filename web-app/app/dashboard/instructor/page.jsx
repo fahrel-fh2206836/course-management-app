@@ -14,17 +14,10 @@ import LoadingSpinner from "@/app/components/LoadingSpinner";
 import styles from "./page.module.css";
 import ErrorMessage from "@/app/components/ErrorMessage";
 import ClientRedirect from "@/app/components/ClientRedirect";
+import { redirect } from "next/navigation";
 
 export default function InstructorDashboard() {
   const { data: session, status } = useSession();
-  if (!session) {
-    return (
-      <main className="main-dashboard">
-        <p>Session expired. Redirecting in 5 seconds...</p>
-        <ClientRedirect to="/" delay={5000} />
-      </main>
-    );
-  }
 
   const user = session?.user;
   const userId = user?.userId ?? user?.id;
@@ -186,6 +179,25 @@ export default function InstructorDashboard() {
     } finally {
       setLoadingNonOngoing(false);
     }
+  }
+
+  if (!session) {
+    return (
+      <main className="main-dashboard">
+        <p>Session expired. Redirecting in 5 seconds...</p>
+        <ClientRedirect to="/" delay={5000} />
+      </main>
+    );
+  }
+
+  if (user?.role !== "Instructor") {
+    const roleBase =
+      user?.role === "Student"
+        ? "/dashboard/student"
+        : user?.role === "Admin"
+        ? "/dashboard/admin"
+        : "/";
+    redirect(roleBase);
   }
 
   if (status === "loading") {
