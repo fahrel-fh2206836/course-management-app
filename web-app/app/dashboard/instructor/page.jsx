@@ -1,8 +1,9 @@
 // app/dashboard/instructor/page.jsx
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 import {
   getSectionsAction,
   getInstructorTotalStudentSemAction,
@@ -14,10 +15,11 @@ import LoadingSpinner from "@/app/components/LoadingSpinner";
 import styles from "./page.module.css";
 import ErrorMessage from "@/app/components/ErrorMessage";
 import ClientRedirect from "@/app/components/ClientRedirect";
-import { redirect } from "next/navigation";
 
 export default function InstructorDashboard() {
+  // 1) HOOKS — always at the very top, no early returns above this line
   const { data: session, status } = useSession();
+  const router = useRouter();
 
   const user = session?.user;
   const userId = user?.userId ?? user?.id;
@@ -42,6 +44,25 @@ export default function InstructorDashboard() {
   const [errorOngoing, setErrorOngoing] = useState(false);
   const [errorNonOngoing, setErrorNonOngoing] = useState(false);
 
+  // 2) GUARDS (derived booleans) — still before any return
+  const shouldRedirectRole = useMemo(
+    () => status === "authenticated" && session && user?.role !== "Instructor",
+    [status, session, user?.role]
+  );
+  const roleBase = useMemo(() => {
+    if (!user?.role) return "/";
+    if (user.role === "Student") return "/dashboard/student";
+    if (user.role === "Admin") return "/dashboard/admin";
+    return "/";
+  }, [user?.role]);
+
+  // 3) EFFECTS — redirects happen here (never inline during render)
+  useEffect(() => {
+    if (shouldRedirectRole) {
+      router.replace(roleBase);
+    }
+  }, [shouldRedirectRole, roleBase, router]);
+
   useEffect(() => {
     if (status !== "authenticated" || !userId) return;
 
@@ -49,7 +70,6 @@ export default function InstructorDashboard() {
 
     (async () => {
       try {
-        // Reset states
         setLoadingStats(true);
         setLoadingOngoing(true);
         setLoadingNonOngoing(true);
@@ -58,9 +78,8 @@ export default function InstructorDashboard() {
         setErrorNonOngoing(false);
 
         const semesters = await getSemestersAction();
-        // Your original code used the second-to-last as target
         const picked = semesters?.[semesters.length - 2]?.semester;
-        setOngoingSemester(picked);
+        if (!cancelled) setOngoingSemester(picked ?? "");
 
         if (!picked) {
           if (!cancelled) {
@@ -76,7 +95,7 @@ export default function InstructorDashboard() {
 
         // Build the non-ongoing semester options (exclude target)
         try {
-          const options = await getSemestersAction([picked]); // your action supports exclusion
+          const options = await getSemestersAction([picked]); // if your action supports exclusion
           if (!cancelled) {
             setNonOngoingSemesters(
               Array.isArray(options) ? options.map((s) => s.semester) : []
@@ -86,55 +105,45 @@ export default function InstructorDashboard() {
           if (!cancelled) setNonOngoingSemesters([]);
         }
 
-        // Fetch in parallel for the picked semester
         const [activeSecs, nonActiveSecs, totalCurrStudent] =
           await Promise.allSettled([
-            getSectionsAction(userId, picked, false), // ongoing for picked sem
-            getSectionsAction(userId, picked, true), // non-ongoing for picked sem
+            getSectionsAction(userId, picked, false),
+            getSectionsAction(userId, picked, true),
             getInstructorTotalStudentSemAction(userId, picked),
           ]);
 
-        // Ongoing
         if (!cancelled) {
+          // ongoing
           if (
             activeSecs.status === "fulfilled" &&
             Array.isArray(activeSecs.value)
           ) {
             setOngoingSecs(activeSecs.value);
-            setErrorOngoing(false);
           } else {
             setOngoingSecs([]);
             setErrorOngoing(true);
           }
           setLoadingOngoing(false);
-        }
 
-        // Non-ongoing (initially for picked sem)
-        if (!cancelled) {
+          // non-ongoing
           if (
             nonActiveSecs.status === "fulfilled" &&
             Array.isArray(nonActiveSecs.value)
           ) {
             setNonOngoingSecs(nonActiveSecs.value);
-            setErrorNonOngoing(false);
           } else {
             setNonOngoingSecs([]);
             setErrorNonOngoing(true);
           }
           setLoadingNonOngoing(false);
-        }
 
-        // Stats
-        if (!cancelled) {
+          // stats
           if (
             activeSecs.status === "fulfilled" &&
             nonActiveSecs.status === "fulfilled" &&
-            totalCurrStudent.status === "fulfilled" &&
-            totalCurrStudent.value !== null &&
-            totalCurrStudent.value !== undefined
+            totalCurrStudent.status === "fulfilled"
           ) {
             setCurrStudents(totalCurrStudent.value?._sum?.currentSeats ?? 0);
-            setErrorStats(false);
           } else {
             setErrorStats(true);
           }
@@ -158,6 +167,7 @@ export default function InstructorDashboard() {
     };
   }, [status, userId]);
 
+  // 4) EVENT HANDLERS — fine to define here
   async function handleNonOngoingSemesterChange(e) {
     const value = e.target.value;
     setSelectedNonOngoingSem(value);
@@ -166,14 +176,15 @@ export default function InstructorDashboard() {
     setErrorNonOngoing(false);
 
     try {
-      let list = [];
       const semArg = value === "All" ? ongoingSemester : value;
-      if (value === "All") list = await getSectionsAction(userId, semArg, true);
-      else list = await getSectionsAction(userId, semArg);
+      const list =
+        value === "All"
+          ? await getSectionsAction(userId, semArg, true)
+          : await getSectionsAction(userId, semArg);
 
       setNonOngoingSecs(Array.isArray(list) ? list : []);
       if (!Array.isArray(list)) setErrorNonOngoing(true);
-    } catch (err) {
+    } catch {
       setNonOngoingSecs([]);
       setErrorNonOngoing(true);
     } finally {
@@ -181,7 +192,14 @@ export default function InstructorDashboard() {
     }
   }
 
-  if (!session) {
+  // 5) RETURNS — after ALL hooks above
+  if (status === "loading") return <LoadingSpinner center />;
+
+  // if auth resolved & role mismatch, effect will navigate; render nothing meanwhile
+  if (shouldRedirectRole) return null;
+
+  if (status === "unauthenticated") {
+    // either render a message or use your ClientRedirect helper here
     return (
       <main className="main-dashboard">
         <p>Session expired. Redirecting in 5 seconds...</p>
@@ -190,28 +208,7 @@ export default function InstructorDashboard() {
     );
   }
 
-  if (user?.role !== "Instructor") {
-    const roleBase =
-      user?.role === "Student"
-        ? "/dashboard/student"
-        : user?.role === "Admin"
-        ? "/dashboard/admin"
-        : "/";
-    redirect(roleBase);
-  }
-
-  if (status === "loading") {
-    return <LoadingSpinner center />;
-  }
-
-  if (status === "unauthenticated") {
-    return (
-      <main className="main-dashboard">
-        <p>You must be signed in.</p>
-      </main>
-    );
-  }
-
+  // Normal render
   const totalClasses =
     (ongoingSecs?.length ?? 0) + (nonOngoingSecs?.length ?? 0);
 

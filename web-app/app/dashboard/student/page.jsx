@@ -1,7 +1,6 @@
-// app/dashboard/page.jsx
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { useSession } from "next-auth/react";
 import styles from "./page.module.css";
 import CourseCard1 from "@/app/components/CourseCard1";
@@ -15,14 +14,16 @@ import {
   getRegistrationsByStudentIdandSemAction,
   getCompletedCreditsAction,
 } from "@/app/actions/server-actions";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 export default function StudentDashboard() {
+  // HOOKS — always at top
   const { data: session, status } = useSession();
+  const router = useRouter();
   const user = session?.user;
 
   // Data
-  const [regSections, setRegSections] = useState(null); // null until fetched
+  const [regSections, setRegSections] = useState(null);
   const [major, setMajor] = useState(null);
   const [progress, setProgress] = useState(0);
   const [completedCredits, setCompletedCredits] = useState(0);
@@ -33,11 +34,29 @@ export default function StudentDashboard() {
   const [loadingSections, setLoadingSections] = useState(true);
   const [errorSections, setErrorSections] = useState(false);
 
+  // Derived guard for role redirect
+  const shouldRedirectRole = useMemo(
+    () => status === "authenticated" && session && user?.role !== "Student",
+    [status, session, user?.role]
+  );
+  const roleBase = useMemo(() => {
+    if (user?.role === "Admin") return "/dashboard/admin";
+    if (user?.role === "Instructor") return "/dashboard/instructor";
+    return "/";
+  }, [user?.role]);
+
+  // Effect: role-based redirect (never in render)
   useEffect(() => {
-    if (status !== "authenticated" || !user?.id) return;
+    if (shouldRedirectRole) {
+      router.replace(roleBase);
+    }
+  }, [shouldRedirectRole, roleBase, router]);
+
+  // Effect: fetch data (only for authenticated students)
+  useEffect(() => {
+    if (status !== "authenticated" || !user?.id || shouldRedirectRole) return;
 
     let cancelled = false;
-
     (async () => {
       try {
         setLoadingStats(true);
@@ -63,7 +82,8 @@ export default function StudentDashboard() {
               prevSemester
             );
             if (!cancelled) {
-              setRegSections(Array.isArray(regSec) ? regSec : []);
+              const arr = Array.isArray(regSec) ? regSec : [];
+              setRegSections(arr);
               if (!Array.isArray(regSec)) setErrorSections(true);
             }
           } catch {
@@ -82,15 +102,14 @@ export default function StudentDashboard() {
           }
         }
 
-        // 3) Stats: major + completedCredits (from repo) + progress
+        // 3) Stats
         try {
           const m = await getMajorByIdAction(user?.Student?.majorId);
-          const credits = await getCompletedCreditsAction(user.id);
-
+          const creditsRaw = await getCompletedCreditsAction(user.id);
           if (!cancelled) {
+            const credits = Number(creditsRaw) || 0;
             setMajor(m ?? null);
             setCompletedCredits(credits);
-
             const total = Number(m?.totalCreditHour ?? 0);
             const percent = total > 0 ? Math.round((credits / total) * 100) : 0;
             setProgress(percent);
@@ -113,35 +132,27 @@ export default function StudentDashboard() {
     return () => {
       cancelled = true;
     };
-  }, [status, user?.id, user?.Student?.majorId]);
+  }, [status, user?.id, user?.Student?.majorId, shouldRedirectRole]);
+
+  // RETURNS — all after hooks
+  if (status === "loading") return <LoadingSpinner center />;
+
+  if (status === "unauthenticated") {
+    return (
+      <main className="main-dashboard">
+        <p>You must be signed in</p>
+      </main>
+    );
+  }
+
+  // while role redirecting, render nothing to avoid flash
+  if (shouldRedirectRole) return null;
 
   if (!session) {
     return (
       <main className="main-dashboard">
         <p>Session expired. Redirecting in 5 seconds...</p>
         <ClientRedirect to="/" delay={5000} />
-      </main>
-    );
-  }
-
-  if (user?.role !== "Student") {
-    const roleBase =
-      user?.role === "Admin"
-        ? "/dashboard/admin"
-        : user?.role === "Instructor"
-        ? "/dashboard/instructor"
-        : "/";
-    redirect(roleBase);
-  }
-
-  if (status === "loading") {
-    return <LoadingSpinner center />;
-  }
-
-  if (status === "unauthenticated") {
-    return (
-      <main className="main-dashboard">
-        <p>You must be signed in</p>
       </main>
     );
   }

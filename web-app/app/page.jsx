@@ -1,50 +1,60 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+
+import { useEffect, useRef, useState, useMemo } from "react";
 import styles from "./page.module.css";
 import Link from "next/link";
-import { redirect, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { signIn, useSession } from "next-auth/react";
 
 export default function Login() {
-  const { data: session } = useSession();
+  // HOOKS — keep all at the top
+  const { data: session, status } = useSession();
+  const router = useRouter();
+
+  const user = session?.user;
 
   const [password, setPassword] = useState("");
   const usernameRef = useRef("");
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState(false);
   const [hasMounted, setHasMounted] = useState(false);
-  const router = useRouter();
 
+  // mount guard (if you need it to avoid hydration flicker)
   useEffect(() => {
     setHasMounted(true);
   }, []);
 
-  if (!hasMounted) return null;
+  // compute target dashboard
+  const roleBase = useMemo(() => {
+    if (!user?.role) return "/";
+    if (user.role === "Admin") return "/dashboard/admin";
+    if (user.role === "Instructor") return "/dashboard/instructor";
+    if (user.role === "Student") return "/dashboard/student";
+    return "/";
+  }, [user?.role]);
 
-  if (session) {
-    const user = session?.user;
-    const roleBase =
-      user?.role === "Admin"
-        ? "/dashboard/admin"
-        : user?.role === "Instructor"
-        ? "/dashboard/instructor"
-        : user?.role === "Student"
-        ? "/dashboard/student"
-        : "/";
-    redirect(roleBase);
-  }
+  // redirect authenticated users away from login
+  useEffect(() => {
+    if (status === "authenticated" && session) {
+      router.replace(roleBase);
+    }
+  }, [status, session, roleBase, router]);
 
+  // EVENT HANDLERS
   async function googleLogIn() {
-    signIn("google", { callbackUrl: "/redirect" });
+    // Let NextAuth handle the redirect
+    await signIn("google", { callbackUrl: "/redirect" });
   }
 
   async function githubLogIn() {
-    signIn("github", { callbackUrl: "/redirect" });
+    await signIn("github", { callbackUrl: "/redirect" });
   }
 
   async function handleLogin(e) {
     e.preventDefault();
     setError(false);
+
+    // Use redirect: false to control navigation yourself
     const result = await signIn("credentials", {
       redirect: false,
       username: usernameRef.current,
@@ -53,7 +63,8 @@ export default function Login() {
     });
 
     if (result?.ok) {
-      router.push("/redirect");
+      // Prefer replace so Back doesn’t return to login
+      router.replace(result.url ?? "/redirect");
     } else {
       setError(true);
       setPassword("");
@@ -61,8 +72,14 @@ export default function Login() {
   }
 
   function toggleViewPassword() {
-    setShowPassword(!showPassword);
+    setShowPassword((v) => !v);
   }
+
+  // RETURNS — after all hooks above
+  if (!hasMounted) return null;
+
+  // While redirecting an already-authenticated user, render nothing
+  if (status === "authenticated" && session) return null;
 
   return (
     <div className={styles.bodyWrapper}>
@@ -103,9 +120,7 @@ export default function Login() {
                 name="password"
                 placeholder="Password"
                 value={password}
-                onChange={(e) => {
-                  setPassword(e.target.value);
-                }}
+                onChange={(e) => setPassword(e.target.value)}
                 required
                 className={styles.input}
               />
@@ -115,7 +130,7 @@ export default function Login() {
                   styles.icon
                 } bistre`}
                 onClick={toggleViewPassword}
-              ></i>
+              />
             </div>
 
             {error && (
@@ -142,7 +157,7 @@ export default function Login() {
 
             <button
               type="button"
-              onClick={() => googleLogIn()}
+              onClick={googleLogIn}
               className={`${styles.oauthBtn} ${styles.googleBtn}`}
             >
               <img src="/assets/images/google-icon.svg.webp" alt="Google" />
@@ -151,7 +166,7 @@ export default function Login() {
 
             <button
               type="button"
-              onClick={() => githubLogIn()}
+              onClick={githubLogIn}
               className={`${styles.oauthBtn} ${styles.githubBtn}`}
             >
               <img src="/assets/images/github-icon.png" alt="GitHub" />
