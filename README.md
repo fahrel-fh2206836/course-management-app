@@ -31,7 +31,7 @@ For demonstration purposes, you can find the user credentials under `/app/data/u
 
 - **Frontend**: Next.js 15.3.0, React 19.0.0
 - **Authentication**: NextAuth.js 4.24.11
-- **Database**: SQLite with Prisma ORM
+- **Database**: POSTGRESQL with Prisma ORM
 - **Styling**: CSS Modules
 
 ## 🗄️ Database Schema
