@@ -1,68 +1,73 @@
-# 🎓 QU Course Management Application
+# Course Management System
 
-A full-stack web application built for the CSE department of Qatar University to manage students, courses, instructors, and administrators. Developed as part of the CMPS 350 Web Development course project.
-
-## 📌 Overview
-
-This application enables:
-- Students to register for and view courses, track learning paths, and see grades.
-- Instructors to manage classes and submit grades.
-- Administrators to create and manage courses/classes, validate enrollments and view classes schedules.
-
-It is built in two phases:
-- **Phase 1:** JSON-based file storage and basic functionality impemented with vanilla HTML, CSS, and JS.
-- **Phase 2:** Transition to a real database using Prisma with full statistics, Next.js Web APIs and React.js.
-
+A comprehensive web application for managing university courses, student registrations, and academic workflows. Built with Next.js, React, and Prisma for a modern, scalable course management experience.
 
 ## 🚀 Features
 
-### 🛠️ Phase 1 Functionalities (JSON-based)
-- **Login** using JSON-based credential verification.
-- **Search Courses** by name or category.
-- **Course Registration** with validation of prerequisites and available seats.
-- **Learning Path View**: Track completed, in-progress, and pending courses.
-- **Course/Class Management** by administrators (create, validate/cancel).
-- **Grade Submission** by instructors.
-- **Weekly schedule** for classes displayed for administrators.
+### For Students
+- **Course Registration**: Browse and register for available courses
+- **Learning Path Visualization**: View recommended course sequences and prerequisites
+- **Grade Tracking**: Monitor academic progress and completed courses
+- **Schedule Management**: View class schedules and course timings
 
-### ⬆️ Phase 2 Enhancements (Database + Fullstack)
-- Re-implemented to **React.js**.
-- Migration to a **relational database** using Prisma.
-- **Seed.js** to populate database with 500+ students and 50+ courses.
-- Implementation of **Data Repository** with efficient Prisma queries.
-- Integration of both **Next.js Server Actions** and **REST APIs**.
-- A **Statistics Dashboard** featuring at least **10 meaningful metrics**:
-  - Total students per year/course/category
-  - Top 3 most taken courses
-  - Failure rates per course
-  - And more...
+### For Instructors
+- **Course Allocation**: Manage assigned courses and sections
+- **Grade Management**: Input and update student grades
+- **Section Management**: Handle course sections and student enrollment
+- **Academic Oversight**: Monitor student progress and course completion
 
-## 🗂️ Technologies Used
+### For Administrators
+- **Course Management**: Add, edit, and manage course offerings
+- **Section Administration**: Create and manage course sections
+- **User Management**: Oversee students, instructors, and admin accounts
+- **System Statistics**: View comprehensive analytics and reports
 
-| Area              | Tech Stack                     |
-|-------------------|--------------------------------|
-| Frontend          | HTML, CSS, JavaScript, React   |
-| Backend           | Node.js, Next.js               |
-| Database          | SQLite (via Prisma ORM)|  
-| Authentication    | JSON-based (Phase 1), JWT-token sessions (Phase 2) |
-| Dev Tools         | VSCode, Git, GitHub            |
+## 🛠️ Tech Stack
 
-## 📑 More About The Project
-Detailed Documentation for Both Phases:
+- **Frontend**: Next.js 15.3.0, React 19.0.0
+- **Authentication**: NextAuth.js 4.24.11
+- **Database**: SQLite with Prisma ORM
+- **Styling**: CSS Modules
 
-- **_CMPS350_Project Phase 1_Report.docx_**
-- **_CMPS350_Project Phase 2_Report.docx_**
+## 🗄️ Database Schema
 
-## 📦 Prerequisites
+The application uses a comprehensive database schema with the following main entities:
 
-Before running this project, ensure you have the following installed:
+- **Users**: Authentication and role management
+- **Students**: Academic records and course registrations
+- **Instructors**: Teaching assignments and course management
+- **Courses**: Course information and prerequisites
+- **Sections**: Class sections with enrollment limits
+- **Registrations**: Student-course enrollment records
+- **Majors**: Academic programs and degree tracks
 
-- **Node.js** (v18 or later) – for running the backend and Next.js frontend  
-- **npm** – Node package manager (comes with Node.js)
+## 🔐 Authentication
 
-## 🧑‍🤝‍🧑 Team Contributions
-1. Fahrel Azki Hidayat
-2. Mohammed Alam
-3. AbdulWasay Saqib
-4. Ghanim Al-Kuwari
+The system supports multiple authentication methods:
+- **Credentials**: Username/password login
+- **Google OAuth**: Google account integration
+- **GitHub OAuth**: GitHub account integration
 
+## 📊 Features Overview
+
+### Student Dashboard
+- View available courses and sections
+- Register for courses with prerequisite checking
+- Track academic progress and GPA
+- View personalized learning paths
+
+### Instructor Dashboard
+- Manage assigned course sections
+- Input and update student grades
+- View section enrollment and capacity
+- Monitor student progress
+
+### Admin Dashboard
+- Add and manage courses and sections
+- Oversee user accounts and roles
+- View system statistics and reports
+- Manage academic programs and majors
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
