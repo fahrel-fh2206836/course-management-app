@@ -5,7 +5,7 @@ A comprehensive web application for managing university courses, student registr
 ## 🔑 Demo Access
 🔗 Live Demo: https://unitrack-eight.vercel.app
 
-For demonstration purposes, you can find the user credentials under `/app/data/users.json`
+For demonstration purposes, you can find the user credentials under `/app/data/users.json`.
 
 ## 🚀 Features
 
