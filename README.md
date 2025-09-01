@@ -2,6 +2,10 @@
 
 A comprehensive web application for managing university courses, student registrations, and academic workflows. Built with Next.js, React, and Prisma for a modern, scalable course management experience.
 
+## 🔑 Demo Access
+🔗 Live Demo: https://unitrack-eight.vercel.app
+For demonstration purposes, you can find the user credentials under `/app/data/users.json`
+
 ## 🚀 Features
 
 ### For Students
