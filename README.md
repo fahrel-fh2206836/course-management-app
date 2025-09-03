@@ -72,7 +72,3 @@ The system supports multiple authentication methods:
 - Oversee user accounts and roles
 - View system statistics and reports
 - Manage academic programs and majors
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
