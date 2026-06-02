@@ -28,7 +28,7 @@ export default async function RegistrationPage({ params }) {
   }
   const studentId = user?.userId ?? user?.id ?? null;
 
-  const courseId = params?.courseId ?? null;
+  const { courseId = null } = await params;
   const course = await appRepo.getCourseById(courseId);
   const semesters = await appRepo.getSemesters();
   const openRegistrationSemester =

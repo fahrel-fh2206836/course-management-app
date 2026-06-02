@@ -28,7 +28,7 @@ export default async function GradePage({ params }) {
     redirect(roleBase);
   }
 
-  const { sectionId } = params;
+  const { sectionId } = await params;
 
   return (
     <main className="main-grades">

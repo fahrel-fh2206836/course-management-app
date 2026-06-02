@@ -29,7 +29,7 @@ export default async function ManageCoursePage({ params }) {
     redirect(roleBase);
   }
 
-  const courseId = params.courseId;
+  const { courseId } = await params;
   const selectedCourse = await appRepo.getCourseById(courseId);
   const courseSections = await appRepo.getSections(null, null, null, courseId);
   return (

@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server'
 import AppRepo from '@/app/repo/app-repo'
 
 export async function GET(request, { params }) {
-  const { StudentID } = params
+  const { StudentID } = await params
 
   try {
     const data = await AppRepo.getLearningPathData(StudentID)
@@ -19,7 +19,8 @@ export async function GET(request, { params }) {
 }
 
 export async function PUT(req, { params }) {
+  const { StudentID } = await params;
   const student = await req.json()
-  const updatedStudent = await AppRepo.updateStudent(params.StudentID, student);
+  const updatedStudent = await AppRepo.updateStudent(StudentID, student);
   return Response.json(updatedStudent, {status: 200})
 }
